@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Skincare Set – Expert Product Review</title>
+  <meta name="description" content="An in-depth review of the Organic Skincare Set — honest pros, real cons, and a head-to-head competitor comparison." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #f9f6f1;
+      --fg:       #2c2318;
+      --muted-bg: #f1ece4;
+      --border:   #ddd4c5;
+      --card:     #fdfaf6;
+      --primary:  #3a6b4e;
+      --primary-light: #eaf2ec;
+      --accent:   #c46b3a;
+      --gold:     #c9a96e;
+      --gold-light: #f0e4cc;
+      --muted-fg: #7a6a58;
+      --serif:    'Playfair Display', Georgia, serif;
+      --sans:     'Inter', system-ui, sans-serif;
+      --radius:   12px;
+      --shadow:   0 4px 16px rgba(44,35,24,.08);
+      --shadow-lg: 0 12px 40px rgba(44,35,24,.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in[data-delay="1"] { transition-delay: .07s; }
+    .fade-in[data-delay="2"] { transition-delay: .14s; }
+    .fade-in[data-delay="3"] { transition-delay: .21s; }
+    .fade-in[data-delay="4"] { transition-delay: .28s; }
+    .fade-in[data-delay="5"] { transition-delay: .35s; }
+    .fade-in[data-delay="6"] { transition-delay: .42s; }
+    .fade-in[data-delay="7"] { transition-delay: .49s; }
+    .fade-in[data-delay="8"] { transition-delay: .56s; }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--muted-bg); }
+
+    .section-label {
+      display: block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--fg);
+    }
+    .section-sub { color: var(--muted-fg); margin-top: 10px; max-width: 520px; }
+    .text-center { text-align: center; }
+    .text-center .section-sub { margin: 10px auto 0; }
+
+    #hero {
+      background: linear-gradient(135deg, #1e4231 0%, #2d5a41 50%, #6b4a28 100%);
+      padding: 100px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 15% 80%, rgba(201,169,110,.25) 0%, transparent 45%),
+        radial-gradient(circle at 85% 20%, rgba(58,107,78,.4) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 18px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(8px);
+      color: #e8d9bf;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      color: #f5ede0;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    .hero-title span { color: var(--gold); }
+    .hero-sub { color: #c9b89a; font-size: 1.05rem; max-width: 480px; margin: 14px auto 0; line-height: 1.7; }
+    .hero-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; margin-top: 48px; }
+    .hero-stat-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: #8fa895; margin-bottom: 4px; }
+    .hero-stat-value { font-size: 1.7rem; font-weight: 700; color: #f5ede0; }
+    .hero-chevron { margin-top: 56px; animation: bounce 2s infinite; color: #a0b8a8; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; gap: 32px; } }
+    .prose p { color: var(--muted-fg); line-height: 1.8; margin-bottom: 16px; }
+    .prose strong { color: var(--fg); font-weight: 600; }
+    .ingredient-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+    .ingredient-card h3 { font-size: .65rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--muted-fg); margin-bottom: 16px; }
+    .ingredient-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); gap: 12px; }
+    .ingredient-row:last-child { border-bottom: none; }
+    .ingredient-name { display: flex; align-items: center; gap: 7px; font-weight: 600; font-size: .88rem; }
+    .ingredient-name svg { color: var(--primary); flex-shrink: 0; }
+    .ingredient-benefit { font-size: .78rem; color: var(--muted-fg); text-align: right; max-width: 170px; }
+
+    .tab-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--border); border-radius: 99px; padding: 4px; margin: 0 auto 32px; }
+    .tab-btn { padding: 9px 28px; border-radius: 99px; border: none; background: none; font-family: var(--sans); font-size: .88rem; font-weight: 600; cursor: pointer; color: var(--muted-fg); transition: background .2s, color .2s; }
+    .tab-btn.active-pros { background: var(--primary); color: #fff; }
+    .tab-btn.active-cons { background: var(--accent); color: #fff; }
+    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .cards-grid { grid-template-columns: 1fr; } }
+    .item-card { display: flex; align-items: flex-start; gap: 12px; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .item-icon-wrap { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--primary-light); display: flex; align-items: center; justify-content: center; }
+    .item-icon-wrap svg { color: var(--primary); }
+    .item-text { font-size: .88rem; line-height: 1.6; color: var(--fg); }
+    .cross-icon { color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+
+    .table-wrap { border-radius: var(--radius); border: 1px solid var(--border); overflow-x: auto; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    thead tr { background: var(--muted-bg); }
+    th { padding: 14px 18px; text-align: center; font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-fg); white-space: nowrap; }
+    th:first-child { text-align: left; }
+    td { padding: 14px 18px; text-align: center; border-top: 1px solid var(--border); color: var(--muted-fg); vertical-align: middle; }
+    td:first-child { text-align: left; }
+    tr.highlight-row { background: #eaf2ec; }
+    tr:not(.highlight-row):nth-child(even) td { background: var(--bg); }
+    .product-name { font-weight: 700; color: var(--fg); font-size: .92rem; }
+    .product-name.primary { color: var(--primary); }
+    .product-sub { font-size: .75rem; color: var(--muted-fg); margin-top: 2px; }
+    .badge-best { display: inline-block; padding: 2px 10px; border-radius: 99px; background: var(--primary); color: #fff; font-size: .68rem; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+    .natural-high { font-weight: 700; color: var(--primary); }
+    .stars { display: flex; justify-content: center; gap: 2px; }
+    .star { font-size: .9rem; }
+    .star.filled { color: #e8a020; }
+    .star.half { color: #e8c070; }
+    .star.empty { color: #d0c8bc; }
+    .rating-num { font-weight: 700; color: var(--fg); font-size: .82rem; margin-top: 3px; }
+
+    .testimonials-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 640px) { .testimonials-grid { grid-template-columns: 1fr; } }
+    .testimonial-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+    .testimonial-text { font-size: .9rem; line-height: 1.75; color: var(--muted-fg); font-style: italic; flex: 1; }
+    .testimonial-meta { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--primary); color: #fff; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; flex-shrink: 0; }
+    .meta-name { font-weight: 600; font-size: .88rem; }
+    .meta-role { font-size: .75rem; color: var(--muted-fg); }
+
+    .dark-card { background: linear-gradient(135deg, #1e4231 0%, #2d5a41 100%); color: #f0e8da; border-radius: var(--radius); padding: 36px; }
+    .dark-card h3 { font-family: var(--serif); font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; }
+    .check-list, .cross-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .check-list li, .cross-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; line-height: 1.55; }
+    .check-list li svg { color: var(--primary); flex-shrink: 0; margin-top: 1px; }
+    .cross-list li svg { color: #d4855a; flex-shrink: 0; margin-top: 1px; }
+    .check-list li span { color: var(--muted-fg); }
+    .cross-list li span { color: #c9b08a; }
+
+    .verdict-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); margin-bottom: 32px; }
+    .verdict-header { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+    .verdict-score { font-size: 1.5rem; font-weight: 700; }
+    .badge-recommend { margin-left: auto; padding: 4px 14px; border-radius: 99px; background: var(--primary); color: #fff; font-size: .72rem; font-weight: 700; }
+    .verdict-text { color: var(--muted-fg); font-size: .92rem; line-height: 1.8; }
+    .verdict-stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+    .verdict-stat p:first-child { font-size: 2rem; font-weight: 700; color: var(--primary); }
+    .verdict-stat p:last-child { font-size: .72rem; color: var(--muted-fg); margin-top: 2px; }
+
+    #cta { background: linear-gradient(135deg, #1a3a2b 0%, #26503a 100%); padding: 80px 0; text-align: center; }
+    #cta .leaf-icon { color: var(--gold); margin-bottom: 16px; }
+    #cta h2 { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: #f5ede0; margin-bottom: 14px; }
+    #cta p { color: #c9b08a; font-size: .95rem; max-width: 480px; margin: 0 auto 32px; line-height: 1.7; }
+    .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 99px; background: var(--gold); color: #2c1a08; font-family: var(--sans); font-size: .9rem; font-weight: 700; border: none; cursor: pointer; transition: opacity .2s, transform .2s; text-decoration: none; }
+    .cta-btn:hover { opacity: .9; transform: scale(1.04); }
+    .cta-note { font-size: .75rem; color: #8fa895; margin-top: 14px; }
+
+    footer { padding: 28px 24px; text-align: center; border-top: 1px solid var(--border); font-size: .78rem; color: var(--muted-fg); }
+
+    .icon { display: inline-block; width: 1em; height: 1em; vertical-align: middle; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icon-sm { font-size: 14px; }
+    .icon-md { font-size: 18px; }
+    .icon-xl { font-size: 36px; }
+
+    @media (max-width: 500px) {
+      .hero-stats { gap: 28px; }
+      .hero-title { font-size: 2.8rem; }
+      th.hide-sm, td.hide-sm { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="fade-in">
+      <div class="hero-badge">
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        Expert Product Review
+      </div>
+      <h1 class="hero-title">Organic<br><span>Skincare Set</span></h1>
+      <p class="hero-sub">An in-depth review of the full organic skincare system — honest pros, real cons, and a head-to-head competitor comparison.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-label">Overall Rating</div>
+          <div class="hero-stat-value">4.7 / 5</div>
+        </div>
+        <div>
+          <div class="hero-stat-label">Organic Ingredients</div>
+          <div class="hero-stat-value">100%</div>
+        </div>
+        <div>
+          <div class="hero-stat-label">Skin Types</div>
+          <div class="hero-stat-value">All Types</div>
+        </div>
+      </div>
+      <div class="hero-chevron">
+        <svg class="icon icon-md" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="fade-in text-center" style="margin-bottom:48px">
+      <span class="section-label">Overview</span>
+      <h2 class="section-title">What Is the Organic Skincare Set?</h2>
+    </div>
+    <div class="two-col">
+      <div class="prose fade-in" data-delay="1">
+        <p>The <strong>Organic Skincare Set</strong> is a complete five-step botanical skincare system designed for people who want effective, clean beauty without compromise. Each product is formulated with certified organic plant actives — no synthetic fillers, artificial fragrances, or controversial preservatives.</p>
+        <p>The set includes a <strong>gentle foaming cleanser</strong>, a <strong>balancing rose water toner</strong>, a <strong>Vitamin C brightening serum</strong>, an <strong>Argan oil moisturizer</strong>, and a <strong>hydrating eye cream</strong> — a full routine in one beautifully packaged box.</p>
+        <p>After six weeks of daily use across multiple skin types, our reviewers found consistent improvements in hydration, radiance, and overall skin texture. Here is everything you need to know before buying.</p>
+      </div>
+      <div class="ingredient-card fade-in" data-delay="2">
+        <h3>Key Ingredients</h3>
+        <div class="ingredient-row">
+          <div class="ingredient-name">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12c0-2.76 1.12-5.26 2.93-7.07"/><path d="M12 6v6l4 2"/></svg>
+            Argan Oil
+          </div>
+          <div class="ingredient-benefit">Deep nourishment &amp; anti-aging</div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ingredient-name">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 17 2 17 2s1 5-2 8M12 12C12 7 7 2 7 2S6 7 9 10"/></svg>
+            Rose Water
+          </div>
+          <div class="ingredient-benefit">Soothing &amp; natural toner</div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ingredient-name">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Green Tea Extract
+          </div>
+          <div class="ingredient-benefit">Antioxidant protection</div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ingredient-name">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+            Vitamin C
+          </div>
+          <div class="ingredient-benefit">Brightening &amp; collagen boost</div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ingredient-name">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M7 20h10M12 4v16M8 8l4-4 4 4"/></svg>
+            Aloe Vera
+          </div>
+          <div class="ingredient-benefit">Calming &amp; hydration</div>
+        </div>
+        <div class="ingredient-row">
+          <div class="ingredient-name">
+            <svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2C6 2 2 12 2 12s4 10 10 10 10-10 10-10S18 2 12 2z"/></svg>
+            Hyaluronic Acid
+          </div>
+          <div class="ingredient-benefit">Intense moisture retention</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROS & CONS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="fade-in text-center" style="margin-bottom:36px">
+      <span class="section-label">Honest Assessment</span>
+      <h2 class="section-title">Pros &amp; Cons</h2>
+      <p class="section-sub">Based on six weeks of real testing across normal, dry, oily, sensitive, and combination skin types.</p>
+    </div>
+    <div class="fade-in" style="display:flex;justify-content:center">
+      <div class="tab-toggle">
+        <button class="tab-btn active-pros" id="btn-pros" onclick="showTab('pros')">Pros (8)</button>
+        <button class="tab-btn" id="btn-cons" onclick="showTab('cons')">Cons (5)</button>
+      </div>
+    </div>
+    <div id="tab-pros" class="cards-grid">
+      <div class="item-card fade-in" data-delay="1">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M8 12l2.83 2.83L16 9"/></svg></div>
+        <span class="item-text">100% certified organic ingredients — no synthetic fragrances, parabens, or sulfates</span>
+      </div>
+      <div class="item-card fade-in" data-delay="2">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 2C6 2 2 12 2 12s4 10 10 10 10-10 10-10S18 2 12 2z"/></svg></div>
+        <span class="item-text">Deeply hydrating formula with Argan oil and hyaluronic acid for all-day moisture</span>
+      </div>
+      <div class="item-card fade-in" data-delay="3">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span class="item-text">Dermatologist tested and suitable for sensitive skin types, including rosacea-prone skin</span>
+      </div>
+      <div class="item-card fade-in" data-delay="4">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M12 3l1.09 3.26L16 7.27l-2.91 2.84.69 4L12 12.4l-1.78.94.69-4L8 7.27l2.91-.01z"/></svg></div>
+        <span class="item-text">Visible improvement in skin texture and brightness within 2–3 weeks of consistent use</span>
+      </div>
+      <div class="item-card fade-in" data-delay="5">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg></div>
+        <span class="item-text">Ethically sourced, cruelty-free, and eco-certified sustainable packaging</span>
+      </div>
+      <div class="item-card fade-in" data-delay="6">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/></svg></div>
+        <span class="item-text">Lightweight, fast-absorbing serum and moisturizer that layers well under SPF</span>
+      </div>
+      <div class="item-card fade-in" data-delay="7">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <span class="item-text">Pleasant, subtle botanical scent from natural essential oils — not overpowering</span>
+      </div>
+      <div class="item-card fade-in" data-delay="8">
+        <div class="item-icon-wrap"><svg class="icon icon-sm" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+        <span class="item-text">Complete system: cleanser, toner, serum, moisturizer, and eye cream in one cohesive set</span>
+      </div>
+    </div>
+    <div id="tab-cons" class="cards-grid" style="display:none">
+      <div class="item-card fade-in" data-delay="1">
+        <svg class="icon icon-sm cross-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span class="item-text">Premium price point — the full set is a significant investment compared to drugstore alternatives</span>
+      </div>
+      <div class="item-card fade-in" data-delay="2">
+        <svg class="icon icon-sm cross-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span class="item-text">Limited availability — primarily sold online and in select specialty retailers, not widely stocked</span>
+      </div>
+      <div class="item-card fade-in" data-delay="3">
+        <svg class="icon icon-sm cross-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span class="item-text">The eye cream is small (10ml) and runs out faster than the other products in the set</span>
+      </div>
+      <div class="item-card fade-in" data-delay="4">
+        <svg class="icon icon-sm cross-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span class="item-text">Some users with very oily skin found the moisturizer slightly heavy for daytime use in warm climates</span>
+      </div>
+      <div class="item-card fade-in" data-delay="5">
+        <svg class="icon icon-sm cross-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        <span class="item-text">Fragrance-sensitive individuals may still react to the natural essential oil blend</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section">
+  <div class="container">
+    <div class="fade-in text-center" style="margin-bottom:40px">
+      <span class="section-label">Side by Side</span>
+      <h2 class="section-title">Competitor Comparison</h2>
+      <p class="section-sub">How does it stack up against the most popular alternatives on the market?</p>
+    </div>
+    <div class="table-wrap fade-in" data-delay="1">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Natural %</th>
+            <th class="hide-sm">Skin Types</th>
+            <th class="hide-sm">Scent</th>
+            <th class="hide-sm">Packaging</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>
+              <div class="product-name primary">Organic Skincare Set <span class="badge-best">Best Overall</span></div>
+              <div class="product-sub">Our Pick</div>
+            </td>
+            <td><strong>$89</strong></td>
+            <td><span class="natural-high">100%</span></td>
+            <td class="hide-sm">All types</td>
+            <td class="hide-sm">Light botanical</td>
+            <td class="hide-sm">Eco-certified glass</td>
+            <td><div class="stars" id="stars-1"></div><div class="rating-num">4.7</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">The Ordinary</div>
+              <div class="product-sub">Budget-friendly</div>
+            </td>
+            <td>$28</td><td>~40%</td>
+            <td class="hide-sm">All types</td>
+            <td class="hide-sm">Fragrance-free</td>
+            <td class="hide-sm">Plastic bottles</td>
+            <td><div class="stars" id="stars-2"></div><div class="rating-num">4.1</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">Kiehl's</div>
+              <div class="product-sub">Heritage brand</div>
+            </td>
+            <td>$115</td><td>~60%</td>
+            <td class="hide-sm">Normal–dry</td>
+            <td class="hide-sm">Mild herbal</td>
+            <td class="hide-sm">Recyclable plastic</td>
+            <td><div class="stars" id="stars-3"></div><div class="rating-num">4.3</div></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">L'Oréal Paris Natural</div>
+              <div class="product-sub">Mass market</div>
+            </td>
+            <td>$45</td><td>~55%</td>
+            <td class="hide-sm">Normal–combo</td>
+            <td class="hide-sm">Floral (synthetic)</td>
+            <td class="hide-sm">Mixed plastic</td>
+            <td><div class="stars" id="stars-4"></div><div class="rating-num">3.9</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="fade-in text-center" style="margin-bottom:40px">
+      <span class="section-label">Real Voices</span>
+      <h2 class="section-title">What Customers Are Saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in" data-delay="1">
+        <div class="stars" id="t-stars-1"></div>
+        <p class="testimonial-text">"I've tried dozens of skincare sets over the years, but this one genuinely changed my routine. My skin hasn't looked this healthy since my 20s. The serum alone is worth the price."</p>
+        <div class="testimonial-meta">
+          <div class="avatar">SM</div>
+          <div><div class="meta-name">Sarah M.</div><div class="meta-role">Verified Buyer</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in" data-delay="2">
+        <div class="stars" id="t-stars-2"></div>
+        <p class="testimonial-text">"As someone with rosacea, I'm extremely cautious about new products. This set has been a complete game-changer — no flare-ups, just calm, glowing skin. I'm on my third purchase."</p>
+        <div class="testimonial-meta">
+          <div class="avatar">JR</div>
+          <div><div class="meta-name">James R.</div><div class="meta-role">Sensitive Skin</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in" data-delay="3">
+        <div class="stars" id="t-stars-3"></div>
+        <p class="testimonial-text">"The packaging alone makes this feel luxurious, but the results are what keep me coming back. Worth every penny. I've already recommended it to six friends."</p>
+        <div class="testimonial-meta">
+          <div class="avatar">PK</div>
+          <div><div class="meta-name">Priya K.</div><div class="meta-role">Skincare Enthusiast</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in" data-delay="4">
+        <div class="stars" id="t-stars-4"></div>
+        <p class="testimonial-text">"I was skeptical about switching from my usual brand, but after four weeks I can genuinely see the difference. The moisturizer is perfect — not greasy, just nourishing."</p>
+        <div class="testimonial-meta">
+          <div class="avatar">TL</div>
+          <div><div class="meta-name">Thomas L.</div><div class="meta-role">First-time Natural Skincare User</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS IT FOR -->
+<section class="section">
+  <div class="container">
+    <div class="two-col">
+      <div class="fade-in">
+        <span class="section-label">Ideal For</span>
+        <h2 class="section-title" style="margin-bottom:16px">Who Is This Set Right For?</h2>
+        <p style="color:var(--muted-fg);margin-bottom:20px;font-size:.92rem;line-height:1.75">This set is the ideal choice for anyone who wants to transition to a clean, organic routine without having to research individual products. It works especially well for:</p>
+        <ul class="check-list">
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Sensitive or reactive skin that struggles with conventional formulas</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Anyone looking to reduce their exposure to synthetic chemicals</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>People wanting a complete, cohesive routine — no guesswork</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Those who prioritize sustainability and ethical sourcing</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span>Beginners to natural skincare who want a curated starting point</span></li>
+        </ul>
+      </div>
+      <div class="dark-card fade-in" data-delay="2">
+        <h3>May Not Be Ideal If You...</h3>
+        <ul class="cross-list">
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Are on a tight budget — there are cheaper alternatives</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Prefer a fully fragrance-free routine (natural oils are present)</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Need SPF included — this set doesn't contain sun protection</span></li>
+          <li><svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span>Have extremely oily skin in hot, humid climates</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section class="section section-alt">
+  <div class="container" style="max-width:760px">
+    <div class="fade-in text-center" style="margin-bottom:36px">
+      <span class="section-label">Final Verdict</span>
+      <h2 class="section-title">Our Conclusion</h2>
+    </div>
+    <div class="verdict-box fade-in" data-delay="1">
+      <div class="verdict-header">
+        <div class="stars" id="v-stars"></div>
+        <div class="verdict-score">4.7 / 5</div>
+        <div class="badge-recommend">Highly Recommended</div>
+      </div>
+      <p class="verdict-text">The Organic Skincare Set delivers on its promise: a genuinely effective, clean skincare routine that respects both your skin and the environment. The formulations are thoughtful, the ingredient quality is evident, and the results are real — not marketing copy.</p>
+      <p class="verdict-text" style="margin-top:12px">Yes, it costs more than a drugstore routine. But it replaces five products with five well-made ones that work synergistically. For those who have been searching for a trustworthy all-organic set, this is the benchmark.</p>
+    </div>
+    <div class="verdict-stats fade-in" data-delay="2">
+      <div class="verdict-stat text-center"><p>4.7/5</p><p>Overall Score</p></div>
+      <div class="verdict-stat text-center"><p>100%</p><p>Organic</p></div>
+      <div class="verdict-stat text-center"><p>94%</p><p>Would Recommend</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="fade-in">
+      <div class="leaf-icon">
+        <svg class="icon icon-xl" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 22V12M12 12C12 7 17 2 17 2s1 5-2 8M12 12C12 7 7 2 7 2S6 7 9 10"/></svg>
+      </div>
+      <h2>Ready to Make the Switch?</h2>
+      <p>Join thousands of people who have upgraded to cleaner, more intentional skincare. Your skin will thank you in ways your current routine never has.</p>
+      <a href="#" class="cta-btn">
+        Shop the Organic Skincare Set
+        <svg class="icon icon-sm" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <div class="cta-note">Free shipping on orders over $75 &nbsp;·&nbsp; 30-day satisfaction guarantee.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    
+
+    <div style="background: #f5f5f5; padding: 20px; margin-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="../amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="../amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="../amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="../contact.html">Contact</a>
+  </p>
+</div>
+
+  This article is an independent editorial review. All opinions are based on testing and research. Not sponsored.
+</footer>
+
+<script>
+  function renderStars(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const full = Math.floor(value);
+    const hasHalf = value - full >= 0.5;
+    let html = '';
+    for (let i = 0; i < 5; i++) {
+      if (i < full) html += '<span class="star filled">&#9733;</span>';
+      else if (i === full && hasHalf) html += '<span class="star half">&#9733;</span>';
+      else html += '<span class="star empty">&#9733;</span>';
+    }
+    el.innerHTML = html;
+  }
+
+  renderStars('stars-1', 4.7);
+  renderStars('stars-2', 4.1);
+  renderStars('stars-3', 4.3);
+  renderStars('stars-4', 3.9);
+  renderStars('t-stars-1', 5);
+  renderStars('t-stars-2', 5);
+  renderStars('t-stars-3', 4);
+  renderStars('t-stars-4', 5);
+  renderStars('v-stars', 4.7);
+
+  function showTab(tab) {
+    const prosEl = document.getElementById('tab-pros');
+    const consEl = document.getElementById('tab-cons');
+    const btnPros = document.getElementById('btn-pros');
+    const btnCons = document.getElementById('btn-cons');
+    if (tab === 'pros') {
+      prosEl.style.display = 'grid';
+      consEl.style.display = 'none';
+      btnPros.className = 'tab-btn active-pros';
+      btnCons.className = 'tab-btn';
+    } else {
+      prosEl.style.display = 'none';
+      consEl.style.display = 'grid';
+      btnPros.className = 'tab-btn';
+      btnCons.className = 'tab-btn active-cons';
+    }
+    document.querySelectorAll('#tab-' + tab + ' .fade-in').forEach(el => {
+      el.classList.remove('visible');
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('visible')));
+    });
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

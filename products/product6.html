@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyson V15 Detect | Professional In-Depth Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #C8A45C;
+            --gold-light: #E8D5A3;
+            --dark: #0D0D0D;
+            --darker: #080808;
+            --gray: #1A1A1A;
+            --gray-light: #2A2A2A;
+            --text: #E8E8E8;
+            --text-muted: #888;
+            --green: #00E676;
+            --red: #FF5252;
+            --accent: #7B61FF;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+        
+        /* ===== PARTICLES ===== */
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 3px; height: 3px;
+            background: rgba(200,164,92,0.3);
+            border-radius: 50%;
+            animation: floatUp 15s infinite linear;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+        
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker) 0%, #1a0a2e 50%, var(--darker) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(200,164,92,0.15) 0%, transparent 70%);
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(200,164,92,0.15);
+            border: 1px solid var(--gold);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--gold);
+            margin-bottom: 2rem;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--gold-light) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .hero-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .hero-price .old { font-size: 1.5rem; color: var(--text-muted); text-decoration: line-through; }
+        .hero-price .new { font-size: 2.5rem; font-weight: 900; color: var(--gold); }
+        .hero-price .save {
+            background: linear-gradient(135deg, var(--red), #ff8a80);
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+        .hero-rating .stars { color: var(--gold); font-size: 1.2rem; }
+        .hero-rating .score { font-size: 1.5rem; font-weight: 800; }
+        .hero-rating .reviews { color: var(--text-muted); }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(15px); }
+        }
+        
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* ===== SECTIONS ===== */
+        section { position: relative; z-index: 1; padding: 6rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            border-radius: 2px;
+        }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; margin-top: 1.5rem; }
+        
+        /* ===== OVERVIEW ===== */
+        .overview { background: var(--gray); }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .overview-img {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+        .overview-img img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .overview-img:hover img { transform: scale(1.05); }
+        
+        .overview-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+        }
+        
+        .overview-text h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+        .overview-text p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        
+        .highlight-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        .highlight-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        .highlight-list li:hover { padding-left: 1rem; color: var(--gold); }
+        .highlight-list li i { color: var(--green); font-size: 1.2rem; }
+        
+        /* ===== SPECS ===== */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .spec-card {
+            background: var(--gray);
+            border: 1px solid var(--gray-light);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .spec-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        .spec-card:hover::before { transform: scaleX(1); }
+        .spec-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(200,164,92,0.1);
+        }
+        
+        .spec-card .icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .spec-card h4 { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .spec-card .value { font-size: 2rem; font-weight: 900; color: var(--gold-light); }
+        .spec-card .unit { color: var(--text-muted); font-size: 0.9rem; }
+        
+        /* ===== FEATURES ===== */
+        .features { background: var(--darker); }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--gray);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+        .feature-card .num {
+            position: absolute;
+            top: 20px; right: 20px;
+            font-size: 4rem;
+            font-weight: 900;
+            color: rgba(200,164,92,0.08);
+            line-height: 1;
+        }
+        .feature-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .feature-card h3 i { color: var(--green); }
+        .feature-card p { color: var(--text-muted); line-height: 1.9; }
+        
+        /* ===== LASER SHOWCASE ===== */
+        .laser-showcase {
+            background: linear-gradient(180deg, var(--dark) 0%, #0a1a0a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .laser-beam {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--green), transparent);
+            animation: laserScan 3s ease-in-out infinite;
+            box-shadow: 0 0 30px var(--green), 0 0 60px var(--green);
+        }
+        @keyframes laserScan {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .laser-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .laser-img {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 0 60px rgba(0,230,118,0.2);
+            position: relative;
+        }
+        .laser-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 40px rgba(0,230,118,0.3);
+            border-radius: 24px;
+        }
+        .laser-img img { width: 100%; display: block; }
+        
+        .laser-text h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: var(--green);
+            text-shadow: 0 0 30px rgba(0,230,118,0.3);
+        }
+        .laser-text p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
+        
+        .laser-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .laser-stat {
+            background: rgba(0,230,118,0.08);
+            border: 1px solid rgba(0,230,118,0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .laser-stat .val { font-size: 1.8rem; font-weight: 900; color: var(--green); }
+        .laser-stat .lbl { color: var(--text-muted); font-size: 0.9rem; }
+        
+        /* ===== COMPARISON ===== */
+        .comparison { background: var(--gray); }
+        
+        .compare-table-wrapper {
+            overflow-x: auto;
+            border-radius: 20px;
+            background: var(--darker);
+            border: 1px solid var(--gray-light);
+        }
+        
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+        .compare-table th {
+            background: linear-gradient(135deg, var(--gold), #8B6914);
+            color: #000;
+            padding: 1.5rem 1rem;
+            font-weight: 800;
+            font-size: 1rem;
+            text-align: center;
+        }
+        .compare-table th:first-child { text-align: left; border-radius: 20px 0 0 0; }
+        .compare-table th:last-child { border-radius: 0 20px 0 0; }
+        .compare-table th.winner { background: linear-gradient(135deg, var(--green), #00C853); }
+        
+        .compare-table td {
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-light);
+            transition: background 0.3s ease;
+        }
+        .compare-table tr:hover td { background: rgba(200,164,92,0.05); }
+        .compare-table td:first-child { text-align: left; font-weight: 700; color: var(--text-muted); }
+        .compare-table .best { color: var(--green); font-weight: 800; }
+        .compare-table .good { color: var(--gold-light); }
+        .compare-table .avg { color: var(--text-muted); }
+        .compare-table .bad { color: var(--red); }
+        
+        .compare-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+        
+        /* ===== PROS & CONS ===== */
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .pc-card {
+            background: var(--gray);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .pc-card.pros { border-top: 4px solid var(--green); }
+        .pc-card.cons { border-top: 4px solid var(--red); }
+        
+        .pc-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .pc-card.pros h3 { color: var(--green); }
+        .pc-card.cons h3 { color: var(--red); }
+        
+        .pc-list { list-style: none; }
+        .pc-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        .pc-list li:last-child { border-bottom: none; }
+        .pc-list li:hover { padding-left: 0.5rem; }
+        .pc-list li i { margin-top: 4px; font-size: 1.1rem; flex-shrink: 0; }
+        .pc-card.pros li i { color: var(--green); }
+        .pc-card.cons li i { color: var(--red); }
+        
+        /* ===== VERDICT ===== */
+        .verdict {
+            background: linear-gradient(135deg, var(--darker), #1a0a2e);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verdict::before {
+            content: '';
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(200,164,92,0.1) 0%, transparent 70%);
+            top: -200px; left: -200px;
+        }
+        
+        .verdict-card {
+            background: var(--gray);
+            border-radius: 32px;
+            padding: 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .verdict-score {
+            width: 150px; height: 150px;
+            background: linear-gradient(135deg, var(--gold), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 20px 60px rgba(200,164,92,0.3);
+            animation: scorePulse 2s ease-in-out infinite;
+        }
+        @keyframes scorePulse {
+            0%, 100% { box-shadow: 0 20px 60px rgba(200,164,92,0.3); }
+            50% { box-shadow: 0 20px 80px rgba(200,164,92,0.5); }
+        }
+        .verdict-score .num { font-size: 3rem; font-weight: 900; color: #000; }
+        .verdict-score .lbl { font-size: 0.9rem; color: #000; font-weight: 700; }
+        
+        .verdict h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--gold-light);
+        }
+        .verdict p { color: var(--text-muted); font-size: 1.1rem; line-height: 2; }
+        
+        .verdict-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .v-badge {
+            background: var(--gray-light);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .v-badge i { color: var(--gold); }
+        
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--darker);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--gray-light);
+        }
+        footer p { color: var(--text-muted); font-size: 0.9rem; }
+        footer .brand { color: var(--gold); font-weight: 700; }
+        
+        /* ===== ANIMATIONS ON SCROLL ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .overview-grid, .laser-content, .pros-cons-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-price { flex-direction: column; gap: 0.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .laser-stats { grid-template-columns: 1fr; }
+            section { padding: 4rem 1rem; }
+            .verdict-card { padding: 2rem; }
+        }
+        
+        /* ===== COUNTER ANIMATION ===== */
+        .counter { font-variant-numeric: tabular-nums; }
+        
+        /* ===== GLOW EFFECT ===== */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(200,164,92,0.4), 0 0 40px rgba(200,164,92,0.2);
+        }
+        a{
+            text-decoration: none; 
+         
+        } 
+    </style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div class="particles" id="particles"></div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">
+            <i class="fas fa-award"></i>
+            <span>Best Cordless Vacuum 2026 - Vacuum Wars</span>
+        </div>
+        <h1>Dyson V15 Detect</h1>
+        <p class="hero-subtitle">Green laser reveals microscopic dust · Intelligent suction adapts automatically to floor type</p>
+        <div class="hero-price">
+            <span class="old">$749.99</span>
+            <span class="new">$649.99</span>
+            <span class="save">Save $100</span>
+        </div>
+        <div class="hero-rating">
+            <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+            <span class="score">4.9</span>
+            <span class="reviews">(892 reviews)</span>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <i class="fas fa-chevron-down" style="color: var(--gold); font-size: 1.5rem;"></i>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview">
+    <div class="container">
+        <div class="overview-grid reveal">
+            <div class="overview-text">
+                <h3>A Revolution in Home Cleaning</h3>
+                <p>The Dyson V15 Detect represents the pinnacle of engineering innovation in the cordless vacuum world. This vacuum is designed to be more than just a cleaning tool — it is an intelligent system that adapts to its environment and optimizes its performance in real time.</p>
+                <p>Thanks to the green laser technology embedded in the Fluffy Optic™ head, the vacuum reveals microscopic dust particles invisible to the naked eye on hard floors, ensuring a thorough clean that leaves no trace behind.</p>
+                <ul class="highlight-list">
+                    <li><i class="fas fa-check-circle"></i> Record-breaking 240 AW suction power — strongest in its class</li>
+                    <li><i class="fas fa-check-circle"></i> Piezo sensor counts particle size and concentration</li>
+                    <li><i class="fas fa-check-circle"></i> LCD screen displays real-time particle data</li>
+                    <li><i class="fas fa-check-circle"></i> HEPA filter traps 99.99% of particles</li>
+                    <li><i class="fas fa-check-circle"></i> Detachable battery lasts up to 68 minutes</li>
+                </ul>
+            </div>
+            <div class="overview-img">
+                <img src="https://dyson-h.assetsadobe2.com/f8993420167992c4798477679b48a934c3ac3270.png" alt="Dyson V15 Detect">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SPECS -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Technical Specifications</h2>
+            <p>Numbers that speak of unmatched power</p>
+        </div>
+        <div class="specs-grid">
+            <div class="spec-card reveal">
+                <div class="icon"><i class="fas fa-wind"></i></div>
+                <h4>Suction Power</h4>
+                <div class="value counter" data-target="240">0</div>
+                <div class="unit">Air Watts</div>
+            </div>
+            <div class="spec-card reveal">
+                <div class="icon"><i class="fas fa-battery-full"></i></div>
+                <h4>Battery Life</h4>
+                <div class="value counter" data-target="68">0</div>
+                <div class="unit">Minutes</div>
+            </div>
+            <div class="spec-card reveal">
+                <div class="icon"><i class="fas fa-weight-hanging"></i></div>
+                <h4>Weight</h4>
+                <div class="value counter" data-target="3.1">0</div>
+                <div class="unit">kg (hand unit)</div>
+            </div>
+            <div class="spec-card reveal">
+                <div class="icon"><i class="fas fa-trash-alt"></i></div>
+                <h4>Bin Capacity</h4>
+                <div class="value counter" data-target="0.76">0</div>
+                <div class="unit">Liters</div>
+            </div>
+            <div class="spec-card reveal">
+                <div class="icon"><i class="fas fa-volume-up"></i></div>
+                <h4>Noise Level</h4>
+                <div class="value counter" data-target="76">0</div>
+                <div class="unit">Decibels</div>
+            </div>
+            <div class="spec-card reveal">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <h4>Warranty</h4>
+                <div class="value counter" data-target="2">0</div>
+                <div class="unit">Years</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LASER -->
+<section class="laser-showcase">
+    <div class="laser-beam"></div>
+    <div class="container">
+        <div class="laser-content reveal">
+            <div class="laser-text">
+                <h3>Green Laser Technology</h3>
+                <p>The integrated green laser in the Fluffy Optic™ head illuminates microscopic dust particles invisible to the naked eye on hard floors. This special light highlights dust as small as 10 microns and above.</p>
+                <p>As the laser passes over the floor, it transforms invisible dust into clearly visible glowing particles, allowing you to see what you have been missing all along. The result? Cleaning that is up to 2x more precise and thorough compared to traditional vacuums.</p>
+                <div class="laser-stats">
+                    <div class="laser-stat">
+                        <div class="val">10μm+</div>
+                        <div class="lbl">Smallest particle detected</div>
+                    </div>
+                    <div class="laser-stat">
+                        <div class="val">2x</div>
+                        <div class="lbl">Higher cleaning precision</div>
+                    </div>
+                </div>
+            </div>
+            <div class="laser-img">
+                <img src="https://media.gq-magazine.co.uk/0c33a46e8b87a5731253ab2226bdebd6fb0c5009.jpg" alt="Laser Detection">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Key Features</h2>
+            <p>Advanced technologies that make cleaning a different experience</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <span class="num">01</span>
+                <h3><i class="fas fa-microchip"></i> Intelligent Piezo Sensor</h3>
+                <p>The sensor counts the size and number of particles being captured 15,000 times per second. It sends data to the motor to automatically adjust suction power based on dirt levels — saving battery and ensuring maximum efficiency.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span class="num">02</span>
+                <h3><i class="fas fa-tv"></i> Interactive LCD Screen</h3>
+                <p>The screen displays real-time particle data with a graph showing the size of captured particles (>10μm, >60μm, >180μm, >500μm). It also shows remaining battery life and maintenance alerts.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span class="num">03</span>
+                <h3><i class="fas fa-bolt"></i> Digital Motorbar™ Head</h3>
+                <p>The intelligent cleaning head automatically adjusts brush resistance based on floor type. It includes anti-tangle hair removal technology with 56 polycarbonate blades preventing 99% of hair tangles.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span class="num">04</span>
+                <h3><i class="fas fa-lungs"></i> Whole-Machine HEPA Filtration</h3>
+                <p>A fully sealed system with a HEPA filter that traps 99.99% of microscopic particles as small as 0.3 microns. Ideal for allergy and asthma sufferers, ensuring no particles escape back into the air.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span class="num">05</span>
+                <h3><i class="fas fa-plug"></i> Detachable Battery</h3>
+                <p>A high-efficiency lithium-ion battery that lasts up to 68 minutes in Eco mode. It can be detached with a single click to recharge or replaced with a spare battery to extend cleaning time.</p>
+            </div>
+            <div class="feature-card reveal">
+                <span class="num">06</span>
+                <h3><i class="fas fa-hand-holding"></i> Ergonomic Design</h3>
+                <p>The hand unit weighs just 3.1 kg with optimal weight distribution. Comfortable for extended use without fatigue. Easily converts to a handheld vacuum for cleaning cars, sofas, and stairs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison">
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Comparison with Competitors</h2>
+            <p>How does the V15 Detect stand against the toughest rivals on the market?</p>
+        </div>
+        <div class="compare-table-wrapper reveal">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Specification</th>
+                        <th class="winner">Dyson V15 Detect</th>
+                        <th>Shark PowerDetect Clean & Empty</th>
+                        <th>Tineco GoStation Smart</th>
+                        <th>Levoit LVAC-200</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Price</td>
+                        <td class="best">$649.99</td>
+                        <td class="good">$429.95</td>
+                        <td class="good">~$500</td>
+                        <td class="best">$139.98</td>
+                    </tr>
+                    <tr>
+                        <td>Suction Power (AW)</td>
+                        <td class="best">240 AW</td>
+                        <td class="good">~200 AW</td>
+                        <td class="good">~180 AW</td>
+                        <td class="avg">~120 AW</td>
+                    </tr>
+                    <tr>
+                        <td>Battery Life</td>
+                        <td class="best">68 min</td>
+                        <td class="best">70 min</td>
+                        <td class="good">~60 min</td>
+                        <td class="avg">50 min</td>
+                    </tr>
+                    <tr>
+                        <td>Laser Technology</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Green Laser</td>
+                        <td class="avg"><i class="fas fa-times-circle"></i> LED Only</td>
+                        <td class="good"><i class="fas fa-check-circle"></i> Green Laser</td>
+                        <td class="avg"><i class="fas fa-times-circle"></i> LED Only</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Sensor</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Piezo + Auto</td>
+                        <td class="good"><i class="fas fa-check-circle"></i> Auto</td>
+                        <td class="good"><i class="fas fa-check-circle"></i> 3D Sensor</td>
+                        <td class="bad"><i class="fas fa-times-circle"></i> None</td>
+                    </tr>
+                    <tr>
+                        <td>LCD Screen</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Particle Data</td>
+                        <td class="avg"><i class="fas fa-minus-circle"></i> Basic Display</td>
+                        <td class="good"><i class="fas fa-check-circle"></i> Smart Screen</td>
+                        <td class="bad"><i class="fas fa-times-circle"></i> None</td>
+                    </tr>
+                    <tr>
+                        <td>Auto-Empty Base</td>
+                        <td class="bad"><i class="fas fa-times-circle"></i> No</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Yes (45 days)</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Yes (45 days)</td>
+                        <td class="bad"><i class="fas fa-times-circle"></i> No</td>
+                    </tr>
+                    <tr>
+                        <td>HEPA Filter</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Yes</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Yes</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> 5-Stage</td>
+                        <td class="best"><i class="fas fa-check-circle"></i> Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Hand Unit Weight</td>
+                        <td class="good">3.1 kg</td>
+                        <td class="best">2.8 kg</td>
+                        <td class="good">~3.0 kg</td>
+                        <td class="best">1.9 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Bin Capacity</td>
+                        <td class="best">0.76 L</td>
+                        <td class="good">0.7 L</td>
+                        <td class="bad">0.3 L</td>
+                        <td class="avg">0.58 L</td>
+                    </tr>
+                    <tr>
+                        <td>Warranty</td>
+                        <td class="avg">2 Years</td>
+                        <td class="best">5 Years</td>
+                        <td class="avg">2 Years</td>
+                        <td class="avg">2 Years</td>
+                    </tr>
+                    <tr>
+                        <td>Vacuum Wars Score</td>
+                        <td class="best">4.77 / 5</td>
+                        <td class="good">4.65 / 5</td>
+                        <td class="good">4.2 / 5</td>
+                        <td class="avg">3.24 / 5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- PROS & CONS -->
+<section>
+    <div class="container">
+        <div class="section-header reveal">
+            <h2>Pros & Cons</h2>
+            <p>An honest look at strengths and weaknesses</p>
+        </div>
+        <div class="pros-cons-grid">
+            <div class="pc-card pros reveal">
+                <h3><i class="fas fa-thumbs-up"></i> Pros</h3>
+                <ul class="pc-list">
+                    <li><i class="fas fa-plus-circle"></i> <strong>Strongest suction in class:</strong> 240 AW outperforms all competitors by a wide margin</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Unique laser technology:</strong> Reveals microscopic dust invisible to the naked eye</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Smart Piezo sensor:</strong> Automatically adjusts suction and saves battery</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Advanced LCD screen:</strong> Real-time particle data at your fingertips</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Sealed HEPA filtration:</strong> Perfect for allergy and asthma sufferers</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Detachable battery:</strong> Option to extend runtime with a spare</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Anti-tangle technology:</strong> 99% hair tangle prevention</li>
+                    <li><i class="fas fa-plus-circle"></i> <strong>Excellent design:</strong> Lightweight and comfortable for extended use</li>
+                </ul>
+            </div>
+            <div class="pc-card cons reveal">
+                <h3><i class="fas fa-thumbs-down"></i> Cons</h3>
+                <ul class="pc-list">
+                    <li><i class="fas fa-minus-circle"></i> <strong>High price:</strong> $649.99 is a significant investment compared to competitors</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>No auto-empty base:</strong> Requires frequent manual emptying</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>Cannot stand alone:</strong> Needs a wall mount or dock for storage</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>Relatively loud:</strong> 76 dB can be noisy at maximum power</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>Limited warranty:</strong> Only 2 years compared to Shark's 5 years</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>No wet cleaning:</strong> Dry cleaning only, no mopping capability</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>Limited accessories:</strong> Could include more attachments</li>
+                    <li><i class="fas fa-minus-circle"></i> <strong>Heavier than some rivals:</strong> 3.1 kg vs 1.9 kg for the Levoit</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VERDICT -->
+<section class="verdict">
+    <div class="container">
+        <div class="verdict-card reveal">
+            <div class="verdict-score">
+                <div class="num">9.3</div>
+                <div class="lbl">out of 10</div>
+            </div>
+            <h3>Final Verdict</h3>
+            <p>The Dyson V15 Detect remains the best choice for users seeking exceptional cleaning performance with cutting-edge technology. Despite the high price, it delivers real value through record-breaking suction power, unique laser technology, and an intelligent sensor system. If you are looking for the best cordless vacuum on the market and can afford the cost — this is the ultimate choice.</p>
+            <div class="verdict-badges">
+                <div class="v-badge"><i class="fas fa-star"></i> Best Cleaning Performance</div>
+                <div class="v-badge"><i class="fas fa-robot"></i> Most Intelligent</div>
+                <div class="v-badge"><i class="fas fa-gem"></i> Excellent Value</div>
+                <div class="v-badge"><i class="fas fa-heart"></i> Allergy-Friendly</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Professional Review © 2026 | <span class="brand">Tech Reviews Pro</span> | All data sourced from independent testing</p>
+    <div style=" padding: 20px; margin-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you.
+    <a href="../amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="../amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="../amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="../contact.html">Contact</a>
+  </p>
+</div>
+
+</footer>
+
+<script>
+    // ===== PARTICLES =====
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 50; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDelay = Math.random() * 15 + 's';
+        p.style.animationDuration = (10 + Math.random() * 10) + 's';
+        p.style.width = p.style.height = (2 + Math.random() * 3) + 'px';
+        particlesContainer.appendChild(p);
+    }
+    
+    // ===== SCROLL REVEAL =====
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => revealObserver.observe(el));
+    
+    // ===== COUNTER ANIMATION =====
+    const counters = document.querySelectorAll('.counter');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseFloat(counter.dataset.target);
+                const isDecimal = target % 1 !== 0;
+                const duration = 2000;
+                const start = performance.now();
+                
+                function update(currentTime) {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    const current = target * ease;
+                    counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+                requestAnimationFrame(update);
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+    
+    // ===== SMOOTH SCROLL =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    // ===== PARALLAX HERO =====
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+    });
+</script>
+
+</body>
+</html>

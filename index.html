@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="root-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yallabuy - Your ultimate destination for smart online shopping! Discover a curated collection of premium products at unbeatable prices, with fast delivery & secure checkout. Shop smart, save more.">
+
+    <title>Yallabuy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+     /* ============================================
+   YALLABUY — CSS VARIABLES & THEME SYSTEM
+   ============================================ */
+
+:root {
+    /* Brand Colors */
+    --color-navy: #0a1628;
+    --color-navy-light: #1a2a4a;
+    --color-navy-muted: #2a3a5a;
+    --color-orange: #f97316;
+    --color-orange-light: #fb923c;
+    --color-orange-dark: #ea580c;
+    --color-yellow: #fbbf24;
+    --color-yellow-light: #fcd34d;
+
+    /* Light Mode */
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --bg-header: rgba(255, 255, 255, 0.85);
+    --bg-card: #ffffff;
+    --bg-input: #f1f5f9;
+    --bg-badge: #fef3c7;
+    --bg-badge-new: #dbeafe;
+    --bg-badge-sale: #fee2e2;
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-on-primary: #ffffff;
+    --text-on-dark: #f1f5f9;
+
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f5f9;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px rgba(249, 115, 22, 0.15);
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
+
+    --font-family: 'Inter', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3.5rem;
+
+    --header-height: 72px;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-body: #0a0f1a;
+    --bg-surface: #111827;
+    --bg-surface-elevated: #1a2332;
+    --bg-header: rgba(10, 15, 26, 0.9);
+    --bg-card: #1a2332;
+    --bg-input: #1e293b;
+    --bg-badge: #451a03;
+    --bg-badge-new: #1e3a5f;
+    --bg-badge-sale: #450a0a;
+
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-on-primary: #ffffff;
+
+    --border-color: #1e293b;
+    --border-subtle: #1a2332;
+
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+    --shadow-glow: 0 0 30px rgba(249, 115, 22, 0.2);
+}
+
+/* ============================================
+   BASE & RESET
+   ============================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    transition: background-color var(--transition-base), color var(--transition-base);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    background: var(--bg-header);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .header-container {
+        padding: 0 2rem;
+    }
+}
+
+/* Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--color-orange);
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-name {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.logo-slogan {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+.main-nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .main-nav {
+        display: block;
+    }
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-list a {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-orange);
+    border-radius: 2px;
+    transition: width var(--transition-base);
+}
+
+.nav-list a:hover {
+    color: var(--text-primary);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon:hover {
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .icon-moon {
+    display: block;
+}
+
+.lang-toggle .lang-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    margin-left: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-nav-list a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.mobile-nav-list a:hover {
+    background: var(--bg-input);
+    color: var(--color-orange);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-orange);
+    top: -10%;
+    right: -10%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-yellow);
+    bottom: -5%;
+    left: -5%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-navy);
+    top: 40%;
+    left: 30%;
+    opacity: 0.1;
+    animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .hero-content {
+        padding: 5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        padding: 6rem 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-orange);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: var(--font-size-5xl);
+    }
+}
+
+.hero-title .highlight {
+    color: var(--color-orange);
+    position: relative;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--color-yellow);
+    opacity: 0.3;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.hero-desc {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+/* Hero Visual */
+.hero-visual {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .hero-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .hero-cart {
+        width: 320px;
+        height: 320px;
+        color: var(--color-orange);
+        opacity: 0.15;
+        animation: pulse-glow 4s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--color-orange);
+    color: white;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+}
+
+.btn-primary:hover {
+    background: var(--color-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+    transform: translateY(-2px);
+}
+
+.btn-buy {
+    padding: 0.625rem 1.25rem;
+    background: var(--color-navy);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.btn-buy:hover {
+    background: var(--color-orange);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   TRUST BADGES SECTION
+   ============================================ */
+
+.trust-section {
+    padding: 5rem 0;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.trust-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trust-grid {
+        gap: 2.5rem;
+    }
+}
+
+.trust-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-base);
+}
+
+.trust-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-orange);
+}
+
+.trust-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-orange);
+    color: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+}
+
+.trust-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.trust-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.trust-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   PRODUCTS SECTION
+   ============================================ */
+
+.products-section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-orange);
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.section-desc {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Product Card */
+.product-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-orange);
+}
+
+.product-image-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bg-input);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.08);
+}
+
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.375rem 0.875rem;
+    background: var(--bg-badge);
+    color: #92400e;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full);
+    z-index: 2;
+}
+
+.badge-new {
+    background: var(--bg-badge-new);
+    color: #60a5fa;
+}
+
+.badge-sale {
+    background: var(--bg-badge-sale);
+    color: #f87171;
+}
+
+.product-wishlist {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    z-index: 2;
+}
+
+.product-wishlist:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+.product-wishlist svg {
+    width: 18px;
+    height: 18px;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-name {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.product-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.product-price {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--color-orange);
+}
+
+.old-price {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-section {
+    padding: 3rem 0 5rem;
+}
+
+.cta-card {
+    background: var(--color-navy);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: var(--color-orange);
+    opacity: 0.1;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: var(--color-yellow);
+    opacity: 0.08;
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.cta-desc {
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 400px;
+}
+
+.cta-form {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+@media (min-width: 640px) {
+    .cta-form {
+        flex-direction: row;
+    }
+}
+
+.cta-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: var(--font-size-sm);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.cta-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-input:focus {
+    border-color: var(--color-orange);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cta-form .btn-primary {
+    background: var(--color-orange);
+    border: none;
+    padding: 0.875rem 1.5rem;
+}
+
+.cta-form .btn-primary:hover {
+    background: var(--color-orange-light);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background: var(--color-navy);
+    color: var(--text-on-dark);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+.footer-logo-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-logo-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--color-orange);
+}
+
+.footer-logo-name {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: white;
+}
+
+.footer-tagline {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+}
+#px{
+    background:Orange; 
+    width:80%; 
+    padding: 15px; 
+    border-radius: 10px; 
+} 
+.footer-social {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    background: var(--color-orange);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-links-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.6);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-orange);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.footer-copyright {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.5);
+    transition: color var(--transition-fast);
+}
+
+.footer-legal a:hover {
+    color: var(--color-orange);
+}
+
+/* ============================================
+   TOAST NOTIFICATION
+   ============================================ */
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: var(--color-navy);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    box-shadow: var(--shadow-xl);
+    z-index: 2000;
+    opacity: 0;
+    transition: all var(--transition-base);
+    pointer-events: none;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* ============================================
+   RTL SUPPORT
+   ============================================ */
+
+[dir="rtl"] .logo {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-list {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-bottom {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .old-price {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .product-badge {
+    left: auto;
+    right: 1rem;
+}
+
+[dir="rtl"] .product-wishlist {
+    right: auto;
+    left: 1rem;
+}
+
+[dir="rtl"] .cta-form {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .trust-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .products-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .footer-legal {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-nav-list a {
+    text-align: right;
+}
+
+[dir="rtl"] .nav-list a::after {
+    left: auto;
+    right: 0;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-navy-muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+    background: var(--color-orange);
+    color: white;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+   
+        
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="#" class="logo-link" aria-label="Yallabuy Home">
+                <div class="logo">
+                    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 8h6l4 18h20l4-12H14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="18" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="36" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M38 6l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M42 10h-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-name">Yallabuy</span>
+                        <span class="logo-slogan" data-key="slogan">Speedy. Simple. Shopping.</span>
+                    </div>
+                </div>
+            </a>
+
+            <nav class="main-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#products" data-key="nav_products">Products</a></li>
+                    <li><a href="#trust" data-key="nav_about">About</a></li>
+                    <li><a href="#footer" data-key="nav_contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-icon theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="btn-icon lang-toggle" id="lang-toggle" aria-label="Toggle language">
+                    <span class="lang-label" id="lang-label">AR</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav aria-label="Mobile Navigation">
+            <ul class="mobile-nav-list">
+                <li><a href="#products" data-key="nav_products">Products</a></li>
+                <li><a href="#trust" data-key="nav_about">About</a></li>
+                <li><a href="#footer" data-key="nav_contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-key="hero_badge">New Collection</div>
+            <h1 class="hero-title" data-key="hero_title">Shop Smarter, <span class="highlight">Live Better</span></h1>
+            <p class="hero-desc" data-key="hero_desc">Discover premium products with lightning-fast delivery. Your satisfaction is our mission.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn btn-primary" data-key="btn_shop_now">Shop Now</a>
+                <a href="article/article.html" class="btn btn-outline" data-key="btn_learn_more"> Read the article</a>
+            </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="hero-cart">
+                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 60h25l15 60h80l20-40H80" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="85" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
+                    <circle cx="155" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
+                    <path d="M160 40l15 15-15 15" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M175 55h-30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M50 30L40 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Section -->
+    <section class="trust-section" id="trust">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 20h32l-4 16H12L8 20z"/>
+                            <path d="M16 20V12a8 8 0 0 1 16 0v8"/>
+                            <path d="M24 28v4"/>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title" data-key="trust_shipping_title">Free Shipping</h3>
+                    <p class="trust-desc" data-key="trust_shipping_desc">On all orders over $50. Fast and reliable delivery to your door.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M24 4l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title" data-key="trust_quality_title">Quality Guaranteed</h3>
+                    <p class="trust-desc" data-key="trust_quality_desc">Every product is handpicked and tested for premium quality.</p>
+                </div>
+                <div class="trust-card">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M24 4v4"/>
+                            <path d="M24 40v4"/>
+                            <path d="M4 24h4"/>
+                            <path d="M40 24h4"/>
+                            <circle cx="24" cy="24" r="8"/>
+                            <path d="M24 20v4l3 3"/>
+                        </svg>
+                    </div>
+                    <h3 class="trust-title" data-key="trust_support_title">24/7 Support</h3>
+                    <p class="trust-desc" data-key="trust_support_desc">Our team is here for you around the clock, every single day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-key="section_label">Our Collection</span>
+                <h2 class="section-title" data-key="section_title">Featured Products</h2>
+                <p class="section-desc" data-key="section_desc">Handpicked items just for you. Premium quality at unbeatable prices.</p>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <article class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" alt="Premium Wireless Headphones" class="product-image" loading="lazy">
+                        <div class="product-badge" data-key="badge_bestseller">Bestseller</div>
+                        <button class="product-wishlist" aria-label="Add to wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name" data-key="product_1_name">Premium Wireless Headphones</h3>
+                        <p class="product-desc" data-key="product_1_desc">Crystal-clear audio with active noise cancellation and 30-hour battery life.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$50.99</span>
+                            <a href="products/product1.html">
+                            <button style="border: solid black 1.5px; padding: 5px; border-radius:5px; background: black; color: white; " >learn more</button>
+                            </a>
+                            <button class="btn btn-buy" data-key="btn_buy">Buy Now</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 2 -->
+                <article class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Smart Fitness Watch" class="product-image" loading="lazy">
+                        <div class="product-badge badge-new" data-key="badge_new">New</div>
+                                   <button class="product-wishlist" aria-label="Add to wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name" data-key="product_2_name">Smart Fitness Watch</h3>
+                        <p class="product-desc" data-key="product_2_desc">Track your health, sleep, and workouts with precision sensors and GPS.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$99.99</span>
+                             <a href="products/product2.html">
+                            <button style="border: solid black 1.5px; padding: 5px; border-radius:5px; background: black; color: white; " >learn more</button>
+                            </a>
+       
+            
+                            <button class="btn btn-buy" data-key="btn_buy">Buy Now</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&h=600&fit=crop" alt="Organic Skincare Set" class="product-image" loading="lazy">
+                        <div class="product-badge badge-sale" data-key="badge_sale">Sale</div>
+                        <button class="product-wishlist" aria-label="Add to wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name" data-key="product_3_name">Organic Skincare Set</h3>
+                        <p class="product-desc" data-key="product_3_desc">Natural ingredients for radiant skin. Cruelty-free and eco-friendly.</p>
+                        <div class="product-footer">
+                            <span class="product-price"><del class="old-price">$89.99</del> $59.99</span>
+                             <a href="products/product3.html">
+                            <button style="border: solid black 1.5px; padding: 5px; border-radius:5px; background: black; color: white; " >learn more</button>
+                            </a>
+                 
+                            <button class="btn btn-buy" data-key="btn_buy">Buy Now</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter / CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2 class="cta-title" data-key="cta_title">Join the Yallabuy Family</h2>
+                    <p class="cta-desc" data-key="cta_desc">Subscribe for exclusive deals, new arrivals, and insider perks.</p>
+                </div>
+                <form class="cta-form" onsubmit="event.preventDefault();">
+                    <input type="email" class="cta-input" placeholder="Enter your email" data-key-placeholder="placeholder_email" aria-label="Email address">
+                    
+                   <a href="e.html" id="px" style="text-decoration: none; display: inline-block; padding: 10px 20px; background:Orange; color: white; border-radius: 5px; margin: auto;">
+  Next 
+</a>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        
+  <p style="font-size: 12px; color: #888; text-align: center;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+
+
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo-link" aria-label="Yallabuy Home">
+                        <div class="footer-logo">
+                            <svg class="footer-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 8h6l4 18h20l4-12H14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="18" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="36" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M38 6l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M42 10h-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                            <span class="footer-logo-name">Yallabuy</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline" data-key="slogan">Speedy. Simple. Shopping.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-links-title" data-key="footer_shop">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="e.html" data-key="nav_products">Products</a></li>
+                        <li><a href="#" data-key="footer_new_arrivals">New Arrivals</a></li>
+                        <li><a href="#" data-key="footer_deals">Deals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-links-title" data-key="footer_support">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-key="footer_faq">FAQ</a></li>
+                        <li><a href="#" data-key="footer_shipping">Shipping</a></li>
+                        <li><a href="#" data-key="footer_returns">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-col">
+                    <h4 class="footer-links-title" data-key="footer_company">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-key="footer_about">About Us</a></li>
+                        <li><a href="#" data-key="footer_careers">Careers</a></li>
+                        <li><a href="#" data-key="footer_contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright" data-key="footer_copyright">2026 Yallabuy. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" data-key="footer_privacy">Privacy Policy</a>
+                    <a href="#" data-key="footer_terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div style=" padding: 20px; margin-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="contact.html">Contact</a>
+  </p>
+</div>
+
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <script src="script.js">
+        
+        
+        /* ============================================
+   YALLABUY — JAVASCRIPT APPLICATION
+   ============================================ */
+
+(function() {
+    'use strict';
+
+    // ==========================================
+    // TRANSLATION DICTIONARY
+    // ==========================================
+
+    const translations = {
+        en: {
+            slogan: 'Speedy. Simple. Shopping.',
+            nav_products: 'Products',
+            nav_about: 'About',
+            nav_contact: 'Contact',
+            hero_badge: 'New Collection',
+            hero_title: 'Shop Smarter, Live Better',
+            hero_desc: 'Discover premium products with lightning-fast delivery. Your satisfaction is our mission.',
+            btn_shop_now: 'Shop Now',
+            btn_learn_more: 'Learn More',
+            trust_shipping_title: 'Free Shipping',
+            trust_shipping_desc: 'On all orders over $50. Fast and reliable delivery to your door.',
+            trust_quality_title: 'Quality Guaranteed',
+            trust_quality_desc: 'Every product is handpicked and tested for premium quality.',
+            trust_support_title: '24/7 Support',
+            trust_support_desc: 'Our team is here for you around the clock, every single day.',
+            section_label: 'Our Collection',
+            section_title: 'Featured Products',
+            section_desc: 'Handpicked items just for you. Premium quality at unbeatable prices.',
+            badge_bestseller: 'Bestseller',
+            badge_new: 'New',
+            badge_sale: 'Sale',
+            product_1_name: 'Premium Wireless Headphones',
+            product_1_desc: 'Crystal-clear audio with active noise cancellation and 30-hour battery life.',
+            product_2_name: 'Smart Fitness Watch',
+            product_2_desc: 'Track your health, sleep, and workouts with precision sensors and GPS.',
+            product_3_name: 'Organic Skincare Set',
+            product_3_desc: 'Natural ingredients for radiant skin. Cruelty-free and eco-friendly.',
+            btn_buy: 'Buy Now',
+            cta_title: 'Join the Yallabuy Family',
+            cta_desc: 'Subscribe for exclusive deals, new arrivals, and insider perks.',
+            placeholder_email: 'Enter your email',
+            btn_subscribe: 'Subscribe',
+            footer_shop: 'Shop',
+            footer_new_arrivals: 'New Arrivals',
+            footer_deals: 'Deals',
+            footer_support: 'Support',
+            footer_faq: 'FAQ',
+            footer_shipping: 'Shipping',
+            footer_returns: 'Returns',
+            footer_company: 'Company',
+            footer_about: 'About Us',
+            footer_careers: 'Careers',
+            footer_contact: 'Contact',
+            footer_copyright: '2026 Yallabuy. All rights reserved.',
+            footer_privacy: 'Privacy Policy',
+            footer_terms: 'Terms of Service',
+            toast_buy: 'Added to cart!',
+            toast_subscribe: 'Subscribed successfully!',
+            toast_wishlist: 'Added to wishlist!',
+            lang_label: 'AR'
+        },
+        ar: {
+            slogan: 'سريع. بسيط. تسوق.',
+            nav_products: 'المنتجات',
+            nav_about: 'من نحن',
+            nav_contact: 'تواصل معنا',
+            hero_badge: 'تشكيلة جديدة',
+            hero_title: 'تسوق بذكاء، عش بشكل أفضل',
+            hero_desc: 'اكتشف منتجات متميزة مع توصيل فائق السرعة. رضاك هو مهمتنا.',
+            btn_shop_now: 'تسوق الآن',
+            btn_learn_more: 'اعرف المزيد',
+            trust_shipping_title: 'شحن مجاني',
+            trust_shipping_desc: 'على جميع الطلبات فوق 50 دولار. توصيل سريع وموثوق إلى باب منزلك.',
+            trust_quality_title: 'جودة مضمونة',
+            trust_quality_desc: 'كل منتج تم اختياره بعناية واختباره لضمان الجودة الممتازة.',
+            trust_support_title: 'دعم على مدار الساعة',
+            trust_support_desc: 'فريقنا هنا من أجلك على مدار الساعة، كل يوم.',
+            section_label: 'تشكيلتنا',
+            section_title: 'منتجات مميزة',
+            section_desc: 'عناصر مختارة خصيصاً لك. جودة ممتازة بأسعار لا تُضاهى.',
+            badge_bestseller: 'الأكثر مبيعاً',
+            badge_new: 'جديد',
+            badge_sale: 'تخفيض',
+            product_1_name: 'سماعات لاسلكية متميزة',
+            product_1_desc: 'صوت نقي مع إلغاء الضوضاء النشط وبطارية تدوم 30 ساعة.',
+            product_2_name: 'ساعة ذكية للياقة البدنية',
+            product_2_desc: 'تتبع صحتك ونومك وتدريباتك بأجهزة استشعار دقيقة ونظام تحديد المواقع.',
+            product_3_name: 'مجموعة العناية بالبشرة العضوية',
+            product_3_desc: 'مكونات طبيعية لبشرة نضرة. خالية من القسوة على الحيوانات وصديقة للبيئة.',
+            btn_buy: 'اشترِ الآن',
+            cta_title: 'انضم إلى عائلة يلاباي',
+            cta_desc: 'اشترك للحصول على عروض حصرية ووصولات جديدة ومميزات خاصة.',
+            placeholder_email: 'أدخل بريدك الإلكتروني',
+            btn_subscribe: 'اشترك',
+            footer_shop: 'تسوق',
+            footer_new_arrivals: 'وصولات جديدة',
+            footer_deals: 'عروض',
+            footer_support: 'الدعم',
+            footer_faq: 'الأسئلة الشائعة',
+            footer_shipping: 'الشحن',
+            footer_returns: 'الإرجاع',
+            footer_company: 'الشركة',
+            footer_about: 'من نحن',
+            footer_careers: 'الوظائف',
+            footer_contact: 'تواصل معنا',
+            footer_copyright: '2026 يلاباي. جميع الحقوق محفوظة.',
+            footer_privacy: 'سياسة الخصوصية',
+            footer_terms: 'شروط الخدمة',
+            toast_buy: 'تمت الإضافة إلى السلة!',
+            toast_subscribe: 'تم الاشتراك بنجاح!',
+            toast_wishlist: 'تمت الإضافة إلى المفضلة!',
+            lang_label: 'EN'
+        }
+    };
+
+    // ==========================================
+    // STATE
+    // ==========================================
+
+    const state = {
+        theme: localStorage.getItem('yallabuy_theme') || 'light',
+        language: localStorage.getItem('yallabuy_language') || 'en'
+    };
+
+    // ==========================================
+    // DOM ELEMENTS
+    // ==========================================
+
+    const elements = {
+        html: document.getElementById('root-html'),
+        themeToggle: document.getElementById('theme-toggle'),
+        langToggle: document.getElementById('lang-toggle'),
+        langLabel: document.getElementById('lang-label'),
+        mobileMenuBtn: document.getElementById('mobile-menu-btn'),
+        mobileMenu: document.getElementById('mobile-menu'),
+        toast: document.getElementById('toast'),
+        toastMessage: document.getElementById('toast-message')
+    };
+
+    // ==========================================
+    // THEME FUNCTIONS
+    // ==========================================
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        state.theme = theme;
+        localStorage.setItem('yallabuy_theme', theme);
+    }
+
+    function toggleTheme() {
+        const newTheme = state.theme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+    }
+
+    // ==========================================
+    // LANGUAGE FUNCTIONS
+    // ==========================================
+
+    function applyLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+
+        // Update HTML lang and dir attributes
+        elements.html.setAttribute('lang', lang);
+        elements.html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+        // Update all elements with data-key attributes
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) {
+                el.textContent = t[key];
+            }
+        });
+
+        // Update placeholder attributes
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-key-placeholder');
+            if (t[key] !== undefined) {
+                el.setAttribute('placeholder', t[key]);
+            }
+        });
+
+        // Update language button label
+        if (elements.langLabel) {
+            elements.langLabel.textContent = t.lang_label || (lang === 'en' ? 'AR' : 'EN');
+        }
+
+        // Update document title
+        document.title = lang === 'ar' ? 'يلاباي' : 'Yallabuy';
+
+        state.language = lang;
+        localStorage.setItem('yallabuy_language', lang);
+    }
+
+    function toggleLanguage() {
+        const newLang = state.language === 'en' ? 'ar' : 'en';
+        applyLanguage(newLang);
+    }
+
+    // ==========================================
+    // MOBILE MENU
+    // ==========================================
+
+    function toggleMobileMenu() {
+        elements.mobileMenuBtn.classList.toggle('active');
+        elements.mobileMenu.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+        elements.mobileMenuBtn.classList.remove('active');
+        elements.mobileMenu.classList.remove('active');
+    }
+
+    // ==========================================
+    // TOAST NOTIFICATION
+    // ==========================================
+
+    let toastTimeout;
+
+    function showToast(messageKey) {
+        const t = translations[state.language];
+        const message = t[messageKey] || messageKey;
+
+        elements.toastMessage.textContent = message;
+        elements.toast.classList.add('show');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            elements.toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // ==========================================
+    // EVENT LISTENERS
+    // ==========================================
+
+    function initEventListeners() {
+        // Theme toggle
+        if (elements.themeToggle) {
+            elements.themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Language toggle
+        if (elements.langToggle) {
+            elements.langToggle.addEventListener('click', toggleLanguage);
+        }
+
+        // Mobile menu
+        if (elements.mobileMenuBtn) {
+            elements.mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close mobile menu when clicking a nav link
+        document.querySelectorAll('.mobile-nav-list a, .nav-list a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Buy buttons
+        document.querySelectorAll('.btn-buy').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showToast('toast_buy');
+            });
+        });
+
+        // Wishlist buttons
+        document.querySelectorAll('.product-wishlist').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const svg = btn.querySelector('svg');
+                const isFilled = btn.getAttribute('data-filled') === 'true';
+
+                if (!isFilled) {
+                    btn.setAttribute('data-filled', 'true');
+                    svg.setAttribute('fill', '#ef4444');
+                    svg.setAttribute('stroke', '#ef4444');
+                    showToast('toast_wishlist');
+                } else {
+                    btn.setAttribute('data-filled', 'false');
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                }
+            });
+        });
+
+        // Subscribe form
+        const ctaForm = document.querySelector('.cta-form');
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const input = ctaForm.querySelector('.cta-input');
+                if (input && input.value.trim()) {
+                    showToast('toast_subscribe');
+                    input.value = '';
+                }
+            });
+        }
+
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!elements.mobileMenu.contains(e.target) && 
+                !elements.mobileMenuBtn.contains(e.target) &&
+                elements.mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.getElementById('header');
+
+            if (currentScroll > 50) {
+                header.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+
+            lastScroll = currentScroll;
+        });
+    }
+
+    // ==========================================
+    // INITIALIZATION
+    // ==========================================
+
+    function init() {
+        // Apply saved preferences
+        applyTheme(state.theme);
+        applyLanguage(state.language);
+
+        // Setup event listeners
+        initEventListeners();
+    }
+
+    // Start the app
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();
+
+    </script>
+</body>
+</html>

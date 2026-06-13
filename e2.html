@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yallabuy - Shop with Confidence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ═══════════════════════════════════════
+       PHASE 2 — STYLES
+       ═══════════════════════════════════════ -->
+  <style>
+    /* ── CSS Custom Properties (Light Theme Default) ── */
+    :root {
+      --bg: #FFFFFF;
+      --surface: #F8F9FA;
+      --primary: #0A1628;
+      --accent: #F5A623;
+      --text: #1A1A2E;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --shadow: rgba(0,0,0,0.08);
+    }
+
+    /* ── Dark Theme Variables ── */
+    html.dark-theme {
+      --bg: #0A1628;
+      --surface: #162040;
+      --primary: #F5A623;
+      --accent: #F5A623;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --border: #1E3A5F;
+      --shadow: rgba(0,0,0,0.3);
+    }
+
+    /* ── Font Family Switching ── */
+    html[lang="ar"] { font-family: 'Cairo', sans-serif; }
+    html[lang="en"] { font-family: 'Poppins', sans-serif; }
+
+    /* ── Global Reset & Base ── */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: inherit;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul { list-style: none; }
+
+    /* ── Scrollbar Styling ── */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--surface); }
+    ::-webkit-scrollbar-thumb {
+      background: var(--muted);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+    /* ── Header ── */
+    #header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(var(--bg-rgb, 255, 255, 255), 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s ease;
+    }
+
+    #header.scrolled {
+      box-shadow: 0 4px 20px var(--shadow);
+    }
+
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .main-nav a {
+      font-weight: 500;
+      color: var(--text);
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.3s ease;
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .main-nav a:hover::after { width: 100%; }
+    .main-nav a:hover { color: var(--accent); }
+
+    .header-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .header-actions button {
+      padding: 0.5rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .header-actions button:hover {
+      background: var(--accent);
+      color: var(--primary);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .header-actions button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    /* ── Hero Section ── */
+    #hero {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary) 0%, #1a2a4a 100%);
+      padding: 6rem 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    #hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    #hero p {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      opacity: 0.9;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 25px rgba(245, 166, 35, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: #fff;
+      transform: scale(1.03);
+    }
+
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .badge-icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .badge-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ── Stats Section ── */
+    #stats {
+      background: var(--surface);
+      padding: 4rem 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .stats-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 60px;
+      background: var(--border);
+    }
+
+    /* ── Products Section ── */
+    #products {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+
+    #products h2 {
+      text-align: center;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #products h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px var(--shadow);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-body h3 {
+      font-weight: 700;
+      color: var(--text);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .product-price {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-stars {
+      color: #F5A623;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .add-to-cart {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--accent);
+      color: var(--primary);
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .add-to-cart:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(245, 166, 35, 0.35);
+    }
+
+    /* ── Footer ── */
+    #footer {
+      background: var(--primary);
+      color: #fff;
+      padding: 4rem 1.5rem 1.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    html.dark-theme #footer {
+      background: var(--surface);
+    }
+
+    .footer-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .footer-logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col p {
+      color: rgba(255,255,255,0.75);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    html.dark-theme .footer-col p {
+      color: var(--muted);
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: #fff;
+    }
+
+    html.dark-theme .footer-col h4 {
+      color: var(--text);
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-col ul li a,
+    .footer-col ul li {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    html.dark-theme .footer-col ul li a,
+    html.dark-theme .footer-col ul li {
+      color: var(--muted);
+    }
+
+    .footer-col ul li a:hover { color: var(--accent); }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .social-links a svg {
+      width: 18px;
+      height: 18px;
+      fill: #fff;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    html.dark-theme .footer-bottom {
+      border-top-color: var(--border);
+    }
+
+    .footer-bottom p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+    }
+
+    html.dark-theme .footer-bottom p {
+      color: var(--muted);
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .payment-icons svg {
+      width: 40px;
+      height: 26px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    .payment-icons svg:hover {
+      opacity: 1;
+    }
+
+    /* ── Responsive Header ── */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .main-nav { gap: 1.25rem; }
+      .stat-divider { display: none; }
+      .stats-container { gap: 2.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════ -->
+  <header id="header">
+    <div class="header-container">
+      <a href="#" class="logo" data-i18n="logo">Yallabuy</a>
+      <nav class="main-nav">
+        <a href="#hero" data-i18n="navHome">Home</a>
+        <a href="#products" data-i18n="navProducts">Products</a>
+        <a href="#stats" data-i18n="navOffers">Offers</a>
+        <a href="#footer" data-i18n="navContact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button id="langBtn" data-i18n="langBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>العربية</span>
+        </button>
+        <button id="themeBtn" data-i18n="themeBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 data-i18n="heroTitle">Shop with Confidence on Yallabuy</h1>
+      <p data-i18n="heroSub">Best products at the best prices</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" data-i18n="shopNow">Shop Now</button>
+      <a href="e3.html">
+        <button class="btn btn-outline" data-i18n="exploreDeals">Explore Deals</button>
+        </a>
+      </div>
+      <div class="trust-badges">
+        <div class="badge">
+          <span class="badge-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </span>
+          <span data-i18n="freeShipping">Free Shipping</span>
+        </div>
+        <div class="badge">
+          <span class="badge-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </span>
+          <span data-i18n="securePayment">Secure Payment</span>
+        </div>
+        <div class="badge">
+          <span class="badge-icon">
+            <svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><polyline points="23 20 23 14 17 14"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+          </span>
+          <span data-i18n="easyReturns">Easy Returns</span>
+        </div>
+        <div class="badge">
+          <span class="badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span data-i18n="support">24/7 Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       STATS SECTION
+       ═══════════════════════════════════════ -->
+  <section id="stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number" data-target="50000" data-suffix="+">0</span>
+        <span class="stat-label" data-i18n="statsCustomers">Happy Customers</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="10000" data-suffix="+">0</span>
+        <span class="stat-label" data-i18n="statsProducts">Products Available</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="4.9" data-suffix="★">0</span>
+        <span class="stat-label" data-i18n="statsRating">Store Rating</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       PRODUCTS SECTION
+       ═══════════════════════════════════════ -->
+  <section id="products">
+    <h2 data-i18n="productsTitle">Our Featured Products</h2>
+    <div class="products-grid">
+
+      <!-- Product 1: Headphones -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="Headphones">
+        <div class="card-body">
+          <h3 data-i18n="product1Name">Wireless Headphones</h3>
+          <p class="product-desc" data-i18n="product1Desc">Crystal clear sound with noise cancellation and 30-hour battery life</p>
+          <span class="product-price">349 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 2: Smart Watch -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="Smart Watch">
+        <div class="card-body">
+          <h3 data-i18n="product2Name">Smart Watch</h3>
+          <p class="product-desc" data-i18n="product2Desc">Fitness tracking, heart rate monitor, water resistant design</p>
+          <span class="product-price">499 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 3: Laptop -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Laptop">
+        <div class="card-body">
+          <h3 data-i18n="product3Name">Pro Laptop</h3>
+          <p class="product-desc" data-i18n="product3Desc">Fast processor, high-res display, perfect for work and study</p>
+          <span class="product-price">2,999 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 4: Camera -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400" alt="Camera">
+        <div class="card-body">
+          <h3 data-i18n="product4Name">Digital Camera</h3>
+          <p class="product-desc" data-i18n="product4Desc">4K recording, professional lenses, ideal for photographers</p>
+          <span class="product-price">1,899 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 5: Sneakers -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="Sneakers">
+        <div class="card-body">
+          <h3 data-i18n="product5Name">Red Sneakers</h3>
+          <p class="product-desc" data-i18n="product5Desc">Modern design, ultimate comfort, great for running and daily wear</p>
+          <span class="product-price">279 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 6: Sunglasses -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400" alt="Sunglasses">
+        <div class="card-body">
+          <h3 data-i18n="product6Name">Sunglasses</h3>
+          <p class="product-desc" data-i18n="product6Desc">UV400 protection, lightweight frame, stylish and comfortable</p>
+          <span class="product-price">189 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 7: Backpack -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400" alt="Backpack">
+        <div class="card-body">
+          <h3 data-i18n="product7Name">Backpack</h3>
+          <p class="product-desc" data-i18n="product7Desc">Large capacity, water resistant, multiple organizer pockets</p>
+          <span class="product-price">159 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 8: Perfume -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=400" alt="Perfume">
+        <div class="card-body">
+          <h3 data-i18n="product8Name">Luxury Perfume</h3>
+          <p class="product-desc" data-i18n="product8Desc">Unique long-lasting scent, elegant bottle, perfect gift choice</p>
+          <span class="product-price">420 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 9: Keyboard -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400" alt="Keyboard">
+        <div class="card-body">
+          <h3 data-i18n="product9Name">Mechanical Keyboard</h3>
+          <p class="product-desc" data-i18n="product9Desc">RGB lighting, fast responsive keys, perfect for gaming</p>
+          <span class="product-price">299 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 10: Coffee Maker -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400" alt="Coffee Maker">
+        <div class="card-body">
+          <h3 data-i18n="product10Name">Coffee Maker</h3>
+          <p class="product-desc" data-i18n="product10Desc">Quick brewing, rich flavor, sleek design for your kitchen</p>
+          <span class="product-price">599 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 11: Running Shoes -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=400" alt="Running Shoes">
+        <div class="card-body">
+          <h3 data-i18n="product11Name">Pro Running Shoes</h3>
+          <p class="product-desc" data-i18n="product11Desc">Shock absorption technology, lightweight, excellent performance</p>
+          <span class="product-price">359 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 12: Tablet -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1544244015-0df4592c6a6e?w=400" alt="Tablet">
+        <div class="card-body">
+          <h3 data-i18n="product12Name">Smart Tablet</h3>
+          <p class="product-desc" data-i18n="product12Desc">Large touch screen, all-day battery, perfect for entertainment</p>
+          <span class="product-price">1,199 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 13: Speaker -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400" alt="Speaker">
+        <div class="card-body">
+          <h3 data-i18n="product13Name">Bluetooth Speaker</h3>
+          <p class="product-desc" data-i18n="product13Desc">Powerful stereo sound, water resistant, great for trips</p>
+          <span class="product-price">229 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 14: Gaming Mouse -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=400" alt="Gaming Mouse">
+        <div class="card-body">
+          <h3 data-i18n="product14Name">Gaming Mouse</h3>
+          <p class="product-desc" data-i18n="product14Desc">High precision, programmable buttons, custom RGB lighting</p>
+          <span class="product-price">149 SAR</span>
+          <div class="product-stars">★★★★★</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+      <!-- Product 15: Leather Wallet -->
+      <article class="product-card">
+        <img src="https://images.unsplash.com/photo-1627123424574-724758594e93?w=400" alt="Leather Wallet">
+        <div class="card-body">
+          <h3 data-i18n="product15Name">Leather Wallet</h3>
+          <p class="product-desc" data-i18n="product15Desc">Premium genuine leather, classic design, ample card space</p>
+          <span class="product-price">129 SAR</span>
+          <div class="product-stars">★★★★☆</div>
+          <button class="add-to-cart" data-i18n="addToCart">Add to Cart</button>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════ -->
+  <footer id="footer">
+
+  <div style=" padding: 20px; margin"-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="contact.html">Contact</a>
+  </p>
+</div>
+
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#" class="footer-logo" data-i18n="logo">Yallabuy</a>
+        <p data-i18n="footerAbout">Yallabuy is your trusted online shopping destination in Saudi Arabia. We offer the best products at competitive prices with exceptional customer service.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerQuickLinks">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="navHome">Home</a></li>
+          <li><a href="e.html" data-i18n="navProducts">Products</a></li>
+          <li><a href="#stats" data-i18n="navOffers">Offers</a></li>
+          <li><a href="#footer" data-i18n="navContact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerContact">Contact Us</h4>
+        <ul>
+          <li>support@yallabuy.sa</li>
+          <li>9200-12345</li>
+          <li>Riyadh, Saudi Arabia</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerFollow">Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.54c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footerCopyright">© 2026 Yallabuy. All rights reserved.</p>
+      <div class="payment-icons">
+        <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#1A1F71"/><path d="M18.5 22h-3L19 10h3l-3.5 12zm13-12l-2.5 6.5-.5-2.5-1.5-6h-3.5l3.5 12h3.5l4.5-12h-3.5zm-8 0h-3v12h3V10zm-6 0h-5v12h3v-4h2c2 0 3.5-1.5 3.5-4s-1.5-4-3.5-4z" fill="#fff"/></svg>
+        <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#EB001B"/><circle cx="16" cy="16" r="10" fill="#F79E1B" fill-opacity="0.8"/><path d="M24 6a10 10 0 0 1 0 20 10 10 0 0 0 0-20z" fill="#F79E1B"/></svg>
+        <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#00A1FF"/><path d="M24 8c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z" fill="#fff"/></svg>
+        <svg viewBox="0 0 48 32" fill="none"><rect width="48" height="32" rx="4" fill="#000"/><path d="M16 10h16v12H16z" fill="#fff"/><path d="M24 10c-2 0-3.8.8-5 2.2A6.5 6.5 0 0 0 14 10c-3.3 0-6 2.7-6 6s2.7 6 6 6c2 0 3.8-.8 5-2.2A6.5 6.5 0 0 0 24 22c3.3 0 6-2.7 6-6s-2.7-6-6-6z" fill="#000"/></svg>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       PHASE 3 — JAVASCRIPT
+       ═══════════════════════════════════════ -->
+  <script>
+    // ── 1. Translations Object ──
+    const translations = {
+      ar: {
+        logo: "يلاباي",
+        navHome: "الرئيسية",
+        navProducts: "المنتجات",
+        navOffers: "العروض",
+        navContact: "تواصل معنا",
+        langBtn: "English",
+        themeBtn: "🌙",
+        heroTitle: "تسوق بثقة مع يلاباي",
+        heroSub: "أفضل المنتجات بأفضل الأسعار",
+        shopNow: "تسوق الآن",
+        exploreDeals: "اكتشف العروض",
+        freeShipping: "شحن مجاني",
+        securePayment: "دفع آمن",
+        easyReturns: "إرجاع سهل",
+        support: "دعم 24/7",
+        statsCustomers: "عميل راضٍ",
+        statsProducts: "منتج متوفر",
+        statsRating: "تقييم المتجر",
+        productsTitle: "منتجاتنا المميزة",
+        addToCart: "أضف للسلة",
+        product1Name: "سماعات رأس لاسلكية",
+        product1Desc: "صوت نقي مع عزل الضوضاء وعمر بطارية يصل إلى 30 ساعة",
+        product2Name: "ساعة ذكية",
+        product2Desc: "تتبع اللياقة البدنية، قياس نبض القلب، مقاومة للماء",
+        product3Name: "لابتوب احترافي",
+        product3Desc: "معالج سريع، شاشة عالية الدقة، مثالي للعمل والدراسة",
+        product4Name: "كاميرا رقمية",
+        product4Desc: "تصوير بدقة 4K، عدسات احترافية، مثالية للمصورين",
+        product5Name: "حذاء رياضي أحمر",
+        product5Desc: "تصميم عصري، راحة فائقة، مناسب للجري والمشي اليومي",
+        product6Name: "نظارة شمسية",
+        product6Desc: "حماية UV400، إطار خفيف الوزن، تصميم أنيق ومريح",
+        product7Name: "حقيبة ظهر",
+        product7Desc: "سعة كبيرة، مقاومة للماء، جيوب متعددة للتنظيم",
+        product8Name: "عطر فاخر",
+        product8Desc: "رائحة فريدة تدوم طويلاً، زجاجة أنيقة، هدية مثالية",
+        product9Name: "لوحة مفاتيح ميكانيكية",
+        product9Desc: "إضاءة RGB، مفاتيح سريعة الاستجابة، مثالية للألعاب",
+        product10Name: "آلة تحضير القهوة",
+        product10Desc: "تحضير سريع، نكهة غنية، تصميم أنيق للمطبخ",
+        product11Name: "حذاء جري احترافي",
+        product11Desc: "تقنية امتصاص الصدمات، خفيف الوزن، أداء ممتاز",
+        product12Name: "تابلت ذكي",
+        product12Desc: "شاشة لمس كبيرة، بطارية تدوم يوماً كاملاً، مثالي للترفيه",
+        product13Name: "سماعة بلوتوث",
+        product13Desc: "صوت ستيريو قوي، مقاومة للماء، مثالية للرحلات والتنزه",
+        product14Name: "فأرة ألعاب",
+        product14Desc: "دقة عالية، أزرار قابلة للبرمجة، إضاءة RGB مخصصة",
+        product15Name: "محفظة جلدية",
+        product15Desc: "جلد طبيعي فاخر، تصميم كلاسيكي، مساحة كافية للبطاقات",
+        footerAbout: "يلاباي وجهتك الأولى للتسوق الإلكتروني الموثوق في المملكة العربية السعودية. نقدم لك أفضل المنتجات بأسعار تنافسية مع خدمة عملاء متميزة.",
+        footerQuickLinks: "روابط سريعة",
+        footerContact: "تواصل معنا",
+        footerFollow: "تابعنا",
+        footerCopyright: "© 2026 يلاباي. جميع الحقوق محفوظة."
+      },
+      en: {
+        logo: "Yallabuy",
+        navHome: "Home",
+        navProducts: "Products",
+        navOffers: "Offers",
+        navContact: "Contact",
+        langBtn: "العربية",
+        themeBtn: "☀️",
+        heroTitle: "Shop with Confidence on Yallabuy",
+        heroSub: "Best products at the best prices",
+        shopNow: "Shop Now",
+        exploreDeals: "Explore Deals",
+        freeShipping: "Free Shipping",
+        securePayment: "Secure Payment",
+        easyReturns: "Easy Returns",
+        support: "24/7 Support",
+        statsCustomers: "Happy Customers",
+        statsProducts: "Products Available",
+        statsRating: "Store Rating",
+        productsTitle: "Our Featured Products",
+        addToCart: "Add to Cart",
+        product1Name: "Wireless Headphones",
+        product1Desc: "Crystal clear sound with noise cancellation and 30-hour battery life",
+        product2Name: "Smart Watch",
+        product2Desc: "Fitness tracking, heart rate monitor, water resistant design",
+        product3Name: "Pro Laptop",
+        product3Desc: "Fast processor, high-res display, perfect for work and study",
+        product4Name: "Digital Camera",
+        product4Desc: "4K recording, professional lenses, ideal for photographers",
+        product5Name: "Red Sneakers",
+        product5Desc: "Modern design, ultimate comfort, great for running and daily wear",
+        product6Name: "Sunglasses",
+        product6Desc: "UV400 protection, lightweight frame, stylish and comfortable",
+        product7Name: "Backpack",
+        product7Desc: "Large capacity, water resistant, multiple organizer pockets",
+        product8Name: "Luxury Perfume",
+        product8Desc: "Unique long-lasting scent, elegant bottle, perfect gift choice",
+        product9Name: "Mechanical Keyboard",
+        product9Desc: "RGB lighting, fast responsive keys, perfect for gaming",
+        product10Name: "Coffee Maker",
+        product10Desc: "Quick brewing, rich flavor, sleek design for your kitchen",
+        product11Name: "Pro Running Shoes",
+        product11Desc: "Shock absorption technology, lightweight, excellent performance",
+        product12Name: "Smart Tablet",
+        product12Desc: "Large touch screen, all-day battery, perfect for entertainment",
+        product13Name: "Bluetooth Speaker",
+        product13Desc: "Powerful stereo sound, water resistant, great for trips",
+        product14Name: "Gaming Mouse",
+        product14Desc: "High precision, programmable buttons, custom RGB lighting",
+        product15Name: "Leather Wallet",
+        product15Desc: "Premium genuine leather, classic design, ample card space",
+        footerAbout: "Yallabuy is your trusted online shopping destination in Saudi Arabia. We offer the best products at competitive prices with exceptional customer service.",
+        footerQuickLinks: "Quick Links",
+        footerContact: "Contact Us",
+        footerFollow: "Follow Us",
+        footerCopyright: "© 2026 Yallabuy. All rights reserved."
+      }
+    };
+
+    let currentLang = "en";
+
+    // ── 2. switchLanguage() ──
+    function switchLanguage() {
+      currentLang = currentLang === "ar" ? "en" : "ar";
+      const html = document.documentElement;
+      html.setAttribute("lang", currentLang);
+      html.setAttribute("dir", currentLang === "ar" ? "rtl" : "ltr");
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[currentLang][key]) {
+          el.textContent = translations[currentLang][key];
+        }
+      });
+
+      // Update language button label
+      const langBtn = document.getElementById("langBtn");
+      const langSpan = langBtn.querySelector("span");
+      if (langSpan) langSpan.textContent = translations[currentLang].langBtn;
+
+      // Update theme button icon
+      const themeBtn = document.getElementById("themeBtn");
+      const isDark = html.classList.contains("dark-theme");
+      themeBtn.innerHTML = isDark
+        ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
+        : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+      localStorage.setItem("yallabuy-lang", currentLang);
+    }
+
+    // ── 3. switchTheme() ──
+    function switchTheme() {
+      const html = document.documentElement;
+      html.classList.toggle("dark-theme");
+      const isDark = html.classList.contains("dark-theme");
+      localStorage.setItem("yallabuy-theme", isDark ? "dark" : "light");
+
+      const themeBtn = document.getElementById("themeBtn");
+      themeBtn.innerHTML = isDark
+        ? `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
+        : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+    }
+
+    // ── 4. Animated Counters ──
+    function animateCounters() {
+      const counters = document.querySelectorAll(".stat-number");
+      const duration = 2000;
+      const steps = 60;
+
+      counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute("data-target"));
+        const suffix = counter.getAttribute("data-suffix") || "";
+        const isFloat = target % 1 !== 0;
+        const stepValue = target / steps;
+        let current = 0;
+        let step = 0;
+
+        const timer = setInterval(() => {
+          step++;
+          current = stepValue * step;
+          if (step >= steps) {
+            current = target;
+            clearInterval(timer);
+          }
+          if (isFloat) {
+            counter.textContent = current.toFixed(1) + suffix;
+          } else {
+            counter.textContent = Math.floor(current).toLocaleString() + suffix;
+          }
+        }, duration / steps);
+      });
+    }
+
+    // ── 5. Sticky Header Shadow ──
+    function handleScroll() {
+      const header = document.getElementById("header");
+      if (window.scrollY > 10) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+
+    // ── 6. Add to Cart Feedback ──
+    function handleCartClick(e) {
+      const btn = e.target;
+      if (!btn.classList.contains("add-to-cart")) return;
+
+      const originalText = translations[currentLang].addToCart;
+      const successText = currentLang === "ar" ? "✓ تمت الإضافة" : "✓ Added!";
+
+      btn.textContent = successText;
+      btn.style.background = "#22c55e";
+      btn.style.color = "#fff";
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = "";
+        btn.style.color = "";
+      }, 1500);
+    }
+
+    // ── DOMContentLoaded ──
+    document.addEventListener("DOMContentLoaded", () => {
+      // Restore language preference
+      const savedLang = localStorage.getItem("yallabuy-lang");
+      if (savedLang && savedLang !== "en") {
+        switchLanguage();
+      }
+
+      // Restore theme preference
+      const savedTheme = localStorage.getItem("yallabuy-theme");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark-theme");
+        const themeBtn = document.getElementById("themeBtn");
+        themeBtn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`;
+      }
+
+      // Event listeners
+      document.getElementById("langBtn").addEventListener("click", switchLanguage);
+      document.getElementById("themeBtn").addEventListener("click", switchTheme);
+      window.addEventListener("scroll", handleScroll);
+      document.getElementById("products").addEventListener("click", handleCartClick);
+
+      // Animate counters
+      animateCounters();
+    });
+  </script>
+
+</body>
+</html>

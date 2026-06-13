@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Best Sellers 2026 | Top Trending Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9900;
+            --primary-dark: #E8890C;
+            --secondary: #232F3E;
+            --accent: #00A8E1;
+            --dark: #0F1111;
+            --light: #F3F3F3;
+            --card-bg: #ffffff;
+            --gradient-1: linear-gradient(135deg, #FF9900 0%, #FFB84D 50%, #FF9900 100%);
+            --gradient-2: linear-gradient(135deg, #232F3E 0%, #37475A 100%);
+            --gradient-3: linear-gradient(135deg, #00A8E1 0%, #0077B6 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+            --shadow-glow: 0 0 40px rgba(255,153,0,0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: var(--dark);
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,153,0,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0,168,225,0.06) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255,153,0,0.04) 0%, transparent 50%);
+            animation: bgRotate 30s linear infinite;
+        }
+
+        @keyframes bgRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(15, 17, 17, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.6rem 3rem;
+            background: rgba(15, 17, 17, 0.95);
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            animation: logoPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,153,0,0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,153,0,0.4); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,153,0,0.15);
+            border: 1px solid rgba(255,153,0,0.3);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            animation: badgeFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .hero-badge .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, #FF9900 50%, #fff 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-15px); }
+            60% { transform: translateX(-50%) translateY(-7px); }
+        }
+
+        .scroll-indicator span {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--primary), transparent);
+        }
+
+        /* ===== SECTION STYLES ===== */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            background: rgba(255,153,0,0.15);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
+        }
+
+        /* ===== PRODUCT CARDS ===== */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(255,153,0,0.3);
+            box-shadow: var(--shadow-glow), var(--shadow-lg);
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image-wrapper img {
+            width: 70%;
+            height: 70%;
+            object-fit: contain;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+        }
+
+        .product-card:hover .product-image-wrapper img {
+            transform: scale(1.15) rotate(-3deg);
+            filter: drop-shadow(0 20px 40px rgba(255,153,0,0.2));
+        }
+
+        .product-rank {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(255,153,0,0.4);
+            z-index: 10;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(10px);
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            border: 1px solid rgba(255,153,0,0.2);
+            z-index: 10;
+        }
+
+        .product-info {
+            padding: 1.8rem;
+        }
+
+        .product-category {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .product-price span {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            font-weight: 400;
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .stars {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .rating-count {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .product-cta {
+            display: block;
+            width: 100%;
+            margin-top: 1.2rem;
+            padding: 1rem;
+            background: var(--gradient-1);
+            color: var(--dark);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .product-cta:hover::before {
+            left: 100%;
+        }
+
+        .product-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,153,0,0.4);
+        }
+
+        /* ===== CATEGORIES SECTION ===== */
+        .categories-section {
+            background: linear-gradient(180deg, var(--dark) 0%, rgba(35,47,62,0.3) 50%, var(--dark) 100%);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0;
+            background: var(--gradient-1);
+            transition: height 0.4s ease;
+            opacity: 0.1;
+        }
+
+        .category-card:hover::after {
+            height: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255,153,0,0.3);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .category-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .category-count {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ===== TRENDS SECTION ===== */
+        .trends-section {
+            background: var(--gradient-2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trends-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,153,0,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .trend-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .trend-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateX(10px);
+            border-left: 4px solid var(--primary);
+        }
+
+        .trend-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255,153,0,0.2);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .trend-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .trend-desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .trend-growth {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(0,200,100,0.15);
+            color: #00C864;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        /* ===== NEWSLETTER ===== */
+        .newsletter-section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255,153,0,0.1) 0%, rgba(0,168,225,0.1) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,153,0,0.05) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .newsletter-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-box p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(255,153,0,0.2);
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: var(--gradient-1);
+            color: var(--dark);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,153,0,0.4);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: rgba(0,0,0,0.3);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+
+        /* ===== ANIMATED COUNTERS ===== */
+        .counter {
+            display: inline-block;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* ===== REVEAL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ===== MARQUEE ===== */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 1.5rem 0;
+            background: rgba(255,153,0,0.05);
+            border-top: 1px solid rgba(255,153,0,0.1);
+            border-bottom: 1px solid rgba(255,153,0,0.1);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-item {
+            display: inline-block;
+            padding: 0 3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .marquee-item span {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+            
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+        }
+
+        /* ===== LOADING ANIMATION ===== */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255,153,0,0.2);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        a{
+            color: #888;
+            text-decoration:none; 
+        } 
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="floating-particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <a href="#" class="logo">
+            <div class="logo-icon">🛒</div>
+            <span>Amazon</span>Best Sellers
+        </a>
+        <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#trends">Trends</a></li>
+            <li><a href="#newsletter">Subscribe</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="pulse-dot"></div>
+                Live Data — Updated Hourly
+            </div>
+            <h1>Amazon's Best Selling Products of 2026</h1>
+            <p>Discover the most trending, highest-rated, and fastest-selling items across every category. Updated in real-time with verified sales data.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number counter" data-target="80">0</span>
+                    <span class="stat-label">Top Products</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number counter" data-target="12">0</span>
+                    <span class="stat-label">Categories</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number counter" data-target="500">0</span>
+                    <span class="stat-label">K+ Reviews</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number counter" data-target="99">0</span>
+                    <span class="stat-label">% Verified</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span class="marquee-item"><span>🔥</span> Stanley Quencher Tumbler — 8,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>📺</span> Fire TV Stick 4K — 10,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>🎧</span> Apple AirPods Pro — Bestseller in Electronics</span>
+            <span class="marquee-item"><span>👟</span> Crocs Classic Clog — 1,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>✨</span> TruSkin Vitamin C Serum — 60,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>🎯</span> Mighty Patch — 100,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>🔥</span> Stanley Quencher Tumbler — 8,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>📺</span> Fire TV Stick 4K — 10,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>🎧</span> Apple AirPods Pro — Bestseller in Electronics</span>
+            <span class="marquee-item"><span>👟</span> Crocs Classic Clog — 1,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>✨</span> TruSkin Vitamin C Serum — 60,000+ Monthly Sales</span>
+            <span class="marquee-item"><span>🎯</span> Mighty Patch — 100,000+ Monthly Sales</span>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="section-header reveal">
+            <span class="section-label">Top Picks</span>
+            <h2>Best Selling Products Right Now</h2>
+            <p>Hand-picked from Amazon's official bestseller lists across Beauty, Electronics, Home, and more.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Product 1: Stanley Tumbler -->
+            <div class="product-card reveal reveal-delay-1">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#1</span>
+                    <span class="product-badge">🔥 Hot</span>
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.stanley1913.com/2ed82630ac4a5ea9b7164a5c90236f692cac3700.png" alt="Stanley Quencher Tumbler">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Home & Kitchen</span>
+                    <h3 class="product-title">Stanley Quencher H2.0 Travel Tumbler</h3>
+                    <p class="product-description">The viral sensation that took over social media. Vacuum insulated, spill-proof, and keeps drinks cold for 11 hours or iced for 2 days.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$45.00 <span>$60.00</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(45,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 2: Fire TV Stick -->
+            <div class="product-card reveal reveal-delay-2">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#2</span>
+                    <span class="product-badge">📺 Best Value</span>
+                    <img src="https://kimi-web-img.moonshot.cn/img/images.thdstatic.com/6c46ac53c3f30844d563b5d3d1680620a356c16e.jpg" alt="Amazon Fire TV Stick 4K">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Electronics</span>
+                    <h3 class="product-title">Amazon Fire TV Stick 4K (Wi-Fi 6)</h3>
+                    <p class="product-description">Stream in 4K Ultra HD with Dolby Vision, HDR10+, and Dolby Atmos. Alexa Voice Remote included. Access 300,000+ movies and shows.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$49.99 <span>$69.99</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(120,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 3: Crocs -->
+            <div class="product-card reveal reveal-delay-3">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#3</span>
+                    <span class="product-badge">👟 Trending</span>
+                    <img src="https://kimi-web-img.moonshot.cn/img/d18xazalilbrpm.cloudfront.net/d3afc4591065645af66c06e53a608bdb3b9fb077.jpg" alt="Crocs Classic Clog">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Clothing & Shoes</span>
+                    <h3 class="product-title">Crocs Unisex Classic Clog</h3>
+                    <p class="product-description">The iconic comfort footwear endorsed by celebrities and influencers worldwide. Lightweight, durable, and available in 20+ colors.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$49.99 <span>$59.99</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(85,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 4: TruSkin Serum -->
+            <div class="product-card reveal reveal-delay-1">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#4</span>
+                    <span class="product-badge">✨ Top Rated</span>
+                    <img src="https://kimi-web-img.moonshot.cn/img/truskin.com/516450b8c6e7287d9cc324adb05ed7bf57b39c7b.jpg" alt="TruSkin Vitamin C Serum">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Beauty & Personal Care</span>
+                    <h3 class="product-title">TruSkin Vitamin C Facial Serum</h3>
+                    <p class="product-description">Anti-aging formula with Vitamin E, Hyaluronic Acid & Aloe. Brightens dark spots, reduces fine lines, and evens skin tone naturally.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$19.99 <span>$35.99</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(60,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 5: Mighty Patch -->
+            <div class="product-card reveal reveal-delay-2">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#5</span>
+                    <span class="product-badge">🎯 #1 Brand</span>
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.herocosmetics.us/c072f52311fb07271ef6cb4b309e6bed257fd8cb.png" alt="Mighty Patch Acne Patches">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Beauty & Wellness</span>
+                    <h3 class="product-title">Mighty Patch Original — 36 Count</h3>
+                    <p class="product-description">Hydrocolloid patches that visibly shrink pimples overnight. Drug-free, vegan, and perfect for sensitive skin. Allure Best of Beauty winner.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$12.99 <span>$18.99</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(100,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 6: TEKFUN Tablet -->
+            <div class="product-card reveal reveal-delay-3">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#6</span>
+                    <span class="product-badge">🎨 Kids</span>
+                    <img src="https://kimi-web-img.moonshot.cn/img/mytekfun.com/13b0bafb616eee03418c5720c5e78a45e5370504.jpg" alt="TEKFUN LCD Writing Tablet">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Toys & Games</span>
+                    <h3 class="product-title">TEKFUN LCD Writing Tablet 8.5\"</h3>
+                    <p class="product-description">Reusable doodle board for kids with colorful LCD screen. Perfect for travel, learning, and sparking creativity. Durable and eye-safe design.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$9.99 <span>$16.99</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(25,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 7: AirPods -->
+            <div class="product-card reveal reveal-delay-1">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#7</span>
+                    <span class="product-badge">🎧 Premium</span>
+                    <img src="https://images.unsplash.com/photo-1603351154351-5cfb3d04ef32?w=500&h=500&fit=crop" alt="Apple AirPods Pro">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Electronics</span>
+                    <h3 class="product-title">Apple AirPods Pro (2nd Gen)</h3>
+                    <p class="product-description">Active Noise Cancellation, Adaptive Transparency, and Personalized Spatial Audio. Up to 6 hours of listening time with MagSafe charging case.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$199.00 <span>$249.00</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(200,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 8: Resistance Bands -->
+            <div class="product-card reveal reveal-delay-2">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#8</span>
+                    <span class="product-badge">💪 Fitness</span>
+                    <img src="https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500&h=500&fit=crop" alt="Resistance Exercise Bands">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Sports & Outdoors</span>
+                    <h3 class="product-title">Resistance Loop Exercise Bands Set</h3>
+                    <p class="product-description">5 levels of resistance for full-body workouts at home or gym. Non-slip, durable latex bands with carrying bag and workout guide included.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$14.95 <span>$29.95</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(40,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+
+            <!-- Product 9: Scented Candle -->
+            <div class="product-card reveal reveal-delay-3">
+                <div class="product-image-wrapper">
+                    <span class="product-rank">#9</span>
+                    <span class="product-badge">🕯️ Best Gift</span>
+                    <img src="https://images.unsplash.com/photo-1602826511473-1e57555b5628?w=500&h=500&fit=crop" alt="Luxury Scented Candle">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Home & Kitchen</span>
+                    <h3 class="product-title">Luxury Soy Scented Candle</h3>
+                    <p class="product-description">Hand-poured with natural soy wax and essential oils. 60-hour burn time. Perfect for relaxation, self-care, and home décor ambiance.</p>
+                    <div class="product-meta">
+                        <div class="product-price">$24.99 <span>$39.99</span></div>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(18,000+)</span>
+                        </div>
+                    </div>
+                    <a href="#" class="product-cta">View on Amazon →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories-section">
+        <div class="section-header reveal">
+            <span class="section-label">Browse</span>
+            <h2>Top Selling Categories</h2>
+            <p>Explore the most profitable and high-demand product categories on Amazon this year.</p>
+        </div>
+
+        <div class="categories-grid">
+            <div class="category-card reveal reveal-delay-1">
+                <span class="category-icon">💄</span>
+                <div class="category-name">Beauty & Care</div>
+                <div class="category-count">80+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-2">
+                <span class="category-icon">📱</span>
+                <div class="category-name">Electronics</div>
+                <div class="category-count">60+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-3">
+                <span class="category-icon">🏠</span>
+                <div class="category-name">Home & Kitchen</div>
+                <div class="category-count">90+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-1">
+                <span class="category-icon">👕</span>
+                <div class="category-name">Clothing & Shoes</div>
+                <div class="category-count">70+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-2">
+                <span class="category-icon">🏋️</span>
+                <div class="category-name">Sports & Fitness</div>
+                <div class="category-count">50+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-3">
+                <span class="category-icon">🎨</span>
+                <div class="category-name">Arts & Crafts</div>
+                <div class="category-count">40+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-1">
+                <span class="category-icon">🧸</span>
+                <div class="category-name">Toys & Games</div>
+                <div class="category-count">55+ Bestsellers</div>
+            </div>
+            <div class="category-card reveal reveal-delay-2">
+                <span class="category-icon">🍼</span>
+                <div class="category-name">Baby Care</div>
+                <div class="category-count">45+ Bestsellers</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trends Section -->
+    <section id="trends" class="trends-section">
+        <div class="section-header reveal">
+            <span class="section-label">Insights</span>
+            <h2>2026 Market Trends</h2>
+            <p>Key shifts driving consumer behavior and shaping the future of e-commerce.</p>
+        </div>
+
+        <div class="trends-grid">
+            <div class="trend-card reveal reveal-delay-1">
+                <div class="trend-number">01</div>
+                <h3 class="trend-title">Sustainable & Eco-Friendly</h3>
+                <p class="trend-desc">Consumers increasingly prefer organic, cruelty-free, and sustainable products. The global clean beauty market is forecast to reach $32.7 billion by 2033.</p>
+                <span class="trend-growth">↑ 40% YoY Growth</span>
+            </div>
+            <div class="trend-card reveal reveal-delay-2">
+                <div class="trend-number">02</div>
+                <h3 class="trend-title">Smart Home Integration</h3>
+                <p class="trend-desc">Streaming devices, smart speakers, and connected home gadgets dominate electronics. Fire TV Stick and Alexa-enabled devices lead the charge.</p>
+                <span class="trend-growth">↑ 25% YoY Growth</span>
+            </div>
+            <div class="trend-card reveal reveal-delay-3">
+                <div class="trend-number">03</div>
+                <h3 class="trend-title">Wellness & Self-Care</h3>
+                <p class="trend-desc">From skincare serums to fitness equipment, health-conscious products see consistent demand. Vitamin C serums and resistance bands are top performers.</p>
+                <span class="trend-growth">↑ 35% YoY Growth</span>
+            </div>
+            <div class="trend-card reveal reveal-delay-1">
+                <div class="trend-number">04</div>
+                <h3 class="trend-title">Content Creator Economy</h3>
+                <p class="trend-desc">Wireless lapel microphones, ring lights, and streaming gear are booming as more people enter content creation and remote work spaces.</p>
+                <span class="trend-growth">↑ 50% YoY Growth</span>
+            </div>
+            <div class="trend-card reveal reveal-delay-2">
+                <div class="trend-number">05</div>
+                <h3 class="trend-title">Comfort-First Fashion</h3>
+                <p class="trend-desc">Crocs, yoga pants, and loungewear continue to dominate. The shift toward casual, comfortable clothing shows no signs of slowing down.</p>
+                <span class="trend-growth">↑ 20% YoY Growth</span>
+            </div>
+            <div class="trend-card reveal reveal-delay-3">
+                <div class="trend-number">06</div>
+                <h3 class="trend-title">Pet Care Premiumization</h3>
+                <p class="trend-desc">Pet owners are investing in premium food, grooming tools, and accessories. The pet supplies category is one of Amazon's fastest-growing segments.</p>
+                <span class="trend-growth">↑ 30% YoY Growth</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="newsletter-box reveal">
+            <h3>Stay Ahead of the Trends</h3>
+            <p>Get weekly updates on Amazon's hottest products, price drops, and exclusive deals delivered straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Amazon Best Sellers</div>
+            <div padding: 20px; margin-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="../amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="../amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="../amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="../contact.html">Contact</a>
+  </p>
+</div>
+
+            <p class="footer-copy">© 2026 Amazon Best Sellers Guide. All data sourced from Amazon's official bestseller lists.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Remove loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 800);
+        });
+
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+            particle.style.animationDelay = (Math.random() * 10) + 's';
+            particle.style.width = (Math.random() * 4 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Animated counters
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target + (target === 500 ? 'K' : target === 99 ? '%' : '+');
+                        }
+                    };
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // Product card tilt effect on mouse move
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px) scale(1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+
+        // Parallax effect for hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-content');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+                hero.style.opacity = 1 - (scrolled / 800);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nespresso Vertuo Plus - Professional Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #c9a96e;
+            --text: #333;
+            --text-light: #666;
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --border: #e0e0e0;
+            --shadow: 0 10px 40px rgba(0,0,0,0.08);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.12);
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #0f0f1a;
+            --secondary: #1a1a2e;
+            --accent: #e94560;
+            --gold: #d4af37;
+            --text: #e0e0e0;
+            --text-light: #a0a0a0;
+            --bg: #0a0a0f;
+            --card-bg: #1a1a2e;
+            --border: #2a2a3e;
+            --shadow: 0 10px 40px rgba(0,0,0,0.3);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        /* Floating Controls */
+        .floating-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 12px;
+        }
+
+        .control-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            background: var(--card-bg);
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .control-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--gold);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201,169,110,0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(201,169,110,0.2);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            color: var(--gold);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .price-current {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .price-original {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.4);
+            text-decoration: line-through;
+        }
+
+        .price-save {
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--gold);
+            font-size: 1.1rem;
+            animation: fadeInUp 0.8s ease 0.8s both;
+        }
+
+        .hero-rating .stars {
+            color: #ffd700;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.5);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold), #d4a843);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Pros & Cons */
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pc-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .pc-card.pros {
+            border-top: 4px solid #27ae60;
+        }
+
+        .pc-card.cons {
+            border-top: 4px solid #e74c3c;
+        }
+
+        .pc-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pc-card.pros h3 { color: #27ae60; }
+        .pc-card.cons h3 { color: #e74c3c; }
+
+        .pc-list {
+            list-style: none;
+        }
+
+        .pc-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .pc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .pc-list li i {
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .pc-list li i.fa-check { color: #27ae60; }
+        .pc-list li i.fa-times { color: #e74c3c; }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(201,169,110,0.05);
+        }
+
+        .comparison-table .highlight {
+            background: rgba(201,169,110,0.1);
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .comparison-table .winner {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .comparison-table .loser {
+            color: #e74c3c;
+        }
+
+        /* Specs */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .spec-item {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: var(--transition);
+        }
+
+        .spec-item:hover {
+            border-color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .spec-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(201,169,110,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 20px;
+        }
+
+        .spec-info h4 {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .spec-info p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Verdict */
+        .verdict {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 32px;
+            padding: 60px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .verdict::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(201,169,110,0.1);
+            border-radius: 50%;
+        }
+
+        .verdict h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .verdict p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .verdict-score {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255,255,255,0.1);
+            padding: 16px 32px;
+            border-radius: 50px;
+            border: 1px solid rgba(201,169,110,0.3);
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .score-label {
+            text-align: left;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .score-label strong {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+        }
+
+        /* Animations on scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .floating-controls {
+                top: 10px;
+                right: 10px;
+            }
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            section {
+                padding: 60px 5%;
+            }
+            .verdict {
+                padding: 40px 20px;
+            }
+            .comparison-table {
+                font-size: 14px;
+            }
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+            }
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+        a{
+            text-dicortio: none; 
+            color:#888;
+        } 
+    </style>
+</head>
+<body>
+    <!-- Floating Controls -->
+    <div class="floating-controls">
+        <button class="control-btn" id="themeToggle" title="Toggle Theme">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="control-btn" id="langToggle" title="Switch Language">
+            <span id="langText">AR</span>
+        </button>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </div>
+        <img src="" alt="Gallery Image" id="lightboxImg">
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge" data-en="Premium Coffee Experience" data-ar="تجربة قهوة فاخرة">Premium Coffee Experience</div>
+            <h1 data-en="Nespresso <span>Vertuo Plus</span>" data-ar="نيسبريسو <span>فيرتو بلس</span>">Nespresso <span>Vertuo Plus</span></h1>
+            <p class="hero-subtitle" data-en="Brews 5 cup sizes from espresso to alto with rich crema and barcode-reading technology. The perfect balance of convenience and quality." data-ar="تخمر 5 أحجام أكواب من الإسبريسو إلى ألتو مع كريما غنية وتقنية قراءة الباركود. التوازن المثالي بين الراحة والجودة.">Brews 5 cup sizes from espresso to alto with rich crema and barcode-reading technology. The perfect balance of convenience and quality.</p>
+            <div class="hero-price">
+                <span class="price-current">$188.00</span>
+                <span class="price-original">$199.00</span>
+                <span class="price-save" data-en="Save $11" data-ar="وفر $11">Save $11</span>
+            </div>
+            <div class="hero-rating">
+                <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                <span data-en="4.6 (3,412 Reviews)" data-ar="4.6 (3,412 تقييم)">4.6 (3,412 Reviews)</span>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="section-header reveal">
+            <h2 data-en="Product Gallery" data-ar="معرض المنتج">Product Gallery</h2>
+            <div class="gold-line"></div>
+            <p data-en="Explore the Nespresso Vertuo Plus from every angle" data-ar="استكشف نيسبريسو فيرتو بلس من كل زاوية">Explore the Nespresso Vertuo Plus from every angle</p>
+        </div>
+        <div class="gallery">
+            <div class="gallery-item reveal" onclick="openLightbox('https://kimi-web-img.moonshot.cn/img/www.nespresso.com/d9799cf0097a9c70905bc2a68a1b8c4635f044b6.jpg')">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.nespresso.com/d9799cf0097a9c70905bc2a68a1b8c4635f044b6.jpg" alt="Nespresso Vertuo Plus Piano Black">
+                <div class="gallery-overlay">
+                    <h4 data-en="Piano Black Edition" data-ar="إصدار بيانو بلاك">Piano Black Edition</h4>
+                    <p data-en="Sleek and modern design" data-ar="تصميم أنيق وعصري">Sleek and modern design</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://kimi-web-img.moonshot.cn/img/www.nespresso.com/02ea3637d8d8ab03ef241ae57a57be5271474b99.png')">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.nespresso.com/02ea3637d8d8ab03ef241ae57a57be5271474b99.png" alt="Nespresso Vertuo Plus Lifestyle">
+                <div class="gallery-overlay">
+                    <h4 data-en="Kitchen Lifestyle" data-ar="أسلوب حياة المطبخ">Kitchen Lifestyle</h4>
+                    <p data-en="Perfect for any modern kitchen" data-ar="مثالي لأي مطبخ عصري">Perfect for any modern kitchen</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://kimi-web-img.moonshot.cn/img/www.nespresso.com/146f2bea990d3ac1fe326f8849e046dc5f21e9a6.jpg')">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.nespresso.com/146f2bea990d3ac1fe326f8849e046dc5f21e9a6.jpg" alt="Nespresso Vertuo Plus White">
+                <div class="gallery-overlay">
+                    <h4 data-en="White Edition" data-ar="الإصدار الأبيض">White Edition</h4>
+                    <p data-en="Elegant and clean aesthetic" data-ar="جمالية أنيقة ونظيفة">Elegant and clean aesthetic</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/350ba015650ee2ec2f519d675c8217efa8ddad57.jpg')">
+                <img src="https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/350ba015650ee2ec2f519d675c8217efa8ddad57.jpg" alt="Nespresso Vertuo Plus Brewing">
+                <div class="gallery-overlay">
+                    <h4 data-en="Hot & Iced Coffee" data-ar="قهوة ساخنة ومثلجة">Hot & Iced Coffee</h4>
+                    <p data-en="Versatile brewing options" data-ar="خيارات تخمير متعددة الاستخدامات">Versatile brewing options</p>
+                </div>
+            </div>
+            <div class="gallery-item reveal" onclick="openLightbox('https://kimi-web-img.moonshot.cn/img/www.nespresso.com/04410865fba2277d2462df3fe8569d0347762f09.png')">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.nespresso.com/04410865fba2277d2462df3fe8569d0347762f09.png" alt="Nespresso Vertuo Plus Bundle">
+                <div class="gallery-overlay">
+                    <h4 data-en="Complete Bundle" data-ar="الحزمة الكاملة">Complete Bundle</h4>
+                    <p data-en="Includes Aeroccino milk frother" data-ar="يتضمن جهاز تبخير الحليب Aeroccino">Includes Aeroccino milk frother</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="section-header reveal">
+            <h2 data-en="Key Features" data-ar="الميزات الرئيسية">Key Features</h2>
+            <div class="gold-line"></div>
+            <p data-en="What makes the Vertuo Plus stand out from the competition" data-ar="ما الذي يجعل فيرتو بلس يتفوق على المنافسين">What makes the Vertuo Plus stand out from the competition</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal">
+                <div class="feature-icon"><i class="fas fa-barcode"></i></div>
+                <h3 data-en="Barcode Technology" data-ar="تقنية الباركود">Barcode Technology</h3>
+                <p data-en="Each capsule has a unique barcode that the machine reads to automatically adjust brewing parameters for the perfect cup every time." data-ar="تحتوي كل كبسولة على باركود فريد تقرأه الآلة لتعديل معلمات التخمير تلقائياً للحصول على الكوب المثالي في كل مرة.">Each capsule has a unique barcode that the machine reads to automatically adjust brewing parameters for the perfect cup every time.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon"><i class="fas fa-mug-hot"></i></div>
+                <h3 data-en="5 Cup Sizes" data-ar="5 أحجام أكواب">5 Cup Sizes</h3>
+                <p data-en="From a 1.35oz Espresso to a 14oz Alto, brew exactly the amount you need with consistent quality across all sizes." data-ar="من إسبريسو 1.35 أونصة إلى ألتو 14 أونصة، اخمر بالضبط الكمية التي تحتاجها مع جودة متسقة عبر جميع الأحجام.">From a 1.35oz Espresso to a 14oz Alto, brew exactly the amount you need with consistent quality across all sizes.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon"><i class="fas fa-droplet"></i></div>
+                <h3 data-en="Rich Crema" data-ar="كريما غنية">Rich Crema</h3>
+                <p data-en="Centrifusion technology spins the capsule at up to 7,000 RPM, creating a luxurious, thick crema that enhances flavor and aroma." data-ar="تقنية السنتريفيوجن تدور الكبسولة بسرعة تصل إلى 7000 دورة في الدقيقة، مما يخلق كريما فاخرة وسميكة تعزز النكهة والرائحة.">Centrifusion technology spins the capsule at up to 7,000 RPM, creating a luxurious, thick crema that enhances flavor and aroma.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon"><i class="fas fa-hand-pointer"></i></div>
+                <h3 data-en="One-Touch Operation" data-ar="تشغيل بلمسة واحدة">One-Touch Operation</h3>
+                <p data-en="Simply insert a capsule and press one button. The motorized head opens and closes automatically for effortless brewing." data-ar="ما عليك سوى إدخال كبسولة والضغط على زر واحد. يفتح ويغلق الرأس المحرك تلقائياً للتخمير دون جهد.">Simply insert a capsule and press one button. The motorized head opens and closes automatically for effortless brewing.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon"><i class="fas fa-temperature-low"></i></div>
+                <h3 data-en="Rapid Heating" data-ar="تسخين سريع">Rapid Heating</h3>
+                <p data-en="Reaches optimal brewing temperature in just 20-25 seconds, so you never have to wait long for your perfect coffee." data-ar="تصل إلى درجة حرارة التخمير المثلى في 20-25 ثانية فقط، لذا لن تضطر أبداً للانتظار طويلاً لقهوتك المثالية.">Reaches optimal brewing temperature in just 20-25 seconds, so you never have to wait long for your perfect coffee.</p>
+            </div>
+            <div class="feature-card reveal">
+                <div class="feature-icon"><i class="fas fa-recycle"></i></div>
+                <h3 data-en="Recycling Program" data-ar="برنامج إعادة التدوير">Recycling Program</h3>
+                <p data-en="Nespresso offers a free recycling program for used capsules, making it easy to enjoy great coffee sustainably." data-ar="تقدم نيسبريسو برنامج إعادة تدوير مجاني للكبسولات المستخدمة، مما يسهل الاستمتاع بقهوة رائعة بشكل مستدام.">Nespresso offers a free recycling program for used capsules, making it easy to enjoy great coffee sustainably.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section id="specs">
+        <div class="section-header reveal">
+            <h2 data-en="Technical Specifications" data-ar="المواصفات التقنية">Technical Specifications</h2>
+            <div class="gold-line"></div>
+        </div>
+        <div class="specs-grid">
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-ruler-combined"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Dimensions" data-ar="الأبعاد">Dimensions</h4>
+                    <p>5.6" x 16.9" x 12.8"</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-weight-hanging"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Weight" data-ar="الوزن">Weight</h4>
+                    <p>10.1 lbs</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-tint"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Water Tank" data-ar="خزان الماء">Water Tank</h4>
+                    <p>40 oz (1.2L)</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-bolt"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Power" data-ar="الطاقة">Power</h4>
+                    <p>1350 Watts</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-clock"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Heat-up Time" data-ar="وقت التسخين">Heat-up Time</h4>
+                    <p>20-25 Seconds</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-capsules"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Capsule Capacity" data-ar="سعة الكبسولات">Capsule Capacity</h4>
+                    <p>10-14 Used Capsules</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-plug"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Voltage" data-ar="الجهد">Voltage</h4>
+                    <p>110-120V</p>
+                </div>
+            </div>
+            <div class="spec-item reveal">
+                <div class="spec-icon"><i class="fas fa-certificate"></i></div>
+                <div class="spec-info">
+                    <h4 data-en="Warranty" data-ar="الضمان">Warranty</h4>
+                    <p>1 Year Limited</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pros & Cons -->
+    <section id="pros-cons">
+        <div class="section-header reveal">
+            <h2 data-en="Pros & Cons" data-ar="المميزات والعيوب">Pros & Cons</h2>
+            <div class="gold-line"></div>
+            <p data-en="An honest look at the strengths and weaknesses" data-ar="نظرة صادقة على نقاط القوة والضعف">An honest look at the strengths and weaknesses</p>
+        </div>
+        <div class="pros-cons">
+            <div class="pc-card pros reveal">
+                <h3><i class="fas fa-thumbs-up"></i> <span data-en="Pros" data-ar="المميزات">Pros</span></h3>
+                <ul class="pc-list">
+                    <li><i class="fas fa-check"></i> <span data-en="Exceptional crema quality with Centrifusion technology" data-ar="جودة كريما استثنائية بتقنية السنتريفيوجن">Exceptional crema quality with Centrifusion technology</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="5 different cup sizes for maximum versatility" data-ar="5 أحجام أكواب مختلفة لأقصى درجات التنوع">5 different cup sizes for maximum versatility</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="Motorized head opens and closes automatically" data-ar="الرأس المحرك يفتح ويغلق تلقائياً">Motorized head opens and closes automatically</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="Large 40oz water tank reduces refills" data-ar="خزان ماء كبير 40 أونصة يقلل من عمليات إعادة التعبئة">Large 40oz water tank reduces refills</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="Fast heat-up time of just 20-25 seconds" data-ar="وقت تسخين سريع يصل إلى 20-25 ثانية فقط">Fast heat-up time of just 20-25 seconds</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="Barcode system ensures perfect brewing every time" data-ar="نظام الباركود يضمن التخمير المثالي في كل مرة">Barcode system ensures perfect brewing every time</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="Sleek, modern design fits any kitchen decor" data-ar="تصميم أنيق وعصري يناسب أي ديكور مطبخ">Sleek, modern design fits any kitchen decor</span></li>
+                    <li><i class="fas fa-check"></i> <span data-en="Free recycling program for used capsules" data-ar="برنامج إعادة تدوير مجاني للكبسولات المستخدمة">Free recycling program for used capsules</span></li>
+                </ul>
+            </div>
+            <div class="pc-card cons reveal">
+                <h3><i class="fas fa-thumbs-down"></i> <span data-en="Cons" data-ar="العيوب">Cons</span></li>
+                </h3>
+                <ul class="pc-list">
+                    <li><i class="fas fa-times"></i> <span data-en="Capsules are more expensive than ground coffee" data-ar="الكبسولات أغلى من القهوة المطحونة">Capsules are more expensive than ground coffee</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="Only compatible with Nespresso Vertuo capsules" data-ar="متوافق فقط مع كبسولات نيسبريسو فيرتو">Only compatible with Nespresso Vertuo capsules</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="No built-in milk frother (sold separately)" data-ar="لا يوجد جهاز تبخير حليب مدمج (يُباع منفصلاً)">No built-in milk frother (sold separately)</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="Limited third-party capsule options" data-ar="خيارات كبسولات الطرف الثالث محدودة">Limited third-party capsule options</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="Larger footprint than some competitors" data-ar="مساحة أكبر من بعض المنافسين">Larger footprint than some competitors</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="No temperature control for different drinks" data-ar="لا يوجد تحكم في درجة الحرارة للمشروبات المختلفة">No temperature control for different drinks</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="Requires regular descaling maintenance" data-ar="يتطلب صيانة تنظيف دورية">Requires regular descaling maintenance</span></li>
+                    <li><i class="fas fa-times"></i> <span data-en="Pods not widely available in all grocery stores" data-ar="الكبسولات غير متوفرة على نطاق واسع في جميع محلات البقالة">Pods not widely available in all grocery stores</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison -->
+    <section id="comparison">
+        <div class="section-header reveal">
+            <h2 data-en="Competitor Comparison" data-ar="مقارنة المنافسين">Competitor Comparison</h2>
+            <div class="gold-line"></div>
+            <p data-en="How the Vertuo Plus stacks up against the competition" data-ar="كيف يتفوق فيرتو بلس على المنافسين">How the Vertuo Plus stacks up against the competition</p>
+        </div>
+        <div style="overflow-x: auto;">
+            <table class="comparison-table reveal">
+                <thead>
+                    <tr>
+                        <th data-en="Feature" data-ar="الميزة">Feature</th>
+                        <th class="highlight">Nespresso Vertuo Plus</th>
+                        <th>Keurig K-Elite</th>
+                        <th>Breville Barista Express</th>
+                        <th>De'Longhi Dedica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-en="Price" data-ar="السعر">Price</td>
+                        <td class="highlight winner">$188</td>
+                        <td>$170</td>
+                        <td>$700</td>
+                        <td>$300</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Cup Sizes" data-ar="أحجام الأكواب">Cup Sizes</td>
+                        <td class="highlight winner">5 Sizes</td>
+                        <td>5 Sizes</td>
+                        <td>Manual</td>
+                        <td>Manual</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Crema Quality" data-ar="جودة الكريما">Crema Quality</td>
+                        <td class="highlight winner">Excellent</td>
+                        <td>Poor</td>
+                        <td>Excellent</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Ease of Use" data-ar="سهولة الاستخدام">Ease of Use</td>
+                        <td class="highlight winner">One-Touch</td>
+                        <td>One-Touch</td>
+                        <td>Manual</td>
+                        <td>Semi-Auto</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Heat-up Time" data-ar="وقت التسخين">Heat-up Time</td>
+                        <td class="highlight winner">20-25s</td>
+                        <td>60s</td>
+                        <td>90s</td>
+                        <td>30s</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Water Tank" data-ar="خزان الماء">Water Tank</td>
+                        <td class="highlight winner">40 oz</td>
+                        <td>75 oz</td>
+                        <td>67 oz</td>
+                        <td>35 oz</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Milk Frother" data-ar="مخفق الحليب">Milk Frother</td>
+                        <td class="highlight">Separate</td>
+                        <td>None</td>
+                        <td>Built-in</td>
+                        <td>Separate</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Capsule Cost" data-ar="تكلفة الكبسولة">Capsule Cost</td>
+                        <td class="highlight loser">$0.85-$1.10</td>
+                        <td class="winner">$0.35-$0.65</td>
+                        <td>Ground Coffee</td>
+                        <td>Ground Coffee</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Build Quality" data-ar="جودة التصنيع">Build Quality</td>
+                        <td class="highlight winner">Premium</td>
+                        <td>Good</td>
+                        <td>Premium</td>
+                        <td>Good</td>
+                    </tr>
+                    <tr>
+                        <td data-en="Warranty" data-ar="الضمان">Warranty</td>
+                        <td class="highlight">1 Year</td>
+                        <td>1 Year</td>
+                        <td>1 Year</td>
+                        <td>1 Year</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Verdict -->
+    <section id="verdict">
+        <div class="verdict reveal">
+            <h2 data-en="Final Verdict" data-ar="الحكم النهائي">Final Verdict</h2>
+            <p data-en="The Nespresso Vertuo Plus is an outstanding choice for coffee lovers who want cafe-quality beverages at home without the complexity of traditional espresso machines. Its barcode technology, rich crema, and versatile cup sizes make it a standout in the pod coffee market. While capsule costs are higher than competitors, the quality and convenience justify the premium for most users." data-ar="نيسبريسو فيرتو بلس هو خيار ممتاز لعشاق القهوة الذين يريدون مشروبات بجودة المقهى في المنزل دون تعقيد آلات الإسبريسو التقليدية. تجعل تقنية الباركود والكريما الغنية وأحجام الأكواب المتنوعة منه standout في سوق قهوة الكبسولات. على الرغم من أن تكاليف الكبسولات أعلى من المنافسين، إلا أن الجودة والراحة تبرران العلاوة لمعظم المستخدمين.">The Nespresso Vertuo Plus is an outstanding choice for coffee lovers who want cafe-quality beverages at home without the complexity of traditional espresso machines. Its barcode technology, rich crema, and versatile cup sizes make it a standout in the pod coffee market. While capsule costs are higher than competitors, the quality and convenience justify the premium for most users.</p>
+            <div class="verdict-score">
+                <span class="score-number">9.2</span>
+                <div class="score-label">
+                    <div data-en="Overall Score" data-ar="التقييم العام">Overall Score</div>
+                    <strong data-en="Highly Recommended" data-ar="موصى به بشدة">Highly Recommended</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p data-en="Nespresso Vertuo Plus Review 2026 | Professional Product Analysis" data-ar="مراجعة نيسبريسو فيرتو بلس 2026 | تحليل منتج احترافي">Nespresso Vertuo Plus Review 2026 | Professional Product Analysis</p>
+        <div style=" padding: 20px; margin-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="../amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="../amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="../amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="../contact.html">Contact</a>
+  </p>
+</div>
+
+    </footer>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        let isDark = false;
+
+        themeToggle.addEventListener('click', () => {
+            isDark = !isDark;
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // Language Toggle
+        const langToggle = document.getElementById('langToggle');
+        const langText = document.getElementById('langText');
+        let isEnglish = true;
+
+        langToggle.addEventListener('click', () => {
+            isEnglish = !isEnglish;
+            langText.textContent = isEnglish ? 'AR' : 'EN';
+            document.documentElement.lang = isEnglish ? 'en' : 'ar';
+            document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+            
+            // Update all elements with data-en and data-ar
+            document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+                el.textContent = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+            });
+
+            // Update HTML innerHTML for elements with HTML inside
+            document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+                if (el.getAttribute('data-en').includes('<')) {
+                    el.innerHTML = isEnglish ? el.getAttribute('data-en') : el.getAttribute('data-ar');
+                }
+            });
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Lightbox
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('lightbox')) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard support for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

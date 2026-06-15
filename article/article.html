@@ -915,6 +915,61 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* ========== RESPONSIVE GRID FIX ========== */
+
+/* Container that holds the cards */
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* 2 columns side-by-side */
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Each card */
+.guide-card {
+  width: 100%;
+  max-width: 380px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 16px;
+  }
+}
+
+/* Mobile: stack cards vertically */
+@media (max-width: 768px) {
+  .guides-grid {
+    grid-template-columns: 1fr;  /* 1 column */
+    gap: 16px;
+    padding: 0 12px;
+  }
+  
+  .guide-card {
+    max-width: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .guides-grid {
+    gap: 12px;
+    padding: 0 8px;
+  }
+}
+
     </style>
 </head>
 <body>

@@ -1,1 +1,2159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPad Pro M5 vs Galaxy Tab S10 Ultra - Ultimate Comparison 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* ===== CSS VARIABLES ===== */
+:root {
+    --primary: #0f172a;
+    --secondary: #1e293b;
+    --accent: #3b82f6;
+    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --apple: #007AFF;
+    --samsung: #1428A0;
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+    --bg: #020617;
+    --card-bg: rgba(30, 41, 59, 0.6);
+    --border: rgba(148, 163, 184, 0.1);
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ===== CUSTOM SCROLLBAR - HIDDEN ===== */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== LOADING BAR ANIMATION ===== */
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+    z-index: 9999;
+    width: 0%;
+    animation: loadingProgress 1.5s ease-out forwards;
+}
+
+@keyframes loadingProgress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; opacity: 0; }
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.3); }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+
+.nav-cta:hover::before {
+    left: 100%;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+    z-index: 0;
+    animation: bgPulse 8s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    max-width: 900px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease, borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { border-color: rgba(59, 130, 246, 0.2); box-shadow: 0 0 5px rgba(59, 130, 246, 0.1); }
+    50% { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero h1 span {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 3s ease-in-out infinite;
+    background-size: 200% auto;
+}
+
+@keyframes textShimmer {
+    0% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+    100% { background-position: 0% center; }
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-devices {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* ===== DEVICE CARDS ===== */
+.device-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 1.5rem;
+    width: 280px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
+}
+
+.device-card:nth-child(2) {
+    animation-delay: -3s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.device-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.03) 100%);
+    pointer-events: none;
+}
+
+.device-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.device-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.device-card:hover::after {
+    opacity: 1;
+}
+
+.device-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.device-card:hover img {
+    transform: scale(1.05);
+}
+
+.device-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.device-card .price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    animation: priceGlow 2s ease-in-out infinite;
+}
+
+@keyframes priceGlow {
+    0%, 100% { text-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
+}
+
+.device-card .price span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* ===== SECTION STYLES ===== */
+.section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.section-header h2 span {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-header p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* ===== COMPARISON TABLE ===== */
+.compare-table-wrapper {
+    overflow-x: auto;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    animation: fadeInUp 1s ease;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.compare-table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.compare-table th,
+.compare-table td {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.compare-table th {
+    background: rgba(59, 130, 246, 0.05);
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compare-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.compare-table tbody tr:hover {
+    background: rgba(59, 130, 246, 0.05);
+    transform: scale(1.01);
+}
+
+.compare-table td:first-child {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.compare-table td:first-child i {
+    margin-right: 0.5rem;
+    color: var(--accent);
+}
+
+.compare-winner {
+    color: var(--success);
+    font-weight: 700;
+    animation: winnerPulse 2s ease-in-out infinite;
+}
+
+@keyframes winnerPulse {
+    0%, 100% { text-shadow: 0 0 5px rgba(16, 185, 129, 0.2); }
+    50% { text-shadow: 0 0 15px rgba(16, 185, 129, 0.5); }
+}
+
+/* ===== SPEC CARDS ===== */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.spec-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.spec-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--accent-gradient);
+    transition: height 0.4s ease;
+}
+
+.spec-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+.spec-card:hover::before {
+    height: 100%;
+}
+
+.spec-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.spec-card-header i {
+    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    transition: all 0.3s ease;
+}
+
+.spec-card:hover .spec-card-header i {
+    background: var(--accent-gradient);
+    color: white;
+    transform: rotate(10deg) scale(1.1);
+}
+
+.spec-card-header h3 {
+    font-size: 1.2rem;
+}
+
+.spec-card-header p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.05);
+    transition: all 0.3s ease;
+}
+
+.spec-row:hover {
+    padding-left: 10px;
+    background: rgba(59, 130, 246, 0.03);
+    border-radius: 8px;
+}
+
+.spec-row:last-child {
+    border-bottom: none;
+}
+
+.spec-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.spec-value {
+    font-weight: 600;
+    text-align: right;
+}
+
+.spec-winner {
+    color: var(--success);
+    animation: winnerPulse 2s ease-in-out infinite;
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.15);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.gallery-overlay p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ===== REVIEWS ===== */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.review-card:hover::before {
+    transform: scaleX(1);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    transition: all 0.3s ease;
+    animation: avatarPulse 3s ease-in-out infinite;
+}
+
+@keyframes avatarPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+}
+
+.review-card:hover .review-avatar {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.review-meta h4 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.review-meta .verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--success);
+}
+
+.review-stars {
+    color: var(--warning);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    animation: starsTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes starsTwinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.review-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.review-device {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.review-device.apple {
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--apple);
+}
+
+.review-device.samsung {
+    background: rgba(20, 40, 160, 0.1);
+    color: #60a5fa;
+}
+
+.review-card:hover .review-device {
+    transform: scale(1.05);
+}
+
+/* ===== VERDICT CARDS ===== */
+.verdict-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.verdict-card {
+    background: var(--card-bg);
+    border: 2px solid transparent;
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.verdict-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.verdict-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at bottom, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.verdict-card:hover::before {
+    transform: scaleX(1);
+}
+
+.verdict-card:hover::after {
+    opacity: 1;
+}
+
+.verdict-card:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.winner-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    animation: badgeBounce 2s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.verdict-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.verdict-card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: scoreGlow 2s ease-in-out infinite;
+}
+
+@keyframes scoreGlow {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+}
+
+.verdict-pros {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.verdict-pros div {
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.verdict-pros div:hover {
+    padding-left: 10px;
+}
+
+.verdict-pros i {
+    margin-right: 0.5rem;
+}
+
+.verdict-pros .fa-check {
+    color: var(--success);
+}
+
+.verdict-pros .fa-times {
+    color: var(--danger);
+}
+
+.verdict-pros .fa-lightbulb {
+    color: var(--warning);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    animation: fadeInUp 1s ease;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    list-style: none;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--accent);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-10deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* ===== SCROLL ANIMATION CLASSES ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .hero-devices {
+        flex-direction: column;
+        align-items: center;
+    }
+    .device-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    .verdict-grid {
+        grid-template-columns: 1fr;
+    }
+    .section {
+        padding: 4rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .compare-table-wrapper {
+        border-radius: 12px;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .nav, .loading-bar {
+        display: none;
+    }
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+a {
+    text-decoration: none;  
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Loading Bar -->
+    <div class="loading-bar" id="loadingBar"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">TechCompare Pro</div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#verdict">Verdict</a></li>
+        </ul>
+        <button class="nav-cta" onclick="scrollToSection('verdict')">Get Verdict</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-bolt"></i>
+                2026 Ultimate Comparison
+            </div>
+            <h1>
+                iPad Pro <span>M5</span><br>
+                vs<br>
+                Galaxy Tab <span>S10 Ultra</span>
+            </h1>
+            <p class="hero-subtitle">
+                The battle for tablet supremacy reaches its peak. Two titans, one crown. 
+                Discover which powerhouse deserves your desk space in 2026.
+            </p>
+            <div class="hero-devices">
+                <div class="device-card" onclick="scrollToSection('specs')">
+                    <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=400&fit=crop&q=80" alt="iPad Pro M5">
+                    <h3>iPad Pro M5</h3>
+                    <div class="price">$999 <span>starting</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">11-inch & 13-inch</p>
+                </div>
+                <div class="device-card" onclick="scrollToSection('specs')">
+                    <img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&h=400&fit=crop&q=80" alt="Galaxy Tab S10 Ultra">
+                    <h3>Galaxy Tab S10 Ultra</h3>
+                    <div class="price">$1,199 <span>starting</span></div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">14.6-inch AMOLED</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Specs Comparison -->
+    <section class="section" id="specs">
+        <div class="section-header fade-in">
+            <h2>Head-to-Head <span>Specifications</span></h2>
+            <p>Every detail matters when you're investing in a premium tablet. Here's the complete breakdown.</p>
+        </div>
+
+        <div class="compare-table-wrapper fade-in">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>iPad Pro M5 (13")</th>
+                        <th>Galaxy Tab S10 Ultra</th>
+                        <th>Winner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fas fa-microchip"></i> Processor</td>
+                        <td class="compare-winner">Apple M5 (10-core)</td>
+                        <td>MediaTek Dimensity 9300+</td>
+                        <td class="compare-winner"><i class="fas fa-apple-alt"></i> iPad</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-display"></i> Display</td>
+                        <td>13" Ultra Retina XDR Tandem OLED, 2752×2064</td>
+                        <td class="compare-winner">14.6" Dynamic AMOLED 2X, 2960×1848</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-memory"></i> RAM</td>
+                        <td>12GB / 16GB</td>
+                        <td class="compare-winner">12GB / 16GB (expandable)</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-hdd"></i> Storage</td>
+                        <td>256GB - 2TB</td>
+                        <td class="compare-winner">256GB - 1TB + microSD</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-battery-full"></i> Battery</td>
+                        <td>10,290 mAh (10h)</td>
+                        <td class="compare-winner">11,200 mAh (14h)</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-weight-hanging"></i> Weight</td>
+                        <td class="compare-winner">579g (Wi-Fi)</td>
+                        <td>718g (Wi-Fi)</td>
+                        <td class="compare-winner"><i class="fas fa-apple-alt"></i> iPad</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-pen"></i> Stylus</td>
+                        <td>Apple Pencil Pro ($129)</td>
+                        <td class="compare-winner">S Pen (Included)</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-shield-alt"></i> Protection</td>
+                        <td>None</td>
+                        <td class="compare-winner">IP68 Water & Dust</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-desktop"></i> Desktop Mode</td>
+                        <td>Stage Manager</td>
+                        <td class="compare-winner">Samsung DeX</td>
+                        <td class="compare-winner"><i class="fas fa-android"></i> Samsung</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-dollar-sign"></i> Price (Base)</td>
+                        <td class="compare-winner">$999 (11") / $1,299 (13")</td>
+                        <td>$1,199</td>
+                        <td class="compare-winner"><i class="fas fa-apple-alt"></i> iPad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Detailed Specs Cards -->
+    <section class="section">
+        <div class="specs-grid">
+            <div class="spec-card fade-in">
+                <div class="spec-card-header">
+                    <i class="fas fa-brain"></i>
+                    <div>
+                        <h3>Performance</h3>
+                        <p>Raw power & efficiency</p>
+                    </div>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">iPad Pro M5</span>
+                    <span class="spec-value spec-winner">M5 Chip (3nm)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">CPU Cores</span>
+                    <span class="spec-value spec-winner">10-core (4P+6E)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">GPU</span>
+                    <span class="spec-value spec-winner">10-core with Neural Accelerators</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Geekbench 6 Single</span>
+                    <span class="spec-value spec-winner">~2,800</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Galaxy Tab S10 Ultra</span>
+                    <span class="spec-value">Dimensity 9300+ (4nm)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">CPU Cores</span>
+                    <span class="spec-value">8-core (1+3+4)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">GPU</span>
+                    <span class="spec-value">Immortalis-G720 MC12</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Geekbench 6 Single</span>
+                    <span class="spec-value">~2,111</span>
+                </div>
+            </div>
+
+            <div class="spec-card fade-in">
+                <div class="spec-card-header">
+                    <i class="fas fa-tv"></i>
+                    <div>
+                        <h3>Display Technology</h3>
+                        <p>Visual excellence</p>
+                    </div>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">iPad Pro</span>
+                    <span class="spec-value spec-winner">Tandem OLED XDR</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Peak Brightness</span>
+                    <span class="spec-value spec-winner">1,600 nits</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Refresh Rate</span>
+                    <span class="spec-value">120Hz ProMotion</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Color Accuracy</span>
+                    <span class="spec-value spec-winner">Reference-grade</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Galaxy Tab</span>
+                    <span class="spec-value">Dynamic AMOLED 2X</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Peak Brightness</span>
+                    <span class="spec-value">775 nits (HDR)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Refresh Rate</span>
+                    <span class="spec-value">120Hz Adaptive</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Color Accuracy</span>
+                    <span class="spec-value">99% DCI-P3</span>
+                </div>
+            </div>
+
+            <div class="spec-card fade-in">
+                <div class="spec-card-header">
+                    <i class="fas fa-camera"></i>
+                    <div>
+                        <h3>Camera System</h3>
+                        <p>Capture & create</p>
+                    </div>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">iPad Pro Rear</span>
+                    <span class="spec-value">12MP Wide + LiDAR</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">iPad Pro Front</span>
+                    <span class="spec-value">12MP Ultra-wide (Center Stage)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Video</span>
+                    <span class="spec-value spec-winner">4K ProRes</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Galaxy Tab Rear</span>
+                    <span class="spec-value spec-winner">13MP + 8MP Ultra-wide</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Galaxy Tab Front</span>
+                    <span class="spec-value spec-winner">12MP Dual (Wide+Ultra)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Video</span>
+                    <span class="spec-value">4K@60fps</span>
+                </div>
+            </div>
+
+            <div class="spec-card fade-in">
+                <div class="spec-card-header">
+                    <i class="fas fa-plug"></i>
+                    <div>
+                        <h3>Connectivity</h3>
+                        <p>Future-proof connections</p>
+                    </div>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">iPad Pro Port</span>
+                    <span class="spec-value spec-winner">Thunderbolt/USB 4</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Wi-Fi</span>
+                    <span class="spec-value">Wi-Fi 7</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Bluetooth</span>
+                    <span class="spec-value spec-winner">6.0</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Cellular</span>
+                    <span class="spec-value">5G (C1X Modem)</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Galaxy Tab Port</span>
+                    <span class="spec-value">USB-C 3.2</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Wi-Fi</span>
+                    <span class="spec-value">Wi-Fi 7</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Bluetooth</span>
+                    <span class="spec-value">5.3</span>
+                </div>
+                <div class="spec-row">
+                    <span class="spec-label">Cellular</span>
+                    <span class="spec-value">5G (Sub6)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="section-header fade-in">
+            <h2>Product <span>Gallery</span></h2>
+            <p>See every angle of these engineering masterpieces.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=450&fit=crop&q=80" alt="iPad Pro M5 with Magic Keyboard">
+                <div class="gallery-overlay">
+                    <h4>iPad Pro M5 Design</h4>
+                    <p>Ultra-thin 5.1mm profile with Magic Keyboard</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&h=450&fit=crop&q=80" alt="iPad Pro Display">
+                <div class="gallery-overlay">
+                    <h4>Ultra Retina XDR</h4>
+                    <p>Tandem OLED technology delivers stunning visuals</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&h=450&fit=crop&q=80" alt="iPad Pro Real World">
+                <div class="gallery-overlay">
+                    <h4>iPad Pro in Action</h4>
+                    <p>Real-world productivity and creativity</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=450&fit=crop&q=80" alt="Galaxy Tab S10 Ultra Front">
+                <div class="gallery-overlay">
+                    <h4>Galaxy Tab S10 Ultra</h4>
+                    <p>Massive 14.6-inch Dynamic AMOLED 2X</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&h=450&fit=crop&q=80" alt="Galaxy Tab S10 Ultra Series">
+                <div class="gallery-overlay">
+                    <h4>Galaxy Tab S10 Series</h4>
+                    <p>Galaxy AI integration and S Pen</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&h=450&fit=crop&q=80" alt="Galaxy Tab Back">
+                <div class="gallery-overlay">
+                    <h4>Premium Build</h4>
+                    <p>Armor Aluminum with IP68 rating</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=450&fit=crop&q=80" alt="S Pen Drawing">
+                <div class="gallery-overlay">
+                    <h4>S Pen Creativity</h4>
+                    <p>2.8ms latency for natural drawing</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=600&h=450&fit=crop&q=80" alt="Samsung DeX">
+                <div class="gallery-overlay">
+                    <h4>Samsung DeX Mode</h4>
+                    <p>Desktop experience on a tablet</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&h=450&fit=crop&q=80" alt="iPad Pro Back">
+                <div class="gallery-overlay">
+                    <h4>iPad Pro Build</h4>
+                    <p>Space Black aluminum unibody</p>
+                </div>
+            </div>
+            <div class="gallery-item fade-in">
+                <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=450&fit=crop&q=80" alt="Magic Keyboard">
+                <div class="gallery-overlay">
+                    <h4>Magic Keyboard</h4>
+                    <p>Trackpad and backlit keys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real User Reviews -->
+    <section class="section" id="reviews">
+        <div class="section-header fade-in">
+            <h2>Real User <span>Reviews</span></h2>
+            <p>Authentic feedback from verified owners who use these devices daily.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar">JD</div>
+                    <div class="review-meta">
+                        <h4>James Davidson</h4>
+                        <span class="verified"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "The M5 iPad Pro is an absolute beast. I edit 4K ProRes footage on this thing daily and it never breaks a sweat. 
+                    The Tandem OLED display is the best I've ever seen on any portable device. Yes, it's expensive, but for professional 
+                    video editing, there's nothing else that comes close."
+                </p>
+                <span class="review-device apple"><i class="fab fa-apple"></i> iPad Pro M5 13" 1TB</span>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #1428A0, #3b82f6);">SK</div>
+                    <div class="review-meta">
+                        <h4>Sarah Kim</h4>
+                        <span class="verified"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">
+                    "The Tab S10 Ultra is massive and I love it! The S Pen included in the box is a game-changer for my illustration work. 
+                    DeX mode turns this into a proper laptop replacement. Battery life is insane - I get 2 full days of use. 
+                    Only downside is the weight, but the 14.6" screen makes up for it."
+                </p>
+                <span class="review-device samsung"><i class="fab fa-android"></i> Galaxy Tab S10 Ultra 512GB</span>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">MR</div>
+                    <div class="review-meta">
+                        <h4>Michael Rodriguez</h4>
+                        <span class="verified"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "Switched from iPad Pro to Tab S10 Ultra for the expandable storage. As a photographer, being able to pop in a 1TB 
+                    microSD card is invaluable. The display is stunning and the quad speakers are better than my laptop. 
+                    Android tablet apps have improved a lot, but still not at iPad level."
+                </p>
+                <span class="review-device samsung"><i class="fab fa-android"></i> Galaxy Tab S10 Ultra 256GB</span>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #f59e0b, #d97706);">EW</div>
+                    <div class="review-meta">
+                        <h4>Emily Watson</h4>
+                        <span class="verified"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "As a medical student, the iPad Pro M5 is my digital textbook, note-taking device, and entertainment center. 
+                    The Apple Pencil Pro's hover feature is incredibly precise for anatomy diagrams. iPadOS 26 finally brings 
+                    proper external monitor support. Worth every penny for the ecosystem integration."
+                </p>
+                <span class="review-device apple"><i class="fab fa-apple"></i> iPad Pro M5 11" 512GB</span>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">AL</div>
+                    <div class="review-meta">
+                        <h4>Alex Liu</h4>
+                        <span class="verified"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="review-text">
+                    "The iPad Pro is technically perfect but iPadOS still holds it back. The hardware is desktop-class but the software 
+                    feels mobile. That said, for creative apps like Procreate and LumaFusion, nothing touches it. 
+                    The nano-texture display option is amazing for reducing glare."
+                </p>
+                <span class="review-device apple"><i class="fab fa-apple"></i> iPad Pro M5 13" 2TB</span>
+            </div>
+
+            <div class="review-card fade-in">
+                <div class="review-header">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #ec4899, #db2777);">TJ</div>
+                    <div class="review-meta">
+                        <h4>Thomas Jensen</h4>
+                        <span class="verified"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="review-text">
+                    "I use the Tab S10 Ultra as my primary work device. Samsung DeX with a Bluetooth keyboard and mouse is genuinely 
+                    as good as a laptop for 90% of tasks. The IP68 rating means I don't worry about spills at coffee shops. 
+                    Galaxy AI features like Note Assist save me hours every week."
+                </p>
+                <span class="review-device samsung"><i class="fab fa-android"></i> Galaxy Tab S10 Ultra 5G 1TB</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Verdict -->
+    <section class="section" id="verdict">
+        <div class="section-header fade-in">
+            <h2>The Final <span>Verdict</span></h2>
+            <p>Based on comprehensive testing, real user feedback, and technical analysis.</p>
+        </div>
+
+        <div class="verdict-grid">
+            <div class="verdict-card fade-in">
+                <div class="winner-badge">
+                    <i class="fas fa-trophy"></i>
+                    Best for Creatives
+                </div>
+                <h3><i class="fab fa-apple" style="color: #007AFF;"></i> iPad Pro M5</h3>
+                <p>
+                    Unmatched raw performance with the M5 chip, reference-grade Tandem OLED display, 
+                    and the industry's best creative app ecosystem. If you need desktop-class power 
+                    in a tablet form factor, this is the only choice.
+                </p>
+                <div class="score">9.4/10</div>
+                <div class="verdict-pros">
+                    <div><i class="fas fa-check"></i>Best-in-class performance</div>
+                    <div><i class="fas fa-check"></i>Superior display technology</div>
+                    <div><i class="fas fa-check"></i>Unbeatable creative apps</div>
+                    <div><i class="fas fa-times"></i>Expensive accessories</div>
+                </div>
+            </div>
+
+            <div class="verdict-card fade-in">
+                <div class="winner-badge" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">
+                    <i class="fas fa-star"></i>
+                    Best for Productivity
+                </div>
+                <h3><i class="fab fa-android" style="color: #60a5fa;"></i> Galaxy Tab S10 Ultra</h3>
+                <p>
+                    The ultimate multitasking machine with DeX mode, massive 14.6" display, included S Pen, 
+                    expandable storage, and superior battery life. Best value for money in the premium tablet space.
+                </p>
+                <div class="score">9.1/10</div>
+                <div class="verdict-pros">
+                    <div><i class="fas fa-check"></i>Best desktop replacement</div>
+                    <div><i class="fas fa-check"></i>Included S Pen & expandable storage</div>
+                    <div><i class="fas fa-check"></i>Superior battery life</div>
+                    <div><i class="fas fa-times"></i>Heavier and bulkier</div>
+                </div>
+            </div>
+
+            <div class="verdict-card fade-in">
+                <div class="winner-badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                    <i class="fas fa-balance-scale"></i>
+                    Overall Winner
+                </div>
+                <h3>It Depends on You</h3>
+                <p>
+                    Choose iPad Pro if you're invested in Apple's ecosystem, need maximum creative performance, 
+                    or want the best display. Choose Galaxy Tab if you want desktop-like multitasking, 
+                    value for money, and maximum flexibility.
+                </p>
+                <div class="score" style="font-size: 2rem;">Tie</div>
+                <div class="verdict-pros">
+                    <div><i class="fas fa-lightbulb"></i>iPad: Creative professionals, Apple users</div>
+                    <div><i class="fas fa-lightbulb"></i>Samsung: Business users, Android fans</div>
+                    <div><i class="fas fa-lightbulb"></i>Both: Premium build, 120Hz, 5G options</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <ul class="footer-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#specs">Specifications</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#verdict">Verdict</a></li>
+        </ul>
+        <p> TechCompare Pro. All specifications and prices are based on 2026 market data.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Images courtesy of Apple Inc. and Samsung Electronics.</p>
+        <div style=" padding: 20px; margin-top: 40px; text-align: center;">
+            <p style="font-size: 12px; color: #888;">
+                Yallabuy participates in the Amazon Services LLC Associates Program. 
+                We may earn a commission when you purchase through links on our site — 
+                at no extra cost to you. 
+                <a href="../amazon/affiliate-disclosure.html">Learn more</a>
+            </p>
+            <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+                <a href="../amazon/privacy-policy.html">Privacy Policy</a> | 
+                <a href="../amazon/terms-of-service.html">Terms of Service</a> | 
+                <a href="../contact.html">Contact</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+     // ============================================
+// STAGE 3: JAVASCRIPT
+// Interactive Features & Animations
+// ============================================
+
+// ===== LOADING BAR =====
+window.addEventListener('load', () => {
+    const loadingBar = document.getElementById('loadingBar');
+    if (loadingBar) {
+        loadingBar.style.width = '100%';
+        setTimeout(() => {
+            loadingBar.style.opacity = '0';
+            setTimeout(() => {
+                loadingBar.style.display = 'none';
+            }, 500);
+        }, 1500);
+    }
+});
+
+// ===== SMOOTH SCROLL =====
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
+// ===== INTERSECTION OBSERVER FOR SCROLL ANIMATIONS =====
+const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in').forEach(el => {
+    observer.observe(el);
+});
+
+// ===== NAVBAR SCROLL EFFECTS =====
+let lastScroll = 0;
+const nav = document.querySelector('.nav');
+
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+        nav.style.background = 'rgba(2, 6, 23, 0.95)';
+        nav.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+    } else {
+        nav.style.background = 'rgba(2, 6, 23, 0.8)';
+        nav.style.boxShadow = 'none';
+    }
+    
+    if (currentScroll > lastScroll && currentScroll > 500) {
+        nav.style.transform = 'translateY(-100%)';
+    } else {
+        nav.style.transform = 'translateY(0)';
+    }
+    
+    lastScroll = currentScroll;
+});
+
+// ===== ACTIVE NAV LINK HIGHLIGHTING =====
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.style.color = '';
+        link.style.textShadow = '';
+        if (link.getAttribute('href') === '#' + current) {
+            link.style.color = 'var(--accent)';
+            link.style.textShadow = '0 0 10px rgba(59, 130, 246, 0.5)';
+        }
+    });
+});
+
+// ===== GALLERY LIGHTBOX =====
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        const overlay = document.createElement('div');
+        overlay.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            backdrop-filter: blur(10px);
+        `;
+        
+        const clone = img.cloneNode();
+        clone.style.cssText = `
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+            transform: scale(0.5) rotate(-5deg);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        `;
+        
+        const caption = document.createElement('div');
+        caption.style.cssText = `
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.4s ease 0.3s;
+        `;
+        caption.textContent = img.alt;
+        
+        overlay.appendChild(clone);
+        overlay.appendChild(caption);
+        document.body.appendChild(overlay);
+        document.body.style.overflow = 'hidden';
+        
+        requestAnimationFrame(() => {
+            overlay.style.opacity = '1';
+            clone.style.transform = 'scale(1) rotate(0deg)';
+            caption.style.opacity = '1';
+        });
+        
+        const closeLightbox = () => {
+            overlay.style.opacity = '0';
+            clone.style.transform = 'scale(0.5) rotate(5deg)';
+            caption.style.opacity = '0';
+            setTimeout(() => {
+                overlay.remove();
+                document.body.style.overflow = '';
+            }, 400);
+        };
+        
+        overlay.addEventListener('click', closeLightbox);
+        
+        const escapeHandler = (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+                document.removeEventListener('keydown', escapeHandler);
+            }
+        };
+        document.addEventListener('keydown', escapeHandler);
+    });
+});
+
+// ===== PARALLAX EFFECT =====
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) {
+        heroBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+});
+
+// ===== DEVICE CARD 3D TILT EFFECT =====
+document.querySelectorAll('.device-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+});
+
+// ===== SPEC CARD HOVER EFFECTS =====
+document.querySelectorAll('.spec-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const rows = card.querySelectorAll('.spec-row');
+        rows.forEach((row, index) => {
+            setTimeout(() => {
+                row.style.transform = 'translateX(5px)';
+                row.style.transition = 'transform 0.3s ease';
+            }, index * 50);
+        });
+    });
+    
+    card.addEventListener('mouseleave', () => {
+        const rows = card.querySelectorAll('.spec-row');
+        rows.forEach(row => {
+            row.style.transform = 'translateX(0)';
+        });
+    });
+});
+
+// ===== REVIEW CARD STAGGER ANIMATION =====
+const reviewObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }, index * 150);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.review-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    reviewObserver.observe(card);
+});
+
+// ===== VERDICT CARD ANIMATION =====
+const verdictObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.animation = 'scaleIn 0.6s ease forwards';
+            }, index * 200);
+       
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.verdict-card').forEach(card => {
+    verdictObserver.observe(card);
+});
+
+// ===== COMPARISON TABLE ROW ANIMATION =====
+const tableObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const rows = entry.target.querySelectorAll('tbody tr');
+            rows.forEach((row, index) => {
+                row.style.opacity = '0';
+                row.style.transform = 'translateX(-20px)';
+                setTimeout(() => {
+                    row.style.transition = 'all 0.4s ease';
+                    row.style.opacity = '1';
+                    row.style.transform = 'translateX(0)';
+                }, index * 100);
+            });
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.compare-table').forEach(table => {
+    tableObserver.observe(table);
+});
+
+// ===== GALLERY ITEM STAGGER =====
+const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'scale(1)';
+            }, index * 100);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.gallery-item').forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'scale(0.9)';
+    item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    galleryObserver.observe(item);
+});
+
+// ===== SMOOTH SCROLL FOR NAV LINKS =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// ===== SCROLL TO TOP BUTTON =====
+const scrollTopBtn = document.createElement('button');
+scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+scrollTopBtn.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    font-size: 1.2rem;
+`;
+
+document.body.appendChild(scrollTopBtn);
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+scrollTopBtn.addEventListener('mouseenter', () => {
+    scrollTopBtn.style.transform = 'translateY(0) scale(1.1)';
+    scrollTopBtn.style.boxShadow = '0 6px 25px rgba(59, 130, 246, 0.6)';
+});
+
+scrollTopBtn.addEventListener('mouseleave', () => {
+    scrollTopBtn.style.transform = 'translateY(0) scale(1)';
+    scrollTopBtn.style.boxShadow = '0 4px 15px rgba(59, 130, 246, 0.4)';
+});
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 500) {
+        scrollTopBtn.style.opacity = '1';
+        scrollTopBtn.style.transform = 'translateY(0)';
+    } else {
+        scrollTopBtn.style.opacity = '0';
+        scrollTopBtn.style.transform = 'translateY(20px)';
+    }
+});
+
+// ===== MOUSE CURSOR GLOW EFFECT =====
+const cursorGlow = document.createElement('div');
+cursorGlow.style.cssText = `
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+`;
+document.body.appendChild(cursorGlow);
+
+document.addEventListener('mousemove', (e) => {
+    cursorGlow.style.left = e.clientX + 'px';
+    cursorGlow.style.top = e.clientY + 'px';
+    cursorGlow.style.opacity = '1';
+});
+
+document.addEventListener('mouseleave', () => {
+    cursorGlow.style.opacity = '0';
+});
+
+// ===== PERFORMANCE OPTIMIZATION =====
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+const debouncedScroll = debounce(() => {}, 10);
+window.addEventListener('scroll', debouncedScroll);
+
+// ===== PREFERS REDUCED MOTION =====
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('*').forEach(el => {
+        el.style.animation = 'none';
+        el.style.transition = 'none';
+    });
+}
+
+// ===== CONSOLE EASTER EGG =====
+console.log('%c🔥 TechCompare Pro', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
+console.log('%cMade with ❤️ for tech enthusiasts', 'font-size: 14px; color: #94a3b8;');
+console.log('%c2026 Tablet Comparison: iPad Pro M5 vs Galaxy Tab S10 Ultra', 'font-size: 12px; color: #64748b;');
+   
+    </script>
+
+</body>
+</html>
 

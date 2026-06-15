@@ -918,14 +918,7 @@
         /* ========== RESPONSIVE GRID FIX ========== */
 
 /* Container that holds the cards */
-.guides-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* 2 columns side-by-side */
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+
 
 /* Each card */
 .guide-card {
@@ -950,12 +943,7 @@
 }
 
 /* Mobile: stack cards vertically */
-@media (max-width: 768px) {
-  .guides-grid {
-    grid-template-columns: 1fr;  /* 1 column */
-    gap: 16px;
-    padding: 0 12px;
-  }
+        
   
   .guide-card {
     max-width: 100%;
@@ -1691,6 +1679,43 @@
             });
         });
     </script>
+<style>
+    /* ========== FIXED GUIDES GRID ========== */
 
+/* Desktop: 2 columns side by side */
+.guides-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .guides-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Mobile: stack in 1 column */
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .guide-card {
+        max-width: 100% !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .guides-grid {
+        gap: 1rem !important;
+    }
+}
+
+</style> 
 </body>
 </html>

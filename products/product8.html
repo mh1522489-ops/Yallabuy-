@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samsung 55" Neo QLED 4K Smart TV QN90C - Professional Review</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --primary: #1428a0;
+            --primary-light: #3b5bdb;
+            --accent: #00d4ff;
+            --dark: #0a0a0a;
+            --darker: #050505;
+            --card: #111111;
+            --card-hover: #1a1a1a;
+            --text: #e8e8e8;
+            --text-muted: #888888;
+            --success: #00c853;
+            --danger: #ff1744;
+            --warning: #ffab00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker) 0%, #0a0e2a 50%, var(--darker) 100%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(20, 40, 160, 0.15) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(20, 40, 160, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(20, 40, 160, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 2rem;
+            max-width: 1200px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 50px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .price-current {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--success);
+        }
+        
+        .price-original {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        
+        .price-save {
+            background: var(--danger);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .hero-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .stars {
+            color: var(--warning);
+            font-size: 1.5rem;
+        }
+        
+        .rating-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+        
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            cursor: pointer;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03) translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay span {
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            background: var(--card-hover);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: white;
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        /* Specs Section */
+        .specs-section {
+            background: linear-gradient(180deg, var(--dark) 0%, #0d1029 100%);
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .spec-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .spec-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .spec-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .spec-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Comparison Table */
+        .comparison-section {
+            background: var(--darker);
+        }
+        
+        .comparison-table-wrapper {
+            overflow-x: auto;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+            background: var(--card);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 1.5rem 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+        }
+        
+        .comparison-table th:first-child {
+            border-radius: 24px 0 0 0;
+            text-align: left;
+            padding-left: 2rem;
+        }
+        
+        .comparison-table th:last-child {
+            border-radius: 0 24px 0 0;
+        }
+        
+        .comparison-table td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--text);
+            transition: background 0.3s ease;
+        }
+        
+        .comparison-table tr:hover td {
+            background: rgba(255,255,255,0.02);
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 600;
+            padding-left: 2rem;
+            color: var(--text-muted);
+        }
+        
+        .comparison-table .highlight {
+            background: rgba(0, 212, 255, 0.05);
+            color: var(--accent);
+            font-weight: 700;
+        }
+        
+        .comparison-table tr:hover .highlight {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .check { color: var(--success); font-weight: 700; }
+        .cross { color: var(--danger); font-weight: 700; }
+        .partial { color: var(--warning); font-weight: 700; }
+        
+        /* Pros & Cons */
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .pros-card, .cons-card {
+            background: var(--card);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pros-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--success), #00e676);
+        }
+        
+        .cons-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--danger), #ff5252);
+        }
+        
+        .pros-card h3, .cons-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .pros-card h3 { color: var(--success); }
+        .cons-card h3 { color: var(--danger); }
+        
+        .pros-card ul, .cons-card ul {
+            list-style: none;
+        }
+        
+        .pros-card li, .cons-card li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            transition: transform 0.3s ease;
+        }
+        
+        .pros-card li:hover, .cons-card li:hover {
+            transform: translateX(5px);
+        }
+        
+        .pros-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        .cons-card li::before {
+            content: '✕';
+            position: absolute;
+            left: 0;
+            color: var(--danger);
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        
+        /* Verdict */
+        .verdict-section {
+            background: linear-gradient(135deg, #0a0e2a 0%, var(--darker) 100%);
+            text-align: center;
+        }
+        
+        .verdict-card {
+            background: var(--card);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 32px;
+            padding: 4rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verdict-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .verdict-score {
+            font-size: 5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        
+        .verdict-label {
+            font-size: 1.2rem;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        
+        .verdict-text {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(20, 40, 160, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--darker);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+        
+        /* Particle Effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 15s infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(1);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 4rem 1rem;
+            }
+            .hero-price {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .price-current {
+                font-size: 2.5rem;
+            }
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
+            .verdict-card {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+        
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        a{
+            text-decoration: none; 
+            color: white; 
+        } 
+    </style>
+</head>
+<body>
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Verified Product</div>
+            <h1>Samsung 55" Neo QLED 4K Smart TV QN90C</h1>
+            <p class="hero-subtitle">Quantum Matrix Technology with AI upscaling, 120Hz refresh rate, and Dolby Atmos sound. Experience cinema-grade visuals in your living room.</p>
+            <div class="hero-price">
+                <span class="price-current">$940.99</span>
+                <span class="price-original">$1,197.99</span>
+                <span class="price-save">Save $302</span>
+            </div>
+            <div class="hero-rating">
+                <span class="stars">★★★★★</span>
+                <span class="rating-text">4.7/5 (678 Reviews) | Free Installation Included</span>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- Product Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Product Gallery</h2>
+                <p>Explore the stunning design and display capabilities of the Samsung QN90C Neo QLED</p>
+            </div>
+            <div class="gallery">
+                <div class="gallery-item reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.centrehifi.com/5fd53863989d149c89c3d9317f864b4b83c6423f.webp" alt="Samsung QN90C Side View">
+                    <div class="gallery-overlay"><span>Sleek Design Profile</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/images.samsung.com/0333dd8b5ff0b3284a7d75a68eb078aca2a6dedb" alt="Samsung QN90C Front View">
+                    <div class="gallery-overlay"><span>Neo QLED Display</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/cdn.mos.cms.futurecdn.net/9921e280f3d3590c4c0f196fb9765c058578b4e4.jpg" alt="Samsung QN90C Real Life">
+                    <div class="gallery-overlay"><span>Real-World Performance</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/images.samsung.com/41daa7c2ec82b5dabf93bde8ea10e44980ae89c3" alt="Samsung QN90C Display">
+                    <div class="gallery-overlay"><span>Vivid Color Reproduction</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/samsungstore.tz/fbf28ab8e59e2303ac8a0c8b7f9e5ee2eaee845a" alt="Samsung QN90C Lifestyle">
+                    <div class="gallery-overlay"><span>Neo QLED Technology</span></div>
+                </div>
+                <div class="gallery-item reveal">
+                    <img src="https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/f252995ac4f28d4235f7aa5f612f89777f9890bd.jpg" alt="Samsung QN90C Refurbished">
+                    <div class="gallery-overlay"><span>Quantum Matrix Technology</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Features -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Key Features</h2>
+                <p>Cutting-edge technology that sets the QN90C apart from the competition</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Quantum Matrix Technology</h3>
+                    <p>Precision-controlled Mini LEDs deliver ultra-fine light control, revealing hidden details in both the darkest shadows and brightest highlights for a truly immersive HDR experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Neural Quantum Processor 4K</h3>
+                    <p>AI-powered upscaling transforms any content into stunning 4K resolution. The processor analyzes scenes in real-time to optimize picture quality, contrast, and color accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>120Hz Refresh Rate</h3>
+                    <p>Ultra-smooth motion handling with a native 120Hz panel. Perfect for next-gen gaming on PS5 and Xbox Series X with VRR, ALLM, and FreeSync Premium Pro support.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h3>Dolby Atmos Sound</h3>
+                    <p>Immersive 3D audio technology creates a multi-dimensional soundscape. Object Tracking Sound+ follows the action on screen for a cinema-like audio experience.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌈</div>
+                    <h3>HDR10+ Adaptive</h3>
+                    <p>Dynamic HDR that adapts to your room's lighting conditions scene by scene. Enjoy optimized brightness and contrast without manual adjustments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Smart Hub & Tizen OS</h3>
+                    <p>Samsung's intuitive Smart Hub organizes all your content in one place. Access Netflix, Disney+, Prime Video, and more with seamless voice control via Bixby, Alexa, or Google Assistant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technical Specs -->
+    <section class="specs-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Technical Specifications</h2>
+                <p>The numbers that define premium performance</p>
+            </div>
+            <div class="specs-grid">
+                <div class="spec-item reveal">
+                    <div class="spec-value">55"</div>
+                    <div class="spec-label">Screen Size</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">4K</div>
+                    <div class="spec-label">Resolution</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">120Hz</div>
+                    <div class="spec-label">Refresh Rate</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">2000+</div>
+                    <div class="spec-label">Peak Nits</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">4x</div>
+                    <div class="spec-label">HDMI 2.1</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">40W</div>
+                    <div class="spec-label">Audio Output</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">Mini LED</div>
+                    <div class="spec-label">Backlight</div>
+                </div>
+                <div class="spec-item reveal">
+                    <div class="spec-value">Tizen</div>
+                    <div class="spec-label">OS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Head-to-Head Comparison</h2>
+                <p>How the Samsung QN90C stacks up against its biggest rivals in the 55" premium TV market</p>
+            </div>
+            <div class="comparison-table-wrapper reveal">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight">Samsung QN90C</th>
+                            <th>LG C3 OLED</th>
+                            <th>Sony X90L</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Display Technology</td>
+                            <td class="highlight">Neo QLED (Mini LED)</td>
+                            <td>OLED evo</td>
+                            <td>Full Array LED</td>
+                        </tr>
+                        <tr>
+                            <td>Peak Brightness</td>
+                            <td class="highlight">~2,000 nits</td>
+                            <td>~830 nits</td>
+                            <td>~1,300 nits</td>
+                        </tr>
+                        <tr>
+                            <td>Black Levels</td>
+                            <td>Excellent (Local Dimming)</td>
+                            <td class="highlight">Perfect (Infinite)</td>
+                            <td>Very Good</td>
+                        </tr>
+                        <tr>
+                            <td>Viewing Angle</td>
+                            <td>Good</td>
+                            <td class="highlight">Excellent (Wide)</td>
+                            <td>Good</td>
+                        </tr>
+                        <tr>
+                            <td>Refresh Rate</td>
+                            <td class="highlight">120Hz Native</td>
+                            <td>120Hz Native</td>
+                            <td>120Hz Native</td>
+                        </tr>
+                        <tr>
+                            <td>Gaming Features</td>
+                            <td class="highlight">VRR, ALLM, FreeSync, G-Sync</td>
+                            <td>VRR, ALLM, G-Sync, FreeSync</td>
+                            <td>VRR, ALLM</td>
+                        </tr>
+                        <tr>
+                            <td>HDR Support</td>
+                            <td>HDR10+, HDR10, HLG</td>
+                            <td class="highlight">Dolby Vision, HDR10, HLG</td>
+                            <td class="highlight">Dolby Vision, HDR10, HLG</td>
+                        </tr>
+                        <tr>
+                            <td>Burn-in Risk</td>
+                            <td class="highlight">None</td>
+                            <td>Possible (OLED)</td>
+                            <td class="highlight">None</td>
+                        </tr>
+                        <tr>
+                            <td>Smart Platform</td>
+                            <td>Tizen OS</td>
+                            <td>webOS 23</td>
+                            <td class="highlight">Google TV</td>
+                        </tr>
+                        <tr>
+                            <td>Audio Output</td>
+                            <td class="highlight">40W (OTS+)</td>
+                            <td>40W (2.2ch)</td>
+                            <td>30W (Acoustic Multi-Audio)</td>
+                        </tr>
+                        <tr>
+                            <td>Price (55")</td>
+                            <td class="highlight">$940.99</td>
+                            <td>~$1,400+</td>
+                            <td>~$1,100+</td>
+                        </tr>
+                        <tr>
+                            <td>Best For</td>
+                            <td class="highlight">Bright Rooms, Gaming, Value</td>
+                            <td>Dark Rooms, Movies</td>
+                            <td>Balanced Use, Google Ecosystem</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pros & Cons -->
+    <section class="pros-cons-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Pros & Cons</h2>
+                <p>An honest assessment of what works and what could be better</p>
+            </div>
+            <div class="pros-cons-grid">
+                <div class="pros-card reveal">
+                    <h3>✓ Advantages</h3>
+                    <ul>
+                        <li>Exceptional brightness up to 2,000 nits — perfect for bright living rooms</li>
+                        <li>No burn-in risk unlike OLED competitors, ideal for news/sports channels</li>
+                        <li>Outstanding gaming performance with 4K 120Hz, VRR, and low input lag</li>
+                        <li>AI upscaling makes even 1080p content look stunning</li>
+                        <li>Sleek, ultra-thin design with premium build quality</li>
+                        <li>Excellent value at $940.99 with $302 instant savings</li>
+                        <li>Object Tracking Sound+ delivers immersive directional audio</li>
+                        <li>Anti-reflection coating reduces glare significantly</li>
+                    </ul>
+                </div>
+                <div class="cons-card reveal">
+                    <h3>✕ Disadvantages</h3>
+                    <ul>
+                        <li>No Dolby Vision support — HDR10+ only, limiting some streaming content</li>
+                        <li>Viewing angles are good but not as wide as OLED panels</li>
+                        <li>Some blooming visible in very dark scenes with bright objects</li>
+                        <li>Tizen OS can feel cluttered compared to Google TV</li>
+                        <li>No DTS audio support through internal speakers</li>
+                        <li>Stand design is functional but not as elegant as competitors</li>
+                        <li>Higher power consumption than OLED alternatives</li>
+                        <li>Smart Hub recommendations can be overly aggressive</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Verdict -->
+    <section class="verdict-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Final Verdict</h2>
+            </div>
+            <div class="verdict-card reveal">
+                <div class="verdict-score">9.2</div>
+                <div class="verdict-label">Editor's Choice</div>
+                <p class="verdict-text">
+                    The Samsung QN90C Neo QLED is the ultimate all-rounder in the premium 55" TV segment. 
+                    With its exceptional brightness, zero burn-in risk, and gamer-friendly features, it outshines 
+                    the LG C3 in bright environments and undercuts the Sony X90L in price while matching its performance. 
+                    At <strong>$940.99</strong> with free installation, it represents unbeatable value for anyone seeking 
+                    a future-proof 4K TV that excels at movies, sports, and next-gen gaming. The lack of Dolby Vision 
+                    is a minor compromise for an otherwise flawless package.
+                </p>
+                <a href="https://www.amazon.com/Samsung-55-Inch-Processor-Upscaling-Xcelerator/dp/B0DXN7PBFC?crid=3HLDNWPNW1IMR&dib=eyJ2IjoiMSJ9.mmNynNLeBFZIJ57FhnJKkNLmX9Q3h0M6oikG6uglJxibs5XGKUHH2xbSpSbKqvw6YddCcIUY6Jj28reQfh7Oltr0i4P8g2ime-TGe5fHPSzgt10ktLmMUvgNMdkracC6pH8Hz9q84pHGQi91f0LOCKTLy4x49EhfG1xJm3-hBX8VgpTCYK_FaN7_rbiTcCYUaanVaDyP1gE-7Q9-FbfJHa1UzvrAXoSisapvT9enuWA.N0DFLtHUKEMUVB3bI1npdpiKM5jR_ysUpoCGu4TNDN0&dib_tag=se&keywords=Samsung%2B55%22%2BNeo%2BQLED%2B4K%2BSmart%2BTV%2BQN90C&nsdOptOutParam=true&qid=1781613732&sprefix=samsung%2B55%2Bneo%2Bqled%2B4k%2Bsmart%2Btv%2Bqn90c%2Caps%2C514&sr=8-3&th=1&linkCode=ll2&tag=yallabuy2010-20&linkId=3f14cf24f3d1aa92d915da803cb81be4&language=en_US&ref_=as_li_ss_tl" class="cta-button">Buy Now — $940.99</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p> Samsung QN90C Review | Professional Product Analysis</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">Prices and availability subject to change. Images courtesy of Samsung and retail partners.</p>
+        <div style=" padding: 20px; margin-top: 40px; text-align: center;">
+  <p style="font-size: 12px; color: #888;">
+    Yallabuy participates in the Amazon Services LLC Associates Program. 
+    We may earn a commission when you purchase through links on our site — 
+    at no extra cost to you. 
+    <a href="../amazon/affiliate-disclosure.html">Learn more</a>
+  </p>
+  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
+    <a href="../amazon/privacy-policy.html">Privacy Policy</a> | 
+    <a href="../amazon/terms-of-service.html">Terms of Service</a> | 
+    <a href="../contact.html">Contact</a>
+  </p>
+</div>
+
+    </footer>
+    
+    <script>
+        // Particle System
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particle.style.width = (2 + Math.random() * 4) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+        
+        // Scroll Reveal Animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const featureCards = document.querySelectorAll('.feature-card');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+            
+            featureCards.forEach((card, index) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = card.getBoundingClientRect().top;
+                const elementVisible = 50;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+        
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Parallax Effect for Hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+        
+        // Gallery Lightbox Effect (Simple)
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                this.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+            });
+        });
+        
+        // Dynamic Price Counter Animation
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = '$' + value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // Trigger price animation when in view
+        const priceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const priceElement = entry.target.querySelector('.price-current');
+                    if (priceElement && !priceElement.classList.contains('animated')) {
+                        priceElement.classList.add('animated');
+                        animateValue(priceElement, 0, 940, 1500);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const heroPrice = document.querySelector('.hero-price');
+        if (heroPrice) priceObserver.observe(heroPrice);
+    </script>
+</body>
+</html>

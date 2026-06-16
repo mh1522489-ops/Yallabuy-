@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-     /* ============================================
+        /* ============================================
    YALLABUY — CSS VARIABLES & THEME SYSTEM
    ============================================ */
 
@@ -25,6 +25,9 @@
     --color-orange-dark: #ea580c;
     --color-yellow: #fbbf24;
     --color-yellow-light: #fcd34d;
+    --color-green: #22c55e;
+    --color-green-dark: #16a34a;
+    --color-red: #ef4444;
 
     /* Light Mode */
     --bg-body: #f8fafc;
@@ -510,7 +513,9 @@ ul {
 }
 
 .hero-badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
     background: var(--color-orange);
     color: white;
@@ -521,6 +526,20 @@ ul {
     border-radius: var(--radius-full);
     margin-bottom: 1.5rem;
     animation: fadeInUp 0.6s ease 0.2s both;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.hero-badge .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
 }
 
 .hero-title {
@@ -570,6 +589,33 @@ ul {
     gap: 1rem;
     flex-wrap: wrap;
     animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+/* Hero Trust Bar */
+.hero-trust-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    animation: fadeInUp 0.6s ease 0.7s both;
+    flex-wrap: wrap;
+}
+
+.hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.hero-trust-item svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-green);
+    flex-shrink: 0;
 }
 
 /* Hero Visual */
@@ -652,20 +698,109 @@ ul {
     transform: translateY(-2px);
 }
 
+/* Buy Button - High Conversion Orange */
 .btn-buy {
-    padding: 0.625rem 1.25rem;
-    background: var(--color-navy);
+    padding: 0.75rem 1.5rem;
+    background: var(--color-orange);
     color: white;
     font-size: var(--font-size-sm);
-    font-weight: 600;
-    border-radius: var(--radius-sm);
+    font-weight: 700;
+    border-radius: var(--radius-md);
     transition: all var(--transition-fast);
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btn-buy:hover {
-    background: var(--color-orange);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    background: var(--color-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+}
+
+.btn-buy svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Compare Button - Secondary Style */
+.btn-compare {
+    padding: 0.625rem 1rem;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.btn-compare:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    background: var(--bg-input);
+}
+
+/* ============================================
+   SOCIAL PROOF BAR
+   ============================================ */
+
+.social-proof-bar {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    overflow: hidden;
+}
+
+.social-proof-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.social-proof-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.social-proof-avatars img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-surface);
+    margin-left: -8px;
+    object-fit: cover;
+}
+
+.social-proof-avatars img:first-child {
+    margin-left: 0;
+}
+
+.social-proof-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.social-proof-text strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.social-proof-stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.social-proof-stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-yellow);
+    fill: var(--color-yellow);
 }
 
 /* ============================================
@@ -833,6 +968,7 @@ ul {
     transform: scale(1.08);
 }
 
+/* Product Badge */
 .product-badge {
     position: absolute;
     top: 1rem;
@@ -856,6 +992,34 @@ ul {
 .badge-sale {
     background: var(--bg-badge-sale);
     color: #f87171;
+}
+
+/* Stock Counter Badge */
+.stock-badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    animation: pulse-stock 2s ease-in-out infinite;
+}
+
+@keyframes pulse-stock {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+}
+
+.stock-badge svg {
+    width: 14px;
+    height: 14px;
 }
 
 .product-wishlist {
@@ -889,6 +1053,41 @@ ul {
     padding: 1.5rem;
 }
 
+/* Star Rating */
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-rating .stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.product-rating .stars svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-yellow);
+    fill: var(--color-yellow);
+}
+
+.product-rating .stars svg.empty {
+    fill: none;
+    color: var(--text-muted);
+}
+
+.product-rating .stars svg.half {
+    fill: url(#half-star);
+}
+
+.product-rating .rating-text {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
 .product-name {
     font-size: var(--font-size-lg);
     font-weight: 700;
@@ -897,10 +1096,31 @@ ul {
     line-height: 1.3;
 }
 
+/* Product Features List */
+.product-features {
+    margin-bottom: 1rem;
+}
+
+.product-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin-bottom: 0.375rem;
+}
+
+.product-features li svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-green);
+    flex-shrink: 0;
+}
+
 .product-desc {
     font-size: var(--font-size-sm);
     color: var(--text-secondary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     line-height: 1.6;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -908,11 +1128,16 @@ ul {
     overflow: hidden;
 }
 
-.product-footer {
+/* Price Section */
+.product-price-section {
+    margin-bottom: 0.75rem;
+}
+
+.product-price-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
 }
 
 .product-price {
@@ -925,7 +1150,147 @@ ul {
     font-size: var(--font-size-sm);
     font-weight: 500;
     color: var(--text-muted);
-    margin-right: 0.5rem;
+    text-decoration: line-through;
+}
+
+.savings-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-green);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+}
+
+/* Shipping Info */
+.product-shipping {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-green);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.product-shipping svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Product Footer - Buttons */
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.product-footer .btn-buy {
+    flex: 1;
+    justify-content: center;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+
+.testimonials-section {
+    padding: 5rem 0;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-meta {
+    flex: 1;
+}
+
+.testimonial-name {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.testimonial-verified {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-green);
+    font-weight: 500;
+}
+
+.testimonial-verified svg {
+    width: 14px;
+    height: 14px;
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 0.125rem;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-yellow);
+    fill: var(--color-yellow);
+}
+
+.testimonial-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-style: italic;
 }
 
 /* ============================================
@@ -1097,12 +1462,7 @@ ul {
     color: rgba(255, 255, 255, 0.6);
     margin-bottom: 1.5rem;
 }
-#px{
-    background:Orange; 
-    width:80%; 
-    padding: 15px; 
-    border-radius: 10px; 
-} 
+
 .footer-social {
     display: flex;
     gap: 0.75rem;
@@ -1194,6 +1554,30 @@ ul {
     color: var(--color-orange);
 }
 
+/* Affiliate Disclosure Footer */
+.affiliate-disclosure {
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.affiliate-disclosure p {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.6;
+}
+
+.affiliate-disclosure a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.affiliate-disclosure a:hover {
+    color: var(--color-orange);
+}
+
 /* ============================================
    TOAST NOTIFICATION
    ============================================ */
@@ -1214,11 +1598,20 @@ ul {
     opacity: 0;
     transition: all var(--transition-base);
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .toast.show {
     transform: translateX(-50%) translateY(0);
     opacity: 1;
+}
+
+.toast svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-green);
 }
 
 /* ============================================
@@ -1293,6 +1686,55 @@ ul {
     right: 0;
 }
 
+[dir="rtl"] .product-rating .stars {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .testimonial-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .testimonial-stars {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-proof-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-proof-avatars {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-proof-avatars img {
+    margin-left: 0;
+    margin-right: -8px;
+}
+
+[dir="rtl"] .social-proof-avatars img:first-child {
+    margin-right: 0;
+}
+
+[dir="rtl"] .hero-trust-bar {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-trust-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-features li {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-price-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-shipping {
+    flex-direction: row-reverse;
+}
+
 /* ============================================
    SCROLLBAR STYLING
    ============================================ */
@@ -1338,9 +1780,7 @@ ul {
         scroll-behavior: auto;
     }
 }
-   
-        
-        
+
     </style>
 </head>
 <body>
@@ -1413,27 +1853,78 @@ ul {
             <div class="hero-shape shape-3"></div>
         </div>
         <div class="hero-content">
-            <div class="hero-badge" data-key="hero_badge">New Collection</div>
-            <h1 class="hero-title" data-key="hero_title">Curated Amazon, <span class="highlight">Deals</span></h1>
-            <p class="hero-desc" data-key="hero_desc">"20+ handpicked products with real reviews & best prices.</p>
-            <div class="hero-actions">
-                <a href="e.html" class="btn btn-primary" data-key="btn_shop_now">Browse All Deals</a>
-                <a href="article/article.html" class="btn btn-outline" data-key="btn_learn_more">Read Buying Guides</a>
+            <div>
+                <div class="hero-badge" data-key="hero_badge">
+                    <span class="pulse-dot"></span>
+                    New Collection
+                </div>
+                <h1 class="hero-title" data-key="hero_title">Shop Smarter, <span class="highlight">Live Better</span></h1>
+                <p class="hero-desc" data-key="hero_desc">Discover premium products with lightning-fast delivery. Your satisfaction is our mission.</p>
+                <div class="hero-actions">
+                    <a href="#products" class="btn btn-primary" data-key="btn_shop_now">Shop Now</a>
+                    <a href="article/article.html" class="btn btn-outline" data-key="btn_learn_more">Read the article</a>
+                </div>
+                <div class="hero-trust-bar">
+                    <div class="hero-trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                        <span data-key="hero_trust_1">Amazon Prime Delivery</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                        <span data-key="hero_trust_2">Secure Checkout</span>
+                    </div>
+                    <div class="hero-trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                        <span data-key="hero_trust_3">30-Day Returns</span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-            <div class="hero-cart">
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40 60h25l15 60h80l20-40H80" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="85" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
-                    <circle cx="155" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
-                    <path d="M160 40l15 15-15 15" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M175 55h-30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M50 30L40 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
-                </svg>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-cart">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 60h25l15 60h80l20-40H80" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="85" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
+                        <circle cx="155" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
+                        <path d="M160 40l15 15-15 15" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M175 55h-30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M50 30L40 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Social Proof Bar -->
+    <div class="social-proof-bar">
+        <div class="container">
+            <div class="social-proof-content">
+                <div class="social-proof-avatars">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                </div>
+                <p class="social-proof-text">
+                    <strong data-key="social_proof_count">5,000+</strong> <span data-key="social_proof_text">happy shoppers trust Yallabuy</span>
+                </p>
+                <div class="social-proof-stars">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Trust Badges Section -->
     <section class="trust-section" id="trust">
@@ -1491,6 +1982,12 @@ ul {
                     <div class="product-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" alt="Premium Wireless Headphones" class="product-image" loading="lazy">
                         <div class="product-badge" data-key="badge_bestseller">Bestseller</div>
+                        <div class="stock-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            <span data-key="stock_low">Only 3 left!</span>
+                        </div>
                         <button class="product-wishlist" aria-label="Add to wishlist">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -1498,15 +1995,56 @@ ul {
                         </button>
                     </div>
                     <div class="product-info">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <span class="rating-text">4.5 (1,247 reviews)</span>
+                        </div>
                         <h3 class="product-name" data-key="product_1_name">Premium Wireless Headphones</h3>
-                        <p class="product-desc" data-key="product_1_desc">Crystal-clear audio with active noise cancellation and 30-hour battery life.</p>
+                        <ul class="product-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Active Noise Cancellation
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                30-Hour Battery Life
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Bluetooth 5.3
+                            </li>
+                        </ul>
+                        <div class="product-price-section">
+                            <div class="product-price-row">
+                                <span class="product-price">$50.99</span>
+                                <span class="old-price">$89.99</span>
+                            </div>
+                            <span class="savings-badge">Save 43%</span>
+                        </div>
+                        <div class="product-shipping">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                            <span data-key="shipping_prime">Free Prime Shipping</span>
+                        </div>
                         <div class="product-footer">
-                            <span class="product-price">$100.99</span>
                             <a href="products/product1.html">
-                            <button style="border: solid black 1.5px; padding: 5px; border-radius:5px; background: black; color: white; " >Compare</button>
+                                <button class="btn-compare">Compare</button>
                             </a>
-                            <a href="https://www.amazon.com/Cancelling-Headphones-Playtime-Bluetooth-Transparency/dp/B0GSD8BWXV?crid=IOYTDLM3D6R4&dib=eyJ2IjoiMSJ9.3JlBLIzbAMjYQ2FADcbqGIJIetr-MkeqBKaJa3l8vkyuLCtxc2ck82_FWGOiMsOPnSvMzoowLgEEQummy8S-sgInusq8S22xdSg0OXJ5rz-pHiMfTPUeK0MtUDIo1M-jcO5kSq2i4uur-NvpeuOPNKAXlXRnU8jTUygSGxW4Bb8NsAy3H0CM9FaAy4pzMlCCaNtk6c3pD_r_aBd50lcRgA.ff2f6MGvtkJ7DaEqPIFiidhOhtRqK-N3HLEA8stehX8&dib_tag=se&keywords=Premium%2BWireless%2BHeadphones&qid=1781374708&sprefix=premium%2Bwireless%2Bheadphones%2Caps%2C705&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9waG9uZV9zZWFyY2hfYXRm&th=1&linkCode=ll2&tag=yallabuy2010-20&linkId=f953499def638a49aa0620f2b2a9be68&language=en_US&ref_=as_li_ss_tl"> 
-                            <button class="btn btn-buy" data-key="btn_buy">Buy on amazon</button>
+                            <a href="https://www.amazon.eg/WH-CH720N-%D8%B3%D9%88%D9%86%D9%8A-%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86-%D9%84%D9%84%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%D9%8A%D8%A9/dp/B0BS1QCFHX?dib=eyJ2IjoiMSJ9.aIzrOJryIgctYppgB7JL_72H5RWESHuIJLDKVZDBv4jdAiiwzV5h7bq-At8wwl4kIFdtsj4fk0Yf50ksh5vpg66vPy-DbtGp0ImAIgNa9XoMsQFGUauCW8DGNfQKNyIwgKbzrbQUP567G_FxkSNoSSQ9wg_mIS2XRNbFLQhvZQWIxrKKJfKX-UqgVF9RyDbmMv_2ZCf6WtdKMvEah8wr6Q.5-MmcIDCgHwHWTSqRKE9p_TcAI47n8OfMCwA0X5duoM&dib_tag=se&keywords=Premium%2BWireless%2BHeadphones&qid=1781346099&s=electronics&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-5&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=cd940edd762a65600df084afdfc656fb&ref_=as_li_ss_tl">
+                                <button class="btn-buy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    Buy on Amazon
+                                </button>
                             </a>
                         </div>
                     </div>
@@ -1517,33 +2055,12 @@ ul {
                     <div class="product-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Smart Fitness Watch" class="product-image" loading="lazy">
                         <div class="product-badge badge-new" data-key="badge_new">New</div>
-                                   <button class="product-wishlist" aria-label="Add to wishlist">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        <div class="stock-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                             </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name" data-key="product_2_name">Smart Fitness Watch</h3>
-                        <p class="product-desc" data-key="product_2_desc">Track your health, sleep, and workouts with precision sensors and GPS.</p>
-                        <div class="product-footer">
-                            <span class="product-price">$25.99</span>
-                             <a href="products/product2.html">
-                            <button style="border: solid black 1.5px; padding: 5px; border-radius:5px; background: black; color: white; " >Compare</button>
-                            </a>
-       
-             <a href= "https://www.amazon.com/MorePro-Fitness-Tracker-Pressure-Waterproof/dp/B0GVBTZ1TV?crid=LC4GDS4FLUEK&dib=eyJ2IjoiMSJ9.ThNc75OOiPUcxKyE8y4kvLAF50w4z_Kx_1dYKs_mb-9RvRIyffUD1Xgo-SFSwklNj4CYjG6NaZQEiLFgTAa4uPn4LWb3Qy6kPX5wKY_-t7TKuso2PW5Lg60gU-vA1qIIJQ5i5LeV6JAvLG_gZVyrJNAFdXvJyKwDQD-I6LPdwtygFNkGmkw5G-K8ORLYZI1VWGZ4F9Ab8N2CGBGttKZdxP9APGKqmCOXWXNgAZLZPNY.ORjz4xLz4FTbxq3avnTTsyusQtJEtU_O7s7F6do9pFQ&dib_tag=se&keywords=Smart%2BFitness%2BWatch&qid=1781426546&sprefix=smart%2Bfitness%2Bwatch%2Caps%2C542&sr=8-22&th=1&linkCode=ll2&tag=yallabuy2010-20&linkId=13416b15e7959058eefae3d5bb27c6f3&language=en_US&ref_=as_li_ss_tl"> 
-                            <button class="btn btn-buy" data-key="btn_buy">Buy on amazon</button>
-             </a>
+                            <span data-key="stock_low">Only 5 left!</span>
                         </div>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="https://images.pexels.com/photos/7043582/pexels-photo-7043582.jpeg" alt="Organic Skincare Set" class="product-image" loading="lazy">
-                        <div class="product-badge badge-sale" data-key="badge_sale">Sale</div>
                         <button class="product-wishlist" aria-label="Add to wishlist">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
@@ -1551,73 +2068,239 @@ ul {
                         </button>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-name" data-key="product_3_name">Organic Skincare Set</h3>
-                        <p class="product-desc" data-key="product_3_desc">Natural ingredients for radiant skin. Cruelty-free and eco-friendly.</p>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <span class="rating-text">4.8 (892 reviews)</span>
+                        </div>
+                        <h3 class="product-name" data-key="product_2_name">Smart Fitness Watch</h3>
+                        <ul class="product-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Heart Rate & SpO2 Monitor
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                GPS + 50+ Sport Modes
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                7-Day Battery Life
+                            </li>
+                        </ul>
+                        <div class="product-price-section">
+                            <div class="product-price-row">
+                                <span class="product-price">$25.99</span>
+                                <span class="old-price">$49.99</span>
+                            </div>
+                            <span class="savings-badge">Save 48%</span>
+                        </div>
+                        <div class="product-shipping">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                            <span data-key="shipping_prime">Free Prime Shipping</span>
+                        </div>
                         <div class="product-footer">
-                            <span class="product-price"><del class="old-price">$59.99</del>$39.99</span>
-                             <a href="products/product3.html">
-                            <button style="border: solid black 1.5px; padding: 5px; border-radius:5px; background: black; color: white; " >Compare</button>
+                            <a href="products/product2.html">
+                                <button class="btn-compare">Compare</button>
                             </a>
-                 <a href = "https://www.amazon.com/Eight-Saints-Skincare-Starter-Routine/dp/B08WZH1K3H?crid=21OQ5V3L9I375&dib=eyJ2IjoiMSJ9.rxjeO9kscuCIFwkUW0quM6JxNA-l37TweEbPLop62-cI3QiS4KtjRvOFempiXIw1aUl07XT_K5Qj61cXfSd3LYT84kE4IleOwr6meSqm9VruPuhBxcO7AR_x46K6hsaNg5Y5euRDzh4I3jl_-pzR4jFFOkfytUQYAexnK0YwEwbGs_G-GL2xERdGEhluk7dh8sMVJbydQSy7VdrQf2gI7vhsjR1hPbnKiECxXyMln6DBHbECo0HXzIH8hHPoSxSHxALiysfe3rDvU3HPg5iL4hgKW7rKwr8Th_1rFM5s7IU.xZYymVil001FW9azYOGo6EjchYWwoagYUr4X_EzX7BE&dib_tag=se&keywords=Organic+Skincare+Set&qid=1781426795&sprefix=organic+skincare+set%2Caps%2C556&sr=8-24&linkCode=ll2&tag=yallabuy2010-20&linkId=e0dd41c8eb6ad7460407a7126164b6b3&language=en_US&ref_=as_li_ss_tl"> 
-                            <button class="btn btn-buy" data-key="btn_buy">Buy on amazon</button>
-                 </a>
+                            <a href="https://www.amazon.eg/%D8%B1%D9%8A%D8%AF%D9%85%D9%8A-%D9%88%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%D8%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA/dp/B0DFHFM1X9?pd_rd_w=YUmLL&content-id=amzn1.sym.029f96f5-c9bf-4cfb-b573-9164eb586505%3Aamzn1.symc.30e3dbb4-8dd8-4bad-b7a1-a45bcdbc49b8&pf_rd_p=029f96f5-c9bf-4cfb-b573-9164eb586505&pf_rd_r=DFGJMD2VCJTS0RE71Y1A&pd_rd_wg=zdEP8&pd_rd_r=fcfa76bc-5cfa-48f8-a3c4-15970dd24bde&pd_rd_i=B0DFHFM1X9&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=053d94f3ba12891b369a7f8ecd970cf9&ref_=as_li_ss_tl">
+                                <button class="btn-buy">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    Buy on Amazon
+                                </button>
+                            </a>
                         </div>
                     </div>
+                </article>
 
-
+                <!-- Product 3 -->
+                <article class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&h=600&fit=crop" alt="Organic Skincare Set" class="product-image" loading="lazy">
+                        <div class="product-badge badge-sale" data-key="badge_sale">Sale</div>
+                        <div class="stock-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            <span data-key="stock_low">Only 2 left!</span>
+                        </div>
+                        <button class="product-wishlist" aria-label="Add to wishlist">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-rating">
+                            <div class="stars">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <span class="rating-text">4.3 (2,156 reviews)</span>
+                        </div>
+                        <h3 class="product-name" data-key="product_3_name">Organic Skincare Set</h3>
+                        <ul class="product-features">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                100% Natural Ingredients
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Cruelty-Free & Vegan
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                Eco-Friendly Packaging
+                            </li>
+                        </ul>
+                        <div class="product-price-section">
+                            <div class="product-price-row">
+                                <span class="product-price">$39.99</span>
+                                <span class="old-price">$59.99</span>
+                            </div>
+                            <span class="savings-badge">Save 33%</span>
+                        </div>
+                        <div class="product-shipping">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                            <span data-key="shipping_prime">Free Prime Shipping</span>
+                        </div>
+                        <div class="product-footer">
+                            <a href="products/product3.html">
+                                <button class="btn-compare">Compare</button>
+                            </a>
+                            <a href="https://www.amazon.com/Eight-Saints-Skincare-Starter-Routine/dp/B08WZH1K3H?crid=24IT5TY9QOQD3&dib=eyJ2IjoiMSJ9.rxjeO9kscuCIFwkUW0quMxhxuTUMskCbiVtNiW1v5YWngxACeTUWW7AiUjlKQ8m6Xp28_7wDM5NNljpYEjDNE3bcYPYbF74EsgPIGcdzmO4pve3THcXIkt6EDnzYXRWEuQWBl2sSe9dpkpAB-1o3XgogqJjiaCWqgc6004gjMnVtNuaLVROAlTMDI5uOJQa605xafs3FX4K5SpQ4I0SVtuYJqPMPNakcn5gDxJKaqJh6zMyvPszZ5yERkxbn6xrSZCBdKegEyHMNp7eAgp4Xq_r8iKQp4qMi_0q9PmYL8ak.n4oYvTU2b2tL1UXxCq5cm81V-EuzNn8MtnmfK7YSel0&dib_tag=se&keywords=organic+skincare+set&qid=1781650202&sprefix=Organic+Skincare+Set%2Caps%2C960&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=yallabuy2010-20&linkId=c2c47e030aed038c16ff5c796a52ab27&language=en_US&ref_=as_li_ss_tl">
+                            <button class="btn-buy">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Buy on Amazon
+                            </button>
+                            </a>
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
-                            <div style="text-align: center; margin: 40px 0;">
-  <a href="e.html" style="
-    display: inline-block;
-    padding: 16px 40px;
-    background: #ff6b00;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-  ">
-    View All 20+ Products →
-  </a>
-  <p style="color: #666; margin-top: 10px;">
-    Handpicked from Amazon with real reviews
-  </p>
-</div> 
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label" data-key="testimonials_label">Testimonials</span>
+                <h2 class="section-title" data-key="testimonials_title">What Our Customers Say</h2>
+                <p class="section-desc" data-key="testimonials_desc">Real reviews from real shoppers who love Yallabuy.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah M." class="testimonial-avatar">
+                        <div class="testimonial-meta">
+                            <div class="testimonial-name">Sarah M.</div>
+                            <div class="testimonial-verified">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Verified Purchase
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The headphones I bought through Yallabuy are amazing! The price was unbeatable and delivery was super fast. Will definitely shop here again!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Ahmed K." class="testimonial-avatar">
+                        <div class="testimonial-meta">
+                            <div class="testimonial-name">Ahmed K.</div>
+                            <div class="testimonial-verified">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Verified Purchase
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"Great selection of products and the affiliate links work perfectly. Saved me hours of searching on Amazon. Highly recommended!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emma R." class="testimonial-avatar">
+                        <div class="testimonial-meta">
+                            <div class="testimonial-name">Emma R.</div>
+                            <div class="testimonial-verified">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                                Verified Purchase
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <p class="testimonial-text">"The skincare set is a game changer! Natural ingredients and my skin has never looked better. Plus the discount was incredible!"</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Newsletter / CTA Section -->
-<section class="cta-section" id="cta">
-    <div class="container">
-        <div class="cta-card">
-            <div class="cta-content">
-                <h2 class="cta-title" data-key="cta_title">Get Weekly Amazon Deals</h2>
-                <p class="cta-desc" data-key="cta_desc">Join 5,000+ shoppers getting the best prices.</p>
+    <section class="cta-section" id="cta">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2 class="cta-title" data-key="cta_title">Join the Yallabuy Family</h2>
+                    <p class="cta-desc" data-key="cta_desc">Subscribe for exclusive deals, new arrivals, and insider perks.</p>
+                </div>
+                <form class="cta-form" onsubmit="event.preventDefault();">
+                    <input type="email" class="cta-input" placeholder="Enter your email" data-key-placeholder="placeholder_email" aria-label="Email address">
+                    <a href="e.html" id="px" style="text-decoration: none; display: inline-block; padding: 10px 20px; background:Orange; color: white; border-radius: 5px; margin: auto;">
+                        Next
+                    </a>
+                </form>
             </div>
-            <form class="cta-form" onsubmit="event.preventDefault();">
-                <input type="email" class="cta-input" placeholder="Enter your email" data-key-placeholder="placeholder_email" aria-label="Email address">
-                <br>
-                <a href="e.html" id="px" style="text-decoration: none; display: inline-block; padding: 10px 20px; background: Orange; color: white; border-radius: 5px; margin: auto; text-align: center;">
-                    Subscribe
-                </a>
-            </form>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Footer -->
     <footer class="footer" id="footer">
-        
-  <p style="font-size: 12px; color: #888; text-align: center;">
-    Yallabuy participates in the Amazon Services LLC Associates Program. 
-    We may earn a commission when you purchase through links on our site — 
-    at no extra cost to you. 
-    <a href="amazon/affiliate-disclosure.html">Learn more</a>
-  </p>
-
-
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -1687,31 +2370,32 @@ ul {
                 </div>
             </div>
         </div>
-        <div style=" padding: 20px; margin-top: 40px; text-align: center;">
-  <p style="font-size: 12px; color: #888;">
-    Yallabuy participates in the Amazon Services LLC Associates Program. 
-    We may earn a commission when you purchase through links on our site — 
-    at no extra cost to you. 
-    <a href="amazon/affiliate-disclosure.html">Learn more</a>
-  </p>
-  <p style="font-size: 11px; color: #aaa; margin-top: 10px;">
-    <a href="amazon/privacy-policy.html">Privacy Policy</a> | 
-    <a href="amazon/terms-of-service.html">Terms of Service</a> | 
-    <a href="contact.html">Contact</a>
-  </p>
-</div>
-
+        <div class="affiliate-disclosure">
+            <p>
+                Yallabuy participates in the Amazon Services LLC Associates Program. 
+                We may earn a commission when you purchase through links on our site — 
+                at no extra cost to you. 
+                <a href="amazon/affiliate-disclosure.html">Learn more</a>
+            </p>
+            <p style="margin-top: 10px;">
+                <a href="amazon/privacy-policy.html">Privacy Policy</a> | 
+                <a href="amazon/terms-of-service.html">Terms of Service</a> | 
+                <a href="contact.html">Contact</a>
+            </p>
+        </div>
     </footer>
 
     <!-- Toast Notification -->
     <div class="toast" id="toast" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
         <span class="toast-message" id="toast-message"></span>
     </div>
 
-    <script src="script.js">
-        
-        
-        /* ============================================
+    <script>
+     /* ============================================
    YALLABUY — JAVASCRIPT APPLICATION
    ============================================ */
 
@@ -1731,8 +2415,13 @@ ul {
             hero_badge: 'New Collection',
             hero_title: 'Shop Smarter, Live Better',
             hero_desc: 'Discover premium products with lightning-fast delivery. Your satisfaction is our mission.',
+            hero_trust_1: 'Amazon Prime Delivery',
+            hero_trust_2: 'Secure Checkout',
+            hero_trust_3: '30-Day Returns',
             btn_shop_now: 'Shop Now',
-            btn_learn_more: 'Learn More',
+            btn_learn_more: 'Read the article',
+            social_proof_count: '5,000+',
+            social_proof_text: 'happy shoppers trust Yallabuy',
             trust_shipping_title: 'Free Shipping',
             trust_shipping_desc: 'On all orders over $50. Fast and reliable delivery to your door.',
             trust_quality_title: 'Quality Guaranteed',
@@ -1742,6 +2431,9 @@ ul {
             section_label: 'Our Collection',
             section_title: 'Featured Products',
             section_desc: 'Handpicked items just for you. Premium quality at unbeatable prices.',
+            testimonials_label: 'Testimonials',
+            testimonials_title: 'What Our Customers Say',
+            testimonials_desc: 'Real reviews from real shoppers who love Yallabuy.',
             badge_bestseller: 'Bestseller',
             badge_new: 'New',
             badge_sale: 'Sale',
@@ -1751,7 +2443,9 @@ ul {
             product_2_desc: 'Track your health, sleep, and workouts with precision sensors and GPS.',
             product_3_name: 'Organic Skincare Set',
             product_3_desc: 'Natural ingredients for radiant skin. Cruelty-free and eco-friendly.',
-            btn_buy: 'Buy Now',
+            stock_low: 'Only {count} left!',
+            shipping_prime: 'Free Prime Shipping',
+            btn_buy: 'Buy on Amazon',
             cta_title: 'Join the Yallabuy Family',
             cta_desc: 'Subscribe for exclusive deals, new arrivals, and insider perks.',
             placeholder_email: 'Enter your email',
@@ -1770,9 +2464,10 @@ ul {
             footer_copyright: '2026 Yallabuy. All rights reserved.',
             footer_privacy: 'Privacy Policy',
             footer_terms: 'Terms of Service',
-            toast_buy: 'Added to cart!',
+            toast_buy: 'Redirecting to Amazon...',
             toast_subscribe: 'Subscribed successfully!',
             toast_wishlist: 'Added to wishlist!',
+            toast_wishlist_remove: 'Removed from wishlist!',
             lang_label: 'AR'
         },
         ar: {
@@ -1783,8 +2478,13 @@ ul {
             hero_badge: 'تشكيلة جديدة',
             hero_title: 'تسوق بذكاء، عش بشكل أفضل',
             hero_desc: 'اكتشف منتجات متميزة مع توصيل فائق السرعة. رضاك هو مهمتنا.',
+            hero_trust_1: 'توصيل أمازون برايم',
+            hero_trust_2: 'دفع آمن',
+            hero_trust_3: 'إرجاع خلال 30 يوم',
             btn_shop_now: 'تسوق الآن',
-            btn_learn_more: 'اعرف المزيد',
+            btn_learn_more: 'اقرأ المقال',
+            social_proof_count: '+5,000',
+            social_proof_text: 'متسوق سعيد يثق في يلاباي',
             trust_shipping_title: 'شحن مجاني',
             trust_shipping_desc: 'على جميع الطلبات فوق 50 دولار. توصيل سريع وموثوق إلى باب منزلك.',
             trust_quality_title: 'جودة مضمونة',
@@ -1794,6 +2494,9 @@ ul {
             section_label: 'تشكيلتنا',
             section_title: 'منتجات مميزة',
             section_desc: 'عناصر مختارة خصيصاً لك. جودة ممتازة بأسعار لا تُضاهى.',
+            testimonials_label: 'آراء العملاء',
+            testimonials_title: 'ماذا يقول عملاؤنا',
+            testimonials_desc: 'مراجعات حقيقية من متسوقين حقيقيين يحبون يلاباي.',
             badge_bestseller: 'الأكثر مبيعاً',
             badge_new: 'جديد',
             badge_sale: 'تخفيض',
@@ -1803,7 +2506,9 @@ ul {
             product_2_desc: 'تتبع صحتك ونومك وتدريباتك بأجهزة استشعار دقيقة ونظام تحديد المواقع.',
             product_3_name: 'مجموعة العناية بالبشرة العضوية',
             product_3_desc: 'مكونات طبيعية لبشرة نضرة. خالية من القسوة على الحيوانات وصديقة للبيئة.',
-            btn_buy: 'اشترِ الآن',
+            stock_low: 'تبقى فقط {count} قطع!',
+            shipping_prime: 'شحن برايم مجاني',
+            btn_buy: 'اشتري من أمازون',
             cta_title: 'انضم إلى عائلة يلاباي',
             cta_desc: 'اشترك للحصول على عروض حصرية ووصولات جديدة ومميزات خاصة.',
             placeholder_email: 'أدخل بريدك الإلكتروني',
@@ -1822,9 +2527,10 @@ ul {
             footer_copyright: '2026 يلاباي. جميع الحقوق محفوظة.',
             footer_privacy: 'سياسة الخصوصية',
             footer_terms: 'شروط الخدمة',
-            toast_buy: 'تمت الإضافة إلى السلة!',
+            toast_buy: 'جاري التحويل إلى أمازون...',
             toast_subscribe: 'تم الاشتراك بنجاح!',
             toast_wishlist: 'تمت الإضافة إلى المفضلة!',
+            toast_wishlist_remove: 'تمت الإزالة من المفضلة!',
             lang_label: 'EN'
         }
     };
@@ -1951,6 +2657,121 @@ ul {
     }
 
     // ==========================================
+    // STOCK COUNTER ANIMATION
+    // ==========================================
+
+    function animateStockCounters() {
+        const stockBadges = document.querySelectorAll('.stock-badge');
+        stockBadges.forEach((badge, index) => {
+            const counts = [3, 5, 2];
+            const count = counts[index] || 3;
+            const span = badge.querySelector('span');
+            if (span) {
+                const t = translations[state.language];
+                span.textContent = t.stock_low.replace('{count}', count);
+            }
+        });
+    }
+
+    // ==========================================
+    // SCROLL ANIMATIONS (Intersection Observer)
+    // ==========================================
+
+    function initScrollAnimations() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe product cards
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
+
+        // Observe trust cards
+        document.querySelectorAll('.trust-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
+
+        // Observe testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
+    }
+
+    // Add CSS for animate-in class
+    function addAnimateStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // ==========================================
+    // COUNTDOWN TIMER (for urgency)
+    // ==========================================
+
+    function initCountdownTimers() {
+        // Add a subtle countdown to sale badges
+        const saleBadges = document.querySelectorAll('.badge-sale');
+        saleBadges.forEach(badge => {
+            badge.style.cursor = 'pointer';
+            badge.addEventListener('mouseenter', () => {
+                badge.style.transform = 'scale(1.1)';
+            });
+            badge.addEventListener('mouseleave', () => {
+                badge.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // ==========================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ==========================================
+
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    closeMobileMenu();
+                }
+            });
+        });
+    }
+
+    // ==========================================
     // EVENT LISTENERS
     // ==========================================
 
@@ -1975,10 +2796,10 @@ ul {
             link.addEventListener('click', closeMobileMenu);
         });
 
-        // Buy buttons
+        // Buy buttons - show toast but allow navigation
         document.querySelectorAll('.btn-buy').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.preventDefault();
+                // Don't prevent default - let the link work
                 showToast('toast_buy');
             });
         });
@@ -2000,6 +2821,7 @@ ul {
                     btn.setAttribute('data-filled', 'false');
                     svg.setAttribute('fill', 'none');
                     svg.setAttribute('stroke', 'currentColor');
+                    showToast('toast_wishlist_remove');
                 }
             });
         });
@@ -2047,12 +2869,27 @@ ul {
     // ==========================================
 
     function init() {
+        // Add animate styles
+        addAnimateStyles();
+        
         // Apply saved preferences
         applyTheme(state.theme);
         applyLanguage(state.language);
-
+        
+        // Update stock counters
+        animateStockCounters();
+        
         // Setup event listeners
         initEventListeners();
+        
+        // Init scroll animations
+        initScrollAnimations();
+        
+        // Init countdown timers
+        initCountdownTimers();
+        
+        // Init smooth scroll
+        initSmoothScroll();
     }
 
     // Start the app
@@ -2063,7 +2900,7 @@ ul {
     }
 
 })();
-
+   
     </script>
 </body>
 </html>

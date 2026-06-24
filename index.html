@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" id="root-html">
 <head>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20x%3D%223%22%20y%3D%223%22%20width%3D%2294%22%20height%3D%2294%22%20rx%3D%2220%22%20fill%3D%22%230a1628%22/%3E%3Ctext%20x%3D%2250%22%20y%3D%2266%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2255%22%20font-weight%3D%22900%22%20fill%3D%22%23f97316%22%20text-anchor%3D%22middle%22%3EY%3C/text%3E%3C/svg%3E">
-<!-- Open Graph / Facebook / WhatsApp -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://yallabuy-sg5c.vercel.app/">
-<meta property="og:title" content="Yallabuy - Shop Smarter, Live Better">
-<meta property="og:description" content="Discover premium products at unbeatable prices. Handpicked Amazon deals with free Prime shipping. Shop smart, save more!">
-<meta property="og:image" content="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=630&fit=crop">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:site_name" content="Yallabuy">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&h=630&fit=crop">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Yallabuy - Your ultimate destination for smart online shopping! Discover a curated collection of premium products at unbeatable prices, with fast delivery & secure checkout. Shop smart, save more.">
@@ -26,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+      
+       
         /* ============================================
    YALLABUY — CSS VARIABLES & THEME SYSTEM
    ============================================ */
@@ -1791,10 +1778,11 @@ ul {
         transition-duration: 0.01ms !important;
     }
 
-    html {
-        scroll-behavior: auto;
-    }
-}
+  
+
+
+
+    
 
     </style>
 </head>
@@ -1986,235 +1974,32 @@ ul {
     <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="container">
-            <div class="section-header">
+                        <!-- Product Search Bar -->
+            <div class="product-search-wrapper" style="max-width: 500px; margin: 0 auto 2rem; position: relative;">
+                <input type="text" class="search-input" id="product-search-input" placeholder="Search products..." style="width: 100%; padding: 14px 50px 14px 20px; font-size: 16px; border: 2px solid var(--border-color); border-radius: var(--radius-full); background: var(--bg-input); color: var(--text-primary); outline: none; transition: all 0.3s;">
+                <svg style="position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-muted); pointer-events: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+            </div>
+
+<div class="section-header">
                 <span class="section-label" data-key="section_label">Our Collection</span>
                 <h2 class="section-title" data-key="section_title">Featured Products</h2>
                 <p class="section-desc" data-key="section_desc">Handpicked items just for you. Premium quality at unbeatable prices.</p>
             </div>
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <article class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" alt="Premium Wireless Headphones" class="product-image" loading="lazy">
-                        <div class="product-badge" data-key="badge_bestseller">Bestseller</div>
-                        <div class="stock-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                            <span data-key="stock_low">Only 3 left!</span>
-                        </div>
-                        <button class="product-wishlist" aria-label="Add to wishlist">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-rating">
-                            <div class="stars">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                            <span class="rating-text">4.5 (1,247 reviews)</span>
-                        </div>
-                        <h3 class="product-name" data-key="product_1_name">Premium Wireless Headphones</h3>
-                        <ul class="product-features">
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                Active Noise Cancellation
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                30-Hour Battery Life
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                Bluetooth 5.3
-                            </li>
-                        </ul>
-                        <div class="product-price-section">
-                            <div class="product-price-row">
-                                <span class="product-price">$50.99</span>
-                                <span class="old-price">$89.99</span>
-                            </div>
-                            <span class="savings-badge">Save 43%</span>
-                        </div>
-                        <div class="product-shipping">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                            <span data-key="shipping_prime">Free Prime Shipping</span>
-                        </div>
-                        <div class="product-footer">
-                            <a href="products/product1.html">
-                                <button class="btn-compare">Compare</button>
-                            </a>
-                            <a href="https://www.amazon.eg/WH-CH720N-%D8%B3%D9%88%D9%86%D9%8A-%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86-%D9%84%D9%84%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%D9%8A%D8%A9/dp/B0BS1QCFHX?dib=eyJ2IjoiMSJ9.aIzrOJryIgctYppgB7JL_72H5RWESHuIJLDKVZDBv4jdAiiwzV5h7bq-At8wwl4kIFdtsj4fk0Yf50ksh5vpg66vPy-DbtGp0ImAIgNa9XoMsQFGUauCW8DGNfQKNyIwgKbzrbQUP567G_FxkSNoSSQ9wg_mIS2XRNbFLQhvZQWIxrKKJfKX-UqgVF9RyDbmMv_2ZCf6WtdKMvEah8wr6Q.5-MmcIDCgHwHWTSqRKE9p_TcAI47n8OfMCwA0X5duoM&dib_tag=se&keywords=Premium%2BWireless%2BHeadphones&qid=1781346099&s=electronics&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-5&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=cd940edd762a65600df084afdfc656fb&ref_=as_li_ss_tl">
-                                <button class="btn-buy">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                        <circle cx="12" cy="12" r="3"/>
-                                    </svg>
-                                    Buy on Amazon
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 2 -->
-                <article class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Smart Fitness Watch" class="product-image" loading="lazy">
-                        <div class="product-badge badge-new" data-key="badge_new">New</div>
-                        <div class="stock-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                            <span data-key="stock_low">Only 5 left!</span>
-                        </div>
-                        <button class="product-wishlist" aria-label="Add to wishlist">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-rating">
-                            <div class="stars">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                            <span class="rating-text">4.8 (892 reviews)</span>
-                        </div>
-                        <h3 class="product-name" data-key="product_2_name">Smart Fitness Watch</h3>
-                        <ul class="product-features">
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                Heart Rate & SpO2 Monitor
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                GPS + 50+ Sport Modes
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                7-Day Battery Life
-                            </li>
-                        </ul>
-                        <div class="product-price-section">
-                            <div class="product-price-row">
-                                <span class="product-price">$25.99</span>
-                                <span class="old-price">$49.99</span>
-                            </div>
-                            <span class="savings-badge">Save 48%</span>
-                        </div>
-                        <div class="product-shipping">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                            <span data-key="shipping_prime">Free Prime Shipping</span>
-                        </div>
-                        <div class="product-footer">
-                            <a href="products/product2.html">
-                                <button class="btn-compare">Compare</button>
-                            </a>
-                            <a href="https://www.amazon.eg/%D8%B1%D9%8A%D8%AF%D9%85%D9%8A-%D9%88%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%D8%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA/dp/B0DFHFM1X9?pd_rd_w=YUmLL&content-id=amzn1.sym.029f96f5-c9bf-4cfb-b573-9164eb586505%3Aamzn1.symc.30e3dbb4-8dd8-4bad-b7a1-a45bcdbc49b8&pf_rd_p=029f96f5-c9bf-4cfb-b573-9164eb586505&pf_rd_r=DFGJMD2VCJTS0RE71Y1A&pd_rd_wg=zdEP8&pd_rd_r=fcfa76bc-5cfa-48f8-a3c4-15970dd24bde&pd_rd_i=B0DFHFM1X9&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=053d94f3ba12891b369a7f8ecd970cf9&ref_=as_li_ss_tl">
-                                <button class="btn-buy">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                        <circle cx="12" cy="12" r="3"/>
-                                    </svg>
-                                    Buy on Amazon
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Product 3 -->
-                <article class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&h=600&fit=crop" alt="Organic Skincare Set" class="product-image" loading="lazy">
-                        <div class="product-badge badge-sale" data-key="badge_sale">Sale</div>
-                        <div class="stock-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                            <span data-key="stock_low">Only 2 left!</span>
-                        </div>
-                        <button class="product-wishlist" aria-label="Add to wishlist">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-rating">
-                            <div class="stars">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor" class="half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                            <span class="rating-text">4.3 (2,156 reviews)</span>
-                        </div>
-                        <h3 class="product-name" data-key="product_3_name">Organic Skincare Set</h3>
-                        <ul class="product-features">
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                100% Natural Ingredients
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                Cruelty-Free & Vegan
-                            </li>
-                            <li>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                                Eco-Friendly Packaging
-                            </li>
-                        </ul>
-                        <div class="product-price-section">
-                            <div class="product-price-row">
-                                <span class="product-price">$39.99</span>
-                                <span class="old-price">$59.99</span>
-                            </div>
-                            <span class="savings-badge">Save 33%</span>
-                        </div>
-                        <div class="product-shipping">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                            <span data-key="shipping_prime">Free Prime Shipping</span>
-                        </div>
-                        <div class="product-footer">
-                            <a href="products/product3.html">
-                                <button class="btn-compare">Compare</button>
-                            </a>
-                            <a href="https://www.amazon.com/Eight-Saints-Skincare-Starter-Routine/dp/B08WZH1K3H?crid=24IT5TY9QOQD3&dib=eyJ2IjoiMSJ9.rxjeO9kscuCIFwkUW0quMxhxuTUMskCbiVtNiW1v5YWngxACeTUWW7AiUjlKQ8m6Xp28_7wDM5NNljpYEjDNE3bcYPYbF74EsgPIGcdzmO4pve3THcXIkt6EDnzYXRWEuQWBl2sSe9dpkpAB-1o3XgogqJjiaCWqgc6004gjMnVtNuaLVROAlTMDI5uOJQa605xafs3FX4K5SpQ4I0SVtuYJqPMPNakcn5gDxJKaqJh6zMyvPszZ5yERkxbn6xrSZCBdKegEyHMNp7eAgp4Xq_r8iKQp4qMi_0q9PmYL8ak.n4oYvTU2b2tL1UXxCq5cm81V-EuzNn8MtnmfK7YSel0&dib_tag=se&keywords=organic+skincare+set&qid=1781650202&sprefix=Organic+Skincare+Set%2Caps%2C960&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=yallabuy2010-20&linkId=c2c47e030aed038c16ff5c796a52ab27&language=en_US&ref_=as_li_ss_tl">
-                            <button class="btn-buy">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                    <circle cx="12" cy="12" r="3"/>
-                                </svg>
-                                Buy on Amazon
-                            </button>
-                            </a>
-                        </div>
-                    </div>
-                </article>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products rendered by JavaScript -->
+            </div>
+            <!-- No Search Results Message -->
+            <div class="no-search-results" id="no-search-results">
+                <div class="no-search-results-icon">😕</div>
+                <p data-key="no_results">No products found. Try a different search term.</p>
             </div>
         </div>
-                <br>
+        <br>
 <a href="e.html" style="text-decoration: none; display: block; text-align: center; color: Orange; font-style: italic; "><h1>Show More</h1></a>
-
+ 
     </section>
 
     <!-- Testimonials Section -->
@@ -2486,6 +2271,8 @@ ul {
             toast_subscribe: 'Subscribed successfully!',
             toast_wishlist: 'Added to wishlist!',
             toast_wishlist_remove: 'Removed from wishlist!',
+            search_placeholder: 'Search products...',
+            no_results: 'No products found. Try a different search term.',
             lang_label: 'AR'
         },
         ar: {
@@ -2549,6 +2336,8 @@ ul {
             toast_subscribe: 'تم الاشتراك بنجاح!',
             toast_wishlist: 'تمت الإضافة إلى المفضلة!',
             toast_wishlist_remove: 'تمت الإزالة من المفضلة!',
+            search_placeholder: 'ابحث عن منتج...',
+            no_results: 'لم يتم العثور على منتجات. جرب مصطلح بحث مختلف.',
             lang_label: 'EN'
         }
     };
@@ -2617,6 +2406,25 @@ ul {
         });
 
         // Update placeholder attributes
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-key-placeholder');
+            if (t[key] !== undefined) {
+                el.setAttribute('placeholder', t[key]);
+            }
+        });
+        
+        // Update search placeholder
+        updateSearchPlaceholder();
+        
+        // Re-run search to update visibility
+        const searchInput = document.getElementById('product-search');
+        if (searchInput) {
+            searchInput.dispatchEvent(new Event('input'));
+        }
+        
+        return; // Skip the old loop below
+        
+        // Old placeholder update (kept for compatibility)
         document.querySelectorAll('[data-key-placeholder]').forEach(el => {
             const key = el.getAttribute('data-key-placeholder');
             if (t[key] !== undefined) {
@@ -2882,6 +2690,228 @@ ul {
         });
     }
 
+
+
+    // ==========================================
+    // RENDER PRODUCTS FROM JS ARRAY
+    // ==========================================
+
+    const products = [
+        {
+            id: 1,
+            name: "Premium Wireless Headphones",
+            price: "$50.99",
+            oldPrice: "$89.99",
+            image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop",
+            alt: "Premium Wireless Headphones",
+            badge: "Bestseller",
+            badgeClass: "",
+            rating: "4.5 (1,247 reviews)",
+            features: ["Active Noise Cancellation", "30-Hour Battery Life", "Bluetooth 5.3"],
+            buyLink: "https://www.amazon.eg/WH-CH720N-%D8%B3%D9%88%D9%86%D9%8A-%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86-%D9%84%D9%84%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%D9%8A%D8%A9/dp/B0BS1QCFHX?dib=eyJ2IjoiMSJ9.aIzrOJryIgctYppgB7JL_72H5RWESHuIJLDKVZDBv4jdAiiwzV5h7bq-At8wwl4kIFdtsj4fk0Yf50ksh5vpg66vPy-DbtGp0ImAIgNa9XoMsQFGUauCW8DGNfQKNyIwgKbzrbQUP567G_FxkSNoSSQ9wg_mIS2XRNbFLQhvZQWIxrKKJfKX-UqgVF9RyDbmMv_2ZCf6WtdKMvEah8wr6Q.5-MmcIDCgHwHWTSqRKE9p_TcAI47n8OfMCwA0X5duoM&dib_tag=se&keywords=Premium%2BWireless%2BHeadphones&qid=1781346099&s=electronics&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-5&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=cd940edd762a65600df084afdfc656fb&ref_=as_li_ss_tl",
+            compareLink: "products/product1.html",
+            stock: "Only 3 left!",
+            shipping: "Free Prime Shipping",
+            savings: "Save 43%"
+        },
+        {
+            id: 2,
+            name: "Smart Fitness Watch",
+            price: "$25.99",
+            oldPrice: "$49.99",
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop",
+            alt: "Smart Fitness Watch",
+            badge: "New",
+            badgeClass: "badge-new",
+            rating: "4.8 (892 reviews)",
+            features: ["Heart Rate & SpO2 Monitor", "GPS + 50+ Sport Modes", "7-Day Battery Life"],
+            buyLink: "https://www.amazon.eg/%D8%B1%D9%8A%D8%AF%D9%85%D9%8A-%D9%88%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%D8%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA/dp/B0DFHFM1X9?pd_rd_w=YUmLL&content-id=amzn1.sym.029f96f5-c9bf-4cfb-b573-9164eb586505%3Aamzn1.symc.30e3dbb4-8dd8-4bad-b7a1-a45bcdbc49b8&pf_rd_p=029f96f5-c9bf-4cfb-b573-9164eb586505&pf_rd_r=DFGJMD2VCJTS0RE71Y1A&pd_rd_wg=zdEP8&pd_rd_r=fcfa76bc-5cfa-48f8-a3c4-15970dd24bde&pd_rd_i=B0DFHFM1X9&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=053d94f3ba12891b369a7f8ecd970cf9&ref_=as_li_ss_tl",
+            compareLink: "products/product2.html",
+            stock: "Only 5 left!",
+            shipping: "Free Prime Shipping",
+            savings: "Save 48%"
+        },
+        {
+            id: 3,
+            name: "Organic Skincare Set",
+            price: "$39.99",
+            oldPrice: "$59.99",
+            image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&h=600&fit=crop",
+            alt: "Organic Skincare Set",
+            badge: "Sale",
+            badgeClass: "badge-sale",
+            rating: "4.3 (2,156 reviews)",
+            features: ["100% Natural Ingredients", "Cruelty-Free & Vegan", "Eco-Friendly Packaging"],
+            buyLink: "https://www.amazon.com/Eight-Saints-Skincare-Starter-Routine/dp/B08WZH1K3H?crid=24IT5TY9QOQD3&dib=eyJ2IjoiMSJ9.rxjeO9kscuCIFwkUW0quMxhxuTUMskCbiVtNiW1v5YWngxACeTUWW7AiUjlKQ8m6Xp28_7wDM5NNljpYEjDNE3bcYPYbF74EsgPIGcdzmO4pve3THcXIkt6EDnzYXRWEuQWBl2sSe9dpkpAB-1o3XgogqJjiaCWqgc6004gjMnVtNuaLVROAlTMDI5uOJQa605xafs3FX4K5SpQ4I0SVtuYJqPMPNakcn5gDxJKaqJh6zMyvPszZ5yERkxbn6xrSZCBdKegEyHMNp7eAgp4Xq_r8iKQp4qMi_0q9PmYL8ak.n4oYvTU2b2tL1UXxCq5cm81V-EuzNn8MtnmfK7YSel0&dib_tag=se&keywords=organic+skincare+set&qid=1781650202&sprefix=Organic+Skincare+Set%2Caps%2C960&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=yallabuy2010-20&linkId=c2c47e030aed038c16ff5c796a52ab27&language=en_US&ref_=as_li_ss_tl",
+            compareLink: "products/product3.html",
+            stock: "Only 2 left!",
+            shipping: "Free Prime Shipping",
+            savings: "Save 33%"
+        }
+        
+    ];
+
+    function renderProducts(productsToRender) {
+        const grid = document.getElementById('productsGrid');
+        const noResults = document.getElementById('no-search-results');
+
+        if (!grid) return;
+
+        if (productsToRender.length === 0) {
+            grid.innerHTML = '';
+            if (noResults) noResults.classList.add('show');
+            return;
+        }
+
+        if (noResults) noResults.classList.remove('show');
+
+        grid.innerHTML = productsToRender.map(product => `
+            <article class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
+                    <div class="product-badge ${product.badgeClass}">${product.badge}</div>
+                    <div class="stock-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                        <span>${product.stock}</span>
+                    </div>
+                    <button class="product-wishlist" aria-label="Add to wishlist">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-text">${product.rating}</span>
+                    </div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <ul class="product-features">
+                        ${product.features.map(f => `
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                ${f}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <div class="product-price-section">
+                        <div class="product-price-row">
+                            <span class="product-price">${product.price}</span>
+                            <span class="old-price">${product.oldPrice}</span>
+                        </div>
+                        <span class="savings-badge">${product.savings}</span>
+                    </div>
+                    <div class="product-shipping">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                        <span>${product.shipping}</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="${product.compareLink}">
+                            <button class="btn-compare">Compare</button>
+                        </a>
+                        <a href="${product.buyLink}">
+                            <button class="btn-buy">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Buy on Amazon
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `).join('');
+
+        // Re-attach wishlist listeners
+        attachWishlistListeners();
+    }
+
+    function attachWishlistListeners() {
+        document.querySelectorAll('.product-wishlist').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const svg = btn.querySelector('svg');
+                const isFilled = btn.getAttribute('data-filled') === 'true';
+
+                if (!isFilled) {
+                    btn.setAttribute('data-filled', 'true');
+                    svg.setAttribute('fill', '#ef4444');
+                    svg.setAttribute('stroke', '#ef4444');
+                    showToast('toast_wishlist');
+                } else {
+                    btn.setAttribute('data-filled', 'false');
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                    showToast('toast_wishlist_remove');
+                }
+            });
+        });
+    }
+
+
+    // ==========================================
+    // PRODUCT SEARCH FUNCTIONALITY
+    // ==========================================
+
+    function initProductSearch() {
+        const searchInput = document.getElementById('product-search-input');
+        const noResults = document.getElementById('no-search-results');
+
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.trim().toLowerCase();
+
+            if (searchTerm === '') {
+                renderProducts(products);
+                return;
+            }
+
+            const filtered = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.features.some(f => f.toLowerCase().includes(searchTerm))
+            );
+
+            renderProducts(filtered);
+        });
+
+        // Clear search on Escape key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                renderProducts(products);
+                this.blur();
+            }
+        });
+    }
+
+    // ==========================================
+    // UPDATE SEARCH PLACEHOLDER BASED ON LANGUAGE
+    // ==========================================
+
+    function updateSearchPlaceholder() {
+        const searchInput = document.getElementById('product-search-input');
+        if (!searchInput) return;
+
+        const t = translations[state.language];
+        if (t && t.search_placeholder) {
+            searchInput.setAttribute('placeholder', t.search_placeholder);
+        }
+    }
+
+
     // ==========================================
     // INITIALIZATION
     // ==========================================
@@ -2905,6 +2935,13 @@ ul {
         
         // Init countdown timers
         initCountdownTimers();
+        
+        // Init product search
+        initProductSearch();
+        updateSearchPlaceholder();
+
+        // Render products from JS array
+        renderProducts(products);
         
         // Init smooth scroll
         initSmoothScroll();

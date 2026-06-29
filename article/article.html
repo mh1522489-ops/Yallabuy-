@@ -986,6 +986,348 @@
             <!-- ALL 4 CARDS INSIDE .guides-grid -->
             <div class="guides-grid">
                 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f2f2f7;
+            color: #1c1c1e;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e5e5ea;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1c1c1e;
+            letter-spacing: -0.5px;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .get-started-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 28px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .get-started-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .get-started-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px 16px;
+        }
+
+        /* ===== SEARCH BAR ===== */
+        .search-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 16px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid #e5e5ea;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 16px;
+            width: 100%;
+            color: #8e8e93;
+            background: transparent;
+        }
+
+        .search-box input::placeholder {
+            color: #c7c7cc;
+        }
+
+        /* ===== VOICE CARD ===== */
+        .voice-card {
+            background: #1c1c2e;
+            border-radius: 28px;
+            padding: 50px 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .voice-card:hover {
+            transform: scale(1.01);
+        }
+
+        .new-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #3b82f6;
+            color: white;
+            padding: 8px 22px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .mic-icon {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 16px;
+            opacity: 0.6;
+        }
+
+        .mic-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: #636366;
+        }
+
+        .voice-text {
+            color: #8e8e93;
+            font-size: 17px;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* ===== ARTICLE CARD ===== */
+        .article-card {
+            background: #ffffff;
+            border-radius: 28px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            border: 1px solid #e5e5ea;
+        }
+
+        .article-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            background: #1c1c2e;
+        }
+
+        .article-content {
+            padding: 28px 24px 32px;
+        }
+
+        .article-title {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1c1c1e;
+            margin-bottom: 14px;
+            line-height: 1.25;
+            letter-spacing: -0.3px;
+        }
+
+        .article-desc {
+            font-size: 16px;
+            color: #636366;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .read-guide {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s ease;
+            cursor: pointer;
+        }
+
+        .read-guide:hover {
+            gap: 12px;
+            color: #2563eb;
+        }
+
+        .arrow {
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* ===== COMING SOON CARD ===== */
+        .coming-soon-card {
+            background: #1c1c2e;
+            border-radius: 28px;
+            padding: 32px 24px;
+            position: relative;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .coming-soon-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 28px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            text-align: center;
+            padding: 40px 20px 30px;
+            color: #8e8e93;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.08); opacity: 0.9; }
+        }
+
+        .mic-icon {
+            animation: pulse 2.5s ease-in-out infinite;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 480px) {
+            .container {
+                padding: 16px 12px;
+            }
+            
+            .logo {
+                font-size: 28px;
+            }
+            
+            .article-title {
+                font-size: 22px;
+            }
+            
+            .voice-card {
+                min-height: 260px;
+                padding: 40px 20px;
+            }
+        }
+    </style>
+
+
+        
+
+        <!-- Article Card -->
+        <article class="article-card">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=400&fit=crop" 
+                 alt="Top 10 Headphones of 2026" class="article-image">
+            <div class="article-content">
+                <h2 class="article-title"> Headphones</h2>
+                <p class="article-desc">
+                    From audiophile-grade studio monitors to budget-friendly wireless earbuds, 
+                    find the perfect sound for every lifestyle and budget. Featuring the latest 
+                    Sony WH-1000XM6, Sennheiser HDB 630, and Bose QC Ultra Gen 2.
+                </p>
+                <a href="#" class="read-guide" onclick="event.preventDefault(); showGuide()">
+                    Read Guide <span class="arrow">→</span>
+                </a>
+            </div>
+        </article>
+
+        
+
+    <script>
+        // Voice search interaction
+        function activateVoice() {
+            const mic = document.querySelector('.mic-icon');
+            const text = document.getElementById('voiceText');
+            const card = document.querySelector('.voice-card');
+            
+            // Visual feedback
+            mic.style.animation = 'none';
+            mic.offsetHeight; // trigger reflow
+            mic.style.animation = 'pulse 0.4s ease-in-out infinite';
+            
+            text.textContent = 'Listening...';
+            text.style.color = '#3b82f6';
+            card.style.background = '#252538';
+            
+            setTimeout(() => {
+                text.textContent = 'Tap to search by voice';
+                text.style.color = '#8e8e93';
+                card.style.background = '#1c1c2e';
+                mic.style.animation = 'pulse 2.5s ease-in-out infinite';
+            }, 3500);
+        }
+
+        
+        // Get Started button
+     document.querySelector('.get-started-btn').addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+                alert('Welcome to Yallabuy! 🎧');
+            }, 150);
+        });
+
+        // Read Guide
+        function showGuide() {
+            alert('Full guide coming soon! Check back for the complete Top 10 Headphones review.');
+        }
+
+        // Search input focus effect
+        const searchInput = document.querySelector('.search-box input');
+        const searchBox = document.querySelector('.search-box');
+        
+        searchInput.addEventListener('focus', () => {
+            searchBox.style.borderColor = '#3b82f6';
+            searchBox.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            searchBox.style.borderColor = '#e5e5ea';
+            searchBox.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04)';
+        });
+    </script>
+
                 <!-- Card 1: Best-Selling Products -->
                 <a href="best-selling-products-amazon.html" class="guide-card fade-in">
                     <div class="guide-image">

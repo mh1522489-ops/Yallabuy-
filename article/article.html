@@ -10,6 +10,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* الموبايل: عمود واحد */
+.articles-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* الكمبيوتر: 4 أعمدة */
+@media (min-width: 768px) {
+  .articles-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* تابلت: عمودين */
+@media (min-width: 480px) and (max-width: 767px) {
+  .articles-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
         :root {
             --primary: #0f172a;
             --primary-light: #1e293b;

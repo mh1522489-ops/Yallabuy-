@@ -10,7 +10,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+    /* ============================================ */
+/* ===== GUIDES GRID - FIXED FOR DESKTOP ===== */
+/* ============================================ */
+
+/* الكمبيوتر: 4 أعمدة جنب بعض */
+.guides-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2rem !important;
+}
+
+/* التابلت: عمودين */
+@media (max-width: 1024px) {
+    .guides-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* الموبايل: عمود واحد فوق بعض */
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
     
+    .guide-card {
+        max-width: 100% !important;
+    }
+}
+
 
         :root {
             --primary: #0f172a;

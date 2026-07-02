@@ -3,253 +3,1801 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yallabuy - Your ultimate destination for smart online shopping!">
+    <meta name="description" content="Yallabuy - Your ultimate destination for smart online shopping! Discover a curated collection of premium products at unbeatable prices, with fast delivery & secure checkout. Shop smart, save more.">
+
     <title>Yallabuy</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --color-navy: #0a1628; --color-navy-light: #1a2a4a; --color-orange: #f97316;
-            --color-orange-light: #fb923c; --color-orange-dark: #ea580c; --color-yellow: #fbbf24;
-            --color-green: #22c55e; --color-red: #ef4444; --bg-body: #f8fafc;
-            --bg-surface: #ffffff; --bg-header: rgba(255,255,255,0.85); --bg-card: #ffffff;
-            --bg-input: #f1f5f9; --bg-badge: #fef3c7; --bg-badge-new: #dbeafe; --bg-badge-sale: #fee2e2;
-            --text-primary: #0f172a; --text-secondary: #475569; --text-muted: #94a3b8;
-            --text-on-primary: #ffffff; --border-color: #e2e8f0; --border-subtle: #f1f5f9;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
-            --transition-fast: 150ms ease; --transition-base: 250ms ease;
-            --font-family: 'Inter', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
-            --font-size-xs: 0.75rem; --font-size-sm: 0.875rem; --font-size-base: 1rem;
-            --font-size-lg: 1.125rem; --font-size-xl: 1.25rem; --font-size-2xl: 1.5rem;
-            --font-size-3xl: 2rem; --font-size-4xl: 2.5rem; --font-size-5xl: 3.5rem;
-            --header-height: 72px;
-        }
-        [data-theme="dark"] {
-            --bg-body: #0a0f1a; --bg-surface: #111827; --bg-header: rgba(10,15,26,0.9);
-            --bg-card: #1a2332; --bg-input: #1e293b; --bg-badge: #451a03;
-            --bg-badge-new: #1e3a5f; --bg-badge-sale: #450a0a;
-            --text-primary: #f1f5f9; --text-secondary: #94a3b8; --text-muted: #64748b;
-            --border-color: #1e293b; --border-subtle: #1a2332;
-            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
-        }
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
-        body { font-family:var(--font-family); font-size:var(--font-size-base); line-height:1.6; color:var(--text-primary); background:var(--bg-body); min-height:100vh; overflow-x:hidden; }
-        img { max-width:100%; height:auto; display:block; }
-        a { color:inherit; text-decoration:none; }
-        button { font-family:inherit; cursor:pointer; border:none; background:none; }
-        ul { list-style:none; }
-        .container { width:100%; max-width:1280px; margin:0 auto; padding:0 1.5rem; }
-        @media(min-width:640px){ .container { padding:0 2rem; } }
-        @media(min-width:1024px){ .container { padding:0 3rem; } }
+      
+       
+        /* ============================================
+   YALLABUY — CSS VARIABLES & THEME SYSTEM
+   ============================================ */
 
-        .header { position:fixed; top:0; left:0; right:0; z-index:1000; height:var(--header-height); background:var(--bg-header); backdrop-filter:blur(20px); border-bottom:1px solid var(--border-color); }
-        .header-container { display:flex; align-items:center; justify-content:space-between; height:100%; max-width:1280px; margin:0 auto; padding:0 1.5rem; }
-        .logo { display:flex; align-items:center; gap:0.75rem; }
-        .logo-icon { width:40px; height:40px; color:var(--color-orange); }
-        .logo-name { font-size:var(--font-size-xl); font-weight:800; letter-spacing:-0.5px; }
-        .logo-slogan { font-size:var(--font-size-xs); color:var(--text-muted); font-weight:500; letter-spacing:0.5px; text-transform:uppercase; }
-        .main-nav { display:none; }
-        @media(min-width:768px){ .main-nav { display:block; } }
-        .nav-list { display:flex; align-items:center; gap:2rem; }
-        .nav-list a { font-size:var(--font-size-sm); font-weight:500; color:var(--text-secondary); position:relative; padding:0.5rem 0; }
-        .nav-list a::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:var(--color-orange); border-radius:2px; transition:width var(--transition-base); }
-        .nav-list a:hover { color:var(--text-primary); }
-        .nav-list a:hover::after { width:100%; }
-        .header-actions { display:flex; align-items:center; gap:0.5rem; }
-        .btn-icon { width:40px; height:40px; border-radius:var(--radius-md); display:flex; align-items:center; justify-content:center; color:var(--text-secondary); background:var(--bg-surface); border:1px solid var(--border-color); transition:all var(--transition-fast); }
-        .btn-icon:hover { color:var(--color-orange); border-color:var(--color-orange); transform:translateY(-1px); box-shadow:var(--shadow-md); }
-        .icon-moon { display:none; }
-        [data-theme="dark"] .icon-sun { display:none; }
-        [data-theme="dark"] .icon-moon { display:block; }
-        .mobile-menu-btn { display:flex; flex-direction:column; gap:5px; padding:8px; margin-left:0.5rem; }
-        .mobile-menu-btn span { display:block; width:22px; height:2px; background:var(--text-primary); border-radius:2px; transition:all var(--transition-base); }
-        @media(min-width:768px){ .mobile-menu-btn { display:none; } }
-        .mobile-menu { position:fixed; top:var(--header-height); left:0; right:0; background:var(--bg-surface); border-bottom:1px solid var(--border-color); padding:1.5rem; transform:translateY(-100%); opacity:0; visibility:hidden; transition:all var(--transition-base); z-index:999; }
-        .mobile-menu.active { transform:translateY(0); opacity:1; visibility:visible; }
-        .mobile-nav-list { display:flex; flex-direction:column; gap:0.5rem; }
-        .mobile-nav-list a { display:block; padding:0.75rem 1rem; font-size:var(--font-size-lg); font-weight:600; border-radius:var(--radius-md); }
-        .mobile-nav-list a:hover { background:var(--bg-input); color:var(--color-orange); }
+:root {
+    /* Brand Colors */
+    --color-navy: #0a1628;
+    --color-navy-light: #1a2a4a;
+    --color-navy-muted: #2a3a5a;
+    --color-orange: #f97316;
+    --color-orange-light: #fb923c;
+    --color-orange-dark: #ea580c;
+    --color-yellow: #fbbf24;
+    --color-yellow-light: #fcd34d;
+    --color-green: #22c55e;
+    --color-green-dark: #16a34a;
+    --color-red: #ef4444;
 
-        .hero { position:relative; min-height:100vh; display:flex; align-items:center; padding-top:var(--header-height); overflow:hidden; }
-        .hero-bg { position:absolute; inset:0; z-index:0; pointer-events:none; }
-        .hero-shape { position:absolute; border-radius:50%; filter:blur(80px); opacity:0.4; }
-        .shape-1 { width:500px; height:500px; background:var(--color-orange); top:-10%; right:-10%; animation:float 8s ease-in-out infinite; }
-        .shape-2 { width:400px; height:400px; background:var(--color-yellow); bottom:-5%; left:-5%; animation:float 10s ease-in-out infinite reverse; }
-        @keyframes float { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(30px,-30px) scale(1.05);} 66%{transform:translate(-20px,20px) scale(0.95);} }
-        .hero-content { position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:4rem 1.5rem; width:100%; }
-        @media(min-width:1024px){ .hero-content { padding:6rem 3rem; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; } }
-        .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; padding:0.5rem 1rem; background:var(--color-orange); color:white; font-size:var(--font-size-xs); font-weight:700; text-transform:uppercase; letter-spacing:1px; border-radius:var(--radius-full); margin-bottom:1.5rem; }
-        .hero-title { font-size:var(--font-size-4xl); font-weight:800; line-height:1.1; margin-bottom:1.5rem; }
-        @media(min-width:640px){ .hero-title { font-size:var(--font-size-5xl); } }
-        .hero-title .highlight { color:var(--color-orange); }
-        .hero-desc { font-size:var(--font-size-lg); color:var(--text-secondary); max-width:480px; margin-bottom:2.5rem; line-height:1.7; }
-        .hero-actions { display:flex; gap:1rem; flex-wrap:wrap; }
-        .hero-trust-bar { display:flex; align-items:center; gap:1.5rem; margin-top:2.5rem; padding-top:1.5rem; border-top:1px solid var(--border-color); flex-wrap:wrap; }
-        .hero-trust-item { display:flex; align-items:center; gap:0.5rem; font-size:var(--font-size-sm); color:var(--text-secondary); }
-        .hero-trust-item svg { width:18px; height:18px; color:var(--color-green); }
-        .hero-visual { display:none; }
-        @media(min-width:1024px){ .hero-visual { display:flex; align-items:center; justify-content:center; } .hero-cart { width:320px; height:320px; color:var(--color-orange); opacity:0.15; } }
+    /* Light Mode */
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-elevated: #ffffff;
+    --bg-header: rgba(255, 255, 255, 0.85);
+    --bg-card: #ffffff;
+    --bg-input: #f1f5f9;
+    --bg-badge: #fef3c7;
+    --bg-badge-new: #dbeafe;
+    --bg-badge-sale: #fee2e2;
 
-        .btn { display:inline-flex; align-items:center; justify-content:center; gap:0.5rem; padding:0.875rem 1.75rem; font-size:var(--font-size-sm); font-weight:600; border-radius:var(--radius-md); transition:all var(--transition-fast); cursor:pointer; white-space:nowrap; }
-        .btn-primary { background:var(--color-orange); color:white; box-shadow:0 4px 14px rgba(249,115,22,0.35); }
-        .btn-primary:hover { background:var(--color-orange-dark); transform:translateY(-2px); box-shadow:0 6px 20px rgba(249,115,22,0.45); }
-        .btn-outline { background:transparent; color:var(--text-primary); border:2px solid var(--border-color); }
-        .btn-outline:hover { border-color:var(--color-orange); color:var(--color-orange); transform:translateY(-2px); }
-        .btn-buy { padding:0.75rem 1.5rem; background:var(--color-orange); color:white; font-size:var(--font-size-sm); font-weight:700; border-radius:var(--radius-md); transition:all var(--transition-fast); box-shadow:0 4px 14px rgba(249,115,22,0.35); display:inline-flex; align-items:center; gap:0.5rem; }
-        .btn-buy:hover { background:var(--color-orange-dark); transform:translateY(-2px); box-shadow:0 6px 20px rgba(249,115,22,0.5); }
-        .btn-compare { padding:0.625rem 1rem; background:transparent; color:var(--text-secondary); font-size:var(--font-size-xs); font-weight:500; border-radius:var(--radius-sm); border:1px solid var(--border-color); transition:all var(--transition-fast); }
-        .btn-compare:hover { border-color:var(--text-primary); color:var(--text-primary); background:var(--bg-input); }
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --text-on-primary: #ffffff;
+    --text-on-dark: #f1f5f9;
 
-        .social-proof-bar { background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); padding:1rem 0; }
-        .social-proof-content { display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap; text-align:center; }
-        .social-proof-avatars { display:flex; align-items:center; }
-        .social-proof-avatars img { width:32px; height:32px; border-radius:50%; border:2px solid var(--bg-surface); margin-left:-8px; object-fit:cover; }
-        .social-proof-avatars img:first-child { margin-left:0; }
-        .social-proof-text { font-size:var(--font-size-sm); color:var(--text-secondary); }
-        .social-proof-stars { display:flex; gap:0.125rem; }
-        .social-proof-stars svg { width:16px; height:16px; color:var(--color-yellow); fill:var(--color-yellow); }
+    --border-color: #e2e8f0;
+    --border-subtle: #f1f5f9;
 
-        .trust-section { padding:5rem 0; background:var(--bg-surface); border-top:1px solid var(--border-color); border-bottom:1px solid var(--border-color); }
-        .trust-grid { display:grid; gap:2rem; }
-        @media(min-width:640px){ .trust-grid { grid-template-columns:repeat(3,1fr); gap:1.5rem; } }
-        .trust-card { text-align:center; padding:2rem 1.5rem; border-radius:var(--radius-lg); background:var(--bg-body); border:1px solid var(--border-subtle); transition:all var(--transition-base); }
-        .trust-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); border-color:var(--color-orange); }
-        .trust-icon { width:64px; height:64px; margin:0 auto 1.25rem; display:flex; align-items:center; justify-content:center; background:var(--color-orange); color:white; border-radius:var(--radius-md); box-shadow:0 8px 20px rgba(249,115,22,0.25); }
-        .trust-icon svg { width:28px; height:28px; }
-        .trust-title { font-size:var(--font-size-lg); font-weight:700; margin-bottom:0.5rem; }
-        .trust-desc { font-size:var(--font-size-sm); color:var(--text-secondary); line-height:1.6; }
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 20px rgba(249, 115, 22, 0.15);
 
-        .products-section { padding:5rem 0; }
-        .section-header { text-align:center; margin-bottom:3.5rem; }
-        .section-label { display:inline-block; font-size:var(--font-size-xs); font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--color-orange); margin-bottom:0.75rem; }
-        .section-title { font-size:var(--font-size-3xl); font-weight:800; margin-bottom:0.75rem; }
-        .section-desc { font-size:var(--font-size-lg); color:var(--text-secondary); max-width:500px; margin:0 auto; }
-        .products-grid { display:grid; gap:2rem; }
-        @media(min-width:640px){ .products-grid { grid-template-columns:repeat(2,1fr); } }
-        @media(min-width:1024px){ .products-grid { grid-template-columns:repeat(3,1fr); gap:2.5rem; } }
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
 
-        .product-card { background:var(--bg-card); border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--border-color); transition:all var(--transition-base); position:relative; }
-        .product-card:hover { transform:translateY(-8px); box-shadow:var(--shadow-xl); border-color:var(--color-orange); }
-        .product-image-wrapper { position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--bg-input); }
-        .product-image { width:100%; height:100%; object-fit:cover; transition:transform var(--transition-slow); }
-        .product-card:hover .product-image { transform:scale(1.08); }
-        .product-badge { position:absolute; top:1rem; left:1rem; padding:0.375rem 0.875rem; background:var(--bg-badge); color:#92400e; font-size:var(--font-size-xs); font-weight:700; text-transform:uppercase; letter-spacing:0.5px; border-radius:var(--radius-full); z-index:2; }
-        .badge-new { background:var(--bg-badge-new); color:#60a5fa; }
-        .badge-sale { background:var(--bg-badge-sale); color:#f87171; }
-        .stock-badge { position:absolute; bottom:1rem; left:1rem; padding:0.375rem 0.75rem; background:rgba(239,68,68,0.9); color:white; font-size:var(--font-size-xs); font-weight:700; border-radius:var(--radius-full); z-index:2; display:flex; align-items:center; gap:0.375rem; animation:pulse-stock 2s ease-in-out infinite; }
-        @keyframes pulse-stock { 0%,100%{opacity:0.9;} 50%{opacity:1; box-shadow:0 0 10px rgba(239,68,68,0.4);} }
-        .product-wishlist { position:absolute; top:1rem; right:1rem; width:40px; height:40px; border-radius:50%; background:var(--bg-surface); color:var(--text-muted); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-md); transition:all var(--transition-fast); z-index:2; }
-        .product-wishlist:hover { color:#ef4444; transform:scale(1.1); }
-        .product-info { padding:1.5rem; }
-        .product-rating { display:flex; align-items:center; gap:0.375rem; margin-bottom:0.5rem; }
-        .product-rating .stars { display:flex; gap:0.125rem; }
-        .product-rating .stars svg { width:14px; height:14px; color:var(--color-yellow); fill:var(--color-yellow); }
-        .product-rating .rating-text { font-size:var(--font-size-xs); color:var(--text-muted); font-weight:500; }
-        .product-name { font-size:var(--font-size-lg); font-weight:700; margin-bottom:0.5rem; line-height:1.3; }
-        .product-features { margin-bottom:1rem; }
-        .product-features li { display:flex; align-items:center; gap:0.5rem; font-size:var(--font-size-xs); color:var(--text-secondary); margin-bottom:0.375rem; }
-        .product-features li svg { width:14px; height:14px; color:var(--color-green); }
-        .product-price-section { margin-bottom:0.75rem; }
-        .product-price-row { display:flex; align-items:baseline; gap:0.75rem; margin-bottom:0.25rem; }
-        .product-price { font-size:var(--font-size-xl); font-weight:800; color:var(--color-orange); }
-        .product-price.loading { color:var(--text-muted); font-size:var(--font-size-sm); }
-        .old-price { font-size:var(--font-size-sm); font-weight:500; color:var(--text-muted); text-decoration:line-through; }
-        .savings-badge { display:inline-flex; align-items:center; padding:0.25rem 0.5rem; background:var(--color-green); color:white; font-size:var(--font-size-xs); font-weight:700; border-radius:var(--radius-sm); }
-        .product-shipping { display:flex; align-items:center; gap:0.5rem; font-size:var(--font-size-xs); color:var(--color-green); font-weight:500; margin-bottom:1rem; }
-        .product-shipping svg { width:16px; height:16px; }
-        .product-footer { display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding-top:1rem; border-top:1px solid var(--border-subtle); }
-        .product-footer .btn-buy { flex:1; justify-content:center; }
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 350ms ease;
 
-        .no-search-results { display:none; text-align:center; padding:3rem 1rem; }
-        .no-search-results.show { display:block; }
-        .no-search-results-icon { font-size:3rem; margin-bottom:1rem; }
+    --font-family: 'Inter', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3.5rem;
 
-        .testimonials-section { padding:5rem 0; background:var(--bg-surface); border-top:1px solid var(--border-color); }
-        .testimonials-grid { display:grid; gap:1.5rem; }
-        @media(min-width:640px){ .testimonials-grid { grid-template-columns:repeat(2,1fr); } }
-        @media(min-width:1024px){ .testimonials-grid { grid-template-columns:repeat(3,1fr); } }
-        .testimonial-card { background:var(--bg-card); border-radius:var(--radius-lg); padding:1.5rem; border:1px solid var(--border-color); transition:all var(--transition-base); }
-        .testimonial-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
-        .testimonial-header { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
-        .testimonial-avatar { width:44px; height:44px; border-radius:50%; object-fit:cover; }
-        .testimonial-name { font-size:var(--font-size-sm); font-weight:700; }
-        .testimonial-verified { display:flex; align-items:center; gap:0.25rem; font-size:var(--font-size-xs); color:var(--color-green); font-weight:500; }
-        .testimonial-stars { display:flex; gap:0.125rem; margin-bottom:0.75rem; }
-        .testimonial-stars svg { width:16px; height:16px; color:var(--color-yellow); fill:var(--color-yellow); }
-        .testimonial-text { font-size:var(--font-size-sm); color:var(--text-secondary); line-height:1.6; font-style:italic; }
+    --header-height: 72px;
+}
 
-        .cta-section { padding:3rem 0 5rem; }
-        .cta-card { background:var(--color-navy); border-radius:var(--radius-xl); padding:3rem 2rem; display:flex; flex-direction:column; gap:2rem; align-items:center; text-align:center; position:relative; overflow:hidden; }
-        .cta-title { font-size:var(--font-size-2xl); font-weight:800; color:white; margin-bottom:0.75rem; }
-        .cta-desc { font-size:var(--font-size-base); color:rgba(255,255,255,0.7); max-width:400px; }
-        .cta-form { display:flex; flex-direction:column; gap:0.75rem; width:100%; max-width:450px; }
-        @media(min-width:640px){ .cta-form { flex-direction:row; } }
-        .cta-input { flex:1; padding:0.875rem 1.25rem; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:var(--radius-md); color:white; font-size:var(--font-size-sm); outline:none; }
-        .cta-input::placeholder { color:rgba(255,255,255,0.5); }
+/* Dark Mode */
+[data-theme="dark"] {
+    --bg-body: #0a0f1a;
+    --bg-surface: #111827;
+    --bg-surface-elevated: #1a2332;
+    --bg-header: rgba(10, 15, 26, 0.9);
+    --bg-card: #1a2332;
+    --bg-input: #1e293b;
+    --bg-badge: #451a03;
+    --bg-badge-new: #1e3a5f;
+    --bg-badge-sale: #450a0a;
 
-        .footer { background:var(--color-navy); color:var(--text-on-dark); padding:4rem 0 2rem; }
-        .footer-grid { display:grid; gap:2.5rem; margin-bottom:3rem; }
-        @media(min-width:640px){ .footer-grid { grid-template-columns:repeat(2,1fr); } }
-        @media(min-width:1024px){ .footer-grid { grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; } }
-        .footer-logo { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
-        .footer-logo-icon { width:36px; height:36px; color:var(--color-orange); }
-        .footer-logo-name { font-size:var(--font-size-xl); font-weight:800; color:white; }
-        .footer-tagline { font-size:var(--font-size-sm); color:rgba(255,255,255,0.6); margin-bottom:1.5rem; }
-        .footer-social { display:flex; gap:0.75rem; }
-        .social-link { width:40px; height:40px; border-radius:var(--radius-md); background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.7); display:flex; align-items:center; justify-content:center; transition:all var(--transition-fast); }
-        .social-link:hover { background:var(--color-orange); color:white; transform:translateY(-2px); }
-        .footer-links-title { font-size:var(--font-size-sm); font-weight:700; color:white; text-transform:uppercase; letter-spacing:1px; margin-bottom:1.25rem; }
-        .footer-links { display:flex; flex-direction:column; gap:0.75rem; }
-        .footer-links a { font-size:var(--font-size-sm); color:rgba(255,255,255,0.6); }
-        .footer-links a:hover { color:var(--color-orange); }
-        .footer-bottom { padding-top:2rem; border-top:1px solid rgba(255,255,255,0.1); display:flex; flex-direction:column; gap:1rem; align-items:center; text-align:center; }
-        @media(min-width:640px){ .footer-bottom { flex-direction:row; justify-content:space-between; text-align:left; } }
-        .footer-copyright { font-size:var(--font-size-sm); color:rgba(255,255,255,0.5); }
-        .footer-legal { display:flex; gap:1.5rem; }
-        .footer-legal a { font-size:var(--font-size-sm); color:rgba(255,255,255,0.5); }
-        .affiliate-disclosure { padding:1.5rem 0; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.1); text-align:center; }
-        .affiliate-disclosure p { font-size:var(--font-size-xs); color:rgba(255,255,255,0.4); line-height:1.6; }
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-on-primary: #ffffff;
 
-        .toast { position:fixed; bottom:2rem; left:50%; transform:translateX(-50%) translateY(120px); background:var(--color-navy); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-size:var(--font-size-sm); font-weight:500; box-shadow:var(--shadow-xl); z-index:2000; opacity:0; transition:all var(--transition-base); pointer-events:none; display:flex; align-items:center; gap:0.5rem; }
-        .toast.show { transform:translateX(-50%) translateY(0); opacity:1; }
-        .toast svg { width:20px; height:20px; color:var(--color-green); }
+    --border-color: #1e293b;
+    --border-subtle: #1a2332;
 
-        [dir="rtl"] .logo { flex-direction:row-reverse; }
-        [dir="rtl"] .header-container { flex-direction:row-reverse; }
-        [dir="rtl"] .nav-list { flex-direction:row-reverse; }
-        [dir="rtl"] .hero-actions { flex-direction:row-reverse; }
-        [dir="rtl"] .product-footer { flex-direction:row-reverse; }
-        [dir="rtl"] .product-badge { left:auto; right:1rem; }
-        [dir="rtl"] .product-wishlist { right:auto; left:1rem; }
-        [dir="rtl"] .footer-bottom { flex-direction:row-reverse; }
-        [dir="rtl"] .product-price-row { flex-direction:row-reverse; }
-        [dir="rtl"] .product-features li { flex-direction:row-reverse; }
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.6), 0 8px 10px -6px rgb(0 0 0 / 0.6);
+    --shadow-glow: 0 0 30px rgba(249, 115, 22, 0.2);
+}
 
-        ::-webkit-scrollbar { width:8px; }
-        ::-webkit-scrollbar-track { background:var(--bg-body); }
-        ::-webkit-scrollbar-thumb { background:var(--color-navy-light); border-radius:4px; }
-        ::-webkit-scrollbar-thumb:hover { background:var(--color-orange); }
-        ::selection { background:var(--color-orange); color:white; }
+/* ============================================
+   BASE & RESET
+   ============================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    transition: background-color var(--transition-base), color var(--transition-base);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 3rem;
+    }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    background: var(--bg-header);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .header-container {
+        padding: 0 2rem;
+    }
+}
+
+/* Logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: var(--color-orange);
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-name {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.logo-slogan {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+.main-nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .main-nav {
+        display: block;
+    }
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-list a {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-orange);
+    border-radius: 2px;
+    transition: width var(--transition-base);
+}
+
+.nav-list a:hover {
+    color: var(--text-primary);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon:hover {
+    color: var(--color-orange);
+    border-color: var(--color-orange);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-moon {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .icon-moon {
+    display: block;
+}
+
+.lang-toggle .lang-label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    margin-left: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-nav-list a {
+    display: block;
+    padding: 0.75rem 1rem;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast);
+}
+
+.mobile-nav-list a:hover {
+    background: var(--bg-input);
+    color: var(--color-orange);
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-height);
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-orange);
+    top: -10%;
+    right: -10%;
+    animation: float 8s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-yellow);
+    bottom: -5%;
+    left: -5%;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-navy);
+    top: 40%;
+    left: 30%;
+    opacity: 0.1;
+    animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .hero-content {
+        padding: 5rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        padding: 6rem 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--color-orange);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: var(--radius-full);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease 0.2s both;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
+
+.hero-badge .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+@media (min-width: 640px) {
+    .hero-title {
+        font-size: var(--font-size-5xl);
+    }
+}
+
+.hero-title .highlight {
+    color: var(--color-orange);
+    position: relative;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--color-yellow);
+    opacity: 0.3;
+    border-radius: 4px;
+    z-index: -1;
+}
+
+.hero-desc {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+    animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+/* Hero Trust Bar */
+.hero-trust-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    animation: fadeInUp 0.6s ease 0.7s both;
+    flex-wrap: wrap;
+}
+
+.hero-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.hero-trust-item svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-green);
+    flex-shrink: 0;
+}
+
+/* Hero Visual */
+.hero-visual {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .hero-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .hero-cart {
+        width: 320px;
+        height: 320px;
+        color: var(--color-orange);
+        opacity: 0.15;
+        animation: pulse-glow 4s ease-in-out infinite;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.05); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--color-orange);
+    color: white;
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+}
+
+.btn-primary:hover {
+    background: var(--color-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--color-orange);
+    color: var(--color-orange);
+    transform: translateY(-2px);
+}
+
+/* Buy Button - High Conversion Orange */
+.btn-buy {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-orange);
+    color: white;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-buy:hover {
+    background: var(--color-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+}
+
+.btn-buy svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Compare Button - Secondary Style */
+.btn-compare {
+    padding: 0.625rem 1rem;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+}
+
+.btn-compare:hover {
+    border-color: var(--text-primary);
+    color: var(--text-primary);
+    background: var(--bg-input);
+}
+
+/* ============================================
+   SOCIAL PROOF BAR
+   ============================================ */
+
+.social-proof-bar {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    overflow: hidden;
+}
+
+.social-proof-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.social-proof-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.social-proof-avatars img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-surface);
+    margin-left: -8px;
+    object-fit: cover;
+}
+
+.social-proof-avatars img:first-child {
+    margin-left: 0;
+}
+
+.social-proof-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+.social-proof-text strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.social-proof-stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.social-proof-stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-yellow);
+    fill: var(--color-yellow);
+}
+
+/* ============================================
+   TRUST BADGES SECTION
+   ============================================ */
+
+.trust-section {
+    padding: 5rem 0;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-base), border-color var(--transition-base);
+}
+
+.trust-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .trust-grid {
+        gap: 2.5rem;
+    }
+}
+
+.trust-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-body);
+    border: 1px solid var(--border-subtle);
+    transition: all var(--transition-base);
+}
+
+.trust-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-orange);
+}
+
+.trust-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-orange);
+    color: white;
+    border-radius: var(--radius-md);
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.25);
+}
+
+.trust-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.trust-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.trust-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ============================================
+   PRODUCTS SECTION
+   ============================================ */
+
+.products-section {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-orange);
+    margin-bottom: 0.75rem;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.section-desc {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 640px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Product Card */
+.product-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-orange);
+}
+
+.product-image-wrapper {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--bg-input);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.08);
+}
+
+/* Product Badge */
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.375rem 0.875rem;
+    background: var(--bg-badge);
+    color: #92400e;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: var(--radius-full);
+    z-index: 2;
+}
+
+.badge-new {
+    background: var(--bg-badge-new);
+    color: #60a5fa;
+}
+
+.badge-sale {
+    background: var(--bg-badge-sale);
+    color: #f87171;
+}
+
+/* Stock Counter Badge */
+.stock-badge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.375rem 0.75rem;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    animation: pulse-stock 2s ease-in-out infinite;
+}
+
+@keyframes pulse-stock {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+}
+
+.stock-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.product-wishlist {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-fast);
+    z-index: 2;
+}
+
+.product-wishlist:hover {
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+.product-wishlist svg {
+    width: 18px;
+    height: 18px;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+/* Star Rating */
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-rating .stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.product-rating .stars svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-yellow);
+    fill: var(--color-yellow);
+}
+
+.product-rating .stars svg.empty {
+    fill: none;
+    color: var(--text-muted);
+}
+
+.product-rating .stars svg.half {
+    fill: url(#half-star);
+}
+
+.product-rating .rating-text {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+/* Product Features List */
+.product-features {
+    margin-bottom: 1rem;
+}
+
+.product-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin-bottom: 0.375rem;
+}
+
+.product-features li svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-green);
+    flex-shrink: 0;
+}
+
+.product-desc {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Price Section */
+.product-price-section {
+    margin-bottom: 0.75rem;
+}
+
+.product-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.product-price {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: var(--color-orange);
+}
+
+.old-price {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.savings-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    background: var(--color-green);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+}
+
+/* Shipping Info */
+.product-shipping {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-green);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.product-shipping svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Product Footer - Buttons */
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.product-footer .btn-buy {
+    flex: 1;
+    justify-content: center;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================ */
+
+.testimonials-section {
+    padding: 5rem 0;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+}
+
+.testimonials-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-meta {
+    flex: 1;
+}
+
+.testimonial-name {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.testimonial-verified {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: var(--font-size-xs);
+    color: var(--color-green);
+    font-weight: 500;
+}
+
+.testimonial-verified svg {
+    width: 14px;
+    height: 14px;
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 0.125rem;
+    margin-bottom: 0.75rem;
+}
+
+.testimonial-stars svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-yellow);
+    fill: var(--color-yellow);
+}
+
+.testimonial-text {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-section {
+    padding: 3rem 0 5rem;
+}
+
+.cta-card {
+    background: var(--color-navy);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: var(--color-orange);
+    opacity: 0.1;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: var(--color-yellow);
+    opacity: 0.08;
+    border-radius: 50%;
+    filter: blur(50px);
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.75rem;
+}
+
+.cta-desc {
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 400px;
+}
+
+.cta-form {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 450px;
+}
+
+@media (min-width: 640px) {
+    .cta-form {
+        flex-direction: row;
+    }
+}
+
+.cta-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: var(--font-size-sm);
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.cta-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.cta-input:focus {
+    border-color: var(--color-orange);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cta-form .btn-primary {
+    background: var(--color-orange);
+    border: none;
+    padding: 0.875rem 1.5rem;
+}
+
+.cta-form .btn-primary:hover {
+    background: var(--color-orange-light);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background: var(--color-navy);
+    color: var(--text-on-dark);
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+.footer-logo-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-logo-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--color-orange);
+}
+
+.footer-logo-name {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    color: white;
+}
+
+.footer-tagline {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+    background: var(--color-orange);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+.footer-links-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.6);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--color-orange);
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.footer-copyright {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.5);
+    transition: color var(--transition-fast);
+}
+
+.footer-legal a:hover {
+    color: var(--color-orange);
+}
+
+/* Affiliate Disclosure Footer */
+.affiliate-disclosure {
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.affiliate-disclosure p {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.6;
+}
+
+.affiliate-disclosure a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: underline;
+    transition: color var(--transition-fast);
+}
+
+.affiliate-disclosure a:hover {
+    color: var(--color-orange);
+}
+
+/* ============================================
+   TOAST NOTIFICATION
+   ============================================ */
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(120px);
+    background: var(--color-navy);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    box-shadow: var(--shadow-xl);
+    z-index: 2000;
+    opacity: 0;
+    transition: all var(--transition-base);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-green);
+}
+
+/* ============================================
+   RTL SUPPORT
+   ============================================ */
+
+[dir="rtl"] .logo {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .header-container {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nav-list {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-actions {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-footer {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-bottom {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .old-price {
+    margin-right: 0;
+    margin-left: 0.5rem;
+}
+
+[dir="rtl"] .product-badge {
+    left: auto;
+    right: 1rem;
+}
+
+[dir="rtl"] .product-wishlist {
+    right: auto;
+    left: 1rem;
+}
+
+[dir="rtl"] .cta-form {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .footer-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .trust-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .products-grid {
+    direction: rtl;
+}
+
+[dir="rtl"] .footer-legal {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .mobile-nav-list a {
+    text-align: right;
+}
+
+[dir="rtl"] .nav-list a::after {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .product-rating .stars {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .testimonial-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .testimonial-stars {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-proof-content {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-proof-avatars {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social-proof-avatars img {
+    margin-left: 0;
+    margin-right: -8px;
+}
+
+[dir="rtl"] .social-proof-avatars img:first-child {
+    margin-right: 0;
+}
+
+[dir="rtl"] .hero-trust-bar {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-trust-item {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-features li {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-price-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .product-shipping {
+    flex-direction: row-reverse;
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-body);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-navy-muted);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-orange);
+}
+
+/* ============================================
+   SELECTION
+   ============================================ */
+
+::selection {
+    background: var(--color-orange);
+    color: white;
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+  
+
+
+
+    
+
     </style>
 </head>
 <body>
-        <!-- Header -->
+    <!-- Header -->
     <header class="header" id="header">
         <div class="header-container">
-            <a href="#" class="logo-link">
+            <a href="#" class="logo-link" aria-label="Yallabuy Home">
                 <div class="logo">
-                    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M4 8h6l4 18h20l4-12H14"/><circle cx="18" cy="34" r="3"/><circle cx="36" cy="34" r="3"/>
-                        <path d="M38 6l4 4-4 4"/><path d="M42 10h-8"/>
+                    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 8h6l4 18h20l4-12H14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="18" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                        <circle cx="36" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M38 6l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M42 10h-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
                     </svg>
                     <div class="logo-text">
                         <span class="logo-name">Yallabuy</span>
@@ -257,28 +1805,41 @@
                     </div>
                 </div>
             </a>
-            <nav class="main-nav">
+
+            <nav class="main-nav" aria-label="Main Navigation">
                 <ul class="nav-list">
                     <li><a href="#products" data-key="nav_products">Products</a></li>
                     <li><a href="#trust" data-key="nav_about">About</a></li>
                     <li><a href="#footer" data-key="nav_contact">Contact</a></li>
                 </ul>
             </nav>
+
             <div class="header-actions">
-                <button class="btn-icon theme-toggle" id="theme-toggle">
-                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <button class="btn-icon theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"/>
+                        <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
                 </button>
-                <button class="btn-icon lang-toggle" id="lang-toggle">
+                <button class="btn-icon lang-toggle" id="lang-toggle" aria-label="Toggle language">
                     <span class="lang-label" id="lang-label">AR</span>
                 </button>
             </div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn"><span></span><span></span><span></span></button>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
-        <nav>
+        <nav aria-label="Mobile Navigation">
             <ul class="mobile-nav-list">
                 <li><a href="#products" data-key="nav_products">Products</a></li>
                 <li><a href="#trust" data-key="nav_about">About</a></li>
@@ -287,15 +1848,19 @@
         </nav>
     </div>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg">
+        <div class="hero-bg" aria-hidden="true">
             <div class="hero-shape shape-1"></div>
             <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
         </div>
         <div class="hero-content">
             <div>
-                <div class="hero-badge" data-key="hero_badge"><span style="width:8px;height:8px;background:white;border-radius:50%;display:inline-block;margin-right:0.5rem;animation:pulse 1.5s infinite;"></span> New Collection</div>
+                <div class="hero-badge" data-key="hero_badge">
+                    <span class="pulse-dot"></span>
+                    New Collection
+                </div>
                 <h1 class="hero-title" data-key="hero_title">Shop Smarter, <span class="highlight">Live Better</span></h1>
                 <p class="hero-desc" data-key="hero_desc">Discover premium products with lightning-fast delivery. Your satisfaction is our mission.</p>
                 <div class="hero-actions">
@@ -304,39 +1869,55 @@
                 </div>
                 <div class="hero-trust-bar">
                     <div class="hero-trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
                         <span data-key="hero_trust_1">Amazon Prime Delivery</span>
                     </div>
                     <div class="hero-trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
                         <span data-key="hero_trust_2">Secure Checkout</span>
                     </div>
                     <div class="hero-trust-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
                         <span data-key="hero_trust_3">30-Day Returns</span>
                     </div>
                 </div>
             </div>
-            <div class="hero-visual">
-                <svg class="hero-cart" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="4">
-                    <path d="M40 60h25l15 60h80l20-40H80"/><circle cx="85" cy="150" r="12"/><circle cx="155" cy="150" r="12"/>
-                    <path d="M160 40l15 15-15 15"/><path d="M175 55h-30"/>
-                </svg>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-cart">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 60h25l15 60h80l20-40H80" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="85" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
+                        <circle cx="155" cy="150" r="12" stroke="currentColor" stroke-width="4"/>
+                        <path d="M160 40l15 15-15 15" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M175 55h-30" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M50 30L40 60" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Proof -->
+    <!-- Social Proof Bar -->
     <div class="social-proof-bar">
         <div class="container">
             <div class="social-proof-content">
                 <div class="social-proof-avatars">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face" alt="">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" alt="">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face" alt="Customer">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face" alt="Customer">
                 </div>
-                <p class="social-proof-text"><strong data-key="social_proof_count">5,000+</strong> <span data-key="social_proof_text">happy shoppers trust Yallabuy</span></p>
+                <p class="social-proof-text">
+                    <strong data-key="social_proof_count">5,000+</strong> <span data-key="social_proof_text">happy shoppers trust Yallabuy</span>
+                </p>
                 <div class="social-proof-stars">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -348,73 +1929,98 @@
         </div>
     </div>
 
-    <!-- Trust -->
+    <!-- Trust Badges Section -->
     <section class="trust-section" id="trust">
         <div class="container">
             <div class="trust-grid">
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M8 20h32l-4 16H12L8 20z"/><path d="M16 20V12a8 8 0 0 1 16 0v8"/><path d="M24 28v4"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8 20h32l-4 16H12L8 20z"/>
+                            <path d="M16 20V12a8 8 0 0 1 16 0v8"/>
+                            <path d="M24 28v4"/>
+                        </svg>
                     </div>
                     <h3 class="trust-title" data-key="trust_shipping_title">Free Shipping</h3>
-                    <p class="trust-desc" data-key="trust_shipping_desc">On all orders over $50.</p>
+                    <p class="trust-desc" data-key="trust_shipping_desc">On all orders over $50. Fast and reliable delivery to your door.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M24 4l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M24 4l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z"/>
+                        </svg>
                     </div>
                     <h3 class="trust-title" data-key="trust_quality_title">Quality Guaranteed</h3>
-                    <p class="trust-desc" data-key="trust_quality_desc">Handpicked and tested.</p>
+                    <p class="trust-desc" data-key="trust_quality_desc">Every product is handpicked and tested for premium quality.</p>
                 </div>
                 <div class="trust-card">
                     <div class="trust-icon">
-                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="24" cy="24" r="8"/><path d="M24 20v4l3 3"/></svg>
+                        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M24 4v4"/>
+                            <path d="M24 40v4"/>
+                            <path d="M4 24h4"/>
+                            <path d="M40 24h4"/>
+                            <circle cx="24" cy="24" r="8"/>
+                            <path d="M24 20v4l3 3"/>
+                        </svg>
                     </div>
                     <h3 class="trust-title" data-key="trust_support_title">24/7 Support</h3>
-                    <p class="trust-desc" data-key="trust_support_desc">Here for you every day.</p>
+                    <p class="trust-desc" data-key="trust_support_desc">Our team is here for you around the clock, every single day.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products -->
+    <!-- Products Section -->
     <section class="products-section" id="products">
         <div class="container">
-            <div class="product-search-wrapper" style="max-width:500px;margin:0 auto 2rem;position:relative;">
-                <input type="text" class="search-input" id="product-search-input" placeholder="Search products..." style="width:100%;padding:14px 50px 14px 20px;font-size:16px;border:2px solid var(--border-color);border-radius:var(--radius-full);background:var(--bg-input);color:var(--text-primary);outline:none;">
-                <svg style="position:absolute;right:18px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--text-muted);pointer-events:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        <!-- Product Search Bar -->
+            <div class="product-search-wrapper" style="max-width: 500px; margin: 0 auto 2rem; position: relative;">
+                <input type="text" class="search-input" id="product-search-input" placeholder="Search products..." style="width: 100%; padding: 14px 50px 14px 20px; font-size: 16px; border: 2px solid var(--border-color); border-radius: var(--radius-full); background: var(--bg-input); color: var(--text-primary); outline: none; transition: all 0.3s;">
+                <svg style="position: absolute; right: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-muted); pointer-events: none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
             </div>
-            <div class="section-header">
+
+<div class="section-header">
                 <span class="section-label" data-key="section_label">Our Collection</span>
                 <h2 class="section-title" data-key="section_title">Featured Products</h2>
-                <p class="section-desc" data-key="section_desc">Handpicked items just for you.</p>
+                <p class="section-desc" data-key="section_desc">Handpicked items just for you. Premium quality at unbeatable prices.</p>
             </div>
-            <div class="products-grid" id="productsGrid"></div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Products rendered by JavaScript -->
+            </div>
+            <!-- No Search Results Message -->
             <div class="no-search-results" id="no-search-results">
                 <div class="no-search-results-icon">😕</div>
-                <p data-key="no_results">No products found.</p>
+                <p data-key="no_results">No products found. Try a different search term.</p>
             </div>
         </div>
         <br>
-        <a href="e.html" style="text-decoration:none;display:block;text-align:center;color:Orange;font-style:italic;"><h1>Show More</h1></a>
+<a href="e.html" style="text-decoration: none; display: block; text-align: center; color: Orange; font-style: italic; "><h1>Show More</h1></a>
+ 
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials Section -->
     <section class="testimonials-section" id="testimonials">
         <div class="container">
             <div class="section-header">
                 <span class="section-label" data-key="testimonials_label">Testimonials</span>
                 <h2 class="section-title" data-key="testimonials_title">What Our Customers Say</h2>
-                <p class="section-desc" data-key="testimonials_desc">Real reviews from real shoppers.</p>
+                <p class="section-desc" data-key="testimonials_desc">Real reviews from real shoppers who love Yallabuy.</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="" class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face" alt="Sarah M." class="testimonial-avatar">
                         <div class="testimonial-meta">
                             <div class="testimonial-name">Sarah M.</div>
                             <div class="testimonial-verified">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
                                 Verified Purchase
                             </div>
                         </div>
@@ -426,15 +2032,18 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-text">"Amazing headphones! Unbeatable price and super fast delivery."</p>
+                    <p class="testimonial-text">"The headphones I bought through Yallabuy are amazing! The price was unbeatable and delivery was super fast. Will definitely shop here again!"</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="" class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Ahmed K." class="testimonial-avatar">
                         <div class="testimonial-meta">
                             <div class="testimonial-name">Ahmed K.</div>
                             <div class="testimonial-verified">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
                                 Verified Purchase
                             </div>
                         </div>
@@ -446,15 +2055,18 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-text">"Great selection! Saved me hours searching on Amazon."</p>
+                    <p class="testimonial-text">"Great selection of products and the affiliate links work perfectly. Saved me hours of searching on Amazon. Highly recommended!"</p>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-header">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="" class="testimonial-avatar">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emma R." class="testimonial-avatar">
                         <div class="testimonial-meta">
                             <div class="testimonial-name">Emma R.</div>
                             <div class="testimonial-verified">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
                                 Verified Purchase
                             </div>
                         </div>
@@ -466,23 +2078,25 @@
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                     </div>
-                    <p class="testimonial-text">"The skincare set is a game changer! Incredible discount!"</p>
+                    <p class="testimonial-text">"The skincare set is a game changer! Natural ingredients and my skin has never looked better. Plus the discount was incredible!"</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- Newsletter / CTA Section -->
     <section class="cta-section" id="cta">
         <div class="container">
             <div class="cta-card">
                 <div class="cta-content">
                     <h2 class="cta-title" data-key="cta_title">Join the Yallabuy Family</h2>
-                    <p class="cta-desc" data-key="cta_desc">Subscribe for exclusive deals and new arrivals.</p>
+                    <p class="cta-desc" data-key="cta_desc">Subscribe for exclusive deals, new arrivals, and insider perks.</p>
                 </div>
                 <form class="cta-form" onsubmit="event.preventDefault();">
-                    <input type="email" class="cta-input" placeholder="Enter your email">
-                    <a href="e.html" style="text-decoration:none;display:inline-block;padding:10px 20px;background:Orange;color:white;border-radius:5px;">Next</a>
+                    <input type="email" class="cta-input" placeholder="Enter your email" data-key-placeholder="placeholder_email" aria-label="Email address">
+                    <a href="e.html" id="px" style="text-decoration: none; display: inline-block; padding: 10px 20px; background:Orange; color: white; border-radius: 5px; margin: auto;">
+                        Next
+                    </a>
                 </form>
             </div>
         </div>
@@ -493,18 +2107,40 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="footer-logo">
-                        <svg class="footer-logo-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 8h6l4 18h20l4-12H14"/><circle cx="18" cy="34" r="3"/><circle cx="36" cy="34" r="3"/><path d="M38 6l4 4-4 4"/><path d="M42 10h-8"/></svg>
-                        <span class="footer-logo-name">Yallabuy</span>
-                    </div>
+                    <a href="#" class="footer-logo-link" aria-label="Yallabuy Home">
+                        <div class="footer-logo">
+                            <svg class="footer-logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path d="M4 8h6l4 18h20l4-12H14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="18" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                                <circle cx="36" cy="34" r="3" stroke="currentColor" stroke-width="2.5"/>
+                                <path d="M38 6l4 4-4 4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M42 10h-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                            <span class="footer-logo-name">Yallabuy</span>
+                        </div>
+                    </a>
                     <p class="footer-tagline" data-key="slogan">Speedy. Simple. Shopping.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-                        <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-                        <a href="#" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div>
+                <div class="footer-links-col">
                     <h4 class="footer-links-title" data-key="footer_shop">Shop</h4>
                     <ul class="footer-links">
                         <li><a href="e.html" data-key="nav_products">Products</a></li>
@@ -512,7 +2148,7 @@
                         <li><a href="#" data-key="footer_deals">Deals</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="footer-links-col">
                     <h4 class="footer-links-title" data-key="footer_support">Support</h4>
                     <ul class="footer-links">
                         <li><a href="#" data-key="footer_faq">FAQ</a></li>
@@ -520,7 +2156,7 @@
                         <li><a href="#" data-key="footer_returns">Returns</a></li>
                     </ul>
                 </div>
-                <div>
+                <div class="footer-links-col">
                     <h4 class="footer-links-title" data-key="footer_company">Company</h4>
                     <ul class="footer-links">
                         <li><a href="#" data-key="footer_about">About Us</a></li>
@@ -538,367 +2174,788 @@
             </div>
         </div>
         <div class="affiliate-disclosure">
-            <p>Yallabuy participates in the Amazon Services LLC Associates Program. We may earn a commission when you purchase through links on our site — at no extra cost to you. <a href="amazon/affiliate-disclosure.html">Learn more</a></p>
+            <p>
+                Yallabuy participates in the Amazon Services LLC Associates Program. 
+                We may earn a commission when you purchase through links on our site — 
+                at no extra cost to you. 
+                <a href="amazon/affiliate-disclosure.html">Learn more</a>
+            </p>
+            <p style="margin-top: 10px;">
+                <a href="amazon/privacy-policy.html">Privacy Policy</a> | 
+                <a href="amazon/terms-of-service.html">Terms of Service</a> | 
+                <a href="contact.html">Contact</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Toast -->
-    <div class="toast" id="toast">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
         <span class="toast-message" id="toast-message"></span>
     </div>
-  <!-- JavaScript -->
+
     <script>
-    (function() {
-        'use strict';
+     /* ============================================
+   YALLABUY — JAVASCRIPT APPLICATION
+   ============================================ */
 
-        // ==========================================
-        // TRANSLATIONS
-        // ==========================================
-        const translations = {
-            en: {
-                slogan: 'Speedy. Simple. Shopping.',
-                nav_products: 'Products', nav_about: 'About', nav_contact: 'Contact',
-                hero_badge: 'New Collection', hero_title: 'Shop Smarter, Live Better',
-                hero_desc: 'Discover premium products with lightning-fast delivery.',
-                hero_trust_1: 'Amazon Prime Delivery', hero_trust_2: 'Secure Checkout', hero_trust_3: '30-Day Returns',
-                btn_shop_now: 'Shop Now', btn_learn_more: 'Read the article',
-                social_proof_count: '5,000+', social_proof_text: 'happy shoppers trust Yallabuy',
-                trust_shipping_title: 'Free Shipping', trust_shipping_desc: 'On all orders over $50.',
-                trust_quality_title: 'Quality Guaranteed', trust_quality_desc: 'Handpicked and tested.',
-                trust_support_title: '24/7 Support', trust_support_desc: 'Here for you every day.',
-                section_label: 'Our Collection', section_title: 'Featured Products', section_desc: 'Handpicked items just for you.',
-                testimonials_label: 'Testimonials', testimonials_title: 'What Our Customers Say', testimonials_desc: 'Real reviews from real shoppers.',
-                badge_bestseller: 'Bestseller', badge_new: 'New', badge_sale: 'Sale',
-                stock_low: 'Only {count} left!', shipping_prime: 'Free Prime Shipping',
-                btn_buy: 'Buy on Amazon', btn_compare: 'Compare',
-                cta_title: 'Join the Yallabuy Family', cta_desc: 'Subscribe for exclusive deals.',
-                footer_shop: 'Shop', footer_new_arrivals: 'New Arrivals', footer_deals: 'Deals',
-                footer_support: 'Support', footer_faq: 'FAQ', footer_shipping: 'Shipping', footer_returns: 'Returns',
-                footer_company: 'Company', footer_about: 'About Us', footer_careers: 'Careers', footer_contact: 'Contact',
-                footer_copyright: '2026 Yallabuy. All rights reserved.', footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service',
-                toast_buy: 'Redirecting to Amazon...', toast_subscribe: 'Subscribed!', toast_wishlist: 'Added to wishlist!',
-                no_results: 'No products found.', lang_label: 'AR'
-            },
-            ar: {
-                slogan: 'سريع. بسيط. تسوق.',
-                nav_products: 'المنتجات', nav_about: 'من نحن', nav_contact: 'تواصل معنا',
-                hero_badge: 'تشكيلة جديدة', hero_title: 'تسوق بذكاء، عش بشكل أفضل',
-                hero_desc: 'اكتشف منتجات متميزة مع توصيل فائق السرعة.',
-                hero_trust_1: 'توصيل أمازون برايم', hero_trust_2: 'دفع آمن', hero_trust_3: 'إرجاع خلال 30 يوم',
-                btn_shop_now: 'تسوق الآن', btn_learn_more: 'اقرأ المقال',
-                social_proof_count: '+5,000', social_proof_text: 'متسوق سعيد يثق في يلاباي',
-                trust_shipping_title: 'شحن مجاني', trust_shipping_desc: 'على جميع الطلبات فوق 50 دولار.',
-                trust_quality_title: 'جودة مضمونة', trust_quality_desc: 'مختارة بعناية ومختبرة.',
-                trust_support_title: 'دعم 24/7', trust_support_desc: 'هنا من أجلك كل يوم.',
-                section_label: 'تشكيلتنا', section_title: 'منتجات مميزة', section_desc: 'عناصر مختارة خصيصاً لك.',
-                testimonials_label: 'آراء العملاء', testimonials_title: 'ماذا يقول عملاؤنا', testimonials_desc: 'مراجعات حقيقية من متسوقين حقيقيين.',
-                badge_bestseller: 'الأكثر مبيعاً', badge_new: 'جديد', badge_sale: 'تخفيض',
-                stock_low: 'تبقى فقط {count} قطع!', shipping_prime: 'شحن برايم مجاني',
-                btn_buy: 'اشتري من أمازون', btn_compare: 'قارن',
-                cta_title: 'انضم إلى عائلة يلاباي', cta_desc: 'اشترك للحصول على عروض حصرية.',
-                footer_shop: 'تسوق', footer_new_arrivals: 'وصولات جديدة', footer_deals: 'عروض',
-                footer_support: 'الدعم', footer_faq: 'الأسئلة الشائعة', footer_shipping: 'الشحن', footer_returns: 'الإرجاع',
-                footer_company: 'الشركة', footer_about: 'من نحن', footer_careers: 'الوظائف', footer_contact: 'تواصل معنا',
-                footer_copyright: '2026 يلاباي. جميع الحقوق محفوظة.', footer_privacy: 'سياسة الخصوصية', footer_terms: 'شروط الخدمة',
-                toast_buy: 'جاري التحويل إلى أمازون...', toast_subscribe: 'تم الاشتراك!', toast_wishlist: 'تمت الإضافة إلى المفضلة!',
-                no_results: 'لم يتم العثور على منتجات.', lang_label: 'EN'
+(function() {
+    'use strict';
+
+    // ==========================================
+    // TRANSLATION DICTIONARY
+    // ==========================================
+
+    const translations = {
+        en: {
+            slogan: 'Speedy. Simple. Shopping.',
+            nav_products: 'Products',
+            nav_about: 'About',
+            nav_contact: 'Contact',
+            hero_badge: 'New Collection',
+            hero_title: 'Shop Smarter, Live Better',
+            hero_desc: 'Discover premium products with lightning-fast delivery. Your satisfaction is our mission.',
+            hero_trust_1: 'Amazon Prime Delivery',
+            hero_trust_2: 'Secure Checkout',
+            hero_trust_3: '30-Day Returns',
+            btn_shop_now: 'Shop Now',
+            btn_learn_more: 'Read the article',
+            social_proof_count: '5,000+',
+            social_proof_text: 'happy shoppers trust Yallabuy',
+            trust_shipping_title: 'Free Shipping',
+            trust_shipping_desc: 'On all orders over $50. Fast and reliable delivery to your door.',
+            trust_quality_title: 'Quality Guaranteed',
+            trust_quality_desc: 'Every product is handpicked and tested for premium quality.',
+            trust_support_title: '24/7 Support',
+            trust_support_desc: 'Our team is here for you around the clock, every single day.',
+            section_label: 'Our Collection',
+            section_title: 'Featured Products',
+            section_desc: 'Handpicked items just for you. Premium quality at unbeatable prices.',
+            testimonials_label: 'Testimonials',
+            testimonials_title: 'What Our Customers Say',
+            testimonials_desc: 'Real reviews from real shoppers who love Yallabuy.',
+            badge_bestseller: 'Bestseller',
+            badge_new: 'New',
+            badge_sale: 'Sale',
+            product_1_name: 'Premium Wireless Headphones',
+            product_1_desc: 'Crystal-clear audio with active noise cancellation and 30-hour battery life.',
+            product_2_name: 'Smart Fitness Watch',
+            product_2_desc: 'Track your health, sleep, and workouts with precision sensors and GPS.',
+            product_3_name: 'Organic Skincare Set',
+            product_3_desc: 'Natural ingredients for radiant skin. Cruelty-free and eco-friendly.',
+            stock_low: 'Only {count} left!',
+            shipping_prime: 'Free Prime Shipping',
+            btn_buy: 'Buy on Amazon',
+            cta_title: 'Join the Yallabuy Family',
+            cta_desc: 'Subscribe for exclusive deals, new arrivals, and insider perks.',
+            placeholder_email: 'Enter your email',
+            btn_subscribe: 'Subscribe',
+            footer_shop: 'Shop',
+            footer_new_arrivals: 'New Arrivals',
+            footer_deals: 'Deals',
+            footer_support: 'Support',
+            footer_faq: 'FAQ',
+            footer_shipping: 'Shipping',
+            footer_returns: 'Returns',
+            footer_company: 'Company',
+            footer_about: 'About Us',
+            footer_careers: 'Careers',
+            footer_contact: 'Contact',
+            footer_copyright: '2026 Yallabuy. All rights reserved.',
+            footer_privacy: 'Privacy Policy',
+            footer_terms: 'Terms of Service',
+            toast_buy: 'Redirecting to Amazon...',
+            toast_subscribe: 'Subscribed successfully!',
+            toast_wishlist: 'Added to wishlist!',
+            toast_wishlist_remove: 'Removed from wishlist!',
+            search_placeholder: 'Search products...',
+            no_results: 'No products found. Try a different search term.',
+            lang_label: 'AR'
+        },
+        ar: {
+            slogan: 'سريع. بسيط. تسوق.',
+            nav_products: 'المنتجات',
+            nav_about: 'من نحن',
+            nav_contact: 'تواصل معنا',
+            hero_badge: 'تشكيلة جديدة',
+            hero_title: 'تسوق بذكاء، عش بشكل أفضل',
+            hero_desc: 'اكتشف منتجات متميزة مع توصيل فائق السرعة. رضاك هو مهمتنا.',
+            hero_trust_1: 'توصيل أمازون برايم',
+            hero_trust_2: 'دفع آمن',
+            hero_trust_3: 'إرجاع خلال 30 يوم',
+            btn_shop_now: 'تسوق الآن',
+            btn_learn_more: 'اقرأ المقال',
+            social_proof_count: '+5,000',
+            social_proof_text: 'متسوق سعيد يثق في يلاباي',
+            trust_shipping_title: 'شحن مجاني',
+            trust_shipping_desc: 'على جميع الطلبات فوق 50 دولار. توصيل سريع وموثوق إلى باب منزلك.',
+            trust_quality_title: 'جودة مضمونة',
+            trust_quality_desc: 'كل منتج تم اختياره بعناية واختباره لضمان الجودة الممتازة.',
+            trust_support_title: 'دعم على مدار الساعة',
+            trust_support_desc: 'فريقنا هنا من أجلك على مدار الساعة، كل يوم.',
+            section_label: 'تشكيلتنا',
+            section_title: 'منتجات مميزة',
+            section_desc: 'عناصر مختارة خصيصاً لك. جودة ممتازة بأسعار لا تُضاهى.',
+            testimonials_label: 'آراء العملاء',
+            testimonials_title: 'ماذا يقول عملاؤنا',
+            testimonials_desc: 'مراجعات حقيقية من متسوقين حقيقيين يحبون يلاباي.',
+            badge_bestseller: 'الأكثر مبيعاً',
+            badge_new: 'جديد',
+            badge_sale: 'تخفيض',
+            product_1_name: 'سماعات لاسلكية متميزة',
+            product_1_desc: 'صوت نقي مع إلغاء الضوضاء النشط وبطارية تدوم 30 ساعة.',
+            product_2_name: 'ساعة ذكية للياقة البدنية',
+            product_2_desc: 'تتبع صحتك ونومك وتدريباتك بأجهزة استشعار دقيقة ونظام تحديد المواقع.',
+            product_3_name: 'مجموعة العناية بالبشرة العضوية',
+            product_3_desc: 'مكونات طبيعية لبشرة نضرة. خالية من القسوة على الحيوانات وصديقة للبيئة.',
+            stock_low: 'تبقى فقط {count} قطع!',
+            shipping_prime: 'شحن برايم مجاني',
+            btn_buy: 'اشتري من أمازون',
+            cta_title: 'انضم إلى عائلة يلاباي',
+            cta_desc: 'اشترك للحصول على عروض حصرية ووصولات جديدة ومميزات خاصة.',
+            placeholder_email: 'أدخل بريدك الإلكتروني',
+            btn_subscribe: 'اشترك',
+            footer_shop: 'تسوق',
+            footer_new_arrivals: 'وصولات جديدة',
+            footer_deals: 'عروض',
+            footer_support: 'الدعم',
+            footer_faq: 'الأسئلة الشائعة',
+            footer_shipping: 'الشحن',
+            footer_returns: 'الإرجاع',
+            footer_company: 'الشركة',
+            footer_about: 'من نحن',
+            footer_careers: 'الوظائف',
+            footer_contact: 'تواصل معنا',
+            footer_copyright: '2026 يلاباي. جميع الحقوق محفوظة.',
+            footer_privacy: 'سياسة الخصوصية',
+            footer_terms: 'شروط الخدمة',
+            toast_buy: 'جاري التحويل إلى أمازون...',
+            toast_subscribe: 'تم الاشتراك بنجاح!',
+            toast_wishlist: 'تمت الإضافة إلى المفضلة!',
+            toast_wishlist_remove: 'تمت الإزالة من المفضلة!',
+            search_placeholder: 'ابحث عن منتج...',
+            no_results: 'لم يتم العثور على منتجات. جرب مصطلح بحث مختلف.',
+            lang_label: 'EN'
+        }
+    };
+
+    // ==========================================
+    // STATE
+    // ==========================================
+
+    const state = {
+        theme: localStorage.getItem('yallabuy_theme') || 'light',
+        language: localStorage.getItem('yallabuy_language') || 'en'
+    };
+
+    // ==========================================
+    // DOM ELEMENTS
+    // ==========================================
+
+    const elements = {
+        html: document.getElementById('root-html'),
+        themeToggle: document.getElementById('theme-toggle'),
+        langToggle: document.getElementById('lang-toggle'),
+        langLabel: document.getElementById('lang-label'),
+        mobileMenuBtn: document.getElementById('mobile-menu-btn'),
+        mobileMenu: document.getElementById('mobile-menu'),
+        toast: document.getElementById('toast'),
+        toastMessage: document.getElementById('toast-message')
+    };
+
+    // ==========================================
+    // THEME FUNCTIONS
+    // ==========================================
+
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        state.theme = theme;
+        localStorage.setItem('yallabuy_theme', theme);
+    }
+
+    function toggleTheme() {
+        const newTheme = state.theme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+    }
+
+    // ==========================================
+    // LANGUAGE FUNCTIONS
+    // ==========================================
+
+    function applyLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+
+        // Update HTML lang and dir attributes
+        elements.html.setAttribute('lang', lang);
+        elements.html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+        // Update all elements with data-key attributes
+        document.querySelectorAll('[data-key]').forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (t[key] !== undefined) {
+                el.textContent = t[key];
             }
+        });
+
+        // Update placeholder attributes
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-key-placeholder');
+            if (t[key] !== undefined) {
+                el.setAttribute('placeholder', t[key]);
+            }
+        });
+        
+        // Update search placeholder
+        updateSearchPlaceholder();
+        
+        // Re-run search to update visibility
+        const searchInput = document.getElementById('product-search');
+        if (searchInput) {
+            searchInput.dispatchEvent(new Event('input'));
+        }
+        
+        return; // Skip the old loop below
+        
+        // Old placeholder update (kept for compatibility)
+        document.querySelectorAll('[data-key-placeholder]').forEach(el => {
+            const key = el.getAttribute('data-key-placeholder');
+            if (t[key] !== undefined) {
+                el.setAttribute('placeholder', t[key]);
+            }
+        });
+
+        // Update language button label
+        if (elements.langLabel) {
+            elements.langLabel.textContent = t.lang_label || (lang === 'en' ? 'AR' : 'EN');
+        }
+
+        // Update document title
+        document.title = lang === 'ar' ? 'يلاباي' : 'Yallabuy';
+
+        state.language = lang;
+        localStorage.setItem('yallabuy_language', lang);
+    }
+
+    function toggleLanguage() {
+        const newLang = state.language === 'en' ? 'ar' : 'en';
+        applyLanguage(newLang);
+    }
+
+    // ==========================================
+    // MOBILE MENU
+    // ==========================================
+
+    function toggleMobileMenu() {
+        elements.mobileMenuBtn.classList.toggle('active');
+        elements.mobileMenu.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+        elements.mobileMenuBtn.classList.remove('active');
+        elements.mobileMenu.classList.remove('active');
+    }
+
+    // ==========================================
+    // TOAST NOTIFICATION
+    // ==========================================
+
+    let toastTimeout;
+
+    function showToast(messageKey) {
+        const t = translations[state.language];
+        const message = t[messageKey] || messageKey;
+
+        elements.toastMessage.textContent = message;
+        elements.toast.classList.add('show');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            elements.toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // ==========================================
+    // STOCK COUNTER ANIMATION
+    // ==========================================
+
+    function animateStockCounters() {
+        const stockBadges = document.querySelectorAll('.stock-badge');
+        stockBadges.forEach((badge, index) => {
+            const counts = [3, 5, 2];
+            const count = counts[index] || 3;
+            const span = badge.querySelector('span');
+            if (span) {
+                const t = translations[state.language];
+                span.textContent = t.stock_low.replace('{count}', count);
+            }
+        });
+    }
+
+    // ==========================================
+    // SCROLL ANIMATIONS (Intersection Observer)
+    // ==========================================
+
+    function initScrollAnimations() {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
         };
 
-        const state = {
-            theme: localStorage.getItem('yallabuy_theme') || 'light',
-            language: localStorage.getItem('yallabuy_language') || 'en'
-        };
-
-        const elements = {
-            html: document.getElementById('root-html'),
-            themeToggle: document.getElementById('theme-toggle'),
-            langToggle: document.getElementById('lang-toggle'),
-            langLabel: document.getElementById('lang-label'),
-            mobileMenuBtn: document.getElementById('mobile-menu-btn'),
-            mobileMenu: document.getElementById('mobile-menu'),
-            toast: document.getElementById('toast'),
-            toastMessage: document.getElementById('toast-message')
-        };
-
-        function applyTheme(theme) {
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.removeAttribute('data-theme');
-            }
-            state.theme = theme;
-            localStorage.setItem('yallabuy_theme', theme);
-        }
-
-        function toggleTheme() {
-            applyTheme(state.theme === 'light' ? 'dark' : 'light');
-        }
-
-        function applyLanguage(lang) {
-            const t = translations[lang];
-            if (!t) return;
-            elements.html.setAttribute('lang', lang);
-            elements.html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (t[key] !== undefined) el.textContent = t[key];
-            });
-            if (elements.langLabel) elements.langLabel.textContent = t.lang_label;
-            document.title = lang === 'ar' ? 'يلاباي' : 'Yallabuy';
-            state.language = lang;
-            localStorage.setItem('yallabuy_language', lang);
-        }
-
-        function toggleLanguage() {
-            applyLanguage(state.language === 'en' ? 'ar' : 'en');
-        }
-
-        function toggleMobileMenu() {
-            elements.mobileMenuBtn.classList.toggle('active');
-            elements.mobileMenu.classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            elements.mobileMenuBtn.classList.remove('active');
-            elements.mobileMenu.classList.remove('active');
-        }
-
-        let toastTimeout;
-        function showToast(messageKey) {
-            const t = translations[state.language];
-            elements.toastMessage.textContent = t[messageKey] || messageKey;
-            elements.toast.classList.add('show');
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => elements.toast.classList.remove('show'), 3000);
-        }
-
-        // ==========================================
-        // PRODUCTS - WITH ASIN & DYNAMIC PRICES
-        // ==========================================
-        const products = [
-            {
-                id: 1,
-                asin: "B0BS1QCFHX",
-                name: "Premium Wireless Headphones",
-                price: "جاري التحميل...",
-                oldPrice: "$89.99",
-                image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop",
-                alt: "Premium Wireless Headphones",
-                badge: "Bestseller",
-                badgeClass: "",
-                rating: "4.5 (1,247 reviews)",
-                features: ["Active Noise Cancellation", "30-Hour Battery Life", "Bluetooth 5.3"],
-                buyLink: "https://www.amazon.eg/WH-CH720N-%D8%B3%D9%88%D9%86%D9%8A-%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86-%D9%84%D9%84%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%D9%8A%D8%A9/dp/B0BS1QCFHX?tag=yallabuy2026-21",
-                compareLink: "products/product1.html",
-                stock: "Only 3 left!",
-                shipping: "Free Prime Shipping",
-                savings: "Save 43%"
-            },
-            {
-                id: 2,
-                asin: "B0DFHFM1X9",
-                name: "Smart Fitness Watch",
-                price: "جاري التحميل...",
-                oldPrice: "$49.99",
-                image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop",
-                alt: "Smart Fitness Watch",
-                badge: "New",
-                badgeClass: "badge-new",
-                rating: "4.8 (892 reviews)",
-                features: ["Heart Rate & SpO2 Monitor", "GPS + 50+ Sport Modes", "7-Day Battery Life"],
-                buyLink: "https://www.amazon.eg/%D8%B1%D9%8A%D8%AF%D9%85%D9%8A-%D9%88%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%D8%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA/dp/B0DFHFM1X9?tag=yallabuy2026-21",
-                compareLink: "products/product2.html",
-                stock: "Only 5 left!",
-                shipping: "Free Prime Shipping",
-                savings: "Save 48%"
-            },
-            {
-                id: 3,
-                asin: "B08WZH1K3H",
-                name: "Organic Skincare Set",
-                price: "جاري التحميل...",
-                oldPrice: "$59.99",
-                image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&h=600&fit=crop",
-                alt: "Organic Skincare Set",
-                badge: "Sale",
-                badgeClass: "badge-sale",
-                rating: "4.3 (2,156 reviews)",
-                features: ["100% Natural Ingredients", "Cruelty-Free & Vegan", "Eco-Friendly Packaging"],
-                buyLink: "https://www.amazon.com/Eight-Saints-Skincare-Starter-Routine/dp/B08WZH1K3H?tag=yallabuy2010-20",
-                compareLink: "products/product3.html",
-                stock: "Only 2 left!",
-                shipping: "Free Prime Shipping",
-                savings: "Save 33%"
-            }
-        ];
-
-        // ==========================================
-        // DYNAMIC PRICE FETCHER
-        // ==========================================
-        async function fetchPrice(asin) {
-            try {
-                const res = await fetch('/api/price?asin=' + asin);
-                const data = await res.json();
-                return data.price || 'غير متوفر';
-            } catch (err) {
-                console.error('فشل في جيب السعر:', err);
-                return 'غير متوفر';
-            }
-        }
-
-        async function updateAllPrices() {
-            for (const product of products) {
-                if (!product.asin) continue;
-                const price = await fetchPrice(product.asin);
-                product.price = price;
-                const priceElements = document.querySelectorAll('.product-price[data-product-id="' + product.id + '"]');
-                priceElements.forEach(el => {
-                    el.textContent = price;
-                    el.classList.remove('loading');
-                });
-            }
-        }
-
-        function renderProducts(productsToRender) {
-            const grid = document.getElementById('productsGrid');
-            const noResults = document.getElementById('no-search-results');
-            if (!grid) return;
-            if (productsToRender.length === 0) {
-                grid.innerHTML = '';
-                if (noResults) noResults.classList.add('show');
-                return;
-            }
-            if (noResults) noResults.classList.remove('show');
-
-            grid.innerHTML = productsToRender.map(product => `
-                <article class="product-card">
-                    <div class="product-image-wrapper">
-                        <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
-                        <div class="product-badge ${product.badgeClass}">${product.badge}</div>
-                        <div class="stock-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                            <span>${product.stock}</span>
-                        </div>
-                        <button class="product-wishlist" aria-label="Add to wishlist">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                        </button>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-rating">
-                            <div class="stars">
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            </div>
-                            <span class="rating-text">${product.rating}</span>
-                        </div>
-                        <h3 class="product-name">${product.name}</h3>
-                        <ul class="product-features">
-                            ${product.features.map(f => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>${f}</li>`).join('')}
-                        </ul>
-                        <div class="product-price-section">
-                            <div class="product-price-row">
-                                <span class="product-price loading" data-product-id="${product.id}">${product.price}</span>
-                                <span class="old-price">${product.oldPrice}</span>
-                            </div>
-                            <span class="savings-badge">${product.savings}</span>
-                        </div>
-                        <div class="product-shipping">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            <span>${product.shipping}</span>
-                        </div>
-                        <div class="product-footer">
-                            <a href="${product.compareLink}"><button class="btn-compare">Compare</button></a>
-                            <a href="${product.buyLink}"><button class="btn-buy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Buy on Amazon</button></a>
-                        </div>
-                    </div>
-                </article>
-            `).join('');
-
-            // Attach wishlist listeners
-            document.querySelectorAll('.product-wishlist').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const svg = btn.querySelector('svg');
-                    const isFilled = btn.getAttribute('data-filled') === 'true';
-                    if (!isFilled) {
-                        btn.setAttribute('data-filled', 'true');
-                        svg.setAttribute('fill', '#ef4444');
-                        svg.setAttribute('stroke', '#ef4444');
-                        showToast('toast_wishlist');
-                    } else {
-                        btn.setAttribute('data-filled', 'false');
-                        svg.setAttribute('fill', 'none');
-                        svg.setAttribute('stroke', 'currentColor');
-                    }
-                });
-            });
-        }
-
-        function initProductSearch() {
-            const searchInput = document.getElementById('product-search-input');
-            if (!searchInput) return;
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.trim().toLowerCase();
-                if (searchTerm === '') {
-                    renderProducts(products);
-                    return;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
                 }
-                const filtered = products.filter(product =>
-                    product.name.toLowerCase().includes(searchTerm) ||
-                    product.features.some(f => f.toLowerCase().includes(searchTerm))
-                );
-                renderProducts(filtered);
             });
-        }
+        }, observerOptions);
 
-        function init() {
-            applyTheme(state.theme);
-            applyLanguage(state.language);
+        // Observe product cards
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
 
-            if (elements.themeToggle) elements.themeToggle.addEventListener('click', toggleTheme);
-            if (elements.langToggle) elements.langToggle.addEventListener('click', toggleLanguage);
-            if (elements.mobileMenuBtn) elements.mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-            document.querySelectorAll('.mobile-nav-list a, .nav-list a').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
+        // Observe trust cards
+        document.querySelectorAll('.trust-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
+
+        // Observe testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
+            observer.observe(card);
+        });
+    }
+
+    // Add CSS for animate-in class
+    function addAnimateStyles() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .animate-in {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // ==========================================
+    // COUNTDOWN TIMER (for urgency)
+    // ==========================================
+
+    function initCountdownTimers() {
+        // Add a subtle countdown to sale badges
+        const saleBadges = document.querySelectorAll('.badge-sale');
+        saleBadges.forEach(badge => {
+            badge.style.cursor = 'pointer';
+            badge.addEventListener('mouseenter', () => {
+                badge.style.transform = 'scale(1.1)';
             });
-            document.addEventListener('click', (e) => {
-                if (!elements.mobileMenu.contains(e.target) && !elements.mobileMenuBtn.contains(e.target) && elements.mobileMenu.classList.contains('active')) {
+            badge.addEventListener('mouseleave', () => {
+                badge.style.transform = 'scale(1)';
+            });
+        });
+    }
+
+    // ==========================================
+    // SMOOTH SCROLL FOR ANCHOR LINKS
+    // ==========================================
+
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                     closeMobileMenu();
                 }
             });
+        });
+    }
 
-            // Header scroll effect
-            window.addEventListener('scroll', () => {
-                const header = document.getElementById('header');
-                if (window.pageYOffset > 50) {
-                    header.style.boxShadow = 'var(--shadow-md)';
+    // ==========================================
+    // EVENT LISTENERS
+    // ==========================================
+
+    function initEventListeners() {
+        // Theme toggle
+        if (elements.themeToggle) {
+            elements.themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Language toggle
+        if (elements.langToggle) {
+            elements.langToggle.addEventListener('click', toggleLanguage);
+        }
+
+        // Mobile menu
+        if (elements.mobileMenuBtn) {
+            elements.mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close mobile menu when clicking a nav link
+        document.querySelectorAll('.mobile-nav-list a, .nav-list a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Buy buttons - show toast but allow navigation
+        document.querySelectorAll('.btn-buy').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Don't prevent default - let the link work
+                showToast('toast_buy');
+            });
+        });
+
+        // Wishlist buttons
+        document.querySelectorAll('.product-wishlist').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const svg = btn.querySelector('svg');
+                const isFilled = btn.getAttribute('data-filled') === 'true';
+
+                if (!isFilled) {
+                    btn.setAttribute('data-filled', 'true');
+                    svg.setAttribute('fill', '#ef4444');
+                    svg.setAttribute('stroke', '#ef4444');
+                    showToast('toast_wishlist');
                 } else {
-                    header.style.boxShadow = 'none';
+                    btn.setAttribute('data-filled', 'false');
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                    showToast('toast_wishlist_remove');
                 }
             });
+        });
 
-            renderProducts(products);
-            updateAllPrices(); // Fetch dynamic prices from API
-            initProductSearch();
-
-            // Update prices every hour
-            setInterval(updateAllPrices, 3600000);
+        // Subscribe form
+        const ctaForm = document.querySelector('.cta-form');
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const input = ctaForm.querySelector('.cta-input');
+                if (input && input.value.trim()) {
+                    showToast('toast_subscribe');
+                    input.value = '';
+                }
+            });
         }
 
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', init);
-        } else {
-            init();
+        // Close mobile menu on outside click
+        document.addEventListener('click', (e) => {
+            if (!elements.mobileMenu.contains(e.target) && 
+                !elements.mobileMenuBtn.contains(e.target) &&
+                elements.mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
+        // Header scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.getElementById('header');
+
+            if (currentScroll > 50) {
+                header.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+
+            lastScroll = currentScroll;
+        });
+    }
+
+
+
+    // ==========================================
+    // RENDER PRODUCTS FROM JS ARRAY
+    // ==========================================
+
+    const products = [
+        {
+            id: 1,
+            name: "Premium Wireless Headphones",
+            price: "$50.99",
+            oldPrice: "$89.99",
+            image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop",
+            alt: "Premium Wireless Headphones",
+            badge: "Bestseller",
+            badgeClass: "",
+            rating: "4.5 (1,247 reviews)",
+            features: ["Active Noise Cancellation", "30-Hour Battery Life", "Bluetooth 5.3"],
+            buyLink: "https://www.amazon.eg/WH-CH720N-%D8%B3%D9%88%D9%86%D9%8A-%D9%85%D9%8A%D9%83%D8%B1%D9%88%D9%81%D9%88%D9%86-%D9%84%D9%84%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%D9%8A%D8%A9/dp/B0BS1QCFHX?dib=eyJ2IjoiMSJ9.aIzrOJryIgctYppgB7JL_72H5RWESHuIJLDKVZDBv4jdAiiwzV5h7bq-At8wwl4kIFdtsj4fk0Yf50ksh5vpg66vPy-DbtGp0ImAIgNa9XoMsQFGUauCW8DGNfQKNyIwgKbzrbQUP567G_FxkSNoSSQ9wg_mIS2XRNbFLQhvZQWIxrKKJfKX-UqgVF9RyDbmMv_2ZCf6WtdKMvEah8wr6Q.5-MmcIDCgHwHWTSqRKE9p_TcAI47n8OfMCwA0X5duoM&dib_tag=se&keywords=Premium%2BWireless%2BHeadphones&qid=1781346099&s=electronics&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sr=1-5&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=cd940edd762a65600df084afdfc656fb&ref_=as_li_ss_tl",
+            compareLink: "products/product1.html",
+            stock: "Only 3 left!",
+            shipping: "Free Prime Shipping",
+            savings: "Save 43%"
+        },
+        {
+            id: 2,
+            name: "Smart Fitness Watch",
+            price: "$25.99",
+            oldPrice: "$49.99",
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop",
+            alt: "Smart Fitness Watch",
+            badge: "New",
+            badgeClass: "badge-new",
+            rating: "4.8 (892 reviews)",
+            features: ["Heart Rate & SpO2 Monitor", "GPS + 50+ Sport Modes", "7-Day Battery Life"],
+            buyLink: "https://www.amazon.eg/%D8%B1%D9%8A%D8%AF%D9%85%D9%8A-%D9%88%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%B3%D8%AC%D9%8A%D9%86%D8%8C-%D9%85%D9%82%D8%A7%D9%88%D9%85%D8%A9-%D9%85%D9%83%D8%A7%D9%84%D9%85%D8%A7%D8%AA/dp/B0DFHFM1X9?pd_rd_w=YUmLL&content-id=amzn1.sym.029f96f5-c9bf-4cfb-b573-9164eb586505%3Aamzn1.symc.30e3dbb4-8dd8-4bad-b7a1-a45bcdbc49b8&pf_rd_p=029f96f5-c9bf-4cfb-b573-9164eb586505&pf_rd_r=DFGJMD2VCJTS0RE71Y1A&pd_rd_wg=zdEP8&pd_rd_r=fcfa76bc-5cfa-48f8-a3c4-15970dd24bde&pd_rd_i=B0DFHFM1X9&th=1&linkCode=ll2&tag=yallabuy2026-21&linkId=053d94f3ba12891b369a7f8ecd970cf9&ref_=as_li_ss_tl",
+            compareLink: "products/product2.html",
+            stock: "Only 5 left!",
+            shipping: "Free Prime Shipping",
+            savings: "Save 48%"
+        },
+        {
+            id: 3,
+            name: "Organic Skincare Set",
+            price: "$39.99",
+            oldPrice: "$59.99",
+            image: "https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&h=600&fit=crop",
+            alt: "Organic Skincare Set",
+            badge: "Sale",
+            badgeClass: "badge-sale",
+            rating: "4.3 (2,156 reviews)",
+            features: ["100% Natural Ingredients", "Cruelty-Free & Vegan", "Eco-Friendly Packaging"],
+            buyLink: "https://www.amazon.com/Eight-Saints-Skincare-Starter-Routine/dp/B08WZH1K3H?crid=24IT5TY9QOQD3&dib=eyJ2IjoiMSJ9.rxjeO9kscuCIFwkUW0quMxhxuTUMskCbiVtNiW1v5YWngxACeTUWW7AiUjlKQ8m6Xp28_7wDM5NNljpYEjDNE3bcYPYbF74EsgPIGcdzmO4pve3THcXIkt6EDnzYXRWEuQWBl2sSe9dpkpAB-1o3XgogqJjiaCWqgc6004gjMnVtNuaLVROAlTMDI5uOJQa605xafs3FX4K5SpQ4I0SVtuYJqPMPNakcn5gDxJKaqJh6zMyvPszZ5yERkxbn6xrSZCBdKegEyHMNp7eAgp4Xq_r8iKQp4qMi_0q9PmYL8ak.n4oYvTU2b2tL1UXxCq5cm81V-EuzNn8MtnmfK7YSel0&dib_tag=se&keywords=organic+skincare+set&qid=1781650202&sprefix=Organic+Skincare+Set%2Caps%2C960&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1&linkCode=ll2&tag=yallabuy2010-20&linkId=c2c47e030aed038c16ff5c796a52ab27&language=en_US&ref_=as_li_ss_tl",
+            compareLink: "products/product3.html",
+            stock: "Only 2 left!",
+            shipping: "Free Prime Shipping",
+            savings: "Save 33%"
         }
-    })();
+        
+    ];
+
+    function renderProducts(productsToRender) {
+        const grid = document.getElementById('productsGrid');
+        const noResults = document.getElementById('no-search-results');
+
+        if (!grid) return;
+
+        if (productsToRender.length === 0) {
+            grid.innerHTML = '';
+            if (noResults) noResults.classList.add('show');
+            return;
+        }
+
+        if (noResults) noResults.classList.remove('show');
+
+        grid.innerHTML = productsToRender.map(product => `
+            <article class="product-card">
+                <div class="product-image-wrapper">
+                    <img src="${product.image}" alt="${product.alt}" class="product-image" loading="lazy">
+                    <div class="product-badge ${product.badgeClass}">${product.badge}</div>
+                    <div class="stock-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                        <span>${product.stock}</span>
+                    </div>
+                    <button class="product-wishlist" aria-label="Add to wishlist">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="product-info">
+                    <div class="product-rating">
+                        <div class="stars">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="half"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        </div>
+                        <span class="rating-text">${product.rating}</span>
+                    </div>
+                    <h3 class="product-name">${product.name}</h3>
+                    <ul class="product-features">
+                        ${product.features.map(f => `
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                                ${f}
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <div class="product-price-section">
+                        <div class="product-price-row">
+                            <span class="product-price">${product.price}</span>
+                            <span class="old-price">${product.oldPrice}</span>
+                        </div>
+                        <span class="savings-badge">${product.savings}</span>
+                    </div>
+                    <div class="product-shipping">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                        <span>${product.shipping}</span>
+                    </div>
+                    <div class="product-footer">
+                        <a href="${product.compareLink}">
+                            <button class="btn-compare">Compare</button>
+                        </a>
+                        <a href="${product.buyLink}">
+                            <button class="btn-buy">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                    <circle cx="12" cy="12" r="3"/>
+                                </svg>
+                                Buy on Amazon
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        `).join('');
+
+        // Re-attach wishlist listeners
+        attachWishlistListeners();
+    }
+
+    function attachWishlistListeners() {
+        document.querySelectorAll('.product-wishlist').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const svg = btn.querySelector('svg');
+                const isFilled = btn.getAttribute('data-filled') === 'true';
+
+                if (!isFilled) {
+                    btn.setAttribute('data-filled', 'true');
+                    svg.setAttribute('fill', '#ef4444');
+                    svg.setAttribute('stroke', '#ef4444');
+                    showToast('toast_wishlist');
+                } else {
+                    btn.setAttribute('data-filled', 'false');
+                    svg.setAttribute('fill', 'none');
+                    svg.setAttribute('stroke', 'currentColor');
+                    showToast('toast_wishlist_remove');
+                }
+            });
+        });
+    }
+
+
+    // ==========================================
+    // PRODUCT SEARCH FUNCTIONALITY
+    // ==========================================
+
+    function initProductSearch() {
+        const searchInput = document.getElementById('product-search-input');
+        const noResults = document.getElementById('no-search-results');
+
+        if (!searchInput) return;
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.trim().toLowerCase();
+
+            if (searchTerm === '') {
+                renderProducts(products);
+                return;
+            }
+
+            const filtered = products.filter(product => 
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.features.some(f => f.toLowerCase().includes(searchTerm))
+            );
+
+            renderProducts(filtered);
+        });
+
+        // Clear search on Escape key
+        searchInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                this.value = '';
+                renderProducts(products);
+                this.blur();
+            }
+        });
+    }
+
+    // ==========================================
+    // UPDATE SEARCH PLACEHOLDER BASED ON LANGUAGE
+    // ==========================================
+
+    function updateSearchPlaceholder() {
+        const searchInput = document.getElementById('product-search-input');
+        if (!searchInput) return;
+
+        const t = translations[state.language];
+        if (t && t.search_placeholder) {
+            searchInput.setAttribute('placeholder', t.search_placeholder);
+        }
+    }
+
+
+    // ==========================================
+    // INITIALIZATION
+    // ==========================================
+
+    function init() {
+        // Add animate styles
+        addAnimateStyles();
+        
+        // Apply saved preferences
+        applyTheme(state.theme);
+        applyLanguage(state.language);
+        
+        // Update stock counters
+        animateStockCounters();
+        
+        // Setup event listeners
+        initEventListeners();
+        
+        // Init scroll animations
+        initScrollAnimations();
+        
+        // Init countdown timers
+        initCountdownTimers();
+        
+        // Init product search
+        initProductSearch();
+        updateSearchPlaceholder();
+
+        // Render products from JS array
+        renderProducts(products);
+        
+        // Init smooth scroll
+        initSmoothScroll();
+    }
+
+    // Start the app
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+
+})();
+   
     </script>
 </body>
 </html>
-</body>
-                        </html>

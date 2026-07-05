@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Yallabuy</title>
@@ -20,6 +18,7 @@
             --gray-light: #94a3b8;
             --border: #e2e8f0;
             --success: #10b981;
+            --error: #ef4444;
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -40,6 +39,41 @@
             color: var(--secondary);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast.success {
+            background: var(--success);
+            color: white;
+        }
+
+        .toast.error {
+            background: var(--error);
+            color: white;
         }
 
         /* Header */
@@ -516,13 +550,18 @@
             box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
         }
 
-        .submit-btn:active {
+        .submit-btn:active:not(:disabled) {
             transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
         /* FAQ Section */
@@ -798,16 +837,19 @@
 </head>
 <body>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <div class="logo"><i class="fas fa-shopping-bag"></i> Yallabuy</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="e.html">Products</a></li>
-                <li><a href="e.html">Deals</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="index.html" class="nav-cta">Shop Now</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#" class="active">Contact</a></li>
+                <li><a href="#" class="nav-cta">Shop Now</a></li>
             </ul>
         </div>
     </header>
@@ -945,7 +987,7 @@
                     <input type="checkbox" id="newsletter" name="newsletter">
                     <label for="newsletter">I want to receive exclusive deals and updates from Yallabuy</label>
                 </div>
-                <button type="submit" class="submit-btn">
+                <button type="submit" class="submit-btn" id="submitBtn">
                     <i class="fas fa-paper-plane"></i>
                     Send Message
                 </button>
@@ -1057,31 +1099,86 @@
             </div>
         </div>
     </footer>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // ==================== EMAILJS CONFIGURATION ====================
+        const EMAILJS_CONFIG = {
+            PUBLIC_KEY: '2l5Kn8jEaU4mKLHFT',
+            SERVICE_ID: 'service_t48qmqt',
+            TEMPLATE_ID: 'template_i2reshb'
+        };
+
+        // تهيئة EmailJS
+        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+
+        // ==================== TOAST NOTIFICATION ====================
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = type === 'success' 
+                ? `<i class="fas fa-check-circle"></i> ${message}`
+                : `<i class="fas fa-exclamation-circle"></i> ${message}`;
             
-            const btn = this.querySelector('.submit-btn');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            btn.disabled = true;
+            toast.classList.add('show');
             
             setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                    this.reset();
-                }, 2000);
-            }, 1500);
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // ==================== CONTACT FORM ====================
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const originalBtnContent = submitBtn.innerHTML;
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // تعطيل الزر وإظهار الـ loading
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+            // إعداد البيانات
+            const templateParams = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                newsletter: document.getElementById('newsletter').checked ? 'Yes' : 'No'
+            };
+
+            // إرسال البريد
+            emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    // نجاح
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    showToast('تم إرسال الرسالة بنجاح! هنرد عليك قريب.', 'success');
+                    
+                    // إعادة تعيين الفورم
+                    contactForm.reset();
+
+                    // رجوع الزر لوضعه الطبيعي بعد 3 ثواني
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalBtnContent;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                })
+                .catch(function(error) {
+                    // فشل
+                    submitBtn.innerHTML = originalBtnContent;
+                    submitBtn.disabled = false;
+                    showToast('حدث خطأ في الإرسال، جرب تاني.', 'error');
+                    console.error('EmailJS Error:', error);
+                });
         });
 
+        // ==================== FAQ ====================
         function toggleFaq(element) {
             const item = element.parentElement;
             const isActive = item.classList.contains('active');

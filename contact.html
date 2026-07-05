@@ -40,41 +40,6 @@
             overflow-x: hidden;
         }
 
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            top: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-20px);
-            padding: 1rem 2rem;
-            border-radius: var(--radius-sm);
-            font-weight: 600;
-            font-size: 0.95rem;
-            z-index: 9999;
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.4s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .toast.success {
-            background: var(--success);
-            color: white;
-        }
-
-        .toast.error {
-            background: #ef4444;
-            color: white;
-        }
-
         /* Header */
         .header {
             background: rgba(255, 255, 255, 0.95);
@@ -357,206 +322,74 @@
             margin-top: 0.75rem;
         }
 
-        /* Form Section */
-        .form-wrapper {
+        /* Email CTA Section */
+        .email-section {
             max-width: 1280px;
             margin: 0 auto 6rem;
             padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
+            text-align: center;
         }
 
-        .form-info {
-            padding: 2rem 0;
-        }
-
-        .form-info h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--secondary);
-            line-height: 1.2;
-        }
-
-        .form-info > p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .feature-list li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem 0;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        .feature-list li i {
-            color: var(--success);
-            font-size: 1.1rem;
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--gray);
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .trust-badge i {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .form-container {
+        .email-box {
             background: var(--white);
-            padding: 3rem;
+            padding: 4rem 3rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
         }
 
-        .form-header {
-            margin-bottom: 2rem;
+        .email-box h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--secondary);
         }
 
-        .form-header h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-header p {
+        .email-box p {
             color: var(--gray);
-            font-size: 0.95rem;
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--dark);
-        }
-
-        .form-group label span {
-            color: var(--primary);
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid var(--border);
-            border-radius: var(--radius-sm);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            background: var(--light);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: var(--white);
-            box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .form-group select {
-            cursor: pointer;
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2364748b' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: left 1rem center;
-            padding-left: 2.5rem;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
+        .email-btn {
+            display: inline-flex;
+            align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: var(--primary);
-            margin-top: 2px;
-            cursor: pointer;
-        }
-
-        .checkbox-group label {
-            font-size: 0.9rem;
-            color: var(--gray);
-            cursor: pointer;
-            line-height: 1.5;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 3rem;
             background: linear-gradient(135deg, var(--primary), #ff8c00);
             color: var(--white);
             border: none;
             border-radius: var(--radius-sm);
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
             text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
+        .email-btn:hover {
+            transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
         }
 
-        .submit-btn:active {
+        .email-btn:active {
             transform: translateY(0);
+        }
+
+        .email-address {
+            margin-top: 1.5rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .email-address a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
         }
 
         /* FAQ Section */
@@ -782,11 +615,6 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .form-wrapper {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
             .footer-content {
                 grid-template-columns: 1fr 1fr;
             }
@@ -809,12 +637,12 @@
                 grid-template-columns: 1fr;
             }
             
-            .form-row {
-                grid-template-columns: 1fr;
+            .email-box {
+                padding: 2.5rem 1.5rem;
             }
             
-            .form-container {
-                padding: 1.5rem;
+            .email-box h2 {
+                font-size: 1.8rem;
             }
             
             .footer-content {
@@ -831,9 +659,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="toast"></div>
 
     <!-- Header -->
     <header class="header">
@@ -917,76 +742,18 @@
         </div>
     </section>
 
-    <!-- Form Section -->
-    <section class="form-wrapper">
-        <div class="form-info">
+    <!-- Email CTA Section -->
+    <section class="email-section">
+        <div class="email-box">
             <h2>Send Us a Message</h2>
-            <p>Fill out the form and our team will get back to you as soon as possible. We value your feedback and are committed to providing the best shopping experience.</p>
-            <ul class="feature-list">
-                <li><i class="fas fa-check-circle"></i> Fast response guaranteed</li>
-                <li><i class="fas fa-check-circle"></i> Expert support team</li>
-                <li><i class="fas fa-check-circle"></i> Secure communication</li>
-                <li><i class="fas fa-check-circle"></i> Personalized solutions</li>
-            </ul>
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>SSL Secure</span>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-lock"></i>
-                    <span>Privacy Protected</span>
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-award"></i>
-                    <span>Trusted Store</span>
-                </div>
+            <p>Have something to say? Click the button below to send us an email directly. We typically respond within 24 hours.</p>
+            <a href="mailto:mh01036010731@gmail.com" class="email-btn">
+                <i class="fas fa-paper-plane"></i>
+                Send Email
+            </a>
+            <div class="email-address">
+                or write to us at <a href="mailto:mh01036010731@gmail.com">mh01036010731@gmail.com</a>
             </div>
-        </div>
-        <div class="form-container">
-            <div class="form-header">
-                <h3>Contact Form</h3>
-                <p>All fields marked with <span style="color: var(--primary);">*</span> are required</p>
-            </div>
-            <form id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name <span>*</span></label>
-                        <input type="text" id="firstName" name="firstName" required placeholder="John">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name <span>*</span></label>
-                        <input type="text" id="lastName" name="lastName" required placeholder="Doe">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address <span>*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject <span>*</span></label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject</option>
-                        <option value="Product Inquiry">Product Inquiry</option>
-                        <option value="Order Tracking">Order Tracking</option>
-                        <option value="Complaint">Complaint</option>
-                        <option value="Suggestion">Suggestion</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message <span>*</span></label>
-                    <textarea id="message" name="message" required placeholder="How can we help you today?"></textarea>
-                </div>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter">
-                    <label for="newsletter">I want to receive exclusive deals and updates from Yallabuy</label>
-                </div>
-                <a href="mailto:mh01036010731@gmail.com" class="submit-btn" id="sendEmailBtn">
-                    <i class="fas fa-paper-plane"></i>
-                    Send Message
-                </a>
-            </form>
         </div>
     </section>
 
@@ -1096,7 +863,6 @@
     </footer>
 
     <script>
-        // ==================== FAQ ====================
         function toggleFaq(element) {
             const item = element.parentElement;
             const isActive = item.classList.contains('active');

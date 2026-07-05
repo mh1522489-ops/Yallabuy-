@@ -18,7 +18,6 @@
             --gray-light: #94a3b8;
             --border: #e2e8f0;
             --success: #10b981;
-            --error: #ef4444;
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -72,7 +71,7 @@
         }
 
         .toast.error {
-            background: var(--error);
+            background: #ef4444;
             color: white;
         }
 
@@ -548,20 +547,16 @@
             justify-content: center;
             gap: 0.5rem;
             box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+            text-decoration: none;
         }
 
-        .submit-btn:hover:not(:disabled) {
+        .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
         }
 
-        .submit-btn:active:not(:disabled) {
+        .submit-btn:active {
             transform: translateY(0);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
         }
 
         /* FAQ Section */
@@ -953,13 +948,7 @@
                 <h3>Contact Form</h3>
                 <p>All fields marked with <span style="color: var(--primary);">*</span> are required</p>
             </div>
-            <!-- Web3Forms -->
-            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-                <input type="hidden" name="access_key" value="348bc343-c734-4ab9-b8fb-219548ac342b">
-                <input type="hidden" name="subject" value="New Contact Form Submission from Yallabuy">
-                <input type="hidden" name="from_name" value="Yallabuy Contact Form">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                
+            <form id="contactForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name <span>*</span></label>
@@ -975,8 +964,8 @@
                     <input type="email" id="email" name="email" required placeholder="john@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="subjectField">Subject <span>*</span></label>
-                    <select id="subjectField" name="subject_field" required>
+                    <label for="subject">Subject <span>*</span></label>
+                    <select id="subject" name="subject" required>
                         <option value="">Select a subject</option>
                         <option value="Product Inquiry">Product Inquiry</option>
                         <option value="Order Tracking">Order Tracking</option>
@@ -990,13 +979,13 @@
                     <textarea id="message" name="message" required placeholder="How can we help you today?"></textarea>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                    <input type="checkbox" id="newsletter" name="newsletter">
                     <label for="newsletter">I want to receive exclusive deals and updates from Yallabuy</label>
                 </div>
-                <button type="submit" class="submit-btn" id="submitBtn">
+                <a href="mailto:mh01036010731@gmail.com" class="submit-btn" id="sendEmailBtn">
                     <i class="fas fa-paper-plane"></i>
                     Send Message
-                </button>
+                </a>
             </form>
         </div>
     </section>
@@ -1107,65 +1096,6 @@
     </footer>
 
     <script>
-        // ==================== TOAST NOTIFICATION ====================
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            toast.className = `toast ${type}`;
-            toast.innerHTML = type === 'success' 
-                ? `<i class="fas fa-check-circle"></i> ${message}`
-                : `<i class="fas fa-exclamation-circle"></i> ${message}`;
-            
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 4000);
-        }
-
-        // ==================== WEB3FORMS HANDLER ====================
-        const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const originalBtnContent = submitBtn.innerHTML;
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // تعطيل الزر وإظهار الـ loading
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            
-            // إرسال البيانات بـ fetch
-            const formData = new FormData(contactForm);
-            
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                    showToast('تم إرسال الرسالة بنجاح! هنرد عليك قريب.', 'success');
-                    contactForm.reset();
-                    
-                    setTimeout(() => {
-                        submitBtn.innerHTML = originalBtnContent;
-                        submitBtn.style.background = '';
-                        submitBtn.disabled = false;
-                    }, 3000);
-                } else {
-                    throw new Error(data.message || 'Something went wrong');
-                }
-            })
-            .catch(error => {
-                submitBtn.innerHTML = originalBtnContent;
-                submitBtn.disabled = false;
-                showToast('حدث خطأ في الإرسال، جرب تاني.', 'error');
-                console.error('Error:', error);
-            });
-        });
-
         // ==================== FAQ ====================
         function toggleFaq(element) {
             const item = element.parentElement;

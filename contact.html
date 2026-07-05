@@ -548,20 +548,16 @@
             justify-content: center;
             gap: 0.5rem;
             box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+            text-decoration: none;
         }
 
-        .submit-btn:hover:not(:disabled) {
+        .submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
         }
 
-        .submit-btn:active:not(:disabled) {
+        .submit-btn:active {
             transform: translateY(0);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
         }
 
         /* FAQ Section */
@@ -972,11 +968,11 @@
                     <label for="subject">Subject <span>*</span></label>
                     <select id="subject" name="subject" required>
                         <option value="">Select a subject</option>
-                        <option value="inquiry">Product Inquiry</option>
-                        <option value="order">Order Tracking</option>
-                        <option value="complaint">Complaint</option>
-                        <option value="suggestion">Suggestion</option>
-                        <option value="other">Other</option>
+                        <option value="Product Inquiry">Product Inquiry</option>
+                        <option value="Order Tracking">Order Tracking</option>
+                        <option value="Complaint">Complaint</option>
+                        <option value="Suggestion">Suggestion</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -987,10 +983,10 @@
                     <input type="checkbox" id="newsletter" name="newsletter">
                     <label for="newsletter">I want to receive exclusive deals and updates from Yallabuy</label>
                 </div>
-                <button type="submit" class="submit-btn" id="submitBtn">
+                <a href="#" class="submit-btn" id="sendEmailBtn">
                     <i class="fas fa-paper-plane"></i>
                     Send Message
-                </button>
+                </a>
             </form>
         </div>
     </section>
@@ -1091,7 +1087,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Yallabuy. All rights reserved.</p>
+            <p>&copy; 2025 Yallabuy. All rights reserved.</p>
             <div class="footer-bottom-links">
                 <a href="#">Terms</a>
                 <a href="#">Privacy</a>
@@ -1100,20 +1096,7 @@
         </div>
     </footer>
 
-    <!-- EmailJS Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
     <script>
-        // ==================== EMAILJS CONFIGURATION ====================
-        const EMAILJS_CONFIG = {
-            PUBLIC_KEY: '2l5Kn8jEaU4mKLHFT',
-            SERVICE_ID: 'service_t48qmqt',
-            TEMPLATE_ID: 'template_i2reshb'
-        };
-
-        // تهيئة EmailJS
-        emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
-
         // ==================== TOAST NOTIFICATION ====================
         function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
@@ -1129,53 +1112,53 @@
             }, 4000);
         }
 
-        // ==================== CONTACT FORM ====================
+        // ==================== MAILTO FORM ====================
         const contactForm = document.getElementById('contactForm');
-        const submitBtn = document.getElementById('submitBtn');
-        const originalBtnContent = submitBtn.innerHTML;
+        const sendBtn = document.getElementById('sendEmailBtn');
 
-        contactForm.addEventListener('submit', function(e) {
+        sendBtn.addEventListener('click', function(e) {
             e.preventDefault();
-
-            // تعطيل الزر وإظهار الـ loading
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-
-            // إعداد البيانات
-            const templateParams = {
-                firstName: document.getElementById('firstName').value,
-                lastName: document.getElementById('lastName').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
-                newsletter: document.getElementById('newsletter').checked ? 'Yes' : 'No'
-            };
-
-            // إرسال البريد
-            emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
-                .then(function(response) {
-                    // نجاح
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                    showToast('تم إرسال الرسالة بنجاح! هنرد عليك قريب.', 'success');
-                    
-                    // إعادة تعيين الفورم
-                    contactForm.reset();
-
-                    // رجوع الزر لوضعه الطبيعي بعد 3 ثواني
-                    setTimeout(() => {
-                        submitBtn.innerHTML = originalBtnContent;
-                        submitBtn.style.background = '';
-                        submitBtn.disabled = false;
-                    }, 3000);
-                })
-                .catch(function(error) {
-                    // فشل
-                    submitBtn.innerHTML = originalBtnContent;
-                    submitBtn.disabled = false;
-                    showToast('حدث خطأ في الإرسال، جرب تاني.', 'error');
-                    console.error('EmailJS Error:', error);
-                });
+            
+            // جمع البيانات من الفورم
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+            
+            // التحقق من إن كل الحقول المطلوبة مملوءة
+            if (!firstName || !lastName || !email || !subject || !message) {
+                showToast('Please fill in all required fields.', 'error');
+                return;
+            }
+            
+            // التحقق من صحة الإيميل
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showToast('Please enter a valid email address.', 'error');
+                return;
+            }
+            
+            // بناء رابط mailto
+            const to = 'mh01036010731@gmail.com';
+            const mailSubject = encodeURIComponent(`Contact Us: ${subject}`);
+            const mailBody = encodeURIComponent(
+                `Name: ${firstName} ${lastName}\n` +
+                `Email: ${email}\n` +
+                `Subject: ${subject}\n\n` +
+                `Message:\n${message}`
+            );
+            
+            const mailtoLink = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
+            
+            // فتح تطبيق البريد
+            window.location.href = mailtoLink;
+            
+            // إظهار رسالة نجاح
+            showToast('Opening your email app...', 'success');
+            
+            // إعادة تعيين الفورم
+            contactForm.reset();
         });
 
         // ==================== FAQ ====================
@@ -1194,4 +1177,4 @@
     </script>
 
 </body>
-</html>
+</html> 

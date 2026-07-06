@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affiliate Disclosure - Yallabuy</title>
@@ -15,7 +13,7 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 20px;
@@ -23,36 +21,47 @@
         }
         
         .container {
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 850px;
+            margin: 40px auto;
             background: white;
             padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #3498db;
         }
         
         h1 {
-            font-size: 32px;
+            font-size: 34px;
             color: #2c3e50;
-            margin-bottom: 30px;
-            text-align: center;
+            margin-bottom: 10px;
             font-weight: 700;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 15px;
+        }
+        
+        .last-updated {
+            font-size: 14px;
+            color: #7f8c8d;
+            font-style: italic;
         }
         
         .disclosure-content {
             margin-bottom: 25px;
-            padding: 20px;
+            padding: 22px;
             background: #f8f9fa;
-            border-left: 4px solid #3498db;
+            border-left: 5px solid #3498db;
             border-radius: 8px;
         }
         
         .disclosure-content p {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             font-size: 16px;
             line-height: 1.8;
+            color: #4a5568;
         }
         
         .disclosure-content p:last-child {
@@ -62,13 +71,84 @@
         .icon {
             display: inline-block;
             margin-right: 10px;
-            color: #3498db;
             font-size: 20px;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            margin-top: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 24px;
+            background: #3498db;
+            border-radius: 3px;
+            margin-right: 12px;
+        }
+        
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        ul li {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #e0f7ff 0%, #fff 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #2c5282;
+            font-weight: 600;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #fff 100%);
+            border: 2px solid #ffc107;
+            border-radius: 12px;
+            padding: 22px;
+            margin: 25px 0;
+        }
+        
+        .warning-box h3 {
+            color: #856404;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .warning-box p {
+            color: #856404;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        .ftc-badge {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 10px;
+            vertical-align: middle;
         }
         
         .back-link {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 35px;
             padding: 12px 30px;
             background: #3498db;
             color: white;
@@ -90,9 +170,23 @@
             content: "← ";
         }
         
+        .footer-note {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 14px;
+            color: #718096;
+            text-align: center;
+        }
+        
+        .footer-note a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
         @media (max-width: 768px) {
             .container {
-                margin: 20px auto;
+                margin: 15px auto;
                 padding: 30px 20px;
             }
             
@@ -100,25 +194,81 @@
                 font-size: 26px;
             }
             
+            h2 {
+                font-size: 20px;
+            }
+            
             .disclosure-content {
-                padding: 15px;
+                padding: 18px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Affiliate Disclosure</h1>
-        
-        <div class="disclosure-content">
-            <p><span class="icon">📋</span> Yallabuy is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to <strong>Amazon.com</strong>.</p>
-            
-            <p><span class="icon">💰</span> When you click on a product link and make a purchase on Amazon, we receive a <strong>small commission</strong>. This comes at <strong>no additional cost to you</strong>.</p>
-            
-            <p><span class="icon">✨</span> We only recommend products we <strong>genuinely believe in</strong> and have thoroughly researched. Our reviews and recommendations are <strong>honest and unbiased</strong>.</p>
+        <div class="header">
+            <h1>Affiliate Disclosure <span class="ftc-badge">FTC COMPLIANT</span></h1>
+            <div class="last-updated">Last updated: July 2026</div>
         </div>
         
-        <a href="../index.html" class="back-link">Back to Home</a>
+        <!-- Primary FTC Disclosure -->
+        <div class="warning-box">
+            <h3>⚠️ Important Notice</h3>
+            <p><strong>Yallabuy</strong> is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to <strong>Amazon.com</strong> and affiliated sites.</p>
+            <p style="margin-top: 10px;"><strong>As an Amazon Associate, we earn from qualifying purchases.</strong></p>
+        </div>
+        
+        <div class="disclosure-content">
+            <p><span class="icon">📋</span> This page contains affiliate links. When you click on a product link and make a purchase on Amazon, we receive a <span class="highlight">small commission</span>. This comes at <strong>absolutely no additional cost to you</strong>.</p>
+            
+            <p><span class="icon">💰</span> The price you pay on Amazon is the same whether you use our affiliate link or go directly to Amazon. Our commission is paid by Amazon, not by you.</p>
+            
+            <p><span class="icon">✨</span> We only recommend products we <strong>genuinely believe in</strong> and have thoroughly researched. Our reviews, recommendations, and product selections are <strong>honest and unbiased</strong> — our affiliate relationship does not influence our editorial opinions.</p>
+            
+            <p><span class="icon">📊</span> Product prices and availability displayed on our site are accurate as of the date/time indicated and are <span class="highlight">subject to change</span>. Any price and availability information displayed on Amazon at the time of purchase will apply to the purchase of that product.</p>
+        </div>
+        
+        <h2>FTC Compliance</h2>
+        <div class="disclosure-content">
+            <p>In accordance with the <strong>Federal Trade Commission (FTC) Endorsement Guides</strong> (16 CFR Part 255), we disclose our material connection with Amazon and any other brands we promote through affiliate links.</p>
+            <p>A "material connection" exists because we receive financial compensation (commissions) when you purchase products through our affiliate links. This relationship could affect the weight or credibility of our product recommendations.</p>
+            <p>We comply with the FTC's requirement that disclosures must be:</p>
+            <ul>
+                <li><span class="highlight">Clear and conspicuous</span> — easy to notice, read, and understand.</li>
+                <li><span class="highlight">Placed near the endorsement</span> — disclosures appear on every page containing affiliate links, typically at the top of the content or immediately before the link.</li>
+                <li><span class="highlight">In plain language</span> — we avoid jargon or abbreviations that consumers may not understand (e.g., we do not rely solely on terms like "affiliate link" without explanation).</li>
+            </ul>
+        </div>
+        
+        <h2>How Affiliate Links Work</h2>
+        <div class="disclosure-content">
+            <ul>
+                <li>When you click an affiliate link on our site, a <span class="highlight">tracking cookie</span> is placed in your browser by Amazon or the respective merchant.</li>
+                <li>This cookie allows Amazon to identify that you were referred by Yallabuy.</li>
+                <li>If you make a qualifying purchase within the cookie duration (typically 24 hours for Amazon), we earn a commission.</li>
+                <li>The commission percentage varies by product category and is set by Amazon.</li>
+                <li>We do not have access to your personal Amazon account, payment information, or purchase history.</li>
+            </ul>
+        </div>
+        
+        <h2>Other Affiliate Programs</h2>
+        <div class="disclosure-content">
+            <p>In addition to Amazon Associates, Yallabuy may participate in other affiliate programs. Any such relationships will be disclosed on the relevant pages. We will always clearly identify affiliate links and the nature of our relationship with the merchant.</p>
+        </div>
+        
+        <h2>Your Trust Matters</h2>
+        <div class="disclosure-content">
+            <p>Transparency is core to our values. We want you to make informed decisions when using our site. If you have any questions about our affiliate relationships or how we select products, please do not hesitate to <a href="../contact.html" style="color: #3498db; text-decoration: none; font-weight: 600;">contact us</a>.</p>
+        </div>
+        
+        <div class="footer-note">
+            <p>This disclosure is provided in compliance with FTC regulations and Amazon Associates Program Operating Agreement requirements.</p>
+            <p style="margin-top: 8px;">For more information, visit the <a href="https://www.ftc.gov/business-guidance/advertising-marketing/endorsements-influencers-reviews" target="_blank">FTC Endorsement Guides</a> and <a href="https://affiliate-program.amazon.com/help/operating/policies" target="_blank">Amazon Associates Program Policies</a>.</p>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-link">Back to Home</a>
+        </div>
     </div>
     <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();

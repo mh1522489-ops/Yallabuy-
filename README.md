@@ -64,7 +64,7 @@
 
 ## 🚀 الرابط المباشر
 
-🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy.vercel.app)** *(استبدل بالرابط الفعلي)*
+🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)** *(استبدل بالرابط الفعلي)*
 
 ---
 

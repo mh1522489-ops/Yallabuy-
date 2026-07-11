@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Yallabuy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: #0f0f1a;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        /* Animated background circles */
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            background: #e94560;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            background: #0f3460;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: 5s;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: #e94560;
+            top: 50%;
+            left: 80%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        /* Main content */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-size: 150px;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 2px #e94560;
+            text-stroke: 2px #e94560;
+            line-height: 1;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 90%, 100% { transform: translate(0); }
+            92% { transform: translate(-5px, 2px); }
+            94% { transform: translate(5px, -2px); }
+            96% { transform: translate(-3px, -1px); }
+        }
+
+        .error-title {
+            font-size: 28px;
+            color: #fff;
+            margin: 20px 0 10px;
+            font-weight: 600;
+        }
+
+        .error-desc {
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        /* Home button */
+        .home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #e94560;
+            color: #fff;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5);
+        }
+
+        .home-btn svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s;
+        }
+
+        .home-btn:hover svg {
+            transform: translateX(-3px);
+        }
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .error-code { font-size: 100px; }
+            .error-title { font-size: 22px; }
+            .error-desc { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background animations -->
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+    <div class="bg-circle"></div>
+
+    <!-- Logo -->
+    <a href="/index.html" class="logo">⚡ Yallabuy</a>
+
+    <!-- Main content -->
+    <div class="content">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-desc">
+            The page you're looking for doesn't exist or has been moved. 
+            Let's get you back on track.
+        </p>
+        <a href="index.html" class="home-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to Home
+        </a>
+    </div>
+
+</body>
+</html>

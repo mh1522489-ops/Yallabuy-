@@ -32,6 +32,325 @@
         }
     ]
 }
+
+<!-- ============================================ -->
+<!-- ALL SCHEMAS FOR YALLABUY - COPY & PASTE
+     Instructions:
+     1. Copy the schema you need
+     2. Paste inside <head> or before </body>
+     3. Update URLs, names, and dates
+     ============================================ -->
+
+<!-- ============================================ -->
+<!-- 1. WEBSITE SCHEMA (Put on EVERY page)
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Yallabuy",
+    "url": "https://yallabuy-sg5c.vercel.app",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://yallabuy-sg5c.vercel.app/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+    }
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 2. ORGANIZATION SCHEMA (Put on EVERY page)
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Yallabuy",
+    "url": "https://yallabuy-sg5c.vercel.app",
+    "logo": "https://yallabuy-sg5c.vercel.app/images/logo.png",
+    "slogan": "Honest Reviews. Real Testing. No BS.",
+    "sameAs": [
+        "https://www.facebook.com/yallabuy",
+        "https://www.twitter.com/yallabuy",
+        "https://www.instagram.com/yallabuy"
+    ],
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": "English"
+    }
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 3. FAQ SCHEMA (Put on Homepage or FAQ page)
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do you test products?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I buy every product with my own money and test it for at least 2 weeks before writing a review. No free samples, no sponsored content."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are your reviews honest?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. I mention both pros and cons for every product. If a product has flaws, I tell you about them."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you earn money from Amazon links?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Yallabuy participates in the Amazon Associates Program. I may earn a commission when you purchase through links on my site — at no extra cost to you."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How often do you publish new reviews?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I publish 1-2 new reviews every week. Subscribe to my newsletter to get notified."
+            }
+        }
+    ]
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 4. BREADCRUMB SCHEMA (Put on inner pages)
+     Update URLs and names for each page
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://yallabuy-sg5c.vercel.app"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Reviews",
+            "item": "https://yallabuy-sg5c.vercel.app/reviews"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sony WH-1000XM5 Review",
+            "item": "https://yallabuy-sg5c.vercel.app/reviews/sony-wh1000xm5"
+        }
+    ]
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 5. ARTICLE SCHEMA (Put on blog posts/reviews)
+     Update for each article
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sony WH-1000XM5 Review: Best Noise Cancelling Headphones 2026",
+    "description": "I tested the Sony WH-1000XM5 for 3 weeks. Here's my honest review with pros, cons, and who should buy it.",
+    "image": "https://yallabuy-sg5c.vercel.app/images/sony-wh1000xm5.jpg",
+    "author": {
+        "@type": "Person",
+        "name": "Mahmoud Hamdy",
+        "url": "https://yallabuy-sg5c.vercel.app/about"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Yallabuy",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://yallabuy-sg5c.vercel.app/images/logo.png"
+        }
+    },
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-10",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://yallabuy-sg5c.vercel.app/reviews/sony-wh1000xm5"
+    }
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 6. REVIEW SCHEMA (Put on product review pages)
+     Update for each product
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "itemReviewed": {
+        "@type": "Product",
+        "name": "Sony WH-1000XM5",
+        "image": "https://yallabuy-sg5c.vercel.app/images/sony-wh1000xm5.jpg",
+        "description": "Premium wireless noise cancelling headphones",
+        "brand": {
+            "@type": "Brand",
+            "name": "Sony"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "348.00",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.amazon.com/..."
+        }
+    },
+    "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.5",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Mahmoud Hamdy"
+    },
+    "reviewBody": "Excellent noise cancellation and 30-hour battery. However, ear cups get warm after 3+ hours of use. Best for commuters and office workers.",
+    "datePublished": "2026-07-01",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Yallabuy"
+    }
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 7. HOWTO SCHEMA (Put on buying guides)
+     Update for each guide
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Choose the Best Wireless Headphones",
+    "description": "Step-by-step guide to choosing wireless headphones that fit your needs and budget.",
+    "image": "https://yallabuy-sg5c.vercel.app/images/headphones-guide.jpg",
+    "totalTime": "PT10M",
+    "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "USD",
+        "value": "50-400"
+    },
+    "step": [
+        {
+            "@type": "HowToStep",
+            "name": "Set Your Budget",
+            "text": "Decide how much you want to spend. Good headphones start at $50, premium ones at $200+.",
+            "url": "https://yallabuy-sg5c.vercel.app/guides/choose-headphones#step1"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Choose Your Type",
+            "text": "Over-ear for comfort, on-ear for portability, in-ear for sports.",
+            "url": "https://yallabuy-sg5c.vercel.app/guides/choose-headphones#step2"
+        },
+        {
+            "@type": "HowToStep",
+            "name": "Check Key Features",
+            "text": "Look for noise cancellation, battery life, and comfort for long sessions.",
+            "url": "https://yallabuy-sg5c.vercel.app/guides/choose-headphones#step3"
+        }
+    ]
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 8. PRODUCT SCHEMA (Put on product pages)
+     Update for each product
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Sony WH-1000XM5 Wireless Headphones",
+    "image": [
+        "https://yallabuy-sg5c.vercel.app/images/sony-1.jpg",
+        "https://yallabuy-sg5c.vercel.app/images/sony-2.jpg"
+    ],
+    "description": "Industry-leading noise cancellation with 30-hour battery life",
+    "sku": "WH1000XM5/B",
+    "brand": {
+        "@type": "Brand",
+        "name": "Sony"
+    },
+    "offers": {
+        "@type": "Offer",
+        "url": "https://www.amazon.com/...",
+        "price": "248.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "priceValidUntil": "2026-12-31"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "1247",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": {
+        "@type": "Review",
+        "author": {
+            "@type": "Person",
+            "name": "Mahmoud Hamdy"
+        },
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "4.5"
+        },
+        "reviewBody": "Tested for 3 weeks. Excellent ANC, comfortable for 8+ hours..."
+    }
+}
+</script>
+
+<!-- ============================================ -->
+<!-- 9. PERSON SCHEMA (Put on About page)
+     ============================================ -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mahmoud Hamdy",
+    "url": "https://yallabuy-sg5c.vercel.app/about",
+    "image": "https://yallabuy-sg5c.vercel.app/images/mahmoud.jpg",
+    "jobTitle": "Product Reviewer & Founder",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Yallabuy"
+    },
+    "description": "I test electronics with my own money and write honest reviews. No sponsored content.",
+    "sameAs": [
+        "https://twitter.com/yallabuy",
+        "https://instagram.com/yallabuy"
+    ]
+}
+</script>
+
+
+          
 </script>
 
      <!-- Favicon SVG -->

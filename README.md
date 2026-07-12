@@ -12,19 +12,19 @@
   <img src="https://img.shields.io/badge/Amazon%20Associates-FF9900?style=for-the-badge&logo=amazon&logoColor=white" />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Responsive-100%25-success?style=flat-square" />
+  <img src="https://img.shields.io/badge/HTTPS-Active-success?style=flat-square" />
+  <img src="https://img.shields.io/badge/Performance-Optimized-blue?style=flat-square" />
+</p>
+
 </div>
 
 ---
 
 ## 🎯 عن الموقع
 
-**Yallabuy** هو منصة عربية متخصصة في مراجعة و مقارنة منتجات الإلكترونيات من أمازون.
-
-نساعد المبتدئين على اتخاذ قرار شراء **ذكي وموثوق** من خلال:
-- ✅ مقارنات تفاعلية مبنية يدويًا بعناية
-- ✅ مراجعات شاملة للمواصفات والأداء
-- ✅ دليل شراء يناسب كل ميزانية
-- ✅ عروض يومية محدثة
+**Yallabuy** هو منصة عربية متخصصة في مراجعة و مقارنة منتجات الإلكترونيات من أمازون. نساعد المبتدئين على اتخاذ قرار شراء **ذكي وموثوق** من خلال مراجعات شاملة ومقارنات تفاعلية.
 
 > 💡 **هدفنا:** نوفرلك كل المعلومات اللي تحتاجها قبل ما تشتري، في مكان واحد وبعربي.
 
@@ -53,6 +53,23 @@
 
 ---
 
+## 📂 هيكل المشروع
+
+```
+Yallabuy/
+├── index.html          # الصفحة الرئيسية
+├── products.html       # صفحة المنتجات
+├── about.html          # صفحة من نحن
+├── contact.html        # صفحة التواصل
+├── css/
+│   └── styles.css      # ملف التنسيقات
+├── js/
+│   └── main.js         # ملف الجافاسكربت
+└── images/             # مجلد الصور
+```
+
+---
+
 ## 📊 الأداء
 
 - ✅ **تصميم متجاوب 100%** — Mobile First
@@ -64,7 +81,7 @@
 
 ## 🚀 الرابط المباشر
 
-🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)** *(استبدل بالرابط الفعلي)*
+🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)**
 
 ---
 

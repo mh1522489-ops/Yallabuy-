@@ -2,7 +2,7 @@
 
 # ⚡ Yallabuy
 
-### دليلك الذكي لشراء الإلكترونيات من أمازون
+### Your Smart Guide to Buying Electronics from Amazon
 
 <p align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
@@ -22,93 +22,93 @@
 
 ---
 
-## 🎯 عن الموقع
+## 🎯 About
 
-**Yallabuy** هو منصة عربية متخصصة في مراجعة و مقارنة منتجات الإلكترونيات من أمازون. نساعد المبتدئين على اتخاذ قرار شراء **ذكي وموثوق** من خلال مراجعات شاملة ومقارنات تفاعلية.
+**Yallabuy** is an Arabic platform specialized in reviewing and comparing electronics from Amazon. We help beginners make **smart and reliable** purchasing decisions through comprehensive reviews and interactive comparisons.
 
-> 💡 **هدفنا:** نوفرلك كل المعلومات اللي تحتاجها قبل ما تشتري، في مكان واحد وبعربي.
-
----
-
-## ✨ المميزات
-
-| الميزة | التفاصيل |
-|--------|----------|
-| 🔍 **مقارنات تفاعلية** | قارن بين منتجين أو أكثر بجدول جانب-بجانب |
-| 📝 **مراجعات يدوية** | كل مراجعة مكتوبة بشكل شخصي ومدققة |
-| 📱 **تصميم متجاوب** | يعمل بكفاءة على الموبايل والتابلت والديسكتوب |
-| 🔒 **SSL & HTTPS** | اتصال آمن مشفر لحماية بيانات الزوار |
-| ⚡ **سرعة عالية** | بنية خفيفة HTML/CSS/JS بدون أطر ثقيلة |
-| 🌐 **استضافة سحابية** | موثوقية 99.9% عبر Vercel |
+> 💡 **Our Goal:** We provide you with all the information you need before you buy, in one place and in Arabic.
 
 ---
 
-## 🛠️ التقنيات المستخدمة
+## ✨ Features
+
+| Feature | Details |
+|---------|---------|
+| 🔍 **Interactive Comparisons** | Compare two or more products side-by-side |
+| 📝 **Handwritten Reviews** | Every review is personally written and carefully curated |
+| 📱 **Responsive Design** | Works efficiently on mobile, tablet, and desktop |
+| 🔒 **SSL & HTTPS** | Encrypted secure connection to protect visitor data |
+| ⚡ **High Speed** | Lightweight HTML/CSS/JS architecture with no heavy frameworks |
+| 🌐 **Cloud Hosting** | 99.9% reliability via Vercel |
+
+---
+
+## 🛠️ Tech Stack
 
 - **Frontend:** HTML5, CSS3, JavaScript (Vanilla)
-- **الاستضافة:** [Vercel](https://vercel.com)
-- **البرنامج التسويقي:** Amazon Associates
-- **الأمان:** SSL Certificate (HTTPS)
-- **الديزاين:** CSS Custom — بدون أطر خارجية
+- **Hosting:** [Vercel](https://vercel.com)
+- **Affiliate Program:** Amazon Associates
+- **Security:** SSL Certificate (HTTPS)
+- **Design:** Custom CSS — No external frameworks
 
 ---
 
-## 📂 هيكل المشروع
+## 📂 Project Structure
 
 ```
 Yallabuy/
-├── index.html          # الصفحة الرئيسية
-├── products.html       # صفحة المنتجات
-├── about.html          # صفحة من نحن
-├── contact.html        # صفحة التواصل
+├── index.html          # Homepage
+├── products.html       # Products page
+├── about.html          # About page
+├── contact.html        # Contact page
 ├── css/
-│   └── styles.css      # ملف التنسيقات
+│   └── styles.css      # Stylesheet
 ├── js/
-│   └── main.js         # ملف الجافاسكربت
-└── images/             # مجلد الصور
+│   └── main.js         # JavaScript file
+└── images/             # Images folder
 ```
 
 ---
 
-## 📊 الأداء
+## 📊 Performance
 
-- ✅ **تصميم متجاوب 100%** — Mobile First
-- ✅ **HTTPS مشغل** — SSL Certificate فعال
-- ✅ **بنية خفيفة** — بدون Dependencies ثقيلة
-- ✅ **تحميل سريع** — أصول محسّنة وصور مضغوطة
+- ✅ **100% Responsive Design** — Mobile First
+- ✅ **Active HTTPS** — Valid SSL Certificate
+- ✅ **Lightweight Architecture** — No heavy dependencies
+- ✅ **Fast Loading** — Optimized assets and compressed images
 
 ---
 
-## 🚀 الرابط المباشر
+## 🚀 Live Demo
 
 🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)**
 
 ---
 
-## 🗺️ خريطة الطريق (Roadmap)
+## 🗺️ Roadmap
 
-- [ ] إضافة نشرة بريدية للعروض اليومية
-- [ ] نظام بحث متقدم بالفلاتر
-- [ ] دعم اللغتين (عربي / إنجليزي)
-- [ ] توسيع النيتش ليشمل الأجهزة المنزلية والرياضة
-- [ ] تحويل المنصة إلى Full-Stack (قاعدة بيانات + API)
-- [ ] تطبيق موبايل (PWA)
-
----
-
-## 📄 إفصاح
-
-> هذا الموقع يشارك في **برنامج Amazon Associates**.
-> بعض الروابط الموجودة هي روابط تسويق بالعمولة — قد نحصل على عمولة بدون أي تكلفة إضافية عليك.
+- [ ] Add daily deals newsletter
+- [ ] Advanced search with filters
+- [ ] Bilingual support (Arabic / English)
+- [ ] Expand niche to include home appliances and sports
+- [ ] Convert platform to Full-Stack (database + API)
+- [ ] Mobile app (PWA)
 
 ---
 
-## 👤 المطور
+## 📄 Disclosure
+
+> This website participates in the **Amazon Associates Program**.
+> Some links are affiliate links — we may earn a commission at no extra cost to you.
+
+---
+
+## 👤 Developer
 
 **Mahmoud Hamdy**
 
 ---
 
-## 📜 الترخيص
+## 📜 License
 
-هذا المشروع مفتوح المصدر تحت رخصة **MIT**.
+This project is open source under the **MIT License**.

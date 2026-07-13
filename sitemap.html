@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | YallaBuy - Honest Product Reviews</title>
+    <script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+    <meta name="description" content="Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages. Honest reviews from real experience.">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Sitemap - YallaBuy",
+        "description": "Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages.",
+        "url": "https://yallabuy-sg5c.vercel.app/sitemap.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "YallaBuy",
+            "url": "https://yallabuy-sg5c.vercel.app",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://yallabuy-sg5c.vercel.app/assets/logo.png"
+            }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://yallabuy-sg5c.vercel.app/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Sitemap",
+                    "item": "https://yallabuy-sg5c.vercel.app/sitemap.html"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sitemap | YallaBuy - Honest Product Reviews">
+    <meta property="og:description" content="Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yallabuy-sg5c.vercel.app/sitemap.html">
+    <meta property="og:image" content="https://yallabuy-sg5c.vercel.app/assets/og-image.jpg">
+    <meta property="og:site_name" content="YallaBuy">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sitemap | YallaBuy - Honest Product Reviews">
+    <meta name="twitter:description" content="Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages.">
+    <meta name="twitter:image" content="https://yallabuy-sg5c.vercel.app/assets/og-image.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yallabuy-sg5c.vercel.app/sitemap.html">
+
+    <!-- Robots Meta -->
+    <meta name="robots" content="index, follow">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a28;
+            --primary: #e63946;
+            --primary-light: #ff6b6b;
+            --secondary: #f4a261;
+            --accent: #2a9d8f;
+            --text-primary: #f8f9fa;
+            --text-secondary: #adb5bd;
+            --text-muted: #6c757d;
+            --border: rgba(230, 57, 70, 0.12);
+            --gradient-1: linear-gradient(135deg, #e63946 0%, #f4a261 100%);
+            --gradient-2: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+            --gradient-3: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 12px 48px rgba(230, 57, 70, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--gradient-1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.06) 0%, transparent 50%);
+            animation: pulse 10s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.9; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--primary-light);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-mission {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.75rem 2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1.25rem;
+            max-width: 720px;
+            text-align: left;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-mission-icon {
+            width: 52px;
+            height: 52px;
+            background: var(--gradient-2);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+        }
+
+        .hero-mission-text strong {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.35rem;
+            font-size: 1.05rem;
+        }
+
+        .hero-mission-text span {
+            color: var(--text-secondary);
+            font-size: 0.9375rem;
+            line-height: 1.5;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-2px);
+            border-color: rgba(230, 57, 70, 0.25);
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Category Cards */
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+            border-color: rgba(230, 57, 70, 0.25);
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
+        }
+
+        .category-card.articles::before {
+            background: var(--gradient-2);
+        }
+
+        .category-card.articles:hover {
+            border-color: rgba(42, 157, 143, 0.25);
+            box-shadow: 0 12px 48px rgba(42, 157, 143, 0.12);
+        }
+
+        .category-card.products::before {
+            background: var(--gradient-3);
+        }
+
+        .category-card.products:hover {
+            border-color: rgba(244, 162, 97, 0.25);
+            box-shadow: 0 12px 48px rgba(244, 162, 97, 0.12);
+        }
+
+        .category-card.legal::before {
+            background: linear-gradient(135deg, #6c757d 0%, #adb5bd 100%);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .category-card.pages .category-icon {
+            background: rgba(230, 57, 70, 0.12);
+        }
+
+        .category-card.products .category-icon {
+            background: rgba(244, 162, 97, 0.12);
+        }
+
+        .category-card.articles .category-icon {
+            background: rgba(42, 157, 143, 0.12);
+        }
+
+        .category-card.legal .category-icon {
+            background: rgba(108, 117, 125, 0.12);
+        }
+
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        .category-count {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0.35rem 0.9rem;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .link-list {
+            list-style: none;
+        }
+
+        .link-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        .link-list a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.7rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+
+        .link-list a::before {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: all 0.3s ease;
+            color: var(--primary-light);
+            font-weight: 700;
+        }
+
+        .link-list a:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            padding-left: 1.25rem;
+        }
+
+        .link-list a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Marketing Section */
+        .marketing-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketing-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-1);
+        }
+
+        .marketing-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .marketing-section > p {
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .marketing-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .marketing-feature {
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .marketing-feature:hover {
+            transform: translateY(-4px);
+            border-color: rgba(230, 57, 70, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .marketing-feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 1.25rem;
+        }
+
+        .marketing-feature:nth-child(1) .marketing-feature-icon {
+            background: rgba(230, 57, 70, 0.12);
+        }
+
+        .marketing-feature:nth-child(2) .marketing-feature-icon {
+            background: rgba(42, 157, 143, 0.12);
+        }
+
+        .marketing-feature:nth-child(3) .marketing-feature-icon {
+            background: rgba(244, 162, 97, 0.12);
+        }
+
+        .marketing-feature:nth-child(4) .marketing-feature-icon {
+            background: rgba(118, 111, 255, 0.12);
+        }
+
+        .marketing-feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .marketing-feature p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 15, 0.8);
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        footer .footer-tagline {
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .sitemap-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .marketing-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .hero-mission {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.5rem;
+            }
+
+            .hero-mission-text {
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-light);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="nav-container" aria-label="Main navigation">
+            <a href="https://yallabuy-sg5c.vercel.app/" class="logo">
+                <div class="logo-icon">🛒</div>
+                <span>YallaBuy</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://yallabuy-sg5c.vercel.app/">Home</a></li>
+                <li><a href="https://yallabuy-sg5c.vercel.app/e.html">Products</a></li>
+                <li><a href="https://yallabuy-sg5c.vercel.app/buying.html">Buying Guide</a></li>
+                <li><a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🗺️</span>
+                <span>Complete Site Directory</span>
+            </div>
+            <h1>Sitemap</h1>
+            <p>Navigate YallaBuy with ease. Find honest product reviews, buying guides, and tech articles — all in one place.</p>
+            
+            <div class="hero-mission">
+                <div class="hero-mission-icon">🎯</div>
+                <div class="hero-mission-text">
+                    <strong>Our Commitment to You</strong>
+                    <span>We prioritize seamless navigation and premium content quality to elevate your shopping experience and help you make informed decisions with confidence.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Total Pages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">14</div>
+                <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Articles</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Pages</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Sitemap Content -->
+    <main class="container">
+        <div class="sitemap-grid">
+            
+            <!-- Pages Section -->
+            <article class="category-card pages">
+                <div class="category-header">
+                    <div class="category-icon">📄</div>
+                    <h2 class="category-title">Main Pages</h2>
+                    <span class="category-count">6</span>
+                </div>
+                <ul class="link-list">
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/" title="YallaBuy Homepage - Honest Product Reviews">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/e.html" title="All Products Page">
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/buying.html" title="Buying Guide">
+                            <span>Buying Guide</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/contact.html" title="Contact Us">
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html" title="Privacy Policy">
+                            <span>Privacy Policy</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html" title="Terms of Service">
+                            <span>Terms of Service</span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Product Reviews Section (14 Products) -->
+            <article class="category-card products">
+                <div class="category-header">
+                    <div class="category-icon">🎧</div>
+                    <h2 class="category-title">Product Reviews</h2>
+                    <span class="category-count">14</span>
+                </div>
+                <ul class="link-list">
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product1.html" title="Product Review 1">
+                            <span>Product 1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product2.html" title="Product Review 2">
+                            <span>Product 2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product3.html" title="Product Review 3">
+                            <span>Product 3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product4.html" title="Product Review 4">
+                            <span>Product 4</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product5.html" title="Product Review 5">
+                            <span>Product 5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product6.html" title="Product Review 6">
+                            <span>Product 6</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product7.html" title="Product Review 7">
+                            <span>Product 7</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product8.html" title="Product Review 8">
+                            <span>Product 8</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product9.html" title="Product Review 9">
+                            <span>Product 9</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product10.html" title="Product Review 10">
+                            <span>Product 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product11.html" title="Product Review 11">
+                            <span>Product 11</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product12.html" title="Product Review 12">
+                            <span>Product 12</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product13.html" title="Product Review 13">
+                            <span>Product 13</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/products/product14.html" title="Product Review 14">
+                            <span>Product 14</span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+            <!-- Articles Section (5 Articles) -->
+            <article class="category-card articles">
+                <div class="category-header">
+                    <div class="category-icon">📝</div>
+                    <h2 class="category-title">Articles & Guides</h2>
+                    <span class="category-count">5</span>
+                </div>
+                <ul class="link-list">
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/article/article.html" title="Main Articles Page">
+                            <span>Articles Hub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/index.html" title="Headphones Category">
+                            <span>Headphones Guide</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise.html" title="Active Noise Cancellation Guide">
+                            <span>Active Noise Cancellation</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise-folder/Best-Wireless-Earbuds-2026.html" title="Best Wireless Earbuds 2026">
+                            <span>Best Wireless Earbuds 2026</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise-folder/Headphone-Buying-Guide.html" title="Headphone Buying Guide">
+                            <span>Headphone Buying Guide</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise-folder/Transparency-Mode-Explained.html" title="Transparency Mode Explained">
+                            <span>Transparency Mode Explained</span>
+                        </a>
+                    </li>
+                </ul>
+            </article>
+
+        </div>
+
+        <!-- Marketing & UX Section -->
+        <section class="marketing-section">
+            <h2>Built for Discovery</h2>
+            <p>Every link, every review, every guide — designed with you in mind. We believe great navigation is the foundation of great content. Our mission is to make your shopping journey smooth, informed, and enjoyable.</p>
+            
+            <div class="marketing-features">
+                <div class="marketing-feature">
+                    <div class="marketing-feature-icon">⚡</div>
+                    <h3>Fast Navigation</h3>
+                    <p>Find what you need in seconds, not minutes. Clean structure, zero clutter, maximum efficiency.</p>
+                </div>
+                <div class="marketing-feature">
+                    <div class="marketing-feature-icon">✨</div>
+                    <h3>Premium Quality</h3>
+                    <p>Every review is personally tested, researched, and written to the highest editorial standard.</p>
+                </div>
+                <div class="marketing-feature">
+                    <div class="marketing-feature-icon">📈</div>
+                    <h3>SEO Optimized</h3>
+                    <p>Structured data and best practices to help more shoppers discover honest reviews.</p>
+                </div>
+                <div class="marketing-feature">
+                    <div class="marketing-feature-icon">🤝</div>
+                    <h3>Trust & Transparency</h3>
+                    <p>No sponsored content. Every product bought with our own money. Honest pros and cons, always.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://yallabuy-sg5c.vercel.app/">Home</a>
+                <a href="https://yallabuy-sg5c.vercel.app/e.html">Products</a>
+                <a href="https://yallabuy-sg5c.vercel.app/buying.html">Buying Guide</a>
+                <a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a>
+                <a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html">Privacy Policy</a>
+                <a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html">Terms of Service</a>
+            </div>
+            <p>© 2026 YallaBuy. All rights reserved.</p>
+            <p class="footer-tagline">Built with honesty, tested with passion, shared with care.</p>
+        </div>
+    </footer>
+<script>
+   
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+</script>
+</body>
+</html>

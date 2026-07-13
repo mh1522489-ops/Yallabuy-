@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+
+<!-- ✅ الجديد (بيسمح لـ Chatbase) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.chatbase.co https://t.contentsquare.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.chatbase.co; font-src 'self' https://fonts.gstatic.com; frame-src https://www.youtube.com;">
+
 <title>Kasa Smart Light Bulbs Review 2026 — Best No-Hub WiFi Bulbs | YallaBuy</title>
 <meta name="description" content="Honest Kasa Smart Light Bulbs review 2026. 16M colors, no hub, Alexa/Google compatible, 4-pack for $31. Check current price on Amazon now.">
 <meta name="keywords" content="Kasa smart bulbs, KL125P4, smart wifi bulbs, color changing bulbs, alexa bulbs, google home lighting, no hub smart bulbs, dimmable led, energy saving">
@@ -1995,42 +1999,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  <!-- Chatbase Chatbot -->
-<script>
-window.chatbaseConfig = {
-  chatbotId: "JF9wJT_ZHr6FLdPO69v8n"
-};
-</script>
-<script>
-(function(){
-  if(!window.chatbase || window.chatbase("getState") !== "initialized") {
-    window.chatbase = (...arguments) => {
-      if(!window.chatbase.q) { window.chatbase.q = []; }
-      window.chatbase.q.push(arguments);
-    };
-    window.chatbase = new Proxy(window.chatbase, {
-      get(target, prop) {
-        if(prop === "q") { return target.q; }
-        return (...args) => target(prop, ...args);
-      }
-    });
-  }
-  const onLoad = function() {
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.id = "JF9wJT_ZHr6FLdPO69v8n";
-    // script.domain = "www.chatbase.co";  // ❌ شيل السطر ده
-    script.defer = true;  // ✅ أضف defer بدلها
-    document.body.appendChild(script);
-  };
-  if(document.readyState === "complete") {
-    onLoad();
-  } else {
-    window.addEventListener("load", onLoad);
-  }
-})();
-</script>
-
-</body>
+  
+    </body>
 </html>
 

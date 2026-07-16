@@ -3527,7 +3527,7 @@ button {
       window.location.reload();
     });
 
-    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+    navigator.serviceWorker.register('service-worker.js').then(function(reg) {
       console.log('✅ Service Worker مسجل');
 
       reg.addEventListener('updatefound', function() {

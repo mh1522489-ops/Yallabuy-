@@ -2,7 +2,7 @@
 // Yallabuy Service Worker - v2 (Fixed)
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v9';
+const CACHE_NAME = 'yallabuy-cache-v10';
 const IMAGE_CACHE = 'yallabuy-images-v1';
 
 const CORE_ASSETS = [

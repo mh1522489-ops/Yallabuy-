@@ -3,8 +3,8 @@
 // كاشات منفصلة لكل نوع
 // ============================================
 
-const CACHE_NAME = 'yallabuy-pages-v10';
-const IMAGE_CACHE = 'yallabuy-images-v1';
+const CACHE_NAME = 'yallabuy-pages-v11';
+const IMAGE_CACHE = 'yallabuy-images-v2';
 const STATIC_CACHE = 'yallabuy-static-v1';
 
 const CORE_PAGES = [

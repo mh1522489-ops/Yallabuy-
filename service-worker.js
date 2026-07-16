@@ -3,7 +3,7 @@
 // تحديث تلقائي عند تعديل الموقع
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v20';
+const CACHE_NAME = 'yallabuy-cache-v21';
 const CORE_ASSETS = [
   '/',
   '/index.html',

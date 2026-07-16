@@ -3,14 +3,14 @@
 // تحديث تلقائي عند تعديل الموقع
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v6';
+const CACHE_NAME = 'yallabuy-cache-v7';
 const CORE_ASSETS = [
-  'offline.html',
-  'index.html',
-  'style.css',
-  'script.js',
-  'logo.png',
-  'favicon.ico'
+  '/offline.html',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  '/logo.png',
+  '/favicon.ico'
 ];
 
 // ============================================

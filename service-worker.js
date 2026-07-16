@@ -1,14 +1,18 @@
 // ============================================
-// Yallabuy Service Worker - v1
-// صفحات: Network First | صور: Cache First
+// Yallabuy Service Worker - v2 (Fixed)
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v7';
+const CACHE_NAME = 'yallabuy-cache-v9';
 const IMAGE_CACHE = 'yallabuy-images-v1';
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
+  '/offline.html',           // ← ✅ ضيف ده
+  '/terms-of-service.html',   // ← ✅ ضيف الصفحات المهمة
+  '/privacy-policy.html',
+  '/affiliate-disclosure.html',
+  '/contact.html',
   '/style.css',
   '/script.js',
   '/logo.png',
@@ -27,7 +31,7 @@ self.addEventListener('install', (event) => {
 });
 
 // ============================================
-// 2. التفعيل - حذف الكاش القديم
+// 2. التفعيل
 // ============================================
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -49,7 +53,7 @@ self.addEventListener('fetch', (event) => {
   
   if (!request.url.startsWith('http') || request.method !== 'GET') return;
 
-  // 🔴 لو صورة → Cache First (تحفظ مرة واحدة)
+  // 🔴 صور → Cache First
   if (request.destination === 'image') {
     event.respondWith(
       caches.open(IMAGE_CACHE).then((cache) => {
@@ -69,7 +73,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 🔵 لو مش صورة → Network First (تحديث فوري)
+  // 🔵 صفحات وملفات → Network First
   event.respondWith(
     fetch(request).then((networkResponse) => {
       if (networkResponse && networkResponse.status === 200) {
@@ -79,14 +83,21 @@ self.addEventListener('fetch', (event) => {
       return networkResponse;
     }).catch(() => {
       return caches.match(request).then((cached) => {
-        return cached || (request.mode === 'navigate' ? caches.match('/') : null);
+        if (cached) return cached;
+        
+        // ✅ لو مش موجودة → offline.html
+        if (request.mode === 'navigate') {
+          return caches.match('/offline.html');
+        }
+        
+        return null;
       });
     })
   );
 });
 
 // ============================================
-// 4. استقبال رسالة التحديث
+// 4. رسائل التحديث
 // ============================================
 self.addEventListener('message', (event) => {
   if (event.data === 'skipWaiting') {

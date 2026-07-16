@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ Yallabuy
+#  Yallabuy
 
 ### Your Smart Guide to Buying Electronics from Amazon
 

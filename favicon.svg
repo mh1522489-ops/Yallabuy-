@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect x="3" y="3" width="94" height="94" rx="20" fill="#0a1628"/>
+  <text x="50" y="66" font-family="Arial, sans-serif" font-size="55" font-weight="900" fill="#f97316" text-anchor="middle">Y</text>
+</svg>
+<!-- تسجيل Service Worker + تحديث تلقائي -->
+<script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
+
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>

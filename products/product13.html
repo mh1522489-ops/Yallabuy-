@@ -1977,7 +1977,7 @@ console.log('%cDomain: yallabuy-sg5c.vercel.app', 'font-size: 12px; color: #6B72
       window.location.reload();
     });
 
-    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+    navigator.serviceWorker.register('service-worker.js').then(function(reg) {
       console.log('✅ Service Worker مسجل');
 
       reg.addEventListener('updatefound', function() {

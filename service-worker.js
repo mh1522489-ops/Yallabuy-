@@ -3,7 +3,7 @@
 // كل حاجة في كاش واحد
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v11';
+const CACHE_NAME = 'yallabuy-cache-v12';
 
 const CORE_ASSETS = [
   '/',

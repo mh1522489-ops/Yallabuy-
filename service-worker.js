@@ -3,7 +3,7 @@
 // صفحات: Network First | صور: Cache First
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v2';
+const CACHE_NAME = 'yallabuy-cache-v3';
 const IMAGE_CACHE = 'yallabuy-images-v1';
 
 const CORE_ASSETS = [

@@ -1,6 +1,6 @@
 // ============================================
-// Yallabuy Service Worker - Network First Strategy
-// يحل مشكلة التحديث التلقائي
+// Yallabuy Service Worker - v1
+// تحديث تلقائي عند تعديل الموقع
 // ============================================
 
 const CACHE_NAME = 'yallabuy-cache-v1';
@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
 });
 
 // ============================================
-// 2. التفعيل
+// 2. التفعيل - حذف الكاش القديم
 // ============================================
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -40,7 +40,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // ============================================
-// 3. جلب الطلبات - Network First (أولاً من النت)
+// 3. جلب الطلبات
 // ============================================
 self.addEventListener('fetch', (event) => {
   const { request } = event;
@@ -48,25 +48,22 @@ self.addEventListener('fetch', (event) => {
   if (!request.url.startsWith('http') || request.method !== 'GET') return;
 
   event.respondWith(
-    // أولاً: جرب النت
-    fetch(request).then((networkResponse) => {
-      // لو النت شغال → احفظ في الكاش وارجع الرد
-      if (networkResponse && networkResponse.status === 200) {
+    caches.match(request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse;
+      }
+      return fetch(request).then((networkResponse) => {
+        if (!networkResponse || networkResponse.status !== 200) {
+          return networkResponse;
+        }
         const responseToCache = networkResponse.clone();
         caches.open(CACHE_NAME).then((cache) => {
           cache.put(request, responseToCache);
         });
-      }
-      return networkResponse;
-    }).catch(() => {
-      // لو النت مقطوع → ارجع من الكاش
-      return caches.match(request).then((cachedResponse) => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-        // لو مش موجود في الكاش → الصفحة الرئيسية
+        return networkResponse;
+      }).catch(() => {
         if (request.mode === 'navigate') {
-          return caches.match('/');
+          return caches.match('/index.html');
         }
       });
     })
@@ -74,7 +71,7 @@ self.addEventListener('fetch', (event) => {
 });
 
 // ============================================
-// 4. استقبال رسالة التحديث
+// 4. استقبال رسالة التحديث من الصفحة
 // ============================================
 self.addEventListener('message', (event) => {
   if (event.data === 'skipWaiting') {

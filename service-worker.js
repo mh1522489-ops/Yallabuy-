@@ -1,9 +1,9 @@
 // ============================================
-// Yallabuy Service Worker - v1
-// تحديث تلقائي عند تعديل الموقع
+// Yallabuy Service Worker - Network First Strategy
+// يحل مشكلة التحديث التلقائي
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v22';
+const CACHE_NAME = 'yallabuy-cache-v1';
 const CORE_ASSETS = [
   '/',
   '/index.html',
@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
 });
 
 // ============================================
-// 2. التفعيل - حذف الكاش القديم
+// 2. التفعيل
 // ============================================
 self.addEventListener('activate', (event) => {
   event.waitUntil(
@@ -40,7 +40,7 @@ self.addEventListener('activate', (event) => {
 });
 
 // ============================================
-// 3. جلب الطلبات
+// 3. جلب الطلبات - Network First (أولاً من النت)
 // ============================================
 self.addEventListener('fetch', (event) => {
   const { request } = event;
@@ -48,20 +48,23 @@ self.addEventListener('fetch', (event) => {
   if (!request.url.startsWith('http') || request.method !== 'GET') return;
 
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(request).then((networkResponse) => {
-        if (!networkResponse || networkResponse.status !== 200) {
-          return networkResponse;
-        }
+    // أولاً: جرب النت
+    fetch(request).then((networkResponse) => {
+      // لو النت شغال → احفظ في الكاش وارجع الرد
+      if (networkResponse && networkResponse.status === 200) {
         const responseToCache = networkResponse.clone();
         caches.open(CACHE_NAME).then((cache) => {
           cache.put(request, responseToCache);
         });
-        return networkResponse;
-      }).catch(() => {
+      }
+      return networkResponse;
+    }).catch(() => {
+      // لو النت مقطوع → ارجع من الكاش
+      return caches.match(request).then((cachedResponse) => {
+        if (cachedResponse) {
+          return cachedResponse;
+        }
+        // لو مش موجود في الكاش → الصفحة الرئيسية
         if (request.mode === 'navigate') {
           return caches.match('/');
         }
@@ -71,7 +74,7 @@ self.addEventListener('fetch', (event) => {
 });
 
 // ============================================
-// 4. استقبال رسالة التحديث من الصفحة
+// 4. استقبال رسالة التحديث
 // ============================================
 self.addEventListener('message', (event) => {
   if (event.data === 'skipWaiting') {

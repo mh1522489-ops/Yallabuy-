@@ -6,11 +6,11 @@
 const CACHE_NAME = 'yallabuy-cache-v4';
 const CORE_ASSETS = [
   '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/logo.png',
-  '/favicon.ico'
+  'index.html',
+  'style.css',
+  'script.js',
+  'logo.png',
+  'favicon.ico'
 ];
 
 // ============================================

@@ -599,7 +599,8 @@ section { max-width: 1280px; margin: 0 auto; padding: 80px 24px; overflow: auto;
 .checklist li:last-child { border-bottom: none; }
 
 /* ─── RELATED PRODUCTS ─── */
-.related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;.related-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition); }
+.related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;}
+  .related-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: var(--transition); }
 .related-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
 .related-card img { width: 100%; height: 180px; object-fit: cover; }
 .related-card h3 { font-size: 16px; padding: 16px 16px 4px; font-family: 'Inter', sans-serif; }
@@ -928,7 +929,7 @@ section { max-width: 1280px; margin: 0 auto; padding: 80px 24px; overflow: auto;
           <button class="color-swatch" style="background:#FBBF24" data-color="#FBBF24" aria-label="Warm yellow" onclick="setBulbColor('#FBBF24')"></button>
           <button class="color-swatch" style="background:#EF4444" data-color="#EF4444" aria-label="Red" onclick="setBulbColor('#EF4444')"></button>
           <button class="color-swatch" style="background:#10B981" data-color="#10B981" aria-label="Green" onclick="setBulbColor('#10B981')"></button>
-          <button clast"color-swatch" style="background:#3B82F6" data-color="#3B82F6" aria-label="Blue" onclick="setBulbColor('#3B82F6')"></button>
+          <button class="color-swatch" style="background:#3B82F6" data-color="#3B82F6" aria-label="Blue" onclick="setBulbColor('#3B82F6')"></button>
           <button class="color-swatch" style="background:#F472B6" data-color="#F472B6" aria-label="Pink" onclick="setBulbColor('#F472B6')"></button>
         </div>
         <p class="color-hex" id="color-hex">#FF6B35</p>

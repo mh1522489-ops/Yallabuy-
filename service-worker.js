@@ -1,15 +1,15 @@
 // ============================================
-// Yallabuy Service Worker - v2 (Fixed)
+// Yallabuy Service Worker - v3 (Simple)
+// كل حاجة في كاش واحد
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v10';
-const IMAGE_CACHE = 'yallabuy-images-v1';
+const CACHE_NAME = 'yallabuy-cache-v11';
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/offline.html',           // ← ✅ ضيف ده
-  '/terms-of-service.html',   // ← ✅ ضيف الصفحات المهمة
+  '/offline.html',
+  '/terms-of-service.html',
   '/privacy-policy.html',
   '/affiliate-disclosure.html',
   '/contact.html',
@@ -20,13 +20,21 @@ const CORE_ASSETS = [
 ];
 
 // ============================================
-// 1. التثبيت
+// 1. التثبيت - امسح القديم وحط الجديد
 // ============================================
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(CORE_ASSETS))
-      .then(() => self.skipWaiting())
+    caches.keys().then((cacheNames) => {
+      // امسح كل الكاشات القديمة
+      return Promise.all(
+        cacheNames.map((name) => caches.delete(name))
+      );
+    }).then(() => {
+      // اعمل كاش جديد
+      return caches.open(CACHE_NAME).then((cache) => {
+        return cache.addAll(CORE_ASSETS);
+      });
+    }).then(() => self.skipWaiting())
   );
 });
 
@@ -34,46 +42,17 @@ self.addEventListener('install', (event) => {
 // 2. التفعيل
 // ============================================
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME && name !== IMAGE_CACHE)
-          .map((name) => caches.delete(name))
-      );
-    }).then(() => self.clients.claim())
-  );
+  event.waitUntil(self.clients.claim());
 });
 
 // ============================================
-// 3. جلب الطلبات
+// 3. جلب الطلبات - كل حاجة Network First
 // ============================================
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   
   if (!request.url.startsWith('http') || request.method !== 'GET') return;
 
-  // 🔴 صور → Cache First
-  if (request.destination === 'image') {
-    event.respondWith(
-      caches.open(IMAGE_CACHE).then((cache) => {
-        return cache.match(request).then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-          return fetch(request).then((networkResponse) => {
-            if (networkResponse && networkResponse.status === 200) {
-              cache.put(request, networkResponse.clone());
-            }
-            return networkResponse;
-          });
-        });
-      })
-    );
-    return;
-  }
-
-  // 🔵 صفحات وملفات → Network First
   event.respondWith(
     fetch(request).then((networkResponse) => {
       if (networkResponse && networkResponse.status === 200) {
@@ -85,7 +64,7 @@ self.addEventListener('fetch', (event) => {
       return caches.match(request).then((cached) => {
         if (cached) return cached;
         
-        // ✅ لو مش موجودة → offline.html
+        // لو مش موجودة → offline.html
         if (request.mode === 'navigate') {
           return caches.match('/offline.html');
         }

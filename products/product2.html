@@ -5,7 +5,7 @@
 <script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smart Fitness Watch - Full Review & Comparison</title>
+  <title>Smart Fitness Watch - Full Review & Comparison | Yallabuy</title>
   <meta name="description" content="A complete review of the Smart Fitness Watch with pros, cons, and a head-to-head comparison with top competitors." />
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -364,5 +364,41 @@ document.querySelectorAll('.nav a').forEach(a=>{
 });
    
   </script>
+<!-- تسجيل Service Worker + تحديث تلقائي -->
+<script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
+
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>
+
 </body>
 </html>

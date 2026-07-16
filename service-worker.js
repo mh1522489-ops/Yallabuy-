@@ -6,11 +6,11 @@
 const CACHE_NAME = 'yallabuy-cache-v17';
 const CORE_ASSETS = [
   '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/logo.png',
-  '/favicon.ico'
+  'index.html',
+  'style.css',
+  'script.js',
+  'logo.png',
+  'favicon.ico'
 ];
 
 // ============================================
@@ -63,7 +63,7 @@ self.addEventListener('fetch', (event) => {
         return networkResponse;
       }).catch(() => {
         if (request.mode === 'navigate') {
-          return caches.match('/');
+          return caches.match('index.html');
         }
       });
     })

@@ -3,7 +3,7 @@
 // صفحات: Network First | صور: Stale While Revalidate
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v13';
+const CACHE_NAME = 'yallabuy-cache-v99';
 
 const CORE_ASSETS = [
   '/',

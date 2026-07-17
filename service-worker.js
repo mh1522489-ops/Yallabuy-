@@ -1,9 +1,8 @@
 // ============================================
-// Yallabuy Service Worker - v4 (Hybrid)
-// صفحات: Network First | صور: Stale While Revalidate
+// Yallabuy Service Worker - v5 (FINAL FIX)
 // ============================================
 
-const CACHE_NAME = 'yallabuy-cache-v999';
+const CACHE_NAME = 'yallabuy-cache-v20'; // ← غيّر الرقم كل مرة
 
 const CORE_ASSETS = [
   '/',
@@ -20,29 +19,44 @@ const CORE_ASSETS = [
 ];
 
 // ============================================
-// 1. التثبيت - امسح القديم وحط الجديد
+// 1. التثبيت - امسح القديم FIRST
 // ============================================
 self.addEventListener('install', (event) => {
   event.waitUntil(
+    // ✅ امسح كل الكاش القديم FIRST
     caches.keys().then((cacheNames) => {
-      // امسح كل الكاشات القديمة
       return Promise.all(
         cacheNames.map((name) => caches.delete(name))
       );
     }).then(() => {
-      // اعمل كاش جديد
-      return caches.open(CACHE_NAME).then((cache) => {
-        return cache.addAll(CORE_ASSETS);
-      });
-    }).then(() => self.skipWaiting())
+      // ✅ بعد كده اعمل كاش جديد
+      return caches.open(CACHE_NAME);
+    }).then((cache) => {
+      return cache.addAll(CORE_ASSETS);
+    }).then(() => {
+      // ✅ فعل فوراً
+      return self.skipWaiting();
+    })
   );
 });
 
 // ============================================
-// 2. التفعيل
+// 2. التفعيل - خد تحكم فوري
 // ============================================
 self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    // ✅ امسح أي كاش قديم تاني (احتياط)
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames
+          .filter((name) => name !== CACHE_NAME)
+          .map((name) => caches.delete(name))
+      );
+    }).then(() => {
+      // ✅ خد تحكم في كل الصفحات فوراً
+      return self.clients.claim();
+    })
+  );
 });
 
 // ============================================
@@ -53,84 +67,51 @@ self.addEventListener('fetch', (event) => {
   
   if (!request.url.startsWith('http') || request.method !== 'GET') return;
 
-  // 🔴 صور → Stale While Revalidate
-  // (رجع الكاش فوراً + حدّث في الخلفية)
+  // صور → Stale While Revalidate
   if (request.destination === 'image') {
     event.respondWith(imageStaleWhileRevalidate(request));
     return;
   }
 
-  // 🔵 صفحات وملفات → Network First
+  // صفحات → Network First
   event.respondWith(pageNetworkFirst(request));
 });
 
-// ============================================
-// استراتيجيات الكاش
-// ============================================
-
-// 🔴 Stale While Revalidate للصور
 async function imageStaleWhileRevalidate(request) {
   const cache = await caches.open(CACHE_NAME);
   const cached = await cache.match(request);
 
-  // حدّث في الخلفية (مهما يحصل)
   const fetchPromise = fetch(request).then((networkResponse) => {
     if (networkResponse && networkResponse.status === 200) {
       cache.put(request, networkResponse.clone());
     }
     return networkResponse;
-  }).catch(() => {
-    // لو النت قطع، مافيش مشكلة
-    console.log('Image update failed, using cache');
-  });
+  }).catch(() => cached);
 
-  // رجع الكاش فوراً (لو موجود)
-  if (cached) {
-    return cached;
-  }
-
-  // لو مافيش كاش، استنى النت
-  return fetchPromise;
+  return cached || fetchPromise;
 }
 
-// 🔵 Network First للصفحات
 async function pageNetworkFirst(request) {
   const cache = await caches.open(CACHE_NAME);
 
   try {
-    // جرب النت أولاً
     const networkResponse = await fetch(request);
-
     if (networkResponse && networkResponse.status === 200) {
-      // خزّن في الكاش
       const clone = networkResponse.clone();
       cache.put(request, clone);
     }
-
     return networkResponse;
-
   } catch (error) {
-    // النت قطع → جرب الكاش
     const cached = await cache.match(request);
-
-    if (cached) {
-      return cached;
-    }
-
-    // لو الصفحة مش موجودة → offline.html
+    if (cached) return cached;
+    
     if (request.mode === 'navigate') {
       const offlinePage = await cache.match('/offline.html');
       if (offlinePage) return offlinePage;
-
-      // fallback أخير
       return cache.match('/');
     }
-
-    return new Response('⚠️ Offline - No cached data', {
-      status: 503,
-      statusText: 'Service Unavailable',
-      headers: { 'Content-Type': 'text/plain' }
-    });
+    
+    return new Response('⚠️ Offline', { status: 503 });
   }
 }
 

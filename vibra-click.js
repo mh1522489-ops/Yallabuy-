@@ -1,7 +1,6 @@
-
 /* ═══════════════════════════════════════════════════════════════
    VIBRA-CLICK — Haptic Feedback Module for Affiliate Buttons
-   Vibration ONLY (no sound)
+   Vibration ONLY (no sound) — مُعدّل: يهتز مع كل ضغطة
    ═══════════════════════════════════════════════════════════════ */
 
 (function() {
@@ -10,7 +9,7 @@
   /* ── CONFIG ── */
   const CONFIG = {
     vibrateDuration: 60,           // ms — خفيف ومريح
-    oncePerSession: true,          // true = مرة واحدة لكل زيارة
+    oncePerSession: false,         // ← تعديل: false = يهتز مع كل ضغطة
     respectReducedMotion: true,    // يحترم إعداد "تقليل الحركة"
     selectors: [
       '.btn--primary',
@@ -32,8 +31,6 @@
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) return false;
     }
-    // Check session flag
-    if (CONFIG.oncePerSession && state.hasVibrated) return false;
     // Check if vibration supported
     if (!navigator.vibrate) return false;
     return true;
@@ -51,9 +48,6 @@
   /* ── MAIN TRIGGER ── */
   function triggerFeedback(e) {
     if (!shouldRun()) return;
-
-    // Mark as done for this session
-    state.hasVibrated = true;
 
     // Vibrate only
     doVibrate();

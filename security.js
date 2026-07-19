@@ -1,6 +1,7 @@
 // ============================================
-// YallaBuy Security - Maximum Protection v3
+// YallaBuy Security - Balanced Protection v3.1
 // Anti-Debug | Anti-Tamper | Fingerprinting | Encryption
+// FIXED: Reduced false positives, mobile-friendly
 // ============================================
 
 (function() {
@@ -21,7 +22,11 @@
     encryption: true,
     fingerprinting: true,
     selfDestruct: true,
-    obfuscation: true
+    obfuscation: true,
+    // ✅ جديد: مستوى الحساسية
+    sensitivity: 'medium', // 'low' | 'medium' | 'high'
+    // ✅ جديد: وضع التطوير (اطفيه في الـ production)
+    devMode: false
   };
 
   // ============================================
@@ -31,7 +36,6 @@
     key: null,
     
     init() {
-      // توليد مفتاح من domain + user agent
       const seed = window.location.hostname + navigator.userAgent + screen.width + screen.height;
       this.key = this.deriveKey(seed);
     },
@@ -74,7 +78,6 @@
       }
     },
 
-    // تشفير AES-256 محاكى (Web Crypto API)
     async encryptAES(data) {
       const encoder = new TextEncoder();
       const dataBuffer = encoder.encode(data);
@@ -200,7 +203,7 @@
   };
 
   // ============================================
-  // 3. ANTI-DEBUG (كشف أدوات المطور)
+  // 3. ANTI-DEBUG (كشف أدوات المطور) - ✅ مُصلح
   // ============================================
   const AntiDebug = {
     triggered: false,
@@ -208,97 +211,95 @@
     
     init() {
       if (!CONFIG.devToolsDetection) return;
+      if (CONFIG.devMode) {
+        console.warn('[Security] Dev mode active - AntiDebug disabled');
+        return;
+      }
       
       this.detectBySize();
       this.detectByDebugger();
-      this.detectByConsole();
-      this.detectByPerformance();
+      // ✅ تم إزالة detectByConsole() لأنها بتعمل false positives
+      // ✅ تم إزالة detectByPerformance() لأنها غير دقيقة
       this.blockShortcuts();
-      this.detectByError();
+      // ✅ تم إزالة detectByError() لأنها غير موثوقة
     },
 
     detectBySize() {
       const check = () => {
-        const threshold = 160;
+        const threshold = CONFIG.sensitivity === 'high' ? 160 : 
+                         CONFIG.sensitivity === 'medium' ? 200 : 250;
+        
         const widthDiff = window.outerWidth - window.innerWidth;
         const heightDiff = window.outerHeight - window.innerHeight;
         
-        if (widthDiff > threshold || heightDiff > threshold) {
+        // ✅ فحص إضافي: لو الفرق كبير جدًا (أكتر من 800px) يبقى غالبًا DevTools
+        // لو الفرق صغير (أقل من threshold) يبقى غالبًا UI عادي
+        
+        // ✅ استثناء الموبايل: لو العرض أقل من 768px، نتجاهل الفرق
+        if (window.innerWidth < 768) return;
+        
+        // ✅ فحص أكثر دقة: DevTools بتكون على الجنب (widthDiff كبير) أو تحت (heightDiff كبير)
+        const isDockedRight = widthDiff > threshold && widthDiff < 600;
+        const isDockedBottom = heightDiff > threshold && heightDiff < 500;
+        
+        if (isDockedRight || isDockedBottom) {
           this.detectionCount++;
-          if (this.detectionCount > 2) this.trigger();
+          const maxCount = CONFIG.sensitivity === 'high' ? 2 : 
+                          CONFIG.sensitivity === 'medium' ? 3 : 5;
+          if (this.detectionCount >= maxCount) this.trigger();
+        } else {
+          // ✅ خفض الـ count لو ما فيش كشف متواصل
+          this.detectionCount = Math.max(0, this.detectionCount - 0.5);
         }
       };
       
-      setInterval(check, 300);
+      setInterval(check, 1000); // ✅ زودت الفترة من 300ms لـ 1000ms
       window.addEventListener('resize', check);
     },
 
     detectByDebugger() {
+      // ✅ طريقة أكثر أمانًا: نستخدم performance مع debugger
+      // بس نتأكد إنها مش هتوقف الـ execution العادي
+      
       const check = () => {
+        // ✅ فحص أول: لو DevTools مفتوحة فعلاً، debugger هيوقف الـ execution
+        // بس نستخدم طريقة مختلفة: نحسب الـ time بعد setTimeout
+        
         const start = performance.now();
-        debugger;
+        
+        // ✅ استخدام Function constructor بدل debugger مباشرة
+        // ده بيقلل الـ false positives
+        const fn = new Function('debugger;');
+        try {
+          fn();
+        } catch (e) {
+          // لو فيه error، يبقى غالبًا DevTools مش مفتوحة
+        }
+        
         const end = performance.now();
         
+        // ✅ لو الـ time أكتر من 100ms، يبقى debugger اتنفذ (DevTools مفتوحة)
+        // بس نتأكد إننا مش في وضع التطوير
         if (end - start > 100) {
-          this.trigger();
-        }
-      };
-      
-      setInterval(check, 2000);
-    },
-
-    detectByConsole() {
-      // طريقة 1: Image trap
-      const img = new Image();
-      Object.defineProperty(img, 'id', {
-        get: () => {
-          this.trigger();
-          return 'trap';
-        }
-      });
-      
-      // طريقة 2: Function toString
-      const fn = function() {};
-      fn.toString = () => {
-        this.trigger();
-        return '';
-      };
-      
-      console.log('%c', img);
-      console.log(fn);
-    },
-
-    detectByPerformance() {
-      // كشف عبر performance timing
-      const check = () => {
-        const timing = performance.timing;
-        if (timing.domContentLoadedEventEnd - timing.navigationStart < 100) {
-          // صفحة تحملت بسرعة غير طبيعية (headless browser)
           this.detectionCount += 0.5;
+          const maxCount = CONFIG.sensitivity === 'high' ? 3 : 
+                          CONFIG.sensitivity === 'medium' ? 5 : 8;
+          if (this.detectionCount >= maxCount) this.trigger();
         }
       };
       
-      setTimeout(check, 3000);
+      setInterval(check, 5000); // ✅ زودت الفترة من 2000ms لـ 5000ms
     },
 
-    detectByError() {
-      // كشف عبر Error.stack
-      const check = () => {
-        try {
-          throw new Error('test');
-        } catch (e) {
-          if (e.stack && e.stack.includes('debugger')) {
-            this.trigger();
-          }
-        }
-      };
-      
-      setInterval(check, 5000);
-    },
+    // ✅ تم إزالة detectByConsole() - كانت بتعمل مشاكل مع الـ widgets
+
+    // ✅ تم إزالة detectByPerformance() - كانت غير دقيقة
+
+    // ✅ تم إزالة detectByError() - كانت بتعمل false positives
 
     blockShortcuts() {
       document.addEventListener('keydown', (e) => {
-        // F12
+        // ✅ F12
         if (e.key === 'F12') {
           e.preventDefault();
           e.stopPropagation();
@@ -306,7 +307,7 @@
           return false;
         }
         
-        // Ctrl+Shift+I/J/C/K
+        // ✅ Ctrl+Shift+I/J/C/K
         if (e.ctrlKey && e.shiftKey && ['I','J','C','K'].includes(e.key)) {
           e.preventDefault();
           e.stopPropagation();
@@ -314,29 +315,25 @@
           return false;
         }
         
-        // Ctrl+U (View Source)
+        // ✅ Ctrl+U (View Source)
         if (e.ctrlKey && e.key === 'u') {
           e.preventDefault();
           return false;
         }
         
-        // Ctrl+S (Save)
+        // ✅ Ctrl+S (Save) - اختياري
         if (e.ctrlKey && e.key === 's') {
           e.preventDefault();
           return false;
         }
         
-        // Ctrl+P (Print)
+        // ✅ Ctrl+P (Print) - اختياري
         if (e.ctrlKey && e.key === 'p') {
           e.preventDefault();
           return false;
         }
         
-        // Ctrl+A (Select All) - اختياري
-        if (e.ctrlKey && e.key === 'a') {
-          e.preventDefault();
-          return false;
-        }
+        // ❌ تم إزالة Ctrl+A - بتأثر على تجربة المستخدم العادي
       }, true);
     },
 
@@ -344,20 +341,18 @@
       if (this.triggered) return;
       this.triggered = true;
       
-      // 1. امسح الكونسول
-      console.clear();
-      
-      // 2. رسالة تحذير
+      // ✅ 1. رسالة تحذير (بدون مسح الكونسول)
       console.log('%c⚠️ SECURITY ALERT', 'color: red; font-size: 30px; font-weight: bold;');
       console.log('%cUnauthorized access detected. Session terminated.', 'color: orange; font-size: 14px;');
       
-      // 3. اعطل الصفحة
+      // ✅ 2. اعطل الصفحة (بشكل أقل عدوانية)
       setTimeout(() => {
         document.documentElement.innerHTML = `
           <!DOCTYPE html>
           <html>
           <head>
             <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
               body {
                 margin: 0;
@@ -371,33 +366,35 @@
                 justify-content: center;
                 height: 100vh;
                 overflow: hidden;
+                text-align: center;
               }
               .container {
-                text-align: center;
-                padding: 40px;
+                padding: 40px 20px;
                 border: 2px solid #ff3333;
                 border-radius: 10px;
                 background: rgba(255, 51, 51, 0.05);
+                max-width: 90%;
               }
               h1 {
-                font-size: 48px;
+                font-size: clamp(24px, 8vw, 48px);
                 margin: 0 0 20px;
                 text-transform: uppercase;
                 letter-spacing: 10px;
                 animation: glitch 2s infinite;
               }
               p {
-                font-size: 16px;
+                font-size: clamp(12px, 4vw, 16px);
                 color: #888;
                 margin: 10px 0;
               }
               .code {
-                font-size: 12px;
+                font-size: clamp(10px, 3vw, 12px);
                 color: #444;
                 margin-top: 30px;
                 padding: 10px;
                 background: #111;
                 border-radius: 5px;
+                word-break: break-all;
               }
               @keyframes glitch {
                 0%, 100% { text-shadow: 2px 0 #ff0000, -2px 0 #00ff00; }
@@ -418,23 +415,22 @@
           </html>
         `;
         
-        // 4. اعطل كل الـ APIs
+        // ✅ 3. اعطل الـ APIs (بشكل أقل عدوانية)
         window.fetch = () => Promise.reject(new Error('Blocked'));
         window.XMLHttpRequest = function() {};
         window.WebSocket = function() {};
-        window.localStorage = null;
-        window.sessionStorage = null;
+        // ✅ تم إزالة localStorage = null لأنها بتعمل errors في scripts تانية
         
-        // 5. loop مشبوه
+        // ✅ 4. loop مشبوه (بشكل أقل عدوانية)
         setInterval(() => {
           debugger;
-        }, 100);
+        }, 500); // ✅ زودت الفترة من 100ms لـ 500ms
       }, 100);
     }
   };
 
   // ============================================
-  // 4. BOT DETECTION (كشف الروبوتات)
+  // 4. BOT DETECTION (كشف الروبوتات) - ✅ مُصلح
   // ============================================
   const BotDetection = {
     score: 0,
@@ -499,12 +495,10 @@
     },
 
     checkHeadless() {
-      // كشف Headless Chrome
       if (navigator.plugins.length === 0 && navigator.languages.length === 0) {
         this.score += 3;
       }
       
-      // كشف عبر permissions
       if (navigator.permissions) {
         navigator.permissions.query({ name: 'notifications' }).then(permission => {
           if (Notification.permission === 'default' && permission.state === 'prompt') {
@@ -528,22 +522,21 @@
       document.addEventListener('click', () => clicks++, { once: true });
       
       setTimeout(() => {
-        if (mouseMoves === 0 && keyPresses === 0 && scrolls === 0) {
+        // ✅ تعديل: لو مفيش أي interaction خالص (mouse + keyboard + scroll)
+        if (mouseMoves === 0 && keyPresses === 0 && scrolls === 0 && clicks === 0) {
           this.score += 4;
         }
-        if (clicks === 0 && mouseMoves > 0) {
-          this.score += 1; // mouse بس من غير click غريب
-        }
+        // ✅ تم إزالة الفحص الغريب (mouse بس من غير click)
       }, 5000);
     },
 
     evaluate() {
       console.log('[Security] Bot score:', this.score);
       
-      if (this.score >= 8) {
+      // ✅ رفع الـ threshold من 8 لـ 12
+      if (this.score >= 12) {
         console.warn('[Security] Bot detected!');
         
-        // blur الصفحة
         document.body.style.filter = 'blur(10px)';
         document.body.style.pointerEvents = 'none';
         
@@ -636,7 +629,6 @@
     },
 
     protectFunctions() {
-      // احمي الـ functions بتاعتنا
       const originalAddEventListener = EventTarget.prototype.addEventListener;
       EventTarget.prototype.addEventListener = function(type, listener, options) {
         if (type === 'security' || type === 'protected') {
@@ -826,7 +818,6 @@
     },
 
     blockMaliciousURLs() {
-      // اعتراض الـ links المشبوهة
       document.addEventListener('click', (e) => {
         const target = e.target.closest('a');
         if (!target) return;
@@ -851,7 +842,6 @@
         window.top.location = window.self.location;
       }
       
-      // أضف CSP meta tag
       const meta = document.createElement('meta');
       meta.httpEquiv = 'Content-Security-Policy';
       meta.content = "frame-ancestors 'none';";
@@ -866,14 +856,12 @@
     init() {
       if (!CONFIG.selfDestruct) return;
       
-      // تحقق من سلامة الكود
       setInterval(() => {
         if (!window.__yallabuy_security_loaded) {
           document.body.innerHTML = '<h1>Security Error</h1>';
         }
       }, 3000);
       
-      // كشف التلاعب في الكود
       const originalToString = Function.prototype.toString;
       Function.prototype.toString = function() {
         const result = originalToString.call(this);
@@ -887,21 +875,25 @@
   };
 
   // ============================================
-  // 10. RIGHT CLICK & SELECT PROTECTION
+  // 10. RIGHT CLICK & SELECT PROTECTION - ✅ مُصلح
   // ============================================
   const UIProtection = {
     init() {
-      // منع Right Click
-      document.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        return false;
-      });
+      // ✅ منع Right Click (بس مش على الموبايل)
+      if (window.innerWidth > 768) {
+        document.addEventListener('contextmenu', (e) => {
+          e.preventDefault();
+          return false;
+        });
+      }
       
-      // منع Select All
-      document.addEventListener('selectstart', (e) => {
-        e.preventDefault();
-        return false;
-      });
+      // ✅ منع Select All (بس مش على الموبايل)
+      if (window.innerWidth > 768) {
+        document.addEventListener('selectstart', (e) => {
+          e.preventDefault();
+          return false;
+        });
+      }
       
       // منع Drag
       document.addEventListener('dragstart', (e) => {
@@ -933,7 +925,6 @@
       methods.forEach(method => {
         const original = console[method];
         console[method] = function(...args) {
-          // امسح أي محاولة استخدام %c styling
           const filtered = args.filter(arg => {
             if (typeof arg === 'string' && arg.includes('%c')) {
               return false;
@@ -944,7 +935,6 @@
         };
       });
       
-      // امسح الكونسول كل شوية
       setInterval(() => {
         console.clear();
       }, 15000);
@@ -960,7 +950,6 @@
       
       CryptoEngine.init();
       
-      // غطّي localStorage
       const originalSetItem = localStorage.setItem;
       const originalGetItem = localStorage.getItem;
       
@@ -983,7 +972,6 @@
         }
       };
       
-      // نفس الكلام لـ sessionStorage
       const originalSSSetItem = sessionStorage.setItem;
       const originalSSGetItem = sessionStorage.getItem;
       
@@ -1018,14 +1006,10 @@
       const fingerprint = await Fingerprinter.generate();
       console.log('[Security] Device fingerprint:', fingerprint.slice(0, 16) + '...');
       
-      // خزّن البصمة (مشفرة)
       const stored = localStorage.getItem('yallabuy_fp');
       if (!stored) {
         localStorage.setItem('yallabuy_fp', fingerprint);
       }
-      
-      // تحقق من البصمة
-      // (ممكن تضيف logic هنا لو عايز تمنع تغيير الجهاز)
     }
   };
 
@@ -1034,7 +1018,6 @@
   // ============================================
   async function init() {
     try {
-      // ترتيب التفعيل مهم!
       UIProtection.init();
       ConsoleObfuscation.init();
       ClickjackingProtection.init();
@@ -1047,7 +1030,7 @@
       AntiDebug.init();
       SelfDestruct.init();
       
-      console.log('[Security] YallaBuy Maximum Protection active');
+      console.log('[Security] YallaBuy Protection active (v3.1)');
       console.log('[Security] Fingerprint:', await Fingerprinter.generate());
       
     } catch (err) {
@@ -1055,7 +1038,6 @@
     }
   }
 
-  // شغّل
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {

@@ -1,307 +1,1439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<meta name="description" content="This page is coming soon. We are working hard to bring you the best content.">
-<title>Coming Soon | Yalla Buy</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="security.js"></script> 
+ <script src="vibra-click.js" defer></script>
 
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='%230a1628'/%3E%3Ctext x='50' y='66' font-family='Arial, sans-serif' font-size='55' font-weight='900' fill='%23f97316' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="/manifest.json">
+<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+  <title>FAA Recreational UAS Rules 2026 | Complete Guide for Drone Hobbyists | Yallabuy</title>
+  <meta name="description" content="A comprehensive professional guide to FAA recreational drone rules for 2026. Covers TRUST certification, registration, Remote ID, airspace rules, penalties, and practical compliance tips.">
+  <link rel="canonical" href="https://example.com/faa-recreational-uas-rules-2026">
+  <meta property="og:title" content="FAA Recreational UAS Rules 2026 | Complete Guide">
+  <meta property="og:description" content="Comprehensive guide to FAA recreational drone rules covering TRUST, registration, Remote ID, and compliance.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://example.com/faa-recreational-uas-rules-2026">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAA Recreational UAS Rules 2026 | Complete Guide">
+  <meta name="twitter:description" content="Comprehensive guide to FAA recreational drone rules covering TRUST, registration, Remote ID, and compliance.">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "FAA Recreational UAS Rules 2026: A Complete Guide for Drone Hobbyists",
+    "description": "A comprehensive professional guide to FAA recreational drone rules for 2026. Covers TRUST certification, registration, Remote ID, airspace rules, penalties, and practical compliance tips.",
+    "author": {
+      "@type": "Organization",
+      "name": "Drone Compliance Hub"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Drone Compliance Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://example.com/logo.png"
+      }
+    },
+    "datePublished": "2026-07-20",
+    "dateModified": "2026-07-20",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://example.com/faa-recreational-uas-rules-2026"
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need to register my drone if it weighs less than 250 grams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you fly purely for recreation, drones under 250 grams (0.55 lbs) do not require FAA registration. However, if you fly for any commercial purpose, registration is required regardless of weight."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the TRUST test and who needs to take it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Recreational UAS Safety Test (TRUST) is a free online safety test required by law for all recreational drone pilots in the United States. It takes about 30 minutes, allows unlimited attempts, and you must carry proof of completion while flying."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Remote ID and do I need it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Remote ID is a broadcast system that transmits your drone's identification and location data during flight. All drones requiring FAA registration must comply with Remote ID rules unless flown exclusively within an FAA-Recognized Identification Area (FRIA)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the penalties for violating FAA drone rules?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The FAA can impose civil penalties up to $27,500 for non-compliance. Criminal penalties can reach up to $250,000 and/or imprisonment for up to three years for serious violations."
+        }
+      }
+    ]
+  }
+  </script>
 
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  <style>
+    :root {
+      --primary: #1a365d;
+      --primary-light: #2c5282;
+      --accent: #dd6b20;
+      --accent-light: #ed8936;
+      --bg: #f7fafc;
+      --bg-card: #ffffff;
+      --text: #1a202c;
+      --text-muted: #4a5568;
+      --text-light: #718096;
+      --border: #e2e8f0;
+      --success: #38a169;
+      --warning: #d69e2e;
+      --danger: #e53e3e;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+      --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+      --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+      --radius: 8px;
+      --radius-lg: 12px;
+      --max-width: 900px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-:root {
-  --bg: #f8f9fa;
-  --card-bg: #ffffff;
-  --text: #1a1a2e;
-  --text-secondary: #555;
-  --accent: #ff9900;
-  --accent-dark: #e68a00;
-  --header-bg: #1a1a2e;
-  --header-text: #ffffff;
-  --border: #e0e0e0;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-[data-theme="dark"] {
-  --bg: #121212;
-  --card-bg: #1e1e1e;
-  --text: #e0e0e0;
-  --text-secondary: #aaa;
-  --accent: #ff9900;
-  --accent-dark: #e68a00;
-  --header-bg: #0a0a1a;
-  --header-text: #ffffff;
-  --border: #333;
-  --shadow: 0 4px 24px rgba(0,0,0,0.3);
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
 
-html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.3s, color 0.3s;
-}
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* ===== HEADER ===== */
-.site-header {
-  background: var(--header-bg);
-  color: var(--header-text);
-  padding: 1rem 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      pointer-events: none;
+    }
 
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
 
-.logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.5px; }
-.logo span { color: var(--accent); }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      letter-spacing: -0.02em;
+    }
 
-.theme-toggle {
-  width: 50px; height: 26px;
-  background: #ccc;
-  border-radius: 13px;
-  position: relative;
-  cursor: pointer;
-  border: none;
-  outline: none;
-}
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      opacity: 0.85;
+      max-width: 650px;
+      margin: 0 auto 40px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
 
-.theme-toggle::after {
-  content: '';
-  position: absolute;
-  top: 3px; left: 3px;
-  width: 20px; height: 20px;
-  background: #fff;
-  border-radius: 50%;
-  transition: transform 0.3s;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-}
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      opacity: 0.7;
+    }
 
-[data-theme="dark"] .theme-toggle::after { transform: translateX(24px); }
-[data-theme="dark"] .theme-toggle { background: #444; }
+    .hero-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-/* ===== MAIN CONTENT ===== */
-main {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-}
+    /* ===== NAVIGATION ===== */
+    .toc-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
 
-.coming-soon-card {
-  background: var(--card-bg);
-  border-radius: 24px;
-  box-shadow: var(--shadow);
-  padding: 3rem 2rem;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  animation: fadeInUp 0.6s ease-out;
-}
+    .toc-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+    .toc-inner::-webkit-scrollbar {
+      display: none;
+    }
 
-.icon-wrap {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  animation: bounce 2s infinite;
-}
+    .toc-link {
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: var(--transition);
+      cursor: pointer;
+      background: none;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      font-family: inherit;
+    }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
+    .toc-link:hover,
+    .toc-link.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+    }
 
-.coming-soon-card h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--text);
-}
+    /* ===== MAIN CONTENT ===== */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-.coming-soon-card h1 span { color: var(--accent); }
+    .article-body {
+      padding: 50px 0 80px;
+    }
 
-.coming-soon-card .subtitle {
-  font-size: 1.1rem;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-  line-height: 1.7;
-}
+    /* ===== SECTIONS ===== */
+    section {
+      margin-bottom: 60px;
+    }
 
-.status-box {
-  background: rgba(255,153,0,0.08);
-  border: 1px solid var(--accent);
-  border-radius: 12px;
-  padding: 1.2rem;
-  margin-bottom: 2rem;
-  text-align: left;
-}
+    section:last-child {
+      margin-bottom: 0;
+    }
 
-.status-box .status-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
-}
+    h2 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
 
-.status-box p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin: 36px 0 16px;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
 
-.progress-bar {
-  width: 100%;
-  height: 8px;
-  background: var(--border);
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 1.5rem 0;
-}
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 28px 0 12px;
+    }
 
-.progress-fill {
-  height: 100%;
-  width: 65%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-  border-radius: 4px;
-  animation: progressPulse 2s infinite;
-}
+    p {
+      margin-bottom: 18px;
+      color: var(--text-muted);
+    }
 
-@keyframes progressPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
+    p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
 
-.progress-label {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
+    a {
+      color: var(--primary-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: var(--transition);
+    }
 
-.btn-back {
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
-  border: none;
-  cursor: pointer;
-}
+    a:hover {
+      color: var(--accent);
+    }
 
-.btn-back:hover {
-  background: var(--accent-dark);
-  transform: scale(1.02);
-  text-decoration: none;
-}
+    /* ===== CALLOUTS ===== */
+    .callout {
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin: 28px 0;
+      position: relative;
+      border-left: 4px solid;
+    }
 
-/* ===== FOOTER ===== */
-.site-footer {
-  background: var(--header-bg);
-  color: rgba(255,255,255,0.7);
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.85rem;
-}
+    .callout-info {
+      background: #ebf8ff;
+      border-color: #3182ce;
+      color: #2c5282;
+    }
 
-.site-footer a { color: var(--accent); }
+    .callout-warning {
+      background: #fffaf0;
+      border-color: var(--accent);
+      color: #744210;
+    }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 480px) {
-  .coming-soon-card { padding: 2rem 1.5rem; }
-  .coming-soon-card h1 { font-size: 1.5rem; }
-  .icon-wrap { width: 80px; height: 80px; font-size: 2.5rem; }
-}
-</style>
+    .callout-danger {
+      background: #fff5f5;
+      border-color: var(--danger);
+      color: #742a2a;
+    }
+
+    .callout-success {
+      background: #f0fff4;
+      border-color: var(--success);
+      color: #22543d;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout p {
+      margin: 0;
+      color: inherit;
+      opacity: 0.9;
+    }
+
+    .callout p + p {
+      margin-top: 10px;
+    }
+
+    /* ===== LISTS ===== */
+    ul, ol {
+      margin: 16px 0 24px 24px;
+      color: var(--text-muted);
+    }
+
+    li {
+      margin-bottom: 10px;
+      padding-left: 4px;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    /* ===== TABLES ===== */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+      font-size: 15px;
+    }
+
+    thead {
+      background: var(--primary);
+      color: white;
+    }
+
+    th {
+      padding: 14px 18px;
+      text-align: left;
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+
+    tbody tr:hover {
+      background: #f7fafc;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ===== ACCORDION ===== */
+    .accordion {
+      margin: 28px 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .accordion-item {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .accordion-item:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 18px 24px;
+      background: none;
+      border: none;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+
+    .accordion-header:hover {
+      background: #f7fafc;
+    }
+
+    .accordion-header .icon {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .accordion-header[aria-expanded="true"] .icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 24px;
+    }
+
+    .accordion-body.open {
+      max-height: 800px;
+      padding: 0 24px 20px;
+    }
+
+    .accordion-body p {
+      margin: 0 0 12px;
+    }
+
+    .accordion-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== CHECKLIST ===== */
+    .checklist {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin: 28px 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+
+    .checklist-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .checklist-item:last-child {
+      border-bottom: none;
+    }
+
+    .checklist-item:hover {
+      background: #f7fafc;
+      margin: 0 -12px;
+      padding-left: 12px;
+      padding-right: 12px;
+      border-radius: var(--radius);
+    }
+
+    .check-box {
+      width: 22px;
+      height: 22px;
+      border: 2px solid var(--border);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .check-box.checked {
+      background: var(--success);
+      border-color: var(--success);
+    }
+
+    .check-box.checked::after {
+      content: '\\2713';
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .checklist-text {
+      font-size: 15px;
+      color: var(--text-muted);
+      transition: var(--transition);
+    }
+
+    .checklist-item.checked .checklist-text {
+      text-decoration: line-through;
+      color: var(--text-light);
+    }
+
+    /* ===== PROGRESS BAR ===== */
+    .progress-wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      z-index: 200;
+      background: var(--border);
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+      z-index: 99;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 50px 20px 40px;
+      }
+
+      .article-body {
+        padding: 30px 0 50px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .callout {
+        padding: 18px 20px;
+      }
+
+      .checklist {
+        padding: 20px;
+      }
+
+      th, td {
+        padding: 10px 12px;
+        font-size: 14px;
+      }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    section:nth-child(1) { animation-delay: 0.05s; }
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.15s; }
+    section:nth-child(4) { animation-delay: 0.2s; }
+    section:nth-child(5) { animation-delay: 0.25s; }
+    section:nth-child(6) { animation-delay: 0.3s; }
+    section:nth-child(7) { animation-delay: 0.35s; }
+    section:nth-child(8) { animation-delay: 0.4s; }
+    section:nth-child(9) { animation-delay: 0.45s; }
+
+    /* ===== HIGHLIGHT ===== */
+    mark {
+      background: linear-gradient(180deg, transparent 60%, rgba(221,107,32,0.2) 60%);
+      padding: 0 2px;
+      color: inherit;
+    }
+
+    /* ===== SEPARATOR ===== */
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--border);
+      margin: 40px 0;
+    }
+
+    /* ===== NUMBERED STEPS ===== */
+    .steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 24px 0;
+      padding: 0;
+    }
+
+    .steps li {
+      position: relative;
+      padding-left: 56px;
+      margin-bottom: 24px;
+      min-height: 40px;
+    }
+
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .steps li strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    body{
+        margin-left: 10px; 
+    } 
+  </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="site-header">
-  <div class="header-inner">
-    <div class="logo">Yalla<span>Buy</span></div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"></button>
+  <!-- Progress Bar -->
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar"></div>
   </div>
-</header>
 
-<!-- MAIN -->
-<main>
-  <div class="coming-soon-card">
-    <div class="icon-wrap">&#128736;</div>
-    <h1>Coming <span>Soon</span></h1>
-    <p class="subtitle">
-      We are working hard to bring you the best content and reviews.<br>
-      This page is currently under development and will be live very soon.
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-badge">Updated July 2026</div>
+    <h1>FAA Recreational UAS Rules: A Complete Guide for Drone Hobbyists</h1>
+    <p class="hero-subtitle">Everything you need to know about flying drones for fun in the United States — from TRUST certification and registration to Remote ID, airspace rules, and staying compliant.</p>
+    <div class="hero-meta">
+      <span>&#128197; July 20, 2026</span>
+      <span>&#9201; 18 min read</span>
+      <span>&#128220; Federal Aviation Administration</span>
+    </div>
+  </header>
+
+  <!-- Table of Contents -->
+  <nav class="toc-bar">
+    <div class="toc-inner">
+      <button class="toc-link active" data-target="overview">Overview</button>
+      <button class="toc-link" data-target="rules">The 10 Rules</button>
+      <button class="toc-link" data-target="trust">TRUST</button>
+      <button class="toc-link" data-target="registration">Registration</button>
+      <button class="toc-link" data-target="remote-id">Remote ID</button>
+      <button class="toc-link" data-target="airspace">Airspace</button>
+      <button class="toc-link" data-target="penalties">Penalties</button>
+      <button class="toc-link" data-target="checklist">Checklist</button>
+      <button class="toc-link" data-target="faq">FAQ</button>
+    </div>
+  </nav>
+
+  <!-- Main Article -->
+  <main class="container article-body">
+
+    <!-- Section 1: Overview -->
+    <section id="overview">
+      <h2>What Are the FAA Recreational UAS Rules?</h2>
+      <p>The Federal Aviation Administration (FAA) regulates all drone operations within the United States National Airspace System (NAS). For recreational pilots — those who fly drones purely for personal enjoyment and fun — the governing framework is the <strong>Exception for Limited Recreational Operations of Unmanned Aircraft</strong>, codified under <strong>USC 44809</strong>. This law establishes a specific set of requirements that recreational flyers must follow to operate legally and safely.</p>
+      
+      <p>Recreational flying is defined as operating a drone <mark>purely for personal enjoyment</mark> with no business purpose, no compensation, and no indirect benefit to any organization or enterprise. It is important to understand that the absence of payment does not automatically make a flight recreational. If your flight supports a business in any way — such as photographing a property for sale, inspecting a roof, or creating content for a monetized social media channel — it falls under <strong>Part 107</strong> commercial rules, not recreational rules.</p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">&#8505;&#65039; Key Distinction</div>
+        <p>When in doubt about whether your flight is recreational or commercial, the FAA advises assuming it is a <strong>Part 107</strong> operation. Operating under the wrong set of rules can expose you to enforcement action, even if your intentions were harmless.</p>
+      </div>
+
+      <p>The FAA summarizes recreational compliance with the <strong>"Fly SMART"</strong> framework: <strong>S</strong>ign up (register), <strong>M</strong>ake it legal (take TRUST), <strong>A</strong>lways follow the rules, <strong>R</strong>espect the airspace, and <strong>T</strong>eam up with your community. This guide breaks down each component in detail.</p>
+    </section>
+
+    <!-- Section 2: The 10 Rules -->
+    <section id="rules">
+      <h2>The 10 Core Rules for Recreational Flyers</h2>
+      <p>The Exception for Limited Recreational Operations (USC 44809) sets out ten specific rules that every recreational drone pilot must follow. Violating any of these rules may result in FAA enforcement action, including fines and potential criminal charges.</p>
+
+      <ol class="steps">
+        <li><strong>Fly only for recreational purposes.</strong> The flight must be conducted for personal enjoyment only. Any business purpose, compensation, or indirect commercial benefit disqualifies the operation from recreational status.</li>
+        <li><strong>Follow CBO safety guidelines.</strong> You must adhere to the safety guidelines of an FAA-recognized Community-Based Organization (CBO). These organizations establish standards for safe recreational flying practices.</li>
+        <li><strong>Maintain visual line of sight.</strong> You must keep your drone within your visual line of sight at all times. Alternatively, you may use a visual observer who is physically next to you and in direct communication.</li>
+        <li><strong>Yield to other aircraft.</strong> You must give way to and not interfere with manned aircraft. Drones are aircraft, and you share the sky with helicopters, small planes, and emergency aircraft.</li>
+        <li><strong>Controlled airspace authorization.</strong> In Class B, C, D, and surface Class E airspace (near airports), you may only fly at or below FAA-authorized altitudes with prior authorization via LAANC or DroneZone.</li>
+        <li><strong>400-foot altitude limit in uncontrolled airspace.</strong> In Class G (uncontrolled) airspace, you must fly at or below 400 feet above ground level (AGL).</li>
+        <li><strong>Pass the TRUST test.</strong> You are required by law to take The Recreational UAS Safety Test (TRUST) and carry proof of completion whenever you fly.</li>
+        <li><strong>Register your drone.</strong> If your drone weighs 250 grams (0.55 lbs) or more, you must register it with the FAA, mark it with the registration number on the outside, and carry proof of registration.</li>
+        <li><strong>Comply with Remote ID.</strong> As of September 16, 2023, drones requiring registration must also broadcast Remote ID information, unless flown exclusively within a Federally-Recognized Identification Area (FRIA).</li>
+        <li><strong>Do not endanger the NAS.</strong> You must not operate your drone in a manner that endangers the safety of the national airspace system.</li>
+      </ol>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">&#9888;&#65039; Critical Reminder</div>
+        <p>Anyone flying a drone in U.S. airspace is personally responsible for knowing and following all FAA guidelines. Ignorance of the rules is not a defense against enforcement action.</p>
+      </div>
+    </section>
+
+    <!-- Section 3: TRUST -->
+    <section id="trust">
+      <h2>The Recreational UAS Safety Test (TRUST)</h2>
+      <p>The Recreational UAS Safety Test, commonly known as <strong>TRUST</strong>, is a free online safety education and testing program that all recreational drone pilots in the United States are required by law to complete. The FAA developed TRUST in collaboration with industry stakeholders to ensure that hobbyists understand basic safety and regulatory requirements before taking to the skies.</p>
+
+      <h3>Who Needs to Take TRUST?</h3>
+      <p>Every recreational drone pilot operating in the United States must pass TRUST. There is <strong>no minimum age requirement</strong>, and you do not need to be a U.S. citizen. If you fly purely for fun, TRUST applies to you — regardless of whether your drone requires registration.</p>
+
+      <h3>How TRUST Works</h3>
+      <p>TRUST is administered entirely online through FAA-approved Test Administrators. The process is straightforward:</p>
+      <ul>
+        <li><strong>Duration:</strong> Approximately 30 minutes from start to finish</li>
+        <li><strong>Format:</strong> Self-paced online training followed by multiple-choice quizzes</li>
+        <li><strong>Cost:</strong> Completely free — beware of any third-party site charging fees</li>
+        <li><strong>Attempts:</strong> Unlimited attempts allowed; all questions are correctable to 100%</li>
+        <li><strong>Certificate:</strong> Issued immediately upon completion</li>
+      </ul>
+
+      <div class="callout callout-success">
+        <div class="callout-title">&#9989; Good to Know</div>
+        <p>You only need to take TRUST <strong>once</strong>. There is no expiration date and no recurrent training requirement for recreational flyers. However, if you lose your certificate, you must retake the entire test — the FAA and Test Administrators cannot reissue lost certificates.</p>
+      </div>
+
+      <h3>Approved Test Administrators</h3>
+      <p>The FAA partners with multiple approved organizations to deliver TRUST. You can take the test through any of the following FAA-approved Test Administrators:</p>
+      <ul>
+        <li><a href="https://trust.pilotinstitute.com/" target="_blank" rel="noopener">Pilot Institute</a></li>
+        <li><a href="https://trust.dronetrust.com/" target="_blank" rel="noopener">Drone Trust</a></li>
+        <li><a href="https://trust.modelaircraft.org/" target="_blank" rel="noopener">Academy of Model Aeronautics (AMA)</a></li>
+        <li><a href="https://uavcoach.com/faa-recreational-drone-training/" target="_blank" rel="noopener">UAV Coach</a></li>
+        <li><a href="https://www.scouting.org/the-recreational-uas-safety-test/" target="_blank" rel="noopener">Boy Scouts of America</a></li>
+      </ul>
+
+      <h3>Carrying Proof of Completion</h3>
+      <p>After passing TRUST, you must download, save, or print your completion certificate and keep it accessible while flying. A screenshot of your certificate on your phone is sufficient. Law enforcement officers and FAA personnel may ask to see your proof of TRUST completion at any time.</p>
+    </section>
+
+    <!-- Section 4: Registration -->
+    <section id="registration">
+      <h2>Drone Registration Requirements</h2>
+      <p>Registration is a foundational requirement for most drone operations in the United States. The FAA uses registration to maintain accountability and traceability within the National Airspace System. Understanding when, how, and why to register your drone is essential for every pilot.</p>
+
+      <h3>When Is Registration Required?</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Registration Required?</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Recreational flight, drone under 250g</td>
+              <td><span style="color:var(--success);font-weight:700;">No</span></td>
+              <td>Exempt from registration but TRUST still required</td>
+            </tr>
+            <tr>
+              <td>Recreational flight, drone 250g or more</td>
+              <td><span style="color:var(--danger);font-weight:700;">Yes</span></td>
+              <td>Register yourself; one number covers all recreational drones</td>
+            </tr>
+            <tr>
+              <td>Commercial flight (Part 107), any weight</td>
+              <td><span style="color:var(--danger);font-weight:700;">Yes</span></td>
+              <td>Each drone registered individually</td>
+            </tr>
+            <tr>
+              <td>Indoor flight only</td>
+              <td><span style="color:var(--success);font-weight:700;">No</span></td>
+              <td>Indoor operations are outside the NAS</td>
+            </tr>
+            <tr>
+              <td>Foreign visitor, recreational</td>
+              <td><span style="color:var(--danger);font-weight:700;">Yes</span></td>
+              <td>Register through FAA DroneZone; certificate is recognition of ownership</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>How to Register Your Drone</h3>
+      <p>All drone registrations are handled through the FAA's official portal, <a href="https://faadronezone-access.faa.gov/" target="_blank" rel="noopener">FAADroneZone</a>. The process takes approximately 10-15 minutes:</p>
+
+      <ol class="steps">
+        <li><strong>Create an account</strong> on FAADroneZone using your email and personal details.</li>
+        <li><strong>Select your registration type:</strong> Recreational (Exception for Limited Recreational Operations) or Part 107 (Commercial).</li>
+        <li><strong>Provide required information:</strong> Physical address, mailing address, email, phone number, and drone make/model.</li>
+        <li><strong>Enter Remote ID details</strong> if your drone has Standard Remote ID capability (manufacturer-provided serial number).</li>
+        <li><strong>Pay the $5 fee</strong> using a credit or debit card.</li>
+        <li><strong>Download your Certificate of Registration</strong> and save it securely.</li>
+      </ol>
+
+      <h3>Registration Fees and Validity</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Registration Type</th>
+              <th>Cost</th>
+              <th>Validity</th>
+              <th>Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Recreational</td>
+              <td>$5</td>
+              <td>3 years</td>
+              <td>Covers all recreational drones you own</td>
+            </tr>
+            <tr>
+              <td>Part 107 (Commercial)</td>
+              <td>$5 per drone</td>
+              <td>3 years</td>
+              <td>Each drone registered individually</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Displaying Your Registration Number</h3>
+      <p>The FAA requires that your registration number be displayed on the <strong>exterior</strong> of your drone in a way that is legible upon visual inspection. A label maker, printed label, or permanent marker are all acceptable methods. Place the number on a flat, visible area of the drone body or arm — somewhere you can read it without opening battery compartments or removing parts.</p>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">&#9888;&#65039; Important</div>
+        <p>Registration <strong>cannot be transferred</strong> between recreational and Part 107 categories. If you sell a drone, the buyer must register it under their own account. Update your DroneZone records within 10 days of any ownership change.</p>
+      </div>
+    </section>
+
+    <!-- Section 5: Remote ID -->
+    <section id="remote-id">
+      <h2>Remote ID Requirements</h2>
+      <p>Remote ID functions as a <strong>digital license plate</strong> for your drone. It broadcasts identification and location information during flight, allowing the FAA, law enforcement, and other airspace users to identify drones operating in the area. Remote ID compliance became mandatory for all registered drones on <strong>September 16, 2023</strong>.</p>
+
+      <h3>Three Ways to Comply with Remote ID</h3>
+      <p>The FAA provides three methods for meeting Remote ID requirements:</p>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>1. Standard Remote ID (Built-in)</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Most modern drones manufactured after 2023 come with Standard Remote ID capability built in. The drone broadcasts its unique identifier, location, altitude, velocity, and takeoff location automatically during flight. No additional equipment is needed. You simply enter the Remote ID serial number (provided by the manufacturer) during registration.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>2. Remote ID Broadcast Module (Add-on)</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>If your drone does not have built-in Remote ID, you can attach an FAA-approved Remote ID broadcast module. This external device broadcasts the required identification and location data. You must enter the module's serial number during registration. Note that when using a broadcast module, your drone must remain within visual line of sight at all times.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>3. FAA-Recognized Identification Area (FRIA)</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>A FRIA is a designated geographic area where drones without Remote ID capability may be flown. These areas are typically established by community-based organizations, educational institutions, or local governments. Within a FRIA, you can fly legacy drones or drones without Remote ID without needing a broadcast module. However, you cannot fly a Standard Remote ID-equipped drone with its broadcast turned off — the system must remain active.</p>
+          </div>
+        </div>
+      </div>
+
+      <h3>What Remote ID Broadcasts</h3>
+      <p>When your drone is in flight, Remote ID transmits the following information:</p>
+      <ul>
+        <li>Unique drone identifier (serial number or session ID)</li>
+        <li>Drone latitude, longitude, and geometric altitude</li>
+        <li>Drone velocity (speed and direction)</li>
+        <li>Latitude, longitude, and geometric altitude of the control station (pilot location)</li>
+        <li>Time mark indicating when the data was generated</li>
+        <li>Emergency status (if applicable)</li>
+      </ul>
+
+      <div class="callout callout-danger">
+        <div class="callout-title">&#128683; Enforcement Active</div>
+        <p>The FAA ended its discretionary enforcement policy for Remote ID in 2024. Compliance is now strictly enforced. Flying without Remote ID when required can result in civil penalties up to <strong>$27,500</strong> per violation. The FAA can also forward serious violations to the Department of Justice for criminal prosecution.</p>
+      </div>
+    </section>
+
+    <!-- Section 6: Airspace -->
+    <section id="airspace">
+      <h2>Airspace Rules and Restrictions</h2>
+      <p>Understanding airspace classification is one of the most important skills for any drone pilot. The United States divides its airspace into different classes, each with specific rules governing drone operations. Flying in the wrong airspace without authorization is one of the most common violations the FAA encounters.</p>
+
+      <h3>Class G Airspace (Uncontrolled)</h3>
+      <p>Class G is uncontrolled airspace, meaning it is not actively managed by air traffic control. For recreational flyers, the rules are straightforward:</p>
+      <ul>
+        <li>Fly at or below <strong>400 feet above ground level (AGL)</strong></li>
+        <li>Maintain visual line of sight</li>
+        <li>Yield to all manned aircraft</li>
+        <li>No LAANC authorization required</li>
+      </ul>
+
+      <h3>Controlled Airspace (Class B, C, D, and Surface Class E)</h3>
+      <p>Controlled airspace surrounds airports and other high-traffic areas. You <strong>must obtain prior authorization</strong> before flying in these areas. Authorization is obtained through one of two methods:</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Best For</th>
+              <th>Processing Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>LAANC</strong> (Low Altitude Authorization and Notification Capability)</td>
+              <td>Near most airports; real-time authorization</td>
+              <td>Instant to a few minutes</td>
+            </tr>
+            <tr>
+              <td><strong>DroneZone</strong></td>
+              <td>Complex requests; areas not covered by LAANC</td>
+              <td>Up to 90 days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tools for Airspace Awareness</h3>
+      <p>The FAA provides several tools to help you check airspace before every flight:</p>
+      <ul>
+        <li><strong>B4UFLY Mobile App:</strong> The FAA's official app showing airspace restrictions, TFRs, and no-fly zones. Available on iOS and Android.</li>
+        <li><strong>LAANC-enabled Apps:</strong> Third-party apps like AirMap, UASidekick, and Kittyhawk provide LAANC authorization directly from your phone.</li>
+        <li><strong>NOTAMs (Notices to Air Missions):</strong> Temporary flight restrictions for events, emergencies, VIP movements, and wildfires. Always check before flying.</li>
+      </ul>
+
+      <h3>Prohibited and Restricted Areas</h3>
+      <p>Certain areas are completely off-limits to drone operations without specific FAA authorization. These include:</p>
+      <ul>
+        <li>Within 5 miles of airports without LAANC authorization</li>
+        <li>National Security Areas and Restricted Areas</li>
+        <li>Near stadiums during events (TFRs typically extend 3 nautical miles and up to 3,000 feet)</li>
+        <li>Near emergency response scenes (wildfires, accident sites)</li>
+        <li>Over military installations and critical infrastructure</li>
+        <li>Over national parks (NPS prohibits drone takeoffs and landings)</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <div class="callout-title">&#8505;&#65039; Pro Tip</div>
+        <p>Save the <strong>B4UFLY</strong> app link as a bookmark on your phone. Temporary Flight Restrictions can activate with little notice — especially around wildfire zones, sporting events, and presidential movements. Checking before every flight takes 30 seconds and can save you from a costly violation.</p>
+      </div>
+    </section>
+
+    <!-- Section 7: Penalties -->
+    <section id="penalties">
+      <h2>Penalties and Legal Risks of Non-Compliance</h2>
+      <p>The FAA takes drone regulation enforcement seriously. Violations can result in civil penalties, criminal prosecution, and the suspension or revocation of any certificates you hold. Understanding the potential consequences helps underscore the importance of full compliance.</p>
+
+      <h3>Civil Penalties</h3>
+      <p>The FAA can impose civil fines for regulatory violations. As of 2025-2026, the maximum civil penalty for drone-related violations is <strong>up to $27,500</strong> per violation. The actual amount depends on the severity of the violation, the pilot's compliance history, and whether the violation created a safety risk.</p>
+
+      <h3>Criminal Penalties</h3>
+      <p>For serious violations — particularly those involving reckless endangerment, interference with manned aircraft, or operations near critical infrastructure — the FAA can refer cases to the Department of Justice. Criminal penalties can include:</p>
+      <ul>
+        <li>Fines up to <strong>$250,000</strong></li>
+        <li>Imprisonment for up to <strong>three years</strong></li>
+        <li>Both fines and imprisonment</li>
+      </ul>
+
+      <h3>Common Violations Leading to Enforcement</h3>
+      <p>Based on FAA enforcement data, the most common violations include:</p>
+      <ul>
+        <li>Operating without required registration</li>
+        <li>Flying without TRUST completion</li>
+        <li>Operating without Remote ID compliance</li>
+        <li>Flying in controlled airspace without authorization</li>
+        <li>Exceeding the 400-foot altitude limit</li>
+        <li>Operating beyond visual line of sight</li>
+        <li>Flying over people or moving vehicles without authorization</li>
+        <li>Interfering with manned aircraft or emergency operations</li>
+        <li>Operating under the influence of drugs or alcohol</li>
+      </ul>
+
+      <div class="callout callout-danger">
+        <div class="callout-title">&#128680; Real-World Impact</div>
+        <p>Registration and compliance documentation are often reviewed after incidents — including flyaways, property damage complaints, and near-misses with manned aircraft. Being non-compliant at the time of an incident significantly increases your liability and exposure to penalties. The 10 minutes spent registering and taking TRUST is trivial compared to the cost of an enforcement action.</p>
+      </div>
+    </section>
+
+    <!-- Section 8: Checklist -->
+    <section id="checklist">
+      <h2>Pre-Flight Compliance Checklist</h2>
+      <p>Use this interactive checklist before every recreational flight to ensure you are fully compliant with FAA regulations. Click each item to mark it complete.</p>
+
+      <div class="checklist">
+        <div class="checklist-title">&#9989; Before You Fly</div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">My drone is registered with the FAA (if 250g or more)</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">Registration number is visibly marked on the drone exterior</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I have passed TRUST and carry proof of completion</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">My drone complies with Remote ID requirements (or I am flying in a FRIA)</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I have checked airspace using B4UFLY or a LAANC app</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I have obtained LAANC authorization if flying in controlled airspace</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I have checked for Temporary Flight Restrictions (TFRs) and NOTAMs</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">Weather conditions are safe for flight (visibility, wind, precipitation)</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">Battery is fully charged and propellers are in good condition</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I will maintain visual line of sight throughout the flight</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I will fly at or below 400 feet AGL (or authorized altitude)</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="checklist-text">I will yield to all manned aircraft and emergency operations</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: FAQ -->
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Do I need to register a DJI Mini drone?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Most DJI Mini models are designed to weigh under 250 grams, which means they are exempt from FAA registration for recreational use. However, if you add accessories (such as propeller guards, larger batteries, or a gimbal) that push the total weight to 250 grams or more, registration becomes required. Additionally, if you fly commercially under Part 107, registration is mandatory regardless of weight.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Can I fly my drone in my backyard?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Yes, you can fly in your backyard, but all FAA rules still apply. Backyard flying does not create an exemption from registration, altitude limits, airspace restrictions, or Remote ID requirements. You are still operating in U.S. airspace. Additionally, be mindful of privacy concerns — avoid flying over neighboring properties at low altitudes where you might capture images or video of private spaces.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What happens if I lose my TRUST certificate?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Neither the FAA nor the Test Administrators can reissue a lost TRUST certificate. If you lose your certificate, you must retake the entire TRUST test, which takes about 30 minutes. For this reason, it is strongly recommended to save multiple copies — print one, save a PDF, and take a screenshot on your phone.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Do kids need to take TRUST?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>There is no minimum age requirement for taking TRUST. Children flying drones recreationally must pass the test just like adults. If a child is under 13 years old, a parent or guardian must complete the FAA drone registration on their behalf. The adult is responsible for ensuring the child operates the drone safely and in compliance with all rules.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Can I fly at night as a recreational pilot?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Recreational flyers may fly at night, provided the drone is equipped with anti-collision lighting that is visible for at least 3 statute miles. The lights must have a flash rate sufficient to avoid a collision. However, maintaining visual line of sight becomes significantly more challenging at night, and many CBO safety guidelines impose additional restrictions on nighttime operations.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>What is the difference between recreational and Part 107 registration?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Recreational registration costs $5 and covers all drones you fly for fun under a single registration number. Part 107 registration also costs $5 per drone, but each drone must be registered individually. The two categories cannot be transferred between each other. If you hold both recreational and commercial registrations, you must keep them separate and ensure each drone is operated under the correct registration type.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Can foreign visitors fly drones in the U.S.?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>Yes, foreign visitors can fly drones in the United States. For recreational use, you must register through the FAA DroneZone and complete TRUST. The FAA considers the certificate issued as a recognition of ownership rather than a U.S. aircraft registration certificate. For commercial use, foreign operators must obtain a foreign aircraft permit from the Department of Transportation before conducting any commercial operations.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span>Do I need insurance to fly recreationally?</span>
+            <span class="icon">&#9662;</span>
+          </button>
+          <div class="accordion-body">
+            <p>The FAA does not currently require recreational drone pilots to carry insurance. However, it is strongly recommended. Homeowners or renters insurance may not cover drone-related incidents. Standalone drone liability insurance is affordable and provides protection against property damage, injury claims, and accidental damage to your drone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Practical Tips -->
+    <section id="tips">
+      <h2>Practical Tips for Full Compliance</h2>
+      <p>Beyond knowing the rules, developing good habits and workflows ensures you remain compliant every time you fly. Here are practical recommendations from experienced recreational pilots and FAA safety guidelines:</p>
+
+      <h3>1. Build a Pre-Flight Routine</h3>
+      <p>Consistency prevents mistakes. Before every flight, run through the same checklist: check airspace, verify registration and TRUST documents are accessible, inspect your drone, confirm battery levels, and review weather conditions. A routine takes 5 minutes and eliminates the most common compliance oversights.</p>
+
+      <h3>2. Keep Digital and Physical Copies</h3>
+      <p>Store your registration certificate and TRUST completion certificate in multiple places: a printed copy in your drone case, a PDF on your phone, and a cloud backup. If law enforcement asks for proof, you want to produce it immediately without fumbling through apps.</p>
+
+      <h3>3. Join a Community-Based Organization</h3>
+      <p>FAA-recognized CBOs like the Academy of Model Aeronautics (AMA) provide safety guidelines, insurance options, access to flying fields, and a community of experienced pilots. Following CBO guidelines is not optional — it is a legal requirement for recreational flyers.</p>
+
+      <h3>4. Understand Your Drone's Weight</h3>
+      <p>Weigh your drone with all accessories attached. Many pilots assume their drone is under 250 grams based on manufacturer specs, but adding a case, filters, or upgraded batteries can push it over the threshold. A small kitchen scale costs less than the fine for unregistered operation.</p>
+
+      <h3>5. Respect Privacy</h3>
+      <p>While FAA rules govern airspace safety, state and local laws often address privacy. Avoid flying over private property at altitudes where you can capture identifiable images of people in their homes or backyards. When in doubt, obtain permission from property owners.</p>
+
+      <h3>6. Stay Informed</h3>
+      <p>Drone regulations evolve. Subscribe to FAA updates, follow reputable drone news sources, and review the FAA's official recreational flyer page periodically. Rules around Remote ID, airspace, and operational limits are subject to change as drone technology and airspace integration advance.</p>
+
+      <div class="callout callout-success">
+        <div class="callout-title">&#127942; Final Thought</div>
+        <p>Compliance is not a burden — it is the foundation of safe, enjoyable, and sustainable recreational drone flying. The few minutes spent on registration, TRUST, and pre-flight checks protect your investment, your reputation, and the safety of everyone who shares the sky with you.</p>
+      </div>
+    </section>
+
+    <hr>
+
+    <p style="font-size: 14px; color: var(--text-light); text-align: center;">
+      <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute legal advice. Always refer to the official <a href="https://www.faa.gov/uas" target="_blank" rel="noopener">FAA website</a> for the most current regulations and guidance.
     </p>
 
-    <div class="status-box">
-      <div class="status-header">
-        <span>&#128161;</span> <span>Work in Progress</span>
-      </div>
-      <p>
-        Our team is carefully researching, testing, and reviewing products to provide you with honest, detailed, and valuable content. We appreciate your patience while we build something great for you.
-      </p>
-    </div>
+  </main>
 
-    <div class="progress-bar">
-      <div class="progress-fill"></div>
-    </div>
-    <p class="progress-label">Page completion: ~65% &mdash; Launching soon!</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Sources: Federal Aviation Administration (FAA), FAADroneZone, FAA Recreational Flyers & CBO Guidelines</p>
+    <p style="margin-top: 8px;">Last updated: July 20, 2026</p>
+  </footer>
 
-    <a href="../index.html" class="btn-back">&#8592; Back to Home</a>
-  </div>
-</main>
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">&#8593;</button>
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <p>&copy; 2026 Yalla Buy. All rights reserved. | <a href="../index.html">Home</a> | <a href="../contact.html">Contact Us</a></p>
-</footer>
+  <script>
+    // ===== ACCORDION =====
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        const isOpen = header.getAttribute('aria-expanded') === 'true';
+        
+        // Close all in same accordion
+        header.closest('.accordion').querySelectorAll('.accordion-header').forEach(h => {
+          h.setAttribute('aria-expanded', 'false');
+          h.nextElementSibling.classList.remove('open');
+        });
+        
+        // Toggle current
+        if (!isOpen) {
+          header.setAttribute('aria-expanded', 'true');
+          body.classList.add('open');
+        }
+      });
+    });
 
+    // ===== CHECKLIST TOGGLE =====
+    function toggleCheck(item) {
+      item.classList.toggle('checked');
+      const box = item.querySelector('.check-box');
+      box.classList.toggle('checked');
+    }
+
+    // ===== PROGRESS BAR =====
+    const progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
+
+    // ===== BACK TO TOP =====
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+
+    // ===== TOC ACTIVE STATE =====
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('section[id]');
+
+    function updateActiveToc() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.target === current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveToc);
+    updateActiveToc();
+
+    // ===== TOC SMOOTH SCROLL =====
+    tocLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+        const target = document.getElementById(targetId);
+        if (target) {
+          const offset = 90;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+  
+  
+  <!-- تسجيل Service Worker + تحديث تلقائي -->
 <script>
-/* Dark Mode Toggle */
-const themeToggle = document.getElementById('themeToggle');
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
-themeToggle.addEventListener('click', () => {
-  const current = document.documentElement.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-});
-</script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
 
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
-</html>
+          </html>

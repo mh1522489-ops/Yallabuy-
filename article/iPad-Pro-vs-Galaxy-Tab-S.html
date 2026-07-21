@@ -2176,7 +2176,7 @@ console.log('%c2026 Tablet Comparison: iPad Pro M5 vs Galaxy Tab S10 Ultra', 'fo
       window.location.reload();
     });
 
-    navigator.serviceWorker.register('service-worker.js').then(function(reg) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
       console.log('✅ Service Worker مسجل');
 
       reg.addEventListener('updatefound', function() {

@@ -1,0 +1,52 @@
+<!-- Add this to any page where you want the install banner to appear -->
+<div id="pwa-install-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:linear-gradient(90deg, #ff9900, #ff6b6b); color:white; padding:15px 20px; z-index:9999; display:flex; align-items:center; justify-content:space-between; box-shadow:0 -5px 20px rgba(0,0,0,0.2);">
+  <div style="display:flex; align-items:center; gap:15px;">
+    <span style="font-size:30px;">📱</span>
+    <div>
+      <strong style="font-size:1.1rem;">Install YallaBuy on your device!</strong>
+      <p style="margin:0; opacity:0.9; font-size:0.9rem;">Faster access to deals and even offline usage</p>
+    </div>
+  </div>
+  <div style="display:flex; gap:10px;">
+    <button onclick="installPWA()" style="padding:10px 25px; background:white; color:#ff6b6b; border:none; border-radius:25px; font-weight:bold; cursor:pointer;">Install Now</button>
+    <button onclick="dismissBanner()" style="padding:10px 15px; background:rgba(255,255,255,0.2); color:white; border:none; border-radius:25px; cursor:pointer;">❌</button>
+  </div>
+</div>
+
+<script>
+  let deferredPrompt;
+  
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.getElementById('pwa-install-banner').style.display = 'flex';
+  });
+  
+  async function installPWA() {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      document.getElementById('pwa-install-banner').style.display = 'none';
+    }
+    deferredPrompt = null;
+  }
+  
+  function dismissBanner() {
+    document.getElementById('pwa-install-banner').style.display = 'none';
+    localStorage.setItem('pwa-banner-dismissed', Date.now());
+  }
+  
+  // Don't show if the user dismissed it before (for one week)
+  if (localStorage.getItem('pwa-banner-dismissed')) {
+    const dismissed = parseInt(localStorage.getItem('pwa-banner-dismissed'));
+    if (Date.now() - dismissed < 7 * 24 * 60 * 60 * 1000) {
+      document.getElementById('pwa-install-banner').style.display = 'none';
+    }
+  }
+  
+  // Don't show if the app is already installed
+  if (window.matchMedia('(display-mode: standalone)').matches) {
+    document.getElementById('pwa-install-banner').style.display = 'none';
+  }
+</script>

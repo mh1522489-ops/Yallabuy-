@@ -1,21 +1,15 @@
-// ═══════════════════════════════════════════════════════
-// service-worker.js - YallaBuy Offline Only (v58)
-// ═══════════════════════════════════════════════════════
 
-const CACHE_NAME = 'yallabuy-cache-v61';
-
-// الملفات الأساسية اللي هتتخزن
+const CACHE_NAME = 'yallabuy-cache-v58';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/style.css',
   '/script.js',
   '/logo.png',
-  '/favicon.ico',
-  '/offline.html'
+  '/favicon.ico'
 ];
 
-// ممنوع التخزين
+// ✅ أضف الـ API endpoints اللي ممنوع تتخزن
 const NEVER_CACHE = [
   '/api/',
   '/auth/',
@@ -26,13 +20,12 @@ const NEVER_CACHE = [
   '/admin/'
 ];
 
+// ✅ دالة تتحقق لو الرابط ممنوع من التخزين
 function shouldCache(url) {
   return !NEVER_CACHE.some(path => url.includes(path));
 }
 
-// ═══════════════════════════════════════════════════════
-// 1. INSTALL - تثبيت
-// ═══════════════════════════════════════════════════════
+// 1. التثبيت
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -41,9 +34,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// ═══════════════════════════════════════════════════════
-// 2. ACTIVATE - تفعيل
-// ═══════════════════════════════════════════════════════
+// 2. التفعيل
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -56,29 +47,25 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// ═══════════════════════════════════════════════════════
-// 3. FETCH - جلب الطلبات
-// ═══════════════════════════════════════════════════════
+// 3. جلب الطلبات
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   
-  // تجاهل غير HTTP وغير GET
   if (!request.url.startsWith('http') || request.method !== 'GET') return;
 
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
-      // لو في الكاش، رجعه
       if (cachedResponse) {
         return cachedResponse;
       }
 
-      // جرب الشبكة
       return fetch(request).then((networkResponse) => {
+        // ✅ لو مش ناجح، رجعه زي ما هو
         if (!networkResponse || networkResponse.status !== 200) {
           return networkResponse;
         }
 
-        // خزن في الكاش
+        // ✅ فقط static assets تتخزن
         if (shouldCache(request.url)) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -88,13 +75,15 @@ self.addEventListener('fetch', (event) => {
 
         return networkResponse;
       }).catch(() => {
-        // النت قطع!
+        // ✅ التصحيح: return دايماً
         if (request.mode === 'navigate') {
-          return caches.match('/offline.html');
+          return caches.match('/index.html');
         }
         
-        return new Response('Offline', {
+        // ✅ رجع رسالة خطأ مناسبة
+        return new Response('Offline - Content not available', {
           status: 503,
+          statusText: 'Service Unavailable',
           headers: { 'Content-Type': 'text/plain' }
         });
       });
@@ -102,13 +91,9 @@ self.addEventListener('fetch', (event) => {
   );
 });
 
-// ═══════════════════════════════════════════════════════
-// 4. MESSAGE - رسائل التحديث
-// ═══════════════════════════════════════════════════════
+// 4. رسائل التحديث
 self.addEventListener('message', (event) => {
   if (event.data === 'skipWaiting') {
     self.skipWaiting();
   }
 });
-
-console.log('✅ YallaBuy Offline Ready (v58)');

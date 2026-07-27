@@ -1,6 +1,6 @@
 // service-worker.js ← عدل الملف دا بس!
 
-const CACHE_NAME = 'yallabuy-cache-v57';
+const CACHE_NAME = 'yallabuy-cache-v58';
 
 // ═══════════════════════════════════════════════════════
 // استدعي ملفات إضافية (لو عايز تفصل الكود)

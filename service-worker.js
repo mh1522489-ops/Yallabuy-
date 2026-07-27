@@ -2,7 +2,7 @@
 // service-worker.js - YallaBuy Offline Only (v58)
 // ═══════════════════════════════════════════════════════
 
-const CACHE_NAME = 'yallabuy-cache-v59';
+const CACHE_NAME = 'yallabuy-cache-v60';
 
 // الملفات الأساسية اللي هتتخزن
 const CORE_ASSETS = [

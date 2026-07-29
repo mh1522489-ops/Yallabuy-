@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'yallabuy-cache-v61';
+const CACHE_NAME = 'yallabuy-cache-v62';
 const CORE_ASSETS = [
   '/',
   '/index.html',

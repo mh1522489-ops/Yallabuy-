@@ -1,7 +1,7 @@
 
-const CACHE_NAME = 'yallabuy-cache-v80';
+const CACHE_NAME = 'yallabuy-cache-v81';
 const CORE_ASSETS = [
-  '/',
+  '/offline.html',
   '/index.html',
   '/style.css',
   '/script.js',
@@ -97,3 +97,13 @@ self.addEventListener('message', (event) => {
     self.skipWaiting();
   }
 });
+.catch(() => {
+  if (request.mode === 'navigate') {
+    return caches.match('/offline.html');  // ✅ بدل index.html
+  }
+  return new Response('Offline - Content not available', {
+    status: 503,
+    statusText: 'Service Unavailable',
+    headers: { 'Content-Type': 'text/plain' }
+  });
+}) 

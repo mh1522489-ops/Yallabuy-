@@ -1,8 +1,9 @@
 
 const CACHE_NAME = 'yallabuy-cache-v81';
 const CORE_ASSETS = [
-  '/offline.html',
+  '/',
   '/index.html',
+  '/offline.html', 
   '/style.css',
   '/script.js',
   '/logo.png',

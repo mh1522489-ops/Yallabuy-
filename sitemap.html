@@ -957,12 +957,25 @@
                     </li>
                 </ul>
             </article>
+
+            <!-- All HTML files (populated dynamically) -->
+            <article class="category-card pages" id="all-html-card">
+                <div class="category-header">
+                    <div class="category-icon">🔎</div>
+                    <h2 class="category-title">All .html files in repository</h2>
+                    <span class="category-count" id="all-html-count">—</span>
+                </div>
+                <ul class="link-list" id="all-html-list">
+                    <li>Loading list of .html files…</li>
+                </ul>
+            </article>
+
         </div>
 
         <!-- Marketing & UX Section -->
         <section class="marketing-section">
             <h2>Built for Discovery</h2>
-            <p>Every link, every review, every guide — designed with you in mind. We believe great navigation is the foundation of great content. Our mission is to make your shopping journey smooth, intuitive, and rewarding.</p>
+            <p>Every link, every review, every guide — designed with you in mind. We believe great navigation is the foundation of great content. Our mission is to make your shopping journey smooth,[...]
             
             <div class="marketing-features">
                 <div class="marketing-feature">
@@ -998,26 +1011,3 @@
                 <a href="https://yallabuy-sg5c.vercel.app/buying.html">Buying Guide</a>
                 <a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a>
                 <a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html">Privacy Policy</a>
-                <a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html">Terms of Service</a>
-            </div>
-            <p>© 2026 YallaBuy. All rights reserved.</p>
-            <p class="footer-tagline">Built with honesty, tested with passion, shared with care.</p>
-        </div>
-    </footer>
-
-    <script>
-        // Service Worker Registration
-        (function() {
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker registered:', registration);
-                    })
-                    .catch(error => {
-                        console.log('Service Worker registration failed:', error);
-                    });
-            }
-        })();
-    </script>
-</body>
-</html>

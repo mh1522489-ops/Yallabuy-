@@ -1011,3 +1011,62 @@
                 <a href="https://yallabuy-sg5c.vercel.app/buying.html">Buying Guide</a>
                 <a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a>
                 <a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html">Privacy Policy</a>
+                <a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html">Terms of Service</a>
+            </div>
+            <p>&copy; 2026 YallaBuy. All rights reserved.</p>
+            <div class="footer-tagline">Honest reviews from real experience.</div>
+        </div>
+    </footer>
+
+    <!-- Script to fetch repository tree and populate missing .html links -->
+    <script>
+    (async function(){
+        const listEl = document.getElementById('all-html-list');
+        const countEl = document.getElementById('all-html-count');
+        if(!listEl || !countEl) return;
+
+        try{
+            const resp = await fetch('https://api.github.com/repos/mh1522489-ops/Yallabuy-/git/trees/main?recursive=1');
+            if(!resp.ok) throw new Error('GitHub API responded with ' + resp.status);
+            const data = await resp.json();
+            const tree = Array.isArray(data.tree) ? data.tree : [];
+            const htmlPaths = tree
+                .filter(item => item.path && item.path.toLowerCase().endsWith('.html'))
+                .map(item => item.path)
+                .sort();
+
+            // Collect existing links on the page to avoid duplicates
+            const existingHrefs = new Set(Array.from(document.querySelectorAll('a'))
+                .map(a => a.href.replace(/\/?$/,'')));
+
+            listEl.innerHTML = '';
+            let added = 0;
+            for(const p of htmlPaths){
+                // Build public URL using site base
+                const url = 'https://yallabuy-sg5c.vercel.app/' + p.replace(/^\/+/, '');
+                const normalized = url.replace(/\/?$/,'');
+                if(existingHrefs.has(normalized)) continue; // already listed elsewhere
+
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = url;
+                a.title = p;
+                a.textContent = p;
+                li.appendChild(a);
+                listEl.appendChild(li);
+                added++;
+            }
+
+            countEl.textContent = String(added);
+            if(added === 0){
+                listEl.innerHTML = '<li>No additional .html files found — everything is already listed above.</li>';
+            }
+        }catch(err){
+            console.error('Failed to load repo tree', err);
+            listEl.innerHTML = '<li>Unable to load .html files from repository: ' + (err.message || err) + '</li>';
+            countEl.textContent = '0';
+        }
+    })();
+    </script>
+</body>
+</html>

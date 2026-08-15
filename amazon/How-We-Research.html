@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2553585');
+</script>
+<script src="../security.js"></script> 
+ <script src="../vibra-click.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="alternate icon" href="/favicon.ico">
+<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+
+  <title>How We Research — YallaBuy</title>
+  <meta name="description" content="Learn how YallaBuy researches electronics products, verifies information, compares options, and creates buying recommendations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://yallabuy-sg5c.vercel.app/#organization",
+  "name": "YallaBuy",
+  "url": "https://yallabuy-sg5c.vercel.app/",
+  "logo": "https://yallabuy-sg5c.vercel.app/favicon.svg",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q141078673"
+  ]
+}
+</script>
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #fbfaf7;
+      --bg-soft: #f3f1ec;
+      --surface: #ffffff;
+      --surface-secondary: #f8f6f1;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #767676;
+      --border: #e8e4dc;
+      --border-strong: #d8d2c5;
+      --brand: #0f766e;
+      --brand-soft: #ccfbf1;
+      --brand-deep: #134e4a;
+      --accent: #b45309;
+      --radius-sm: 8px;
+      --radius-default: 14px;
+      --radius-large: 22px;
+      --shadow-sm: 0 1px 2px rgba(20,20,20,.04), 0 2px 8px rgba(20,20,20,.04);
+      --shadow-default: 0 4px 24px rgba(20,20,20,.06);
+      --shadow-large: 0 12px 40px rgba(20,20,20,.08);
+      --transition: 0.25s cubic-bezier(.4,0,.2,1);
+      --max-site: 1240px;
+      --max-article: 720px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0f110f;
+      --bg-soft: #1a1c1a;
+      --surface: #1e201e;
+      --surface-secondary: #252725;
+      --text-primary: #e8e6e1;
+      --text-secondary: #a8a59d;
+      --text-muted: #7a7870;
+      --border: #2e302e;
+      --border-strong: #3e403e;
+      --brand: #2dd4bf;
+      --brand-soft: #0f3d38;
+      --brand-deep: #ccfbf1;
+      --accent: #f59e0b;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.2), 0 2px 8px rgba(0,0,0,.15);
+      --shadow-default: 0 4px 24px rgba(0,0,0,.25);
+      --shadow-large: 0 12px 40px rgba(0,0,0,.35);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container */
+    .site-container {
+      max-width: var(--max-site);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media (min-width: 768px) {
+      .site-container {
+        padding: 0 32px;
+      }
+    }
+
+    .article-container {
+      max-width: var(--max-article);
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--brand);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-link.active {
+      color: var(--brand);
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid var(--border);
+      padding: 16px 0;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 10px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a.active {
+      color: var(--brand);
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition), border-color var(--transition), color var(--transition);
+    }
+
+    .theme-toggle:hover {
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+      .hero-section {
+        padding: 72px 0 56px;
+      }
+    }
+
+    .hero-breadcrumb {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .hero-breadcrumb a:hover {
+      color: var(--brand);
+    }
+
+    .hero-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .hero-title {
+        font-size: 44px;
+      }
+    }
+
+    .hero-description {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 580px;
+    }
+
+    /* Article sections */
+    .content-section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    @media (min-width: 768px) {
+      .content-section {
+        padding: 56px 0;
+      }
+    }
+
+    .content-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-heading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .section-heading {
+        font-size: 26px;
+      }
+    }
+
+    .section-intro {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .section-subheading {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      margin-top: 28px;
+    }
+
+    .article-paragraph {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .article-paragraph:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Step list */
+    .step-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--brand);
+    }
+
+    [data-theme="dark"] .step-number {
+      border-color: var(--brand);
+    }
+
+    .step-content h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Source cards grid */
+    .source-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 640px) {
+      .source-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .source-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-default);
+      padding: 24px;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .source-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .source-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .source-icon.blue { background: #dbeafe; color: #2563eb; }
+    .source-icon.orange { background: #ffedd5; color: #ea580c; }
+    .source-icon.green { background: #dcfce7; color: #16a34a; }
+    .source-icon.purple { background: #f3e8ff; color: #9333ea; }
+
+    [data-theme="dark"] .source-icon.blue { background: #1e2a3a; color: #60a5fa; }
+    [data-theme="dark"] .source-icon.orange { background: #2a2010; color: #fb923c; }
+    [data-theme="dark"] .source-icon.green { background: #102a18; color: #4ade80; }
+    [data-theme="dark"] .source-icon.purple { background: #1f1028; color: #c084fc; }
+
+    .source-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .source-card p {
+      font-family: 'Lora', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Callout */
+    .callout {
+      background: var(--surface-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-default);
+      padding: 20px 24px;
+    }
+
+    .callout-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .callout p {
+      font-family: 'Lora', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Blockquote */
+    .pull-quote {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--brand);
+      border-radius: var(--radius-default);
+      padding: 28px 32px;
+      text-align: center;
+      margin: 8px 0 32px;
+    }
+
+    .pull-quote p {
+      font-family: 'Lora', serif;
+      font-size: 19px;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+      .pull-quote p {
+        font-size: 22px;
+      }
+    }
+
+    /* Info type grid */
+    .info-type-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .info-type-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .info-type-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-default);
+      padding: 20px;
+    }
+
+    .info-type-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .info-type-card h4.blue { color: #2563eb; }
+    .info-type-card h4.green { color: #16a34a; }
+    .info-type-card h4.orange { color: #ea580c; }
+    .info-type-card h4.teal { color: var(--brand); }
+
+    [data-theme="dark"] .info-type-card h4.blue { color: #60a5fa; }
+    [data-theme="dark"] .info-type-card h4.green { color: #4ade80; }
+    [data-theme="dark"] .info-type-card h4.orange { color: #fb923c; }
+    [data-theme="dark"] .info-type-card h4.teal { color: var(--brand); }
+
+    .info-type-card p {
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Do/Don't grid */
+    .do-dont-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: 640px) {
+      .do-dont-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .do-dont-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-default);
+      padding: 20px;
+    }
+
+    .do-dont-card h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .do-dont-card h4.green { color: #16a34a; }
+    .do-dont-card h4.red { color: #dc2626; }
+
+    [data-theme="dark"] .do-dont-card h4.green { color: #4ade80; }
+    [data-theme="dark"] .do-dont-card h4.red { color: #f87171; }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-family: 'Lora', serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .check-list li svg {
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    .check-list li .check-green { color: #16a34a; }
+    .check-list li .check-red { color: #dc2626; }
+
+    [data-theme="dark"] .check-list li .check-green { color: #4ade80; }
+    [data-theme="dark"] .check-list li .check-red { color: #f87171; }
+
+    /* Price handling items */
+    .price-point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+
+    .price-point:last-child {
+      margin-bottom: 0;
+    }
+
+    .price-point-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      background: #fef3c7;
+      color: #d97706;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-theme="dark"] .price-point-icon {
+      background: #2a2010;
+      color: #fbbf24;
+    }
+
+    .price-point p {
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Don't do list */
+    .dont-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dont-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid #dc2626;
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      font-family: 'Lora', serif;
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    [data-theme="dark"] .dont-list li {
+      border-left-color: #f87171;
+    }
+
+    /* Closing statement */
+    .closing-section {
+      padding: 48px 0 64px;
+    }
+
+    @media (min-width: 768px) {
+      .closing-section {
+        padding: 64px 0 80px;
+      }
+    }
+
+    .closing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-large);
+      padding: 40px 32px;
+      text-align: center;
+      box-shadow: var(--shadow-default);
+    }
+
+    @media (min-width: 768px) {
+      .closing-card {
+        padding: 48px 56px;
+      }
+    }
+
+    .closing-card p {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .closing-card p {
+        font-size: 24px;
+      }
+    }
+
+    .closing-card .closing-note {
+      font-size: 14px;
+      font-style: normal;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .footer-inner {
+      padding: 48px 0 32px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        padding: 64px 0 40px;
+      }
+    }
+
+    .footer-top {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 48px;
+      }
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-brand .logo {
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-link-group h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .footer-link-group ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-link-group a {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-link-group a:hover {
+      color: var(--brand);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Back to top */
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-default);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition), background var(--transition), color var(--transition);
+      z-index: 40;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      background: var(--brand);
+      color: var(--surface);
+      border-color: var(--brand);
+    }
+
+    /* Table of contents */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-default);
+      padding: 24px;
+      margin-bottom: 8px;
+    }
+
+    .toc h2 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc-counter;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .toc ol li {
+      counter-increment: toc-counter;
+    }
+
+    .toc ol li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .toc ol li a::before {
+      content: counter(toc-counter, decimal-leading-zero);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      min-width: 20px;
+    }
+
+    .toc ol li a:hover {
+      background: var(--surface-secondary);
+      color: var(--brand);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="site-container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">YallaBuy</a>
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="../about.html" class="nav-link">about</a>
+          <a href="../index-folder/categories/index.html" class="nav-link">Comparisons</a>
+          
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
+        </nav>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button class="theme-toggle mobile-theme-toggle" id="themeToggleMobile" aria-label="Toggle dark mode">
+            <svg class="sun-icon-m" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="moon-icon-m" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">about</a>
+        <a href="../index-folder/categories/index.html">categories</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="site-container">
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <div class="article-container">
+          <p class="hero-breadcrumb"><a href="../index.html">Home</a> &nbsp;/&nbsp; How We Research</p>
+          <h1 class="hero-title">How We Research</h1>
+          <p class="hero-description">Before we publish any product recommendation, comparison, or buying guide, we spend time researching. This page explains exactly how that process works, where our information comes from, and what we do not do.</p>
+        </div>
+      </section>
+
+      <!-- Table of Contents -->
+      <div class="article-container" style="padding-top: 32px;">
+        <div class="toc">
+          <h2>On This Page</h2>
+          <ol>
+            <li><a href="#process">Our Research Process</a></li>
+            <li><a href="#sources">Where Our Information Comes From</a></li>
+            <li><a href="#verification">How We Verify Information</a></li>
+            <li><a href="#evaluation">How We Evaluate Products</a></li>
+            <li><a href="#reviews">How We Use Customer Reviews</a></li>
+            <li><a href="#testing">We Do Not Personally Test Every Product</a></li>
+            <li><a href="#pricing">How We Handle Prices</a></li>
+            <li><a href="#affiliate">Affiliate Disclosure</a></li>
+            <li><a href="#updates">How We Keep Content Updated</a></li>
+            <li><a href="#transparency">What We Do Not Do</a></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Our Research Process -->
+      <section class="content-section" id="process">
+        <div class="article-container">
+          <h2 class="section-heading">Our Research Process</h2>
+          <p class="section-intro">Every piece of content on YallaBuy goes through a straightforward research process. We do not have a complicated lab or testing facility. Instead, we focus on gathering information from multiple sources and organizing it in a way that helps readers make decisions.</p>
+          <ol class="step-list">
+            <li class="step-item">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Understand the user need</h3>
+                <p>We start by identifying what problem the reader is trying to solve. This could be finding a budget phone, choosing between two laptops, or understanding which TV features actually matter for a specific room size.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Identify relevant products</h3>
+                <p>We look for products that could realistically address that need. We do not limit ourselves to the most popular or most advertised options. A less-known product might be a better fit for a particular use case.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Gather information from multiple sources</h3>
+                <p>We collect specifications, features, pricing, and user feedback from the sources described below. We try to cross-check important details across more than one source.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Analyze and compare</h3>
+                <p>We compare products based on the information gathered. We look at how each product performs for the specific need we identified, not just which one has the highest specs on paper.</p>
+              </div>
+            </li>
+            <li class="step-item">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h3>Write and publish</h3>
+                <p>We organize our findings into clear, useful content. We explain our reasoning so readers can decide for themselves whether a recommendation fits their situation.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Where Our Information Comes From -->
+      <section class="content-section" id="sources">
+        <div class="article-container">
+          <h2 class="section-heading">Where Our Information Comes From</h2>
+          <p class="section-intro">YallaBuy does not generate product information from thin air. We rely on a combination of sources, each serving a different purpose in our research.</p>
+
+          <div class="source-grid">
+            <article class="source-card">
+              <div class="source-icon blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              </div>
+              <h3>Official Manufacturer Websites</h3>
+              <p>This is our primary source for product specifications, features, compatibility details, and official product descriptions. When we need to confirm a technical specification, the manufacturer's own website is the first place we check.</p>
+            </article>
+            <article class="source-card">
+              <div class="source-icon orange">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+              </div>
+              <h3>Amazon</h3>
+              <p>We use Amazon to check product availability, current pricing, customer ratings, and most importantly, customer reviews. Reading what real buyers say about a product after using it is one of the most valuable parts of our research.</p>
+            </article>
+            <article class="source-card">
+              <div class="source-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3>Independent Reviews and Testing</h3>
+              <p>When available, we refer to trusted independent sources that perform hands-on testing, such as RTINGS and other reputable review sites. Independent test data helps us understand real-world performance that specs alone cannot show.</p>
+            </article>
+            <article class="source-card">
+              <div class="source-icon purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              </div>
+              <h3>Social Media and User Discussions</h3>
+              <p>We sometimes look at social media discussions to understand real user experiences, common complaints, and what people are saying about a product in everyday conversation. However, social media posts are not automatically treated as factual evidence.</p>
+            </article>
+          </div>
+
+          <div class="callout">
+            <p class="callout-label">A note about AI tools</p>
+            <p>We may use AI as a work assistant to help organize information or draft content. However, we do not treat AI-generated information as a verified source. Any important product fact is checked against reliable sources, especially the manufacturer's official website and other trustworthy references. We do not claim something is true simply because an AI model said so.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How We Verify Information -->
+      <section class="content-section" id="verification">
+        <div class="article-container">
+          <h2 class="section-heading">How We Verify Information</h2>
+          <p class="section-intro">Not everything published online is correct. Product specifications can be misstated, features can be misunderstood, and claims can be exaggerated. We try to reduce these errors through a simple verification approach.</p>
+
+          <h3 class="section-subheading">Cross-checking important claims</h3>
+          <p class="article-paragraph">When we encounter an important product claim or specification, we look for confirmation from more than one reliable source. For example, if a product's battery life is stated differently on two websites, we will check the manufacturer's official specifications to find the most authoritative number.</p>
+
+          <h3 class="section-subheading">When sources disagree</h3>
+          <p class="article-paragraph">If information conflicts between sources, we do not simply pick the answer that makes a product look better. We research the claim further, give more weight to the most authoritative source (usually the manufacturer for specs), and if we cannot determine which information is correct, we do not present uncertain information as a confirmed fact.</p>
+
+          <h3 class="section-subheading">What we cannot verify</h3>
+          <p class="article-paragraph">We are honest about the limits of our research. We cannot guarantee that every single specification or detail in every article is correct at all times. Product information can change, mistakes can happen, and we encourage readers to check the manufacturer's website for the most current specifications before making a purchase decision.</p>
+        </div>
+      </section>
+
+      <!-- How We Evaluate Products -->
+      <section class="content-section" id="evaluation">
+        <div class="article-container">
+          <h2 class="section-heading">How We Evaluate Products</h2>
+          <p class="section-intro">Our product evaluations are guided by one main question:</p>
+
+          <div class="pull-quote">
+            <p>Does this product actually solve a problem for the reader?</p>
+          </div>
+
+          <p class="article-paragraph">We do not simply choose products because they are famous, expensive, popular, or heavily marketed. A product might have impressive specifications on paper but fail to deliver value for a typical user. Another product might be less known but offer a much better combination of features, performance, and price for a specific situation.</p>
+
+          <p class="article-paragraph">When we recommend a product, it is because we believe it provides a useful combination of features, performance, price, reliability, or overall value for a particular use case. We try to explain why we think a product is a good fit so readers can judge for themselves.</p>
+
+          <p class="article-paragraph">Our evaluations are based primarily on the information we gather during research: manufacturer specifications, independent test results where available, and patterns we observe in customer experiences. We do not have a scoring formula or a rigid point system. Each product is evaluated in context.</p>
+        </div>
+      </section>
+
+      <!-- How We Use Customer Reviews -->
+      <section class="content-section" id="reviews">
+        <div class="article-container">
+          <h2 class="section-heading">How We Use Customer Reviews</h2>
+          <p class="section-intro">Customer reviews, especially on Amazon, are an important part of our research. They provide insight that specifications and marketing materials cannot.</p>
+
+          <div class="do-dont-grid">
+            <div class="do-dont-card">
+              <h4 class="green">What we look for</h4>
+              <ul class="check-list">
+                <li><svg class="check-green" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Common strengths across multiple reviews</li>
+                <li><svg class="check-green" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recurring complaints or problems</li>
+                <li><svg class="check-green" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Reliability concerns mentioned by multiple users</li>
+                <li><svg class="check-green" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Comfort, usability, or setup issues</li>
+                <li><svg class="check-green" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Features users actually appreciate in practice</li>
+              </ul>
+            </div>
+            <div class="do-dont-card">
+              <h4 class="red">What we do not do</h4>
+              <ul class="check-list">
+                <li><svg class="check-red" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Treat one individual review as absolute proof</li>
+                <li><svg class="check-red" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Copy reviews and present them as our own</li>
+                <li><svg class="check-red" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Assume every negative review is a real defect</li>
+                <li><svg class="check-red" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Copy the Amazon star rating as our own</li>
+                <li><svg class="check-red" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Ignore suspicious reviews that could skew results</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <p class="callout-label">About YallaBuy's own product ratings</p>
+            <p>When we give a product our own assessment or rating, it is based on our analysis of user experiences and the information collected during research. Our rating is not simply copied from Amazon, and the Amazon star rating should not be treated as the same thing as YallaBuy's evaluation. They are separate assessments.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- We Don't Personally Test Every Product -->
+      <section class="content-section" id="testing">
+        <div class="article-container">
+          <h2 class="section-heading">We Do Not Personally Test Every Product</h2>
+          <p class="section-intro">We want to be completely clear about this: YallaBuy does not personally test the products it covers. We do not have a testing lab, and we do not claim hands-on experience with products we have not actually used.</p>
+
+          <p class="article-paragraph">You will never see us say "we tested this product" or "our testing showed" unless we actually performed that test. We do not invent test results, and we do not imply personal experience when we do not have it.</p>
+
+          <p class="article-paragraph" style="margin-bottom: 24px;">Instead, we are transparent about where our information comes from. When we discuss a product's performance, we clearly distinguish between:</p>
+
+          <div class="info-type-grid">
+            <div class="info-type-card">
+              <h4 class="blue">Manufacturer claims</h4>
+              <p>What the brand says about its own product, such as battery life estimates or display brightness numbers.</p>
+            </div>
+            <div class="info-type-card">
+              <h4 class="green">Independent testing</h4>
+              <p>Results from trusted third-party sources that have actually measured or tested the product hands-on.</p>
+            </div>
+            <div class="info-type-card">
+              <h4 class="orange">Customer experiences</h4>
+              <p>What real buyers report after using the product in their daily lives, including both positive and negative feedback.</p>
+            </div>
+            <div class="info-type-card">
+              <h4 class="teal">YallaBuy's analysis</h4>
+              <p>Our interpretation of all the above, organized to help readers understand how a product might fit their needs.</p>
+            </div>
+          </div>
+
+          <p class="article-paragraph" style="color: var(--text-muted);">This approach means our content is based on research and analysis, not personal hands-on testing. We believe being honest about this is more useful to readers than pretending otherwise.</p>
+        </div>
+      </section>
+
+      <!-- How We Handle Prices -->
+      <section class="content-section" id="pricing">
+        <div class="article-container">
+          <h2 class="section-heading">How We Handle Prices</h2>
+          <p class="section-intro">Product prices, especially on Amazon, can change frequently. A price that is accurate today may be different tomorrow.</p>
+
+          <div class="price-point">
+            <div class="price-point-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <p>When we display a price on YallaBuy, it represents the price that was available at the time we researched or wrote the article. It is not a guaranteed price, and we cannot promise it will remain the same when you visit the retailer.</p>
+          </div>
+          <div class="price-point">
+            <div class="price-point-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <p>We encourage readers to always check the current price before making a purchase. The price you see on YallaBuy may be higher or lower than what is actually available at the time you are reading.</p>
+          </div>
+          <div class="price-point">
+            <div class="price-point-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <p>When we mention that a product is a good value, that assessment is based on the price we observed during our research. Value can change as prices fluctuate.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Affiliate Disclosure -->
+      <section class="content-section" id="affiliate">
+        <div class="article-container">
+          <h2 class="section-heading">Affiliate Disclosure</h2>
+          <p class="section-intro">YallaBuy uses Amazon affiliate links. This means that if you click on a link to a product on Amazon and make a purchase, YallaBuy may earn a commission from that sale.</p>
+
+          <p class="article-paragraph">This is how we sustain the website and continue creating content. However, affiliate commissions do not determine which products we recommend, how we rank them, or what we write about them.</p>
+
+          <p class="article-paragraph">Our product selections are made based on research and analysis, not on how much commission a product might generate. A product that pays a higher commission will not rank above a product that we believe is genuinely better for the reader.</p>
+
+          <p class="article-paragraph" style="margin-bottom: 24px;">We would rather recommend the right product and keep our readers' trust than push a higher-paying affiliate link and lose credibility. Our priority is helping you make a better buying decision.</p>
+
+          <div class="callout">
+            <p>As an Amazon Associate, YallaBuy earns from qualifying purchases. This does not affect the price you pay. Amazon affiliate links are clearly identifiable as they direct you to amazon.com or your local Amazon storefront.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How We Keep Content Updated -->
+      <section class="content-section" id="updates">
+        <div class="article-container">
+          <h2 class="section-heading">How We Keep Content Updated</h2>
+          <p class="section-intro">Electronics products change frequently. New models are released, specifications are updated, and prices shift. We try to keep our content relevant, but we want to be realistic about what that means.</p>
+
+          <p class="article-paragraph">We update product information when we become aware of important changes, such as a new generation of a product replacing an older one, significant specification changes, or when a product is discontinued.</p>
+
+          <p class="article-paragraph">We do not claim that every article is monitored or updated every day. Some articles may contain information that was accurate at the time of writing but has since changed. If you notice something that seems outdated, we appreciate you letting us know.</p>
+
+          <p class="article-paragraph">Where possible, we include the date when an article was last updated so readers can gauge how current the information is.</p>
+        </div>
+      </section>
+
+      <!-- What We Don't Do -->
+      <section class="content-section" id="transparency">
+        <div class="article-container">
+          <h2 class="section-heading">What We Do Not Do</h2>
+          <p class="section-intro">Transparency is not just about explaining what we do. It is also about being clear about what we do not do. Here is a list of things you will not find on YallaBuy.</p>
+
+          <ul class="dont-list">
+            <li>We do not invent test results or claim to have tested products we have not actually tested.</li>
+            <li>We do not treat AI-generated information as a verified or authoritative source.</li>
+            <li>We do not copy customer reviews and present them as our own personal experiences.</li>
+            <li>We do not recommend products simply because they are popular or heavily marketed.</li>
+            <li>We do not choose or rank products based on how much affiliate commission they generate.</li>
+            <li>We do not present uncertain information as a confirmed fact.</li>
+            <li>We do not guarantee that every piece of information in every article is always correct.</li>
+            <li>We do not claim that YallaBuy's rating is the same as the Amazon star rating.</li>
+            <li>We do not present ourselves as a laboratory, testing company, or professional product-testing organization.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Closing Statement -->
+      <section class="closing-section">
+        <div class="article-container">
+          <div class="closing-card">
+            <p>YallaBuy cares about giving readers accurate and useful information, not just making a sale.</p>
+            <p class="closing-note">If you have questions about our research process or notice something in our content that needs correction, we welcome you to reach out. Being useful to readers is what matters most to us.</p>
+          <a href="../contact.html"
+   style="
+   display: block;
+   width: 50%;
+   height: 40px;
+   margin: auto;
+   border: none;
+   background-color:Orange;
+   border-radius: 10px;
+   text-align: center;
+   padding:10px; 
+   text-decoration: none; 
+   color:black; 
+   ">
+   Contact Us
+</a>        </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+ <br>
+      <br>
+      <div class="ml-embedded" data-form="8yiAHL"></div>
+
+                   
+<br>
+<br>
+<br>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="../index.html" class="logo">YallaBuy</a>
+            <p>Practical reviews and buying guides for electronics. We research, compare, and explain so you can buy with confidence.</p>
+          </div>
+                   <div class="footer-link-group">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="../about.html">About</a></li>
+              <li><a href="#">How We Research</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of service</a></li>
+              <li><a href="editorial-policy.html">editorial policy</a></li>
+              <li><a href="affiliate-disclosure.html">affiliate disclosure</a></li>
+              <li><a href="editorial-process.html">editorial process</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="footerYear"></span> YallaBuy. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script>
+    // Year
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', function() {
+      const isOpen = mobileMenu.classList.toggle('open');
+      mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Theme toggle
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('yallabuy-theme', theme);
+      updateThemeIcons(theme);
+    }
+
+    function updateThemeIcons(theme) {
+      const sunDesktop = document.getElementById('sunIcon');
+      const moonDesktop = document.getElementById('moonIcon');
+      const sunMobile = document.querySelector('.sun-icon-m');
+      const moonMobile = document.querySelector('.moon-icon-m');
+
+      if (theme === 'dark') {
+        sunDesktop.style.display = 'block';
+        moonDesktop.style.display = 'none';
+        sunMobile.style.display = 'block';
+        moonMobile.style.display = 'none';
+      } else {
+        sunDesktop.style.display = 'none';
+        moonDesktop.style.display = 'block';
+        sunMobile.style.display = 'none';
+        moonMobile.style.display = 'block';
+      }
+    }
+
+    const savedTheme = localStorage.getItem('yallabuy-theme') || 'light';
+    setTheme(savedTheme);
+
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    document.getElementById('themeToggleMobile').addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 600) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+  <script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
+
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
+</html>

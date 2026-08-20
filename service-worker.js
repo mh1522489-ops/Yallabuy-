@@ -1,15 +1,14 @@
-
-const CACHE_NAME = 'yallabuy-cache-v136';
+const CACHE_NAME = 'yallabuy-cache-v138'; // غيّر الرقم عشان يتحدث
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/style.css',
-  '/script.js',
-  '/logo.png',
-  '/favicon.ico'
+  '/manifest.json',
+  '/favicon.svg',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png'
+  // ضيف هنا أي CSS/JS files حقيقية عندك
 ];
 
-// ✅ أضف الـ API endpoints اللي ممنوع تتخزن
 const NEVER_CACHE = [
   '/api/',
   '/auth/',
@@ -20,7 +19,6 @@ const NEVER_CACHE = [
   '/admin/'
 ];
 
-// ✅ دالة تتحقق لو الرابط ممنوع من التخزين
 function shouldCache(url) {
   return !NEVER_CACHE.some(path => url.includes(path));
 }
@@ -29,8 +27,17 @@ function shouldCache(url) {
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(CORE_ASSETS))
-      .then(() => self.skipWaiting())
+      .then((cache) => {
+        console.log('Caching core assets...');
+        return cache.addAll(CORE_ASSETS);
+      })
+      .then(() => {
+        console.log('Core assets cached successfully!');
+        return self.skipWaiting();
+      })
+      .catch((err) => {
+        console.error('Cache failed:', err);
+      })
   );
 });
 
@@ -55,17 +62,18 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.match(request).then((cachedResponse) => {
+      // ✅ لو لقيناه في cache → نرجعه على طول
       if (cachedResponse) {
         return cachedResponse;
       }
 
+      // ✅ لو مش في cache → نجيب من النت
       return fetch(request).then((networkResponse) => {
-        // ✅ لو مش ناجح، رجعه زي ما هو
         if (!networkResponse || networkResponse.status !== 200) {
           return networkResponse;
         }
 
-        // ✅ فقط static assets تتخزن
+        // ✅ نخزن في cache بس لو static asset
         if (shouldCache(request.url)) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -75,15 +83,14 @@ self.addEventListener('fetch', (event) => {
 
         return networkResponse;
       }).catch(() => {
-        // ✅ التصحيح: return دايماً
+        // ✅ لو offline وطلب صفحة → نرجع index.html
         if (request.mode === 'navigate') {
           return caches.match('/index.html');
         }
         
-        // ✅ رجع رسالة خطأ مناسبة
-        return new Response('Offline - Content not available', {
+        // ✅ لو offline وطلب asset → نرجع 404 بسيط
+        return new Response('Offline', {
           status: 503,
-          statusText: 'Service Unavailable',
           headers: { 'Content-Type': 'text/plain' }
         });
       });

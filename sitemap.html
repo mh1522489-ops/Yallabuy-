@@ -1,1072 +1,1224 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
-    <script src="security.js"></script>
-    <link rel="manifest" href="/manifest.json">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitemap | YallaBuy - Honest Product Reviews</title>
-    <script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
-    <meta name="description" content="Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages. Honest reviews from real experience.">
-    
-    <!-- Schema.org JSON-LD -->
+    <title>YallaBuy Sitemap - Products, Guides &amp; Articles</title>
+    <meta name="description" content="Explore all YallaBuy pages including product reviews, buying guides, headphone guides, robot vacuum comparisons, and important policy pages.">
+    <link rel="canonical" href="https://yallabuy-sg5c.vercel.app/sitemap.html">
+    <meta property="og:title" content="YallaBuy Sitemap - Products, Guides &amp; Articles">
+    <meta property="og:description" content="Explore all YallaBuy pages including product reviews, buying guides, headphone guides, robot vacuum comparisons, and important policy pages.">
+    <meta property="og:url" content="https://yallabuy-sg5c.vercel.app/sitemap.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="YallaBuy">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Sitemap - YallaBuy",
-        "description": "Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages.",
-        "url": "https://yallabuy-sg5c.vercel.app/sitemap.html",
-        "publisher": {
-            "@type": "Organization",
-            "name": "YallaBuy",
-            "url": "https://yallabuy-sg5c.vercel.app",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://yallabuy-sg5c.vercel.app/assets/logo.png"
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://yallabuy-sg5c.vercel.app/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Sitemap"
             }
-        },
-        "breadcrumb": {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://yallabuy-sg5c.vercel.app/"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Sitemap",
-                    "item": "https://yallabuy-sg5c.vercel.app/sitemap.html"
-                }
-            ]
-        }
+        ]
     }
     </script>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sitemap | YallaBuy - Honest Product Reviews">
-    <meta property="og:description" content="Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yallabuy-sg5c.vercel.app/sitemap.html">
-    <meta property="og:image" content="https://yallabuy-sg5c.vercel.app/assets/og-image.jpg">
-    <meta property="og:site_name" content="YallaBuy">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sitemap | YallaBuy - Honest Product Reviews">
-    <meta name="twitter:description" content="Complete sitemap for YallaBuy. Browse all product reviews, buying guides, articles, and pages.">
-    <meta name="twitter:image" content="https://yallabuy-sg5c.vercel.app/assets/og-image.jpg">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://yallabuy-sg5c.vercel.app/sitemap.html">
-
-    <!-- Robots Meta -->
-    <meta name="robots" content="index, follow">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            --bg-dark: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-card-hover: #1a1a28;
-            --primary: #e63946;
-            --primary-light: #ff6b6b;
-            --secondary: #f4a261;
-            --accent: #2a9d8f;
-            --text-primary: #f8f9fa;
-            --text-secondary: #adb5bd;
-            --text-muted: #6c757d;
-            --border: rgba(230, 57, 70, 0.12);
-            --gradient-1: linear-gradient(135deg, #e63946 0%, #f4a261 100%);
-            --gradient-2: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
-            --gradient-3: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --shadow-hover: 0 12px 48px rgba(230, 57, 70, 0.15);
+            --bg: #fbfaf7;
+            --bg-soft: #f3f1ec;
+            --surface: #ffffff;
+            --surface-sec: #f8f6f1;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #767676;
+            --border: #e8e4dc;
+            --border-strong: #d8d2c5;
+            --brand: #0f766e;
+            --brand-soft: #ccfbf1;
+            --brand-deep: #134e4a;
+            --accent: #b45309;
+            --radius-sm: 8px;
+            --radius: 14px;
+            --radius-lg: 22px;
+            --shadow-sm: 0 1px 2px rgba(20,20,20,.04), 0 2px 8px rgba(20,20,20,.04);
+            --shadow: 0 4px 24px rgba(20,20,20,.06);
+            --shadow-lg: 0 12px 40px rgba(20,20,20,.08);
+            --transition: 0.25s cubic-bezier(.4,0,.2,1);
+            --max-w: 1240px;
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 24px;
+            --space-6: 32px;
+            --space-7: 48px;
+            --space-8: 64px;
+            --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-editorial: 'Lora', Georgia, serif;
         }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-dark);
+            font-family: var(--font-ui);
+            background: var(--bg);
             color: var(--text-primary);
-            min-height: 100vh;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
+        a { color: var(--brand); text-decoration: none; transition: color var(--transition); }
+        a:hover { color: var(--brand-deep); }
+        img { max-width: 100%; display: block; }
 
         /* Header */
-        header {
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(20px);
+        .site-header {
+            background: var(--surface);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-
-        .nav-container {
-            max-width: 1200px;
+        .header-inner {
+            max-width: var(--max-w);
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: var(--space-4) var(--space-5);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            color: var(--text-primary);
+            font-family: var(--font-display);
             font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
         }
-
-        .logo-icon {
-            width: 42px;
-            height: 42px;
-            background: var(--gradient-1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
+        .logo span { color: var(--brand); }
+        .header-nav { display: flex; align-items: center; gap: var(--space-6); }
+        .header-nav a {
+            font-size: 0.9rem;
             font-weight: 500;
-            font-size: 0.9375rem;
-            transition: color 0.3s ease;
-            position: relative;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+        .header-nav a:hover { color: var(--brand); }
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-2);
+            color: var(--text-primary);
+        }
+        .mobile-toggle svg { display: block; }
+        .mobile-nav {
+            display: none;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-4) var(--space-5);
+        }
+        .mobile-nav.open { display: block; }
+        .mobile-nav a {
+            display: block;
+            padding: var(--space-3) 0;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+        .mobile-nav a:last-child { border-bottom: none; }
+        .mobile-nav a:hover { color: var(--brand); }
+
+        @media (max-width: 768px) {
+            .header-nav { display: none; }
+            .mobile-toggle { display: block; }
+            .header-inner { padding: var(--space-3) var(--space-4); }
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-1);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-light);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 5rem 2rem 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(230, 57, 70, 0.06) 0%, transparent 50%);
-            animation: pulse 10s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.15); opacity: 0.9; }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
+        /* Container */
+        .container {
+            max-width: var(--max-w);
             margin: 0 auto;
+            padding: var(--space-5) var(--space-5);
+        }
+        @media (max-width: 768px) {
+            .container { padding: var(--space-4) var(--space-4); }
         }
 
-        .hero-badge {
-            display: inline-flex;
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: var(--space-5) 0 var(--space-4);
+        }
+        .breadcrumb ol {
+            list-style: none;
+            display: flex;
             align-items: center;
-            gap: 0.5rem;
-            background: rgba(230, 57, 70, 0.1);
-            border: 1px solid var(--border);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            color: var(--primary-light);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            gap: var(--space-2);
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
+        .breadcrumb li + li::before {
+            content: '/';
+            margin-right: var(--space-2);
+            color: var(--border-strong);
+        }
+        .breadcrumb a { color: var(--text-muted); }
+        .breadcrumb a:hover { color: var(--brand); }
+        .breadcrumb .current { color: var(--text-secondary); font-weight: 500; }
 
-        .hero h1 {
-            font-size: 3.2rem;
+        /* Page Header */
+        .page-header {
+            padding: var(--space-6) 0 var(--space-7);
+            text-align: center;
+        }
+        .page-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
             font-weight: 800;
-            margin-bottom: 1rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -1px;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
         }
-
-        .hero p {
-            font-size: 1.125rem;
+        .page-header p {
+            font-family: var(--font-editorial);
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 2rem;
+            max-width: 560px;
+            margin: 0 auto;
             line-height: 1.7;
         }
 
-        .hero-mission {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 1.75rem 2rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 1.25rem;
-            max-width: 720px;
-            text-align: left;
-            box-shadow: var(--shadow);
-        }
-
-        .hero-mission-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--gradient-2);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
-        }
-
-        .hero-mission-text strong {
-            color: var(--text-primary);
-            display: block;
-            margin-bottom: 0.35rem;
-            font-size: 1.05rem;
-        }
-
-        .hero-mission-text span {
-            color: var(--text-secondary);
-            font-size: 0.9375rem;
-            line-height: 1.5;
-        }
-
-        /* Stats Bar */
-        .stats-bar {
-            max-width: 1200px;
-            margin: 0 auto 3rem;
-            padding: 0 2rem;
-        }
-
+        /* Stats */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+            margin-bottom: var(--space-7);
         }
-
-        .stat-item {
-            background: var(--bg-card);
+        .stat-card {
+            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.25rem;
+            border-radius: var(--radius);
+            padding: var(--space-5);
             text-align: center;
-            transition: all 0.3s ease;
+            transition: border-color var(--transition), box-shadow var(--transition);
         }
-
-        .stat-item:hover {
-            transform: translateY(-2px);
-            border-color: rgba(230, 57, 70, 0.25);
+        .stat-card:hover {
+            border-color: var(--brand);
+            box-shadow: var(--shadow-sm);
         }
-
         .stat-number {
+            font-family: var(--font-display);
             font-size: 1.75rem;
             font-weight: 800;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--brand);
+            line-height: 1.2;
         }
-
         .stat-label {
             font-size: 0.8rem;
+            font-weight: 500;
             color: var(--text-muted);
-            margin-top: 0.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-top: var(--space-1);
+        }
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-3); }
+            .stat-card { padding: var(--space-4); }
+            .stat-number { font-size: 1.4rem; }
         }
 
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
-
-        .sitemap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Category Cards */
-        .category-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Search */
+        .search-wrap {
             position: relative;
-            overflow: hidden;
+            margin-bottom: var(--space-5);
         }
-
-        .category-card::before {
-            content: '';
+        .search-icon {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            left: var(--space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            pointer-events: none;
         }
-
-        .category-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-hover);
-            border-color: rgba(230, 57, 70, 0.25);
+        .search-input {
+            width: 100%;
+            padding: var(--space-4) var(--space-5) var(--space-4) 2.75rem;
+            font-family: var(--font-ui);
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            outline: none;
+            transition: border-color var(--transition), box-shadow var(--transition);
         }
-
-        .category-card:hover::before {
-            opacity: 1;
+        .search-input::placeholder { color: var(--text-muted); }
+        .search-input:focus {
+            border-color: var(--brand);
+            box-shadow: 0 0 0 3px var(--brand-soft);
         }
-
-        .category-card.articles::before {
-            background: var(--gradient-2);
-        }
-
-        .category-card.articles:hover {
-            border-color: rgba(42, 157, 143, 0.25);
-            box-shadow: 0 12px 48px rgba(42, 157, 143, 0.12);
-        }
-
-        .category-card.products::before {
-            background: var(--gradient-3);
-        }
-
-        .category-card.products:hover {
-            border-color: rgba(244, 162, 97, 0.25);
-            box-shadow: 0 12px 48px rgba(244, 162, 97, 0.12);
-        }
-
-        .category-card.legal::before {
-            background: linear-gradient(135deg, #6c757d 0%, #adb5bd 100%);
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .category-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            display: flex;
+        .search-clear {
+            position: absolute;
+            right: var(--space-3);
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--bg-soft);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: none;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
-        }
-
-        .category-card.pages .category-icon {
-            background: rgba(230, 57, 70, 0.12);
-        }
-
-        .category-card.products .category-icon {
-            background: rgba(244, 162, 97, 0.12);
-        }
-
-        .category-card.articles .category-icon {
-            background: rgba(42, 157, 143, 0.12);
-        }
-
-        .category-card.legal .category-icon {
-            background: rgba(108, 117, 125, 0.12);
-        }
-
-        .category-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            flex: 1;
-        }
-
-        .category-count {
-            font-size: 0.75rem;
+            cursor: pointer;
             color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.04);
-            padding: 0.35rem 0.9rem;
-            border-radius: 50px;
+            transition: background var(--transition), color var(--transition);
+        }
+        .search-clear.visible { display: flex; }
+        .search-clear:hover { background: var(--border); color: var(--text-primary); }
+
+        /* Filters */
+        .filters-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-bottom: var(--space-4);
+        }
+        .filter-btn {
+            font-family: var(--font-ui);
+            font-size: 0.82rem;
             font-weight: 600;
+            padding: var(--space-2) var(--space-4);
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition);
+            white-space: nowrap;
+        }
+        .filter-btn:hover { border-color: var(--brand); color: var(--brand); }
+        .filter-btn:focus-visible {
+            outline: 2px solid var(--brand);
+            outline-offset: 2px;
+        }
+        .filter-btn.active {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand);
         }
 
-        .link-list {
-            list-style: none;
+        /* Controls row */
+        .controls-row {
+            display: flex;
+            justify-content: flex-end;
+            gap: var(--space-3);
+            margin-bottom: var(--space-5);
         }
-
-        .link-list li {
-            margin-bottom: 0.4rem;
+        .control-btn {
+            font-family: var(--font-ui);
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: var(--space-2) var(--space-3);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all var(--transition);
         }
+        .control-btn:hover { border-color: var(--brand); color: var(--brand); }
+        .control-btn:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 
-        .link-list a {
+        /* Accordion */
+        .sitemap-section { margin-bottom: var(--space-4); }
+        .sitemap-section.hidden { display: none; }
+        .accordion-trigger {
+            width: 100%;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.7rem 1rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-            word-break: break-all;
-        }
-
-        .link-list a::before {
-            content: '→';
-            opacity: 0;
-            transform: translateX(-8px);
-            transition: all 0.3s ease;
-            color: var(--primary-light);
-            font-weight: 700;
-        }
-
-        .link-list a:hover {
-            background: var(--bg-card-hover);
-            color: var(--text-primary);
-            padding-left: 1.25rem;
-        }
-
-        .link-list a:hover::before {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Marketing Section */
-        .marketing-section {
-            background: var(--bg-card);
+            gap: var(--space-3);
+            padding: var(--space-4) var(--space-5);
+            background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 28px;
-            padding: 3.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .marketing-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-1);
-        }
-
-        .marketing-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        .marketing-section > p {
-            color: var(--text-secondary);
-            max-width: 650px;
-            margin: 0 auto 2.5rem;
+            border-radius: var(--radius);
+            cursor: pointer;
+            font-family: var(--font-display);
             font-size: 1.05rem;
-            line-height: 1.7;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-align: left;
+            transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
         }
-
-        .marketing-features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+        .accordion-trigger:hover { border-color: var(--brand); background: var(--surface-sec); }
+        .accordion-trigger:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+        .accordion-trigger[aria-expanded="true"] {
+            border-color: var(--brand);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            box-shadow: var(--shadow-sm);
         }
-
-        .marketing-feature {
-            padding: 2rem 1.5rem;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        .marketing-feature:hover {
-            transform: translateY(-4px);
-            border-color: rgba(230, 57, 70, 0.2);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        .marketing-feature-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 18px;
+        .accordion-icon-wrap {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            background: var(--brand-soft);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.75rem;
-            margin: 0 auto 1.25rem;
+            flex-shrink: 0;
+            color: var(--brand);
         }
-
-        .marketing-feature:nth-child(1) .marketing-feature-icon {
-            background: rgba(230, 57, 70, 0.12);
-        }
-
-        .marketing-feature:nth-child(2) .marketing-feature-icon {
-            background: rgba(42, 157, 143, 0.12);
-        }
-
-        .marketing-feature:nth-child(3) .marketing-feature-icon {
-            background: rgba(244, 162, 97, 0.12);
-        }
-
-        .marketing-feature:nth-child(4) .marketing-feature-icon {
-            background: rgba(118, 111, 255, 0.12);
-        }
-
-        .marketing-feature h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.6rem;
-            color: var(--text-primary);
-            font-weight: 700;
-        }
-
-        .marketing-feature p {
-            font-size: 0.875rem;
+        .accordion-count {
+            margin-left: auto;
+            font-family: var(--font-ui);
+            font-size: 0.75rem;
+            font-weight: 600;
             color: var(--text-muted);
-            line-height: 1.6;
+            background: var(--bg-soft);
+            padding: var(--space-1) var(--space-3);
+            border-radius: 100px;
+            flex-shrink: 0;
         }
+        .accordion-chevron {
+            flex-shrink: 0;
+            color: var(--text-muted);
+            transition: transform var(--transition);
+        }
+        .accordion-trigger[aria-expanded="true"] .accordion-chevron {
+            transform: rotate(180deg);
+        }
+        .accordion-panel {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.35s cubic-bezier(.4,0,.2,1);
+        }
+        .accordion-panel.open { max-height: 5000px; }
+        .accordion-panel-inner {
+            border: 1px solid var(--border);
+            border-top: none;
+            border-bottom-left-radius: var(--radius);
+            border-bottom-right-radius: var(--radius);
+            background: var(--surface);
+            overflow: hidden;
+        }
+        .sitemap-list { list-style: none; }
+        .sitemap-item {
+            border-bottom: 1px solid var(--border);
+            transition: background var(--transition);
+        }
+        .sitemap-item:last-child { border-bottom: none; }
+        .sitemap-item:hover { background: var(--bg-soft); }
+        .sitemap-link {
+            display: flex;
+            flex-direction: column;
+            padding: var(--space-4) var(--space-5);
+            gap: var(--space-1);
+            color: var(--text-primary);
+            transition: color var(--transition);
+        }
+        .sitemap-link:hover { color: var(--brand); }
+        .sitemap-link:focus-visible {
+            outline: 2px solid var(--brand);
+            outline-offset: -2px;
+            border-radius: var(--radius-sm);
+        }
+        .sitemap-link-title {
+            font-weight: 600;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+        .sitemap-link-url {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            word-break: break-all;
+            font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+        }
+        .current-badge {
+            font-family: var(--font-ui);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--brand);
+            background: var(--brand-soft);
+            padding: 2px var(--space-2);
+            border-radius: 100px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .accordion-trigger {
+                padding: var(--space-3) var(--space-4);
+                font-size: 0.95rem;
+            }
+            .sitemap-link { padding: var(--space-3) var(--space-4); }
+            .sitemap-link-title { font-size: 0.88rem; }
+            .sitemap-link-url { font-size: 0.72rem; }
+            .accordion-icon-wrap { width: 28px; height: 28px; }
+            .accordion-icon-wrap svg { width: 14px; height: 14px; }
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: var(--space-8) var(--space-5);
+            display: none;
+        }
+        .empty-state.visible { display: block; }
+        .empty-state-icon {
+            color: var(--border-strong);
+            margin-bottom: var(--space-4);
+        }
+        .empty-state h2 {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+        .empty-state p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-5);
+        }
+        .empty-state button {
+            font-family: var(--font-ui);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: var(--space-3) var(--space-5);
+            background: var(--brand);
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+        .empty-state button:hover { background: var(--brand-deep); }
+        .empty-state button:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
 
         /* Footer */
-        footer {
-            background: rgba(10, 10, 15, 0.8);
-            border-top: 1px solid var(--border);
-            padding: 2.5rem 2rem;
-            text-align: center;
+        .site-footer {
+            background: var(--text-primary);
+            color: rgba(255,255,255,0.7);
+            margin-top: var(--space-8);
         }
-
-        .footer-content {
-            max-width: 1200px;
+        .footer-inner {
+            max-width: var(--max-w);
             margin: 0 auto;
+            padding: var(--space-7) var(--space-5) var(--space-6);
         }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-            flex-wrap: wrap;
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: var(--space-7);
+            margin-bottom: var(--space-7);
         }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: color 0.3s ease;
+        .footer-brand .logo {
+            color: #fff;
+            margin-bottom: var(--space-3);
         }
-
-        .footer-links a:hover {
-            color: var(--primary-light);
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            max-width: 300px;
         }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-
-        footer .footer-tagline {
-            margin-top: 0.5rem;
+        .footer-heading {
+            font-family: var(--font-display);
             font-size: 0.8rem;
-            color: var(--text-muted);
-            opacity: 0.7;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: var(--space-4);
         }
-
-        /* Responsive */
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: var(--space-3); }
+        .footer-links a {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.85rem;
+            transition: color var(--transition);
+        }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: var(--space-5);
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.35);
+        }
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .sitemap-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .marketing-section {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .hero-mission {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem;
-            }
-
-            .hero-mission-text {
-                text-align: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .footer-top { grid-template-columns: 1fr; gap: var(--space-6); }
+            .footer-inner { padding: var(--space-6) var(--space-4) var(--space-5); }
         }
 
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-light);
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+            .accordion-panel { transition: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header>
-        <nav class="nav-container" aria-label="Main navigation">
-            <a href="https://yallabuy-sg5c.vercel.app/" class="logo">
-                <div class="logo-icon">🛒</div>
-                <span>YallaBuy</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="https://yallabuy-sg5c.vercel.app/">Home</a></li>
-                <li><a href="https://yallabuy-sg5c.vercel.app/e.html">Products</a></li>
-                <li><a href="https://yallabuy-sg5c.vercel.app/buying.html">Buying Guide</a></li>
-                <li><a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a></li>
-            </ul>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://yallabuy-sg5c.vercel.app/" class="logo" aria-label="YallaBuy Home">Yalla<span>Buy</span></a>
+            <nav class="header-nav" aria-label="Primary navigation">
+                <a href="https://yallabuy-sg5c.vercel.app/">Home</a>
+                <a href="https://yallabuy-sg5c.vercel.app/about.html">About</a>
+                <a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+        </div>
+        <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+            <a href="https://yallabuy-sg5c.vercel.app/">Home</a>
+            <a href="https://yallabuy-sg5c.vercel.app/about.html">About</a>
+            <a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a>
+            <a href="https://yallabuy-sg5c.vercel.app/sitemap.html">Sitemap</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span>🗺️</span>
-                <span>Complete Site Directory</span>
-            </div>
-            <h1>Sitemap</h1>
-            <p>Navigate YallaBuy with ease. Find honest product reviews, buying guides, and tech articles — all in one place.</p>
-            
-            <div class="hero-mission">
-                <div class="hero-mission-icon">🎯</div>
-                <div class="hero-mission-text">
-                    <strong>Our Commitment to You</strong>
-                    <span>We prioritize seamless navigation and premium content quality to elevate your shopping experience and help you make informed decisions with confidence.</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main>
+        <div class="container">
 
-    <!-- Stats Bar -->
-    <div class="stats-bar">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">25</div>
-                <div class="stat-label">Total Pages</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">14</div>
-                <div class="stat-label">Products</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Articles</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Pages</div>
-            </div>
-        </div>
-    </div>
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <ol>
+                    <li><a href="https://yallabuy-sg5c.vercel.app/">Home</a></li>
+                    <li><span class="current" aria-current="page">Sitemap</span></li>
+                </ol>
+            </nav>
 
-    <!-- Main Sitemap Content -->
-    <main class="container">
-        <div class="sitemap-grid">
-           
-            <!-- Pages Section -->
-            <article class="category-card pages">
-                <div class="category-header">
-                    <div class="category-icon">📄</div>
-                    <h2 class="category-title">Main Pages</h2>
-                    <span class="category-count">6</span>
-                </div>
-                <ul class="link-list">
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/" title="YallaBuy Homepage - Honest Product Reviews">
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/e.html" title="All Products Page">
-                            <span>Products</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/buying.html" title="Buying Guide">
-                            <span>Buying Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/contact.html" title="Contact Us">
-                            <span>Contact</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html" title="Privacy Policy">
-                            <span>Privacy Policy</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html" title="Terms of Service">
-                            <span>Terms of Service</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/about.html" title="About Us">
-                            <span>About Us</span>
-                        </a>
-                    </li>
-                </ul>
-            </article>
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>YallaBuy Sitemap</h1>
+                <p>Explore YallaBuy's products, buying guides, articles, and important website pages.</p>
+            </section>
 
-            <!-- Product Reviews Section (14 Products) -->
-            <article class="category-card products">
-                <div class="category-header">
-                    <div class="category-icon">🎧</div>
-                    <h2 class="category-title">Product Reviews</h2>
-                    <span class="category-count">14</span>
-                </div>
-                <ul class="link-list">
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product1.html" title="Product Review 1">
-                            <span>Product 1</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product2.html" title="Product Review 2">
-                            <span>Product 2</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product3.html" title="Product Review 3">
-                            <span>Product 3</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product4.html" title="Product Review 4">
-                            <span>Product 4</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product5.html" title="Product Review 5">
-                            <span>Product 5</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product6.html" title="Product Review 6">
-                            <span>Product 6</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product7.html" title="Product Review 7">
-                            <span>Product 7</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product8.html" title="Product Review 8">
-                            <span>Product 8</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product9.html" title="Product Review 9">
-                            <span>Product 9</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product10.html" title="Product Review 10">
-                            <span>Product 10</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product11.html" title="Product Review 11">
-                            <span>Product 11</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product12.html" title="Product Review 12">
-                            <span>Product 12</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product13.html" title="Product Review 13">
-                            <span>Product 13</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product14.html" title="Product Review 14">
-                            <span>Product 14</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/also-products/Best-Gaming-Chairs-2026.html" title="Best Gaming Chairs">
-                            <span>Best Gaming Chairs</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/products/product15.html" title="Product 15">
-                            <span>Product 15</span>
-                        </a>
-                    </li>
-                    <li><a href ="https://yallabuy-sg5c.vercel.app/products/product16.html"><span>product 16
-                    </span>
-                    </a>
-                    </li>
-                </ul>
-            </article>
+            <!-- Stats -->
+            <section class="stats-grid" id="statsGrid" aria-label="Sitemap statistics"></section>
 
-            <!-- Articles Section -->
-            <article class="category-card articles">
-                <div class="category-header">
-                    <div class="category-icon">📝</div>
-                    <h2 class="category-title">Articles & Guides</h2>
-                    <span class="category-count">12</span>
-                </div>
-                <ul class="link-list">
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/article.html" title="Main Articles Page">
-                            <span>Articles Hub</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/index.html" title="Headphones Category">
-                            <span>Headphones Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise.html" title="Active Noise Cancellation Guide">
-                            <span>Active Noise Cancellation</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise-folder/Best-Wireless-Earbuds-2026.html" title="Best Wireless Earbuds 2026">
-                            <span>Best Wireless Earbuds 2026</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise-folder/Headphone-Buying-Guide.html" title="Headphone Buying Guide">
-                            <span>Headphone Buying Guide</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/headphones/Active-Noise-folder/Transparency-Mode-Explained.html" title="Transparency Mode Explained">
-                            <span>Transparency Mode Explained</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/best-selling-products-amazon.html" title="Best Selling Products">
-                            <span>Best Selling Products on Amazon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/top-10-headphones-2026.html" title="Top 10 Headphones">
-                            <span>Top 10 Headphones on Amazon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/article/iPad-Pro-vs-Galaxy-Tab-S.html" title="iPad Pro vs Galaxy Tab S">
-                            <span>iPad Pro vs Galaxy Tab S</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/buying.html" title="How to Buy on Amazon">
-                            <span>How to Buy on Amazon</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/product-article/top-5-drones-beginners-2026.html" title="Top 5 Drones for Beginners">
-                            <span>Top 5 Drones for Beginners 2026</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://yallabuy-sg5c.vercel.app/product-article/FAA-Recreational-UAS-rules.html" title="FAA Recreational UAS Rules">
-                            <span>FAA Recreational UAS Rules</span>
-                        </a>
-                    </li>
-                </ul>
-            </article>
+            <!-- Search -->
+            <section class="search-wrap" aria-label="Search sitemap">
+                <span class="search-icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <label for="sitemapSearch" class="sr-only">Search sitemap</label>
+                <input type="search" id="sitemapSearch" class="search-input" placeholder="Search sitemap..." autocomplete="off" aria-label="Search sitemap">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </section>
 
-            <!-- All HTML files (populated dynamically) -->
-            <article class="category-card pages" id="all-html-card">
-                <div class="category-header">
-                    <div class="category-icon">🔎</div>
-                    <h2 class="category-title">All .html files in repository</h2>
-                    <span class="category-count" id="all-html-count">—</span>
+            <!-- Filters -->
+            <section class="filters-row" id="filtersRow" aria-label="Category filters"></section>
+
+            <!-- Controls -->
+            <div class="controls-row">
+                <button class="control-btn" id="expandAll" type="button">Expand All</button>
+                <button class="control-btn" id="collapseAll" type="button">Collapse All</button>
+            </div>
+
+            <!-- Sitemap Categories (generated by JS) -->
+            <div id="sitemapCategories"></div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" role="status" aria-live="polite">
+                <div class="empty-state-icon" aria-hidden="true">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="8" x2="14" y2="14"/><line x1="14" y1="8" x2="8" y2="14"/></svg>
                 </div>
-                <ul class="link-list" id="all-html-list">
-                    <li>Loading list of .html files…</li>
-                </ul>
-            </article>
+                <h2>No pages found</h2>
+                <p>Try a different search term or clear the filters.</p>
+                <button type="button" id="emptyClearBtn">Clear Search &amp; Filters</button>
+            </div>
 
         </div>
-
-        <!-- Marketing & UX Section -->
-        <section class="marketing-section">
-            <h2>Built for Discovery</h2>
-            <p>Every link, every review, every guide — designed with you in mind. We believe great navigation is the foundation of great content. Our mission is to make your shopping journey smooth,[...]
-            
-            <div class="marketing-features">
-                <div class="marketing-feature">
-                    <div class="marketing-feature-icon">⚡</div>
-                    <h3>Fast Navigation</h3>
-                    <p>Find what you need in seconds, not minutes. Clean structure, zero clutter, maximum efficiency.</p>
-                </div>
-                <div class="marketing-feature">
-                    <div class="marketing-feature-icon">✨</div>
-                    <h3>Premium Quality</h3>
-                    <p>Every review is personally tested, researched, and written to the highest editorial standard.</p>
-                </div>
-                <div class="marketing-feature">
-                    <div class="marketing-feature-icon">📈</div>
-                    <h3>SEO Optimized</h3>
-                    <p>Structured data and best practices to help more shoppers discover honest reviews.</p>
-                </div>
-                <div class="marketing-feature">
-                    <div class="marketing-feature-icon">🤝</div>
-                    <h3>Trust & Transparency</h3>
-                    <p>No sponsored content. Every product bought with our own money. Honest pros and cons, always.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="https://yallabuy-sg5c.vercel.app/">Home</a>
-                <a href="https://yallabuy-sg5c.vercel.app/e.html">Products</a>
-                <a href="https://yallabuy-sg5c.vercel.app/buying.html">Buying Guide</a>
-                <a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a>
-                <a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html">Privacy Policy</a>
-                <a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html">Terms of Service</a>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">Yalla<span>Buy</span></div>
+                    <p>Practical reviews and buying guides to help you choose the right electronics.</p>
+                </div>
+                <div>
+                    <div class="footer-heading">Pages</div>
+                    <ul class="footer-links">
+                        <li><a href="https://yallabuy-sg5c.vercel.app/">Home</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/about.html">About</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/contact.html">Contact</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-heading">Legal</div>
+                    <ul class="footer-links">
+                        <li><a href="https://yallabuy-sg5c.vercel.app/amazon/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/amazon/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/amazon/terms-conditions.html">Terms &amp; Conditions</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/amazon/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+                        <li><a href="https://yallabuy-sg5c.vercel.app/amazon/Editorial-Policy.html">Editorial Policy</a></li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2026 YallaBuy. All rights reserved.</p>
-            <div class="footer-tagline">Honest reviews from real experience.</div>
+            <div class="footer-bottom">&copy; 2026 YallaBuy. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- Script to fetch repository tree and populate missing .html links -->
     <script>
-    (async function(){
-        const listEl = document.getElementById('all-html-list');
-        const countEl = document.getElementById('all-html-count');
-        if(!listEl || !countEl) return;
+    (function() {
+        'use strict';
 
-        try{
-            const resp = await fetch('https://api.github.com/repos/mh1522489-ops/Yallabuy-/git/trees/main?recursive=1');
-            if(!resp.ok) throw new Error('GitHub API responded with ' + resp.status);
-            const data = await resp.json();
-            const tree = Array.isArray(data.tree) ? data.tree : [];
-            const htmlPaths = tree
-                .filter(item => item.path && item.path.toLowerCase().endsWith('.html'))
-                .map(item => item.path)
-                .sort();
+        /* ========================================
+           1. SITEMAP DATA
+           Source: sitemap.xml
+           Duplicate /index.html excluded (same as /)
+        ======================================== */
+        var BASE = 'https://yallabuy-sg5c.vercel.app';
 
-            // Collect existing links on the page to avoid duplicates
-            const existingHrefs = new Set(Array.from(document.querySelectorAll('a'))
-                .map(a => a.href.replace(/\/?$/,'')));
+        var sitemapData = [
+            // ── Main Pages ──
+            { title: 'Homepage', url: BASE + '/', category: 'Main Pages', filter: 'main' },
+            { title: 'About', url: BASE + '/about.html', category: 'Main Pages', filter: 'main' },
+            { title: 'Contact', url: BASE + '/contact.html', category: 'Main Pages', filter: 'main' },
+            { title: 'Buying Guide', url: BASE + '/buying.html', category: 'Main Pages', filter: 'main' },
+            { title: 'Sitemap', url: BASE + '/sitemap.html', category: 'Main Pages', filter: 'main', isCurrent: true },
+            { title: 'Electronics', url: BASE + '/e.html', category: 'Main Pages', filter: 'main' },
+            { title: 'Electronics Hub', url: BASE + '/e2.html', category: 'Main Pages', filter: 'main' },
 
-            listEl.innerHTML = '';
-            let added = 0;
-            for(const p of htmlPaths){
-                // Build public URL using site base
-                const url = 'https://yallabuy-sg5c.vercel.app/' + p.replace(/^\/+/, '');
-                const normalized = url.replace(/\/?$/,'');
-                if(existingHrefs.has(normalized)) continue; // already listed elsewhere
+            // ── Products ──
+            { title: 'Product 1', url: BASE + '/products/product1.html', category: 'Products', filter: 'products' },
+            { title: 'Product 2', url: BASE + '/products/product2.html', category: 'Products', filter: 'products' },
+            { title: 'Product 3', url: BASE + '/products/product3.html', category: 'Products', filter: 'products' },
+            { title: 'Product 4', url: BASE + '/products/product4.html', category: 'Products', filter: 'products' },
+            { title: 'Product 5', url: BASE + '/products/product5.html', category: 'Products', filter: 'products' },
+            { title: 'Product 6', url: BASE + '/products/product6.html', category: 'Products', filter: 'products' },
+            { title: 'Product 7', url: BASE + '/products/product7.html', category: 'Products', filter: 'products' },
+            { title: 'Product 8', url: BASE + '/products/product8.html', category: 'Products', filter: 'products' },
+            { title: 'Product 9', url: BASE + '/products/product9.html', category: 'Products', filter: 'products' },
+            { title: 'Product 10', url: BASE + '/products/product10.html', category: 'Products', filter: 'products' },
+            { title: 'Product 11', url: BASE + '/products/product11.html', category: 'Products', filter: 'products' },
+            { title: 'Product 12', url: BASE + '/products/product12.html', category: 'Products', filter: 'products' },
+            { title: 'Product 13', url: BASE + '/products/product13.html', category: 'Products', filter: 'products' },
+            { title: 'Product 14', url: BASE + '/products/product14.html', category: 'Products', filter: 'products' },
+            { title: 'Product 15', url: BASE + '/products/product15.html', category: 'Products', filter: 'products' },
+            { title: 'Product 16', url: BASE + '/products/product16.html', category: 'Products', filter: 'products' },
+            { title: 'Product 17', url: BASE + '/products/product17.html', category: 'Products', filter: 'products' },
+            { title: 'Product 18', url: BASE + '/products/product18.html', category: 'Products', filter: 'products' },
 
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = url;
-                a.title = p;
-                a.textContent = p;
-                li.appendChild(a);
-                listEl.appendChild(li);
-                added++;
+            // ── Robot Vacuums ──
+            { title: 'Dreame L40 Ultra', url: BASE + '/products/product18-folder/dreame-L40-Ultra.html', category: 'Robot Vacuums', filter: 'products' },
+            { title: 'Roborock Q7 M5 Plus', url: BASE + '/products/product18-folder/roborock-Q7-M5-plus.html', category: 'Robot Vacuums', filter: 'products' },
+            { title: 'Roborock S8 Pro Ultra', url: BASE + '/products/product18-folder/roborock-s8-pro-ultra.html', category: 'Robot Vacuums', filter: 'products' },
+            { title: 'Ecovacs Deebot X2 Comdo', url: BASE + '/products/product18-folder/Ecovacs-Deebot-X2-Comdo.html', category: 'Robot Vacuums', filter: 'products' },
+            { title: 'Roborock Qrevo Curv', url: BASE + '/products/product18-folder/Roborock-Qrevo-Curv.html', category: 'Robot Vacuums', filter: 'products' },
+            { title: 'Best Robot Vacuums for Pet Hair', url: BASE + '/products/product18-folder/Best-Robot-Vacuums-for-Pet-Hair.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'Roomba j7 vs j7 Plus', url: BASE + '/products/product18-folder/Roomba-j7-vs-j7-plus.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'Best Self-Emptying Robot Vacuums', url: BASE + '/products/product18-folder/Best-Self-Emptying-Robot-Vacuums.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'Roomba vs Roborock', url: BASE + '/products/product18-folder/roomba-vs-roborock.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'How Do Robot Vacuums Actually Work', url: BASE + '/products/product18-folder/How-Do-Robot-Vacuums-Actually-Work.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'How to Prepare Your Home for a Robot Vacuum', url: BASE + '/products/product18-folder/How-to-Prepare-Your-Home-for-a-Robot-Vacuum.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'How to Clean Roomba Brushes & Filters', url: BASE + '/products/product18-folder/How-to-Clean-Roomba-Brushes-Filters.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: '7 Tips to Extend Your Robot Vacuum Battery', url: BASE + '/products/product18-folder/7-Tips-to-Extend-Your-Robot-Vacuum-Battery.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: "Roomba Won't Connect to Wi-Fi? Try This", url: BASE + '/products/product18-folder/Roomba-Wont-Connect-to-Wi-Fi-Try-This.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: '5 Robot Vacuum Tips for Pet Owners', url: BASE + '/products/product18-folder/5-Robot-Vacuum-Tips-for-Pet-Owners.html', category: 'Robot Vacuums', filter: 'guides' },
+            { title: 'Robot Vacuum FAQ', url: BASE + '/products/product18-folder/FAQ.html', category: 'Robot Vacuums', filter: 'guides' },
+
+            // ── Headphones ──
+            { title: 'Headphones Hub', url: BASE + '/article/headphones/index.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'Active Noise Cancellation', url: BASE + '/article/headphones/Active-Noise.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'Best Wireless Earbuds 2026', url: BASE + '/article/headphones/Active-Noise-folder/Best-Wireless-Earbuds-2026.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'Headphone Buying Guide', url: BASE + '/article/headphones/Active-Noise-folder/Headphone-Buying-Guide.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'Transparency Mode Explained', url: BASE + '/article/headphones/Active-Noise-folder/Transparency-Mode-Explained.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'ANC Explained', url: BASE + '/article/headphones/Active-Noise-folder/ANC.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'Audio Codec Comparison', url: BASE + '/article/headphones/Active-Noise-folder/Audio-Codec-Comparison.html', category: 'Headphones', filter: 'headphones' },
+            { title: 'Headphones vs Earbuds', url: BASE + '/article/headphones/Active-Noise-folder/headphones-earbuds.html', category: 'Headphones', filter: 'headphones' },
+
+            // ── Buying Guides ──
+            { title: 'Best Gaming Chairs 2026', url: BASE + '/also-products/Best-Gaming-Chairs-2026.html', category: 'Buying Guides', filter: 'guides' },
+            { title: 'Best Standing Desks', url: BASE + '/also-products/Best-Standing-Desks.html', category: 'Buying Guides', filter: 'guides' },
+            { title: 'Best Desk Lamps', url: BASE + '/also-products/Best-Desk-Lamps.html', category: 'Buying Guides', filter: 'guides' },
+            { title: 'Best Monitor Arms', url: BASE + '/also-products/Best-Monitor-Arms.html', category: 'Buying Guides', filter: 'guides' },
+            { title: 'Best Keyboard Trays', url: BASE + '/also-products/Best-Keyboard-Trays.html', category: 'Buying Guides', filter: 'guides' },
+            { title: 'Best Footrests', url: BASE + '/also-products/Best-Footrests.html', category: 'Buying Guides', filter: 'guides' },
+
+            // ── Articles & Comparisons ──
+            { title: 'Article', url: BASE + '/article/article.html', category: 'Articles & Comparisons', filter: 'articles' },
+            { title: 'Best Selling Products on Amazon', url: BASE + '/article/best-selling-products-amazon.html', category: 'Articles & Comparisons', filter: 'articles' },
+            { title: 'Top 10 Headphones 2026', url: BASE + '/article/top-10-headphones-2026.html', category: 'Articles & Comparisons', filter: 'articles' },
+            { title: 'iPad Pro vs Galaxy Tab S', url: BASE + '/article/iPad-Pro-vs-Galaxy-Tab-S.html', category: 'Articles & Comparisons', filter: 'articles' },
+            { title: 'Top 5 Drones for Beginners 2026', url: BASE + '/product-article/top-5-drones-beginners-2026.html', category: 'Articles & Comparisons', filter: 'articles' },
+            { title: 'FAA Recreational UAS Rules', url: BASE + '/product-article/FAA-Recreational-UAS-rules.html', category: 'Articles & Comparisons', filter: 'articles' },
+            
+
+            // ── Editorial & Transparency ──
+            { title: 'Editorial Process', url: BASE + '/amazon/Editorial-Process.html', category: 'Editorial & Transparency', filter: 'policies' },
+            { title: 'How We Research', url: BASE + '/amazon/How-We-Research.html', category: 'Editorial & Transparency', filter: 'policies' },
+            { title: 'Editorial Policy', url: BASE + '/amazon/Editorial-Policy.html', category: 'Editorial & Transparency', filter: 'policies' },
+            { title: 'Affiliate Disclosure', url: BASE + '/amazon/affiliate-disclosure.html', category: 'Editorial & Transparency', filter: 'policies' },
+
+            // ── Legal & Policies ──
+            { title: 'Privacy Policy', url: BASE + '/amazon/privacy-policy.html', category: 'Legal & Policies', filter: 'policies' },
+            { title: 'Terms of Service', url: BASE + '/amazon/terms-of-service.html', category: 'Legal & Policies', filter: 'policies' },
+            { title: 'Terms & Conditions', url: BASE + '/amazon/terms-conditions.html', category: 'Legal & Policies', filter: 'policies' }
+        ];
+
+        /* ========================================
+           2. CATEGORY CONFIG
+           Icons as inline SVG strings
+        ======================================== */
+        var categoryConfig = {
+            'Main Pages': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>'
+            },
+            'Products': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>'
+            },
+            'Robot Vacuums': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/></svg>'
+            },
+            'Headphones': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>'
+            },
+            'Buying Guides': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>'
+            },
+            'Articles & Comparisons': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+            },
+            'Editorial & Transparency': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>'
+            },
+            'Legal & Policies': {
+                icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
             }
+        };
 
-            countEl.textContent = String(added);
-            if(added === 0){
-                listEl.innerHTML = '<li>No additional .html files found — everything is already listed above.</li>';
+        /* ========================================
+           3. FILTER CONFIG
+        ======================================== */
+        var filterConfig = [
+            { key: 'all', label: 'All' },
+            { key: 'products', label: 'Products' },
+            { key: 'guides', label: 'Guides' },
+            { key: 'headphones', label: 'Headphones' },
+            { key: 'articles', label: 'Articles' },
+            { key: 'main', label: 'Main Pages' },
+            { key: 'policies', label: 'Policies' }
+        ];
+
+        /* ========================================
+           4. UTILITY FUNCTIONS
+        ======================================== */
+        function getDisplayUrl(url) {
+            try {
+                var path = new URL(url).pathname;
+                return path || '/';
+            } catch (e) {
+                return url;
             }
-        }catch(err){
-            console.error('Failed to load repo tree', err);
-            listEl.innerHTML = '<li>Unable to load .html files from repository: ' + (err.message || err) + '</li>';
-            countEl.textContent = '0';
         }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function getCategories() {
+            var order = [
+                'Main Pages', 'Products', 'Robot Vacuums', 'Headphones',
+                'Buying Guides', 'Articles & Comparisons', 'Editorial & Transparency', 'Legal & Policies'
+            ];
+            var seen = {};
+            var result = [];
+            for (var i = 0; i < sitemapData.length; i++) {
+                var cat = sitemapData[i].category;
+                if (!seen[cat]) {
+                    seen[cat] = true;
+                    result.push(cat);
+                }
+            }
+            // Return in defined order, then any extras
+            var ordered = [];
+            for (var j = 0; j < order.length; j++) {
+                if (seen[order[j]]) {
+                    ordered.push(order[j]);
+                }
+            }
+            for (var k = 0; k < result.length; k++) {
+                if (ordered.indexOf(result[k]) === -1) {
+                    ordered.push(result[k]);
+                }
+            }
+            return ordered;
+        }
+
+        function getItemsByCategory(category) {
+            var items = [];
+            for (var i = 0; i < sitemapData.length; i++) {
+                if (sitemapData[i].category === category) {
+                    items.push(sitemapData[i]);
+                }
+            }
+            return items;
+        }
+
+        /* ========================================
+           5. RENDER: STATISTICS
+        ======================================== */
+        function renderStats() {
+            var total = sitemapData.length;
+            var products = 0, guides = 0, info = 0;
+            for (var i = 0; i < sitemapData.length; i++) {
+                var f = sitemapData[i].filter;
+                if (f === 'products') products++;
+                else if (f === 'guides' || f === 'headphones' || f === 'articles') guides++;
+                else if (f === 'main' || f === 'policies') info++;
+            }
+            var stats = [
+                { number: total, label: 'Total Pages' },
+                { number: products, label: 'Products' },
+                { number: guides, label: 'Guides & Articles' },
+                { number: info, label: 'Information Pages' }
+            ];
+            var grid = document.getElementById('statsGrid');
+            grid.innerHTML = '';
+            for (var j = 0; j < stats.length; j++) {
+                var card = document.createElement('div');
+                card.className = 'stat-card';
+                card.innerHTML =
+                    '<div class="stat-number">' + stats[j].number + '</div>' +
+                    '<div class="stat-label">' + escapeHtml(stats[j].label) + '</div>';
+                grid.appendChild(card);
+            }
+        }
+
+        /* ========================================
+           6. RENDER: FILTER BUTTONS
+        ======================================== */
+        var activeFilter = 'all';
+
+        function renderFilters() {
+            var row = document.getElementById('filtersRow');
+            row.innerHTML = '';
+            for (var i = 0; i < filterConfig.length; i++) {
+                var btn = document.createElement('button');
+                btn.className = 'filter-btn' + (filterConfig[i].key === activeFilter ? ' active' : '');
+                btn.setAttribute('type', 'button');
+                btn.setAttribute('data-filter', filterConfig[i].key);
+                btn.textContent = filterConfig[i].label;
+                row.appendChild(btn);
+            }
+        }
+
+        /* ========================================
+           7. RENDER: ACCORDION CATEGORIES
+        ======================================== */
+        function renderCategories() {
+            var container = document.getElementById('sitemapCategories');
+            container.innerHTML = '';
+            var categories = getCategories();
+            for (var c = 0; c < categories.length; c++) {
+                var cat = categories[c];
+                var items = getItemsByCategory(cat);
+                var config = categoryConfig[cat] || { icon: '' };
+                var section = document.createElement('section');
+                section.className = 'sitemap-section';
+                section.setAttribute('data-category', cat);
+
+                var panelId = 'panel-' + cat.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+                var triggerId = 'trigger-' + cat.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase();
+
+                // Trigger button
+                var trigger = document.createElement('button');
+                trigger.className = 'accordion-trigger';
+                trigger.id = triggerId;
+                trigger.setAttribute('aria-expanded', 'false');
+                trigger.setAttribute('aria-controls', panelId);
+                trigger.innerHTML =
+                    '<span class="accordion-icon-wrap">' + config.icon + '</span>' +
+                    '<span>' + escapeHtml(cat) + '</span>' +
+                    '<span class="accordion-count">' + items.length + '</span>' +
+                    '<span class="accordion-chevron" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>';
+
+                // Panel
+                var panel = document.createElement('div');
+                panel.className = 'accordion-panel';
+                panel.id = panelId;
+                panel.setAttribute('role', 'region');
+                panel.setAttribute('aria-labelledby', triggerId);
+
+                var inner = document.createElement('div');
+                inner.className = 'accordion-panel-inner';
+
+                var list = document.createElement('ul');
+                list.className = 'sitemap-list';
+
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var li = document.createElement('li');
+                    li.className = 'sitemap-item';
+                    li.setAttribute('data-filter', item.filter);
+                    li.setAttribute('data-search', (item.title + ' ' + item.url + ' ' + item.category).toLowerCase());
+
+                    var a = document.createElement('a');
+                    a.className = 'sitemap-link';
+                    a.href = item.url;
+                    if (item.isCurrent) a.setAttribute('aria-current', 'page');
+
+                    var titleSpan = document.createElement('span');
+                    titleSpan.className = 'sitemap-link-title';
+                    titleSpan.textContent = item.title;
+
+                    if (item.isCurrent) {
+                        var badge = document.createElement('span');
+                        badge.className = 'current-badge';
+                        badge.textContent = 'Current';
+                        titleSpan.appendChild(badge);
+                    }
+
+                    var urlSpan = document.createElement('span');
+                    urlSpan.className = 'sitemap-link-url';
+                    urlSpan.textContent = getDisplayUrl(item.url);
+
+                    a.appendChild(titleSpan);
+                    a.appendChild(urlSpan);
+                    li.appendChild(a);
+                    list.appendChild(li);
+                }
+
+                inner.appendChild(list);
+                panel.appendChild(inner);
+                section.appendChild(trigger);
+                section.appendChild(panel);
+                container.appendChild(section);
+            }
+        }
+
+        /* ========================================
+           8. ACCORDION LOGIC
+        ======================================== */
+        function toggleAccordion(trigger) {
+            var expanded = trigger.getAttribute('aria-expanded') === 'true';
+            var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+            if (expanded) {
+                trigger.setAttribute('aria-expanded', 'false');
+                panel.classList.remove('open');
+            } else {
+                trigger.setAttribute('aria-expanded', 'true');
+                panel.classList.add('open');
+            }
+        }
+
+        function expandAll() {
+            var triggers = document.querySelectorAll('.accordion-trigger');
+            for (var i = 0; i < triggers.length; i++) {
+                var section = triggers[i].closest('.sitemap-section');
+                if (section.classList.contains('hidden')) continue;
+                triggers[i].setAttribute('aria-expanded', 'true');
+                document.getElementById(triggers[i].getAttribute('aria-controls')).classList.add('open');
+            }
+        }
+
+        function collapseAll() {
+            var triggers = document.querySelectorAll('.accordion-trigger');
+            for (var i = 0; i < triggers.length; i++) {
+                triggers[i].setAttribute('aria-expanded', 'false');
+                document.getElementById(triggers[i].getAttribute('aria-controls')).classList.remove('open');
+            }
+        }
+
+        /* ========================================
+           9. SEARCH & FILTER LOGIC
+        ======================================== */
+        var searchQuery = '';
+
+        function applySearchAndFilter() {
+            var sections = document.querySelectorAll('.sitemap-section');
+            var totalVisible = 0;
+            var emptyState = document.getElementById('emptyState');
+
+            for (var s = 0; s < sections.length; s++) {
+                var section = sections[s];
+                var items = section.querySelectorAll('.sitemap-item');
+                var visibleCount = 0;
+
+                for (var i = 0; i < items.length; i++) {
+                    var item = items[i];
+                    var matchFilter = (activeFilter === 'all') || (item.getAttribute('data-filter') === activeFilter);
+                    var matchSearch = !searchQuery || (item.getAttribute('data-search').indexOf(searchQuery) !== -1);
+
+                    if (matchFilter && matchSearch) {
+                        item.style.display = '';
+                        visibleCount++;
+                        totalVisible++;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+
+                if (visibleCount === 0) {
+                    section.classList.add('hidden');
+                } else {
+                    section.classList.remove('hidden');
+                    // Update count badge
+                    var countEl = section.querySelector('.accordion-count');
+                    if (countEl) countEl.textContent = visibleCount;
+                    // Auto-expand if searching
+                    if (searchQuery || activeFilter !== 'all') {
+                        var trigger = section.querySelector('.accordion-trigger');
+                        var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+                        trigger.setAttribute('aria-expanded', 'true');
+                        panel.classList.add('open');
+                    }
+                }
+            }
+
+            if (totalVisible === 0) {
+                emptyState.classList.add('visible');
+            } else {
+                emptyState.classList.remove('visible');
+            }
+        }
+
+        function clearSearch() {
+            var input = document.getElementById('sitemapSearch');
+            input.value = '';
+            searchQuery = '';
+            document.getElementById('searchClear').classList.remove('visible');
+        }
+
+        function resetAll() {
+            clearSearch();
+            activeFilter = 'all';
+            renderFilters();
+            // Collapse all
+            collapseAll();
+            // Show all items
+            var items = document.querySelectorAll('.sitemap-item');
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.display = '';
+            }
+            // Show all sections and reset counts
+            var sections = document.querySelectorAll('.sitemap-section');
+            for (var s = 0; s < sections.length; s++) {
+                sections[s].classList.remove('hidden');
+                var countEl = sections[s].querySelector('.accordion-count');
+                var sectionItems = sections[s].querySelectorAll('.sitemap-item');
+                if (countEl) countEl.textContent = sectionItems.length;
+            }
+            document.getElementById('emptyState').classList.remove('visible');
+        }
+
+        /* ========================================
+           10. EVENT LISTENERS
+        ======================================== */
+        function initEvents() {
+            // Mobile menu toggle
+            var mobileToggle = document.getElementById('mobileToggle');
+            var mobileNav = document.getElementById('mobileNav');
+            mobileToggle.addEventListener('click', function() {
+                var isOpen = mobileNav.classList.contains('open');
+                mobileNav.classList.toggle('open');
+                mobileToggle.setAttribute('aria-expanded', String(!isOpen));
+                mobileToggle.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
+            });
+
+            // Accordion triggers (delegated)
+            document.getElementById('sitemapCategories').addEventListener('click', function(e) {
+                var trigger = e.target.closest('.accordion-trigger');
+                if (trigger) {
+                    toggleAccordion(trigger);
+                }
+            });
+
+            // Expand / Collapse all
+            document.getElementById('expandAll').addEventListener('click', expandAll);
+            document.getElementById('collapseAll').addEventListener('click', collapseAll);
+
+            // Search input
+            var searchInput = document.getElementById('sitemapSearch');
+            var searchClearBtn = document.getElementById('searchClear');
+
+            searchInput.addEventListener('input', function() {
+                searchQuery = this.value.toLowerCase().trim();
+                if (searchQuery) {
+                    searchClearBtn.classList.add('visible');
+                } else {
+                    searchClearBtn.classList.remove('visible');
+                }
+                applySearchAndFilter();
+            });
+
+            searchClearBtn.addEventListener('click', function() {
+                clearSearch();
+                applySearchAndFilter();
+                searchInput.focus();
+            });
+
+            // Filter buttons (delegated)
+            document.getElementById('filtersRow').addEventListener('click', function(e) {
+                var btn = e.target.closest('.filter-btn');
+                if (!btn) return;
+                activeFilter = btn.getAttribute('data-filter');
+                renderFilters();
+                applySearchAndFilter();
+            });
+
+            // Empty state clear button
+            document.getElementById('emptyClearBtn').addEventListener('click', resetAll);
+
+            // Keyboard: Escape to clear search
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && searchQuery) {
+                    clearSearch();
+                    applySearchAndFilter();
+                    searchInput.blur();
+                }
+            });
+        }
+
+        /* ========================================
+           11. INITIALIZATION
+        ======================================== */
+        function init() {
+            renderStats();
+            renderFilters();
+            renderCategories();
+            initEvents();
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
     })();
     </script>
 </body>
-</html>
+                                                                                                                                                                                                                                </html>

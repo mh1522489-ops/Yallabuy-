@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | YallaBuy</title>
+  <meta name="description" content="This YallaBuy page is currently being prepared. Check back soon for useful product information and buying guides.">
+  <meta name="robots" content="noindex, follow">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #222222;
+      background-color: #F7F7F7;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Header */
+    .site-header {
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      gap: 0.625rem;
+    }
+
+    .logo {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: #222222;
+      text-decoration: none;
+      letter-spacing: -0.025em;
+    }
+
+    .logo span {
+      color: #FF9900;
+    }
+
+    .logo-tagline {
+      font-size: 0.75rem;
+      color: #999999;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .coming-soon-card {
+      background-color: #FFFFFF;
+      border-radius: 1rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.06);
+      padding: 2.75rem 2rem 2.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Orange accent bar on top of card */
+    .coming-soon-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      right: 1.5rem;
+      height: 3px;
+      background-color: #FF9900;
+      border-radius: 0 0 3px 3px;
+    }
+
+    /* Illustration */
+    .illustration {
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .illustration svg {
+      width: 120px;
+      height: 120px;
+    }
+
+    /* Text */
+    .coming-soon-heading {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #222222;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
+
+    .coming-soon-subheading {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #555555;
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon-description {
+      font-size: 0.9375rem;
+      color: #777777;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 380px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Button */
+    .btn-back {
+      display: inline-block;
+      background-color: #FF9900;
+      color: #FFFFFF;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.8125rem 2rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-back:hover {
+      background-color: #E68A00;
+      box-shadow: 0 2px 8px rgba(255, 153, 0, 0.3);
+    }
+
+    .btn-back:active {
+      transform: scale(0.98);
+      background-color: #CC7A00;
+    }
+
+    .btn-back:focus-visible {
+      outline: 3px solid rgba(255, 153, 0, 0.4);
+      outline-offset: 2px;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #AAAAAA;
+      background-color: #F7F7F7;
+    }
+
+    /* Responsive */
+    @media (min-width: 480px) {
+      .coming-soon-card {
+        padding: 3.25rem 3rem 3rem;
+      }
+
+      .illustration svg {
+        width: 140px;
+        height: 140px;
+      }
+
+      .coming-soon-heading {
+        font-size: 2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .site-header {
+        padding: 1.375rem 2rem;
+      }
+
+      .header-inner {
+        gap: 0.75rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      main {
+        padding: 3rem 2rem 4rem;
+      }
+
+      .coming-soon-card {
+        padding: 3.75rem 3.5rem 3.25rem;
+      }
+
+      .coming-soon-card::before {
+        left: 2rem;
+        right: 2rem;
+      }
+
+      .illustration svg {
+        width: 152px;
+        height: 152px;
+      }
+
+      .coming-soon-heading {
+        font-size: 2.25rem;
+      }
+
+      .coming-soon-description {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../index.html" class="logo" aria-label="YallaBuy home">Yalla<span>Buy</span></a>
+      <span class="logo-tagline" aria-hidden="true">Smart choices. Better products.</span>
+    </div>
+  </header>
+
+  <main role="main">
+    <div class="coming-soon-card">
+
+      <!-- Inline SVG illustration: monitor with gear, representing product research in progress -->
+      <div class="illustration" role="img" aria-label="Illustration of a monitor with a gear, representing a page being built">
+        <svg viewBox="0 0 152 152" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Monitor body -->
+          <rect x="24" y="20" width="104" height="72" rx="6" stroke="#DDDDDD" stroke-width="2.5" fill="#FAFAFA"/>
+          <!-- Screen -->
+          <rect x="30" y="26" width="92" height="60" rx="3" fill="#F5F5F5"/>
+          <!-- Screen content: product lines -->
+          <rect x="40" y="36" width="36" height="4" rx="2" fill="#E0E0E0"/>
+          <rect x="40" y="46" width="56" height="3" rx="1.5" fill="#EEEEEE"/>
+          <rect x="40" y="54" width="48" height="3" rx="1.5" fill="#EEEEEE"/>
+          <rect x="40" y="62" width="52" height="3" rx="1.5" fill="#EEEEEE"/>
+          <rect x="40" y="70" width="32" height="3" rx="1.5" fill="#EEEEEE"/>
+          <!-- Star rating dots -->
+          <circle cx="106" cy="38" r="2" fill="#FF9900"/>
+          <circle cx="112" cy="38" r="2" fill="#FF9900"/>
+          <circle cx="118" cy="38" r="2" fill="#FF9900"/>
+          <circle cx="100" cy="38" r="2" fill="#FF9900"/>
+          <circle cx="94" cy="38" r="2" fill="#E0E0E0"/>
+          <!-- Monitor stand -->
+          <path d="M62 92 L90 92 L86 102 L66 102 Z" fill="#E8E8E8"/>
+          <rect x="56" y="102" width="40" height="4" rx="2" fill="#DDDDDD"/>
+          <!-- Gear icon -->
+          <g transform="translate(108, 106)">
+            <circle cx="0" cy="0" r="16" fill="#FFF7ED" stroke="#FF9900" stroke-width="2"/>
+            <circle cx="0" cy="0" r="5.5" fill="none" stroke="#FF9900" stroke-width="2"/>
+            <!-- Gear teeth -->
+            <rect x="-2" y="-16" width="4" height="7" rx="1.5" fill="#FF9900"/>
+            <rect x="-2" y="9" width="4" height="7" rx="1.5" fill="#FF9900"/>
+            <rect x="-16" y="-2" width="7" height="4" rx="1.5" fill="#FF9900"/>
+            <rect x="9" y="-2" width="7" height="4" rx="1.5" fill="#FF9900"/>
+            <!-- Diagonal teeth -->
+            <rect x="7.5" y="-12.5" width="4" height="7" rx="1.5" fill="#FF9900" transform="rotate(45 9.5 -9)"/>
+            <rect x="-11.5" y="5.5" width="4" height="7" rx="1.5" fill="#FF9900" transform="rotate(45 -9.5 9)"/>
+            <rect x="5.5" y="7.5" width="4" height="7" rx="1.5" fill="#FF9900" transform="rotate(-45 7.5 11)"/>
+            <rect x="-9.5" y="-11.5" width="4" height="7" rx="1.5" fill="#FF9900" transform="rotate(-45 -7.5 -8)"/>
+          </g>
+          <!-- Small decorative dots -->
+          <circle cx="18" cy="116" r="3" fill="#FFF0DB"/>
+          <circle cx="12" cy="100" r="2" fill="#FFF0DB"/>
+          <circle cx="22" cy="130" r="2.5" fill="#FFF0DB"/>
+        </svg>
+      </div>
+
+      <h1 class="coming-soon-heading">Coming Soon</h1>
+      <p class="coming-soon-subheading">We're working on something useful for you.</p>
+      <p class="coming-soon-description">This page is currently being prepared. We're working to provide you with accurate and useful product information. Please check back soon.</p>
+
+      <a href="../index.html" class="btn-back">Back to YallaBuy</a>
+
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 YallaBuy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

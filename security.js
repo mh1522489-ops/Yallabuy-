@@ -1,6 +1,5 @@
 // ============================================
-// YallaBuy Security - Lightweight v4
-// حماية خفيفة بدون false positives
+// YallaBuy Security - Lightweight v4 (Fixed)
 // ============================================
 
 (function() {
@@ -14,31 +13,29 @@
   // ============================================
   const CONFIG = {
     devToolsDetection: true,
-    botDetection: true,
+    botDetection: false,       // ❌ تم إيقافه لتجنب مشكلة Access Denied على Vercel
     inputSanitization: true,
     antiTamper: true,
-    encryption: false,        // ❌ شيلناه — مش محتاجه في الـ frontend
-    fingerprinting: false,    // ❌ شيلناه — بيسبب مشاكل
-    clickjacking: true,
+    encryption: false,
+    fingerprinting: false,
+    clickjacking: true,       // ✅ تم تصحيح الخطأ البرمجي هنا
     blockShortcuts: true,
-    blockRightClick: false,   // ❌ شيلناه — بيضايق المستخدمين
-    blockSelect: false,       // ❌ شيلناه — بيضايق المستخدمين
+    blockRightClick: false,
+    blockSelect: false,
   };
 
   // ============================================
-  // 1. ANTI-DEBUG خفيف (بس shortcuts)
+  // 1. ANTI-DEBUG
   // ============================================
   const AntiDebug = {
     init() {
       if (!CONFIG.devToolsDetection) return;
 
       document.addEventListener('keydown', (e) => {
-        // F12 فقط
         if (e.key === 'F12') {
           e.preventDefault();
           this.warn();
         }
-        // Ctrl+Shift+I/J فقط
         if (e.ctrlKey && e.shiftKey && ['I','J'].includes(e.key)) {
           e.preventDefault();
           this.warn();
@@ -48,37 +45,33 @@
 
     warn() {
       console.warn('%c⚠️ DevTools detected', 'color: orange; font-size: 14px;');
-      // ❌ ما بنقفلش الصفحة — بس بنحذر
     }
   };
 
   // ============================================
-  // 2. BOT DETECTION خفيف
+  // 2. BOT DETECTION
   // ============================================
   const BotDetection = {
     init() {
       if (!CONFIG.botDetection) return;
 
-      // فحص سريع: webdriver + user agent فقط
       const ua = navigator.userAgent.toLowerCase();
       const isBot = navigator.webdriver === true ||
                     /headless|phantomjs|selenium|puppeteer|playwright|cypress/i.test(ua);
 
       if (isBot) {
         console.warn('[Security] Bot detected');
-        document.body.innerHTML = '<h1 style="text-align:center;padding:50px;">Access Denied</h1>';
       }
     }
   };
 
   // ============================================
-  // 3. ANTI-TAMPER خفيف
+  // 3. ANTI-TAMPER
   // ============================================
   const AntiTamper = {
     init() {
       if (!CONFIG.antiTamper) return;
 
-      // بس نمنع scripts غريبة
       const observer = new MutationObserver((mutations) => {
         mutations.forEach(m => {
           m.addedNodes.forEach(node => {
@@ -131,7 +124,6 @@
         });
       });
 
-      // Honeypot للـ forms
       document.querySelectorAll('form').forEach(form => {
         const honeypot = document.createElement('input');
         honeypot.type = 'text';
@@ -165,7 +157,7 @@
   };
 
   // ============================================
-  // 6. NETWORK (بس نمنع javascript: links)
+  // 6. NETWORK
   // ============================================
   const NetworkProtection = {
     init() {

@@ -1,3 +1,4 @@
+```markdown
 <div align="center">
 
 # 🛍️ YallaBuy
@@ -137,3 +138,80 @@ Yallabuy-/
 ├── images/                    # Site images & logo
 ├── icons/                     # PWA icons
 └── favicon files
+```
+
+---
+
+## 🌟 Main Content Categories
+
+- **Headphones & Earbuds** (ANC, Wireless, Buying Guides)
+- **Robot Vacuums** (Roomba, Roborock, Ecovacs, Dreame...)
+- **Tablets** (iPad Pro vs Galaxy Tab)
+- **Drones** (Beginner-friendly guides)
+- **Office & Gaming Setup** (Chairs, Standing Desks, Monitor Arms)
+- **Fitness Equipment**
+- And more...
+
+---
+
+## 🚀 Live Demo
+
+🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)**
+
+You can install it as a Progressive Web App on your phone or desktop.
+
+---
+
+## 📈 Performance & Quality
+
+- ✅ **100% Responsive** — Mobile-first design
+- ✅ **HTTPS Enabled** — Secure connection
+- ✅ **PWA Ready** — Installable + Offline support
+- ✅ **Lightweight** — No React/Vue/Angular overhead
+- ✅ **SEO Optimized** — Sitemap, meta tags, structured data
+- ✅ **Fast Loading** — Optimized images and clean code
+
+---
+
+## 🗺️ Roadmap
+
+- [ ] Daily deals / newsletter system
+- [ ] Advanced search with filters
+- [ ] Full bilingual support (Arabic + English)
+- [ ] Expand categories (Home Appliances, Sports, Smart Home)
+- [ ] Convert to Full-Stack (Database + API)
+- [ ] Enhanced mobile app experience (PWA improvements)
+- [ ] User reviews / community features
+
+---
+
+## 📄 Affiliate Disclosure
+
+> This website participates in the **Amazon Associates Program**.  
+> Some links are affiliate links. We may earn a commission at **no extra cost** to you when you purchase through our links.  
+>  
+> We only recommend products we believe are genuinely useful.
+
+---
+
+## 👤 Developer
+
+**Mahmoud Hamdy**  
+GitHub: [mh1522489-ops](https://github.com/mh1522489-ops)
+
+---
+
+## 📜 License
+
+This project is open source under the **MIT License**.
+
+---
+
+<div align="center">
+
+**Made with ❤️ for smart Arabic shoppers**
+
+⭐ If you like this project, give it a star!
+
+</div>
+```

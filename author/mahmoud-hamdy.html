@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahmoud Hamdy — Founder, Writer &amp; Developer | YallaBuy</title>
+<meta name="description" content="Meet Mahmoud Hamdy, the founder, writer, and developer behind YallaBuy. Learn about his approach to product research, honest reviews, SEO, and technology.">
+<link rel="canonical" href="https://yallabuy-sg5c.vercel.app/author/mahmoud-hamdy.html">
+<link rel="stylesheet" href="/css/view-transition.css">
+ <script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2553585');
+</script>
+<script src="../security.js"></script> 
+ <script src="../vibra-click.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="alternate icon" href="/favicon.ico">
+<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+
+<style>
+  /* =========================================================
+   YallaBuy — Author Profile Page
+   css/author.css
+   ========================================================= */
+
+/* -----------------------------
+   Design Tokens
+------------------------------ */
+:root {
+  /* Color */
+  --color-accent: #ff9900;
+  --color-accent-dark: #e6890a;
+  --color-accent-light: #fff2e0;
+  --color-bg: #ffffff;
+  --color-bg-subtle: #faf9f7;
+  --color-bg-alt: #f6f4f1;
+  --color-text: #17171a;
+  --color-text-muted: #56565f;
+  --color-text-faint: #8a8a93;
+  --color-border: #eae8e4;
+  --color-border-strong: #dedbd5;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter", -apple-system, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-h1: clamp(2.1rem, 4.2vw, 3.4rem);
+  --fs-h2: clamp(1.6rem, 2.8vw, 2.2rem);
+  --fs-h3: 1.2rem;
+  --fs-body: 1.0625rem;
+  --fs-small: 0.9rem;
+  --fs-tiny: 0.8rem;
+
+  /* Spacing scale */
+  --space-1: 0.5rem;
+  --space-2: 0.875rem;
+  --space-3: 1.5rem;
+  --space-4: 2.25rem;
+  --space-5: 3.5rem;
+  --space-6: 5.5rem;
+
+  /* Radius / shadow */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-round: 999px;
+  --shadow-sm: 0 1px 2px rgba(23, 23, 26, 0.05), 0 1px 1px rgba(23, 23, 26, 0.04);
+  --shadow-md: 0 8px 24px rgba(23, 23, 26, 0.07);
+
+  --content-width: 1120px;
+  --transition: 180ms ease;
+}
+
+/* -----------------------------
+   Reset
+------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-text);
+  color: var(--color-white);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 8px 0;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* -----------------------------
+   Layout helpers
+------------------------------ */
+.wrap {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+.section {
+  padding-block: var(--space-6);
+}
+
+.section--alt {
+  background: var(--color-bg-subtle);
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: var(--space-4);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: var(--space-2);
+}
+
+.section-eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-2);
+}
+
+.section-lede {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 56ch;
+}
+
+/* -----------------------------
+   Header
+------------------------------ */
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-2);
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.site-nav ul {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.site-nav a {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--color-text);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--color-text);
+  position: relative;
+  transition: transform var(--transition);
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle span::before { top: -6px; }
+.nav-toggle span::after { top: 6px; }
+
+/* -----------------------------
+   Hero
+------------------------------ */
+.hero {
+  padding-block: var(--space-6) var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, var(--color-accent-light) 0%, rgba(255, 153, 0, 0) 70%);
+  z-index: 0;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-5);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  background: var(--color-accent-light);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-round);
+  margin-bottom: var(--space-3);
+}
+
+.hero h1 {
+  font-size: var(--fs-h1);
+  margin-bottom: var(--space-1);
+}
+
+.hero__role {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.hero__intro {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  margin-bottom: var(--space-4);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.hero__figure {
+  position: relative;
+  justify-self: center;
+}
+
+.hero__photo-frame {
+  width: min(340px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.hero__photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  box-shadow: inset 0 0 0 1px rgba(23, 23, 26, 0.04);
+}
+
+.hero__accent-line {
+  position: absolute;
+  bottom: -16px;
+  left: -16px;
+  width: 64px;
+  height: 64px;
+  border-left: 3px solid var(--color-accent);
+  border-bottom: 3px solid var(--color-accent);
+  border-radius: 0 0 0 var(--radius-sm);
+}
+
+/* -----------------------------
+   Buttons
+------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #1a1200;
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+/* -----------------------------
+   About
+------------------------------ */
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.about__lead {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+.about__body p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.about__body p:last-child {
+  margin-bottom: 0;
+}
+
+.about__highlight {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-2);
+  color: var(--color-text) !important;
+  font-weight: 500;
+}
+
+/* -----------------------------
+   Timeline (My Journey)
+------------------------------ */
+.timeline {
+  position: relative;
+  max-width: 760px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-border-strong) 92%);
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: var(--space-5);
+  padding-bottom: var(--space-4);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-dark);
+}
+
+.timeline__item--future .timeline__dot {
+  border-style: dashed;
+  color: var(--color-text-faint);
+  border-color: var(--color-border-strong);
+}
+
+.timeline__dot svg {
+  width: 16px;
+  height: 16px;
+}
+
+.timeline__label {
+  font-size: var(--fs-tiny);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline__title {
+  font-size: 1.15rem;
+  margin-bottom: 0.4rem;
+}
+
+.timeline__text {
+  color: var(--color-text-muted);
+  max-width: 54ch;
+}
+
+/* -----------------------------
+   What I Do — cards
+------------------------------ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+.card__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* -----------------------------
+   Skills
+------------------------------ */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius-round);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.skill-tag:hover {
+  background: var(--color-accent-light);
+  border-color: var(--color-accent);
+}
+
+.skill-tag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+/* -----------------------------
+   How I Choose Products
+------------------------------ */
+.choose {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.choose__statement {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1.35;
+  padding: var(--space-3);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-md);
+}
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.source-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+}
+
+.source-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-dark);
+  flex-shrink: 0;
+}
+
+.choose__note {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+/* -----------------------------
+   Research & Transparency
+------------------------------ */
+.transparency {
+  background: var(--color-text);
+  color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.transparency .section-eyebrow {
+  color: var(--color-accent);
+}
+
+.transparency h2 {
+  color: var(--color-white);
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-2);
+}
+
+.transparency p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: var(--space-2);
+}
+
+.transparency-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+}
+
+.transparency-list li:first-child {
+  border-top: none;
+}
+
+.transparency-list svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-accent);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* -----------------------------
+   Trust cards
+------------------------------ */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.trust-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+}
+
+.trust-card__num {
+  font-family: var(--font-display);
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.trust-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.trust-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.trust-statement {
+  text-align: center;
+  padding: var(--space-4);
+  background: var(--color-accent-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-accent);
+}
+
+.trust-statement p {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  color: var(--color-text);
+  max-width: 44ch;
+  margin-inline: auto;
+}
+
+/* -----------------------------
+   Philosophy / Quote
+------------------------------ */
+.philosophy {
+  text-align: center;
+  position: relative;
+}
+
+.philosophy__mark {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: var(--color-accent-light);
+  line-height: 1;
+  margin-bottom: -1.5rem;
+}
+
+.philosophy blockquote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  line-height: 1.3;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.philosophy blockquote span {
+  color: var(--color-accent-dark);
+}
+
+.philosophy__support {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 50ch;
+  margin-inline: auto;
+}
+
+/* -----------------------------
+   Goal
+------------------------------ */
+.goal__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.goal__body p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.goal__body p:last-child {
+  margin-bottom: 0;
+}
+
+.goal__visual {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.goal__visual-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.goal__visual-row:last-child {
+  border-bottom: none;
+}
+
+.goal__visual-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.goal__visual-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.goal__visual-text {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+/* -----------------------------
+   Expect list
+------------------------------ */
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.expect-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.expect-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-accent-dark);
+  flex-shrink: 0;
+}
+
+.expect-item span {
+  font-size: 0.95rem;
+}
+
+/* -----------------------------
+   Contact
+------------------------------ */
+.contact {
+  text-align: center;
+}
+
+.contact__inner {
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.contact h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: var(--space-2);
+}
+
+.contact p {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+/* -----------------------------
+   Footer
+------------------------------ */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-subtle);
+  padding-block: var(--space-4);
+}
+
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.site-footer nav ul {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.site-footer nav a {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.site-footer nav a:hover {
+  color: var(--color-accent-dark);
+}
+
+.site-footer__copy {
+  font-size: 0.85rem;
+  color: var(--color-text-faint);
+}
+
+/* -----------------------------
+   Responsive
+------------------------------ */
+@media (max-width: 900px) {
+  .hero__inner,
+  .about__grid,
+  .choose,
+  .goal__grid,
+  .transparency {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__figure {
+    order: -1;
+  }
+
+  .card-grid,
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .source-grid,
+  .expect-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --space-6: 3.5rem;
+    --space-5: 2.25rem;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .card-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+  }
+
+  .transparency {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+  
+</style>
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mahmoud Hamdy — Founder, Writer &amp; Developer | YallaBuy">
+<meta property="og:description" content="Meet Mahmoud Hamdy, the founder, writer, and developer behind YallaBuy. Learn about his approach to product research, honest reviews, SEO, and technology.">
+<meta property="og:image" content="https://yallabuy-sg5c.vercel.app/author/img/mahmoud-hamdy.jpg">
+<meta property="og:url" content="https://yallabuy-sg5c.vercel.app/author/mahmoud-hamdy.html">
+<meta property="og:site_name" content="YallaBuy">
+<meta property="profile:first_name" content="Mahmoud">
+<meta property="profile:last_name" content="Hamdy">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mahmoud Hamdy — Founder, Writer &amp; Developer | YallaBuy">
+<meta name="twitter:description" content="Meet Mahmoud Hamdy, the founder, writer, and developer behind YallaBuy.">
+<meta name="twitter:image" content="https://yallabuy-sg5c.vercel.app/author/img/mahmoud-hamdy.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://yallabuy-sg5c.vercel.app/author/mahmoud-hamdy.html/#organization",
+  "name": "YallaBuy",
+  "url": "https://yallabuy-sg5c.vercel.app/",
+  "logo": "https://yallabuy-sg5c.vercel.app/favicon.svg",
+  "sameAs": [
+    "https://www.wikidata.org/wiki/Q141078673"
+  ]
+}
+</script>
+
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mahmoud Hamdy",
+  "url": "https://yallabuy-sg5c.vercel.app/author/mahmoud-hamdy.html",
+  "image": "https://yallabuy-sg5c.vercel.app/author/img/mahmoud-hamdy.jpg",
+  "jobTitle": "Founder, Writer & Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "YallaBuy"
+  },
+  "description": "Mahmoud Hamdy is the founder, writer, and developer behind YallaBuy, an electronics review and product discovery website focused on honest, research-based buying guidance."
+}
+</script>
+
+<!-- Structured data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "YallaBuy", "item": "https://yallabuy-sg5c.vercel.app" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://yallabuy-sg5c.vercel.app/about.html" },
+    { "@type": "ListItem", "position": 3, "name": "Mahmoud Hamdy", "item": "https://yallabuy-sg5c.vercel.app/author/mahmoud-hamdy.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===================== Header ===================== -->
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a href="../index.html" class="logo">Yalla<span>Buy</span></a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../e.html">products</a></li>
+        <li><a href="../article/article.html"> Guides</a></li>
+        <li><a href="../about.html" aria-current="page">About the Author</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== Hero ===================== -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__content">
+        <span class="hero__eyebrow">About the author</span>
+        <h1>Mahmoud Hamdy</h1>
+        <p class="hero__role">Founder, Writer &amp; Developer of YallaBuy</p>
+        <p class="hero__intro">
+          Hi, I'm Mahmoud Hamdy, the founder, writer, and developer behind YallaBuy.
+          I created YallaBuy to help people make smarter buying decisions with honest,
+          useful, and well-researched information.
+        </p>
+        <div class="hero__actions">
+          <a href="#trust" class="btn btn--primary">Why trust my content</a>
+          <a href="#connect" class="btn btn--ghost">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero__figure">
+        <div class="hero__photo-frame">
+          <img
+            src="img/mahmoud-hamdy.jpg"
+            alt="Mahmoud Hamdy — Founder, Writer &amp; Developer of YallaBuy"
+            width="340"
+            height="340"
+            loading="eager"
+          >
+        </div>
+        <div class="hero__accent-line" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== About Me ===================== -->
+  <section class="section" id="about">
+    <div class="wrap about__grid">
+      <div>
+        <span class="section-eyebrow">About me</span>
+        <p class="about__lead">Choosing the right product shouldn't mean reading between the lines of an ad.</p>
+      </div>
+      <div class="about__body">
+        <p>
+          I started YallaBuy because choosing the right product can be difficult when
+          advertisements often focus only on the positive side of a product.
+        </p>
+        <p>
+          My goal is simple: provide people with the information they need to make a
+          better buying decision.
+        </p>
+        <p class="about__highlight">
+          I believe honesty is more important than making a sale. If the information
+          I provide causes someone to choose another product, that's okay — the
+          priority is giving the reader the information they need.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== My Journey ===================== -->
+  <section class="section section--alt" id="journey">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">My journey</span>
+        <h2 class="section-title">Still learning, still building</h2>
+        <p class="section-lede">
+          YallaBuy grew out of learning in public — picking up web development,
+          programming, and SEO along the way, and putting all of it toward one goal.
+        </p>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </span>
+          <p class="timeline__label">Foundations</p>
+          <h3 class="timeline__title">Learning Web Development</h3>
+          <p class="timeline__text">Mahmoud started learning web development and continues improving his skills.</p>
+        </li>
+
+        <li class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m10 20 4-16M14 4l6 8-6 8M6 4 0 12l6 8" transform="translate(2 0)"/></svg>
+          </span>
+          <p class="timeline__label">Programming</p>
+          <h3 class="timeline__title">Learning JavaScript</h3>
+          <p class="timeline__text">Focus on understanding programming and building interactive web experiences.</p>
+        </li>
+
+        <li class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <p class="timeline__label">Discoverability</p>
+          <h3 class="timeline__title">Learning SEO</h3>
+          <p class="timeline__text">Learning how search engines work and how useful content can reach the right audience.</p>
+        </li>
+
+        <li class="timeline__item">
+          <span class="timeline__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          </span>
+          <p class="timeline__label">Today</p>
+          <h3 class="timeline__title">Building YallaBuy</h3>
+          <p class="timeline__text">Combining web development, SEO, affiliate marketing, and product research to build YallaBuy.</p>
+        </li>
+
+        <li class="timeline__item timeline__item--future">
+          <span class="timeline__dot" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          </span>
+          <p class="timeline__label">What's next</p>
+          <h3 class="timeline__title">Future Goal</h3>
+          <p class="timeline__text">Become a trusted reference for people before they buy electronics.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== What I Do ===================== -->
+  <section class="section" id="what-i-do">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">What I do</span>
+        <h2 class="section-title">Four roles, one goal</h2>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </span>
+          <h3>Founder</h3>
+          <p>Building and developing the vision of YallaBuy.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+          </span>
+          <h3>Writer</h3>
+          <p>Creating product reviews, comparisons, buying guides, and educational content.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+          </span>
+          <h3>Developer</h3>
+          <p>Building and improving the website using modern web technologies.</p>
+        </div>
+        <div class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          </span>
+          <h3>Product Research</h3>
+          <p>Researching products to understand their features, strengths, weaknesses, and real-world usefulness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Skills ===================== -->
+  <section class="section section--alt" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">My skills</span>
+        <h2 class="section-title">What I'm currently working with</h2>
+        <p class="section-lede">Tools and areas I use and continue to learn as I build and write for YallaBuy.</p>
+      </div>
+
+      <ul class="skills-list">
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>HTML</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>CSS</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>JavaScript</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>SEO</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>Affiliate Marketing</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>Web Performance</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>Product Research</li>
+        <li class="skill-tag"><span class="skill-tag__dot" aria-hidden="true"></span>Content Creation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== How I Choose Products ===================== -->
+  <section class="section" id="how-i-choose">
+    <div class="wrap choose">
+      <div>
+        <span class="section-eyebrow">How I choose products</span>
+        <p class="choose__statement">"I look for products that solve problems people actually have."</p>
+        <p class="choose__note">
+          The goal isn't to recommend the most expensive product — it's to help you
+          understand which product is right for your specific needs.
+        </p>
+      </div>
+
+      <div>
+        <div class="source-grid">
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"/><path d="M14 2v6h6"/></svg>
+            Official product specifications
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14"/></svg>
+            Manufacturer information
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M14 2v5h5"/></svg>
+            Amazon product information
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m11.5 2 2.6 5.9 6.4.6-4.8 4.3 1.4 6.3-5.6-3.4-5.6 3.4 1.4-6.3-4.8-4.3 6.4-.6Z"/></svg>
+            Customer reviews
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Real-world user experiences
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            Search research
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+            Product comparisons
+          </div>
+          <div class="source-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Multiple sources of information
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Research & Transparency ===================== -->
+  <section class="section" id="transparency">
+    <div class="wrap">
+      <div class="transparency">
+        <div>
+          <span class="section-eyebrow">Research &amp; transparency</span>
+          <h2>How the content gets made</h2>
+          <p>
+            Every piece of content on YallaBuy starts with research — collecting and
+            verifying product information across multiple sources before anything gets written.
+          </p>
+          <p>
+            AI is used as a tool during the content creation process, and I want to be
+            upfront about that rather than imply every article is entirely hand-typed.
+          </p>
+          <p>AI is a tool. Accuracy, verification, and editorial responsibility stay with me.</p>
+        </div>
+        <ul class="transparency-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11H1v10h8V11ZM23 3h-8v18h8V3ZM16 7H8v14h8V7Z"/></svg>
+            Organizing information
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+            Structuring content
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>
+            Improving workflow
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z"/></svg>
+            Assisting with research and drafting
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Why Trust My Content ===================== -->
+  <section class="section section--alt" id="trust">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Why trust my content?</span>
+        <h2 class="section-title">Four things I hold myself to</h2>
+      </div>
+
+      <div class="trust-grid">
+        <div class="trust-card">
+          <p class="trust-card__num">01</p>
+          <h3>Accuracy</h3>
+          <p>I aim to provide accurate and useful product information.</p>
+        </div>
+        <div class="trust-card">
+          <p class="trust-card__num">02</p>
+          <h3>Honesty</h3>
+          <p>I don't hide important disadvantages just to make a product look better.</p>
+        </div>
+        <div class="trust-card">
+          <p class="trust-card__num">03</p>
+          <h3>Research</h3>
+          <p>I research products using multiple sources before creating content.</p>
+        </div>
+        <div class="trust-card">
+          <p class="trust-card__num">04</p>
+          <h3>Reader First</h3>
+          <p>The goal is to help the reader make the right decision, not simply to make a sale.</p>
+        </div>
+      </div>
+
+      <div class="trust-statement">
+        <p>Your buying decision matters more than my affiliate commission.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== My Philosophy ===================== -->
+  <section class="section philosophy" id="philosophy">
+    <div class="wrap">
+      <p class="philosophy__mark" aria-hidden="true">&ldquo;</p>
+      <blockquote>
+        Honest information is <span>more valuable</span> than a sale.
+      </blockquote>
+      <p class="philosophy__support">If a product isn't right for you, I want you to know that before you buy it.</p>
+    </div>
+  </section>
+
+  <!-- ===================== My Goal ===================== -->
+  <section class="section section--alt" id="goal">
+    <div class="wrap goal__grid">
+      <div class="goal__body">
+        <span class="section-eyebrow">My goal</span>
+        <h2 class="section-title">A reference you can trust before you buy</h2>
+        <p>
+          My goal is to make YallaBuy a trusted reference people can visit before
+          buying electronics.
+        </p>
+        <p>
+          I want visitors to understand their options, compare products, recognize
+          the strengths and weaknesses of each product, and make a decision that
+          fits their needs — including alternatives, when appropriate.
+        </p>
+      </div>
+      <div class="goal__visual">
+        <div class="goal__visual-row">
+          <span class="goal__visual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg>
+          </span>
+          <span class="goal__visual-text">Understand your options</span>
+        </div>
+        <div class="goal__visual-row">
+          <span class="goal__visual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3M16 3h5v5M21 3l-9 9"/></svg>
+          </span>
+          <span class="goal__visual-text">Compare products side by side</span>
+        </div>
+        <div class="goal__visual-row">
+          <span class="goal__visual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          </span>
+          <span class="goal__visual-text">Recognize strengths and weaknesses</span>
+        </div>
+        <div class="goal__visual-row">
+          <span class="goal__visual-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m22 4-10 10-3-3"/></svg>
+          </span>
+          <span class="goal__visual-text">Decide with confidence</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== What Readers Can Expect ===================== -->
+  <section class="section" id="expect">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">What readers can expect</span>
+        <h2 class="section-title">Every article, built the same way</h2>
+      </div>
+
+      <div class="expect-grid">
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Honest product information</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Product comparisons</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Buying guides</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Product alternatives</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Clear explanations</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Pros and cons</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Research-based content</span>
+        </div>
+        <div class="expect-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <span>Information that helps you decide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Contact ===================== -->
+  <section class="section contact" id="connect">
+    <div class="wrap contact__inner">
+      <span class="section-eyebrow">Let's connect</span>
+      <h2>Have a question, a tip, or feedback?</h2>
+      <p>I read everything that comes in — whether it's about an article, a product I should look into, or something I got wrong.</p>
+      <a href="mailto:mh01036010731@gmail.com" class="btn btn--primary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16v16H4V4Z"/><path d="m4 6 8 7 8-7"/></svg>
+        Email Me
+      </a>
+    </div>
+  </section>
+
+</main>
+ <br>
+      <br>
+      <div class="ml-embedded" data-form="8yiAHL"></div>
+
+                   
+<br>
+<br>
+<br>
+
+
+<!-- ===================== Footer ===================== -->
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <a href="../index.html" class="logo">Yalla<span>Buy</span></a>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="../index.html">YallaBuy</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../amazon/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="../amazon/terms-conditions.html">Terms &amp; Conditions</a></li>
+        <li><a href="../amazon/editorial-policy.html">Editorial Policy</a></li>
+        <li><a href="../amazon/Editorial-Process.html">Editorial Process</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="site-footer__copy">&copy; <span id="year"></span> YallaBuy. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+    // YallaBuy — Author Profile Page
+// js/author.js
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Footer year
+  var yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+
+  // Mobile nav toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.site-nav');
+
+  if (toggle && nav) {
+    nav.id = nav.id || 'site-nav';
+    toggle.setAttribute('aria-controls', nav.id);
+
+    toggle.addEventListener('click', function () {
+      var isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+
+      // Inline fallback styles so the menu is usable without extra CSS states
+      if (isOpen) {
+        nav.style.display = 'block';
+        nav.style.position = 'absolute';
+        nav.style.top = '100%';
+        nav.style.left = '0';
+        nav.style.right = '0';
+        nav.style.background = '#ffffff';
+        nav.style.borderBottom = '1px solid #eae8e4';
+        nav.style.padding = '1rem 1.5rem';
+      } else {
+        nav.style.display = '';
+      }
+    });
+  }
+});
+</script>
+<script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
+
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+</body>
+</html>

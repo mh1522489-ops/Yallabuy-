@@ -1,4 +1,4 @@
-const CACHE_NAME = 'yallabuy-cache-v190'; // غيّر الرقم عشان يتحدث
+const CACHE_NAME = 'yallabuy-cache-v191'; // غيّر الرقم عشان يتحدث
 const CORE_ASSETS = [
   '/',
   '/index.html',

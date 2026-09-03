@@ -1,0 +1,50 @@
+/* =========================================
+   YallaBuy - Page View Transitions
+   ========================================= */
+
+/* Enable browser-level page transitions */
+@view-transition {
+  navigation: auto;
+}
+
+/* New page */
+::view-transition-new(root) {
+  animation: yb-page-in 180ms ease-out both;
+}
+
+/* Previous page */
+::view-transition-old(root) {
+  animation: yb-page-out 120ms ease-in both;
+}
+
+/* Enter animation */
+@keyframes yb-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Exit animation */
+@keyframes yb-page-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}

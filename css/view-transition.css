@@ -1,27 +1,22 @@
-/* =========================================
-   YallaBuy - Page View Transitions
-   ========================================= */
-
-/* Enable browser-level page transitions */
 @view-transition {
   navigation: auto;
 }
 
-/* New page */
-::view-transition-new(root) {
-  animation: yb-page-in 180ms ease-out both;
-}
-
-/* Previous page */
+/* الصفحة القديمة */
 ::view-transition-old(root) {
-  animation: yb-page-out 120ms ease-in both;
+  animation: yb-page-out 350ms ease-in-out both;
 }
 
-/* Enter animation */
+/* الصفحة الجديدة */
+::view-transition-new(root) {
+  animation: yb-page-in 450ms ease-in-out both;
+}
+
+/* دخول الصفحة الجديدة */
 @keyframes yb-page-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(12px);
   }
 
   to {
@@ -30,18 +25,20 @@
   }
 }
 
-/* Exit animation */
+/* خروج الصفحة القديمة */
 @keyframes yb-page-out {
   from {
     opacity: 1;
+    transform: translateY(0);
   }
 
   to {
     opacity: 0;
+    transform: translateY(-8px);
   }
 }
 
-/* Respect users who prefer reduced motion */
+/* احترام إعدادات تقليل الحركة */
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root),
   ::view-transition-new(root) {

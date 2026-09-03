@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Share YallaBuy with friends using the YallaBuy QR Code."
+    >
+
+    <title>Share YallaBuy - QR Code</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+        }
+
+        .qr-container {
+            width: 100%;
+            max-width: 520px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .logo span {
+            color: #ff9900;
+        }
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #666;
+            line-height: 1.6;
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+
+        .qr-wrapper {
+            width: 320px;
+            max-width: 100%;
+            margin: 0 auto 25px;
+            padding: 10px;
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 18px;
+        }
+
+        .qr-wrapper img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .website-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 18px;
+        }
+
+        .website-link {
+            flex: 1;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .copy-btn {
+            border: none;
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .copy-btn:hover {
+            background: #ff9900;
+            color: #fff;
+            border-color: #ff9900;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .btn {
+            border: none;
+            padding: 14px 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .download-btn {
+            background: #ff9900;
+            color: #fff;
+        }
+
+        .download-btn:hover {
+            background: #e68a00;
+            transform: translateY(-2px);
+        }
+
+        .share-btn {
+            background: #222;
+            color: #fff;
+        }
+
+        .share-btn:hover {
+            background: #000;
+            transform: translateY(-2px);
+        }
+
+        .scan-text {
+            margin-top: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 12px;
+            color: #16803c;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 500px) {
+
+            .qr-container {
+                padding: 30px 20px;
+                border-radius: 18px;
+            }
+
+            .title {
+                font-size: 26px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+
+            .buttons {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="qr-container">
+
+        <div class="logo">
+            Yalla<span>Buy</span>
+        </div>
+
+        <h1 class="title">
+            Share YallaBuy
+        </h1>
+
+        <p class="description">
+            Scan the QR code to visit YallaBuy.
+            You can also download or share this QR code with others.
+        </p>
+
+
+        <!-- QR Code -->
+
+        <div class="qr-wrapper">
+
+            <img
+                src="QR.png"
+                alt="YallaBuy QR Code"
+            >
+
+        </div>
+
+
+        <!-- Website Link -->
+
+        <div class="website-box">
+
+            <a
+                href="https://yallabuy-sg5c.vercel.app"
+                class="website-link"
+                target="_blank"
+                rel="noopener">
+            YallBuy
+            </a>
+
+            <button
+                class="copy-btn"
+                id="copyBtn"
+            >
+                Copy
+            </button>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="buttons">
+
+            <a
+                href="QR.png"
+                download="YallaBuy-QR-Code.png"
+                class="btn download-btn"
+            >
+                Download QR
+            </a>
+
+
+            <button
+                class="btn share-btn"
+                id="shareBtn"
+            >
+                Share YallaBuy
+            </button>
+
+        </div>
+
+
+        <p class="success-message" id="successMessage">
+            Link copied successfully!
+        </p>
+
+
+        <p class="scan-text">
+            📱 Scan the QR code with your phone camera
+        </p>
+
+    </main>
+
+
+    <script>
+
+        const websiteURL =
+            "https://yallabuy-sg5c.vercel.app";
+
+
+        const copyBtn =
+            document.getElementById("copyBtn");
+
+        const shareBtn =
+            document.getElementById("shareBtn");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        // Copy Website Link
+
+        copyBtn.addEventListener("click", async function () {
+
+            try {
+
+                await navigator.clipboard.writeText(websiteURL);
+
+                copyBtn.textContent = "Copied!";
+
+                successMessage.style.display = "block";
+
+                setTimeout(function () {
+
+                    copyBtn.textContent = "Copy";
+
+                    successMessage.style.display = "none";
+
+                }, 2000);
+
+            } catch (error) {
+
+                alert("Unable to copy the link.");
+
+            }
+
+        });
+
+
+        // Share Website
+
+        shareBtn.addEventListener("click", async function () {
+
+            if (navigator.share) {
+
+                try {
+
+                    await navigator.share({
+
+                        title: "YallaBuy",
+
+                        text: "Check out YallaBuy!",
+
+                        url: websiteURL
+
+                    });
+
+                } catch (error) {
+
+                    console.log("Share cancelled.");
+
+                }
+
+            } else {
+
+                try {
+
+                    await navigator.clipboard.writeText(websiteURL);
+
+                    alert("Sharing is not supported on this device. The website link has been copied.");
+
+                } catch (error) {
+
+                    alert(websiteURL);
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

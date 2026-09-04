@@ -1,0 +1,87 @@
+[
+   {
+    "id": "1",
+    "category": "Headphones",
+    "title": "Sony WH-1000XM4 vs WH-1000XM5",
+    "image": "assets/images/smart-watches-comparisons/img.png",
+    "url": "#"
+  },
+
+  {
+    "id": "2",
+    "category": "Headphones",
+    "title": "Bose QuietComfort 45 vs Sony XM5",
+    "image": "https://images.unsplash.com/photo-1545127398-14699f92334b?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "3",
+    "category": "Earbuds",
+    "title": "AirPods Pro 2 vs Galaxy Buds 2 Pro",
+    "image": "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f42?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "4",
+    "category": "Robot Vacuums",
+    "title": "Roomba j7+ vs Roborock S7 MaxV",
+    "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "5",
+    "category": "Laptops",
+    "title": "MacBook Air M2 vs MacBook Pro M2",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "6",
+    "category": "Headphones",
+    "title": "Apple AirPods Max vs Sony WH-1000XM5",
+    "image": "https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "7",
+    "category": "Earbuds",
+    "title": "Sony WF-1000XM4 vs Bose QuietComfort Earbuds II",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "8",
+    "category": "Robot Vacuums",
+    "title": "Dreame L10s Ultra vs Roborock S8 Pro Ultra",
+    "image": "https://images.unsplash.com/photo-1568085336085-82d5c3e6a8a8?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "9",
+    "category": "Smartwatches",
+    "title": "Apple Watch Series 8 vs Galaxy Watch 5",
+    "image": "https://images.unsplash.com/photo-1551816230-ef5deaed4a26?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "10",
+    "category": "Smartwatches",
+    "title": "Garmin Fenix 7 vs Apple Watch Ultra",
+    "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "11",
+    "category": "Laptops",
+    "title": "Dell XPS 13 vs MacBook Air M2",
+    "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  },
+  {
+    "id": "12",
+    "category": "Headphones",
+    "title": "Sennheiser Momentum 4 vs Sony WH-1000XM5",
+    "image": "https://images.unsplash.com/photo-1487215078519-e21cc028cb29?auto=format&fit=crop&w=800&q=80",
+    "url": "#"
+  }
+]

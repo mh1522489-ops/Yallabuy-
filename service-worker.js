@@ -6,7 +6,7 @@ const CORE_ASSETS = [
   '/favicon.svg',
   '/icons/icon-192x192.jpg',
   '/icons/icon-512x512.jpg',
-  /icons/icon-180x180.jpg
+  '/icons/icon-180x180.jpg'
   // ضيف هنا أي CSS/JS files حقيقية عندك
 ];
 

@@ -18,7 +18,7 @@
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2553585');
 </script>
-<script src="../../security.js"></script> 
+<script src="../../security.js" defer></script> 
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
     }, 5000);
 });
     </script>
-<link rel="stylesheet" href="/css/view-transition.css">
+
 <link rel="manifest" href="/manifest.json">
 
     <!-- Open Graph / Facebook -->
@@ -2035,6 +2035,36 @@ window.addEventListener("load", function () {
 <script defer>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="JF9wJT_ZHr6FLdPO69v8n";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+<style>
+  @view-transition {
+    navigation: auto;
+  }
 
+  ::view-transition-old(root) {
+    animation: fade-out 0.2s ease-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: fade-in 0.2s ease-in;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
 </body>
 </html>

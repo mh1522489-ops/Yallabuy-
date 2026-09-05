@@ -24,12 +24,6 @@
       "sizes": "512x512",
       "type": "image/jpg",
       "purpose": "any"
-    },
-    {
-      "src": "/icons/icon-180x180.jpg",
-      "sizes": "180x180",
-      "type": "image/jpg",
-      "purpose": "any"
     }
   ],
   "screenshots": [

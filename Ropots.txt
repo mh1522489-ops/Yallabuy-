@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://Yallabuy-sg5c.vercel.app/sitemap.xml
+Sitemap: https://yallbuy.shop/sitemap.xml

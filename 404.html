@@ -1,222 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <script src="/security.js"></script>
-    <link rel="manifest" href="/manifest.json">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Yallabuy</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="alternate icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Page Not Found | YallaBuy</title>
+  <meta name="description" content="The page you're looking for could not be found on YallaBuy.">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #222222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-        body {
-            background: #0f0f1a;
-            color: #fff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            overflow: hidden;
-        }
+    header {
+      width: 100%;
+      padding: 22px 6%;
+      border-bottom: 1px solid #eeeeee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        /* Animated background circles */
-        .bg-circle {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.05;
-            animation: float 20s infinite ease-in-out;
-        }
+    .logo {
+      text-decoration: none;
+      color: #222222;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
 
-        .bg-circle:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            background: #e94560;
-            top: -100px;
-            left: -100px;
-            animation-delay: 0s;
-        }
+    .logo span {
+      color: #ff9900;
+    }
 
-        .bg-circle:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            background: #0f3460;
-            bottom: -50px;
-            right: -50px;
-            animation-delay: 5s;
-        }
+    .home-link {
+      text-decoration: none;
+      color: #555555;
+      font-size: 15px;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
 
-        .bg-circle:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            background: #e94560;
-            top: 50%;
-            left: 80%;
-            animation-delay: 10s;
-        }
+    .home-link:hover {
+      color: #ff9900;
+    }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.1); }
-            66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 70px 20px;
+    }
 
-        /* Main content */
-        .content {
-            position: relative;
-            z-index: 1;
-        }
+    .error-container {
+      width: 100%;
+      max-width: 650px;
+      text-align: center;
+    }
 
-        .error-code {
-            font-size: 150px;
-            font-weight: 900;
-            color: transparent;
-            -webkit-text-stroke: 2px #e94560;
-            text-stroke: 2px #e94560;
-            line-height: 1;
-            animation: glitch 2s infinite;
-        }
+    .error-number {
+      font-size: clamp(100px, 22vw, 190px);
+      line-height: 0.9;
+      font-weight: 900;
+      color: #ff9900;
+      letter-spacing: -10px;
+      margin-bottom: 25px;
+    }
 
-        @keyframes glitch {
-            0%, 90%, 100% { transform: translate(0); }
-            92% { transform: translate(-5px, 2px); }
-            94% { transform: translate(5px, -2px); }
-            96% { transform: translate(-3px, -1px); }
-        }
+    .error-container h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      margin-bottom: 15px;
+      color: #222222;
+    }
 
-        .error-title {
-            font-size: 28px;
-            color: #fff;
-            margin: 20px 0 10px;
-            font-weight: 600;
-        }
+    .error-container p {
+      max-width: 520px;
+      margin: 0 auto 30px;
+      color: #666666;
+      font-size: 17px;
+      line-height: 1.7;
+    }
 
-        .error-desc {
-            font-size: 16px;
-            color: #888;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            max-width: 400px;
-        }
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-        /* Home button */
-        .home-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #e94560;
-            color: #fff;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
 
-        .home-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(233, 69, 96, 0.5);
-        }
+    .primary-btn {
+      background: #ff9900;
+      color: #ffffff;
+    }
 
-        .home-btn svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.3s;
-        }
+    .primary-btn:hover {
+      background: #e88b00;
+      transform: translateY(-1px);
+    }
 
-        .home-btn:hover svg {
-            transform: translateX(-3px);
-        }
+    .secondary-btn {
+      border: 1px solid #dddddd;
+      color: #333333;
+      background: #ffffff;
+    }
 
-        /* Logo */
-        .logo {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-            font-weight: bold;
-            color: #e94560;
-            text-decoration: none;
-        }
+    .secondary-btn:hover {
+      border-color: #ff9900;
+      color: #ff9900;
+    }
 
-        /* Responsive */
-        @media (max-width: 480px) {
-            .error-code { font-size: 100px; }
-            .error-title { font-size: 22px; }
-            .error-desc { font-size: 14px; }
-        }
-    </style>
-</head>
-<body>
+    footer {
+      text-align: center;
+      padding: 25px 20px;
+      border-top: 1px solid #eeeeee;
+      color: #888888;
+      font-size: 13px;
+    }
 
-    <!-- Background animations -->
-    <div class="bg-circle"></div>
-    <div class="bg-circle"></div>
-    <div class="bg-circle"></div>
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 20px;
+      }
 
-    <!-- Logo -->
-    <a href="/index.html" class="logo">⚡ Yallabuy</a>
+      .logo {
+        font-size: 22px;
+      }
 
-    <!-- Main content -->
-    <div class="content">
-        <div class="error-code">404</div>
-        <h1 class="error-title">Page Not Found</h1>
-        <p class="error-desc">
-            The page you're looking for doesn't exist or has been moved. 
-            Let's get you back on track.
-        </p>
-        <a href="/index.html" class="home-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back To Home
-        </a>
-    </div>
-<!-- تسجيل Service Worker + تحديث تلقائي -->
-<script>
-  (function() {
-    if (!('serviceWorker' in navigator)) return;
+      .home-link {
+        font-size: 14px;
+      }
 
-    let refreshing = false;
+      main {
+        padding: 50px 20px;
+      }
 
-    // عندما يتحكم Service Worker جديد
-    navigator.serviceWorker.addEventListener('controllerchange', function() {
-      if (refreshing) return;
-      refreshing = true;
-      window.location.reload();
-    });
+      .error-number {
+        letter-spacing: -5px;
+        margin-bottom: 20px;
+      }
 
-    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
-      console.log('✅ Service Worker مسجل');
+      .error-container p {
+        font-size: 15px;
+      }
 
-      reg.addEventListener('updatefound', function() {
-        const newWorker = reg.installing;
+      .actions {
+        flex-direction: column;
+        max-width: 300px;
+        margin: auto;
+      }
 
-        newWorker.addEventListener('statechange', function() {
-          // لو فيه SW قديم شغال → فيه تحديث جديد
-          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-            console.log('🔄 تحديث جديد متاح!');
-            
-            // أرسل رسالة للتحديث فوراً
-            newWorker.postMessage('skipWaiting');
-          }
-        });
-      });
-    }).catch(function(err) {
-      console.log('❌ فشل التسجيل:', err);
-    });
-  })();
-</script>
+      .btn {
+        width: 100%;
+      }
+    }
+  </style></head><body>  <header>
+    <a href="index.html" class="logo">
+      Yalla<span>Buy</span>
+    </a><a href="index.html" class="home-link">
+  Back to Home
+</a>
 
-</body>
+  </header>  <main>
+    <section class="error-container">  <div class="error-number">404</div>
+
+  <h1>Oops! Page Not Found</h1>
+
+  <p>
+    The page you're looking for doesn't exist, may have been moved,
+    or the link you followed is no longer available.
+  </p>
+
+  <div class="actions">
+    <a href="index.html" class="btn primary-btn">
+      Go to Homepage
+    </a>
+
+    <a href="about.html" class="btn secondary-btn">
+      About Us
+    </a>
+  </div>
+
+</section>
+
+  </main>  <footer>
+    © 2026 YallaBuy. All rights reserved.
+  </footer></body>
 </html>

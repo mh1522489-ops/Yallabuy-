@@ -2309,19 +2309,46 @@ html[data-theme="dark"] .price-card .price-save { background: #14532d; color: #8
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     `;
     document.body.appendChild(bar);
-    const update = () => {
-      const article = document.querySelector('.article');
-      if (!article) return;
-      const rect = article.getBoundingClientRect();
-      const total = article.offsetHeight - window.innerHeight + 200;
-      const scrolled = -rect.top + 200;
-      const pct = Math.max(0, Math.min(100, (scrolled / total) * 100));
-      bar.style.width = pct + '%';
-    };
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  }
-  injectProgressBar();
+    function injectProgressBar() {
+  const bar = document.createElement('div');
+  bar.className = 'reading-progress';
+  document.body.appendChild(bar);
+
+  const article = document.querySelector('.article');
+  if (!article) return;
+
+  let ticking = false;
+
+  const update = () => {
+    const scrollTop = window.scrollY;
+    const articleTop = article.offsetTop;
+    const articleHeight = article.offsetHeight;
+
+    const total = articleHeight - window.innerHeight + 200;
+    const scrolled = scrollTop - articleTop + 200;
+
+    const pct = Math.max(
+      0,
+      Math.min(100, (scrolled / total) * 100)
+    );
+
+    bar.style.width = pct + '%';
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  update();
+}
+
+injectProgressBar();
 
   // ---------- Smooth anchor for in-page links ----------
   document.querySelectorAll('a[href^="#"]').forEach((a) => {

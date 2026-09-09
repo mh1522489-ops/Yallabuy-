@@ -20,7 +20,31 @@
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="alternate icon" href="../favicon.ico">
-<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+<script>
+(function () {
+  let loaded = false;
+
+  function loadContentsquare() {
+    if (loaded) return;
+    loaded = true;
+
+    const script = document.createElement('script');
+    script.src = 'https://t.contentsquare.net/uxa/f9739eb83d63e.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    window.removeEventListener('scroll', loadContentsquare);
+    window.removeEventListener('click', loadContentsquare);
+    window.removeEventListener('touchstart', loadContentsquare);
+    window.removeEventListener('mousemove', loadContentsquare);
+  }
+
+  window.addEventListener('scroll', loadContentsquare, { once: true, passive: true });
+  window.addEventListener('click', loadContentsquare, { once: true });
+  window.addEventListener('touchstart', loadContentsquare, { once: true, passive: true });
+  window.addEventListener('mousemove', loadContentsquare, { once: true });
+})();
+</script>
 
 <link rel="manifest" href="../manifest.json">
 

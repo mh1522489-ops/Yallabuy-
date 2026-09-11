@@ -8,13 +8,22 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="alternate icon" href="/favicon.ico">
-<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
 <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2553585');
+(function () {
+  function loadContentsquare() {
+    const script = document.createElement("script");
+    script.src = "https://t.contentsquare.net/uxa/f9739eb83d63e.js";
+    script.defer = true;
+    document.head.appendChild(script);
+
+    window.removeEventListener("scroll", loadContentsquare);
+  }
+
+  window.addEventListener("scroll", loadContentsquare, {
+    passive: true,
+    once: true
+  });
+})();
 </script>
 <link rel="stylesheet" href="/css/view-transition.css">
 <link rel="manifest" href="/manifest.json">
@@ -34,9 +43,7 @@
 <meta name="twitter:title" content="iRobot Roomba j7+ FAQ: 70 Important Questions Answered | YallaBuy">
 <meta name="twitter:description" content="Roomba j7+ FAQ covering pet hair, obstacle avoidance, smart mapping, battery life, Clean Base, Wi-Fi setup, and 60+ more questions answered honestly.">
 <meta name="twitter:image" content="https://i.ibb.co/TMLX40RQ/file-000000006e1c81f4b214eb5109479ea5.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+ 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -701,8 +708,6 @@ a:hover { color: var(--brand-dark); }
     </div>
   </div>
 </section>
-<div class="ml-embedded" data-form="8yiAHL"></div>
-<br><br>
 
 
 <!-- Footer -->

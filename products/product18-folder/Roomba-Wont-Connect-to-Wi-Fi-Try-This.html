@@ -8,13 +8,22 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="alternate icon" href="/favicon.ico">
-<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
 <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2553585');
+(function () {
+  function loadContentsquare() {
+    const script = document.createElement("script");
+    script.src = "https://t.contentsquare.net/uxa/f9739eb83d63e.js";
+    script.defer = true;
+    document.head.appendChild(script);
+
+    window.removeEventListener("scroll", loadContentsquare);
+  }
+
+  window.addEventListener("scroll", loadContentsquare, {
+    passive: true,
+    once: true
+  });
+})();
 </script>
 
 <link rel="stylesheet" href="/css/view-transition.css">
@@ -42,11 +51,7 @@
     <meta name="twitter:description" content="Is your iRobot Roomba refusing to connect to Wi-Fi? Follow this comprehensive troubleshooting guide to fix network issues, 2.4GHz errors, and app connection problems.">
     <meta name="twitter:image" content="https://i.ibb.co/v4ttKP8Z/1785964092720.png">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-
+    
     <!-- Structured Data: Article -->
     <script type="application/ld+json">
     {
@@ -179,9 +184,9 @@ a { color: inherit; text-decoration: none; }
   --shadow-lg: 0 12px 40px rgba(20,20,20,.08);
   --max-w: 1240px;
   --content-w: 720px;
-  --font-sans: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-  --font-serif: 'Lora', Georgia, "Times New Roman", serif;
+  --font-sans:  system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display:  system-ui, sans-serif;
+  --font-serif:  Georgia, "Times New Roman", serif;
   --transition: 0.25s cubic-bezier(.4,0,.2,1);
 }
 
@@ -1137,9 +1142,7 @@ html[data-theme="dark"] .article ol li::before { color: var(--brand-deep); }
 
         </article>
     </div>
-    <br>
-<div class="ml-embedded" data-form="8yiAHL"></div>
-<br><br>
+    
 
     <!-- Footer -->
     <footer class="site-footer">

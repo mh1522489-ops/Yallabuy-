@@ -1885,38 +1885,7 @@ a:hover { color: var(--brand-deep); }
     });
   });
 
-  // Sticky Buy Bar
-  var stickyBar = document.getElementById('stickyBar');
-  var stickyDismiss = document.getElementById('stickyDismiss');
-  var heroSection = document.querySelector('.hero');
-  var footer = document.querySelector('.footer');
-  var dismissed = localStorage.getItem('yb-sticky-dismissed');
-
-  function checkStickyBar() {
-    if (dismissed) return;
-    var heroBottom = heroSection.getBoundingClientRect().bottom;
-    var footerTop = footer.getBoundingClientRect().top;
-    var windowH = window.innerHeight;
-    if (heroBottom < 0 && footerTop > windowH) {
-      stickyBar.classList.add('visible');
-    } else {
-      stickyBar.classList.remove('visible');
-    }
-  }
-
-  stickyDismiss.addEventListener('click', function() {
-    stickyBar.classList.remove('visible');
-    localStorage.setItem('yb-sticky-dismissed', 'true');
-  });
-
-  var stickyRaf;
-  window.addEventListener('scroll', function() {
-    if (stickyRaf) cancelAnimationFrame(stickyRaf);
-    stickyRaf = requestAnimationFrame(checkStickyBar);
-  }, { passive: true });
-
-  checkStickyBar();
-
+  
 })();
 </script>
 <script>

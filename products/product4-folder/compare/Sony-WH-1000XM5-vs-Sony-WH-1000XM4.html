@@ -3,19 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2553585');
-</script>
+ 
 <script src="../../../security.js"></script> 
  <script src="../../../vibra-click.js" defer></script>
 <link rel="icon" type="image/svg+xml" href="../../../favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="alternate icon" href="/favicon.ico">
-<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+ <script>
+(function () {
+  function loadContentsquare() {
+    const script = document.createElement("script");
+    script.src = "https://t.contentsquare.net/uxa/f9739eb83d63e.js";
+    script.defer = true;
+    document.head.appendChild(script);
+
+    window.removeEventListener("scroll", loadContentsquare);
+  }
+
+  window.addEventListener("scroll", loadContentsquare, {
+    passive: true,
+    once: true
+  });
+})();
+ </script>
 <link rel="stylesheet" href="/css/view-transition.css">
 <link rel="manifest" href="/manifest.json">
 
@@ -49,16 +59,6 @@
 <meta name="twitter:description" content="Complete Sony XM5 vs XM4 comparison covering ANC, sound, microphone, battery, and value in 2026.">
 <meta name="twitter:image" content="https://yallbuy.shop/products/product4-folder/compare/img/xm5-vs-xm4.png">
 
-<!-- Preconnect for Performance (LCP optimization) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
 
 <!-- Schema: BreadcrumbList -->
 <script type="application/ld+json">
@@ -347,9 +347,9 @@
   --max-site: 1240px;
   --max-article: 720px;
   --transition: 0.25s cubic-bezier(.4,0,.2,1);
-  --font-ui: 'Inter', sans-serif;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --font-editorial: 'Lora', serif;
+  --font-ui:  sans-serif;
+  --font-display:  sans-serif;
+  --font-editorial:  serif;
   --amazon-gradient: linear-gradient(135deg, #f7d56e 0%, #f0c14b 50%, #e4a82b 100%);
   --amazon-dark-gradient: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
   --star-color: #f59e0b;
@@ -1493,11 +1493,11 @@ ul, ol { list-style: none; }
         <div class="hero-image-wrap">
           <img
             class="hero-image"
-            src="img/xm5-vs-xm4.png"
+            src="img/xm5-vs-xm4.avif"
             alt="Sony WH-1000XM5 vs WH-1000XM4 headphones side by side comparison"
             width="800"
             height="600"
-            loading="eager"
+            fetchpriority="high"
           >
         </div>
       </div>
@@ -2306,13 +2306,7 @@ ul, ol { list-style: none; }
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
   <i data-lucide="chevron-up" style="width:20px;height:20px"></i>
 </button>
-<br>
-      <br>
-      <div class="ml-embedded" data-form="8yiAHL"></div>
 
-                   
-<br>
-<br>
 
 
 <!-- ===== FOOTER ===== -->

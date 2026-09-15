@@ -2,20 +2,29 @@
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8"> 
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2553585');
-</script>
-<script src="../../../security.js"></script> 
+
+<script src="../../../security.js" defer></script> 
  <script src="../../../vibra-click.js" defer></script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="alternate icon" href="/favicon.ico">
-<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
+<script>
+(function () {
+  function loadContentsquare() {
+    const script = document.createElement("script");
+    script.src = "https://t.contentsquare.net/uxa/f9739eb83d63e.js";
+    script.defer = true;
+    document.head.appendChild(script);
 
+    window.removeEventListener("scroll", loadContentsquare);
+  }
+
+  window.addEventListener("scroll", loadContentsquare, {
+    passive: true,
+    once: true
+  });
+})();
+</script>
 <link rel="manifest" href="/manifest.json">
 
 <link rel="stylesheet" href="/css/view-transition.css">
@@ -23,8 +32,8 @@
 <title>Sony WH-1000XM5 Review 2026: Worth Buying? | YallaBuy</title>
 <meta name="description" content="Is the Sony WH-1000XM5 still worth buying in 2026? We break down ANC, sound, battery, and whether the discount makes it smarter than the newer XM6.">
 <link rel="canonical" href="https://yallbuy.shop/products/product4-folder/guides/Is-Sony-WH-1000XM5-Worth-It.html">
-<link rel="preload" as="image" href="../sony.png" fetchpriority="high">
-<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.woff2" crossorigin>
+<link rel="preload" as="image" href="../sony.avif" fetchpriority="high">
+
 <style>
 /* ========== CRITICAL CSS (inlined for fast first paint) ========== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -43,9 +52,9 @@
 --space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;
 --z-dropdown:100;--z-sticky:200;--z-mobile:300;--z-modal:400;--z-toast:500;
 --max-site:1240px;--max-article:720px;
---font-ui:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
---font-display:'Plus Jakarta Sans',-apple-system,sans-serif;
---font-editorial:'Lora',Georgia,serif;
+--font-ui:-apple-system,BlinkMacSystemFont,sans-serif;
+--font-display:-apple-system,sans-serif;
+--font-editorial:Georgia,serif;
 }
 [data-theme="dark"]{
 --bg:#14181b;--bg-soft:#1a1f23;--surface:#1c2226;--surface-sec:#20262a;
@@ -475,7 +484,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
           </div>
         </div>
         <div class="hero-image-wrap">
-          <img class="hero-image" src="../sony.png" alt="Sony WH-1000XM5 over-ear wireless headphones in black, displayed on a clean surface" width="720" height="480">
+          <img class="hero-image" src="../sony.avif" alt="Sony WH-1000XM5 over-ear wireless headphones in black, displayed on a clean surface" width="720" height="480">
         </div>
       </div>
     </section>
@@ -1302,13 +1311,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offs
     </div><!-- /article-layout -->
   </div><!-- /container -->
 </main>
-<br>
-      <br>
-      <div class="ml-embedded" data-form="8yiAHL"></div>
-
-                   
-<br>
-<br>
 
 
 <!-- ========== FOOTER ========== -->

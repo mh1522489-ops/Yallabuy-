@@ -2,7 +2,7 @@
 
 ### `/docs/best-usb-c-hubs-macbook.md`
 
-```markdown
+markdown
 # دليل أفضل منافذ USB-C لأجهزة MacBook (دليل شراء 2026)
 
 ## 1. الهدف (Purpose)
@@ -96,9 +96,4 @@
 
 ## 16. سجل التغييرات (Change History)
 - **September 2026:** إنشاء الصفحة وإضافة المحتوى التحريري والمخططات الأساسية.
-```
-
-
-
-
-```
+- 

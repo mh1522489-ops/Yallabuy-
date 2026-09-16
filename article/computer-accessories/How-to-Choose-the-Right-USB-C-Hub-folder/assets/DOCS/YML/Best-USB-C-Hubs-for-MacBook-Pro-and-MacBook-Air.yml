@@ -1,0 +1,96 @@
+page:
+  name: "Best USB-C Hubs for MacBook Pro and MacBook Air (2026 Buying Guide)"
+  type: "guide"
+  purpose: "دليل شراء مقارن لمنافذ USB-C ومحطات Thunderbolt لأجهزة MacBook"
+  status: "active"
+
+url:
+  path: "/guides/best-usb-c-hubs-macbook"
+  canonical: "https://yallbuy.shop/guides/best-usb-c-hubs-macbook"
+
+files:
+  html: "single-file"
+  css: "inline"
+  javascript: "inline"
+  data: "none"
+
+data:
+  sources: "hardcoded_html"
+  rendering: "static"
+  dynamic: false
+
+features:
+  search: false
+  filtering: false
+  sorting: false
+  comparison: true
+  pagination: false
+  faq_accordion: true
+  sticky_buy_bar: true
+  dark_mode_toggle: true
+
+seo:
+  title: "Best USB-C Hubs for MacBook Pro and MacBook Air (2026 Buying Guide) | YallaBuy"
+  meta_description: "Looking for the best USB-C hubs for MacBook Pro and Air? Read our 2026 YallaBuy guide comparing Anker, CalDigit, UGREEN, and Satechi docks for performance, display support, and charging."
+  canonical: "https://yallbuy.shop/guides/best-usb-c-hubs-macbook"
+  structured_data: 
+    - "Article"
+    - "FAQPage"
+    - "BreadcrumbList"
+    - "ItemList"
+  breadcrumbs: true
+
+accessibility:
+  semantic_html: true
+  keyboard_navigation: true
+  alt_text: true
+  aria: "aria-expanded, aria-controls, aria-label"
+  reduced_motion: true
+  focus_visible: true
+
+performance:
+  lazy_loading: "product_images"
+  lcp: "hero_image (fetchpriority=high)"
+  external_scripts: none
+  fonts: "system_fonts_only"
+
+dependencies:
+  internal: none
+  external: 
+    - "amazon_affiliate_links"
+    - "placehold.co (temporary)"
+
+internal_links:
+  incoming: "Needs verification"
+  outgoing: 
+    - "/"
+    - "/guides"
+    - "/reviews"
+    - "/about"
+    - "/headphones"
+    - "/laptops"
+    - "/accessories"
+    - "/contact"
+    - "/affiliate-disclosure"
+
+rules:
+  do_not:
+    - "إزالة تنبيه تقلب أسعار أمازون"
+    - "إزالة إفصاحات الشفافية التحريرية والعمولات"
+    - "إزالة خصائص rel=sponsored من روابط أمازون"
+    - "استخدام صور وهمية في الإنتاج"
+  must_keep:
+    - "مزامنة JSON-LD الخاص بالأسئلة الشائعة مع محتوى HTML"
+    - "حجم الصور المحدد مسبقاً لمنع تغير التخطيط (CLS)"
+
+known_issues:
+  - "جميع الصور حالياً وهمية (placehold.co)"
+  - "لا توجد أسعار حية ديناميكية"
+
+future_improvements:
+  - priority: "High"
+    task: "استبدال الصور الوهمية بصور حقيقية بصيغة WebP"
+  - priority: "Medium"
+    task: "فصل الأكواد (CSS/JS) إلى ملفات خارجية للتخزين المؤقت"
+
+last_updated: "2026-09-15"

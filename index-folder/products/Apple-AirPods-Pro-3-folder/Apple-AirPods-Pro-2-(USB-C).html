@@ -10,15 +10,25 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
 <link rel="alternate icon" href="/favicon.ico">
-<script src="https://t.contentsquare.net/uxa/f9739eb83d63e.js" defer></script>
-<link rel="stylesheet" href="/css/view-transition.css">
- <script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2553585');
+<script>
+(function () {
+  function loadContentsquare() {
+    const script = document.createElement("script");
+    script.src = "https://t.contentsquare.net/uxa/f9739eb83d63e.js";
+    script.defer = true;
+    document.head.appendChild(script);
+
+    window.removeEventListener("scroll", loadContentsquare);
+  }
+
+  window.addEventListener("scroll", loadContentsquare, {
+    passive: true,
+    once: true
+  });
+})();
 </script>
+<link rel="stylesheet" href="/css/view-transition.css">
+ 
 
 <link rel="manifest" href="/manifest.json">
 
@@ -55,11 +65,6 @@
 <meta name="twitter:description" content="Honest, data-backed review. Strong ANC, IP54, USB-C — but is it the right pick after AirPods Pro 3?">
 <meta name="twitter:image" content="https://ik.imagekit.io/ghmasgcim/51NRGHU2NoL._AC_UF1000,1000_QL80_FMwebp_.webp">
 <meta name="twitter:image:alt" content="Apple AirPods Pro 2 USB-C review by YallaBuy">
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 
 <title>Apple AirPods Pro (2nd Gen) with USB-C: Are They Still Worth Buying? | YallaBuy</title>
 
@@ -439,9 +444,9 @@ a { color: inherit; text-decoration: none; }
   --shadow-lg: 0 12px 40px rgba(20,20,20,.08);
   --max-w: 1240px;
   --content-w: 720px;
-  --font-sans: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-  --font-serif: 'Lora', Georgia, "Times New Roman", serif;
+  --font-sans:  system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display:  system-ui, sans-serif;
+  --font-serif:  Georgia, "Times New Roman", serif;
   --transition: 0.25s cubic-bezier(.4,0,.2,1);
 }
 
@@ -1774,13 +1779,7 @@ html[data-theme="dark"] .cc-tag.competitor { background: #1e3a5f; color: #93c5fd
     </article>
   </div>
 </div>
-<br>
-      <br>
-      <div class="ml-embedded" data-form="8yiAHL"></div>
 
-                   
-<br>
-<br>
 
 
 <!-- ===== FOOTER ===== -->
@@ -1797,7 +1796,7 @@ html[data-theme="dark"] .cc-tag.competitor { background: #1e3a5f; color: #93c5fd
       <br>
       <a href="../../../amazon/Editorial-Policy.html">Editorial Policy</a>
       <br>
-      <a href="../../../amazon/Terms-Conditions.html">Terms Conditions</a>
+      <a href="../../../amazon/terms-conditions.html">Terms Conditions</a>
       <a href="../../../amazon/Editorial-Process.html">Editorial Process</a>
       <a href="../../../amazon/How-We-Research.html">how we research</a>
            

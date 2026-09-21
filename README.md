@@ -26,7 +26,7 @@
   <img src="https://img.shields.io/badge/Offline-Support-green?style=flat-square" alt="Offline" />
 </p>
 
-**Live Demo:** [https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)
+**Live Demo:** [https://yallbuy.shop](https://yallbuy.shop)
 
 </div>
 
@@ -72,7 +72,7 @@ The name combines **"Yalla"** (Arabic for "Let's go!") + **"Buy"** — encouragi
 | **Markup** | HTML5 (Semantic) |
 | **Styling** | CSS3 (Custom, no frameworks) |
 | **Logic** | Vanilla JavaScript (ES6+) |
-| **Hosting** | [Vercel](https://vercel.com) |
+| **Hosting** | [Vercel](https://Cloudflare.com) |
 | **PWA** | Service Worker + Web App Manifest |
 | **Affiliate** | Amazon Associates |
 | **Security** | Custom `security.js` + HTTPS |
@@ -156,7 +156,7 @@ Yallabuy-/
 
 ## 🚀 Live Demo
 
-🔗 **[https://yallabuy-sg5c.vercel.app](https://yallabuy-sg5c.vercel.app)**
+🔗 **[https://yallbuy.shop](https://yallbuy.shop)**
 
 You can install it as a Progressive Web App on your phone or desktop.
 

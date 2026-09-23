@@ -1,0 +1,942 @@
+# توثيق صفحة مقالة USB Hub Firmware & Disconnects
+# Project: YallaBuy
+# File: page-documentation-usb-hub-firmware.yml
+# Type: Page Specification & Developer Reference
+# Status: Active
+# Page: /guides/usb-hub-firmware-disconnects.html
+# Last Updated: 2026-09-14
+
+meta:
+  project: YallaBuy
+  file: page-documentation-usb-hub-firmware.yml
+  type: page-specification
+  status: active
+  page_url: https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html
+  canonical: https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html
+  last_updated: 2026-09-14
+
+# ============================================================
+# 1. الغرض من الملف
+# ============================================================
+purpose:
+  description: "مرجع تقني كامل لصفحة مقالة USB Hub Firmware & Disconnects على موقع YallaBuy"
+  audience:
+    - developers_maintaining_page
+    - ai_assistants_editing_page
+    - reviewers_auditing_page
+    - new_contributors
+  note: "الملف ده مش شرح تعليمي. ده مرجع."
+
+# ============================================================
+# 2. تصنيف الصفحة
+# ============================================================
+page_classification:
+  page_type: informational_article
+  hub: guides
+  primary_intent: informational
+  author: Mahmoud Hamdy
+  author_role: Founder & Editor
+  contains_product: false
+  contains_amazon_cta: false
+  contains_faq: true
+  faq_count: 5
+  contains_affiliate_links: false
+  contains_ratings: false
+  contains_prices: false
+  summary: "مقالة معلوماتية خالصة بتشرح مشكلة انقطاع USB-C hubs، تحديثات الـ firmware، وأمان البيانات"
+
+# ============================================================
+# 3. هيكل الملف
+# ============================================================
+file_structure:
+  type: single_self_contained_html
+  css:
+    location: inline
+    placement: inside_head
+  javascript:
+    location: inline
+    placement: end_of_body
+  external_css_files: 0
+  external_js_files: 0
+  web_fonts: 0
+  third_party_scripts: 0
+  reasons:
+    - zero_render_blocking_requests
+    - no_font_downloads
+    - no_css_file_blocking_first_paint
+    - no_js_file_delaying_interactivity
+
+# ============================================================
+# 4. معمارية المحتوى
+# ============================================================
+content_architecture:
+  sections:
+    - id: null
+      title: Introduction
+      index: 1
+      type: intro
+    - id: firmware
+      title: "Can a firmware update really fix random disconnects?"
+      index: 2
+      type: main_section
+    - id: data-safety
+      title: "Is it safe to keep using a hub that disconnects an external SSD?"
+      index: 3
+      type: callout
+    - id: other-causes
+      title: "If it is not firmware, what is it?"
+      index: 4
+      type: main_section
+    - id: checklist
+      title: "A diagnostic checklist in order of cost"
+      index: 5
+      type: main_section
+    - id: replace
+      title: "When to just replace the hub"
+      index: 6
+      type: main_section
+    - id: sources-title
+      title: "Sources and further reading"
+      index: 7
+      type: sources
+    - id: faq-title
+      title: "Frequently asked questions"
+      index: 8
+      type: faq
+    - id: author-title
+      title: "About the author"
+      index: 9
+      type: author_card
+
+  content_source:
+    original_content:
+      - "سؤالين وجواب (firmware + أمان SSD)"
+      - "قائمة بـ 8 مصادر"
+    expanded_content:
+      - introduction
+      - deeper_explanation_of_each_qa
+      - section_on_other_causes_power_cables_os_bandwidth
+      - diagnostic_checklist_7_steps
+      - when_to_replace_section
+    rule: "كل المحتوى الزيادة مبني حصريًا على المصادر الـ 8 المذكورة. مفيش أي ادعاءات اتخترعت."
+
+  writing_style:
+    voice: direct_second_person
+    sentences: short
+    no_fluff: true
+    tone: technical_but_accessible
+    emphasis: em-dashes
+    bold: for_critical_warnings
+    lists: for_steps_and_symptoms
+    code: for_system_commands
+
+# ============================================================
+# 5. الالتزام بـ Design System
+# ============================================================
+design_system:
+  version: 1.2
+  compliance: full
+
+  design_tokens:
+    colors:
+      light:
+        bg: "#fbfaf7"
+        bg-soft: "#f3f1ec"
+        surface: "#ffffff"
+        surface-2: "#f8f6f1"
+        text: "#1a1a1a"
+        text-2: "#4a4a4a"
+        muted: "#767676"
+        border: "#e8e4dc"
+        border-strong: "#d8d2c5"
+        brand: "#0f766e"
+        brand-soft: "#ccfbf1"
+        brand-deep: "#134e4a"
+        accent: "#b45309"
+      dark:
+        bg: "#14181b"
+        bg-soft: "#1a1f23"
+        surface: "#1c2226"
+        surface-2: "#20262a"
+        text: "#f1f1ef"
+        text-2: "#c4c4c2"
+        muted: "#8f9396"
+        border: "#2a3136"
+        border-strong: "#3a4247"
+        brand: "#2dd4bf"
+        brand-soft: "#0f2e2b"
+        brand-deep: "#5eead4"
+        accent: "#f59e0b"
+
+    spacing:
+      s1: "4px"
+      s2: "8px"
+      s3: "12px"
+      s4: "16px"
+      s5: "24px"
+      s6: "32px"
+      s7: "48px"
+      s8: "64px"
+      rule: "مفيش قيم مسافات عشوائية في أي مكان"
+
+    radius:
+      r-sm: "8px"
+      r: "14px"
+      r-lg: "22px"
+
+    shadows:
+      sh-sm: "0 1px 2px rgba(20,20,20,.04), 0 2px 8px rgba(20,20,20,.04)"
+      sh: "0 4px 24px rgba(20,20,20,.06)"
+      sh-lg: "0 12px 40px rgba(20,20,20,.08)"
+
+    z_index:
+      z-dropdown: 100
+      z-sticky: 200
+      z-mobile: 300
+      z-modal: 400
+      z-toast: 500
+
+  typography:
+    system_fonts_only: true
+    no_web_fonts: true
+    no_font_face: true
+    no_google_fonts: true
+    no_font_preload: true
+    no_font_display_swap: true
+    roles:
+      editorial_body:
+        font: 'Georgia, "Times New Roman", serif'
+        usage:
+          - paragraphs
+          - lists
+          - faq_answers
+      ui:
+        font: 'Arial, Helvetica, sans-serif'
+        usage:
+          - headings
+          - buttons
+          - metadata
+          - navigation
+          - chips
+          - source_tags
+    heading_sizes:
+      h1: "clamp(28px, 4vw, 44px)"
+      h2: "28px"
+      h3: "22px"
+    body_text:
+      size: "18px"
+      line_height: "1.7"
+    rules:
+      - typography ثابت قبل وبعد تحميل الصفحة
+      - مفيش layout shift بسبب الخطوط
+
+  dark_mode:
+    mechanism: data-theme_attribute
+    element: html
+    default: light
+    toggle: "#theme-toggle"
+    storage_key: yallabuy-theme
+    storage_type: localStorage
+    rules:
+      - tokens بتتبدل بس (ألوان، خلفيات، حدود)
+      - components مش بتتغير شكلها
+      - spacing مش بيتغير
+      - typography مش بتتغير
+      - layout مش بيتغير
+      - التفضيل بيتحفظ في localStorage
+      - لو localStorage مش متاح، التبديل شغال بس مش بيتحفظ
+
+  transitions:
+    default: "0.25s cubic-bezier(.4,0,.2,1)"
+    faq_accordion: "border-color, box-shadow"
+    faq_icon: "transform: rotate(45deg)"
+    hover_headings: "color change"
+    reduced_motion:
+      respected: true
+      implementation: |
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+# ============================================================
+# 6. هيكل المكونات (Component Architecture)
+# ============================================================
+components:
+  header:
+    element: '<header class="site-header" role="banner">'
+    position: sticky
+    top: 0
+    z_index: z-sticky
+    background: surface
+    border_bottom: "1px solid var(--border)"
+    contents:
+      - logo
+      - primary_navigation
+      - theme_toggle_button
+      - mobile_menu_toggle
+    mobile_behavior:
+      primary_nav_hidden: true
+      menu_toggle_visible: true
+      menu_container: "#mobile-menu"
+      close_on_link_click: true
+      close_on_escape: true
+      return_focus_to_toggle: true
+
+  hero:
+    element: '<section class="hero">'
+    desktop_layout: two_columns
+    mobile_layout: one_column
+    max_width: 1240px
+    contents:
+      - breadcrumbs
+      - category_chip
+      - h1_title
+      - description
+      - author_meta
+      - hero_image
+    hero_image:
+      is_lcp: true
+      loading: eager
+      fetchpriority: high
+      decoding: async
+      width: 1200
+      height: 675
+      preload: true
+
+  article_body:
+    element: '<article class="article-body">'
+    max_width: 720px
+    paragraph_font: 'Georgia, serif'
+    paragraph_size: 18px
+    paragraph_line_height: 1.7
+    heading_font: 'Arial, sans-serif'
+    heading_sizes:
+      h2: 28px
+      h3: 22px
+
+  callout:
+    element: '<section class="callout" role="note">'
+    background: brand-soft
+    border_left: "4px solid var(--brand)"
+    padding: s5
+    border_radius: r-sm
+    purpose: "إبراز تحذير أمان البيانات"
+
+  sources:
+    element: '<section class="sources">'
+    background: bg-soft
+    layout: vertical_list
+    each_item: tag + description
+    tag_background: surface
+    tag_text_color: brand-deep
+
+  faq_accordion:
+    element: '<section class="faq">'
+    item_element: '.faq-item'
+    trigger_element: '.faq-trigger'
+    panel_element: '.faq-panel'
+    closed_state:
+      aria_expanded: false
+      panel_hidden: true
+    open_state:
+      aria_expanded: true
+      panel_visible: true
+      class_is_open: true
+    icon:
+      closed: "+"
+      open: "× (rotated 45deg)"
+    keyboard:
+      enter_space: toggle
+      escape: close_open_item
+      arrow_down: next_question
+      arrow_up: previous_question
+    aria:
+      trigger_aria_expanded: true
+      trigger_aria_controls: true
+      panel_role: region
+      panel_aria_labelledby: true
+
+  author_card:
+    element: '<aside class="author-card">'
+    contents:
+      - avatar (MH)
+      - author_name
+      - author_role
+      - author_bio
+    avatar:
+      size: 56px
+      shape: circle
+      background: brand
+      color: white
+      font: Arial sans-serif
+
+  footer:
+    element: '<footer class="site-footer" role="contentinfo">'
+    desktop_layout: two_columns
+    mobile_layout: one_column
+    contents:
+      - logo
+      - tagline
+      - categories_links
+      - company_links
+      - copyright
+
+# ============================================================
+# 7. الـ Meta Tags
+# ============================================================
+meta_tags:
+  primary:
+    title: "Can a Firmware Update Fix USB Hub Disconnects? (And Is It Safe?) | YallaBuy"
+    description: "A practical explainer on whether firmware updates can fix random USB-C hub disconnects, why an external SSD disconnect loop is a data-safety risk, and the diagnostic steps worth trying before replacing your hub."
+    author: Mahmoud Hamdy
+    robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    canonical: https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html
+    theme_color: "#0f766e"
+
+  open_graph:
+    og_type: article
+    og_site_name: YallaBuy
+    og_title: "Can a Firmware Update Fix USB Hub Disconnects? (And Is It Safe?)"
+    og_description: "Whether a firmware update can fix random USB-C hub disconnects, why SSD disconnect loops are a data-safety risk, and what to try before replacing your hub."
+    og_url: https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html
+    og_image: https://yallabuy.shop/images/articles/usb-hub-disconnect-explainer-placeholder.avif
+    og_image_width: 1200
+    og_image_height: 675
+    og_image_alt: "USB-C hub disconnected from a laptop"
+    og_locale: en_US
+    article_author: Mahmoud Hamdy
+    article_published_time: REPLACE_WITH_REAL_PUBLISH_DATE
+    article_modified_time: REPLACE_WITH_REAL_MODIFIED_DATE
+    article_section: Peripherals
+    article_tag: "USB-C, firmware, hubs, SSD, troubleshooting"
+
+  twitter_card:
+    card: summary_large_image
+    twitter_title: "Can a Firmware Update Fix USB Hub Disconnects? (And Is It Safe?)"
+    twitter_description: "Whether a firmware update can fix random USB-C hub disconnects, why SSD disconnect loops are a data-safety risk, and what to try before replacing your hub."
+    twitter_image: https://yallabuy.shop/images/articles/usb-hub-disconnect-explainer-placeholder.avif
+    twitter_image_alt: "USB-C hub disconnected from a laptop"
+
+  warnings:
+    - "التواريخ placeholders لازم تتسدبل قبل النشر"
+    - "متخترعش تواريخ"
+
+# ============================================================
+# 8. الـ JSON-LD Schema
+# ============================================================
+json_ld:
+  format: json-ld
+  placement: head
+  count: 6
+
+  schemas_present:
+    - type: Organization
+      id: "https://yallabuy.shop/#organization"
+      properties:
+        name: YallaBuy
+        url: https://yallabuy.shop/
+      reason: "تعريف YallaBuy كـ organization"
+
+    - type: WebSite
+      id: "https://yallabuy.shop/#website"
+      properties:
+        name: YallaBuy
+        url: https://yallabuy.shop/
+      reason: "تعريف الموقع"
+
+    - type: Person
+      id: "https://yallabuy.shop/author/mahmoud-hamdy.html#person"
+      properties:
+        name: Mahmoud Hamdy
+        jobTitle: Founder & Editor
+        url: https://yallabuy.shop/author/mahmoud-hamdy.html
+        worksFor:
+          id: "https://yallabuy.shop/#organization"
+      reason: "تعريف الكاتب"
+
+    - type: BreadcrumbList
+      items:
+        - position: 1
+          name: Home
+          item: https://yallabuy.shop/
+        - position: 2
+          name: Guides
+          item: https://yallabuy.shop/guides/
+        - position: 3
+          name: "USB Hub Firmware & Disconnects"
+          item: https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html
+      reason: "مسار التنقل في الموقع"
+
+    - type: Article
+      id: "https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html#article"
+      properties:
+        headline: "Can a Firmware Update Fix USB Hub Disconnects? (And Is It Safe?)"
+        description: "A practical explainer on whether firmware updates can fix random USB-C hub disconnects and why an external SSD disconnect loop is a data-safety risk."
+        image:
+          type: ImageObject
+          url: https://yallabuy.shop/images/articles/usb-hub-disconnect-explainer-placeholder.avif
+          width: 1200
+          height: 675
+        mainEntityOfPage: https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html
+        author:
+          id: "https://yallabuy.shop/author/mahmoud-hamdy.html#person"
+        publisher:
+          id: "https://yallabuy.shop/#organization"
+        isPartOf:
+          id: "https://yallabuy.shop/#website"
+        about: "USB-C hub disconnects, firmware updates, and external SSD data safety"
+      reason: "المقالة نفسها"
+
+    - type: FAQPage
+      questions_count: 5
+      matches_visible_html: true
+      reason: "الأسئلة الشائعة المرئية"
+
+  schemas_absent_intentionally:
+    - type: Product
+      reason: "مفيش منتج محدد في الصفحة"
+    - type: Offer
+      reason: "مفيش سعر معروض"
+    - type: Review
+      reason: "مفيش مراجعة لمنتج"
+    - type: AggregateRating
+      reason: "مفيش تقييم"
+    - type: ItemList
+      reason: "الصفحة مش قائمة منتجات"
+
+  entity_ids:
+    organization: "https://yallabuy.shop/#organization"
+    website: "https://yallabuy.shop/#website"
+    person: "https://yallabuy.shop/author/mahmoud-hamdy.html#person"
+    article: "https://yallabuy.shop/guides/usb-hub-firmware-disconnects.html#article"
+
+  rules_followed:
+    - "Structured data must represent the visible page"
+    - "Never invent structured-data facts"
+    - "Do not add schema just because it exists"
+    - "FAQ schema must match visible FAQs"
+    - "Use @id to link entities"
+    - "No datePublished or dateModified invented"
+
+# ============================================================
+# 9. معمارية الـ CSS
+# ============================================================
+css_architecture:
+  type: inline
+  placement: inside_head
+
+  order:
+    - design_tokens_root
+    - dark_mode_tokens
+    - reset
+    - focus_styles
+    - skip_link
+    - container
+    - header
+    - hero
+    - article_body
+    - callout
+    - sources
+    - faq
+    - author_card
+    - reduced_motion
+    - footer
+    - responsive_rules
+
+  responsive_breakpoints:
+    - breakpoint: 768px
+      changes:
+        - container padding 20px
+        - primary nav hidden
+        - menu toggle visible
+        - hero one column
+        - footer one column
+
+  css_rules:
+    - all values from tokens
+    - focus-visible used instead of focus
+    - focus-visible outline 3px brand color
+    - no !important
+    - no unnecessary specificity
+    - selectors clear and descriptive
+
+# ============================================================
+# 10. معمارية الـ JavaScript
+# ============================================================
+javascript_architecture:
+  type: inline
+  placement: end_of_body
+  pattern: IIFE
+  use_strict: true
+  globals: 0
+
+  functions:
+    - name: initThemeToggle
+      purpose: "تبديل بين light/dark mode + حفظ في localStorage"
+      storage_key: yallabuy-theme
+      steps:
+        - read preference from localStorage
+        - apply theme if exists
+        - update aria-pressed
+        - on click toggle theme
+        - update aria-pressed
+        - save to localStorage
+        - if localStorage unavailable print warning
+
+    - name: initMobileMenu
+      purpose: "فتح/قفل قائمة الموبايل + Escape"
+      elements:
+        - "#menu-toggle"
+        - "#mobile-menu"
+      steps:
+        - select toggle and menu
+        - if either missing return
+        - on click toggle aria-expanded and hidden
+        - on link click close menu
+        - on Escape close menu and return focus
+
+    - name: initFaq
+      purpose: "تشغيل الـ FAQ accordion + keyboard navigation"
+      elements:
+        - ".faq-trigger"
+      steps:
+        - select all triggers
+        - if none return
+        - for each trigger add click event
+        - for each trigger add Escape keydown
+        - add ArrowUp/ArrowDown navigation
+      keyboard:
+        enter_space: toggle
+        escape: close open item
+        arrow_down: next question
+        arrow_up: previous question
+
+    - name: initImageFallback
+      purpose: "تبديل الصور المكسورة بـ placeholder"
+      elements:
+        - all img tags
+      steps:
+        - select all images
+        - for each image add error event listener
+        - on error swap src with SVG placeholder
+        - set data-fallback-applied to prevent repeat
+      placeholder:
+        type: svg_inline
+        text: "Image unavailable"
+        no_network_request: true
+        cls_safe: true
+
+  js_rules:
+    - const and let only no var
+    - defensive null checks before any DOM operation
+    - addEventListener only no inline handlers
+    - no innerHTML with untrusted data
+    - no eval
+    - no globals
+    - no secrets in code
+    - all errors handled visibly console.warn
+    - initialization after DOMContentLoaded
+
+  initialization:
+    function: init
+    timing: "DOMContentLoaded or immediate if already loaded"
+    call_order:
+      - initThemeToggle
+      - initMobileMenu
+      - initFaq
+      - initImageFallback
+
+# ============================================================
+# 11. الـ Accessibility
+# ============================================================
+accessibility:
+  standard: WCAG 2.2 Level AA
+
+  semantic_html:
+    header: true
+    nav: true
+    main: true
+    section: true
+    article: true
+    aside: true
+    footer: true
+    button: true
+    a: true
+    rule: "مفيش div في مكان لازم فيه عنصر دلالي"
+
+  aria:
+    skip_link: true
+    theme_toggle:
+      aria_label: "Toggle dark mode"
+      aria_pressed: true
+    menu_toggle:
+      aria_label: "Open menu"
+      aria_expanded: true
+      aria_controls: true
+    faq_triggers:
+      aria_expanded: true
+      aria_controls: true
+    faq_panels:
+      role: region
+      aria_labelledby: true
+    breadcrumbs:
+      aria_label: "Breadcrumb"
+      aria_current: page
+    author_card:
+      aria_labelledby: author-title
+    rule: "Prefer native HTML semantics before ARIA"
+
+  focus:
+    focus_visible: true
+    outline: "3px solid var(--brand)"
+    outline_offset: 2px
+    tab_order: visual_order
+    no_keyboard_traps: true
+    skip_link_visible_on_focus: true
+
+  keyboard:
+    links: Enter
+    buttons: Enter or Space
+    faq: Enter or Space or Escape or ArrowUp or ArrowDown
+    mobile_menu: Click or Escape
+    theme_toggle: Click
+
+  touch:
+    min_button_size: "40x40px"
+    no_hover_only_functionality: true
+    mobile_menu_touch: true
+    faq_accordion_touch: true
+
+# ============================================================
+# 12. الأداء (Performance)
+# ============================================================
+performance:
+  targets:
+    lcp: "< 2.5s"
+    inp: "< 200ms"
+    cls: "< 0.1"
+
+  lcp_strategy:
+    - hero image preloaded with fetchpriority high
+    - hero image eager not lazy
+    - css inline no blocking request
+    - no web fonts zero font requests
+    - no render-blocking scripts
+
+  cls_strategy:
+    - all images have width and height attributes
+    - font stable no font swap
+    - no content inserted above existing content
+    - faq panels open without layout jump
+
+  inp_strategy:
+    - all js at end of body
+    - no third-party scripts
+    - event listeners lightweight
+    - no long-running main thread javascript
+
+  network_requests:
+    html: 1
+    css: 0
+    js: 0
+    fonts: 0
+    hero_image: 1
+    total_base: 2
+
+# ============================================================
+# 13. استراتيجية الصور
+# ============================================================
+image_strategy:
+  hero_image:
+    loading: eager
+    fetchpriority: high
+    decoding: async
+    width: 1200
+    height: 675
+    preload: true
+    is_lcp: true
+    rule: "Never lazy-load the LCP image"
+    alt: "A USB-C hub disconnected from a laptop, lying on a desk next to a coiled cable"
+
+  fallback_strategy:
+    trigger: image error event
+    action: swap src with SVG placeholder
+    placeholder_type: svg_inline
+    placeholder_text: "Image unavailable"
+    prevention_flag: data-fallback-applied
+    cls_safe: true
+    no_network_request: true
+    benefits:
+      - layout لاينهارش لو الصورة مش متاحة
+      - المستخدم بيشوف رسالة واضحة
+      - مفيش طلب شبكة إضافي
+
+  alt_text_rules:
+    - descriptive not keyword-stuffed
+    - describes visual content
+    - empty alt for decorative images only
+
+# ============================================================
+ ============================================================
+# 15. الـ Testing Notes
+# ============================================================
+testing:
+  code_inspection:
+    html_validity: PASS
+    css_validity: PASS
+    js_syntax: PASS
+    aria_correctness: PASS
+    schema_org_validity: PASS
+    design_system_compliance: PASS
+    internal_linking_rules: PASS
+
+  runtime_testing:
+    browser_testing: NOT_RUN
+    keyboard_testing: NOT_RUN
+    screen_reader_testing: NOT_RUN
+    mobile_testing: NOT_RUN
+    pagespeed_insights: NOT_RUN
+    rich_results_test: NOT_RUN
+    schema_markup_validator: NOT_RUN
+    search_console: NOT_RUN
+
+  pre_publish_recommendations:
+    - test in Chrome Firefox Safari
+    - test keyboard navigation Tab Enter Space Escape arrows
+    - test screen reader NVDA or VoiceOver
+    - test on mobile touch and responsive
+    - test PageSpeed Insights mobile
+    - test Rich Results Test
+    - test Schema Markup Validator
+    - verify all placeholders replaced
+
+# ============================================================
+# 16. الـ Placeholders اللي لازم تتسدبل
+# ============================================================
+placeholders:
+  - item: publish_date
+    current: REPLACE_WITH_REAL_PUBLISH_DATE
+    replace_with: real ISO 8601 date
+    locations:
+      - meta article:published_time
+  - item: modified_date
+    current: REPLACE_WITH_REAL_MODIFIED_DATE
+    replace_with: real ISO 8601 date
+    locations:
+      - meta article:modified_time
+  - item: hero_image
+    current: /images/articles/usb-hub-disconnect-explainer-placeholder.avif
+    replace_with: real image 1200x675
+    locations:
+      - og:image
+      - twitter:image
+      - preload link
+      - img src
+      - JSON-LD Article image
+  - item: hero_image_alt
+    current: "A USB-C hub disconnected from a laptop, lying on a desk next to a coiled cable"
+    replace_with: description of real image
+    locations:
+      - og:image:alt
+      - twitter:image:alt
+      - img alt
+
+  rule: "Never invent dates. Never invent image URLs."
+
+# ============================================================
+# 17. القيود المعروفة (Known Limitations)
+# ============================================================
+known_limitations:
+  placeholders:
+    - dates not present in meta or JSON-LD
+    - hero image is placeholder
+    - must be replaced before publish
+
+  json_ld:
+    - Article schema has no datePublished or dateModified
+    - dates must be added in ISO 8601 when available
+
+  mobile_menu:
+    - closes when any link inside is clicked
+    - closes on Escape
+    - intended behavior
+
+  faq:
+    - only one question open at a time
+    - intentional design choice
+    - to allow multiple open remove the close-others code
+
+# ============================================================
+# 18. العلاقة مع المواصفات التانية
+# ============================================================
+spec_relationships:
+  this_file:
+    describes: "شرح صفحة محددة"
+  yallabuy_design_system:
+    describes: "الـ visual tokens و الـ components"
+  javascript_standards:
+    describes: "قواعد الـ JavaScript"
+  accessibility:
+    describes: "قواعد الـ accessibility"
+  images:
+    describes: "قواعد الصور"
+  internal_linking:
+    describes: "قواعد الروابط الداخلية"
+  testing:
+    describes: "قواعد الـ testing"
+  schema_master_guide:
+    describes: "قواعد الـ JSON-LD"
+  performance_guidelines:
+    describes: "قواعد الأداء"
+  rule: "كل المواصفات لازم تشتغل سوا"
+
+# ============================================================
+# 19. Checklist قبل النشر
+# ============================================================
+pre_publish_checklist:
+  - dates replaced with real values
+  - hero image replaced with real image
+  - alt text matches real image
+  - canonical URL correct
+  - all internal links use yallabuy.shop
+  - no Vercel URLs
+  - JSON-LD valid Rich Results Test
+  - JSON-LD valid Schema Markup Validator
+  - PageSpeed Insights LCP under 2.5s INP under 200ms CLS under 0.1
+  - keyboard testing done
+  - screen reader testing done
+  - mobile testing done
+  - FAQ visible matches FAQPage schema
+  - no console errors
+  - dark mode works
+  - mobile menu works
+  - faq accordion works with keyboard
+  - image fallback works test with broken image
+
+# ============================================================
+# 20. المبدأ النهائي
+# ============================================================
+final_principle:
+  page_type: informational_article
+  not_a_product_page: true
+  not_a_review_page: true
+  not_a_sales_page: true
+
+  schema_represents_visible_content: true
+  design_system_followed: true
+  accessibility_built_in: true
+  performance_integrated: true
+
+  edit_rules:
+    - المحتوى الزيادة مبني على مصادر موثقة
+    - الـ schema الجديد بيمثل المحتوى المرئي
+    - الـ design tokens مستخدمة
+    - الـ accessibility محفوظة
+    - الـ performance مش اتأثرت سلبًا
+    - الـ testing اتعمل بعد التعديل
+
+  goal: "الهدف مش إن الصفحة تبقى كبيرة. الهدف إنها تبقى صحيحة."

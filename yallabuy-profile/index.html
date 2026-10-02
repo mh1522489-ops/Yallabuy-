@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About YallaBuy — Better decisions begin with better understanding</title>
+<meta name="description" content="YallaBuy helps people understand products, explore meaningful differences, and make more informed purchasing decisions through organized research and editorial clarity." />
+<link rel="canonical" href="https://yallbuy.shop/yallabuy-profile/" />
+<meta name="theme-color" content="#FFFFFF" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================
+   Design tokens
+========================================================= */
+:root{
+  --bg:#FFFFFF;
+  --warm:#FFF9F0;
+  --surface:#F6F6F3;
+  --orange:#FF9900;
+  --orange-hover:#E88900;
+  --text:#202124;
+  --muted:#666666;
+  --border:#E8E8E5;
+  --soft-orange:#FFF0D9;
+  --ink:#1A1A1A;
+  --serif:'Fraunces', Georgia, serif;
+  --sans:'Inter', system-ui, -apple-system, sans-serif;
+  --ease:cubic-bezier(0.22, 0.61, 0.36, 1);
+  --shadow-soft:0 2px 10px rgba(0,0,0,0.04), 0 24px 60px -28px rgba(0,0,0,0.10);
+  --shadow-lift:0 4px 14px rgba(0,0,0,0.05), 0 40px 80px -30px rgba(255,153,0,0.18);
+  --r-lg:24px;
+  --r-md:16px;
+  --r-sm:10px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.6;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+
+::selection{background:var(--soft-orange);color:var(--ink)}
+
+:focus-visible{
+  outline:2.5px solid var(--orange);
+  outline-offset:3px;
+  border-radius:6px;
+}
+
+.wrap{max-width:1320px;margin:0 auto;padding:0 28px}
+
+/* =========================================================
+   Header
+========================================================= */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,0.78);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  height:68px;
+}
+.brand{
+  display:flex;align-items:center;gap:8px;
+  font-family:var(--serif);font-weight:600;font-size:22px;
+  letter-spacing:-0.02em;color:var(--ink);
+}
+.brand::after{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--orange);display:inline-block;
+  box-shadow:0 0 0 3px var(--soft-orange);
+}
+.nav-links{
+  display:flex;align-items:center;gap:34px;list-style:none;
+}
+.nav-links a{
+  font-size:14.5px;color:var(--text);font-weight:500;
+  position:relative;padding:6px 0;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:100%;bottom:0;
+  height:1.5px;background:var(--orange);
+  transition:right 0.35s var(--ease);
+}
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after{right:0}
+.nav-links a.active{color:var(--orange-hover)}
+.nav-links a.active::after{right:0;background:var(--orange-hover)}
+.nav-cta{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--ink);color:#fff;padding:10px 18px;
+  border-radius:100px;font-size:14px;font-weight:500;
+  transition:background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.nav-cta:hover{background:var(--orange-hover);transform:translateY(-1px)}
+
+.nav-toggle{display:none}
+
+@media (max-width:880px){
+  .nav-links{
+    position:fixed;inset:68px 0 auto 0;
+    background:rgba(255,255,255,0.96);
+    backdrop-filter:blur(20px);
+    flex-direction:column;gap:0;
+    padding:20px 28px;border-bottom:1px solid var(--border);
+    transform:translateY(-12px);opacity:0;pointer-events:none;
+    transition:transform 0.3s var(--ease), opacity 0.3s var(--ease);
+  }
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav-links li{width:100%;border-bottom:1px solid var(--border)}
+  .nav-links a{display:block;padding:16px 0;font-size:18px}
+  .nav-cta{display:none}
+  .nav-toggle{
+    display:flex;flex-direction:column;justify-content:space-between;
+    width:30px;height:22px;background:none;border:none;cursor:pointer;
+  }
+  .nav-toggle span{display:block;height:2px;width:100%;background:var(--ink);border-radius:2px;transition:transform 0.3s var(--ease)}
+}
+
+/* =========================================================
+   Hero
+========================================================= */
+.hero{
+  position:relative;
+  padding:clamp(60px, 9vw, 120px) 0 clamp(40px, 6vw, 80px);
+  background:
+    radial-gradient(1200px 600px at 85% 0%, var(--warm), transparent 60%),
+    radial-gradient(800px 500px at -10% 30%, var(--soft-orange), transparent 70%),
+    var(--bg);
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr 1fr;
+  gap:clamp(40px, 5vw, 80px);align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12.5px;font-weight:600;
+  letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--orange-hover);
+}
+.eyebrow::before{
+  content:"";width:28px;height:1.5px;background:var(--orange);
+}
+.hero-title{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(2.6rem, 6.2vw, 5.4rem);
+  line-height:1.02;
+  letter-spacing:-0.025em;
+  color:var(--ink);
+  margin:24px 0 28px;
+  font-variation-settings:"opsz" 120, "SOFT" 50;
+}
+.hero-title em{
+  font-style:italic;font-weight:300;
+  color:var(--orange-hover);
+  position:relative;display:inline-block;
+}
+.hero-title em::after{
+  content:"";position:absolute;left:-4%;right:-4%;bottom:6%;height:14%;
+  background:var(--soft-orange);z-index:-1;border-radius:6px;
+  transform:rotate(-1deg);
+}
+.hero-lead{
+  font-size:clamp(1.05rem, 1.4vw, 1.2rem);
+  color:var(--muted);
+  max-width:540px;
+  line-height:1.7;
+  margin-bottom:36px;
+}
+.hero-cta{
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--orange);color:var(--ink);
+  padding:16px 26px;border-radius:100px;
+  font-weight:600;font-size:15px;
+  transition:background 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  box-shadow:0 10px 30px -10px rgba(255,153,0,0.6);
+}
+.btn-primary:hover{
+  background:var(--orange-hover);color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 16px 36px -10px rgba(232,137,0,0.5);
+}
+.btn-primary svg{width:16px;height:16px;transition:transform 0.3s var(--ease)}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-link{
+  display:inline-flex;align-items:center;gap:8px;
+  font-weight:500;font-size:15px;color:var(--ink);
+  padding:14px 4px;position:relative;
+}
+.btn-link::after{
+  content:"";position:absolute;left:4px;right:4px;bottom:8px;height:1px;
+  background:var(--ink);transform-origin:left;transform:scaleX(1);
+  transition:transform 0.35s var(--ease);
+}
+.btn-link:hover::after{transform:scaleX(0)}
+.btn-link svg{width:14px;height:14px;transition:transform 0.3s var(--ease)}
+.btn-link:hover svg{transform:translate(3px,-3px)}
+
+/* Hero visual composition */
+.hero-visual{
+  position:relative;
+  perspective:1400px;
+  min-height:520px;
+}
+.hero-layer{
+  position:absolute;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  transform-style:preserve-3d;
+  box-shadow:var(--shadow-soft);
+  will-change:transform;
+}
+.hero-layer--main{
+  top:0;right:0;width:78%;height:78%;
+  transform:translateZ(0);
+  background:linear-gradient(140deg,#F6F6F3,#FFF9F0);
+}
+.hero-layer--main img{
+  width:100%;height:100%;object-fit:cover;
+  mix-blend-mode:multiply;opacity:0.92;
+}
+.hero-layer--accent{
+  bottom:0;left:0;width:46%;height:46%;
+  background:var(--soft-orange);
+  transform:translateZ(60px);
+  display:flex;align-items:flex-end;padding:18px;
+}
+.hero-layer--accent span{
+  font-family:var(--serif);font-style:italic;font-size:14px;
+  color:var(--orange-hover);font-weight:500;line-height:1.3;
+}
+.hero-layer--detail{
+  top:8%;left:6%;width:30%;height:24%;
+  background:#fff;border:1px solid var(--border);
+  transform:translateZ(110px);
+  padding:14px;display:flex;flex-direction:column;justify-content:space-between;
+  border-radius:var(--r-md);
+}
+.hero-layer--detail .tag{
+  font-size:9.5px;font-weight:700;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--orange-hover);
+}
+.hero-layer--detail .num{
+  font-family:var(--serif);font-size:28px;font-weight:500;
+  color:var(--ink);letter-spacing:-0.02em;
+}
+.hero-layer--detail .bar{
+  height:4px;background:var(--surface);border-radius:2px;overflow:hidden;
+}
+.hero-layer--detail .bar i{
+  display:block;height:100%;width:72%;
+  background:linear-gradient(90deg,var(--orange),var(--orange-hover));
+  border-radius:2px;
+}
+.hero-orb{
+  position:absolute;width:140px;height:140px;
+  right:-30px;bottom:-30px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #FFD37A, var(--orange));
+  transform:translateZ(40px);
+  filter:blur(0.4px);
+  box-shadow:0 30px 60px -20px rgba(255,153,0,0.45);
+}
+/* ✅ FIXED: removed translateX(-100%) so text is visible */
+.hero-meta{
+  position:absolute;left:0;top:46%;
+  display:flex;flex-direction:column;gap:2px;
+  transform:translateZ(80px);
+  padding-right:18px;text-align:right;
+  margin-left:-140px;
+  z-index:5;
+}
+.hero-meta b{
+  font-family:var(--serif);font-size:46px;font-weight:500;
+  color:var(--ink);line-height:1;letter-spacing:-0.02em;
+}
+.hero-meta small{
+  font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{min-height:420px;margin-top:20px}
+  .hero-meta{display:none}
+}
+
+/* =========================================================
+   Section heading
+========================================================= */
+.section-head{
+  max-width:720px;margin:0 auto clamp(48px, 6vw, 80px);
+  text-align:center;
+}
+.section-head .eyebrow{justify-content:center}
+.section-head .eyebrow::before{display:none}
+.section-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2rem, 4.4vw, 3.4rem);
+  line-height:1.08;letter-spacing:-0.025em;
+  color:var(--ink);margin:18px 0 18px;
+  font-variation-settings:"opsz" 120;
+}
+.section-head p{
+  color:var(--muted);font-size:1.05rem;max-width:560px;margin:0 auto;
+}
+
+/* =========================================================
+   Bento grid
+========================================================= */
+.bento-section{
+  padding:clamp(60px, 8vw, 110px) 0;
+  background:linear-gradient(180deg, var(--bg) 0%, var(--surface) 100%);
+}
+.bento{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  gap:22px;
+  grid-auto-rows:minmax(220px, auto);
+}
+.card{
+  position:relative;
+  border-radius:var(--r-lg);
+  background:#fff;
+  border:1px solid var(--border);
+  overflow:hidden;
+  isolation:isolate;
+  transition:box-shadow 0.5s var(--ease), border-color 0.5s var(--ease);
+  will-change:transform;
+  perspective:1200px;
+}
+.card:hover{
+  box-shadow:var(--shadow-lift);
+  border-color:transparent;
+}
+.card__inner{
+  position:relative;display:block;
+  width:100%;height:100%;
+  transform-style:preserve-3d;
+  transition:transform 0.6s var(--ease);
+  will-change:transform;
+}
+.card__visual{
+  position:absolute;inset:0;
+  transform:translateZ(20px);
+  transition:transform 0.6s var(--ease);
+  overflow:hidden;
+}
+.card__content{
+  position:absolute;inset:auto 0 0 0;
+  padding:28px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  z-index:3;
+  transform:translateZ(40px);
+  background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.85) 35%, #fff 70%);
+  /* ✅ FIXED: prevent text being hidden during 3D tilt */
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+}
+.card__eyebrow{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--orange-hover);margin-bottom:10px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.card__eyebrow::before{
+  content:"";width:18px;height:1px;background:var(--orange);
+}
+.card__title{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.4rem, 2vw, 1.9rem);
+  line-height:1.12;letter-spacing:-0.02em;
+  color:var(--ink);margin-bottom:10px;
+}
+.card__desc{
+  font-size:14.5px;color:var(--muted);
+  line-height:1.55;max-width:46ch;
+}
+.card__cta{
+  margin-top:18px;
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13.5px;font-weight:600;color:var(--ink);
+  letter-spacing:0.02em;
+}
+.card__cta .arrow{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  transition:transform 0.35s var(--ease), background 0.35s var(--ease);
+}
+.card__cta .arrow svg{width:13px;height:13px}
+.card:hover .card__cta .arrow{
+  background:var(--orange);transform:rotate(-45deg) scale(1.05);
+}
+
+/* Card sizing */
+.card--1{grid-column:span 7;grid-row:span 2;min-height:480px}
+.card--2{grid-column:span 5;grid-row:span 1}
+.card--3{grid-column:span 5;grid-row:span 1}
+.card--4{grid-column:span 12;grid-row:span 1;min-height:340px}
+.card--5{grid-column:span 5;grid-row:span 1}
+.card--6{grid-column:span 7;grid-row:span 1;min-height:340px}
+
+@media (max-width:1024px){
+  .bento{grid-template-columns:repeat(6,1fr)}
+  .card--1{grid-column:span 6;grid-row:span 1;min-height:auto}
+  .card--2,.card--3{grid-column:span 3}
+  .card--4{grid-column:span 6}
+  .card--5,.card--6{grid-column:span 3}
+  .card--6{min-height:280px}
+}
+@media (max-width:680px){
+  .bento{grid-template-columns:1fr;gap:16px}
+  .card{grid-column:span 1 !important;min-height:280px !important}
+}
+
+/* ===== Card 1: Why YallaBuy (Three.js feature) ===== */
+.card--1 .card__visual{background:linear-gradient(160deg,#FFF9F0 0%, #FFFFFF 60%, var(--surface) 100%)}
+.card--1 canvas{width:100% !important;height:100% !important;display:block}
+/* ✅ FIXED: stronger gradient + z-index + top padding for text visibility */
+.card--1 .card__content{
+  background:linear-gradient(180deg, transparent 0%, transparent 35%,
+              rgba(255,255,255,0.85) 65%, #fff 88%);
+  z-index:5;
+  padding-top:60px;
+}
+.card--1 .card__title{font-size:clamp(1.8rem, 2.6vw, 2.4rem)}
+.card--1 .badge{
+  position:absolute;top:24px;left:24px;z-index:4;
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.7);backdrop-filter:blur(6px);
+  border:1px solid var(--border);
+  padding:8px 14px;border-radius:100px;
+  font-size:11px;font-weight:600;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--orange-hover);
+  transform:translateZ(60px);
+}
+.card--1 .badge .dot{
+  width:6px;height:6px;border-radius:50%;background:var(--orange);
+  box-shadow:0 0 0 3px var(--soft-orange);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:0.6;transform:scale(0.85)}
+}
+.card--1 .webgl-fallback{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 30% 40%, var(--soft-orange), transparent 50%),
+    radial-gradient(circle at 70% 70%, #F6F6F3, transparent 60%),
+    linear-gradient(140deg,#FFF9F0,#fff);
+  display:none;
+}
+.card--1.no-webgl .webgl-fallback{display:block}
+.card--1.no-webgl canvas{display:none}
+
+/* ===== Card 2: What Makes Us Different ===== */
+.card--2 .card__visual{
+  background:linear-gradient(160deg,#FFFFFF, var(--surface));
+  display:flex;align-items:center;justify-content:center;
+}
+.diff-stack{
+  position:relative;width:78%;height:78%;
+  transform-style:preserve-3d;
+}
+.diff-panel{
+  position:absolute;border-radius:14px;
+  background:#fff;border:1px solid var(--border);
+  box-shadow:0 10px 30px -12px rgba(0,0,0,0.1);
+  padding:14px;display:flex;flex-direction:column;gap:8px;
+  transform-style:preserve-3d;
+  transition:transform 0.5s var(--ease);
+}
+.diff-panel--a{
+  top:8%;left:0;width:62%;height:62%;
+  transform:translateZ(40px) rotate(-4deg);
+  background:linear-gradient(140deg,#fff,var(--warm));
+}
+.diff-panel--b{
+  bottom:6%;right:0;width:60%;height:60%;
+  transform:translateZ(70px) rotate(5deg);
+  background:linear-gradient(140deg,#fff,var(--soft-orange));
+  border-color:var(--soft-orange);
+}
+.diff-panel .row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:10px;color:var(--muted);font-weight:500;
+  letter-spacing:0.1em;text-transform:uppercase;
+}
+.diff-panel .row b{color:var(--ink);font-weight:600}
+.diff-panel .bar{height:5px;background:var(--surface);border-radius:3px;overflow:hidden}
+.diff-panel .bar i{display:block;height:100%;background:var(--orange);border-radius:3px}
+.diff-panel--b .bar i{background:var(--ink)}
+.diff-panel .tag{
+  font-family:var(--serif);font-style:italic;
+  font-size:12px;color:var(--orange-hover);font-weight:500;
+}
+
+/* ===== Card 3: Our Mission ===== */
+.card--3 .card__visual{background:var(--warm)}
+.card--3 .card__visual img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(0.9) contrast(1.02);
+}
+.card--3 .card__visual::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(255,249,240,0.1) 0%, transparent 40%, rgba(255,255,255,0.4) 100%);
+}
+
+/* ===== Card 4: How We Research (wide) ===== */
+.card--4{
+  min-height:340px;
+}
+.card--4 .card__inner{display:grid;grid-template-columns:1.1fr 1fr}
+.card--4 .card__visual{
+  position:relative;inset:auto;
+  grid-column:1;
+  background:linear-gradient(140deg, var(--warm), #fff);
+  overflow:hidden;
+}
+.card--4 .research-img{position:absolute;inset:0}
+.card--4 .research-img img{
+  width:100%;height:100%;object-fit:cover;
+  mix-blend-mode:multiply;opacity:0.95;
+}
+.card--4 .research-notes{
+  position:absolute;bottom:24px;left:24px;
+  display:flex;flex-direction:column;gap:6px;
+  transform:translateZ(50px);
+}
+.card--4 .note-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(6px);
+  border:1px solid var(--border);
+  padding:7px 12px;border-radius:100px;
+  font-size:11px;font-weight:500;letter-spacing:0.06em;
+  color:var(--ink);
+}
+.card--4 .note-chip i{
+  width:6px;height:6px;border-radius:50%;background:var(--orange);
+}
+.card--4 .card__content{
+  position:relative;inset:auto;
+  grid-column:2;
+  padding:48px 44px;
+  background:none;
+  justify-content:center;
+  transform:translateZ(20px);
+}
+.card--4 .card__content::before{
+  content:"";position:absolute;top:24px;left:0;
+  width:1px;height:60%;background:var(--border);
+}
+.card--4 .card__title{font-size:clamp(1.8rem, 2.6vw, 2.3rem)}
+.card--4 .research-list{
+  list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;
+}
+.card--4 .research-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:var(--muted);line-height:1.5;
+}
+.card--4 .research-list li::before{
+  content:"";flex-shrink:0;width:14px;height:14px;
+  margin-top:3px;border-radius:50%;
+  background:var(--soft-orange);
+  box-shadow:inset 0 0 0 3px var(--orange);
+}
+@media (max-width:680px){
+  .card--4 .card__inner{grid-template-columns:1fr}
+  .card--4 .card__visual{min-height:240px}
+  .card--4 .card__content{grid-column:1;padding:32px 28px}
+  .card--4 .card__content::before{display:none}
+}
+
+/* ===== Card 5: Editorial Principles ===== */
+.card--5 .card__visual{
+  background:
+    linear-gradient(160deg, #fff, var(--surface));
+  display:flex;align-items:center;justify-content:center;
+}
+.principles-visual{
+  position:relative;width:80%;height:80%;
+}
+.principles-doc{
+  position:absolute;top:8%;left:10%;width:60%;height:84%;
+  background:#fff;border:1px solid var(--border);
+  border-radius:6px;
+  padding:14px;
+  box-shadow:0 12px 30px -10px rgba(0,0,0,0.08);
+  transform:rotate(-3deg) translateZ(40px);
+  transform-style:preserve-3d;
+}
+.principles-doc::before{
+  content:"";position:absolute;top:14px;left:14px;right:14px;
+  height:2px;background:var(--ink);
+}
+.principles-line{
+  height:3px;background:var(--surface);border-radius:2px;margin:14px 6px 0;
+}
+.principles-line.short{width:60%}
+.principles-line.mid{width:85%}
+.principles-doc .stamp{
+  position:absolute;bottom:14px;right:14px;
+  font-family:var(--serif);font-style:italic;
+  font-size:11px;color:var(--orange-hover);
+  border:1px solid var(--orange);border-radius:50%;
+  width:42px;height:42px;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;line-height:1;
+  transform:rotate(-12deg);
+}
+.principles-lens{
+  position:absolute;bottom:6%;right:8%;
+  width:70px;height:70px;border-radius:50%;
+  border:2.5px solid var(--ink);
+  background:radial-gradient(circle at 35% 35%, rgba(255,153,0,0.25), rgba(255,255,255,0.7));
+  transform:translateZ(80px);
+  box-shadow:0 16px 30px -10px rgba(0,0,0,0.18), inset 0 0 20px rgba(255,255,255,0.4);
+}
+.principles-lens::after{
+  content:"";position:absolute;inset:8px;border-radius:50%;
+  border:1px solid rgba(0,0,0,0.1);
+}
+.principles-lens::before{
+  content:"";position:absolute;top:50%;left:50%;
+  width:6px;height:6px;background:var(--ink);border-radius:50%;
+  transform:translate(-50%,-50%);
+}
+
+/* ===== Card 6: Meet the Founder ===== */
+.card--6 .card__inner{display:grid;grid-template-columns:0.85fr 1.15fr}
+.card--6 .card__visual{
+  position:relative;inset:auto;
+  background:linear-gradient(160deg, var(--warm), #fff);
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+}
+.founder-portrait{
+  position:relative;width:84%;height:88%;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 40% 35%, var(--soft-orange) 0%, transparent 55%),
+    linear-gradient(170deg,#F6F6F3,#fff);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  transform:translateZ(30px);
+  overflow:hidden;
+}
+.founder-portrait svg{width:100%;height:100%}
+.founder-portrait::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 60%, rgba(255,255,255,0.5));
+  pointer-events:none;
+}
+.founder-mark{
+  position:absolute;top:18px;right:18px;
+  font-size:9.5px;font-weight:600;letter-spacing:0.2em;
+  text-transform:uppercase;color:var(--muted);
+  background:rgba(255,255,255,0.85);
+  padding:6px 10px;border-radius:100px;
+  border:1px solid var(--border);
+  z-index:2;
+}
+.card--6 .card__content{
+  position:relative;inset:auto;
+  padding:48px 44px;
+  background:none;justify-content:center;
+  transform:translateZ(15px);
+}
+.card--6 .card__title{
+  font-size:clamp(1.7rem, 2.4vw, 2.2rem);
+}
+.card--6 .card__desc{max-width:42ch}
+.card--6 .card__cta{margin-top:22px}
+/* ✅ FIXED: added word-wrap for long quotes */
+.founder-quote{
+  margin-top:20px;
+  padding-left:18px;
+  border-left:2px solid var(--orange);
+  font-family:var(--serif);font-style:italic;font-size:15.5px;
+  color:var(--ink);line-height:1.5;
+  max-width:40ch;
+  word-wrap:break-word;
+  overflow-wrap:break-word;
+}
+@media (max-width:680px){
+  .card--6 .card__inner{grid-template-columns:1fr}
+  .card--6 .card__visual{min-height:280px}
+  .card--6 .card__content{padding:32px 28px}
+}
+
+/* =========================================================
+   Philosophy section
+========================================================= */
+.philosophy{
+  padding:clamp(80px, 10vw, 140px) 0;
+  background:
+    linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
+  position:relative;
+  overflow:hidden;
+}
+.philosophy::before{
+  content:"";position:absolute;
+  top:-200px;right:-200px;width:600px;height:600px;
+  background:radial-gradient(circle, var(--soft-orange), transparent 65%);
+  opacity:0.5;pointer-events:none;
+}
+.philosophy-head{
+  text-align:center;
+  max-width:680px;margin:0 auto 64px;
+}
+.philosophy-head .eyebrow{justify-content:center}
+.philosophy-head .eyebrow::before{display:none}
+.philosophy-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.2rem, 4.6vw, 3.6rem);
+  line-height:1.06;letter-spacing:-0.025em;color:var(--ink);
+  margin:18px 0 16px;
+}
+.philosophy-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:28px;position:relative;z-index:2;
+}
+.philosophy-card{
+  background:#fff;border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:40px 32px;
+  position:relative;
+  transition:transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+  min-height:340px;
+  display:flex;flex-direction:column;
+}
+.philosophy-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow-lift);
+}
+.philosophy-num{
+  font-family:var(--serif);font-size:14px;font-weight:500;
+  color:var(--orange-hover);
+  letter-spacing:0.16em;
+  margin-bottom:30px;
+}
+.philosophy-card h3{
+  font-family:var(--serif);font-weight:500;
+  font-size:2rem;letter-spacing:-0.02em;color:var(--ink);
+  margin-bottom:14px;
+}
+.philosophy-card p{
+  color:var(--muted);font-size:15px;line-height:1.6;
+  margin-bottom:auto;
+}
+.philosophy-art{
+  height:120px;margin-top:30px;
+  position:relative;overflow:hidden;border-radius:12px;
+}
+.philosophy-card:nth-child(1) .philosophy-art{
+  background:linear-gradient(140deg, var(--warm), var(--soft-orange));
+}
+.philosophy-card:nth-child(1) .philosophy-art::before,
+.philosophy-card:nth-child(1) .philosophy-art::after{
+  content:"";position:absolute;border-radius:8px;
+  background:rgba(255,255,255,0.7);border:1px solid var(--border);
+}
+.philosophy-card:nth-child(1) .philosophy-art::before{
+  top:24px;left:20px;width:50%;height:50%;
+  transform:rotate(-6deg);
+}
+.philosophy-card:nth-child(1) .philosophy-art::after{
+  bottom:24px;right:20px;width:55%;height:55%;
+  background:rgba(255,153,0,0.85);
+  transform:rotate(4deg);
+}
+.philosophy-card:nth-child(2) .philosophy-art{
+  background:linear-gradient(140deg,#fff,var(--surface));
+  display:flex;align-items:center;justify-content:center;gap:14px;
+}
+.philosophy-card:nth-child(2) .philosophy-art span{
+  flex:1;height:60%;border-radius:8px;
+  background:linear-gradient(160deg,var(--ink),#444);
+  position:relative;
+}
+.philosophy-card:nth-child(2) .philosophy-art span:first-child{
+  background:linear-gradient(160deg,var(--orange),var(--orange-hover));
+}
+.philosophy-card:nth-child(2) .philosophy-art span em{
+  position:absolute;top:8px;left:10px;
+  width:30%;height:5px;background:rgba(255,255,255,0.7);border-radius:3px;
+}
+.philosophy-card:nth-child(3) .philosophy-art{
+  background:radial-gradient(circle at 30% 50%, var(--soft-orange), var(--warm));
+  display:flex;align-items:center;justify-content:center;
+}
+.philosophy-card:nth-child(3) .philosophy-art::before{
+  content:"";width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,var(--ink),var(--orange-hover));
+  box-shadow:0 10px 30px -8px rgba(0,0,0,0.25);
+}
+.philosophy-card:nth-child(3) .philosophy-art::after{
+  content:"";position:absolute;right:36%;bottom:34px;
+  width:24px;height:24px;border-radius:50%;
+  background:var(--orange);
+  box-shadow:0 6px 18px -4px rgba(255,153,0,0.6);
+}
+
+@media (max-width:880px){
+  .philosophy-grid{grid-template-columns:1fr;gap:20px}
+  .philosophy-card{min-height:auto}
+}
+
+/* =========================================================
+   Footer
+========================================================= */
+.site-footer{
+  background:var(--ink);color:#C7C7C0;
+  padding:80px 0 36px;
+  position:relative;overflow:hidden;
+}
+.site-footer::before{
+  content:"";position:absolute;top:-2px;left:0;right:0;height:2px;
+  background:linear-gradient(90deg, transparent, var(--orange), transparent);
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:48px;margin-bottom:60px;
+}
+.footer-brand{
+  font-family:var(--serif);font-size:28px;font-weight:500;color:#fff;
+  letter-spacing:-0.02em;margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.footer-brand::after{
+  content:"";width:7px;height:7px;border-radius:50%;
+  background:var(--orange);box-shadow:0 0 0 3px rgba(255,153,0,0.2);
+}
+.footer-tag{
+  font-size:14.5px;line-height:1.6;max-width:300px;margin-bottom:24px;
+}
+.footer-disclosure{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;padding:14px 16px;
+  font-size:12.5px;color:#9B9B95;line-height:1.55;
+}
+.footer-disclosure b{color:var(--orange);font-weight:600}
+.footer-col h4{
+  font-size:11.5px;font-weight:600;letter-spacing:0.2em;
+  text-transform:uppercase;color:#fff;margin-bottom:18px;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer-col a{
+  font-size:14px;color:#C7C7C0;transition:color 0.3s var(--ease);
+  position:relative;
+}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:28px;display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;color:#9B9B95;flex-wrap:wrap;gap:14px;
+}
+.footer-bottom a{color:#9B9B95}
+.footer-bottom a:hover{color:var(--orange)}
+
+@media (max-width:880px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+}
+@media (max-width:540px){
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* =========================================================
+   ✅ FIXED: Reveal helper — visible by default (JS hides them)
+========================================================= */
+.reveal{
+  /* ✅ default: VISIBLE so content never disappears if JS fails */
+  opacity:1;
+  transform:none;
+  transition:opacity 0.9s var(--ease), transform 0.9s var(--ease);
+}
+/* When JS is ready, it adds .js-ready to <html> and hides .reveal */
+html.js-ready .reveal{
+  opacity:0;
+  transform:translateY(28px);
+}
+html.js-ready .reveal.is-visible{
+  opacity:1;
+  transform:none;
+}
+
+/* =========================================================
+   Reduced motion
+========================================================= */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}
+  .reveal, html.js-ready .reveal{opacity:1 !important;transform:none !important}
+  .card__inner{transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ Header ============ -->
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="../index.html" class="brand" aria-label="YallaBuy home">YallaBuy</a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../sitemap.html">Sitemap</a></li>
+        <li><a href="../article/article.html">Guides</a></li>
+        <li><a href="../QR.html" class="active" aria-current="page">Share</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="../about.html" class="nav-cta">Our Story</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ Hero ============ -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow">The story behind YallaBuy</span>
+      <h1 class="hero-title" id="hero-title">
+        Better decisions begin with <em>better understanding</em>.
+      </h1>
+      <p class="hero-lead">
+        YallaBuy helps people understand products, explore meaningful differences,
+        and make more informed purchasing decisions — through organized research,
+        transparent sourcing, and editorial clarity.
+      </p>
+      <div class="hero-cta">
+        <a href="#bento" class="btn-primary">
+          Discover Our Approach
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#philosophy" class="btn-link">
+          Explore Our Principles
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="heroVisual" aria-hidden="true">
+      <div class="hero-meta" data-depth="0.6">
+        <b>14k+</b>
+        <small>Hours of research</small>
+      </div>
+      <div class="hero-layer hero-layer--main" data-depth="0.2">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&auto=format&fit=crop&q=80" alt="" loading="eager" onerror="this.style.display='none'" />
+      </div>
+      <div class="hero-layer hero-layer--accent" data-depth="0.45">
+        <span>“Comparison, not <br/>confusion.”</span>
+      </div>
+      <div class="hero-layer hero-layer--detail" data-depth="0.8">
+        <span class="tag">Verified</span>
+        <b class="num">98<span style="color:var(--orange)">%</span></b>
+        <span class="bar"><i></i></span>
+      </div>
+      <div class="hero-orb" data-depth="0.35"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Bento Grid ============ -->
+<section class="bento-section" id="bento" aria-labelledby="bento-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 id="bento-title">A clearer way to look at every purchase.</h2>
+      <p>Six principles guide how YallaBuy researches, compares, and presents products — each one designed to remove noise and surface what matters.</p>
+    </div>
+
+    <div class="bento">
+
+      <!-- Card 1: Why YallaBuy (Three.js feature) -->
+      <article class="card card--1 reveal" tabindex="0" aria-labelledby="c1-title">
+        <div class="card__inner">
+          <div class="card__visual">
+            <canvas id="featureCanvas" aria-hidden="true"></canvas>
+            <div class="webgl-fallback"></div>
+            <div class="badge"><span class="dot"></span>Live · WebGL</div>
+          </div>
+          <div class="card__content">
+            <span class="card__eyebrow">Research first Buy second</span>
+            <h3 class="card__title" id="c1-title">Research that respects your time.</h3>
+            <p class="card__desc">Understand the product before you buy it. Discover how YallaBuy researches, compares, and organizes information to help you make a more informed decision.</p>
+            <a href="research-first-buy-second.html" class="card__cta" aria-label="Read why people choose YallaBuy">
+              Read the full story
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: What Makes Us Different -->
+      <article class="card card--2 reveal" tabindex="0" aria-labelledby="c2-title">
+        <a href="#" class="card__inner" aria-label="What makes YallaBuy different">
+          <div class="card__visual" aria-hidden="true">
+            <div class="diff-stack">
+              <div class="diff-panel diff-panel--a">
+                <div class="row"><span>Spec sheet</span><b>12 items</b></div>
+                <div class="bar"><i style="width:68%"></i></div>
+                <div class="bar"><i style="width:42%"></i></div>
+                <div class="tag">Manufacturer</div>
+              </div>
+              <div class="diff-panel diff-panel--b">
+                <div class="row"><span>Real-world</span><b>8.6 / 10</b></div>
+                <div class="bar"><i style="width:84%"></i></div>
+                <div class="bar"><i style="width:60%"></i></div>
+                <div class="tag">Editorial layer</div>
+              </div>
+            </div>
+          </div>
+          <div class="card__content">
+            <span class="card__eyebrow">Our difference</span>
+            <h3 class="card__title" id="c2-title">What makes us different.</h3>
+            <p class="card__desc">An editorial layer over raw specs — built on transparent sources and clear reasoning, not marketing copy.</p>
+            <span class="card__cta">
+              See the approach
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 3: Our Mission -->
+      <article class="card card--3 reveal" tabindex="0" aria-labelledby="c3-title">
+        <a href="#" class="card__inner" aria-label="Read the YallaBuy mission">
+          <div class="card__visual" aria-hidden="true">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=80" alt="" loading="lazy" onerror="this.style.opacity=0;this.parentElement.style.background='linear-gradient(160deg,#FFF9F0,#F6F6F3)'" />
+          </div>
+          <div class="card__content">
+            <span class="card__eyebrow">Our mission</span>
+            <h3 class="card__title" id="c3-title">Clarity over noise.</h3>
+            <p class="card__desc">We exist to make complex product decisions easier — cutting through marketing, jargon, and biased reviews.</p>
+            <span class="card__cta">
+              Read the mission
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 4: How We Research (wide) -->
+      <article class="card card--4 reveal" tabindex="0" aria-labelledby="c4-title">
+        <a href="#" class="card__inner" aria-label="How YallaBuy researches products">
+          <div class="card__visual" aria-hidden="true">
+            <div class="research-img">
+              <img src="https://images.unsplash.com/photo-1517842645767-c63904278786?w=1200&auto=format&fit=crop&q=80" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(140deg,var(--warm),#fff)'" />
+            </div>
+            <div class="research-notes">
+              <span class="note-chip"><i></i>Spec sheets</span>
+              <span class="note-chip"><i></i>Independent reviews</span>
+              <span class="note-chip"><i></i>Owner feedback</span>
+            </div>
+          </div>
+          <div class="card__content">
+            <span class="card__eyebrow">How we research</span>
+            <h3 class="card__title" id="c4-title">Three layers. One clear picture.</h3>
+            <p class="card__desc">We combine manufacturer specifications, independent testing, and verified owner feedback — and we label which is which.</p>
+            <ul class="research-list">
+              <li>Manufacturer data — checked, never copied.</li>
+              <li>Independent reviews — weighed, never averaged blindly.</li>
+              <li>Owner feedback — sampled, never cherry-picked.</li>
+            </ul>
+            <span class="card__cta">
+              See the method
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 5: Editorial Principles -->
+      <article class="card card--5 reveal" tabindex="0" aria-labelledby="c5-title">
+        <a href="#" class="card__inner" aria-label="YallaBuy editorial principles">
+          <div class="card__visual" aria-hidden="true">
+            <div class="principles-visual">
+              <div class="principles-doc">
+                <div class="principles-line mid"></div>
+                <div class="principles-line"></div>
+                <div class="principles-line short"></div>
+                <div class="principles-line"></div>
+                <div class="stamp">verified</div>
+              </div>
+              <div class="principles-lens"></div>
+            </div>
+          </div>
+          <div class="card__content">
+            <span class="card__eyebrow">Editorial principles</span>
+            <h3 class="card__title" id="c5-title">Accuracy, sourced.</h3>
+            <p class="card__desc">Transparent sources, prompt corrections, and a firm rule against unsupported claims.</p>
+            <span class="card__cta">
+              Read the principles
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Card 6: Meet the Founder -->
+      <article class="card card--6 reveal" tabindex="0" aria-labelledby="c6-title">
+        <a href="#" class="card__inner" aria-label="Meet the founder of YallaBuy">
+          <div class="card__visual" aria-hidden="true">
+            <div class="founder-portrait">
+              <span class="founder-mark">Illustration</span>
+              <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                  <linearGradient id="fg1" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD37A"/>
+                    <stop offset="100%" stop-color="#FF9900"/>
+                  </linearGradient>
+                  <linearGradient id="fg2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#202124"/>
+                    <stop offset="100%" stop-color="#666666"/>
+                  </linearGradient>
+                </defs>
+                <rect width="200" height="240" fill="transparent"/>
+                <path d="M30,240 C40,180 70,165 100,165 C130,165 160,180 170,240 Z" fill="url(#fg2)" opacity="0.9"/>
+                <ellipse cx="100" cy="110" rx="46" ry="56" fill="url(#fg1)"/>
+                <path d="M54,90 C54,55 80,38 100,38 C122,38 148,55 146,90 C146,82 138,70 128,68 C132,76 130,86 124,90 C118,76 100,72 90,80 C80,76 70,80 64,92 C58,86 56,80 54,90 Z" fill="#202124"/>
+                <circle cx="84" cy="112" r="14" fill="none" stroke="#202124" stroke-width="3"/>
+                <circle cx="116" cy="112" r="14" fill="none" stroke="#202124" stroke-width="3"/>
+                <line x1="98" y1="112" x2="102" y2="112" stroke="#202124" stroke-width="3"/>
+                <path d="M82,168 L100,184 L118,168 L124,200 L76,200 Z" fill="#fff" opacity="0.95"/>
+              </svg>
+            </div>
+          </div>
+          <div class="card__content">
+            <span class="card__eyebrow">Meet the founder</span>
+            <h3 class="card__title" id="c6-title">A note from our founder.</h3>
+            <p class="card__desc">YallaBuy started with a simple frustration: too many product pages, too little clarity. This is the story of how that became a mission.</p>
+            <p class="founder-quote">“I wanted a place where I could trust the answer — not just the search result.”</p>
+            <span class="card__cta">
+              Meet the founder
+              <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+            </span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ Philosophy ============ -->
+<section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+  <div class="wrap">
+    <div class="philosophy-head reveal">
+      <span class="eyebrow">How we think</span>
+      <h2 id="philosophy-title">Understand. Compare. Decide.</h2>
+      <p style="color:var(--muted);max-width:560px;margin:16px auto 0">Three steps shape every page we publish — each one built to bring you closer to a decision you can trust.</p>
+    </div>
+    <div class="philosophy-grid">
+
+      <article class="philosophy-card reveal">
+        <div class="philosophy-num">01 — Understand</div>
+        <h3>Make product information easier to understand.</h3>
+        <p>We translate dense specifications sheets and competing claims into plain language, without losing the technical detail that matters.</p>
+        <div class="philosophy-art" aria-hidden="true"></div>
+      </article>
+
+      <article class="philosophy-card reveal">
+        <div class="philosophy-num">02 — Compare</div>
+        <h3>Explain meaningful differences and trade-offs.</h3>
+        <p>Not every difference matters. We highlight the ones that actually change how a product fits into your life, your room, or your workflow.</p>
+        <div class="philosophy-art" aria-hidden="true"></div>
+      </article>
+
+      <article class="philosophy-card reveal">
+        <div class="philosophy-num">03 — Decide</div>
+        <h3>Help you evaluate options for your needs and budget.</h3>
+        <p>Every recommendation is grounded in a context — what you need, what you can spend, and what trade-offs make sense for you.</p>
+        <div class="philosophy-art" aria-hidden="true"></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">YallaBuy</div>
+        <p class="footer-tag">Helping people understand products and make more informed purchasing decisions — one clear comparison at a time.</p>
+        <div class="footer-disclosure">
+          <b>Affiliate disclosure:</b> YallaBuy may earn a commission when you purchase through links on our site. This never influences which products we recommend.
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Why YallaBuy</a></li>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Meet the Founder</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          
+          <li><a href="../sitemap.html">Sitemap</a></li>
+          <li><a href="../article/article.html">Buying Guides</a></li>
+          <li><a href="../amazon/How-We-Research.html">How We Research</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="../amazon/privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="../amazon/terms-of-service.html">Terms of service</a></li>
+          <li><a href="../amazon/affiliate-disclosure.html">affiliate disclosure</a></li>
+          <li><a href="../amazon/Editorial-Policy.html">Editorial Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 YallaBuy. All rights reserved.</span>
+      <span>Made with care for clearer decisions.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CDN Scripts (load in parallel) ============ -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+
+<!-- ============ Main Script (non-module — safer) ============ -->
+<script>
+(function() {
+  'use strict';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+  /* ====== Mobile nav ====== */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  /* ====== Safely check GSAP ====== */
+  const hasGSAP = (typeof gsap !== 'undefined');
+  const hasScrollTrigger = (typeof ScrollTrigger !== 'undefined');
+
+  /* ====== Reveal system: JS-driven only if GSAP available ====== */
+  function activateRevealSystem() {
+    // Add js-ready — CSS will now hide .reveal
+    document.documentElement.classList.add('js-ready');
+
+    if (hasGSAP && hasScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* Hero entrance */
+      const heroTl = gsap.timeline({ delay: 0.2, defaults: { ease: 'power3.out' } });
+      heroTl
+        .from('.hero-text .eyebrow', { y: 20, opacity: 0, duration: 0.6 })
+        .from('.hero-title', { y: 40, opacity: 0, duration: 1.0 }, '-=0.3')
+        .from('.hero-lead', { y: 24, opacity: 0, duration: 0.7 }, '-=0.6')
+        .from('.hero-cta > *', { y: 20, opacity: 0, duration: 0.6, stagger: 0.12 }, '-=0.4')
+        .from('.hero-layer', { y: 60, opacity: 0, duration: 1.0, stagger: 0.12 }, '-=1.1')
+        .from('.hero-orb', { scale: 0.4, opacity: 0, duration: 0.8 }, '-=0.6')
+        .from('.hero-meta', { x: -30, opacity: 0, duration: 0.7 }, '-=0.7');
+
+      /* Hero parallax on scroll */
+      if (!reduceMotion) {
+        gsap.to('.hero-layer--main',   { yPercent: -12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 } });
+        gsap.to('.hero-layer--accent', { yPercent: -6,  ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 } });
+        gsap.to('.hero-layer--detail', { yPercent: -20, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 } });
+        gsap.to('.hero-orb',           { yPercent: -30, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.6 } });
+      }
+
+      /* Generic reveal */
+      document.querySelectorAll('.reveal').forEach(el => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+          onEnter: () => el.classList.add('is-visible')
+        });
+      });
+
+      /* Bento cards stagger — use gsap.fromTo so we control both states */
+      gsap.utils.toArray('.bento .card').forEach((card, i) => {
+        if (reduceMotion) { card.classList.add('is-visible'); return; }
+        gsap.fromTo(card,
+          { y: 50, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.9, ease: 'power3.out',
+            delay: (i % 3) * 0.08,
+            scrollTrigger: { trigger: card, start: 'top 90%', once: true },
+            onComplete: () => card.classList.add('is-visible')
+          }
+        );
+      });
+
+      /* Philosophy cards stagger */
+      gsap.utils.toArray('.philosophy-card').forEach((card, i) => {
+        if (reduceMotion) { card.classList.add('is-visible'); return; }
+        gsap.fromTo(card,
+          { y: 40, opacity: 0 },
+          {
+            y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+            delay: i * 0.1,
+            scrollTrigger: { trigger: card, start: 'top 90%', once: true },
+            onComplete: () => card.classList.add('is-visible')
+          }
+        );
+      });
+
+      /* ====== Card 3D tilt (desktop, non-touch) ====== */
+      if (!isTouch && !reduceMotion) {
+        document.querySelectorAll('.card').forEach(card => {
+          const inner = card.querySelector('.card__inner');
+          if (!inner) return;
+          let raf = null;
+          let targetX = 0, targetY = 0;
+          let curX = 0, curY = 0;
+
+          const animate = () => {
+            curX += (targetX - curX) * 0.08;
+            curY += (targetY - curY) * 0.08;
+            inner.style.transform = `rotateY(${curX}deg) rotateX(${curY}deg)`;
+            if (Math.abs(targetX - curX) > 0.01 || Math.abs(targetY - curY) > 0.01) {
+              raf = requestAnimationFrame(animate);
+            } else {
+              raf = null;
+            }
+          };
+
+          card.addEventListener('pointermove', (e) => {
+            const r = card.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width - 0.5;
+            const py = (e.clientY - r.top) / r.height - 0.5;
+            targetX = px * 6;
+            targetY = -py * 5;
+            if (!raf) raf = requestAnimationFrame(animate);
+          });
+
+          card.addEventListener('pointerleave', () => {
+            targetX = 0; targetY = 0;
+            if (!raf) raf = requestAnimationFrame(animate);
+          });
+        });
+      }
+
+      /* ====== Hero pointer parallax (desktop) ====== */
+      if (!isTouch && !reduceMotion) {
+        const heroVisual = document.getElementById('heroVisual');
+        if (heroVisual) {
+          const layers = heroVisual.querySelectorAll('[data-depth]');
+          let raf = null;
+          heroVisual.addEventListener('pointermove', (e) => {
+            const r = heroVisual.getBoundingClientRect();
+            const px = (e.clientX - r.left) / r.width - 0.5;
+            const py = (e.clientY - r.top) / r.height - 0.5;
+            if (raf) cancelAnimationFrame(raf);
+            raf = requestAnimationFrame(() => {
+              layers.forEach(layer => {
+                const depth = parseFloat(layer.dataset.depth) || 0.2;
+                const tx = px * 30 * depth;
+                const ty = py * 30 * depth;
+                layer.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+              });
+            });
+          });
+          heroVisual.addEventListener('pointerleave', () => {
+            layers.forEach(layer => { layer.style.transform = ''; });
+          });
+        }
+      }
+    } else {
+      // GSAP missing → reveal everything immediately
+      console.warn('GSAP/ScrollTrigger not loaded — revealing all content');
+      document.querySelectorAll('.reveal, .card, .philosophy-card').forEach(el => {
+        el.classList.add('is-visible');
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }
+  }
+
+  /* Wait a tick so browser paints visible content first */
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      requestAnimationFrame(activateRevealSystem);
+    });
+  } else {
+    requestAnimationFrame(activateRevealSystem);
+  }
+
+  /* ====== Keyboard accessibility for cards ====== */
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const link = card.querySelector('a[href]');
+        if (link) {
+          e.preventDefault();
+          link.click();
+        }
+      }
+    });
+  });
+
+  /* ====== Cleanup on unload ====== */
+  window.addEventListener('beforeunload', () => {
+    if (hasScrollTrigger) {
+      try { ScrollTrigger.getAll().forEach(t => t.kill()); } catch(e) {}
+    }
+  });
+
+})();
+</script>
+
+<!-- ============ Three.js Module (separate — isolated) ============ -->
+<script type="module">
+import * as THREE from 'three';
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+function initFeatureScene() {
+  const card = document.querySelector('.card--1');
+  const canvas = document.getElementById('featureCanvas');
+  if (!card || !canvas) return;
+
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({
+      canvas,
+      antialias: true,
+      alpha: true,
+      powerPreference: 'high-performance'
+    });
+  } catch (err) {
+    console.warn('WebGL unavailable, using fallback', err);
+    card.classList.add('no-webgl');
+    return;
+  }
+
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  camera.position.set(0, 0, 6);
+
+  const sizeRenderer = () => {
+    const r = card.getBoundingClientRect();
+    renderer.setSize(r.width, r.height, false);
+    camera.aspect = r.width / r.height;
+    camera.updateProjectionMatrix();
+  };
+
+  // Lighting
+  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+  const key = new THREE.DirectionalLight(0xfff2dc, 1.2);
+  key.position.set(4, 5, 6);
+  scene.add(key);
+  const fill = new THREE.DirectionalLight(0xffd1a0, 0.6);
+  fill.position.set(-5, -2, 3);
+  scene.add(fill);
+  const rim = new THREE.DirectionalLight(0xffffff, 0.4);
+  rim.position.set(0, -4, -5);
+  scene.add(rim);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const matIvory  = new THREE.MeshStandardMaterial({ color: 0xF6F6F3, roughness: 0.65, metalness: 0.05 });
+  const matWarm   = new THREE.MeshStandardMaterial({ color: 0xFFF9F0, roughness: 0.55, metalness: 0.08 });
+  const matOrange = new THREE.MeshStandardMaterial({ color: 0xFF9900, roughness: 0.4,  metalness: 0.15 });
+  const matInk    = new THREE.MeshStandardMaterial({ color: 0x202124, roughness: 0.5,  metalness: 0.1 });
+
+  const torus = new THREE.Mesh(new THREE.TorusGeometry(1.1, 0.18, 32, 96), matInk);
+  torus.rotation.x = 0.4; torus.rotation.y = 0.2;
+  group.add(torus);
+
+  const sphere = new THREE.Mesh(new THREE.SphereGeometry(0.42, 48, 48), matOrange);
+  sphere.position.set(1.6, 0.6, 0.4);
+  group.add(sphere);
+
+  const box = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.7, 0.7), matIvory);
+  box.position.set(-1.5, -0.4, 0.5);
+  box.rotation.set(0.4, 0.3, 0);
+  group.add(box);
+
+  const cyl = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.18, 1.1, 32), matWarm);
+  cyl.position.set(-0.4, 1.3, -0.2);
+  cyl.rotation.z = 0.6;
+  group.add(cyl);
+
+  const small = new THREE.Mesh(new THREE.SphereGeometry(0.18, 32, 32), matIvory);
+  small.position.set(1.0, -1.1, 0.6);
+  group.add(small);
+
+  const tiny = new THREE.Mesh(new THREE.SphereGeometry(0.1, 24, 24), matOrange);
+  tiny.position.set(-1.8, 0.9, 0.6);
+  group.add(tiny);
+
+  const items = [
+    { mesh: torus,  baseY: 0.1,  amp: 0.08, speed: 0.7, rot: 0.001 },
+    { mesh: sphere, baseY: 0.6,  amp: 0.12, speed: 1.0, rot: 0.0015 },
+    { mesh: box,    baseY: -0.4, amp: 0.1,  speed: 0.8, rot: 0.002 },
+    { mesh: cyl,    baseY: 1.3,  amp: 0.06, speed: 1.2, rot: 0.0008 },
+    { mesh: small,  baseY: -1.1, amp: 0.14, speed: 0.9, rot: 0.0025 },
+    { mesh: tiny,   baseY: 0.9,  amp: 0.18, speed: 1.4, rot: 0.003 },
+  ];
+
+  let targetRotX = 0, targetRotY = 0;
+  let curRotX = 0, curRotY = 0;
+
+  if (!isTouch) {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      targetRotY = px * 0.4;
+      targetRotX = py * 0.3;
+    });
+    card.addEventListener('pointerleave', () => {
+      targetRotX = 0; targetRotY = 0;
+    });
+  }
+
+  sizeRenderer();
+  window.addEventListener('resize', sizeRenderer);
+
+  let visible = true;
+  let running = true;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { visible = entry.isIntersecting; });
+  }, { threshold: 0.05 });
+  io.observe(card);
+
+  document.addEventListener('visibilitychange', () => {
+    running = !document.hidden;
+  });
+
+  const clock = new THREE.Clock();
+
+  function render() {
+    requestAnimationFrame(render);
+    if (!visible || !running) return;
+    const t = clock.getElapsedTime();
+
+    items.forEach(it => {
+      it.mesh.position.y = it.baseY + Math.sin(t * it.speed) * it.amp;
+      it.mesh.rotation.x += it.rot;
+      it.mesh.rotation.y += it.rot * 0.6;
+    });
+
+    curRotX += (targetRotX - curRotX) * 0.06;
+    curRotY += (targetRotY - curRotY) * 0.06;
+    group.rotation.x = curRotX;
+    group.rotation.y = curRotY + t * 0.05;
+
+    renderer.render(scene, camera);
+  }
+
+  if (reduceMotion) {
+    renderer.render(scene, camera);
+  } else {
+    render();
+  }
+}
+
+if (document.readyState === 'complete') {
+  initFeatureScene();
+} else {
+  window.addEventListener('load', initFeatureScene);
+}
+</script>
+
+</body>
+  </html>

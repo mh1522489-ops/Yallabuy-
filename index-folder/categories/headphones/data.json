@@ -14,7 +14,7 @@
     "microphone": true,
     "tags": ["Premium", "Travel", "Audiophile"],
     "summary": "Flagship noise-canceling headphones with adaptive sound control and clear hands-free calling.",
-    "imageUrl": "https://images.unsplash.com/photo-1545127390-954cbd3a7c64?w=600&q=80",
+    "imageUrl": "images/XM6.avif",
     "amazonUrl": "https://www.amazon.com/s?k=sony+wh-1000xm6",
     "detailsUrl": "#"
   },
@@ -33,9 +33,9 @@
     "microphone": true,
     "tags": ["Premium", "Travel"],
     "summary": "Previous flagship with a refined design, eight-microphone system, and strong ANC performance.",
-    "imageUrl": "https://images.unsplash.com/photo-1583394838336-acd977775f14?w=600&q=80",
-    "amazonUrl": "https://www.amazon.com/s?k=sony+wh-1000xm5",
-    "detailsUrl": "#"
+    "imageUrl": "images/sony.avif",
+    "amazonUrl": "#",
+    "detailsUrl": "../../../products/product4.html"
   },
   {
     "id": "sony-wh-ch720n",

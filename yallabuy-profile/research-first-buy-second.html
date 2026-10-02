@@ -1,0 +1,3716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YallaBuy — Research first. Buy second.</title>
+<meta name="description" content="YallaBuy is built to help people understand products before they buy them. A product research platform focused on transparency, evidence, and clarity.">
+<meta name="author" content="Mahmoud Hamdy">
+<link rel="canonical" href="https://yallbuy.shop/yallabuy-profile/research-first-buy-second">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="YallaBuy — Research first. Buy second.">
+<meta property="og:description" content="YallaBuy is built to help people understand products before they buy them.">
+<meta property="og:site_name" content="YallaBuy">
+<meta property="og:url" content="https://yallbuy.shop/yallabuy-profile/research-first-buy-second.html">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YallaBuy — Research first. Buy second.">
+<meta name="twitter:description" content="YallaBuy is built to help people understand products before they buy them.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700;9..144,900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   YALLABUY — PROFILE
+   Premium immersive editorial experience
+   ============================================================ */
+
+:root {
+  --orange: #FF9900;
+  --orange-soft: #FFB84D;
+  --orange-deep: #E68A00;
+  --orange-dim: rgba(255, 153, 0, 0.12);
+  --orange-line: rgba(255, 153, 0, 0.35);
+
+  --ink: #0A0A0A;
+  --ink-1: #141414;
+  --ink-2: #1C1C1C;
+  --ink-3: #282828;
+  --charcoal: #3A3A3A;
+  --graphite: #5A5A5A;
+  --stone: #8A8A8A;
+  --mist: #B8B8B8;
+  --haze: #E8E8E8;
+  --cloud: #F4F4F2;
+  --paper: #FAFAF7;
+  --white: #FFFFFF;
+
+  --max: 1440px;
+  --gut: clamp(1.25rem, 4vw, 3rem);
+
+  --ease-quiet: cubic-bezier(.22, 1, .36, 1);
+  --ease-precise: cubic-bezier(.4, 0, .2, 1);
+  --ease-emphasis: cubic-bezier(.16, 1, .3, 1);
+
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+*::selection { background: var(--orange); color: var(--ink); }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* Skip link */
+.skip-link {
+  position: absolute; top: -100px; left: 1rem; z-index: 1000;
+  background: var(--ink); color: var(--white);
+  padding: .75rem 1.25rem; border-radius: 2px; font-size: .875rem;
+  transition: top .2s var(--ease-precise);
+}
+.skip-link:focus { top: 1rem; }
+
+/* Focus visibility */
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.1rem clamp(1rem, 4vw, 2.5rem);
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  transition: background .4s var(--ease-quiet), border-color .4s var(--ease-quiet);
+}
+.nav.is-dark {
+  background: rgba(10, 10, 10, 0.72);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.nav.is-dark .nav__logo-mark { color: var(--white); }
+.nav.is-dark .nav__logo-text { color: var(--white); }
+.nav.is-dark .nav__links a { color: rgba(255,255,255,0.72); }
+.nav.is-dark .nav__links a:hover { color: var(--white); }
+.nav.is-dark .nav__cta { background: var(--white); color: var(--ink); }
+.nav.is-dark .nav__menu-btn { color: var(--white); }
+.nav.is-dark .nav__progress { background: rgba(255,255,255,0.1); }
+
+.nav__logo {
+  display: flex; align-items: center; gap: .65rem;
+  font-family: var(--font-display); font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.nav__logo-mark {
+  font-size: 1.15rem; color: var(--ink);
+  transition: color .4s var(--ease-quiet);
+}
+.nav__logo-text {
+  font-size: 1.05rem; color: var(--ink);
+  transition: color .4s var(--ease-quiet);
+}
+.nav__logo-dot {
+  width: 7px; height: 7px; background: var(--orange); border-radius: 50%;
+  display: inline-block; margin-left: -3px;
+}
+
+.nav__links {
+  display: flex; align-items: center; gap: 2rem;
+  list-style: none;
+}
+.nav__links a {
+  font-size: .82rem; font-weight: 500;
+  color: var(--graphite);
+  letter-spacing: 0.01em;
+  position: relative; padding: .25rem 0;
+  transition: color .25s var(--ease-precise);
+}
+.nav__links a::after {
+  content: ''; position: absolute; bottom: 0; left: 0;
+  width: 0; height: 1px; background: var(--orange);
+  transition: width .35s var(--ease-quiet);
+}
+.nav__links a:hover { color: var(--ink); }
+.nav__links a:hover::after { width: 100%; }
+
+.nav__right { display: flex; align-items: center; gap: 1.25rem; }
+
+.nav__cta {
+  font-size: .82rem; font-weight: 600;
+  padding: .55rem 1.1rem;
+  background: var(--ink); color: var(--white);
+  border-radius: 2px;
+  letter-spacing: 0.01em;
+  transition: background .25s var(--ease-precise), transform .25s var(--ease-precise);
+}
+.nav__cta:hover { background: var(--orange); transform: translateY(-1px); }
+
+.nav__menu-btn {
+  display: none;
+  width: 36px; height: 36px;
+  align-items: center; justify-content: center;
+  color: var(--ink);
+}
+.nav__menu-btn svg { width: 18px; height: 18px; }
+
+.nav__progress {
+  position: absolute; left: 0; bottom: -1px;
+  height: 1px; background: rgba(0,0,0,0.08);
+  width: 100%; pointer-events: none;
+}
+.nav__progress-bar {
+  height: 100%; width: 0;
+  background: var(--orange);
+  transition: width .15s linear;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 99;
+  background: var(--ink); color: var(--white);
+  padding: 6rem 2rem 2rem;
+  display: flex; flex-direction: column; gap: 1.5rem;
+  transform: translateY(-100%);
+  transition: transform .5s var(--ease-emphasis);
+  visibility: hidden;
+}
+.mobile-menu.is-open { transform: translateY(0); visibility: visible; }
+.mobile-menu a {
+  font-family: var(--font-display); font-size: 2rem; font-weight: 400;
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: .75rem;
+}
+.mobile-menu a:hover { color: var(--orange); }
+
+@media (max-width: 860px) {
+  .nav__links { display: none; }
+  .nav__cta { display: none; }
+  .nav__menu-btn { display: flex; }
+}
+
+/* ============================================================
+   CANVAS / SCENE BACKDROP
+   ============================================================ */
+.scene-canvas {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh; height: 100dvh;
+  z-index: 0;
+  pointer-events: none;
+}
+.scene-canvas.is-fixed { position: fixed; }
+.scene-canvas.is-absolute { position: absolute; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative; z-index: 2;
+  min-height: 100vh; min-height: 100dvh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 var(--gut);
+  padding-top: 7rem;
+  background: var(--white);
+}
+.hero__inner { max-width: var(--max); margin: 0 auto; width: 100%; }
+
+.hero__eyebrow {
+  display: flex; align-items: center; gap: .85rem;
+  font-family: var(--font-mono); font-size: .72rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 2rem;
+  opacity: 0; transform: translateY(20px);
+}
+.hero__eyebrow::before {
+  content: ''; width: 28px; height: 1px; background: var(--orange);
+}
+.hero__eyebrow span { color: var(--orange); font-weight: 600; }
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 11vw, 11rem);
+  line-height: 0.92; font-weight: 900;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.hero__title .word {
+  display: inline-block; overflow: hidden; vertical-align: top;
+}
+.hero__title .word > span {
+  display: inline-block;
+  transform: translateY(110%);
+}
+.hero__title .accent {
+  font-style: italic; font-weight: 400;
+  color: var(--orange);
+  letter-spacing: -0.02em;
+}
+
+.hero__sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--charcoal);
+  max-width: 540px;
+  margin-top: 2rem;
+  opacity: 0; transform: translateY(20px);
+}
+.hero__sub em {
+  font-style: italic; color: var(--ink);
+}
+
+.hero__meta {
+  display: flex; gap: 2.5rem; flex-wrap: wrap;
+  margin-top: 4rem;
+  opacity: 0; transform: translateY(20px);
+}
+.hero__meta-item {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+.hero__meta-item span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 500;
+  color: var(--ink); letter-spacing: -0.02em;
+  text-transform: none;
+  margin-top: .35rem;
+}
+.hero__meta-item span.accent { color: var(--orange); }
+
+.hero__scroll {
+  position: absolute; bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center;
+  gap: .75rem;
+  font-family: var(--font-mono); font-size: .68rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--graphite);
+  opacity: 0;
+}
+.hero__scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--ink) 30%, var(--orange));
+  position: relative; overflow: hidden;
+}
+.hero__scroll-line::after {
+  content: ''; position: absolute; top: -50%; left: 0;
+  width: 100%; height: 50%;
+  background: var(--white);
+  animation: scrollPulse 2.4s var(--ease-quiet) infinite;
+}
+@keyframes scrollPulse {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(300%); }
+}
+
+@media (max-width: 720px) {
+  .hero__meta { gap: 1.5rem; }
+  .hero__meta-item span { font-size: 1.25rem; }
+}
+
+/* ============================================================
+   GENERIC SECTION
+   ============================================================ */
+section { position: relative; z-index: 2; }
+.container {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+
+.section-tag {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-family: var(--font-mono);
+  font-size: .7rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 1.75rem;
+}
+.section-tag::before {
+  content: ''; width: 18px; height: 1px; background: var(--orange);
+}
+.section-tag.dark { color: var(--mist); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  line-height: 1.02; font-weight: 700;
+  letter-spacing: -0.028em;
+  color: var(--ink);
+  max-width: 18ch;
+}
+.section-title .accent {
+  font-style: italic; font-weight: 400; color: var(--orange);
+}
+.section-title.dark { color: var(--white); }
+
+.section-intro {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.5; font-weight: 300;
+  color: var(--charcoal);
+  max-width: 60ch;
+  margin-top: 1.75rem;
+}
+.section-intro.dark { color: var(--mist); }
+
+/* ============================================================
+   HERO TRANSITION — Information overload
+   ============================================================ */
+.hero-transition {
+  position: relative; z-index: 2;
+  height: 220vh; /* tall for scroll-driven sequence */
+  background: linear-gradient(to bottom, var(--white) 0%, var(--cloud) 40%, var(--ink) 100%);
+}
+.hero-transition__sticky {
+  position: sticky; top: 0;
+  height: 100vh; height: 100dvh;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.hero-transition__inner {
+  position: relative;
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-transition__text {
+  position: absolute;
+  text-align: center;
+  padding: 0 var(--gut);
+  z-index: 3;
+  pointer-events: none;
+  max-width: 100%;
+}
+.hero-transition__line {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 5rem);
+  line-height: 1.05; font-weight: 500;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  opacity: 0;
+  transition: opacity .4s ease;
+}
+.hero-transition__line.is-active { opacity: 1; }
+.hero-transition__line.is-fading { opacity: 0.15; }
+.hero-transition__line.dark { color: var(--white); }
+.hero-transition__line em {
+  font-style: italic; color: var(--orange); font-weight: 400;
+}
+
+.hero-transition__cats {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.hero-transition__cat {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: clamp(.75rem, 1.1vw, .95rem);
+  letter-spacing: 0.1em;
+  color: var(--charcoal);
+  padding: .5rem .85rem;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.08);
+  white-space: nowrap;
+  opacity: 0;
+  transform-origin: center;
+  will-change: transform, opacity;
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   PROBLEM SECTION
+   ============================================================ */
+.problem {
+  position: relative; z-index: 2;
+  background: var(--ink);
+  color: var(--white);
+  padding: 0;
+  overflow: hidden;
+}
+.problem__sticky {
+  position: sticky; top: 0;
+  height: 100vh; height: 100dvh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.problem__inner {
+  width: 100%; padding: 0 var(--gut);
+  position: relative;
+}
+.problem__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  line-height: 0.98; font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  max-width: 16ch;
+  position: relative; z-index: 2;
+}
+.problem__title .accent {
+  font-style: italic; font-weight: 400; color: var(--orange);
+}
+.problem__title .strike {
+  display: inline-block;
+  position: relative;
+}
+.problem__title .strike::after {
+  content: ''; position: absolute; left: -2%; right: -2%;
+  top: 55%; height: 4px;
+  background: var(--orange);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 1s var(--ease-quiet);
+}
+
+.problem__conclusion {
+  position: absolute;
+  bottom: 4rem; left: var(--gut); right: var(--gut);
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 2rem;
+}
+.problem__conclusion-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 300; font-style: italic;
+  color: var(--white);
+  max-width: 32ch;
+  line-height: 1.4;
+  opacity: 0; transform: translateY(30px);
+}
+.problem__conclusion-text em {
+  font-style: normal; color: var(--orange); font-weight: 500;
+}
+
+.problem__fragments {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.fragment {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: .65rem .9rem;
+  white-space: nowrap;
+  will-change: transform, opacity;
+}
+.fragment--spec { color: var(--orange-soft); border-color: rgba(255,153,0,0.25); background: rgba(255,153,0,0.05); }
+.fragment--num { color: var(--white); font-weight: 600; }
+
+.problem__count {
+  position: absolute; top: 8rem; right: var(--gut);
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 300; color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.problem__count-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  margin-top: .5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 720px) {
+  .problem__conclusion { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   WHY YALLABUY EXISTS
+   ============================================================ */
+.why {
+  position: relative; z-index: 2;
+  background: var(--white);
+  padding: clamp(7rem, 14vh, 11rem) 0;
+}
+.why__head { margin-bottom: 5rem; }
+
+.why__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+.why__statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 300; font-style: italic;
+  line-height: 1.35;
+  color: var(--charcoal);
+  letter-spacing: -0.015em;
+  position: sticky; top: 8rem;
+}
+.why__statement em {
+  font-style: normal; color: var(--ink); font-weight: 500;
+}
+.why__statement .accent {
+  color: var(--orange); font-style: normal; font-weight: 500;
+}
+
+.why__list {
+  list-style: none;
+  display: flex; flex-direction: column;
+}
+.why__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--haze);
+}
+.why__item:last-child { border-bottom: 1px solid var(--haze); }
+.why__item-num {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--orange);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding-top: .35rem;
+}
+.why__item-text {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.why__item-text strong {
+  font-weight: 600;
+  display: block;
+  margin-bottom: .35rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 860px) {
+  .why__grid { grid-template-columns: 1fr; }
+  .why__statement { position: static; }
+}
+
+/* ============================================================
+   RESEARCH JOURNEY
+   ============================================================ */
+.journey {
+  position: relative; z-index: 2;
+  background: var(--paper);
+  padding: clamp(7rem, 14vh, 11rem) 0;
+  overflow: hidden;
+}
+.journey__head { margin-bottom: 5rem; }
+
+.journey__path {
+  position: relative;
+  margin-top: 4rem;
+}
+.journey__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+.journey__line {
+  position: absolute;
+  top: 32px; left: 0; right: 0;
+  height: 1px; background: var(--haze);
+  z-index: 0;
+}
+.journey__line-progress {
+  position: absolute; top: 0; left: 0;
+  height: 100%; width: 0;
+  background: var(--orange);
+  transition: width .2s linear;
+}
+.journey__step {
+  position: relative;
+  z-index: 1;
+  opacity: 0.25;
+  transition: opacity .5s var(--ease-quiet);
+}
+.journey__step.is-active { opacity: 1; }
+.journey__step-dot {
+  width: 14px; height: 14px;
+  background: var(--paper);
+  border: 1.5px solid var(--stone);
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  margin-left: 1px;
+  position: relative;
+  transition: all .4s var(--ease-quiet);
+}
+.journey__step.is-active .journey__step-dot {
+  border-color: var(--orange);
+  background: var(--orange);
+  box-shadow: 0 0 0 6px rgba(255,153,0,0.15);
+}
+.journey__step-num {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--graphite);
+  letter-spacing: 0.1em;
+  margin-bottom: .5rem;
+}
+.journey__step.is-active .journey__step-num { color: var(--orange); }
+.journey__step-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: .6rem;
+}
+.journey__step-desc {
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--graphite);
+}
+
+@media (max-width: 860px) {
+  .journey__track {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .journey__line {
+    top: 0; bottom: 0; left: 7px;
+    width: 1px; height: auto;
+  }
+  .journey__step-dot { margin-bottom: 1rem; }
+}
+
+/* ============================================================
+   PRODUCT UNIVERSE — Three.js section
+   ============================================================ */
+.universe {
+  position: relative; z-index: 2;
+  background: var(--ink);
+  color: var(--white);
+  overflow: hidden;
+  height:300vh;
+}
+.universe__sticky {
+  position: sticky; top: 0;
+  height: 100vh; height: 100dvh;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.universe__canvas-wrap {
+  position: absolute; inset: 0;
+  z-index: 1;
+}
+.universe__canvas-wrap canvas {
+  width: 100% !important; height: 100% !important;
+  display: block;
+}
+.universe__overlay {
+  position: relative; z-index: 2;
+  width: 100%; padding: 0 var(--gut);
+  pointer-events: none;
+}
+.universe__head {
+  max-width: 720px;
+}
+.universe__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1.05; font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+.universe__title .accent {
+  font-style: italic; font-weight: 400; color: var(--orange);
+}
+.universe__desc {
+  font-family: var(--font-display);
+  font-size: 1.1rem; font-weight: 300;
+  line-height: 1.5;
+  color: var(--mist);
+  max-width: 50ch;
+}
+
+.universe__flow {
+  position: absolute;
+  bottom: 3rem; left: var(--gut); right: var(--gut);
+  display: flex; gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 2;
+  pointer-events: none;
+}
+.universe__flow-step {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: 0.1em;
+  color: var(--mist);
+  opacity: 0.4;
+  transition: opacity .4s var(--ease-quiet), color .4s var(--ease-quiet);
+  text-transform: uppercase;
+}
+.universe__flow-step.is-active {
+  opacity: 1; color: var(--orange);
+}
+.universe__flow-arrow {
+  color: var(--graphite); opacity: 0.5;
+  font-size: .75rem;
+}
+
+.universe__scene-meta {
+  position: absolute;
+  top: 6rem; right: var(--gut);
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: 0.15em;
+  color: var(--stone);
+  text-align: right;
+  z-index: 2;
+  pointer-events: none;
+}
+.universe__scene-meta span { color: var(--orange); }
+
+.universe__scroll-hint {
+  position: absolute;
+  bottom: 1rem; right: var(--gut);
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============================================================
+   DIFFERENCE — Four principles
+   ============================================================ */
+.difference {
+  position: relative; z-index: 2;
+  background: var(--white);
+  padding: clamp(7rem, 14vh, 11rem) 0;
+}
+.difference__head { margin-bottom: 5rem; }
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--haze);
+  border: 1px solid var(--haze);
+}
+.principle {
+  background: var(--white);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  position: relative;
+  transition: background .4s var(--ease-quiet);
+  overflow: hidden;
+}
+.principle:hover { background: var(--paper); }
+.principle__num {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--orange);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: .75rem;
+}
+.principle__num::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--haze);
+}
+.principle__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+.principle__desc {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--charcoal);
+  font-style: italic;
+}
+.principle__marker {
+  position: absolute;
+  top: 0; left: 0;
+  width: 0; height: 3px;
+  background: var(--orange);
+  transition: width .5s var(--ease-quiet);
+}
+.principle:hover .principle__marker { width: 100%; }
+
+@media (max-width: 720px) {
+  .principles { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   SOURCES VISUALIZATION
+   ============================================================ */
+.sources {
+  position: relative; z-index: 2;
+  background: var(--paper);
+  padding: clamp(7rem, 14vh, 11rem) 0;
+}
+.sources__head { margin-bottom: 4rem; }
+
+.sources__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.sources__list {
+  display: flex; flex-direction: column;
+  gap: .5rem;
+}
+.source-btn {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--haze);
+  text-align: left;
+  width: 100%;
+  transition: all .35s var(--ease-quiet);
+  position: relative;
+}
+.source-btn:hover, .source-btn.is-active {
+  border-color: var(--orange);
+  background: var(--white);
+  transform: translateX(4px);
+}
+.source-btn.is-active::before {
+  content: ''; position: absolute;
+  left: -1px; top: -1px; bottom: -1px;
+  width: 3px; background: var(--orange);
+}
+.source-btn__dot {
+  width: 10px; height: 10px;
+  background: var(--graphite);
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background .35s var(--ease-quiet);
+}
+.source-btn.is-active .source-btn__dot,
+.source-btn:hover .source-btn__dot { background: var(--orange); }
+.source-btn__label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  flex: 1;
+}
+.source-btn__arrow {
+  font-size: .85rem;
+  color: var(--stone);
+  transition: transform .35s var(--ease-quiet), color .35s var(--ease-quiet);
+}
+.source-btn.is-active .source-btn__arrow,
+.source-btn:hover .source-btn__arrow {
+  color: var(--orange); transform: translateX(3px);
+}
+
+.sources__detail {
+  background: var(--white);
+  border: 1px solid var(--haze);
+  padding: clamp(2rem, 4vw, 3rem);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+.sources__detail-tag {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.15em;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+}
+.sources__detail-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+}
+.sources__detail-desc {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+.sources__detail-examples {
+  font-size: .85rem;
+  color: var(--graphite);
+  border-top: 1px solid var(--haze);
+  padding-top: 1.25rem;
+}
+.sources__detail-examples strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .sources__layout { grid-template-columns: 1fr; }
+  .sources__detail { min-height: auto; }
+}
+
+/* ============================================================
+   CLAIM SECTION — Dark dramatic statement
+   ============================================================ */
+.claim {
+  position: relative; z-index: 2;
+  background: var(--ink);
+  color: var(--white);
+  padding: clamp(8rem, 18vh, 14rem) 0;
+  text-align: center;
+  overflow: hidden;
+}
+.claim__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gut);
+  position: relative;
+}
+.claim__eyebrow {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 2rem;
+  display: inline-flex; align-items: center; gap: .75rem;
+}
+.claim__eyebrow::before,
+.claim__eyebrow::after {
+  content: ''; width: 24px; height: 1px; background: var(--orange);
+}
+.claim__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  line-height: 1; font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+}
+.claim__title .accent {
+  font-style: italic; font-weight: 400; color: var(--orange);
+}
+.claim__sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: 300; font-style: italic;
+  line-height: 1.5;
+  color: var(--mist);
+  max-width: 55ch;
+  margin: 0 auto 2rem;
+}
+.claim__final {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  max-width: 40ch;
+  margin-left: auto; margin-right: auto;
+}
+
+.claim__bg-mark {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: clamp(15rem, 35vw, 35rem);
+  font-weight: 900;
+  color: rgba(255,255,255,0.025);
+  letter-spacing: -0.05em;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TIMELINE / ACHIEVEMENTS
+   ============================================================ */
+.timeline {
+  position: relative; z-index: 2;
+  background: var(--white);
+  padding: clamp(7rem, 14vh, 11rem) 0;
+}
+.timeline__head { margin-bottom: 5rem; }
+
+.timeline__track {
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+}
+.timeline__rail {
+  position: relative;
+  padding-right: 2rem;
+  border-right: 1px solid var(--haze);
+  text-align: right;
+}
+.timeline__rail-line {
+  position: absolute;
+  top: 8px; right: -1px;
+  width: 1px; height: calc(100% - 16px);
+  background: var(--haze);
+  overflow: hidden;
+}
+.timeline__rail-line-progress {
+  width: 100%; height: 0;
+  background: var(--orange);
+  transition: height .2s linear;
+}
+.timeline__year-marker {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  line-height: 1;
+  position: sticky; top: 8rem;
+}
+.timeline__year-marker .accent { color: var(--orange); }
+
+.timeline__items {
+  padding-left: clamp(2rem, 4vw, 4rem);
+  display: flex; flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4rem);
+}
+.timeline__item {
+  position: relative;
+  opacity: 0; transform: translateY(30px);
+  transition: opacity .8s var(--ease-quiet), transform .8s var(--ease-quiet);
+}
+.timeline__item.is-visible { opacity: 1; transform: translateY(0); }
+.timeline__item::before {
+  content: ''; position: absolute;
+  top: 8px; left: calc(-1 * clamp(2rem, 4vw, 4rem) - 5px);
+  width: 9px; height: 9px;
+  background: var(--white);
+  border: 1.5px solid var(--graphite);
+  border-radius: 50%;
+  z-index: 2;
+  transition: all .4s var(--ease-quiet);
+}
+.timeline__item.is-visible::before {
+  border-color: var(--orange);
+  background: var(--orange);
+  box-shadow: 0 0 0 5px rgba(255,153,0,0.15);
+}
+.timeline__item-num {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.15em;
+  color: var(--graphite);
+  margin-bottom: .65rem;
+  text-transform: uppercase;
+}
+.timeline__item.is-visible .timeline__item-num { color: var(--orange); }
+.timeline__item-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: .65rem;
+  line-height: 1.2;
+}
+.timeline__item-desc {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--charcoal);
+  max-width: 55ch;
+}
+.timeline__item-placeholder {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  background: var(--cloud);
+  padding: .25rem .5rem;
+  margin-top: .65rem;
+  border-radius: 2px;
+}
+
+@media (max-width: 720px) {
+  .timeline__track { grid-template-columns: 1fr; }
+  .timeline__rail {
+    border-right: none;
+    padding-right: 0;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  .timeline__rail-line { display: none; }
+  .timeline__items { padding-left: 1.5rem; }
+  .timeline__item::before {
+    left: -1.5rem - 5px;
+    left: calc(-1 * 1.5rem - 5px);
+  }
+  .timeline__year-marker { position: static; }
+}
+
+/* ============================================================
+   FOUNDER
+   ============================================================ */
+.founder {
+  position: relative; z-index: 2;
+  background: var(--paper);
+  padding: clamp(7rem, 14vh, 11rem) 0;
+}
+.founder__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+}
+.founder__visual {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--ink);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.founder__visual-fallback {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-2) 100%);
+  position: relative;
+}
+.founder__visual-fallback::before {
+  content: ''; position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,153,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,153,0,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.founder__visual-initials {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 10vw, 9rem);
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: -0.05em;
+  position: relative;
+  z-index: 1;
+}
+.founder__visual-label {
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mist);
+  z-index: 1;
+}
+.founder__visual-tag {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  z-index: 1;
+}
+
+.founder__info { }
+.founder__role {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 1.5rem;
+}
+.founder__role .accent { color: var(--orange); }
+.founder__name {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+.founder__bio {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+  max-width: 50ch;
+}
+.founder__bio em { font-style: italic; color: var(--ink); }
+
+.founder__pillars {
+  display: flex; flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 2rem;
+}
+.founder__pillar {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  padding: .55rem .9rem;
+  border: 1px solid var(--haze);
+  background: var(--white);
+  transition: all .3s var(--ease-quiet);
+}
+.founder__pillar:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+@media (max-width: 860px) {
+  .founder__layout { grid-template-columns: 1fr; }
+  .founder__visual { max-width: 360px; margin: 0 auto; }
+}
+
+/* ============================================================
+   FUTURE / STILL BUILDING
+   ============================================================ */
+.future {
+  position: relative; z-index: 2;
+  background: var(--ink);
+  color: var(--white);
+  padding: clamp(8rem, 16vh, 12rem) 0;
+  overflow: hidden;
+}
+.future__bg {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.future__bg svg {
+  width: clamp(600px, 80vw, 1100px);
+  height: auto;
+  opacity: 0.6;
+}
+.future__inner {
+  position: relative; z-index: 1;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+.future__head { margin-bottom: 5rem; max-width: 720px; }
+
+.future__areas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.future__area {
+  background: var(--ink);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  display: flex; align-items: center; gap: 1.5rem;
+  position: relative;
+  transition: background .4s var(--ease-quiet);
+}
+.future__area:hover { background: var(--ink-1); }
+.future__area-num {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--orange);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.future__area-label {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 720px) {
+  .future__areas { grid-template-columns: 1fr; }
+  .future__area { padding: 1.25rem; gap: 1rem; }
+}
+
+/* ============================================================
+   FINAL / EXPLORE
+   ============================================================ */
+.final {
+  position: relative;
+  z-index: 10; /* ← غير من 2 لـ 10 */
+  background: var(--white);
+  padding: clamp(8rem, 16vh, 12rem) 0 6rem;
+  text-align: center;
+  isolation: isolate; /* ← ضيف ده */
+}
+
+.final__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gut);
+}
+.final__eyebrow {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 2rem;
+  display: inline-flex; align-items: center; gap: .75rem;
+}
+.final__eyebrow::before,
+.final__eyebrow::after {
+  content: ''; width: 24px; height: 1px; background: var(--orange);
+}
+.final__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 11vw, 11rem);
+  line-height: 0.92; font-weight: 900;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+.final__title .accent {
+  font-style: italic; font-weight: 400; color: var(--orange);
+}
+.final__sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  max-width: 50ch;
+  margin: 0 auto 4rem;
+  line-height: 1.5;
+}
+.final__cta {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 500;
+  color: var(--ink);
+  padding: 1rem 0;
+  margin-bottom: 5rem;
+  position: relative;
+  transition: color .3s var(--ease-quiet);
+}
+.final__cta::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px; background: var(--ink);
+  transform: scaleX(0.4); transform-origin: left;
+  transition: transform .5s var(--ease-quiet), background .3s var(--ease-quiet);
+}
+.final__cta:hover { color: var(--orange); }
+.final__cta:hover::after { transform: scaleX(1); background: var(--orange); }
+.final__cta-arrow {
+  display: inline-block;
+  transition: transform .35s var(--ease-quiet);
+}
+.final__cta:hover .final__cta-arrow { transform: translateX(6px); }
+
+.final__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.final__card {
+  display: block;
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  background: var(--paper);
+  border: 1px solid var(--haze);
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  transition: all .4s var(--ease-quiet);
+}
+.final__card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 0; height: 3px;
+  background: var(--orange);
+  transition: width .5s var(--ease-quiet);
+}
+.final__card:hover {
+  background: var(--white);
+  border-color: var(--orange-line);
+  transform: translateY(-3px);
+}
+.final__card:hover::before { width: 100%; }
+.final__card-num {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.1em;
+  color: var(--graphite);
+  margin-bottom: 1.5rem;
+  display: flex; justify-content: space-between;
+  align-items: center;
+}
+.final__card-num span:last-child { color: var(--orange); }
+.final__card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: .6rem;
+}
+.final__card-desc {
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--graphite);
+  margin-bottom: 1.5rem;
+}
+.final__card-link {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: inline-flex; align-items: center; gap: .4rem;
+  transition: gap .3s var(--ease-quiet);
+}
+.final__card:hover .final__card-link { gap: .8rem; }
+
+@media (max-width: 860px) {
+  .final__cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .final__cards { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  position: relative; z-index: 2;
+  background: var(--ink);
+  color: var(--mist);
+  padding: 3rem 0 2rem;
+}
+.footer__inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gut);
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer__brand {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 600;
+  color: var(--white);
+  display: flex; align-items: center; gap: .5rem;
+}
+.footer__brand-dot {
+  width: 6px; height: 6px;
+  background: var(--orange); border-radius: 50%;
+}
+.footer__meta {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero__title .word > span { transform: translateY(0); }
+  .hero__eyebrow, .hero__sub, .hero__meta, .hero__scroll { opacity: 1; transform: none; }
+  .problem__conclusion-text { opacity: 1; transform: none; }
+  .timeline__item { opacity: 1; transform: none; }
+  .hero__scroll-line::after { display: none; }
+}
+
+/* ============================================================
+   SCROLLBAR (slight styling)
+   ============================================================ */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+/* ============================================================
+   FIX: Ensure final section is always visible above canvas
+   ============================================================ */
+.final {
+  position: relative;
+  z-index: 10 !important;
+  background: var(--white) !important;
+  isolation: isolate; /* يمنع أي تأثير من الـ canvas */
+}
+
+.final__inner {
+  position: relative;
+  z-index: 11;
+}
+
+/* لو الـ canvas لسه ظاهر فوق، خفيه */
+.scene-canvas,
+.universe__canvas-wrap {
+  z-index: 0 !important;
+}
+/* Force hide any fixed canvas after universe section */
+.universe ~ .scene-canvas,
+.universe ~ canvas {
+  display: none !important;
+}
+/* Nuclear option - force visibility */
+.final,
+.final__inner,
+.final__title,
+.final__sub,
+.final__cta,
+.final__cards,
+.final__card {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav" id="nav" aria-label="Primary">
+  <a href="../index.html" class="nav__logo" aria-label="YallaBuy home">
+    <span class="nav__logo-mark">YallaBuy<span class="nav__logo-dot"></span></span>
+  </a>
+  <ul class="nav__links">
+    <li><a href="#profile" aria-current="page">Profile</a></li>
+    <li><a href="../e.html">Products</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../article/article.html">Guides</a></li>
+  </ul>
+  <div class="nav__right">
+    <a href="#explore" class="nav__cta">Explore YallaBuy</a>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="2" y1="5" x2="16" y2="5"/>
+        <line x1="2" y1="13" x2="16" y2="13"/>
+      </svg>
+    </button>
+  </div>
+  <div class="nav__progress" aria-hidden="true">
+    <div class="nav__progress-bar" id="navProgress"></div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <a href="#profile">Profile</a>
+   <li><a href="../e.html">Products</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../article/article.html">Guides</a></li>
+</div>
+
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+    <div class="hero__eyebrow" id="heroEyebrow">
+      <span>Profile</span>
+      <span>·</span>
+      <span>YallaBuy / 2026</span>
+    </div>
+    <h1 class="hero__title">
+      <span class="word"><span>Research</span></span>
+      <span class="word accent"><span>first.</span></span><br>
+      <span class="word"><span>Buy</span></span>
+      <span class="word accent"><span>second.</span></span>
+    </h1>
+    <p class="hero__sub" id="heroSub">
+      YallaBuy is built to help people <em>understand products</em> before they buy them — not to push them toward a purchase, but to make the purchase feel deliberate.
+    </p>
+    <div class="hero__meta" id="heroMeta">
+      <div class="hero__meta-item">
+        Platform
+        <span>Product Research</span>
+      </div>
+      <div class="hero__meta-item">
+        Approach
+        <span class="accent">Evidence First</span>
+      </div>
+      <div class="hero__meta-item">
+        Status
+        <span>Continuously Building</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero__scroll" id="heroScroll">
+    <span>Scroll to begin</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- HERO TRANSITION -->
+<section class="hero-transition" id="heroTransition">
+  <div class="hero-transition__sticky">
+    <div class="hero-transition__inner">
+      <div class="hero-transition__cats" id="heroTransCats"></div>
+      <div class="hero-transition__text">
+        <p class="hero-transition__line" data-line="0">
+          Thousands of products. <em>Endless specs.</em>
+        </p>
+        <p class="hero-transition__line" data-line="1" style="position:absolute; left:-9999px;">
+          There are too many products and too much information.
+        </p>
+        <p class="hero-transition__line dark" data-line="2" style="position:absolute; left:-9999px;">
+          Choosing the right product <em>isn't always simple.</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="problem__sticky">
+    <div class="problem__inner">
+      <div class="problem__fragments" id="problemFragments"></div>
+      <div class="problem__count" id="problemCount">
+        100+
+        <span class="problem__count-label">Models per category</span>
+      </div>
+      <h2 class="problem__title">
+        Too many choices.<br>
+        <span class="accent">Too little clarity.</span>
+      </h2>
+      <div class="problem__conclusion">
+        <p class="problem__conclusion-text" id="problemConclusion">
+          That's why we built <em>YallaBuy</em> — to turn scattered product information into structured understanding.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY YALLABUY EXISTS -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why__head">
+      <div class="section-tag">Why we exist</div>
+      <h2 class="section-title">
+        Buying a product shouldn't<br>start with a <span class="accent">Buy button.</span>
+      </h2>
+      <p class="section-intro">
+        It should start with understanding. YallaBuy exists to help people approach products the way research is supposed to work — by collecting information first, then making a decision.
+      </p>
+    </div>
+    <div class="why__grid">
+      <div class="why__statement">
+        We don't push products. <em>We organize what's known about them</em> — so the decision becomes <span class="accent">clearer</span>, not louder.
+      </div>
+      <ul class="why__list">
+        <li class="why__item">
+          <span class="why__item-num">01</span>
+          <div class="why__item-text">
+            <strong>Discover products</strong>
+            Find products across categories without marketing noise replacing the actual information.
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-num">02</span>
+          <div class="why__item-text">
+            <strong>Understand differences</strong>
+            See what actually separates one product from another — beyond surface-level specifications.
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-num">03</span>
+          <div class="why__item-text">
+            <strong>Compare options</strong>
+            Place comparable products side by side with the same criteria, instead of marketing language.
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-num">04</span>
+          <div class="why__item-text">
+            <strong>Identify fit</strong>
+            Understand who a product is built for — and who it isn't.
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-num">05</span>
+          <div class="why__item-text">
+            <strong>Recognize limitations</strong>
+            See what a product doesn't do well, not only what it does.
+          </div>
+        </li>
+        <li class="why__item">
+          <span class="why__item-num">06</span>
+          <div class="why__item-text">
+            <strong>Decide deliberately</strong>
+            Make purchasing decisions based on context, not pressure.
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH JOURNEY -->
+<section class="journey" id="journey">
+  <div class="container">
+    <div class="journey__head">
+      <div class="section-tag">The Research Journey</div>
+      <h2 class="section-title">
+        How YallaBuy <span class="accent">researches</span> products.
+      </h2>
+      <p class="section-intro">
+        YallaBuy does not display a product and immediately suggest buying it. There is a sequence — six stages — that turns scattered information into a usable decision.
+      </p>
+    </div>
+    <div class="journey__path">
+      <div class="journey__track" id="journeyTrack">
+        <div class="journey__line">
+          <div class="journey__line-progress" id="journeyProgress"></div>
+        </div>
+        <div class="journey__step" data-step="0">
+          <div class="journey__step-dot"></div>
+          <div class="journey__step-num">01 — Stage</div>
+          <h3 class="journey__step-title">Discover</h3>
+          <p class="journey__step-desc">Identify products within a category and map the landscape before focusing on specifics.</p>
+        </div>
+        <div class="journey__step" data-step="1">
+          <div class="journey__step-dot"></div>
+          <div class="journey__step-num">02 — Stage</div>
+          <h3 class="journey__step-title">Research</h3>
+          <p class="journey__step-desc">Gather information from multiple distinct source types — not only manufacturer claims.</p>
+        </div>
+        <div class="journey__step" data-step="2">
+          <div class="journey__step-dot"></div>
+          <div class="journey__step-num">03 — Stage</div>
+          <h3 class="journey__step-title">Compare</h3>
+          <p class="journey__step-desc">Place products against each other using consistent criteria, not marketing narratives.</p>
+        </div>
+        <div class="journey__step" data-step="3">
+          <div class="journey__step-dot"></div>
+          <div class="journey__step-num">04 — Stage</div>
+          <h3 class="journey__step-title">Analyze</h3>
+          <p class="journey__step-desc">Identify patterns, trade-offs, and what specifications actually mean in real use.</p>
+        </div>
+        <div class="journey__step" data-step="4">
+          <div class="journey__step-dot"></div>
+          <div class="journey__step-num">05 — Stage</div>
+          <h3 class="journey__step-title">Explain</h3>
+          <p class="journey__step-desc">Write the findings in plain language, with context — not jargon.</p>
+        </div>
+        <div class="journey__step" data-step="5">
+          <div class="journey__step-dot"></div>
+          <div class="journey__step-num">06 — Stage</div>
+          <h3 class="journey__step-title">Decide</h3>
+          <p class="journey__step-desc">Present the decision in terms of fit — who the product is for, and who it isn't.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT UNIVERSE -->
+<section class="universe" id="universe">
+  <div class="universe__sticky">
+    <div class="universe__canvas-wrap" id="universeCanvasWrap"></div>
+    <div class="universe__scene-meta" aria-hidden="true">
+      <span>03</span> · Product Universe<br>
+      Interactive WebGL scene
+    </div>
+    <div class="universe__overlay">
+      <div class="universe__head">
+        <div class="section-tag dark">The Product Universe</div>
+        <h2 class="universe__title">
+          Products don't exist<br>in isolation — <span class="accent">they exist in context.</span>
+        </h2>
+        <p class="universe__desc">
+          Every product YallaBuy researches connects to sources, evidence, and comparable alternatives. The scene below visualizes that structure: floating products gradually organize into categories, then connect to the research behind them.
+        </p>
+      </div>
+    </div>
+    <div class="universe__flow" id="universeFlow">
+      <span class="universe__flow-step is-active" data-flow="0">Products</span>
+      <span class="universe__flow-arrow">→</span>
+      <span class="universe__flow-step" data-flow="1">Sources</span>
+      <span class="universe__flow-arrow">→</span>
+      <span class="universe__flow-step" data-flow="2">Evidence</span>
+      <span class="universe__flow-arrow">→</span>
+      <span class="universe__flow-step" data-flow="3">Comparison</span>
+      <span class="universe__flow-arrow">→</span>
+      <span class="universe__flow-step" data-flow="4">Analysis</span>
+      <span class="universe__flow-arrow">→</span>
+      <span class="universe__flow-step" data-flow="5">Decision</span>
+    </div>
+    <div class="universe__scroll-hint">Scroll to advance →</div>
+  </div>
+</section>
+
+<!-- DIFFERENCE / FOUR PRINCIPLES -->
+<section class="difference" id="difference">
+  <div class="container">
+    <div class="difference__head">
+      <div class="section-tag">Principles</div>
+      <h2 class="section-title">
+        What makes YallaBuy <span class="accent">different.</span>
+      </h2>
+      <p class="section-intro">
+        YallaBuy isn't defined by having more products or faster reviews. It's defined by how it treats information — and by what it refuses to do.
+      </p>
+    </div>
+    <div class="principles">
+      <div class="principle">
+        <div class="principle__marker"></div>
+        <div class="principle__num">01 / Principle</div>
+        <h3 class="principle__title">Transparency</h3>
+        <p class="principle__desc">
+          We clearly distinguish between manufacturer information, independent testing, owner feedback, and YallaBuy's own analysis. Every type of source has its own weight, and we mark which is which.
+        </p>
+      </div>
+      <div class="principle">
+        <div class="principle__marker"></div>
+        <div class="principle__num">02 / Principle</div>
+        <h3 class="principle__title">No Fake Testing</h3>
+        <p class="principle__desc">
+          We don't claim to personally test products when we haven't. If our coverage is based on documentation, specs, or owner feedback rather than hands-on testing, we say so openly.
+        </p>
+      </div>
+      <div class="principle">
+        <div class="principle__marker"></div>
+        <div class="principle__num">03 / Principle</div>
+        <h3 class="principle__title">Evidence First</h3>
+        <p class="principle__desc">
+          Product information should be supported by reliable sources whenever possible. Where a claim can't be sourced, we either label it as analysis or leave it out — we don't dress it up as fact.
+        </p>
+      </div>
+      <div class="principle">
+        <div class="principle__marker"></div>
+        <div class="principle__num">04 / Principle</div>
+        <h3 class="principle__title">Buyer Context</h3>
+        <p class="principle__desc">
+          A product isn't simply good or bad. What matters is whether it fits the user's needs. YallaBuy frames products around who they're for — and who they're not for.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCES VISUALIZATION -->
+<section class="sources" id="sources">
+  <div class="container">
+    <div class="sources__head">
+      <div class="section-tag">Information Sources</div>
+      <h2 class="section-title">
+        Six types of <span class="accent">evidence.</span>
+      </h2>
+      <p class="section-intro">
+        YallaBuy doesn't rely on a single kind of information. Each source type is treated differently — and labeled so readers know what they're looking at.
+      </p>
+    </div>
+    <div class="sources__layout">
+      <div class="sources__list" id="sourcesList" role="tablist" aria-label="Information source types">
+        <button class="source-btn is-active" role="tab" aria-selected="true" data-source="0">
+          <span class="source-btn__dot"></span>
+          <span class="source-btn__label">Manufacturer</span>
+          <span class="source-btn__arrow">→</span>
+        </button>
+        <button class="source-btn" role="tab" aria-selected="false" data-source="1">
+          <span class="source-btn__dot"></span>
+          <span class="source-btn__label">Independent Testing</span>
+          <span class="source-btn__arrow">→</span>
+        </button>
+        <button class="source-btn" role="tab" aria-selected="false" data-source="2">
+          <span class="source-btn__dot"></span>
+          <span class="source-btn__label">Owner Feedback</span>
+          <span class="source-btn__arrow">→</span>
+        </button>
+        <button class="source-btn" role="tab" aria-selected="false" data-source="3">
+          <span class="source-btn__dot"></span>
+          <span class="source-btn__label">Technical Documentation</span>
+          <span class="source-btn__arrow">→</span>
+        </button>
+        <button class="source-btn" role="tab" aria-selected="false" data-source="4">
+          <span class="source-btn__dot"></span>
+          <span class="source-btn__label">Market Information</span>
+          <span class="source-btn__arrow">→</span>
+        </button>
+        <button class="source-btn" role="tab" aria-selected="false" data-source="5">
+          <span class="source-btn__dot"></span>
+          <span class="source-btn__label">YallaBuy Analysis</span>
+          <span class="source-btn__arrow">→</span>
+        </button>
+      </div>
+      <div class="sources__detail" id="sourcesDetail" role="tabpanel" aria-live="polite">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAIM -->
+<section class="claim" id="claim">
+  <div class="claim__bg-mark" aria-hidden="true">Honest</div>
+  <div class="claim__inner">
+    <div class="claim__eyebrow">A Commitment</div>
+    <h2 class="claim__title">
+      We don't claim<br>what we <span class="accent">didn't do.</span>
+    </h2>
+    <p class="claim__sub">
+      If we didn't personally test a product, we tell you. If a claim is based on documentation rather than hands-on use, we label it. If we don't know something, we leave it out rather than invent it.
+    </p>
+    <p class="claim__final">
+      Transparency is more important than pretending.
+    </p>
+  </div>
+</section>
+
+<!-- TIMELINE / ACHIEVEMENTS -->
+<section class="timeline" id="timeline">
+  <div class="container">
+    <div class="timeline__head">
+      <div class="section-tag">Building YallaBuy</div>
+      <h2 class="section-title">
+        What's been <span class="accent">built so far.</span>
+      </h2>
+      <p class="section-intro">
+        YallaBuy is not a finished product — it's an ongoing project. Below are the milestones that have shaped the platform as it exists today.
+      </p>
+    </div>
+    <div class="timeline__track">
+      <div class="timeline__rail">
+        <div class="timeline__year-marker">
+          20<span class="accent">26</span>
+        </div>
+        <div class="timeline__rail-line">
+          <div class="timeline__rail-line-progress" id="timelineProgress"></div>
+        </div>
+      </div>
+      <div class="timeline__items" id="timelineItems">
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 01</div>
+          <h3 class="timeline__item-title">YallaBuy launched</h3>
+          <p class="timeline__item-desc">
+            Initial public release of the platform, establishing the editorial direction and core commitment to product research over product promotion.
+          </p>
+          <span class="timeline__item-placeholder">Foundational Release</span>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 02</div>
+          <h3 class="timeline__item-title">Product research system</h3>
+          <p class="timeline__item-desc">
+            Established the internal framework for how products are researched, structured, and presented — including the six-stage research journey that still guides coverage today.
+          </p>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 03</div>
+          <h3 class="timeline__item-title">Product category architecture</h3>
+          <p class="timeline__item-desc">
+            Defined how products are organized across categories, ensuring consistent comparison criteria and avoiding the混乱 of unstructured catalogues.
+          </p>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 04</div>
+          <h3 class="timeline__item-title">Deals system</h3>
+          <p class="timeline__item-desc">
+            Introduced a deals layer that surfaces pricing information without letting it override the research-first sequence. Price is presented after context, not before.
+          </p>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 05</div>
+          <h3 class="timeline__item-title">Insights system</h3>
+          <p class="timeline__item-desc">
+            Added an editorial layer for broader product guidance — category-level writing that sits above individual product pages and explains how a market works.
+          </p>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 06</div>
+          <h3 class="timeline__item-title">Editorial framework</h3>
+          <p class="timeline__item-desc">
+            Formalized the writing standards that keep coverage consistent — distinguishing manufacturer claims, independent findings, owner feedback, and YallaBuy's own analysis.
+          </p>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 07</div>
+          <h3 class="timeline__item-title">Performance improvements</h3>
+          <p class="timeline__item-desc">
+            Continuous work on speed, accessibility, and rendering — because a research platform that loads slowly or works inconsistently isn't usable as a research platform.
+          </p>
+        </article>
+        <article class="timeline__item">
+          <div class="timeline__item-num">Milestone 08 — Ongoing</div>
+          <h3 class="timeline__item-title">Continuous development</h3>
+          <p class="timeline__item-desc">
+            YallaBuy is not a finished product. It continues to evolve across discovery, research, comparisons, deals, insights, editorial systems, and user experience.
+          </p>
+          <span class="timeline__item-placeholder">In Progress</span>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="founder">
+  <div class="container">
+    <div class="founder__layout">
+      <div class="founder__visual">
+        <div class="founder__visual-fallback">
+          <div class="founder__visual-tag">Founder</div>
+          <div class="founder__visual-initials">MH</div>
+          <div class="founder__visual-label">Mahmoud Hamdy</div>
+        </div>
+      </div>
+      <div class="founder__info">
+        <div class="founder__role">
+          Founder · <span class="accent">Writer & Developer</span>
+        </div>
+        <h2 class="founder__name">Mahmoud Hamdy</h2>
+        <p class="founder__bio">
+          YallaBuy is built by one person across three disciplines: <em>research</em>, <em>writing</em>, and <em>web development</em>. That combination shapes how the platform reads, how it's structured, and how it evolves — because the person building it is also the person writing it.
+        </p>
+        <p class="founder__bio">
+          The work is editorial as much as it is technical. Every product page is written, every system is built by hand, and every decision about what to cover is made deliberately rather than algorithmically.
+        </p>
+        <div class="founder__pillars">
+          <span class="founder__pillar">Research</span>
+          <span class="founder__pillar">Writing</span>
+          <span class="founder__pillar">Web Development</span>
+          <span class="founder__pillar">Editorial Direction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUTURE -->
+<section class="future" id="future">
+  <div class="future__bg" aria-hidden="true">
+    <svg viewBox="0 0 800 400" fill="none">
+      <!-- Concentric expanding rings -->
+      <circle cx="400" cy="200" r="40" stroke="#FF9900" stroke-width="0.5" opacity="0.6"/>
+      <circle cx="400" cy="200" r="90" stroke="#FF9900" stroke-width="0.5" opacity="0.4"/>
+      <circle cx="400" cy="200" r="150" stroke="#FF9900" stroke-width="0.5" opacity="0.3"/>
+      <circle cx="400" cy="200" r="220" stroke="#FF9900" stroke-width="0.5" opacity="0.2"/>
+      <circle cx="400" cy="200" r="300" stroke="#FF9900" stroke-width="0.5" opacity="0.12"/>
+      <circle cx="400" cy="200" r="380" stroke="#FF9900" stroke-width="0.5" opacity="0.06"/>
+      <!-- Nodes -->
+      <circle cx="440" cy="200" r="3" fill="#FF9900"/>
+      <circle cx="490" cy="200" r="2.5" fill="#FF9900" opacity="0.8"/>
+      <circle cx="550" cy="200" r="2" fill="#FF9900" opacity="0.6"/>
+      <circle cx="400" cy="160" r="2.5" fill="#FF9900" opacity="0.7"/>
+      <circle cx="400" cy="110" r="2" fill="#FF9900" opacity="0.5"/>
+      <circle cx="400" cy="50" r="1.5" fill="#FF9900" opacity="0.4"/>
+      <circle cx="360" cy="200" r="2" fill="#FF9900" opacity="0.6"/>
+      <circle cx="310" cy="200" r="1.5" fill="#FF9900" opacity="0.5"/>
+      <circle cx="400" cy="240" r="2" fill="#FF9900" opacity="0.6"/>
+      <circle cx="400" cy="290" r="1.5" fill="#FF9900" opacity="0.5"/>
+      <circle cx="400" cy="350" r="1" fill="#FF9900" opacity="0.3"/>
+    </svg>
+  </div>
+  <div class="future__inner">
+    <div class="future__head">
+      <div class="section-tag dark">Where it's going</div>
+      <h2 class="section-title dark">
+        Still <span class="accent">building.</span>
+      </h2>
+      <p class="section-intro dark">
+        YallaBuy is continuously evolving — not toward a single feature, but toward a clearer research experience. The platform grows across every layer at once: discovery, comparison, writing, and the systems behind them.
+      </p>
+    </div>
+    <div class="future__areas">
+      <div class="future__area">
+        <span class="future__area-num">01</span>
+        <span class="future__area-label">Product Discovery</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">02</span>
+        <span class="future__area-label">Research</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">03</span>
+        <span class="future__area-label">Comparisons</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">04</span>
+        <span class="future__area-label">Deals</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">05</span>
+        <span class="future__area-label">Insights</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">06</span>
+        <span class="future__area-label">Editorial Systems</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">07</span>
+        <span class="future__area-label">User Experience</span>
+      </div>
+      <div class="future__area">
+        <span class="future__area-num">08</span>
+        <span class="future__area-label">Performance</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL / EXPLORE -->
+<section class="final" id="explore">
+  <div class="final__inner">
+    <div class="final__eyebrow">End of Profile · Beginning of Exploration</div>
+    <h2 class="final__title">
+      YallaBuy<br>
+      <span class="accent">Research first. Buy second.</span>
+    </h2>
+    <p class="final__sub">
+      The profile ends here. The platform begins on the next page — explore the parts of YallaBuy that interest you most.
+    </p>
+    <a href="#" class="final__cta">
+      Explore YallaBuy
+      <span class="final__cta-arrow">→</span>
+    </a>
+    <div class="final__cards">
+      <a href="../e.html" class="final__card">
+        <div class="final__card-num">
+          <span>01</span>
+          <span>Section</span>
+        </div>
+        <h3 class="final__card-title">Products</h3>
+        <p class="final__card-desc">Browse the full catalogue of researched products, organized by category and use case.</p>
+        <span class="final__card-link">Browse Products →</span>
+      </a>
+   <a href="../index-folder/categories/headphones/index.html" class="final__card">
+  <div class="final__card-num">
+    <span>03</span>
+    <span>Section</span>
+  </div>
+  <h3 class="final__card-title">Headphones</h3>
+  <p class="final__card-desc">Research-driven headphone comparisons — from sound signature and comfort to noise cancellation and real-world battery life.</p>
+  <span class="final__card-link">Explore Headphones →</span>
+</a>
+      
+      <a href="../article/article.html" class="final__card">
+        <div class="final__card-num">
+          <span>04</span>
+          <span>Section</span>
+        </div>
+        <h3 class="final__card-title">Guides</h3>
+        <p class="final__card-desc">Decision-focused guides for specific buying situations — context before recommendation.</p>
+        <span class="final__card-link">Open Guides →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      YallaBuy<span class="footer__brand-dot"></span>
+    </div>
+    <div class="footer__meta">
+      <span>Research First · Buy Second</span>
+      <span>Founded 2026</span>
+      <span>Built by Mahmoud Hamdy</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Three.js -->
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+<script>
+/* ============================================================
+   YALLABUY — PROFILE INTERACTIONS
+   ============================================================ */
+
+(function() {
+  'use strict';
+
+  // Detect environment
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 860px)').matches;
+  const isLowPerf = isMobile && (navigator.hardwareConcurrency || 4) <= 4;
+
+  // Performance: cap pixel ratio
+  const MAX_DPR = Math.min(window.devicePixelRatio || 1, isMobile ? 2 : 2);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ============================================================
+     UTILITIES
+     ============================================================ */
+  const lerp = (a, b, t) => a + (b - a) * t;
+  const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+  const randomRange = (min, max) => Math.random() * (max - min) + min;
+
+  /* ============================================================
+     NAVIGATION
+     ============================================================ */
+  const nav = document.getElementById('nav');
+  const navProgress = document.getElementById('navProgress');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  // Theme switcher based on section background
+  const darkSections = ['problem', 'universe', 'claim', 'future'];
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.4) {
+        const id = entry.target.id;
+        if (darkSections.includes(id)) {
+          nav.classList.add('is-dark');
+        } else {
+          nav.classList.remove('is-dark');
+        }
+      }
+    });
+  }, { threshold: [0.4, 0.6] });
+
+  ['problem', 'universe', 'claim', 'future', 'hero', 'why', 'journey', 'difference', 'sources', 'timeline', 'founder', 'explore']
+    .forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sectionObserver.observe(el);
+    });
+
+  // Scroll progress bar
+  const updateProgress = () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = scrollHeight > 0 ? (window.scrollY / scrollHeight) * 100 : 0;
+    navProgress.style.width = `${progress}%`;
+  };
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Mobile menu
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
+  /* ============================================================
+     HERO CANVAS — Product Universe (Three.js)
+     ============================================================ */
+
+  /**
+   * HeroScene
+   * Subtle floating product "card" meshes in 3D space.
+   * Mouse parallax + slow auto-rotation.
+   */
+  function HeroScene() {
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'position:absolute;inset:0;pointer-events:none;z-index:1;';
+    document.getElementById('hero').appendChild(wrap);
+
+    let canvas, renderer, scene, camera, meshGroup;
+    let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
+    let rafId = null;
+    let isVisible = true;
+    let active = !prefersReducedMotion;
+
+    function init() {
+      canvas = document.createElement('canvas');
+      canvas.style.cssText = 'width:100%;height:100%;display:block;opacity:0.85;';
+      canvas.setAttribute('aria-hidden', 'true');
+      wrap.appendChild(canvas);
+
+      renderer = new THREE.WebGLRenderer({
+        canvas, antialias: !isMobile, alpha: true,
+        powerPreference: 'high-performance'
+      });
+      renderer.setPixelRatio(MAX_DPR);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setClearColor(0x000000, 0);
+
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.set(0, 0, 14);
+
+      meshGroup = new THREE.Group();
+      scene.add(meshGroup);
+
+      // Generate floating "product card" planes
+      const count = isMobile ? 14 : 28;
+      const cardGeos = [
+        new THREE.PlaneGeometry(1.4, 1.0),   // phone-like
+        new THREE.PlaneGeometry(1.8, 1.2),   // tablet-like
+        new THREE.PlaneGeometry(2.2, 1.4),   // laptop-like
+        new THREE.PlaneGeometry(1.0, 1.0),   // square
+      ];
+
+      for (let i = 0; i < count; i++) {
+        const geo = cardGeos[Math.floor(Math.random() * cardGeos.length)];
+        // Vary between orange accent and dark
+        const isAccent = Math.random() > 0.7;
+        const mat = new THREE.MeshBasicMaterial({
+          color: isAccent ? 0xFF9900 : 0x0A0A0A,
+          transparent: true,
+          opacity: isAccent ? 0.08 : 0.06,
+          side: THREE.DoubleSide,
+        });
+        const mesh = new THREE.Mesh(geo, mat);
+        const radius = randomRange(6, 12);
+        const angle = Math.random() * Math.PI * 2;
+        mesh.position.set(
+          Math.cos(angle) * radius,
+          (Math.random() - 0.5) * 10,
+          (Math.random() - 0.5) * 8 - 2
+        );
+        mesh.rotation.set(
+          Math.random() * Math.PI,
+          Math.random() * Math.PI,
+          Math.random() * Math.PI * 0.3
+        );
+        mesh.userData = {
+          baseY: mesh.position.y,
+          floatSpeed: randomRange(0.3, 0.8),
+          floatAmp: randomRange(0.15, 0.4),
+          rotSpeed: randomRange(0.0005, 0.0015) * (Math.random() > 0.5 ? 1 : -1),
+        };
+        meshGroup.add(mesh);
+
+        // Wireframe edge for premium feel
+        const edges = new THREE.EdgesGeometry(geo);
+        const lineMat = new THREE.LineBasicMaterial({
+          color: isAccent ? 0xFF9900 : 0x0A0A0A,
+          transparent: true,
+          opacity: isAccent ? 0.35 : 0.18,
+        });
+        const wireframe = new THREE.LineSegments(edges, lineMat);
+        mesh.add(wireframe);
+      }
+
+      // Add subtle "data point" particles
+      const particleCount = isMobile ? 30 : 60;
+      const particleGeo = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 30;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 20;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
+      }
+      particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      const particleMat = new THREE.PointsMaterial({
+        color: 0xFF9900,
+        size: 0.04,
+        transparent: true,
+        opacity: 0.5,
+        sizeAttenuation: true,
+      });
+      const particles = new THREE.Points(particleGeo, particleMat);
+      scene.add(particles);
+      meshGroup.userData.particles = particles;
+
+      // Mouse parallax
+      window.addEventListener('mousemove', onMouseMove, { passive: true });
+      window.addEventListener('resize', onResize);
+    }
+
+    function onMouseMove(e) {
+      targetMouseX = (e.clientX / window.innerWidth - 0.5) * 0.4;
+      targetMouseY = (e.clientY / window.innerHeight - 0.5) * 0.4;
+    }
+
+    function onResize() {
+      if (!renderer) return;
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function tick() {
+      if (!isVisible || !active) {
+        rafId = null;
+        return;
+      }
+      rafId = requestAnimationFrame(tick);
+
+      // Smooth mouse
+      mouseX = lerp(mouseX, targetMouseX, 0.05);
+      mouseY = lerp(mouseY, targetMouseY, 0.05);
+
+      // Camera parallax
+      camera.position.x = mouseX * 2;
+      camera.position.y = -mouseY * 2;
+      camera.lookAt(0, 0, 0);
+
+      // Animate meshes
+      const t = performance.now() * 0.001;
+      meshGroup.children.forEach(mesh => {
+        const ud = mesh.userData;
+        if (ud.baseY !== undefined) {
+          mesh.position.y = ud.baseY + Math.sin(t * ud.floatSpeed) * ud.floatAmp;
+          mesh.rotation.z += ud.rotSpeed;
+          mesh.rotation.x += ud.rotSpeed * 0.5;
+        }
+      });
+
+      // Slow group rotation
+      meshGroup.rotation.y = Math.sin(t * 0.1) * 0.15;
+      meshGroup.rotation.x = Math.cos(t * 0.08) * 0.05;
+
+      // Particles slow drift
+      if (meshGroup.userData.particles) {
+        meshGroup.userData.particles.rotation.y = t * 0.02;
+      }
+
+      renderer.render(scene, camera);
+    }
+
+    function start() {
+      if (!active) return;
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    // Intersection observer to pause when out of view
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isVisible = entry.isIntersecting;
+        if (isVisible) start();
+        else stop();
+      });
+    }, { threshold: 0.05 });
+
+    this.init = init;
+    this.start = start;
+    this.stop = stop;
+    this.observe = (el) => heroObserver.observe(el);
+  }
+
+  /* ============================================================
+     HERO ANIMATION (GSAP entrance)
+     ============================================================ */
+  function initHeroAnimation() {
+    if (prefersReducedMotion) return;
+
+    const tl = gsap.timeline({ delay: 0.3 });
+
+    tl.to('#heroEyebrow', {
+        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+      })
+      .to('.hero__title .word > span', {
+        y: 0, duration: 1.0, stagger: 0.08, ease: 'power4.out'
+      }, '-=0.4')
+      .to('#heroSub', {
+        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+      }, '-=0.5')
+      .to('#heroMeta', {
+        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out'
+      }, '-=0.4')
+      .to('#heroScroll', {
+        opacity: 1, duration: 0.6, ease: 'power2.out'
+      }, '-=0.3');
+  }
+
+  /* ============================================================
+     HERO TRANSITION — Information overload sequence
+     ============================================================ */
+  function initHeroTransition() {
+    const catsContainer = document.getElementById('heroTransCats');
+    const lines = document.querySelectorAll('.hero-transition__line');
+
+    // Generate floating category labels
+    const categories = [
+      'Headphones', 'Laptops', 'Tablets', 'Smartphones',
+      'Cameras', 'Monitors', 'Speakers', 'Wearables',
+      'Keyboards', 'Mice', 'Earbuds', 'Smartwatches',
+      'Microphones', 'Webcams', 'SSDs', 'Routers',
+      '4K · 144Hz', 'USB-C', 'Bluetooth 5.3', 'OLED',
+      'mAh 5000', 'Snapdragon', 'M3 Pro', 'Wi-Fi 7',
+      'RGB', 'Mechanical', 'Wireless', 'Dolby Atmos'
+    ];
+
+    const positions = [];
+    const catCount = isMobile ? 14 : 22;
+
+    for (let i = 0; i < catCount; i++) {
+      const cat = document.createElement('div');
+      cat.className = 'hero-transition__cat';
+      cat.textContent = categories[Math.floor(Math.random() * categories.length)];
+
+      // Distribute in a rough grid with randomness
+      const cols = isMobile ? 3 : 5;
+      const rows = Math.ceil(catCount / cols);
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+
+      const xPct = (col / (cols - 1)) * 80 + (Math.random() - 0.5) * 12 - 40;
+      const yPct = (row / (rows - 1)) * 60 + (Math.random() - 0.5) * 12 - 10;
+
+      cat.style.left = `${50 + xPct}%`;
+      cat.style.top = `${50 + yPct}%`;
+      cat.style.transform = 'translate(-50%, -50%) scale(0.8)';
+
+      catsContainer.appendChild(cat);
+      positions.push({ el: cat, x: xPct, y: yPct, baseScale: 0.8 });
+    }
+
+    if (prefersReducedMotion) {
+      lines.forEach(l => l.style.opacity = 1);
+      positions.forEach(p => {
+        p.el.style.opacity = 1;
+        p.el.style.transform = 'translate(-50%, -50%) scale(1)';
+      });
+      return;
+    }
+
+    // Initial state
+    gsap.set(lines[0], { opacity: 1 });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#heroTransition',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+      }
+    });
+
+    // Animate categories appearing (chaos)
+    positions.forEach((p, i) => {
+      tl.to(p.el, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'power2.out',
+      }, i * 0.02);
+    });
+
+    // Slight movement / jitter
+    positions.forEach((p, i) => {
+      tl.to(p.el, {
+        x: `+=${(Math.random() - 0.5) * 30}`,
+        y: `+=${(Math.random() - 0.5) * 30}`,
+        duration: 1,
+        ease: 'none',
+      }, 0.5);
+    });
+
+    // Line 0 fades, line 1 appears
+    tl.to(lines[0], { opacity: 0.15, duration: 0.3 }, 0.3)
+      .set(lines[1], { position: 'static', opacity: 0 }, 0.3)
+      .to(lines[1], { opacity: 1, duration: 0.4 }, 0.4)
+      .to(lines[1], { opacity: 0.15, duration: 0.3 });
+
+    // Categories scatter more, then fade
+    tl.to(positions.map(p => p.el), {
+      opacity: 0,
+      scale: 1.3,
+      x: (i, el) => (Math.random() - 0.5) * 200,
+      y: (i, el) => (Math.random() - 0.5) * 200,
+      duration: 0.6,
+      stagger: 0.005,
+      ease: 'power2.in',
+    }, '>-0.1');
+
+    // Line 2 (dark) appears
+    tl.set(lines[2], { position: 'static', opacity: 0 })
+      .to(lines[2], { opacity: 1, duration: 0.4 });
+  }
+
+  /* ============================================================
+     PROBLEM SECTION — Chaotic fragments → organized
+     ============================================================ */
+  function initProblemSection() {
+    const container = document.getElementById('problemFragments');
+    const conclusion = document.getElementById('problemConclusion');
+
+    // Generate fragments
+    const fragments = [
+      { text: 'SKU: YB-2026-0142', type: 'spec' },
+      { text: 'Battery 5000mAh', type: 'num' },
+      { text: '4K · 144Hz', type: 'spec' },
+      { text: 'Snapdragon 8 Gen 3', type: '' },
+      { text: 'USB-C 3.2', type: 'spec' },
+      { text: 'Weight: 1.24kg', type: 'num' },
+      { text: 'RAM 32GB', type: 'num' },
+      { text: 'OLED 27"', type: 'spec' },
+      { text: 'Bluetooth 5.3', type: '' },
+      { text: 'SSD 1TB NVMe', type: 'num' },
+      { text: 'Refresh 240Hz', type: 'spec' },
+      { text: 'Dolby Atmos', type: '' },
+      { text: 'mAh 5000', type: 'num' },
+      { text: 'M3 Pro', type: '' },
+      { text: 'Wi-Fi 7', type: 'spec' },
+      { text: 'ANSI 1200 lumens', type: 'num' },
+      { text: 'Aspect 16:10', type: 'spec' },
+      { text: 'HDR10+', type: '' },
+      { text: 'ISO 25600', type: 'num' },
+      { text: 'f/1.4 aperture', type: 'spec' },
+    ];
+
+    const count = isMobile ? 12 : 18;
+    for (let i = 0; i < count; i++) {
+      const f = fragments[i % fragments.length];
+      const el = document.createElement('div');
+      el.className = `fragment ${f.type === 'spec' ? 'fragment--spec' : f.type === 'num' ? 'fragment--num' : ''}`;
+      el.textContent = f.text;
+
+      // Random initial position (scattered)
+      const x = randomRange(5, 85);
+      const y = randomRange(15, 80);
+      const rot = randomRange(-15, 15);
+
+      el.style.left = `${x}%`;
+      el.style.top = `${y}%`;
+      el.style.transform = `translate(-50%, -50%) rotate(${rot}deg) scale(0.9)`;
+      el.style.opacity = '0';
+
+      container.appendChild(el);
+    }
+
+    if (prefersReducedMotion) {
+      container.querySelectorAll('.fragment').forEach(f => {
+        f.style.opacity = 1;
+      });
+      gsap.set(conclusion, { opacity: 1, y: 0 });
+      return;
+    }
+
+    const fragmentEls = container.querySelectorAll('.fragment');
+
+    // Master timeline synced to scroll
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#problem',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.2,
+      }
+    });
+
+    // Phase 1: fragments appear scattered (chaos)
+    tl.to(fragmentEls, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.3,
+      stagger: 0.02,
+      ease: 'power2.out',
+    }, 0);
+
+    // Phase 2: jitter/move around
+    fragmentEls.forEach((el, i) => {
+      tl.to(el, {
+        x: `+=${(Math.random() - 0.5) * 40}`,
+        y: `+=${(Math.random() - 0.5) * 40}`,
+        rotation: `+=${(Math.random() - 0.5) * 20}`,
+        duration: 0.4,
+        ease: 'none',
+      }, 0.3 + i * 0.005);
+    });
+
+    // Phase 3: organize — fragments drift to organized positions
+    fragmentEls.forEach((el, i) => {
+      const cols = 6;
+      const col = i % cols;
+      const row = Math.floor(i / cols);
+      const targetX = (col - cols / 2 + 0.5) * 90;
+      const targetY = (row - 1) * 50 + 30;
+
+      tl.to(el, {
+        x: targetX,
+        y: targetY,
+        rotation: 0,
+        scale: 0.85,
+        opacity: 0.4,
+        duration: 0.6,
+        ease: 'power3.inOut',
+      }, 0.8 + i * 0.005);
+    });
+
+    // Phase 4: fragments fade out as conclusion appears
+    tl.to(fragmentEls, {
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.4,
+      stagger: 0.005,
+      ease: 'power2.in',
+    }, 1.4);
+
+    // Conclusion text rises
+    tl.to(conclusion, {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      ease: 'power3.out',
+    }, 1.5);
+  }
+
+  /* ============================================================
+     WHY SECTION — Scroll reveal
+     ============================================================ */
+  function initWhySection() {
+    if (prefersReducedMotion) return;
+
+    gsap.from('.why__statement', {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.why__statement',
+        start: 'top 80%',
+      }
+    });
+
+    gsap.from('.why__item', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.why__list',
+        start: 'top 75%',
+      }
+    });
+  }
+
+  /* ============================================================
+     RESEARCH JOURNEY — Step activation + progress
+     ============================================================ */
+  function initResearchJourney() {
+    const steps = document.querySelectorAll('.journey__step');
+    const progress = document.getElementById('journeyProgress');
+
+    if (prefersReducedMotion) {
+      steps.forEach(s => s.classList.add('is-active'));
+      progress.style.width = '100%';
+      return;
+    }
+
+    // Animate progress line based on scroll position
+    gsap.to(progress, {
+      width: '100%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.journey__path',
+        start: 'top 70%',
+        end: 'bottom 60%',
+        scrub: 1,
+      }
+    });
+
+    // Activate steps progressively
+    steps.forEach((step, i) => {
+      ScrollTrigger.create({
+        trigger: step,
+        start: 'top 75%',
+        end: 'bottom 30%',
+        onEnter: () => step.classList.add('is-active'),
+        onEnterBack: () => step.classList.add('is-active'),
+        onLeave: () => {
+          // Only deactivate if past
+          if (i < steps.length - 1) {
+            // keep active for narrative flow
+          }
+        },
+      });
+
+      // Subtle entrance
+      gsap.from(step, {
+        opacity: 0.3,
+        y: 30,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: step,
+          start: 'top 85%',
+        }
+      });
+    });
+  }
+
+  /* ============================================================
+     UNIVERSE — Three.js Product Universe
+     ============================================================ */
+  function UniverseScene() {
+    let canvas, renderer, scene, camera, group;
+    let rafId = null;
+    let isVisible = false;
+    let scrollProgress = 0;
+    let mouseX = 0, mouseY = 0, targetMouseX = 0, targetMouseY = 0;
+    let flowSteps = [];
+
+    const productCount = isMobile ? 24 : 42;
+    const sourceCount = isMobile ? 12 : 20;
+    const connectionCount = isMobile ? 16 : 30;
+    const products = [];
+    const sources = [];
+    const connections = [];
+
+    function init() {
+      const wrap = document.getElementById('universeCanvasWrap');
+      canvas = document.createElement('canvas');
+      canvas.style.cssText = 'width:100%;height:100%;display:block;';
+      canvas.setAttribute('aria-hidden', 'true');
+      wrap.appendChild(canvas);
+
+      renderer = new THREE.WebGLRenderer({
+        canvas, antialias: !isMobile, alpha: true,
+        powerPreference: 'high-performance'
+      });
+      renderer.setPixelRatio(MAX_DPR);
+      renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+      renderer.setClearColor(0x0A0A0A, 1);
+
+      scene = new THREE.Scene();
+      scene.fog = new THREE.Fog(0x0A0A0A, 15, 40);
+
+      camera = new THREE.PerspectiveCamera(50, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+      camera.position.set(0, 0, 18);
+
+      group = new THREE.Group();
+      scene.add(group);
+
+      // Generate "product" planes — abstract, varied geometries
+      const geos = [
+        new THREE.PlaneGeometry(1.0, 1.6),    // phone
+        new THREE.PlaneGeometry(1.4, 1.0),    // tablet
+        new THREE.PlaneGeometry(1.8, 1.2),    // laptop screen
+        new THREE.PlaneGeometry(0.8, 0.8),    // watch
+        new THREE.PlaneGeometry(1.2, 0.9),    // camera body
+        new THREE.PlaneGeometry(1.6, 1.0),    // monitor
+      ];
+
+      for (let i = 0; i < productCount; i++) {
+        const geo = geos[i % geos.length];
+        const isAccent = Math.random() > 0.75;
+
+        const mat = new THREE.MeshBasicMaterial({
+          color: isAccent ? 0xFF9900 : 0xFFFFFF,
+          transparent: true,
+          opacity: isAccent ? 0.12 : 0.08,
+          side: THREE.DoubleSide,
+        });
+        const mesh = new THREE.Mesh(geo, mat);
+
+        // Initial scattered positions
+        const radius = randomRange(8, 14);
+        const angle = Math.random() * Math.PI * 2;
+        mesh.position.set(
+          Math.cos(angle) * radius,
+          (Math.random() - 0.5) * 14,
+          (Math.random() - 0.5) * 10
+        );
+        mesh.rotation.set(
+          Math.random() * Math.PI * 0.3,
+          Math.random() * Math.PI * 0.5,
+          Math.random() * Math.PI * 0.2
+        );
+
+        // Wireframe edge
+        const edges = new THREE.EdgesGeometry(geo);
+        const lineMat = new THREE.LineBasicMaterial({
+          color: isAccent ? 0xFF9900 : 0xFFFFFF,
+          transparent: true,
+          opacity: isAccent ? 0.45 : 0.25,
+        });
+        const wireframe = new THREE.LineSegments(edges, lineMat);
+        mesh.add(wireframe);
+
+        mesh.userData = {
+          isAccent,
+          // Final organized position (circular arrangement)
+          finalAngle: (i / productCount) * Math.PI * 2,
+          finalRadius: 6,
+          finalY: Math.sin(i * 0.5) * 2,
+          floatOffset: Math.random() * Math.PI * 2,
+          rotSpeed: randomRange(0.0003, 0.001) * (Math.random() > 0.5 ? 1 : -1),
+        };
+
+        group.add(mesh);
+        products.push(mesh);
+      }
+
+      // Generate "source" dots — smaller, brighter
+      const sourceGeo = new THREE.CircleGeometry(0.08, 16);
+      for (let i = 0; i < sourceCount; i++) {
+        const isAccent = Math.random() > 0.6;
+        const mat = new THREE.MeshBasicMaterial({
+          color: isAccent ? 0xFF9900 : 0xFFFFFF,
+          transparent: true,
+          opacity: 0.6,
+        });
+        const mesh = new THREE.Mesh(sourceGeo, mat);
+        const angle = (i / sourceCount) * Math.PI * 2;
+        const radius = 4;
+        mesh.position.set(
+          Math.cos(angle) * radius,
+          Math.sin(i * 1.2) * 3,
+          Math.sin(angle) * radius * 0.3
+        );
+        mesh.userData = {
+          basePos: mesh.position.clone(),
+          finalAngle: angle,
+          finalRadius: 3,
+          floatOffset: Math.random() * Math.PI * 2,
+        };
+        group.add(mesh);
+        sources.push(mesh);
+
+        // Add glow ring
+        const ringGeo = new THREE.RingGeometry(0.12, 0.16, 16);
+        const ringMat = new THREE.MeshBasicMaterial({
+          color: isAccent ? 0xFF9900 : 0xFFFFFF,
+          transparent: true,
+          opacity: 0.3,
+          side: THREE.DoubleSide,
+        });
+        const ring = new THREE.Mesh(ringGeo, ringMat);
+        mesh.add(ring);
+      }
+
+      // Generate "connection" lines
+      const lineMat = new THREE.LineBasicMaterial({
+        color: 0xFF9900,
+        transparent: true,
+        opacity: 0,
+      });
+
+      for (let i = 0; i < connectionCount; i++) {
+        const geo = new THREE.BufferGeometry();
+        const positions = new Float32Array(6); // 2 points
+        geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const line = new THREE.Line(geo, lineMat.clone());
+        line.userData = {
+          productIndex: Math.floor(Math.random() * products.length),
+          sourceIndex: Math.floor(Math.random() * sources.length),
+          opacity: 0,
+        };
+        group.add(line);
+        connections.push(line);
+      }
+
+      // Ambient dust particles
+      const dustCount = isMobile ? 100 : 200;
+      const dustGeo = new THREE.BufferGeometry();
+      const dustPos = new Float32Array(dustCount * 3);
+      for (let i = 0; i < dustCount; i++) {
+        dustPos[i * 3] = (Math.random() - 0.5) * 40;
+        dustPos[i * 3 + 1] = (Math.random() - 0.5) * 25;
+        dustPos[i * 3 + 2] = (Math.random() - 0.5) * 20;
+      }
+      dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+      const dustMat = new THREE.PointsMaterial({
+        color: 0xFF9900,
+        size: 0.03,
+        transparent: true,
+        opacity: 0.35,
+        sizeAttenuation: true,
+      });
+      const dust = new THREE.Points(dustGeo, dustMat);
+      scene.add(dust);
+      group.userData.dust = dust;
+
+      // Mouse parallax
+      window.addEventListener('mousemove', (e) => {
+        targetMouseX = (e.clientX / window.innerWidth - 0.5) * 0.3;
+        targetMouseY = (e.clientY / window.innerHeight - 0.5) * 0.3;
+      }, { passive: true });
+
+      window.addEventListener('resize', onResize);
+
+      // Flow steps
+      flowSteps = document.querySelectorAll('.universe__flow-step');
+    }
+
+    function onResize() {
+      if (!renderer) return;
+      const wrap = document.getElementById('universeCanvasWrap');
+      camera.aspect = wrap.clientWidth / wrap.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    }
+
+    function setProgress(p) {
+      scrollProgress = clamp(p, 0, 1);
+    }
+
+    function updateFlowStep() {
+      const stage = Math.floor(scrollProgress * 6);
+      const clampedStage = Math.min(stage, 5);
+      flowSteps.forEach((step, i) => {
+        step.classList.toggle('is-active', i <= clampedStage);
+      });
+    }
+
+    function tick() {
+      if (!isVisible) {
+        rafId = null;
+        return;
+      }
+      rafId = requestAnimationFrame(tick);
+
+      const t = performance.now() * 0.001;
+      const p = scrollProgress;
+
+      // Smooth mouse
+      mouseX = lerp(mouseX, targetMouseX, 0.04);
+      mouseY = lerp(mouseY, targetMouseY, 0.04);
+
+      // Camera moves based on progress
+      // Stage 0-0.2: products scattered
+      // Stage 0.2-0.5: products organize
+      // Stage 0.5-0.8: sources appear + connections form
+      // Stage 0.8-1.0: connections strengthen, pull to center
+
+      const organizeP = clamp((p - 0.15) / 0.35, 0, 1); // 0.15 to 0.5
+      const sourcesP = clamp((p - 0.4) / 0.3, 0, 1);     // 0.4 to 0.7
+      const connectionsP = clamp((p - 0.6) / 0.3, 0, 1); // 0.6 to 0.9
+
+      // Camera movement
+      camera.position.x = lerp(0, mouseX * 3, 1);
+      camera.position.y = lerp(0, -mouseY * 2 + organizeP * 1.5, 1);
+      camera.position.z = lerp(18, 14, p);
+      camera.lookAt(0, 0, 0);
+
+      // Animate products: scatter → organize
+      products.forEach((mesh, i) => {
+        const ud = mesh.userData;
+        // Floating
+        const floatY = Math.sin(t * 0.5 + ud.floatOffset) * 0.2;
+
+        // Scattered position
+        const scatterX = Math.cos(i * 0.7 + t * 0.1) * 10;
+        const scatterY = Math.sin(i * 0.9 + t * 0.15) * 5;
+        const scatterZ = Math.sin(i * 1.1) * 4;
+
+        // Organized position (circular ring)
+        const finalX = Math.cos(ud.finalAngle) * ud.finalRadius;
+        const finalY = ud.finalY + Math.sin(t * 0.4 + ud.floatOffset) * 0.15;
+        const finalZ = Math.sin(ud.finalAngle) * ud.finalRadius * 0.4;
+
+        mesh.position.x = lerp(scatterX, finalX, organizeP);
+        mesh.position.y = lerp(scatterY, finalY, organizeP) + floatY;
+        mesh.position.z = lerp(scatterZ, finalZ, organizeP);
+
+        // Rotation
+        mesh.rotation.y += ud.rotSpeed;
+        mesh.rotation.x = lerp(0.3, 0, organizeP);
+      });
+
+      // Animate sources
+      sources.forEach((mesh, i) => {
+        const ud = mesh.userData;
+        const floatY = Math.sin(t * 0.6 + ud.floatOffset) * 0.15;
+
+        // Fade in based on sourcesP
+        mesh.material.opacity = sourcesP * 0.8;
+        mesh.children[0].material.opacity = sourcesP * 0.4;
+
+        // Position
+        const angle = ud.finalAngle + t * 0.05;
+        const radius = lerp(8, ud.finalRadius, sourcesP);
+        mesh.position.x = Math.cos(angle) * radius;
+        mesh.position.y = Math.sin(angle * 1.3) * 2.5 + floatY;
+        mesh.position.z = Math.sin(angle) * radius * 0.4;
+
+        // Pulse
+        const pulse = 1 + Math.sin(t * 2 + i) * 0.15;
+        mesh.scale.setScalar(pulse);
+      });
+
+      // Animate connections
+      connections.forEach((line, i) => {
+        const ud = line.userData;
+        const product = products[ud.productIndex % products.length];
+        const source = sources[ud.sourceIndex % sources.length];
+
+        if (!product || !source) return;
+
+        const positions = line.geometry.attributes.position.array;
+        positions[0] = product.position.x;
+        positions[1] = product.position.y;
+        positions[2] = product.position.z;
+        positions[3] = source.position.x;
+        positions[4] = source.position.y;
+        positions[5] = source.position.z;
+        line.geometry.attributes.position.needsUpdate = true;
+
+        const targetOpacity = connectionsP * (0.15 + Math.sin(t + i) * 0.05 + 0.1);
+        line.material.opacity = Math.max(0, targetOpacity);
+      });
+
+      // Dust drift
+      if (group.userData.dust) {
+        group.userData.dust.rotation.y = t * 0.02;
+        group.userData.dust.rotation.x = Math.sin(t * 0.05) * 0.05;
+      }
+
+      // Group slow rotation
+      group.rotation.y = Math.sin(t * 0.08) * 0.1 + p * 0.3;
+
+      renderer.render(scene, camera);
+    }
+
+    function start() {
+      if (prefersReducedMotion) {
+        // Render single frame
+        tick();
+        return;
+      }
+      if (!rafId) rafId = requestAnimationFrame(tick);
+    }
+
+    function stop() {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+    }
+
+    this.init = init;
+    this.start = start;
+    this.stop = stop;
+    this.setProgress = setProgress;
+    this.updateFlowStep = updateFlowStep;
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const wasVisible = isVisible;
+        isVisible = entry.isIntersecting;
+        if (isVisible && !wasVisible) start();
+        else if (!isVisible && wasVisible) stop();
+      });
+    }, { threshold: 0.05 });
+    this.observe = (el) => obs.observe(el);
+  }
+
+  /* ============================================================
+     DIFFERENCE — Principle reveals
+     ============================================================ */
+  function initDifferenceSection() {
+    if (prefersReducedMotion) return;
+
+    gsap.from('.principle', {
+      opacity: 0,
+      y: 40,
+      duration: 0.9,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.principles',
+        start: 'top 75%',
+      }
+    });
+  }
+
+  /* ============================================================
+     SOURCES — Interactive tabs
+     ============================================================ */
+  function initSourcesInteraction() {
+    const btns = document.querySelectorAll('.source-btn');
+    const detail = document.getElementById('sourcesDetail');
+
+    const sourceData = [
+      {
+        tag: 'Source Type 01',
+        title: 'Manufacturer',
+        desc: 'Information provided directly by the company that makes the product — specifications, marketing claims, official documentation, and product images.',
+        examples: 'Official spec sheets · Product pages · Press kits'
+      },
+      {
+        tag: 'Source Type 02',
+        title: 'Independent Testing',
+        desc: 'Findings from third parties who measure, benchmark, or evaluate products — typically labs, reviewers, or publications with controlled methodologies.',
+        examples: 'Benchmark results · Lab measurements · Reviewer findings'
+      },
+      {
+        tag: 'Source Type 03',
+        title: 'Owner Feedback',
+        desc: 'What people who actually own and use the product report over time — including patterns that only emerge after extended use, not first impressions.',
+        examples: 'Long-term owner reviews · Forum discussions · Recurring issues'
+      },
+      {
+        tag: 'Source Type 04',
+        title: 'Technical Documentation',
+        desc: 'Engineering-level documentation — datasheets, technical manuals, certification filings — that describe how a product behaves under specific conditions.',
+        examples: 'Datasheets · Technical manuals · Certification filings'
+      },
+      {
+        tag: 'Source Type 05',
+        title: 'Market Information',
+        desc: 'Context about where a product sits in its category — pricing trends, release timing, positioning relative to comparable alternatives.',
+        examples: 'Pricing context · Release cycles · Category positioning'
+      },
+      {
+        tag: 'Source Type 06',
+        title: 'YallaBuy Analysis',
+        desc: 'Synthesis written by YallaBuy — clearly labeled as analysis rather than fact. Combines the above source types into a coherent picture of who a product is for.',
+        examples: 'Editorial synthesis · Comparative analysis · Buyer-context notes'
+      }
+    ];
+
+    function render(idx) {
+      const d = sourceData[idx];
+      detail.innerHTML = `
+        <div class="sources__detail-tag">${d.tag}</div>
+        <h3 class="sources__detail-title">${d.title}</h3>
+        <p class="sources__detail-desc">${d.desc}</p>
+        <div class="sources__detail-examples">
+          <strong>What it includes</strong>
+          ${d.examples}
+        </div>
+      `;
+
+      // Subtle fade-in
+      if (!prefersReducedMotion) {
+        gsap.fromTo(detail, { opacity: 0.3, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' });
+      }
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        btns.forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+        render(i);
+      });
+    });
+
+    // Initial
+    render(0);
+  }
+
+  /* ============================================================
+     CLAIM SECTION — Dramatic reveal
+     ============================================================ */
+  function initClaimSection() {
+    if (prefersReducedMotion) return;
+
+    gsap.from('.claim__title', {
+      opacity: 0,
+      y: 60,
+      duration: 1.2,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '.claim',
+        start: 'top 60%',
+      }
+    });
+
+    gsap.from('.claim__sub', {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      delay: 0.2,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.claim',
+        start: 'top 60%',
+      }
+    });
+
+    gsap.from('.claim__final', {
+      opacity: 0,
+      y: 30,
+      duration: 1,
+      delay: 0.4,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.claim',
+        start: 'top 50%',
+      }
+    });
+
+    gsap.to('.claim__bg-mark', {
+      scale: 1.05,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.claim',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      }
+    });
+  }
+
+  /* ============================================================
+     TIMELINE — Animate items + progress rail
+     ============================================================ */
+  function initTimeline() {
+    const items = document.querySelectorAll('.timeline__item');
+    const progress = document.getElementById('timelineProgress');
+
+    if (prefersReducedMotion) {
+      items.forEach(i => i.classList.add('is-visible'));
+      progress.style.height = '100%';
+      return;
+    }
+
+    items.forEach((item, i) => {
+      ScrollTrigger.create({
+        trigger: item,
+        start: 'top 80%',
+        onEnter: () => {
+          item.classList.add('is-visible');
+        },
+        onEnterBack: () => {
+          item.classList.add('is-visible');
+        }
+      });
+    });
+
+    // Animate vertical progress line
+    gsap.to(progress, {
+      height: '100%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.timeline__items',
+        start: 'top 80%',
+        end: 'bottom 80%',
+        scrub: 1,
+      }
+    });
+
+    // Year marker subtle parallax
+    gsap.to('.timeline__year-marker', {
+      y: -30,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.timeline',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1,
+      }
+    });
+  }
+
+  /* ============================================================
+     FOUNDER — Image fallback
+     ============================================================ */
+  function setupImageFallbacks() {
+    // The founder visual uses initials fallback by design — no external images.
+    // If real images are added later, this provides graceful fallback.
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        const fallback = document.createElement('div');
+        fallback.className = 'img-fallback';
+        fallback.style.cssText = `
+          width: 100%; height: 100%;
+          display: flex; align-items: center; justify-content: center;
+          background: var(--ink); color: var(--orange);
+          font-family: var(--font-display); font-size: 2rem; font-weight: 700;
+        `;
+        fallback.textContent = 'YallaBuy';
+        img.parentNode.replaceChild(fallback, img);
+      });
+    });
+  }
+
+  /* ============================================================
+     FUTURE — Animated rings
+     ============================================================ */
+  function initFutureSection() {
+    if (prefersReducedMotion) return;
+
+    // Subtle pulse on the SVG rings
+    const rings = document.querySelectorAll('.future__bg svg circle');
+    rings.forEach((ring, i) => {
+      gsap.to(ring, {
+        attr: { r: parseFloat(ring.getAttribute('r')) * 1.04 },
+        duration: 3 + i * 0.5,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+      });
+    });
+
+    // Animate area cards in
+    gsap.from('.future__area', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.06,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.future__areas',
+        start: 'top 80%',
+      }
+    });
+  }
+
+  /* ============================================================
+     FINAL — Cards reveal
+     ============================================================ */
+  function initFinalSection() {
+    if (prefersReducedMotion) return;
+
+    gsap.from('.final__title', {
+      opacity: 0,
+      y: 40,
+      duration: 1.2,
+      ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '.final',
+        start: 'top 60%',
+      }
+    });
+
+    gsap.from('.final__card', {
+      opacity: 0,
+      y: 30,
+      duration: 0.8,
+      stagger: 0.08,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.final__cards',
+        start: 'top 80%',
+      }
+    });
+  }
+
+  /* ============================================================
+     UNIVERSE — Scroll-driven progress
+     ============================================================ */
+  function initUniverseScroll(universe) {
+    ScrollTrigger.create({
+      trigger: '#universe',
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        universe.setProgress(self.progress);
+        universe.updateFlowStep();
+      }
+    });
+  }
+
+  /* ============================================================
+     REDUCED MOTION HANDLING
+     ============================================================ */
+  function handleReducedMotion() {
+    if (prefersReducedMotion) {
+      // Ensure all content is visible
+      document.querySelectorAll('.timeline__item, .journey__step').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }
+  }
+
+  /* ============================================================
+     INITIALIZATION
+     ============================================================ */
+  function init() {
+    // Image fallbacks
+    setupImageFallbacks();
+
+    // Hero scene (Three.js)
+    let heroScene = null;
+    if (typeof THREE !== 'undefined' && !prefersReducedMotion) {
+      try {
+        heroScene = new HeroScene();
+        heroScene.init();
+        heroScene.observe(document.getElementById('hero'));
+        heroScene.start();
+      } catch (e) {
+        console.warn('Hero scene failed to initialize:', e);
+      }
+    }
+
+    // Hero entrance animation
+    initHeroAnimation();
+
+    // Hero transition (information overload)
+    initHeroTransition();
+
+    // Problem section
+    initProblemSection();
+
+    // Why section
+    initWhySection();
+
+    // Research journey
+    initResearchJourney();
+
+    // Universe scene (Three.js)
+    let universe = null;
+    if (typeof THREE !== 'undefined' && !prefersReducedMotion) {
+      try {
+        universe = new UniverseScene();
+        universe.init();
+        universe.observe(document.getElementById('universe'));
+        universe.start();
+        initUniverseScroll(universe);
+      } catch (e) {
+        console.warn('Universe scene failed to initialize:', e);
+      }
+    }
+
+    // Difference
+    initDifferenceSection();
+
+    // Sources
+    initSourcesInteraction();
+
+    // Claim
+    initClaimSection();
+
+    // Timeline
+    initTimeline();
+
+    // Future
+    initFutureSection();
+
+    // Final
+    initFinalSection();
+
+    // Reduced motion safety
+    handleReducedMotion();
+
+    // Refresh ScrollTrigger after images load
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+  }
+
+  // Start when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+function initFinalSection() {
+  if (prefersReducedMotion) {
+    gsap.set('.final__title, .final__card', { opacity: 1, y: 0 });
+    return;
+  }
+
+  gsap.fromTo('.final__title', 
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1, y: 0, duration: 1.2, ease: 'power4.out',
+      scrollTrigger: {
+        trigger: '.final',
+        start: 'top 60%',
+        toggleActions: 'play none none reverse',
+      }
+    }
+  );
+
+  gsap.fromTo('.final__card',
+    { opacity: 0, y: 30 },
+    {
+      opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.final__cards',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      }
+    }
+  );
+}
+
+</script>
+</body>
+</html>

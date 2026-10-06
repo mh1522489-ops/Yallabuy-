@@ -384,7 +384,7 @@
     "name": "Anker Soundcore Q30",
     "brand": "Anker",
     "type": "Over-Ear",
-    "price": 79,
+    "price": 55.99,
     "batteryLife": 40,
     "wireless": true,
     "noiseCancelling": true,
@@ -394,9 +394,9 @@
     "microphone": true,
     "tags": ["Budget", "Battery Life"],
     "summary": "Budget-friendly ANC headphones with a 40-hour battery and customizable EQ.",
-    "imageUrl": "https://images.unsplash.com/photo-1545127390-954cbd3a7c64?w=600&q=80",
-    "amazonUrl": "https://www.amazon.com/s?k=anker+soundcore+q30",
-    "detailsUrl": "#"
+    "imageUrl": "https://ik.imagekit.io/ghmasgcim/anker-soundcore-q30.avif",
+    "amazonUrl": "https://amzn.to/4rQElf2",
+    "detailsUrl": "products/over-ear/anker-soundcore-q30.html"
   },
   {
     "id": "anker-soundcore-q35",

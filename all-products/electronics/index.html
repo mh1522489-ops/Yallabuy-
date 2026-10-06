@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electronics | YallaBuy</title>
+  <meta name="description" content="Explore electronics by category, discover buying guides, and find useful information to help you choose the right products." />
+  <link rel="canonical" href="https://yallbuy.shop/all-products/electronics/#" />
+<script src="/security.js"></script> 
+ <script src="/vibra-click.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="stylesheet" href="/css/view-transition.css">
+<link rel="manifest" href="/manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Electronics | YallaBuy" />
+  <meta property="og:description" content="Explore electronics by category, discover buying guides, and find useful information to help you choose the right products." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yallbuy.shop/all-products/electronics/" />
+
+  <style>
+    /* ===== Design Tokens ===== */
+    :root {
+      --accent: #FF9900;
+      --accent-dark: #E68A00;
+      --accent-soft: #FFF6E9;
+      --text: #1A1A1A;
+      --text-muted: #5A5A5A;
+      --text-light: #8A8A8A;
+      --bg: #FFFFFF;
+      --bg-soft: #FAFAFA;
+      --bg-alt: #F5F5F5;
+      --border: #ECECEC;
+      --border-strong: #E0E0E0;
+      --footer-bg: #1A1A1A;
+      --footer-text: #D0D0D0;
+      --footer-muted: #8A8A8A;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 6px 20px rgba(0,0,0,0.06);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.08);
+      --container: 1200px;
+      --transition: 0.25s ease;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    /* ===== Reset ===== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4, p { margin: 0; }
+
+    /* ===== Skip Link ===== */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      padding: 12px 20px;
+      background: var(--accent);
+      color: #000;
+      z-index: 999;
+      font-weight: 600;
+      border-radius: 0 0 8px 0;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* ===== Site Header ===== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: saturate(180%) blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo .dot { color: var(--accent); }
+    .main-nav { display: none; gap: 28px; }
+    .main-nav a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color var(--transition);
+      padding: 6px 0;
+      position: relative;
+    }
+    .main-nav a:hover, .main-nav a.active { color: var(--text); }
+    .main-nav a.active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .search-btn {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .search-btn:hover { border-color: var(--border-strong); background: #EEE; }
+
+    @media (min-width: 768px) {
+      .main-nav { display: flex; }
+    }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ===== Breadcrumb ===== */
+    .breadcrumb {
+      padding: 16px 0 0;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .breadcrumb ol {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .breadcrumb li::after { content: "/"; margin-left: 6px; color: var(--border-strong); }
+    .breadcrumb li:last-child::after { content: ""; }
+    .breadcrumb a:hover { color: var(--accent-dark); }
+
+    /* ===== Hero ===== */
+    .hero {
+      padding: 36px 0 28px;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .hero h1 .accent-bar {
+      display: inline-block;
+      width: 56px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: clamp(16px, 2vw, 19px);
+      color: var(--text-muted);
+      max-width: 640px;
+    }
+
+    /* ===== Section ===== */
+    section { padding: 40px 0; }
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .section-head .subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-top: 6px;
+      max-width: 560px;
+    }
+
+    /* ===== Category Grid ===== */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    @media (min-width: 560px) {
+      .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .cat-grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    }
+    @media (min-width: 1100px) {
+      .cat-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .cat-card {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .cat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-strong);
+    }
+    .cat-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .cat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .cat-icon svg { width: 24px; height: 24px; stroke-width: 1.8; }
+    .cat-name {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+    .cat-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      flex-grow: 1;
+      margin-bottom: 16px;
+    }
+    .cat-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      transition: gap var(--transition);
+    }
+    .cat-card:hover .cat-arrow { gap: 10px; }
+
+    /* ===== Popular Electronics ===== */
+    .popular {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .popular-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .popular-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: all var(--transition);
+    }
+    .popular-link:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+    .popular-link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .popular-link .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ===== Articles ===== */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 600px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 980px) { .articles-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; } }
+    @media (min-width: 1180px) { .articles-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-strong);
+    }
+    .article-card:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .article-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, var(--accent-soft), #FFE7C2);
+      position: relative;
+      overflow: hidden;
+    }
+    .article-thumb svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.55;
+    }
+    .article-body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .article-cat {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent-dark);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .article-title {
+      font-size: 16.5px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: var(--text);
+      letter-spacing: -0.2px;
+    }
+    .article-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      flex-grow: 1;
+      margin-bottom: 14px;
+    }
+    .article-read {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      transition: gap var(--transition);
+    }
+    .article-card:hover .article-read { gap: 10px; color: var(--accent-dark); }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 56px 0;
+      background: var(--bg-soft);
+      border-top: 1px solid var(--border);
+    }
+    .cta-card {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 44px 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .cta-card h2 {
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+    .cta-card p {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto 26px;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #1A1A1A;
+    }
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: var(--bg);
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+    .btn:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 56px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+    @media (min-width: 640px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+    @media (min-width: 900px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; } }
+    .footer-brand .logo { color: #fff; }
+    .footer-brand p {
+      color: var(--footer-muted);
+      font-size: 14px;
+      margin-top: 14px;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      color: var(--footer-text);
+      font-size: 14px;
+      transition: color var(--transition);
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid #2A2A2A;
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--footer-muted);
+    }
+    .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal a:hover { color: var(--accent); }
+
+    /* ===== Reveal Animations ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .cat-card:hover, .article-card:hover, .btn:hover, .popular-link:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/index.html" class="logo" aria-label="YallaBuy home">Yalla<span class="dot">Buy</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/about.html" class="active" aria-current="page">About</a>
+        <a href="/contect.html">contact</a>
+        <a href="/yallabuy-profile/index.html">Yallabuy profile</a>
+        <a href="/article/article.html">Guides</a>
+      </nav>
+      <button class="search-btn" type="button" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path>
+        </svg>
+        Search
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/index.html">Home</a></li>
+          <li>Electronics</li>
+        </ol>
+      </nav>
+
+      <!-- ===== Hero ===== -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <span class="accent-bar" aria-hidden="true"></span>
+        <h1 id="hero-heading">Electronics</h1>
+        <p>Explore electronics by category, discover useful buying guides, and find the products that fit your needs.</p>
+      </section>
+    </div>
+
+<!-- ===== Explore Electronics Categories ===== -->
+<section aria-labelledby="explore-heading">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2 id="explore-heading">Explore Electronics</h2>
+        <p class="subtitle">Browse by category to dig into detailed guides, comparisons, and product references.</p>
+      </div>
+    </div>
+
+    <div class="cat-grid">
+      <!-- 1. Audio -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        </span>
+        <span class="cat-name">Audio</span>
+        <span class="cat-desc">Headphones, earbuds, speakers, and sound systems.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 2. Mobile -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        </span>
+        <span class="cat-name">Mobile</span>
+        <span class="cat-desc">Smartphones, tablets, cases, and mobile accessories.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 3. Computing -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M2 20h20M9 17h6"/></svg>
+        </span>
+        <span class="cat-name">Computing</span>
+        <span class="cat-desc">Laptops, desktops, monitors, and peripherals.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 4. TV & Home Theater -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </span>
+        <span class="cat-name">TV &amp; Home Theater</span>
+        <span class="cat-desc">Televisions, soundbars, receivers, and home cinema.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 5. Gaming -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h4M8 10v4"/><circle cx="15" cy="11" r="1"/><circle cx="18" cy="13" r="1"/><rect x="2" y="6" width="20" height="12" rx="6"/></svg>
+        </span>
+        <span class="cat-name">Gaming</span>
+        <span class="cat-desc">Consoles, controllers, monitors, and gaming setups.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 6. Cameras & Photography -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+        </span>
+        <span class="cat-name">Cameras &amp; Photography</span>
+        <span class="cat-desc">Cameras, lenses, drones-cameras, and gear.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 7. Wearables -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6M9 17h6"/></svg>
+        </span>
+        <span class="cat-name">Wearables</span>
+        <span class="cat-desc">Smartwatches, fitness trackers, and health bands.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 8. Smart Home -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </span>
+        <span class="cat-name">Smart Home</span>
+        <span class="cat-desc">Hubs, lights, sensors, and connected appliances.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 9. Networking -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M5 8l7-4 7 4M2 14h6M16 14h6M5 14v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6M9 14v2M15 14v2"/></svg>
+        </span>
+        <span class="cat-name">Networking</span>
+        <span class="cat-desc">Routers, mesh systems, switches, and extenders.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 10. Accessories -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 1 1-7-8.4 6.5 6.5 0 0 0 7 8.4z"/></svg>
+        </span>
+        <span class="cat-name">Accessories</span>
+        <span class="cat-desc">Cross-device accessories like stands, sleeves, and mounts.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 11. Security -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <span class="cat-name">Security</span>
+        <span class="cat-desc">Cameras, locks, alarms, and monitoring systems.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 12. Drones -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8 8 4M12 8l4-4M12 8v4M5 22l3-6M19 22l-3-6"/><circle cx="12" cy="14" r="2"/><path d="M5 11a2 2 0 1 0 0-4M19 11a2 2 0 1 1 0-4"/></svg>
+        </span>
+        <span class="cat-name">Drones</span>
+        <span class="cat-desc">Consumer drones, gimbals, and FPV equipment.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 13. 3D Printing -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 8l10 6 10-6z"/><path d="M2 8v8l10 6 10-6V8M12 14v8"/></svg>
+        </span>
+        <span class="cat-name">3D Printing</span>
+        <span class="cat-desc">Printers, filaments, and design tools.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 14. E-Readers -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>
+        </span>
+        <span class="cat-name">E-Readers</span>
+        <span class="cat-desc">E-ink readers, stylus devices, and reading tablets.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 15. Car Electronics -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a2 2 0 0 0-1.6-.8H5.5a2 2 0 0 0-1.9 1.4L2 12v4h3"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/></svg>
+        </span>
+        <span class="cat-name">Car Electronics</span>
+        <span class="cat-desc">Dash cams, head units, chargers, and in-car tech.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 16. GPS & Navigation -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-7-8-12a8 8 0 1 1 16 0c0 5-8 12-8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="cat-name">GPS &amp; Navigation</span>
+        <span class="cat-desc">Handheld GPS, trackers, and navigation devices.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 17. Projectors -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M7 12h2M2 10v4"/></svg>
+        </span>
+        <span class="cat-name">Projectors</span>
+        <span class="cat-desc">Home, portable, and business projectors with screens.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 18. Streaming -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>
+        </span>
+        <span class="cat-name">Streaming</span>
+        <span class="cat-desc">Streaming sticks, capture cards, and broadcast gear.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 19. Storage -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="2"/><rect x="3" y="14" width="18" height="6" rx="2"/><path d="M7 7h.01M7 17h.01"/></svg>
+        </span>
+        <span class="cat-name">Storage</span>
+        <span class="cat-desc">SSDs, HDDs, NAS, and external drives.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 20. Power & Charging -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+        </span>
+        <span class="cat-name">Power &amp; Charging</span>
+        <span class="cat-desc">Chargers, power banks, adapters, and cables.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 21. Computer Components -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+        </span>
+        <span class="cat-name">Computer Components</span>
+        <span class="cat-desc">CPUs, GPUs, motherboards, RAM, and cases.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 22. Office Electronics -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </span>
+        <span class="cat-name">Office Electronics</span>
+        <span class="cat-desc">Printers, scanners, calculators, and label makers.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 23. Musical Instruments -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </span>
+        <span class="cat-name">Musical Instruments</span>
+        <span class="cat-desc">Digital pianos, MIDI gear, synths, and audio interfaces.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+
+      <!-- 24. Electronics Accessories -->
+      <a class="cat-card" href="#">
+        <span class="cat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="19" cy="17" r="2"/></svg>
+        </span>
+        <span class="cat-name">Electronics Accessories</span>
+        <span class="cat-desc">Generic parts, adapters, replacement components, and spares.</span>
+        <span class="cat-arrow">Explore →</span>
+      </a>
+    </div>
+  </div>
+</section>
+    <!-- ===== Popular Electronics ===== -->
+    <section class="popular" aria-labelledby="popular-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="popular-heading">Popular Electronics</h2>
+            <p class="subtitle">Quick entry points to the products people search for most.</p>
+          </div>
+        </div>
+        <div class="popular-grid">
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Headphones</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Smartphones</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Laptops</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Gaming</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>TVs</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Smartwatches</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Speakers</a>
+          <a class="popular-link" href="#"><span class="dot" aria-hidden="true"></span>Computer Components</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Electronics Articles ===== -->
+    <section aria-labelledby="articles-heading">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 id="articles-heading">Electronics Articles</h2>
+            <p class="subtitle">Guides and comparisons to help you understand what matters before you buy.</p>
+          </div>
+        </div>
+
+        <div class="articles-grid">
+          <!-- Article 1 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><circle cx="70" cy="60" r="32" fill="#FF9900" opacity="0.35"/><circle cx="140" cy="70" r="22" fill="#FF9900" opacity="0.25"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Audio</span>
+              <h3 class="article-title">How to Choose the Right Headphones for Your Needs</h3>
+              <p class="article-desc">Form factor, fit, sound signature, and use cases explained for everyday listeners and audiophiles.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 2 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="40" y="40" width="120" height="40" rx="6" fill="#FF9900" opacity="0.25"/><path d="M40 60h120" stroke="#FF9900" stroke-width="2" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Audio</span>
+              <h3 class="article-title">Wireless vs Wired Headphones: What Actually Matters?</h3>
+              <p class="article-desc">Latency, sound quality, battery life, and convenience compared honestly.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 3 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><circle cx="100" cy="60" r="40" fill="none" stroke="#FF9900" stroke-width="3" opacity="0.4"/><circle cx="100" cy="60" r="18" fill="#FF9900" opacity="0.3"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Audio</span>
+              <h3 class="article-title">Are Premium Headphones Worth the Money?</h3>
+              <p class="article-desc">Where the extra money actually goes and when a premium pair makes sense.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 4 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="70" y="30" width="60" height="60" rx="10" fill="#FF9900" opacity="0.3"/><circle cx="100" cy="60" r="14" fill="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Audio</span>
+              <h3 class="article-title">How to Choose a Bluetooth Speaker</h3>
+              <p class="article-desc">Size, battery, waterproofing, and sound output explained for home and travel.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 5 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="80" y="25" width="40" height="70" rx="6" fill="#FF9900" opacity="0.35"/><circle cx="100" cy="40" r="4" fill="#FF9900" opacity="0.7"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Mobile</span>
+              <h3 class="article-title">What to Look for When Buying a Smartphone</h3>
+              <p class="article-desc">The specs that matter and the ones that don't, from screen to chipset to battery.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 6 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="40" y="35" width="50" height="50" rx="8" fill="#FF9900" opacity="0.3"/><rect x="110" y="35" width="50" height="50" rx="8" fill="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Mobile</span>
+              <h3 class="article-title">iPhone vs Android: What Actually Matters?</h3>
+              <p class="article-desc">Ecosystem, longevity, customization, and real-world differences to consider.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 7 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="60" y="40" width="80" height="40" rx="4" fill="#FF9900" opacity="0.3"/><rect x="60" y="40" width="50" height="40" fill="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Mobile</span>
+              <h3 class="article-title">How Much Smartphone Storage Do You Really Need?</h3>
+              <p class="article-desc">A practical breakdown by usage: photos, video, apps, and cloud alternatives.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 8 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="75" y="25" width="50" height="70" rx="8" fill="#FF9900" opacity="0.3"/><path d="M85 60h30" stroke="#FF9900" stroke-width="3" opacity="0.6"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Mobile</span>
+              <h3 class="article-title">How to Choose the Right Phone for Your Needs</h3>
+              <p class="article-desc">Match your daily habits to the right phone class: budget, mid-range, or flagship.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 9 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="40" y="35" width="120" height="50" rx="6" fill="#FF9900" opacity="0.3"/><rect x="30" y="85" width="140" height="8" rx="3" fill="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Computing</span>
+              <h3 class="article-title">Laptop Buying Guide: What Actually Matters?</h3>
+              <p class="article-desc">Weight, screen, keyboard, performance, and battery priorities for real use.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 10 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="50" y="45" width="100" height="30" rx="3" fill="#FF9900" opacity="0.3"/><rect x="50" y="45" width="33" height="30" fill="#FF9900" opacity="0.5"/><rect x="83" y="45" width="33" height="30" fill="#FF9900" opacity="0.4"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Computing</span>
+              <h3 class="article-title">8GB vs 16GB vs 32GB RAM: How Much Do You Need?</h3>
+              <p class="article-desc">A usage-based guide to avoid overspending or under-spec'ing your machine.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 11 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="40" y="45" width="50" height="30" rx="4" fill="#FF9900" opacity="0.3"/><rect x="110" y="40" width="50" height="40" rx="4" fill="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Computing</span>
+              <h3 class="article-title">SSD vs HDD: What Is the Difference?</h3>
+              <p class="article-desc">Speed, reliability, price, and use cases explained in plain language.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 12 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="80" y="40" width="40" height="40" rx="4" fill="#FF9900" opacity="0.4"/><path d="M80 50h-10M80 60h-10M80 70h-10M120 50h10M120 60h10M120 70h10" stroke="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Computing</span>
+              <h3 class="article-title">How to Choose the Right Laptop Processor</h3>
+              <p class="article-desc">Understand cores, generations, and what performance means for your tasks.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 13 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="40" y="40" width="50" height="40" rx="4" fill="#FF9900" opacity="0.4"/><rect x="110" y="45" width="50" height="30" rx="8" fill="#FF9900" opacity="0.3"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Gaming</span>
+              <h3 class="article-title">Gaming PC vs Gaming Console: Which Is Right for You?</h3>
+              <p class="article-desc">Cost, flexibility, exclusives, and longevity compared side by side.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 14 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="50" y="30" width="100" height="60" rx="6" fill="#FF9900" opacity="0.3"/><path d="M85 90h30M100 90v10" stroke="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Gaming</span>
+              <h3 class="article-title">What Makes a Good Gaming Monitor?</h3>
+              <p class="article-desc">Refresh rate, response time, panel type, and resolution explained.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 15 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="50" y="45" width="100" height="30" rx="3" fill="#FF9900" opacity="0.3"/><rect x="50" y="45" width="66" height="30" fill="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Gaming</span>
+              <h3 class="article-title">How Much RAM Do You Need for Gaming?</h3>
+              <p class="article-desc">Real benchmarks and advice for 8GB, 16GB, and 32GB gaming builds.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 16 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><path d="M60 50a40 40 0 0 1 80 0v30" fill="none" stroke="#FF9900" stroke-width="4" opacity="0.5"/><rect x="55" y="60" width="14" height="28" rx="6" fill="#FF9900" opacity="0.4"/><rect x="131" y="60" width="14" height="28" rx="6" fill="#FF9900" opacity="0.4"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Gaming</span>
+              <h3 class="article-title">How to Choose a Gaming Headset</h3>
+              <p class="article-desc">Mic quality, surround sound, comfort, and connectivity for long sessions.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 17 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><path d="M70 100V60l30-25 30 25v40z" fill="#FF9900" opacity="0.35"/><rect x="90" y="80" width="20" height="20" fill="#FF9900" opacity="0.6"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Smart Home</span>
+              <h3 class="article-title">Smart Home Basics: Where Should You Start?</h3>
+              <p class="article-desc">A logical first setup that avoids lock-in and avoids common mistakes.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 18 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="80" y="35" width="40" height="55" rx="6" fill="#FF9900" opacity="0.4"/><circle cx="100" cy="55" r="6" fill="#FF9900" opacity="0.7"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Smart Home</span>
+              <h3 class="article-title">How to Choose the Right Smart Speaker</h3>
+              <p class="article-desc">Assistant, sound quality, and ecosystem considerations before you buy.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 19 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="40" y="25" width="120" height="65" rx="6" fill="#FF9900" opacity="0.3"/><path d="M85 90h30" stroke="#FF9900" stroke-width="3" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">TV &amp; Home Theater</span>
+              <h3 class="article-title">How to Choose a Smart TV</h3>
+              <p class="article-desc">Panel types, sizes for your room, HDR, and the smart platform question.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+
+          <!-- Article 20 -->
+          <a class="article-card" href="#">
+            <div class="article-thumb" aria-hidden="true">
+              <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice"><rect x="60" y="50" width="80" height="25" rx="4" fill="#FF9900" opacity="0.4"/><path d="M70 50l-5-10M80 50l-5-10M130 50l5-10M120 50l5-10" stroke="#FF9900" opacity="0.5"/></svg>
+            </div>
+            <article class="article-body">
+              <span class="article-cat">Smart Home</span>
+              <h3 class="article-title">How to Choose the Right Wi-Fi Router</h3>
+              <p class="article-desc">Speeds, coverage, mesh vs single router, and features worth paying for.</p>
+              <span class="article-read">Read article →</span>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA: Not Sure Where to Start? ===== -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-card">
+          <h2 id="cta-heading">Not sure where to start?</h2>
+          <p>Start with our buying guides and comparisons to understand what matters before you buy.</p>
+          <div class="cta-buttons">
+            <a class="btn btn-primary" href="#">Browse Buying Guides</a>
+            <a class="btn btn-secondary" href="#">View Comparisons</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/index.html" class="logo" aria-label="YallaBuy home">Yalla<span class="dot">Buy</span></a>
+          <p>Product research and buying references to help you choose with confidence.</p>
+        </div>
+     
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#">Audio</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Computing</a></li>
+            <li><a href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/amazon/Editorial-Policy.html">Editorial Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/amazon/privacy-policy.html">Privacy</a></li>
+            <li><a href="/amazon/terms-of-service.html">Terms</a></li>
+            <li><a href="/amazon/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2025</span> YallaBuy. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="/amazon/privacy-policy.html">Privacy</a>
+          <a href="/amazon/terms-of-service.html">Terms of service</a>
+          <a href="/amazon/affiliate-disclosure.html">Affiliate Disclosure</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Reveal on scroll (lightweight)
+    (function () {
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReduced) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        return;
+      }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      // Mark cards as reveal targets
+      document.querySelectorAll('.cat-card, .article-card, .popular-link, .cta-card').forEach((el, i) => {
+        el.classList.add('reveal');
+        el.style.transitionDelay = Math.min(i * 30, 200) + 'ms';
+        obs.observe(el);
+      });
+    })();
+  </script>
+    <script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
+
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>
+
+</body>
+  </html>

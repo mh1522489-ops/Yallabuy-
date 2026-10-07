@@ -2,311 +2,382 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YallaBuy - Offline Mode</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
-<link rel="alternate icon" href="/favicon.ico">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>You're Offline | YallaBuy</title>
 
   <style>
     :root {
-      --primary-gradient: linear-gradient(135deg, #FF9900 0%, #FF6B6B 100%);
-      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      --glass-bg: rgba(255, 255, 255, 0.05);
-      --glass-border: rgba(255, 255, 255, 0.1);
-      --text-primary: #ffffff;
-      --text-secondary: #94a3b8;
+      --orange: #ff9900;
+      --text: #171717;
+      --muted: #666;
+      --border: #e8e8e8;
+      --background: #fafafa;
+      --white: #ffffff;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: var(--bg-gradient);
-      color: var(--text-primary);
+      padding: 24px;
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--text);
+      background: var(--background);
+    }
+
+    .offline-card {
+      width: min(100%, 720px);
+      padding: 48px 32px;
+
       text-align: center;
-      padding: 20px;
-      overflow-x: hidden;
-    }
-    
-    /* Animated Background Blobs */
-    .blob {
-      position: absolute;
-      filter: blur(80px);
-      z-index: -1;
-      opacity: 0.4;
-      animation: moveBlob 10s infinite alternate;
-    }
-    .blob-1 { top: -10%; left: -10%; width: 300px; height: 300px; background: #FF9900; }
-    .blob-2 { bottom: -10%; right: -10%; width: 300px; height: 300px; background: #FF6B6B; }
 
-    @keyframes moveBlob {
-      0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(20px, -20px) scale(1.1); }
-    }
-
-    .container {
-      max-width: 600px;
-      width: 100%;
-      z-index: 1;
-    }
-
-    .icon-wrapper {
-      margin-bottom: 25px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .icon {
-      font-size: 80px;
-      display: block;
-      animation: float 4s ease-in-out infinite;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.5px;
-    }
-    
-    .subtitle {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-    
-    .card {
-      background: var(--glass-bg);
+      background: var(--white);
+      border: 1px solid var(--border);
       border-radius: 24px;
-      padding: 30px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-      margin-bottom: 25px;
-      transition: transform 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid var(--glass-border);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.06);
     }
 
-    .card-header h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #FF9900;
-    }
-    
-    .product-list {
-      list-style: none;
-      max-height: 300px;
-      overflow-y: auto;
-      padding-right: 5px; /* Space for scrollbar */
+    .illustration {
+      width: min(100%, 300px);
+      margin: 0 auto 32px;
     }
 
-    /* Custom Scrollbar */
-    .product-list::-webkit-scrollbar { width: 6px; }
-    .product-list::-webkit-scrollbar-track { background: transparent; }
-    .product-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
-    
-    .product-item {
-      background: rgba(255,255,255,0.03);
-      padding: 12px 15px;
-      margin-bottom: 10px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      transition: all 0.2s ease;
-      border: 1px solid transparent;
+    .illustration svg {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    
-    .product-item:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,153,0,0.3);
-      transform: translateX(-5px);
-    }
-    
-    .product-item a {
-      color: var(--text-primary);
-      text-decoration: none;
-      flex: 1;
-      font-weight: 500;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    .btn-retry {
-      padding: 16px 40px;
-      background: var(--primary-gradient);
-      color: white;
-      border: none;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 10px 20px rgba(255, 107, 107, 0.2);
+
+    .status {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-    }
-    
-    .btn-retry:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
-    }
-    
-    .btn-retry:active {
-      transform: scale(0.98);
-    }
-    
-    .tips {
-      margin-top: 25px;
-      font-size: 0.85rem;
-      color: var(--text-secondary);
-      background: rgba(255,255,255,0.05);
-      padding: 10px 20px;
-      border-radius: 20px;
-      display: inline-block;
+      gap: 8px;
+
+      margin-bottom: 16px;
+      padding: 7px 12px;
+
+      color: #8a5700;
+      background: #fff4df;
+
+      border: 1px solid #ffe0a3;
+      border-radius: 999px;
+
+      font-size: 13px;
+      font-weight: 600;
     }
 
-    .empty-state {
-      color: var(--text-secondary);
-      font-style: italic;
-      padding: 20px 0;
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    h1 {
+      margin-bottom: 14px;
+
+      font-size: clamp(32px, 6vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+    }
+
+    .description {
+      max-width: 520px;
+      margin: 0 auto;
+
+      color: var(--muted);
+
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+
+      margin-top: 30px;
+    }
+
+    button,
+    .home-link {
+      min-height: 46px;
+      padding: 0 20px;
+
+      border-radius: 12px;
+
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .retry {
+      border: 0;
+      color: #111;
+      background: var(--orange);
+    }
+
+    .retry:hover {
+      filter: brightness(0.96);
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      color: var(--text);
+      background: var(--white);
+
+      border: 1px solid var(--border);
+    }
+
+    .home-link:hover {
+      border-color: #ccc;
+    }
+
+    .brand {
+      margin-top: 34px;
+
+      color: #999;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 520px) {
+      .offline-card {
+        padding: 36px 22px;
+        border-radius: 20px;
+      }
+
+      .illustration {
+        width: 240px;
+        margin-bottom: 26px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      button,
+      .home-link {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .wifi-wave {
+        animation: pulse 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          opacity: 0.35;
+        }
+
+        50% {
+          opacity: 1;
+        }
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
+  <main class="offline-card">
 
-  <div class="container">
-    <div class="icon-wrapper">
-      <span class="icon">📡</span>
+    <div class="illustration" aria-hidden="true">
+
+      <svg
+        viewBox="0 0 400 300"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <!-- Background shape -->
+        <rect
+          x="40"
+          y="35"
+          width="320"
+          height="230"
+          rx="28"
+          fill="#fff8ed"
+        />
+
+        <!-- Laptop -->
+        <rect
+          x="105"
+          y="75"
+          width="190"
+          height="125"
+          rx="12"
+          fill="#ffffff"
+          stroke="#171717"
+          stroke-width="6"
+        />
+
+        <!-- Screen -->
+        <rect
+          x="120"
+          y="90"
+          width="160"
+          height="95"
+          rx="6"
+          fill="#fafafa"
+        />
+
+        <!-- Browser top bar -->
+        <circle cx="133" cy="103" r="3" fill="#ff9900"/>
+        <circle cx="144" cy="103" r="3" fill="#ddd"/>
+        <circle cx="155" cy="103" r="3" fill="#ddd"/>
+
+        <!-- Wi-Fi broken icon -->
+        <path
+          d="M155 135
+             C178 115 222 115 245 135"
+          fill="none"
+          stroke="#ff9900"
+          stroke-width="8"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M170 150
+             C185 137 215 137 230 150"
+          fill="none"
+          stroke="#ff9900"
+          stroke-width="8"
+          stroke-linecap="round"
+        />
+
+        <circle
+          cx="200"
+          cy="166"
+          r="6"
+          fill="#ff9900"
+        />
+
+        <!-- Broken line -->
+        <path
+          d="M185 125 L215 170"
+          stroke="#171717"
+          stroke-width="7"
+          stroke-linecap="round"
+        />
+
+        <!-- Laptop base -->
+        <path
+          d="M85 210
+             H315
+             L330 225
+             Q332 232 320 232
+             H80
+             Q68 232 70 225
+             Z"
+          fill="#171717"
+        />
+
+        <!-- Orange accent -->
+        <rect
+          x="175"
+          y="216"
+          width="50"
+          height="4"
+          rx="2"
+          fill="#ff9900"
+        />
+
+        <!-- Decorative dots -->
+        <circle cx="78" cy="75" r="5" fill="#ff9900"/>
+        <circle cx="325" cy="100" r="4" fill="#ff9900"/>
+        <circle cx="70" cy="190" r="3" fill="#ddd"/>
+        <circle cx="335" cy="185" r="5" fill="#eee"/>
+
+        <!-- Wi-Fi waves -->
+        <g class="wifi-wave">
+          <path
+            d="M150 45 C180 20 220 20 250 45"
+            fill="none"
+            stroke="#ff9900"
+            stroke-width="5"
+            stroke-linecap="round"
+            opacity=".35"
+          />
+        </g>
+
+      </svg>
+
     </div>
-    
-    <h1>You're Offline</h1>
-    <p class="subtitle">No internet connection detected.<br>Don't worry, you can still access previously viewed pages.</p>
-    
-    <div class="card">
-      <div class="card-header">
-        <span>🛍️</span>
-        <h3>Cached Products</h3>
-      </div>
-      <ul class="product-list" id="cached-list">
-        <li class="empty-state">Scanning local storage...</li>
-      </ul>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      You're offline
     </div>
-    
-    <button class="btn-retry" onclick="window.location.reload()">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
-      Try Again
-    </button>
-    
-    <div class="tips">
-      💡 Tip: Pages you visited recently are available instantly.
+
+    <h1>No internet connection</h1>
+
+    <p class="description">
+      We couldn't load this page right now.
+      Check your internet connection and try again.
+    </p>
+
+    <div class="actions">
+
+      <button
+        class="retry"
+        type="button"
+        onclick="location.reload()"
+      >
+        Try again
+      </button>
+
+      <a
+        class="home-link"
+        href="/"
+      >
+        Back to YallaBuy
+      </a>
+
     </div>
-  </div>
 
-  <script>
-    async function showCachedProducts() {
-      const list = document.getElementById('cached-list');
-      
-      try {
-        // Check if Cache API is supported
-        if (!('caches' in window)) {
-          throw new Error('Cache API not supported');
-        }
+    <p class="brand">
+      YallaBuy · Research first, buy second.
+    </p>
 
-        const cacheNames = await caches.keys();
-        let allRequests = [];
-        
-        // Gather all requests from all caches
-        for (const name of cacheNames) {
-          const cache = await caches.open(name);
-          const requests = await cache.keys();
-          allRequests.push(...requests);
-        }
-        
-        // Filter for product-like URLs
-        const products = allRequests.filter(r => {
-          const url = r.url.toLowerCase();
-          return (
-            url.includes('/product/') || 
-            url.includes('/item/') ||
-            url.includes('/p/') ||
-            url.includes('/shop/')
-          ) && !r.url.includes('.css') && !r.url.includes('.js');
-        });
-        
-        if (products.length === 0) {
-          list.innerHTML = '<li class="empty-state">No cached products found yet.<br>Browse some items while online!</li>';
-          return;
-        }
-        
-        // Display up to 10 most recent (reverse order usually shows newest first in keys)
-        const recentProducts = products.slice(-10).reverse();
-        
-        list.innerHTML = recentProducts.map(r => {
-          // Clean up the URL to make a nice title
-          let title = r.url.split('/').filter(Boolean).pop();
-          
-          // Decode URL encoding (e.g., %20 -> space)
-          title = decodeURIComponent(title);
-          
-          // Capitalize first letter
-          title = title.charAt(0).toUpperCase() + title.slice(1);
-          
-          // Replace hyphens/underscores with spaces if needed
-          title = title.replace(/[-_]/g, ' ');
+  </main>
 
-          return `
-            <li class="product-item">
-              <span style="font-size: 1.2rem;">📦</span>
-              <a href="${r.url}" title="${r.url}">${title}</a>
-            </li>
-          `;
-        }).join('');
-        
-      } catch (err) {
-        console.error(err);
-        list.innerHTML = '<li class="empty-state">Unable to load cached data.</li>';
-      }
-    }
-    
-    // Run on load
-    showCachedProducts();
-  </script>
 </body>
 </html>

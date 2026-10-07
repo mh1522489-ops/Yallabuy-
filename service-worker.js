@@ -3,6 +3,7 @@ const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
+  '/offline.html',
   '/favicon.svg',
   '/icons/icon-192x192.jpg',
   '/icons/icon-512x512.jpg',
@@ -86,7 +87,7 @@ self.addEventListener('fetch', (event) => {
       }).catch(() => {
         // ✅ لو offline وطلب صفحة → نرجع index.html
         if (request.mode === 'navigate') {
-          return caches.match('/index.html');
+          return caches.match('/offline.html);
         }
         
         // ✅ لو offline وطلب asset → نرجع 404 بسيط

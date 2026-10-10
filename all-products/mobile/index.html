@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YallaBuy - Find the Right Phone for You | Smarter Product Discovery</title>
+    <meta name="description" content="Explore phones by brand, budget, features, and everyday needs. Compare your options, discover useful accessories, and make a more informed buying decision.">
+   <script src="/security.js"></script> 
+ <script src="/vibra-click.js" defer></script>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="stylesheet" href="/css/view-transition.css">
+<link rel="manifest" href="/manifest.json">
+ 
+    <link rel="canonical" href="https://yallbuy.shop/all-products/mobile/#">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://yallbuy.shop/all-products/mobile/#webpage",
+  "url": "https://yallbuy.shop/all-products/mobile/",
+  "name": "Mobile Phones & Accessories | YallaBuy",
+  "description": "Explore mobile phones and accessories by brand, budget, features, and everyday needs. Research your options and compare products to find what fits you.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://yallbuy.shop/#website",
+    "url": "https://yallbuy.shop/",
+    "name": "YallaBuy"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://yallbuy.shop/#organization",
+    "name": "YallaBuy",
+    "url": "https://yallbuy.shop/"
+  },
+  "inLanguage": "en-US",
+  "breadcrumb": {
+    "@id": "https://yallbuy.shop/all-products/mobile/#breadcrumb"
+  },
+  "mainEntity": {
+    "@id": "https://yallbuy.shop/all-products/mobile/#product-list"
+  }
+}
+</script>
+
+    <style>
+        /* === Design tokens (same YallaBuy white / orange / black palette) === */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9f9f9;
+            --bg-muted: #f4f5f7;
+            --bg-dark: #1a1a1a;
+
+            --text-primary: #111111;
+            --text-secondary: #555555;
+            --text-muted: #888888;
+            --text-inverse: #ffffff;
+
+            --accent: #ff6a00;
+            --accent-hover: #e65f00;
+            --accent-light: #fff3e6;
+
+            --border: #e5e7eb;
+            --border-hover: #d1d5db;
+
+            --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+            --shadow-md: 0 8px 20px -6px rgba(0,0,0,.14);
+            --shadow-lg: 0 24px 40px -12px rgba(0,0,0,.22);
+
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 28px;
+            --radius-leaf: 32px 32px 32px 8px;   /* signature card shape */
+
+            --header-height: 72px;
+            --max-width: 1240px;
+            --transition: 180ms ease;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 12px); }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
+        ul { list-style: none; }
+
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+        .skip-link { position: absolute; left: -9999px; top: 0; background: var(--accent); color: #fff; padding: 12px 20px; z-index: 300; }
+        .skip-link:focus { left: 0; }
+
+        /* === Floating pill header === */
+        .header {
+            position: sticky; top: 0; z-index: 100;
+            height: var(--header-height);
+            display: flex; align-items: center;
+            padding: 0 16px;
+            pointer-events: none;
+        }
+        .header-inner {
+            pointer-events: auto;
+            width: 100%; max-width: var(--max-width); margin: 0 auto;
+            height: 56px; padding: 0 10px 0 18px;
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            background: rgba(255,255,255,.88);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            box-shadow: var(--shadow-md);
+        }
+        .logo { display: flex; align-items: center; font-size: 21px; font-weight: 800; letter-spacing: -0.03em; }
+        .logo-mark {
+            background: var(--accent); color: #fff;
+            width: 30px; height: 30px; margin-right: 2px;
+            border-radius: 10px 10px 10px 3px;
+            display: grid; place-items: center; font-size: 17px;
+        }
+        .nav-desktop { display: none; align-items: center; gap: 2px; }
+        .nav-desktop a { padding: 8px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; color: var(--text-secondary); transition: var(--transition); }
+        .nav-desktop a:hover { color: var(--accent); background: var(--accent-light); }
+        .nav-desktop a.active { color: #fff; background: var(--bg-dark); }
+        .header-actions { display: flex; align-items: center; gap: 6px; }
+        .icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; color: var(--text-primary); transition: var(--transition); }
+        .icon-btn:hover { background: var(--accent-light); color: var(--accent); }
+        .icon-btn svg { width: 21px; height: 21px; }
+
+        /* === Mobile menu === */
+        .mobile-menu {
+            position: fixed; top: 0; right: -100%;
+            width: min(340px, 88vw); height: 100vh; height: 100dvh;
+            background: var(--bg-primary);
+            border-radius: 28px 0 0 28px;
+            box-shadow: var(--shadow-lg);
+            z-index: 200;
+            transition: right 300ms cubic-bezier(.4,0,.2,1);
+            display: flex; flex-direction: column; overflow-y: auto;
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; }
+        .mobile-nav { padding: 8px 14px 24px; flex: 1; }
+        .mobile-nav-group { margin-bottom: 12px; }
+        .mobile-nav-label { padding: 10px 12px 6px; font-size: 13px; font-weight: 700; color: var(--accent); }
+        .mobile-nav a { display: flex; align-items: center; padding: 12px; border-radius: var(--radius-md); font-size: 15px; font-weight: 600; transition: var(--transition); }
+        .mobile-nav a:hover { background: var(--accent-light); color: var(--accent); }
+        .overlay { position: fixed; inset: 0; background: rgba(17,17,17,.55); z-index: 150; opacity: 0; visibility: hidden; transition: opacity 300ms ease; }
+        .overlay.open { opacity: 1; visibility: visible; }
+
+        /* === Layout === */
+        main { min-height: 60vh; }
+        .container { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
+
+        /* === Hero: dark panel with phone collage === */
+        .hero-wrap { padding: 8px 16px 0; }
+        .hero {
+            max-width: var(--max-width); margin: 0 auto;
+            background: var(--bg-dark);
+            color: #fff;
+            border-radius: var(--radius-lg);
+            padding: 40px 24px 0;
+            display: grid; gap: 32px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ""; position: absolute; right: -120px; bottom: -160px;
+            width: 520px; height: 520px; border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--accent), rgba(255,106,0,0) 70%);
+            opacity: .9; pointer-events: none;
+        }
+        .hero-copy { position: relative; z-index: 2; max-width: 560px; }
+        .hero h1 { font-size: clamp(36px, 6.4vw, 64px); font-weight: 800; line-height: 1.04; letter-spacing: -0.04em; margin-bottom: 18px; }
+        .hero p { font-size: 17px; color: #d6d6d6; margin-bottom: 26px; max-width: 480px; }
+        .cta-group { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 24px; border-radius: 999px; font-size: 15px; font-weight: 700; transition: var(--transition); }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .btn-secondary { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.35); }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        .hero-visual { position: relative; z-index: 2; height: 300px; display: flex; justify-content: center; align-items: flex-end; gap: 14px; }
+        .hero-phone { width: 34%; max-width: 190px; border-radius: 28px 28px 0 0; overflow: hidden; box-shadow: var(--shadow-lg); }
+        .hero-phone img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-phone:nth-child(1) { height: 70%; }
+        .hero-phone:nth-child(2) { height: 92%; }
+        .hero-phone:nth-child(3) { height: 78%; }
+
+        /* === Search (inside hero) === */
+        .search-bar { position: relative; max-width: 520px; }
+        .search-wrapper { position: relative; }
+        .search-input {
+            width: 100%; padding: 16px 52px 16px 50px;
+            font-size: 16px; font-family: inherit;
+            background: #fff; color: var(--text-primary);
+            border: 2px solid transparent; border-radius: 999px;
+            transition: var(--transition);
+        }
+        .search-input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 5px rgba(255,106,0,.25); }
+        .search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--text-muted); pointer-events: none; }
+        .search-clear { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; display: none; place-items: center; background: var(--bg-muted); color: var(--text-secondary); }
+        .search-clear.visible { display: grid; }
+        .search-results { position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: #fff; color: var(--text-primary); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); overflow: hidden; z-index: 50; display: none; }
+        .search-results.visible { display: block; }
+        .search-result-item { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--border); cursor: pointer; transition: var(--transition); }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover, .search-result-item:focus-visible { background: var(--accent-light); }
+        .search-result-item img { width: 36px; height: 36px; border-radius: 10px; object-fit: cover; }
+        .search-result-item span { font-weight: 600; font-size: 14px; }
+        .search-result-item small { color: var(--text-muted); margin-left: auto; font-size: 12px; }
+        .search-empty { padding: 22px; text-align: center; color: var(--text-secondary); font-size: 14px; }
+
+        /* === Sections === */
+        .section { padding: 56px 0 8px; }
+        .section-header { margin-bottom: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .section-header h2 { font-size: clamp(26px, 3.6vw, 36px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; margin-top: 6px; }
+        .view-all { font-size: 14px; font-weight: 700; color: var(--accent); padding: 8px 16px; border: 1.5px solid var(--accent); border-radius: 999px; display: inline-flex; align-items: center; gap: 4px; transition: var(--transition); }
+        .view-all:hover { background: var(--accent); color: #fff; }
+
+        .grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+        .grid-tiles { grid-template-columns: repeat(2, 1fr); }
+
+        /* === Card shape 1: image tile (brand / need / feature / ecosystem) === */
+        .tile {
+            position: relative; display: block;
+            aspect-ratio: 4 / 5;
+            border-radius: var(--radius-leaf);
+            overflow: hidden;
+            background: var(--bg-dark);
+            isolation: isolate;
+            transition: var(--transition);
+        }
+        .tile > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 500ms ease; }
+        .tile::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(17,17,17,.92) 0%, rgba(17,17,17,.35) 48%, rgba(17,17,17,0) 75%); }
+        .tile:hover > img { transform: scale(1.06); }
+        .tile:hover { box-shadow: var(--shadow-lg); }
+        .tile-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; color: #fff; }
+        .tile h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+        .tile p { font-size: 13px; color: #e2e2e2; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .tile-arrow { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; transition: var(--transition); }
+        .tile:hover .tile-arrow { transform: rotate(-45deg); background: #fff; color: var(--accent); }
+
+        /* === Card shape 2: wide strip (budget) === */
+        .strip {
+            display: flex; align-items: center; gap: 16px;
+            padding: 10px 18px 10px 10px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 999px 28px 28px 999px;
+            transition: var(--transition);
+        }
+        .strip:hover { background: #fff; border-color: var(--accent); box-shadow: var(--shadow-md); }
+        .strip img { width: 84px; height: 84px; flex: none; border-radius: 50%; object-fit: cover; }
+        .strip h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+        .strip p { font-size: 13px; color: var(--text-secondary); line-height: 1.4; margin-top: 2px; }
+        .strip-arrow { margin-left: auto; flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--accent-light); color: var(--accent); display: grid; place-items: center; transition: var(--transition); }
+        .strip:hover .strip-arrow { background: var(--accent); color: #fff; }
+
+        /* === Card shape 3: product card === */
+        .product-card {
+            display: flex; flex-direction: column;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-leaf);
+            padding: 10px;
+            transition: var(--transition);
+        }
+        .product-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); border-color: transparent; }
+        .product-img { position: relative; border-radius: 24px 24px 24px 4px; overflow: hidden; aspect-ratio: 1 / 1; background: var(--accent-light); }
+        .product-img img { width: 100%; height: 100%; object-fit: cover; }
+        .product-chip { position: absolute; top: 10px; left: 10px; background: #fff; color: var(--text-primary); font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; box-shadow: var(--shadow-sm); }
+        .product-price { position: absolute; right: 10px; bottom: 10px; background: var(--bg-dark); color: #fff; font-size: 16px; font-weight: 800; padding: 6px 14px; border-radius: 999px; }
+        .product-info { padding: 14px 8px 6px; display: flex; flex-direction: column; flex: 1; }
+        .product-card h3 { font-size: 17px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 4px; }
+        .product-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 14px; flex: 1; }
+        .product-btn { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--accent); color: #fff; padding: 11px 14px; border-radius: 999px; font-size: 14px; font-weight: 700; transition: var(--transition); }
+        .product-btn:hover { background: var(--accent-hover); }
+        .product-note { text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+
+        /* === Why YallaBuy === */
+        .why-wrap { padding: 64px 16px 0; }
+        .why { max-width: var(--max-width); margin: 0 auto; background: var(--bg-secondary); border-radius: var(--radius-lg); padding: 48px 20px; }
+        .why-header { max-width: 620px; margin: 0 auto 32px; text-align: center; }
+        .why-header h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
+        .why-header p { color: var(--text-secondary); font-size: 16px; }
+        .why-card { background: #fff; border-radius: var(--radius-leaf); overflow: hidden; border: 1px solid var(--border); }
+        .why-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+        .why-body { padding: 18px 20px 22px; }
+        .why-card h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+        .why-card p { font-size: 14px; color: var(--text-secondary); }
+        .trust-note { margin: 28px auto 0; padding: 14px 20px; background: #fff; border: 1px solid var(--border); border-radius: 999px; font-size: 14px; color: var(--text-secondary); max-width: 640px; text-align: center; }
+        .trust-note a { color: var(--accent); font-weight: 700; }
+
+        /* === Footer === */
+        .footer { margin-top: 64px; background: var(--bg-dark); color: #fff; border-radius: var(--radius-lg) var(--radius-lg) 0 0; padding: 56px 0 24px; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 36px; margin-bottom: 36px; }
+        .footer-brand .logo { margin-bottom: 14px; }
+        .footer-brand p { font-size: 14px; color: #bdbdbd; margin-bottom: 14px; max-width: 320px; }
+        .footer-brand a:not(.logo) { color: var(--accent); font-weight: 600; font-size: 14px; }
+        .footer-col h4 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: #fff; }
+        .footer-col ul li { margin-bottom: 10px; }
+        .footer-col ul li a { font-size: 14px; color: #bdbdbd; transition: var(--transition); }
+        .footer-col ul li a:hover { color: var(--accent); }
+        .footer-bottom { padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); display: flex; flex-direction: column; gap: 14px; }
+        .footer-disclosure { font-size: 12px; color: #a8a8a8; line-height: 1.5; padding: 12px 16px; background: rgba(255,255,255,.06); border-radius: var(--radius-md); }
+        .footer-disclosure a { color: #fff; text-decoration: underline; }
+        .footer-copy { font-size: 13px; color: #8c8c8c; text-align: center; }
+
+        /* === Responsive === */
+        @media (min-width: 600px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+            .grid-tiles { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 768px) {
+            .nav-desktop { display: flex; }
+            .menu-btn { display: none; }
+            .hero { grid-template-columns: 1.05fr 1fr; padding: 64px 56px 0; align-items: end; }
+            .hero-copy { padding-bottom: 64px; }
+            .hero-visual { height: 420px; }
+            .grid-tiles { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+            .footer-bottom { flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; }
+            .footer-copy { text-align: right; }
+            .why { padding: 64px 48px; }
+        }
+        @media (min-width: 992px) {
+            .grid-tiles, .grid-products { grid-template-columns: repeat(4, 1fr); }
+            .grid-why { grid-template-columns: repeat(4, 1fr); }
+            .grid-strips { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 600px) and (max-width: 991px) {
+            .grid-why { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+            html { scroll-behavior: auto; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="header-inner">
+            <a href="/index.html" class="logo"><span class="logo-mark">Y</span>allaBuy</a>
+            <nav class="nav-desktop" aria-label="Main navigation">
+                <a href="/index.html">Home</a>
+                <a href="../electronics/index.html">Electronics</a>
+                <a href="/mobile" class="active" aria-current="page">Mobile</a>
+                <a href="/about.html">About</a>
+                <a href="/yallabuy-profile/index.html">Yallabuy Profile</a>
+                <a href="/article/article.html">Article</a>
+                <a href="/amazon/How-We-Research.html">How We Research</a>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" aria-label="Search" id="searchToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                </button>
+                <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="overlay" id="overlay"></div>
+    <aside class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+        <div class="mobile-menu-header">
+            <span class="logo"><span class="logo-mark">Y</span>allaBuy</span>
+            <button class="icon-btn" id="closeBtn" aria-label="Close navigation menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-group">
+                <div class="mobile-nav-label">Main</div>
+                <a href="/index.html">Home</a>
+                <a href="/article/article.html">Article</a>
+            </div>
+            <div class="mobile-nav-group">
+                <div class="mobile-nav-label">Electronics</div>
+                <a href="#">Mobile</a>
+                <a href="/system/coming-soon.html">Audio</a>
+                <a href="/system/coming-soon.html">Computing</a>
+                <a href="/system/coming-soon.html">Gaming</a>
+                <a href="/system/coming-soon.html">Wearables</a>
+            </div>
+            <div class="mobile-nav-group">
+                <div class="mobile-nav-label">Mobile Discovery</div>
+                <a href="#">All Phones</a>
+                <a href="#brand">Shop by Brand</a>
+                <a href="#budget">Shop by Budget</a>
+                <a href="#accessories">Mobile Accessories</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main id="main">
+        <!-- Hero -->
+        <div class="hero-wrap">
+            <section class="hero" aria-labelledby="hero-heading">
+                <div class="hero-copy">
+                    <h1 id="hero-heading">Find the right phone for you.</h1>
+                    <p>Explore phones by brand, budget, features, and everyday needs. Compare your options and make a more informed buying decision.</p>
+                    <div class="cta-group">
+                        <a href="#all-phones" class="btn btn-primary">Explore phones</a>
+                        <a href="#accessories" class="btn btn-secondary">Browse accessories</a>
+                    </div>
+                    <div class="search-bar" role="search">
+                        <div class="search-wrapper">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                            <input type="search" class="search-input" id="searchInput" placeholder="Search by brand, feature, or phone..." aria-label="Search mobile products" autocomplete="off">
+                            <button class="search-clear" id="searchClear" aria-label="Clear search">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            </button>
+                        </div>
+                        <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+                    </div>
+                </div>
+                <div class="hero-visual" id="heroVisual" aria-hidden="true"></div>
+            </section>
+        </div>
+
+        <!-- Featured Phones -->
+        <section class="section container" id="all-phones" aria-labelledby="phones-heading">
+            <div class="section-header">
+                <div>
+                    <h2 id="phones-heading">Featured phones</h2>
+                    <p>Top picks across brands and price ranges</p>
+                </div>
+                <a href="#" class="view-all">View all</a>
+            </div>
+            <div class="grid grid-products" id="featuredPhonesGrid"></div>
+        </section>
+
+        <!-- Brand -->
+        <section class="section container" aria-labelledby="brand-heading" id="brand">
+            <div class="section-header">
+                <div>
+                    <h2 id="brand-heading">Shop by brand</h2>
+                    <p>Explore phones from your preferred manufacturer</p>
+                </div>
+            </div>
+            <div class="grid grid-tiles" id="brandGrid"></div>
+        </section>
+
+        <!-- Budget -->
+        <section class="section container" aria-labelledby="budget-heading" id="budget">
+            <div class="section-header">
+                <div>
+                    <h2 id="budget-heading">Shop by budget</h2>
+                    <p>Find phones that fit your price range</p>
+                </div>
+            </div>
+            <div class="grid grid-strips" id="budgetGrid"></div>
+        </section>
+
+        <!-- Need -->
+        <section class="section container" aria-labelledby="need-heading">
+            <div class="section-header">
+                <div>
+                    <h2 id="need-heading">Shop by need</h2>
+                    <p>Find phones suited to how you use them</p>
+                </div>
+            </div>
+            <div class="grid grid-tiles" id="needGrid"></div>
+        </section>
+
+        <!-- Feature -->
+        <section class="section container" aria-labelledby="feature-heading">
+            <div class="section-header">
+                <div>
+                    <h2 id="feature-heading">Shop by feature</h2>
+                    <p>Discover phones with specific capabilities</p>
+                </div>
+            </div>
+            <div class="grid grid-tiles" id="featureGrid"></div>
+        </section>
+
+        <!-- Ecosystem -->
+        <section class="section container" aria-labelledby="ecosystem-heading">
+            <div class="section-header">
+                <div>
+                    <h2 id="ecosystem-heading">Shop by ecosystem</h2>
+                    <p>Explore compatible phones and accessories</p>
+                </div>
+            </div>
+            <div class="grid grid-tiles" id="ecosystemGrid"></div>
+        </section>
+
+        <!-- Accessories -->
+        <section class="section container" id="accessories" aria-labelledby="accessories-heading">
+            <div class="section-header">
+                <div>
+                    <h2 id="accessories-heading">Mobile accessories</h2>
+                    <p>Complement your phone with quality accessories</p>
+                </div>
+                <a href="#" class="view-all">View all</a>
+            </div>
+            <div class="grid grid-products" id="accessoryGrid"></div>
+        </section>
+
+        <!-- Why YallaBuy -->
+        <div class="why-wrap">
+            <section class="why" aria-labelledby="why-heading">
+                <div class="why-header">
+                    <h2 id="why-heading">Why shop smarter with YallaBuy?</h2>
+                    <p>Choosing the right product shouldn't feel complicated. YallaBuy helps you explore your options, understand what matters, and find products that fit your needs.</p>
+                </div>
+                <div class="grid grid-why" id="whyGrid"></div>
+                <div class="trust-note">
+                    <strong>Transparent research.</strong> YallaBuy aims to make product research clearer. <a href="/amazon/How-We-Research.html">Learn how we research</a>.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/index.html" class="logo"><span class="logo-mark">Y</span>allaBuy</a>
+                    <p>YallaBuy helps you research products, explore alternatives, and find options that fit your needs and budget.</p>
+                    <a href="/about.html">About YallaBuy</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="../electronics/index.html">Electronics</a></li>
+                        <li><a href="/system/coming-soon.html">Mobile Phones</a></li>
+                        <li><a href="/system/coming-soon.html">Audio</a></li>
+                        <li><a href="/system/coming-soon.html">Computing</a></li>
+                        <li><a href="/system/coming-soon.html">Gaming</a></li>
+                        <li><a href="/system/coming-soon.html">Wearables</a></li>
+                        <li><a href="/system/coming-soon.html">Mobile Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Guides &amp; Research</h4>
+                    <ul>
+                            <li><a href="/amazon/How-We-Research.html">How We Research</a></li>
+                        <li><a href="/amazon/Editorial-Policy.html">Editorial Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company &amp; Legal</h4>
+                    <ul>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="/amazon/affiliate-disclosure.html">Affiliate Disclosure</a></li>
+                        <li><a href="/amazon/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/amazon/terms-of-service.html">Terms of service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-disclosure">
+                    YallaBuy may earn a commission when you purchase through qualifying affiliate links, at no additional cost to you. <a href="/amazon/affiliate-disclosure.html">Read the full disclosure</a>.
+                </div>
+                <div class="footer-copy">© <span id="year"></span> YallaBuy. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+ /* =========================================================
+   IMAGE GENERATION
+========================================================= */
+
+const PALETTES = [
+    ['#ff6a00', '#ffb066', '#1a1a1a'],
+    ['#1a1a1a', '#3a3a3a', '#ff6a00'],
+    ['#fff3e6', '#ffd2a6', '#ff6a00'],
+    ['#e65f00', '#ff9a3d', '#ffffff']
+];
+
+const svgUri = svg =>
+    'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+
+function artImage(emoji, i = 0, w = 400, h = 500) {
+    const [a, b, c] = PALETTES[i % PALETTES.length];
+
+    return svgUri(`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">
+            <defs>
+                <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="${a}"/>
+                    <stop offset="1" stop-color="${b}"/>
+                </linearGradient>
+            </defs>
+            <rect width="${w}" height="${h}" fill="url(#g)"/>
+            <circle cx="${w * .85}" cy="${h * .18}" r="${w * .32}"
+                fill="${c}" opacity=".16"/>
+            <circle cx="${w * .1}" cy="${h * .85}" r="${w * .4}"
+                fill="#fff" opacity=".12"/>
+            <text x="${w / 2}" y="${h * .5}" font-size="${w * .38}"
+                text-anchor="middle" dominant-baseline="central">${emoji}</text>
+        </svg>
+    `);
+}
+
+function phoneImage(i = 0, w = 400, h = 400) {
+    const bg = i % 2 ? '#fff3e6' : '#ffe3c7';
+    const s1 = i % 2 ? '#1a1a1a' : '#ff6a00';
+    const s2 = i % 2 ? '#555' : '#ffb066';
+
+    return svgUri(`
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}">
+            <defs>
+                <linearGradient id="s" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="${s1}"/>
+                    <stop offset="1" stop-color="${s2}"/>
+                </linearGradient>
+            </defs>
+            <rect width="${w}" height="${h}" fill="${bg}"/>
+            <circle cx="${w * .5}" cy="${h * .55}" r="${w * .36}"
+                fill="#ff6a00" opacity=".14"/>
+            <g transform="rotate(${i % 2 ? 8 : -8} ${w / 2} ${h / 2})">
+                <rect x="${w * .3}" y="${h * .1}" width="${w * .4}"
+                    height="${h * .8}" rx="30" fill="#111"/>
+                <rect x="${w * .32}" y="${h * .125}" width="${w * .36}"
+                    height="${h * .75}" rx="22" fill="url(#s)"/>
+                <rect x="${w * .44}" y="${h * .14}" width="${w * .12}"
+                    height="12" rx="6" fill="#111"/>
+            </g>
+        </svg>
+    `);
+}
+
+
+/* =========================================================
+   DATA
+   Add your own page URL to the `url` field of each item.
+   Leave it empty to use the generated fallback URL.
+========================================================= */
+
+const appState = {
+    products: [
+        {
+            id: 1,
+            name: "iPhone 15 Pro Max",
+            brand: "Apple",
+            category: "Phone",
+            price: 1099,
+            img: "",
+            url: "/system/coming-soon.html", // Product page URL
+            features: ["5G", "OLED", "Face ID"],
+            ecosystem: "Apple",
+            amazonUrl: "#"
+        },
+        {
+            id: 2,
+            name: "Galaxy S24 Ultra",
+            brand: "Samsung",
+            category: "Phone",
+            price: 1299,
+            img: "",
+            url: "/system/coming-soon.html",
+            features: ["5G", "OLED", "Stylus"],
+            ecosystem: "Samsung Galaxy",
+            amazonUrl: "#"
+        },
+        {
+            id: 3,
+            name: "Pixel 8 Pro",
+            brand: "Google",
+            category: "Phone",
+            price: 899,
+            img: "",
+            url: "/system/coming-soon.html",
+            features: ["5G", "OLED", "Wireless Charging"],
+            ecosystem: "Google Pixel",
+            amazonUrl: "#"
+        },
+        {
+            id: 4,
+            name: "OnePlus 12",
+            brand: "OnePlus",
+            category: "Phone",
+            price: 799,
+            img: "",
+            url: "/system/coming-soon.html",
+            features: ["5G", "OLED", "Fast Charging"],
+            ecosystem: null,
+            amazonUrl: "#"
+        },
+        {
+            id: 5,
+            name: "WH-1000XM5",
+            brand: "Sony",
+            category: "Accessory",
+            subcategory: "Audio",
+            price: 399,
+            img: "",
+            url: "/system/coming-soon.html",
+            emoji: "🎧",
+            features: ["Noise Cancelling"],
+            ecosystem: null,
+            amazonUrl: "#"
+        },
+        {
+            id: 6,
+            name: "MagSafe Charger",
+            brand: "Apple",
+            category: "Accessory",
+            subcategory: "Charger",
+            price: 39,
+            img: "",
+            url: "/system/coming-soon.html",
+            emoji: "🔌",
+            features: ["MagSafe", "Wireless Charging"],
+            ecosystem: "Apple",
+            amazonUrl: "#"
+        }
+    ],
+
+    brands: [
+        {
+            name: "Apple",
+            description: "Explore iPhones and discover models that fit your needs.",
+            img: "",
+            emoji: "🍎",
+            url: "/system/coming-soon.html"
+        },
+        {
+            name: "Samsung",
+            description: "Discover Galaxy phones across different budgets and feature sets.",
+            img: "",
+            emoji: "📱",
+            url: "/system/coming-soon.html"
+        },
+        {
+            name: "Google",
+            description: "Explore Pixel phones and their available features.",
+            img: "",
+            emoji: "🔍",
+            url: "/system/coming-soon.html"
+        },
+        {
+            name: "Motorola",
+            description: "Browse Motorola phones across supported product categories.",
+            img: "",
+            emoji: "🅼",
+            url: "/system/coming-soon.html"
+        }
+    ],
+
+    budgets: [
+        {
+            id: 1,
+            title: "Under $100",
+            description: "Explore phones for shoppers working with a very limited budget.",
+            img: "",
+            emoji: "💰",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 2,
+            title: "$100 – $199",
+            description: "Discover affordable phones for everyday essentials.",
+            img: "",
+            emoji: "💵",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 3,
+            title: "$200 – $349",
+            description: "Explore phones balancing useful features and cost.",
+            img: "",
+            emoji: "💳",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 4,
+            title: "$350 – $499",
+            description: "Find phones offering a broader range of features.",
+            img: "",
+            emoji: "💎",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 5,
+            title: "$500 – $799",
+            description: "Explore higher-end phones and advanced capabilities.",
+            img: "",
+            emoji: "🏦",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 6,
+            title: "$800 – $999",
+            description: "Discover premium phones in a higher price range.",
+            img: "",
+            emoji: "📈",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 7,
+            title: "$1,000 and Above",
+            description: "Explore phones at the top end of the price spectrum.",
+            img: "",
+            emoji: "👑",
+            url: "/system/coming-soon.html"
+        }
+    ],
+
+    needs: [
+        {
+            id: 1,
+            title: "Gaming",
+            description: "Explore phones and accessories suited to mobile gaming.",
+            img: "",
+            emoji: "🎮",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 2,
+            title: "Photography",
+            description: "Discover phones and accessories for mobile photography.",
+            img: "",
+            emoji: "📷",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 3,
+            title: "Long Battery Life",
+            description: "Phones that last all day and beyond.",
+            img: "",
+            emoji: "🔋",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 4,
+            title: "Everyday Use",
+            description: "Find phones designed to cover common daily needs.",
+            img: "",
+            emoji: "📅",
+            url: "/system/coming-soon.html"
+        }
+    ],
+
+    features: [
+        {
+            id: 1,
+            title: "5G Connectivity",
+            description: "Phones with next-generation cellular speeds.",
+            img: "",
+            emoji: "📶",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 2,
+            title: "Wireless Charging",
+            description: "Charge without the cables.",
+            img: "",
+            emoji: "🔌",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 3,
+            title: "OLED Display",
+            description: "Vibrant colors and deep blacks.",
+            img: "",
+            emoji: "🖼️",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 4,
+            title: "Foldable Design",
+            description: "Phones that open into tablets.",
+            img: "",
+            emoji: "📖",
+            url: "/system/coming-soon.html"
+        }
+    ],
+
+    ecosystems: [
+        {
+            id: 1,
+            title: "Apple",
+            description: "iPhones and MagSafe-compatible accessories.",
+            img: "",
+            emoji: "🍎",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 2,
+            title: "Samsung Galaxy",
+            description: "Galaxy phones and supported accessories.",
+            img: "",
+            emoji: "📱",
+            url: "/system/coming-soon.html"
+        },
+        {
+            id: 3,
+            title: "Google Pixel",
+            description: "Pixel phones and compatible mounts.",
+            img: "",
+            emoji: "🔍",
+            url: "/system/coming-soon.html"
+        }
+    ],
+
+    why: [
+        {
+            title: "Find what fits you",
+            text: "Discover products by brand, budget, features, and needs.",
+            img: "",
+            emoji: "🧭",
+            url: "/system/coming-soon.html"
+        },
+        {
+            title: "Research before you buy",
+            text: "Understand important specifications and available evidence.",
+            img: "",
+            emoji: "🔎",
+            url: "/system/coming-soon.html"
+        },
+        {
+            title: "Compare your options",
+            text: "Explore relevant alternatives and differences.",
+            img: "",
+            emoji: "⚖️",
+            url: "/system/coming-soon.html"
+        },
+        {
+            title: "Shop with more clarity",
+            text: "Access useful product information and retailer links.",
+            img: "",
+            emoji: "✅",
+            url: "/system/coming-soon.html"
+        }
+    ]
+};
+
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+const ARROW = `
+    <svg width="18" height="18" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2.4">
+        <line x1="5" y1="12" x2="19" y2="12"/>
+        <polyline points="12 5 19 12 12 19"/>
+    </svg>
+`;
+
+const EXTERNAL = `
+    <svg viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" width="14" height="14">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+    </svg>
+`;
+
+const slug = value =>
+    String(value)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+
+function productImg(product, index) {
+    return product.img ||
+        (product.category === "Phone"
+            ? phoneImage(index)
+            : artImage(product.emoji || "📦", index, 400, 400));
+}
+
+/*
+ * Priority:
+ * 1. Use the custom URL when supplied.
+ * 2. Otherwise generate a fallback path.
+ *
+ * This helper expects site-internal paths in `url`.
+ */
+function getItemUrl(item, fallbackPath) {
+    if (typeof item.url === "string" && item.url.trim()) {
+        return item.url.trim();
+    }
+
+    return fallbackPath;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS
+========================================================= */
+
+function productCard(product, index) {
+    const isPhone = product.category === "Phone";
+    const productUrl = getItemUrl(
+        product,
+        `/products/${slug(product.name)}`
+    );
+
+    return `
+        <article class="product-card">
+            <a href="${productUrl}" class="product-link">
+                <div class="product-img">
+                    <img
+                        src="${productImg(product, index)}"
+                        alt="${product.name}"
+                        loading="lazy"
+                    >
+                    <span class="product-chip">${product.brand}</span>
+                    <span class="product-price">$${product.price}</span>
+                </div>
+
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="product-desc">
+                        ${isPhone ? "Premium phone with" : "High-quality accessory with"}
+                        ${product.features.join(", ")}.
+                    </p>
+                </div>
+            </a>
+
+            <div class="product-info">
+                <a
+                    href="${product.amazonUrl}"
+                    target="_blank"
+                    rel="sponsored nofollow noopener"
+                    class="product-btn"
+                >
+                    View on Amazon ${EXTERNAL}
+                </a>
+
+                <div class="product-note">Price varies</div>
+            </div>
+        </article>
+    `;
+}
+
+function renderProducts() {
+    const grid = document.getElementById("featuredPhonesGrid");
+
+    grid.innerHTML = appState.products
+        .filter(product => product.category === "Phone")
+        .slice(0, 4)
+        .map(productCard)
+        .join("");
+}
+
+function renderAccessories() {
+    const grid = document.getElementById("accessoryGrid");
+
+    grid.innerHTML = appState.products
+        .filter(product => product.category === "Accessory")
+        .slice(0, 4)
+        .map(productCard)
+        .join("");
+}
+
+
+/* =========================================================
+   DISCOVERY TILES
+========================================================= */
+
+function tile(item, path, index) {
+    const name = item.name || item.title;
+
+    const fallback = `/${path}/${
+        item.name ? slug(item.name) : item.id
+    }`;
+
+    const href = getItemUrl(item, fallback);
+
+    return `
+        <a href="${href}" class="tile">
+            <img
+                src="${item.img || artImage(item.emoji || "📦", index)}"
+                alt=""
+                loading="lazy"
+            >
+
+            <span class="tile-arrow">${ARROW}</span>
+
+            <div class="tile-body">
+                <h3>${name}</h3>
+                <p>${item.description}</p>
+            </div>
+        </a>
+    `;
+}
+
+function strip(item, path, index) {
+    const href = getItemUrl(item, `/${path}/${item.id}`);
+
+    return `
+        <a href="${href}" class="strip">
+            <img
+                src="${item.img || artImage(item.emoji || "📦", index, 200, 200)}"
+                alt=""
+                loading="lazy"
+            >
+
+            <div>
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+            </div>
+
+            <span class="strip-arrow">${ARROW}</span>
+        </a>
+    `;
+}
+
+function renderDiscoveryCards() {
+    const $ = id => document.getElementById(id);
+
+    $("brandGrid").innerHTML = appState.brands
+        .map((brand, index) => tile(brand, "mobile/brand", index))
+        .join("");
+
+    $("budgetGrid").innerHTML = appState.budgets
+        .map((budget, index) => strip(budget, "mobile/budget", index))
+        .join("");
+
+    $("needGrid").innerHTML = appState.needs
+        .map((need, index) => tile(need, "mobile/need", index + 1))
+        .join("");
+
+    $("featureGrid").innerHTML = appState.features
+        .map((feature, index) => tile(feature, "mobile/feature", index + 2))
+        .join("");
+
+    $("ecosystemGrid").innerHTML = appState.ecosystems
+        .map((ecosystem, index) => tile(ecosystem, "mobile/ecosystem", index + 3))
+        .join("");
+}
+
+
+/* =========================================================
+   WHY YALLBUY CARDS
+========================================================= */
+
+function renderWhy() {
+    document.getElementById("whyGrid").innerHTML =
+        appState.why.map((item, index) => {
+            const content = `
+                <img
+                    src="${item.img || artImage(item.emoji || "📦", index, 640, 360)}"
+                    alt=""
+                    loading="lazy"
+                >
+                <div class="why-body">
+                    <h3>${item.title}</h3>
+                    <p>${item.text}</p>
+                </div>
+            `;
+
+            if (item.url && item.url.trim()) {
+                return `
+                    <a href="${item.url.trim()}" class="why-card">
+                        ${content}
+                    </a>
+                `;
+            }
+
+            return `
+                <div class="why-card">
+                    ${content}
+                </div>
+            `;
+        }).join("");
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const searchInput = document.getElementById("searchInput");
+const searchClear = document.getElementById("searchClear");
+const searchResults = document.getElementById("searchResults");
+
+function getSearchData() {
+    const products = appState.products.map((product, index) => ({
+        name: product.name,
+        type: "Product",
+        url: getItemUrl(product, `/products/${slug(product.name)}`),
+        thumb: productImg(product, index)
+    }));
+
+    const brands = appState.brands.map((brand, index) => ({
+        name: brand.name,
+        type: "Brand",
+        url: getItemUrl(
+            brand,
+            `/mobile/brand/${slug(brand.name)}`
+        ),
+        thumb: brand.img || artImage(brand.emoji, index, 100, 100)
+    }));
+
+    const budgets = appState.budgets.map((budget, index) => ({
+        name: budget.title,
+        type: "Budget",
+        url: getItemUrl(
+            budget,
+            `/mobile/budget/${budget.id}`
+        ),
+        thumb: budget.img || artImage(budget.emoji, index, 100, 100)
+    }));
+
+    const needs = appState.needs.map((need, index) => ({
+        name: need.title,
+        type: "Need",
+        url: getItemUrl(
+            need,
+            `/mobile/need/${need.id}`
+        ),
+        thumb: need.img || artImage(need.emoji, index, 100, 100)
+    }));
+
+    const features = appState.features.map((feature, index) => ({
+        name: feature.title,
+        type: "Feature",
+        url: getItemUrl(
+            feature,
+            `/mobile/feature/${feature.id}`
+        ),
+        thumb: feature.img || artImage(feature.emoji, index, 100, 100)
+    }));
+
+    const ecosystems = appState.ecosystems.map((ecosystem, index) => ({
+        name: ecosystem.title,
+        type: "Ecosystem",
+        url: getItemUrl(
+            ecosystem,
+            `/mobile/ecosystem/${ecosystem.id}`
+        ),
+        thumb: ecosystem.img || artImage(ecosystem.emoji, index, 100, 100)
+    }));
+
+    return [
+        ...products,
+        ...brands,
+        ...budgets,
+        ...needs,
+        ...features,
+        ...ecosystems
+    ];
+}
+
+function handleSearch() {
+    const query = searchInput.value.trim().toLowerCase();
+
+    searchClear.classList.toggle("visible", query.length > 0);
+
+    if (!query) {
+        searchResults.classList.remove("visible");
+        searchResults.innerHTML = "";
+        return;
+    }
+
+    const matches = getSearchData()
+        .filter(item => item.name.toLowerCase().includes(query))
+        .slice(0, 8);
+
+    if (matches.length === 0) {
+        const safe = searchInput.value.replace(/[<>&"]/g, "");
+
+        searchResults.innerHTML = `
+            <div class="search-empty">
+                No results found for "${safe}"
+            </div>
+        `;
+    } else {
+        searchResults.innerHTML = matches.map(item => `
+            <a
+                href="${item.url}"
+                class="search-result-item"
+                role="option"
+            >
+                <img src="${item.thumb}" alt="" loading="lazy">
+                <span>${item.name}</span>
+                <small>${item.type}</small>
+            </a>
+        `).join("");
+    }
+
+    searchResults.classList.add("visible");
+}
+
+searchInput.addEventListener("input", handleSearch);
+
+searchClear.addEventListener("click", () => {
+    searchInput.value = "";
+    handleSearch();
+    searchInput.focus();
+});
+
+document.addEventListener("click", event => {
+    if (!event.target.closest(".search-bar")) {
+        searchResults.classList.remove("visible");
+    }
+});
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+function renderHero() {
+    document.getElementById("heroVisual").innerHTML =
+        [0, 1, 2].map(index => `
+            <div class="hero-phone">
+                <img src="${phoneImage(index, 400, 700)}" alt="">
+            </div>
+        `).join("");
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const closeBtn = document.getElementById("closeBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const overlay = document.getElementById("overlay");
+
+let lastFocused = null;
+
+function openMenu() {
+    lastFocused = document.activeElement;
+
+    mobileMenu.classList.add("open");
+    overlay.classList.add("open");
+
+    menuBtn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+
+    setTimeout(() => closeBtn.focus(), 100);
+}
+
+function closeMenu() {
+    mobileMenu.classList.remove("open");
+    overlay.classList.remove("open");
+
+    menuBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+
+    if (lastFocused) lastFocused.focus();
+}
+
+menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.contains("open")
+        ? closeMenu()
+        : openMenu();
+});
+
+closeBtn.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+document.addEventListener("keydown", event => {
+    if (
+        event.key === "Escape" &&
+        mobileMenu.classList.contains("open")
+    ) {
+        closeMenu();
+    }
+});
+
+mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+document.getElementById("searchToggle").addEventListener("click", () => {
+    searchInput.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    searchInput.focus();
+});
+
+
+/* =========================================================
+   FOOTER YEAR & INITIALIZATION
+========================================================= */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+renderHero();
+renderProducts();
+renderDiscoveryCards();
+renderAccessories();
+renderWhy();   
+ </script>
+     <script>
+  (function() {
+    if (!('serviceWorker' in navigator)) return;
+
+    let refreshing = false;
+
+    // عندما يتحكم Service Worker جديد
+    navigator.serviceWorker.addEventListener('controllerchange', function() {
+      if (refreshing) return;
+      refreshing = true;
+      window.location.reload();
+    });
+
+    navigator.serviceWorker.register('/service-worker.js').then(function(reg) {
+      console.log('✅ Service Worker مسجل');
+
+      reg.addEventListener('updatefound', function() {
+        const newWorker = reg.installing;
+
+        newWorker.addEventListener('statechange', function() {
+          // لو فيه SW قديم شغال → فيه تحديث جديد
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            console.log('🔄 تحديث جديد متاح!');
+            
+            // أرسل رسالة للتحديث فوراً
+            newWorker.postMessage('skipWaiting');
+          }
+        });
+      });
+    }).catch(function(err) {
+      console.log('❌ فشل التسجيل:', err);
+    });
+  })();
+</script>
+
+
+</body>
+</html>

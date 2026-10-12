@@ -1,1 +1,1226 @@
+{
+  "site": {
+    "name": "YallaBuy",
+    "section": "Audio",
+    "version": 1
+  },
+  "mainCategories": [
+    {
+      "id": "audio-headphones",
+      "type": "main",
+      "slug": "headphones",
+      "name": "Headphones",
+      "description": "Explore headphones for music, gaming, work, and everyday listening.",
+      "image": "",
+      "url": "#",
+      "order": 1,
+      "status": "active",
+      "subcategories": [
+        "over-ear-headphones",
+        "on-ear-headphones",
+        "wired-headphones",
+        "wireless-headphones",
+        "noise-cancelling-headphones",
+        "gaming-headphones",
+        "studio-headphones",
+        "open-back-headphones",
+        "closed-back-headphones"
+      ]
+    },
+    {
+      "id": "audio-earbuds",
+      "type": "main",
+      "slug": "earbuds",
+      "name": "Earbuds & Earphones",
+      "description": "Find earbuds and earphones for commuting, workouts, calls, and daily use.",
+      "image": "images/audio/earbuds.webp",
+      "url": "#",
+      "order": 2,
+      "status": "active",
+      "subcategories": [
+        "true-wireless-earbuds",
+        "wired-earphones",
+        "wireless-earphones",
+        "noise-cancelling-earbuds",
+        "sports-earbuds",
+        "gaming-earbuds",
+        "open-ear-earbuds",
+        "bone-conduction-earphones"
+      ]
+    },
+    {
+      "id": "audio-speakers",
+      "type": "main",
+      "slug": "speakers",
+      "name": "Speakers",
+      "description": "Explore speakers for home listening, outdoor use, computers, and parties.",
+      "image": "images/audio/speakers.webp",
+      "url": "#",
+      "order": 3,
+      "status": "active",
+      "subcategories": [
+        "bluetooth-speakers",
+        "portable-speakers",
+        "bookshelf-speakers",
+        "floorstanding-speakers",
+        "computer-speakers",
+        "smart-speakers",
+        "outdoor-speakers",
+        "party-speakers"
+      ]
+    },
+    {
+      "id": "audio-subwoofers",
+      "type": "main",
+      "slug": "subwoofers",
+      "name": "Subwoofers",
+      "description": "Discover subwoofers for deeper bass in music and home theater systems.",
+      "image": "images/audio/subwoofers.webp",
+      "url": "#",
+      "order": 4,
+      "status": "active",
+      "subcategories": [
+        "powered-subwoofers",
+        "passive-subwoofers",
+        "home-theater-subwoofers",
+        "car-subwoofers",
+        "studio-subwoofers"
+      ]
+    },
+    {
+      "id": "audio-home-theater",
+      "type": "main",
+      "slug": "home-audio-home-theater",
+      "name": "Home Audio & Home Theater",
+      "description": "Build a home listening or cinema setup with audio equipment for your space.",
+      "image": "images/audio/home-theater.webp",
+      "url": "#",
+      "order": 5,
+      "status": "active",
+      "subcategories": [
+        "soundbars",
+        "av-receivers",
+        "home-theater-systems",
+        "surround-sound-systems",
+        "stereo-receivers",
+        "integrated-amplifiers",
+        "wireless-home-audio",
+        "home-audio-components"
+      ]
+    },
+    {
+      "id": "audio-microphones",
+      "type": "main",
+      "slug": "microphones",
+      "name": "Microphones",
+      "description": "Find microphones for streaming, podcasting, recording, meetings, and performance.",
+      "image": "images/audio/microphones.webp",
+      "url": "#",
+      "order": 6,
+      "status": "active",
+      "subcategories": [
+        "usb-microphones",
+        "xLR-microphones",
+        "wireless-microphones",
+        "condenser-microphones",
+        "dynamic-microphones",
+        "lavaliers",
+        "shotgun-microphones",
+        "podcast-microphones"
+      ]
+    },
+    {
+      "id": "audio-wireless-systems",
+      "type": "main",
+      "slug": "wireless-audio-systems",
+      "name": "Wireless Audio Systems",
+      "description": "Explore wireless audio transmitters, receivers, and multi-room listening systems.",
+      "image": "images/audio/wireless-audio.webp",
+      "url": "#",
+      "order": 7,
+      "status": "active",
+      "subcategories": [
+        "wireless-audio-transmitters",
+        "wireless-audio-receivers",
+        "multiroom-audio-systems",
+        "wireless-speaker-systems",
+        "wireless-microphone-systems"
+      ]
+    },
+    {
+      "id": "audio-computer-audio",
+      "type": "main",
+      "slug": "audio-interfaces-computer-audio",
+      "name": "Audio Interfaces & Computer Audio",
+      "description": "Improve computer recording, playback, and connectivity with dedicated audio hardware.",
+      "image": "images/audio/computer-audio.webp",
+      "url": "#",
+      "order": 8,
+      "status": "active",
+      "subcategories": [
+        "usb-audio-interfaces",
+        "thunderbolt-audio-interfaces",
+        "pcie-audio-cards",
+        "external-sound-cards",
+        "computer-audio-adapters"
+      ]
+    },
+    {
+      "id": "audio-dacs-amplifiers",
+      "type": "main",
+      "slug": "dacs-headphone-amplifiers",
+      "name": "DACs & Headphone Amplifiers",
+      "description": "Explore digital-to-analog converters and amplifiers for headphones and speakers.",
+      "image": "images/audio/dacs-amplifiers.webp",
+      "url": "#",
+      "order": 9,
+      "status": "active",
+      "subcategories": [
+        "portable-dacs",
+        "desktop-dacs",
+        "usb-dacs",
+        "headphone-amplifiers",
+        "portable-headphone-amplifiers",
+        "dac-amplifier-combos"
+      ]
+    },
+    {
+      "id": "audio-mixers",
+      "type": "main",
+      "slug": "audio-mixers-control-surfaces",
+      "name": "Audio Mixers & Control Surfaces",
+      "description": "Find mixing equipment for recording, streaming, broadcasting, and live sound.",
+      "image": "images/audio/mixers.webp",
+      "url": "#",
+      "order": 10,
+      "status": "active",
+      "subcategories": [
+        "analog-mixers",
+        "digital-mixers",
+        "usb-mixers",
+        "dj-mixers",
+        "broadcast-mixers",
+        "control-surfaces"
+      ]
+    },
+    {
+      "id": "audio-studio-recording",
+      "type": "main",
+      "slug": "studio-recording-equipment",
+      "name": "Studio Recording Equipment",
+      "description": "Explore essential equipment for home studios and professional recording rooms.",
+      "image": "images/audio/studio-recording.webp",
+      "url": "#",
+      "order": 11,
+      "status": "active",
+      "subcategories": [
+        "studio-monitor-speakers",
+        "studio-headphones",
+        "microphone-preamps",
+        "studio-monitor-controllers",
+        "headphone-distribution-amplifiers",
+        "recording-bundles"
+      ]
+    },
+    {
+      "id": "audio-recorders",
+      "type": "main",
+      "slug": "audio-recorders-playback",
+      "name": "Audio Recorders & Playback Devices",
+      "description": "Discover portable recorders, voice recorders, and dedicated audio playback devices.",
+      "image": "images/audio/recorders.webp",
+      "url": "#",
+      "order": 12,
+      "status": "active",
+      "subcategories": [
+        "portable-audio-recorders",
+        "digital-voice-recorders",
+        "field-recorders",
+        "multitrack-recorders",
+        "audio-players",
+        "portable-music-players"
+      ]
+    },
+    {
+      "id": "audio-dj-equipment",
+      "type": "main",
+      "slug": "dj-equipment",
+      "name": "DJ Equipment & Music Performance Audio",
+      "description": "Explore DJ controllers, turntables, and equipment for music performance.",
+      "image": "images/audio/dj-equipment.webp",
+      "url": "#",
+      "order": 13,
+      "status": "active",
+      "subcategories": [
+        "dj-controllers",
+        "dj-turntables",
+        "dj-media-players",
+        "dj-headphones",
+        "dj-accessories"
+      ]
+    },
+    {
+      "id": "audio-live-pa",
+      "type": "main",
+      "slug": "live-sound-pa-systems",
+      "name": "Live Sound & PA Systems",
+      "description": "Find sound reinforcement equipment for events, performances, and public spaces.",
+      "image": "images/audio/live-sound.webp",
+      "url": "#",
+      "order": 14,
+      "status": "active",
+      "subcategories": [
+        "powered-pa-speakers",
+        "passive-pa-speakers",
+        "portable-pa-systems",
+        "line-array-systems",
+        "stage-monitors",
+        "pa-amplifiers"
+      ]
+    },
+    {
+      "id": "audio-commercial",
+      "type": "main",
+      "slug": "commercial-installed-audio",
+      "name": "Commercial & Installed Audio",
+      "description": "Explore installed audio equipment for offices, shops, venues, and public spaces.",
+      "image": "images/audio/commercial-audio.webp",
+      "url": "#",
+      "order": 15,
+      "status": "active",
+      "subcategories": [
+        "ceiling-speakers",
+        "in-wall-speakers",
+        "commercial-amplifiers",
+        "paging-systems",
+        "distributed-audio-systems"
+      ]
+    },
+    {
+      "id": "audio-conference",
+      "type": "main",
+      "slug": "conference-communication-audio",
+      "name": "Conference & Communication Audio",
+      "description": "Audio tools for meetings, remote work, conferencing, and two-way communication.",
+      "image": "images/audio/conference-audio.webp",
+      "url": "#",
+      "order": 16,
+      "status": "active",
+      "subcategories": [
+        "conference-speakers",
+        "speakerphones",
+        "conference-microphones",
+        "meeting-room-audio-systems",
+        "communication-headsets"
+      ]
+    },
+    {
+      "id": "audio-car",
+      "type": "main",
+      "slug": "car-audio",
+      "name": "Car Audio",
+      "description": "Upgrade in-car listening with speakers, receivers, amplifiers, and related equipment.",
+      "image": "images/audio/car-audio.webp",
+      "url": "#",
+      "order": 17,
+      "status": "active",
+      "subcategories": [
+        "car-stereos",
+        "car-speakers",
+        "car-subwoofers",
+        "car-amplifiers",
+        "car-dsp-processors",
+        "car-audio-installation-kits"
+      ]
+    },
+    {
+      "id": "audio-marine",
+      "type": "main",
+      "slug": "marine-powersports-audio",
+      "name": "Marine & Powersports Audio",
+      "description": "Audio equipment designed for boats, motorcycles, and other powersports vehicles.",
+      "image": "images/audio/marine-audio.webp",
+      "url": "#",
+      "order": 18,
+      "status": "active",
+      "subcategories": [
+        "marine-speakers",
+        "marine-stereos",
+        "marine-amplifiers",
+        "motorcycle-audio-systems",
+        "powersports-audio-kits"
+      ]
+    },
+    {
+      "id": "audio-musical-instruments",
+      "type": "main",
+      "slug": "musical-instrument-audio",
+      "name": "Musical Instrument Audio Equipment",
+      "description": "Find audio equipment for electronic instruments, practice, rehearsal, and performance.",
+      "image": "images/audio/instrument-audio.webp",
+      "url": "#",
+      "order": 19,
+      "status": "active",
+      "subcategories": [
+        "keyboard-amplifiers",
+        "guitar-amplifiers",
+        "bass-amplifiers",
+        "electronic-drum-monitors",
+        "instrument-wireless-systems"
+      ]
+    },
+    {
+      "id": "audio-processing",
+      "type": "main",
+      "slug": "audio-signal-processing",
+      "name": "Audio Signal Processing",
+      "description": "Explore hardware for shaping, controlling, and improving audio signals.",
+      "image": "images/audio/signal-processing.webp",
+      "url": "#",
+      "order": 20,
+      "status": "active",
+      "subcategories": [
+        "equalizers",
+        "compressors-limiters",
+        "audio-crossovers",
+        "audio-effects-processors",
+        "feedback-suppressors",
+        "speaker-management-processors"
+      ]
+    },
+    {
+      "id": "audio-cables",
+      "type": "main",
+      "slug": "audio-cables-connectors-adapters",
+      "name": "Audio Cables, Connectors & Adapters",
+      "description": "Find cables and adapters for connecting audio devices and systems.",
+      "image": "images/audio/cables.webp",
+      "url": "#",
+      "order": 21,
+      "status": "active",
+      "subcategories": [
+        "aux-cables",
+        "rca-cables",
+        "xlr-cables",
+        "speaker-cables",
+        "optical-audio-cables",
+        "digital-audio-adapters",
+        "audio-connectors"
+      ]
+    },
+    {
+      "id": "audio-headphone-accessories",
+      "type": "main",
+      "slug": "headphone-earbud-accessories",
+      "name": "Headphone & Earbud Accessories",
+      "description": "Browse replacement parts and accessories for headphones and earbuds.",
+      "image": "images/audio/headphone-accessories.webp",
+      "url": "#",
+      "order": 22,
+      "status": "active",
+      "subcategories": [
+        "replacement-earpads",
+        "replacement-ear-tips",
+        "headphone-cables",
+        "headphone-cases",
+        "earbud-charging-cases",
+        "headphone-stands"
+      ]
+    },
+    {
+      "id": "audio-speaker-accessories",
+      "type": "main",
+      "slug": "speaker-parts-accessories",
+      "name": "Speaker Parts & Accessories",
+      "description": "Find speaker stands, mounts, grilles, and replacement components.",
+      "image": "images/audio/speaker-accessories.webp",
+      "url": "#",
+      "order": 23,
+      "status": "active",
+      "subcategories": [
+        "speaker-stands",
+        "speaker-wall-mounts",
+        "speaker-grilles",
+        "speaker-drivers",
+        "speaker-replacement-parts"
+      ]
+    },
+    {
+      "id": "audio-microphone-accessories",
+      "type": "main",
+      "slug": "microphone-accessories",
+      "name": "Microphone Accessories",
+      "description": "Explore microphone stands, mounts, pop filters, and wind protection.",
+      "image": "images/audio/microphone-accessories.webp",
+      "url": "#",
+      "order": 24,
+      "status": "active",
+      "subcategories": [
+        "microphone-stands",
+        "boom-arms",
+        "shock-mounts",
+        "pop-filters",
+        "microphone-windscreens",
+        "microphone-cables"
+      ]
+    },
+    {
+      "id": "audio-power-installation",
+      "type": "main",
+      "slug": "audio-power-installation",
+      "name": "Audio Power & Installation",
+      "description": "Power, mount, and install audio equipment with compatible accessories.",
+      "image": "images/audio/audio-installation.webp",
+      "url": "#",
+      "order": 25,
+      "status": "active",
+      "subcategories": [
+        "power-amplifiers",
+        "audio-power-conditioners",
+        "rack-mount-accessories",
+        "audio-equipment-racks",
+        "installation-hardware"
+      ]
+    },
+    {
+      "id": "audio-software",
+      "type": "main",
+      "slug": "audio-software-digital-tools",
+      "name": "Audio Software & Digital Tools",
+      "description": "Discover software and digital tools for recording, editing, mixing, and audio production.",
+      "image": "images/audio/audio-software.webp",
+      "url": "#",
+      "order": 26,
+      "status": "active",
+      "subcategories": [
+        "digital-audio-workstations",
+        "audio-editing-software",
+        "audio-plugins",
+        "virtual-instruments",
+        "audio-analysis-software"
+      ]
+    },
+    {
+      "id": "audio-spatial",
+      "type": "main",
+      "slug": "immersive-spatial-audio",
+      "name": "Immersive & Spatial Audio",
+      "description": "Explore equipment for immersive listening, spatial sound, and specialized audio experiences.",
+      "image": "images/audio/spatial-audio.webp",
+      "url": "#",
+      "order": 27,
+      "status": "active",
+      "subcategories": [
+        "spatial-audio-headphones",
+        "immersive-audio-processors",
+        "binaural-audio-equipment",
+        "ambisonic-microphones",
+        "surround-sound-decoders"
+      ]
+    },
+    {
+      "id": "audio-assistive",
+      "type": "main",
+      "slug": "assistive-listening-devices",
+      "name": "Assistive Listening & Hearing Devices",
+      "description": "Explore assistive listening products and personal hearing-support devices.",
+      "image": "images/audio/assistive-audio.webp",
+      "url": "#",
+      "order": 28,
+      "status": "active",
+      "subcategories": [
+        "personal-sound-amplifiers",
+        "assistive-listening-systems",
+        "tv-listening-systems",
+        "hearing-accessories"
+      ]
+    },
+    {
+      "id": "audio-camera-video",
+      "type": "main",
+      "slug": "camera-video-audio",
+      "name": "Audio for Cameras & Video Production",
+      "description": "Find microphones and audio accessories for cameras, filmmaking, and video production.",
+      "image": "images/audio/camera-audio.webp",
+      "url": "#",
+      "order": 29,
+      "status": "active",
+      "subcategories": [
+        "camera-microphones",
+        "wireless-video-microphone-systems",
+        "on-camera-shotgun-microphones",
+        "portable-audio-recorders-video",
+        "timecode-audio-accessories"
+      ]
+    },
+    {
+      "id": "audio-device-accessories",
+      "type": "main",
+      "slug": "audio-for-phones-tablets-computers",
+      "name": "Audio for Phones, Tablets & Computers",
+      "description": "Explore audio devices and accessories designed for phones, tablets, and computers.",
+      "image": "images/audio/device-audio.webp",
+      "url": "#",
+      "order": 30,
+      "status": "active",
+      "subcategories": [
+        "usb-c-audio-adapters",
+        "lightning-audio-adapters",
+        "computer-headsets",
+        "mobile-microphones",
+        "usb-speakers",
+        "bluetooth-audio-receivers"
+      ]
+    },
+    {
+      "id": "audio-fitness-outdoor",
+      "type": "main",
+      "slug": "fitness-sports-outdoor-audio",
+      "name": "Audio for Fitness, Sports & Outdoors",
+      "description": "Find audio gear suited to workouts, running, cycling, and outdoor activities.",
+      "image": "images/audio/outdoor-audio.webp",
+      "url": "#",
+      "order": 31,
+      "status": "active",
+      "subcategories": [
+        "running-headphones",
+        "swimming-headphones",
+        "cycling-audio-accessories",
+        "rugged-bluetooth-speakers",
+        "sports-earbuds"
+      ]
+    },
+    {
+      "id": "audio-kids",
+      "type": "main",
+      "slug": "kids-family-audio",
+      "name": "Audio for Kids & Family",
+      "description": "Browse audio products designed for children and family listening.",
+      "image": "images/audio/kids-audio.webp",
+      "url": "#",
+      "order": 32,
+      "status": "active",
+      "subcategories": [
+        "kids-headphones",
+        "volume-limited-headphones",
+        "kids-audio-players",
+        "kids-speakers",
+        "bedtime-audio-devices"
+      ]
+    },
+    {
+      "id": "audio-travel",
+      "type": "main",
+      "slug": "vehicle-travel-hospitality-audio",
+      "name": "Audio for Vehicles, Travel & Hospitality",
+      "description": "Explore audio products for travel, hotels, and shared listening environments.",
+      "image": "images/audio/travel-audio.webp",
+      "url": "#",
+      "order": 33,
+      "status": "active",
+      "subcategories": [
+        "travel-headphones",
+        "airplane-audio-adapters",
+        "hotel-audio-systems",
+        "in-flight-headphones",
+        "travel-speakers"
+      ]
+    },
+    {
+      "id": "audio-karaoke",
+      "type": "main",
+      "slug": "karaoke-voice-amplification",
+      "name": "Karaoke & Voice Amplification",
+      "description": "Find karaoke systems, portable voice amplifiers, and public-speaking audio equipment.",
+      "image": "images/audio/karaoke.webp",
+      "url": "#",
+      "order": 34,
+      "status": "active",
+      "subcategories": [
+        "karaoke-machines",
+        "karaoke-microphones",
+        "portable-voice-amplifiers",
+        "megaphones",
+        "wireless-presentation-microphones"
+      ]
+    },
+    {
+      "id": "audio-testing",
+      "type": "main",
+      "slug": "audio-testing-measurement",
+      "name": "Audio Testing, Measurement & Calibration",
+      "description": "Explore tools for measuring, testing, and calibrating audio equipment.",
+      "image": "images/audio/audio-testing.webp",
+      "url": "#",
+      "order": 35,
+      "status": "active",
+      "subcategories": [
+        "audio-measurement-microphones",
+        "sound-level-meters",
+        "audio-analyzers",
+        "speaker-calibration-tools",
+        "audio-cable-testers"
+      ]
+    },
+    {
+      "id": "audio-repair",
+      "type": "main",
+      "slug": "audio-repair-maintenance",
+      "name": "Audio Repair, Maintenance & Spare Parts",
+      "description": "Find replacement parts and maintenance accessories for audio equipment.",
+      "image": "images/audio/audio-repair.webp",
+      "url": "#",
+      "order": 36,
+      "status": "active",
+      "subcategories": [
+        "headphone-replacement-parts",
+        "speaker-repair-parts",
+        "microphone-replacement-parts",
+        "audio-cleaning-kits",
+        "audio-maintenance-tools"
+      ]
+    },
+    {
+      "id": "audio-analog",
+      "type": "main",
+      "slug": "vinyl-hifi-analog-audio",
+      "name": "Vinyl, Hi-Fi & Analog Audio",
+      "description": "Explore turntables, phono equipment, and components for analog music systems.",
+      "image": "images/audio/analog-audio.webp",
+      "url": "#",
+      "order": 37,
+      "status": "active",
+      "subcategories": [
+        "turntables",
+        "phono-preamplifiers",
+        "cartridge-stylus-accessories",
+        "vinyl-record-cleaning",
+        "hi-fi-stereo-components"
+      ]
+    },
+    {
+      "id": "audio-storage",
+      "type": "main",
+      "slug": "audio-storage-transport-protection",
+      "name": "Audio Storage, Transport & Protection",
+      "description": "Protect and transport audio equipment with suitable cases, bags, and storage solutions.",
+      "image": "images/audio/audio-storage.webp",
+      "url": "#",
+      "order": 38,
+      "status": "active",
+      "subcategories": [
+        "audio-equipment-cases",
+        "microphone-cases",
+        "speaker-covers",
+        "cable-organizers",
+        "portable-equipment-bags"
+      ]
+    },
+    {
+      "id": "audio-bundles",
+      "type": "main",
+      "slug": "audio-bundles-complete-kits",
+      "name": "Audio Bundles & Complete Kits",
+      "description": "Explore ready-made audio bundles for recording, streaming, podcasting, and listening.",
+      "image": "images/audio/audio-bundles.webp",
+      "url": "#",
+      "order": 39,
+      "status": "active",
+      "subcategories": [
+        "podcast-starter-kits",
+        "streaming-audio-kits",
+        "home-recording-bundles",
+        "home-theater-bundles",
+        "karaoke-bundles"
+      ]
+    },
+    {
+      "id": "audio-other",
+      "type": "main",
+      "slug": "other-audio-products",
+      "name": "Other & Emerging Audio Products",
+      "description": "Explore additional audio products and emerging categories not listed elsewhere.",
+      "image": "images/audio/other-audio.webp",
+      "url": "#",
+      "order": 40,
+      "status": "active",
+      "subcategories": [
+        "audio-accessories-miscellaneous",
+        "emerging-audio-devices",
+        "specialized-audio-products"
+      ]
+    }
+  ],
+  "subcategories": [
+    {
+      "id": "over-ear-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "over-ear-headphones",
+      "name": "Over-Ear Headphones",
+      "description": "Headphones designed to fit around the ears.",
+      "image": "images/audio/subcategories/over-ear-headphones.webp",
+      "url": "#",
+      "order": 1,
+      "status": "active"
+    },
+    {
+      "id": "on-ear-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "on-ear-headphones",
+      "name": "On-Ear Headphones",
+      "description": "Headphones that rest directly on the ears.",
+      "image": "images/audio/subcategories/on-ear-headphones.webp",
+      "url": "#",
+      "order": 2,
+      "status": "active"
+    },
+    {
+      "id": "wired-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "wired-headphones",
+      "name": "Wired Headphones",
+      "description": "Headphones that connect using an audio cable.",
+      "image": "images/audio/subcategories/wired-headphones.webp",
+      "url": "#",
+      "order": 3,
+      "status": "active"
+    },
+    {
+      "id": "wireless-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "wireless-headphones",
+      "name": "Wireless Headphones",
+      "description": "Headphones that connect wirelessly.",
+      "image": "images/audio/subcategories/wireless-headphones.webp",
+      "url": "#",
+      "order": 4,
+      "status": "active"
+    },
+    {
+      "id": "noise-cancelling-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "noise-cancelling-headphones",
+      "name": "Noise-Cancelling Headphones",
+      "description": "Headphones with active or passive noise reduction features.",
+      "image": "images/audio/subcategories/noise-cancelling-headphones.webp",
+      "url": "#",
+      "order": 5,
+      "status": "active"
+    },
+    {
+      "id": "gaming-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "gaming-headphones",
+      "name": "Gaming Headphones",
+      "description": "Headphones designed for gaming and communication.",
+      "image": "images/audio/subcategories/gaming-headphones.webp",
+      "url": "#",
+      "order": 6,
+      "status": "active"
+    },
+    {
+      "id": "studio-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "studio-headphones",
+      "name": "Studio Headphones",
+      "description": "Headphones intended for recording and audio production.",
+      "image": "images/audio/subcategories/studio-headphones.webp",
+      "url": "#",
+      "order": 7,
+      "status": "active"
+    },
+    {
+      "id": "open-back-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "open-back-headphones",
+      "name": "Open-Back Headphones",
+      "description": "Headphones with open ear cups for a more open listening presentation.",
+      "image": "images/audio/subcategories/open-back-headphones.webp",
+      "url": "#",
+      "order": 8,
+      "status": "active"
+    },
+    {
+      "id": "closed-back-headphones",
+      "type": "sub",
+      "parentId": "audio-headphones",
+      "slug": "closed-back-headphones",
+      "name": "Closed-Back Headphones",
+      "description": "Headphones with closed ear cups to reduce sound leakage.",
+      "image": "images/audio/subcategories/closed-back-headphones.webp",
+      "url": "#",
+      "order": 9,
+      "status": "active"
+    },
+    {
+      "id": "true-wireless-earbuds",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "true-wireless-earbuds",
+      "name": "True Wireless Earbuds",
+      "description": "Earbuds without a cable connecting the two earpieces.",
+      "image": "images/audio/subcategories/true-wireless-earbuds.webp",
+      "url": "#",
+      "order": 1,
+      "status": "active"
+    },
+    {
+      "id": "wired-earphones",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "wired-earphones",
+      "name": "Wired Earphones",
+      "description": "Earphones that connect directly through a cable.",
+      "image": "images/audio/subcategories/wired-earphones.webp",
+      "url": "#",
+      "order": 2,
+      "status": "active"
+    },
+    {
+      "id": "wireless-earphones",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "wireless-earphones",
+      "name": "Wireless Earphones",
+      "description": "Wireless earphones for everyday listening.",
+      "image": "images/audio/subcategories/wireless-earphones.webp",
+      "url": "#",
+      "order": 3,
+      "status": "active"
+    },
+    {
+      "id": "noise-cancelling-earbuds",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "noise-cancelling-earbuds",
+      "name": "Noise-Cancelling Earbuds",
+      "description": "Earbuds designed to reduce surrounding noise.",
+      "image": "images/audio/subcategories/noise-cancelling-earbuds.webp",
+      "url": "#",
+      "order": 4,
+      "status": "active"
+    },
+    {
+      "id": "sports-earbuds",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "sports-earbuds",
+      "name": "Sports Earbuds",
+      "description": "Earbuds designed for exercise and active use.",
+      "image": "images/audio/subcategories/sports-earbuds.webp",
+      "url": "#",
+      "order": 5,
+      "status": "active"
+    },
+    {
+      "id": "gaming-earbuds",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "gaming-earbuds",
+      "name": "Gaming Earbuds",
+      "description": "Earbuds intended for gaming and voice communication.",
+      "image": "images/audio/subcategories/gaming-earbuds.webp",
+      "url": "#",
+      "order": 6,
+      "status": "active"
+    },
+    {
+      "id": "open-ear-earbuds",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "open-ear-earbuds",
+      "name": "Open-Ear Earbuds",
+      "description": "Earbuds designed to leave the ear canal open.",
+      "image": "images/audio/subcategories/open-ear-earbuds.webp",
+      "url": "#",
+      "order": 7,
+      "status": "active"
+    },
+    {
+      "id": "bone-conduction-earphones",
+      "type": "sub",
+      "parentId": "audio-earbuds",
+      "slug": "bone-conduction-earphones",
+      "name": "Bone-Conduction Earphones",
+      "description": "Earphones that transmit sound through bone conduction.",
+      "image": "images/audio/subcategories/bone-conduction-earphones.webp",
+      "url": "#",
+      "order": 8,
+      "status": "active"
+    },
+    {
+      "id": "bluetooth-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "bluetooth-speakers",
+      "name": "Bluetooth Speakers",
+      "description": "Speakers that connect to compatible devices over Bluetooth.",
+      "image": "images/audio/subcategories/bluetooth-speakers.webp",
+      "url": "#",
+      "order": 1,
+      "status": "active"
+    },
+    {
+      "id": "portable-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "portable-speakers",
+      "name": "Portable Speakers",
+      "description": "Compact speakers designed for listening on the go.",
+      "image": "images/audio/subcategories/portable-speakers.webp",
+      "url": "#",
+      "order": 2,
+      "status": "active"
+    },
+    {
+      "id": "bookshelf-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "bookshelf-speakers",
+      "name": "Bookshelf Speakers",
+      "description": "Speakers designed for shelves, desks, and compact stereo systems.",
+      "image": "images/audio/subcategories/bookshelf-speakers.webp",
+      "url": "#",
+      "order": 3,
+      "status": "active"
+    },
+    {
+      "id": "floorstanding-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "floorstanding-speakers",
+      "name": "Floorstanding Speakers",
+      "description": "Tall speakers designed to stand directly on the floor.",
+      "image": "images/audio/subcategories/floorstanding-speakers.webp",
+      "url": "#",
+      "order": 4,
+      "status": "active"
+    },
+    {
+      "id": "computer-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "computer-speakers",
+      "name": "Computer Speakers",
+      "description": "Speakers designed for desktop and laptop audio.",
+      "image": "images/audio/subcategories/computer-speakers.webp",
+      "url": "#",
+      "order": 5,
+      "status": "active"
+    },
+    {
+      "id": "smart-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "smart-speakers",
+      "name": "Smart Speakers",
+      "description": "Speakers with integrated smart features and voice assistants.",
+      "image": "images/audio/subcategories/smart-speakers.webp",
+      "url": "#",
+      "order": 6,
+      "status": "active"
+    },
+    {
+      "id": "outdoor-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "outdoor-speakers",
+      "name": "Outdoor Speakers",
+      "description": "Speakers designed for outdoor listening environments.",
+      "image": "images/audio/subcategories/outdoor-speakers.webp",
+      "url": "#",
+      "order": 7,
+      "status": "active"
+    },
+    {
+      "id": "party-speakers",
+      "type": "sub",
+      "parentId": "audio-speakers",
+      "slug": "party-speakers",
+      "name": "Party Speakers",
+      "description": "Speakers designed for gatherings and parties.",
+      "image": "images/audio/subcategories/party-speakers.webp",
+      "url": "#",
+      "order": 8,
+      "status": "active"
+    },
+    {
+      "id": "powered-subwoofers",
+      "type": "sub",
+      "parentId": "audio-subwoofers",
+      "slug": "powered-subwoofers",
+      "name": "Powered Subwoofers",
+      "description": "Subwoofers with a built-in amplifier.",
+      "image": "images/audio/subcategories/powered-subwoofers.webp",
+      "url": "#",
+      "order": 1,
+      "status": "active"
+    },
+    {
+      "id": "passive-subwoofers",
+      "type": "sub",
+      "parentId": "audio-subwoofers",
+      "slug": "passive-subwoofers",
+      "name": "Passive Subwoofers",
+      "description": "Subwoofers that require an external amplifier.",
+      "image": "images/audio/subcategories/passive-subwoofers.webp",
+      "url": "#",
+      "order": 2,
+      "status": "active"
+    },
+    {
+      "id": "home-theater-subwoofers",
+      "type": "sub",
+      "parentId": "audio-subwoofers",
+      "slug": "home-theater-subwoofers",
+      "name": "Home Theater Subwoofers",
+      "description": "Subwoofers intended for home cinema systems.",
+      "image": "images/audio/subcategories/home-theater-subwoofers.webp",
+      "url": "#",
+      "order": 3,
+      "status": "active"
+    },
+    {
+      "id": "car-subwoofers",
+      "type": "sub",
+      "parentId": "audio-subwoofers",
+      "slug": "car-subwoofers",
+      "name": "Car Subwoofers",
+      "description": "Subwoofers designed for vehicle audio systems.",
+      "image": "images/audio/subcategories/car-subwoofers.webp",
+      "url": "#",
+      "order": 4,
+      "status": "active"
+    },
+    {
+      "id": "studio-subwoofers",
+      "type": "sub",
+      "parentId": "audio-subwoofers",
+      "slug": "studio-subwoofers",
+      "name": "Studio Subwoofers",
+      "description": "Subwoofers designed for studio monitoring setups.",
+      "image": "images/audio/subcategories/studio-subwoofers.webp",
+      "url": "#",
+      "order": 5,
+      "status": "active"
+    },
+    {
+      "id": "soundbars",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "soundbars",
+      "name": "Soundbars",
+      "description": "Compact speaker systems designed to improve TV audio.",
+      "image": "images/audio/subcategories/soundbars.webp",
+      "url": "#",
+      "order": 1,
+      "status": "active"
+    },
+    {
+      "id": "av-receivers",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "av-receivers",
+      "name": "AV Receivers",
+      "description": "Receivers that manage audio and video sources in home theater systems.",
+      "image": "images/audio/subcategories/av-receivers.webp",
+      "url": "#",
+      "order": 2,
+      "status": "active"
+    },
+    {
+      "id": "home-theater-systems",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "home-theater-systems",
+      "name": "Home Theater Systems",
+      "description": "Complete speaker systems for home cinema.",
+      "image": "images/audio/subcategories/home-theater-systems.webp",
+      "url": "#",
+      "order": 3,
+      "status": "active"
+    },
+    {
+      "id": "surround-sound-systems",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "surround-sound-systems",
+      "name": "Surround Sound Systems",
+      "description": "Multi-speaker systems designed to create an immersive sound field.",
+      "image": "images/audio/subcategories/surround-sound-systems.webp",
+      "url": "#",
+      "order": 4,
+      "status": "active"
+    },
+    {
+      "id": "stereo-receivers",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "stereo-receivers",
+      "name": "Stereo Receivers",
+      "description": "Receivers for two-channel stereo listening.",
+      "image": "images/audio/subcategories/stereo-receivers.webp",
+      "url": "#",
+      "order": 5,
+      "status": "active"
+    },
+    {
+      "id": "integrated-amplifiers",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "integrated-amplifiers",
+      "name": "Integrated Amplifiers",
+      "description": "Amplifiers that combine preamplifier and power-amplifier functions.",
+      "image": "images/audio/subcategories/integrated-amplifiers.webp",
+      "url": "#",
+      "order": 6,
+      "status": "active"
+    },
+    {
+      "id": "wireless-home-audio",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "wireless-home-audio",
+      "name": "Wireless Home Audio",
+      "description": "Wireless audio components for home listening.",
+      "image": "images/audio/subcategories/wireless-home-audio.webp",
+      "url": "#",
+      "order": 7,
+      "status": "active"
+    },
+    {
+      "id": "home-audio-components",
+      "type": "sub",
+      "parentId": "audio-home-theater",
+      "slug": "home-audio-components",
+      "name": "Home Audio Components",
+      "description": "Separate components for building a home audio system.",
+      "image": "images/audio/subcategories/home-audio-components.webp",
+      "url": "#",
+      "order": 8,
+      "status": "active"
+    },
+        {
+      "id": "Closed-Back Headphones",
+      "type": "sub",
+      "parentId": "Closed-Back Headphones",
+      "slug": "Closed-Back Headphones",
+      "name": "Closed-Back Headphones",
+      "description": "Separate components for building a home audio system.",
+      "image": "images/audio/subcategories/home-audio-components.webp",
+      "url": "#",
+      "order": 8,
+      "status": "active"
+    }
+
+  ]
+}
 

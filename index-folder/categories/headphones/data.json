@@ -4,7 +4,7 @@
     "name": "Sony WH-1000XM6",
     "brand": "Sony",
     "type": "Over-Ear",
-    "price": 449,
+    "price": 458,
     "batteryLife": 40,
     "wireless": true,
     "noiseCancelling": true,
@@ -14,9 +14,9 @@
     "microphone": true,
     "tags": ["Premium", "Travel", "Audiophile"],
     "summary": "Flagship noise-canceling headphones with adaptive sound control and clear hands-free calling.",
-    "imageUrl": "images/XM6.avif",
-    "amazonUrl": "https://www.amazon.com/s?k=sony+wh-1000xm6",
-    "detailsUrl": "#"
+    "imageUrl": "https://ik.imagekit.io/ghmasgcim/XM6_QGFNd4H87.avif",
+    "amazonUrl": "https://amzn.to/3U0mNRp",
+    "detailsUrl": "products/over-ear/sony-wh-1000xm6/index.html"
   },
   {
     "id": "sony-wh-1000xm5",

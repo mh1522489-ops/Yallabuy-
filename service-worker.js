@@ -4,7 +4,7 @@
 // 1. CACHE CONFIGURATION
 // ========================================
 
-const CACHE_VERSION = 'v331';
+const CACHE_VERSION = 'v332';
 
 const CACHE_PREFIX = 'yallabuy-';
 

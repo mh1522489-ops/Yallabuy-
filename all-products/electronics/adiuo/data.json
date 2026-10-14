@@ -11,8 +11,8 @@
       "slug": "headphones",
       "name": "Headphones",
       "description": "Explore headphones for music, gaming, work, and everyday listening.",
-      "image": "",
-      "url": "#",
+      "image": "https://ik.imagekit.io/ghmasgcim/20628.avif",
+      "url": "products/headphones/index.html",
       "order": 1,
       "status": "active",
       "subcategories": [

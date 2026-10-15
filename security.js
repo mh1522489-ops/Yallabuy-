@@ -1,199 +1,165 @@
 // ============================================
-// YallaBuy Security - Lightweight v4 (Fixed)
+// YallaBuy Security - Lightweight v5
 // ============================================
 
-(function() {
+(function () {
   'use strict';
 
   if (window.__yallabuy_security_loaded) return;
   window.__yallabuy_security_loaded = true;
 
-  // ============================================
-  // CONFIG
-  // ============================================
   const CONFIG = {
-    devToolsDetection: true,
-    botDetection: false,       // ❌ تم إيقافه لتجنب مشكلة Access Denied على Vercel
-    inputSanitization: true,
-    antiTamper: true,
-    encryption: false,
-    fingerprinting: false,
-    clickjacking: true,       // ✅ تم تصحيح الخطأ البرمجي هنا
-    blockShortcuts: true,
-    blockRightClick: false,
-    blockSelect: false,
+    inputProtection: true,
+    honeypot: true,
+    clickjacking: true,
+    blockDangerousLinks: true
   };
 
   // ============================================
-  // 1. ANTI-DEBUG
+  // 1. INPUT PROTECTION
   // ============================================
-  const AntiDebug = {
-    init() {
-      if (!CONFIG.devToolsDetection) return;
 
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'F12') {
-          e.preventDefault();
-          this.warn();
-        }
-        if (e.ctrlKey && e.shiftKey && ['I','J'].includes(e.key)) {
-          e.preventDefault();
-          this.warn();
-        }
-      }, true);
-    },
-
-    warn() {
-      console.warn('%c⚠️ DevTools detected', 'color: orange; font-size: 14px;');
-    }
-  };
-
-  // ============================================
-  // 2. BOT DETECTION
-  // ============================================
-  const BotDetection = {
-    init() {
-      if (!CONFIG.botDetection) return;
-
-      const ua = navigator.userAgent.toLowerCase();
-      const isBot = navigator.webdriver === true ||
-                    /headless|phantomjs|selenium|puppeteer|playwright|cypress/i.test(ua);
-
-      if (isBot) {
-        console.warn('[Security] Bot detected');
-      }
-    }
-  };
-
-  // ============================================
-  // 3. ANTI-TAMPER
-  // ============================================
-  const AntiTamper = {
-    init() {
-      if (!CONFIG.antiTamper) return;
-
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach(m => {
-          m.addedNodes.forEach(node => {
-            if (node.nodeType === 1 && node.tagName === 'SCRIPT') {
-              const src = node.src || '';
-              const allowed = [
-                window.location.origin,
-                'https://cdn.jsdelivr.net',
-                'https://unpkg.com',
-                'https://cdnjs.cloudflare.com',
-                'https://fonts.googleapis.com',
-                'https://fonts.gstatic.com'
-              ];
-              const isAllowed = allowed.some(d => src.startsWith(d)) || src === '';
-              if (!isAllowed) {
-                console.warn('[Security] Blocked script:', src);
-                node.remove();
-              }
-            }
-          });
-        });
-      });
-
-      observer.observe(document.documentElement, {
-        childList: true,
-        subtree: true
-      });
-    }
-  };
-
-  // ============================================
-  // 4. INPUT SANITIZATION
-  // ============================================
   const InputProtection = {
     init() {
-      if (!CONFIG.inputSanitization) return;
+      if (!CONFIG.inputProtection) return;
 
-      const sanitize = (str) => {
-        if (typeof str !== 'string') return str;
-        return str
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#x27;');
-      };
+      document.addEventListener('submit', (event) => {
+        const form = event.target;
 
-      document.querySelectorAll('input:not([type="password"]), textarea').forEach(input => {
-        input.addEventListener('blur', (e) => {
-          e.target.value = sanitize(e.target.value);
-        });
-      });
+        if (!(form instanceof HTMLFormElement)) return;
 
-      document.querySelectorAll('form').forEach(form => {
+        const fields = form.querySelectorAll(
+          'input:not([type="hidden"]):not([type="submit"]):not([type="button"]), textarea'
+        );
+
+        for (const field of fields) {
+          if (field.disabled) continue;
+
+          if (field.validity.valid === false) {
+            event.preventDefault();
+            field.reportValidity();
+            return;
+          }
+        }
+      }, true);
+    }
+  };
+
+  // ============================================
+  // 2. HONEYPOT
+  // ============================================
+
+  const HoneypotProtection = {
+    init() {
+      if (!CONFIG.honeypot) return;
+
+      document.querySelectorAll('form').forEach((form) => {
+        if (form.querySelector('[data-security-honeypot]')) return;
+
         const honeypot = document.createElement('input');
+
         honeypot.type = 'text';
-        honeypot.name = 'website';
-        honeypot.style.cssText = 'position:absolute;left:-9999px;opacity:0;';
-        honeypot.setAttribute('tabindex', '-1');
-        honeypot.setAttribute('autocomplete', 'off');
+        honeypot.name = 'security_website';
+        honeypot.autocomplete = 'off';
+        honeypot.tabIndex = -1;
+        honeypot.setAttribute('aria-hidden', 'true');
+        honeypot.setAttribute('data-security-honeypot', '');
+
+        honeypot.style.cssText = [
+          'position:absolute',
+          'width:1px',
+          'height:1px',
+          'padding:0',
+          'margin:-1px',
+          'overflow:hidden',
+          'clip:rect(0,0,0,0)',
+          'white-space:nowrap',
+          'border:0'
+        ].join(';');
+
         form.appendChild(honeypot);
 
-        form.addEventListener('submit', (e) => {
-          if (honeypot.value !== '') {
-            e.preventDefault();
-            console.warn('[Security] Honeypot triggered');
+        form.addEventListener('submit', (event) => {
+          if (honeypot.value.trim() !== '') {
+            event.preventDefault();
+            event.stopImmediatePropagation();
           }
-        });
+        }, true);
       });
     }
   };
 
   // ============================================
-  // 5. CLICKJACKING
+  // 3. CLICKJACKING FALLBACK
   // ============================================
+
   const ClickjackingProtection = {
     init() {
       if (!CONFIG.clickjacking) return;
 
-      if (window.self !== window.top) {
-        window.top.location = window.self.location;
+      try {
+        if (window.self !== window.top) {
+          document.documentElement.style.display = 'none';
+        }
+      } catch {
+        document.documentElement.style.display = 'none';
       }
     }
   };
 
   // ============================================
-  // 6. NETWORK
+  // 4. DANGEROUS LINK PROTECTION
   // ============================================
-  const NetworkProtection = {
+
+  const LinkProtection = {
     init() {
-      document.addEventListener('click', (e) => {
-        const a = e.target.closest('a');
-        if (!a) return;
-        const href = a.getAttribute('href') || '';
-        if (href.startsWith('javascript:') || href.startsWith('data:')) {
-          e.preventDefault();
-          console.warn('[Security] Blocked:', href);
+      if (!CONFIG.blockDangerousLinks) return;
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (!(target instanceof Element)) return;
+
+        const link = target.closest('a[href]');
+
+        if (!link) return;
+
+        const href = link.getAttribute('href');
+
+        if (!href) return;
+
+        const normalized = href.trim();
+
+        if (/^(javascript|data|vbscript)\s*:/i.test(normalized)) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
         }
-      });
+      }, true);
     }
   };
 
   // ============================================
-  // INIT
+  // 5. INITIALIZATION
   // ============================================
+
   function init() {
     try {
-      AntiDebug.init();
-      BotDetection.init();
-      AntiTamper.init();
       InputProtection.init();
+      HoneypotProtection.init();
       ClickjackingProtection.init();
-      NetworkProtection.init();
-      console.log('[Security] YallaBuy Lightweight active');
-    } catch (err) {
-      console.error('[Security] Init error:', err);
+      LinkProtection.init();
+
+      console.info('[Security] YallaBuy security initialized');
+    } catch (error) {
+      console.error('[Security] Initialization error:', error);
     }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', init, {
+      once: true
+    });
   } else {
     init();
   }
-
 })();

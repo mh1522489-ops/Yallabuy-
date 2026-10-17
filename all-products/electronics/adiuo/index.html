@@ -1259,19 +1259,22 @@
                 imgContainer.appendChild(fallbackDiv);
 
                 if (imgSrc) {
-                    const img = document.createElement('img');
-                    img.className = 'card-image';
-                    img.src = imgSrc;
-                    img.alt = name;
-                    img.loading = 'lazy'; // Lazy load for performance
-                    img.style.opacity = '0';
-                    
-                    img.onload = () => { img.style.opacity = '1'; };
-                    // If image fails, keep the fallback visible
-                    img.onerror = () => { img.remove(); };
-                    
-                    imgContainer.appendChild(img);
-                }
+    const img = document.createElement('img');
+
+    img.className = 'card-image';
+    img.alt = name;
+    img.loading = 'lazy';
+
+    img.onload = () => {
+        console.log('Image loaded:', img.currentSrc || img.src);
+
+        img.style.opacity = '1';
+        fallbackDiv.style.display = 'none';
+    };
+
+    img.src = imgSrc;
+    imgContainer.appendChild(img);
+}
 
                 // Card Body
                 const body = document.createElement('div');

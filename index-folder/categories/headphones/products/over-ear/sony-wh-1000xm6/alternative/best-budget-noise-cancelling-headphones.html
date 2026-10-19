@@ -431,6 +431,55 @@
     </div>
   </section>
 
+<div class="price-disclaimer">
+  <span class="price-disclaimer__icon" aria-hidden="true">ⓘ</span>
+  <p>
+    Prices on Amazon can change at any time.
+    The price displayed on Amazon at checkout
+    is the final price.
+  </p>
+</div>
+
+<style>
+  .price-disclaimer {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    margin: 16px 0;
+    background: #f7f5f0;
+    border: 1px solid #e8e3d9;
+    border-radius: 8px;
+    color: #625e56;
+    font-family: inherit;
+  }
+
+  .price-disclaimer__icon {
+    flex-shrink: 0;
+    color: #d97757;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .price-disclaimer p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  @media (max-width: 480px) {
+    .price-disclaimer {
+      gap: 8px;
+      padding: 10px 12px;
+    }
+
+    .price-disclaimer p {
+      font-size: 11px;
+    }
+  }
+</style>
+
   <!-- ========== ARTICLE ========== -->
   <div class="container">
     <div class="article-layout">

@@ -42,7 +42,7 @@
     "name": "Sony WH-CH720N",
     "brand": "Sony",
     "type": "Over-Ear",
-    "price": 148,
+    "price": 88,
     "batteryLife": 35,
     "wireless": true,
     "noiseCancelling": true,
@@ -52,9 +52,9 @@
     "microphone": true,
     "tags": ["Budget"],
     "summary": "Lightweight everyday wireless headphones with reliable ANC at an accessible price.",
-    "imageUrl": "https://images.unsplash.com/photo-1484787990205-2ca9d6f7ebca?w=600&q=80",
-    "amazonUrl": "https://www.amazon.com/s?k=sony+wh-ch720n",
-    "detailsUrl": "#"
+    "imageUrl": "https://ik.imagekit.io/ghmasgcim/22106.avif",
+    "amazonUrl": "https://link.amazon/B07444nTt",
+    "detailsUrl": "products/over-ear/sony-wh-ch720n/index.html"
   },
   {
     "id": "sony-ult-wear",
